@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+  --white:#FFFFFF;
+  --warm:#F5F1ED;
+  --mid:#8f8a86;
+  --text:#1A1A1A;
+  --pink:#E91E84;
+  --purple:#6B4C9A;
+  --teal:#2BA898;
+  --line: rgba(0,0,0,0.08);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Outfit', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--text);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a{color:inherit;}
+.container{max-width:860px;margin:0 auto;padding:0 18px;}
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  max-width:1080px;margin:0 auto;padding:14px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.brand img{width:28px;height:28px;border-radius:6px;object-fit:cover;}
+.brand span{font-weight:800;letter-spacing:1px;}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+.nav-links a{
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  padding:8px 12px;
+  border-radius:8px;
+  color:var(--mid);
+}
+.nav-links a.active{color:var(--pink);background:rgba(233,30,132,0.10);}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:100px 0 60px;
+  background:linear-gradient(160deg,var(--white) 0%,var(--warm) 42%,rgba(233,30,132,0.04) 100%);
+  position:relative;
+  overflow:hidden;
+}
+.bubble1{position:absolute;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;background:rgba(43,168,152,0.06);}
+.bubble2{position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:rgba(107,76,154,0.05);}
+
+.kicker{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--mid);}
+.h1{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(42px,6.2vw,72px);
+  line-height:1.05;
+  margin:22px 0 0;
+  font-weight:700;
+  white-space:pre-line;
+}
+.h2{
+  font-family:'Playfair Display', serif;
+  font-size:clamp(28px,4vw,44px);
+  line-height:1.15;
+  margin:0;
+  font-weight:700;
+  white-space:pre-line;
+}
+.p{
+  font-size:18px;
+  line-height:1.75;
+  font-weight:300;
+  margin:0;
+  white-space:pre-line;
+}
+.p.mid{color:var(--mid);}
+.btn{
+  display:inline-block;
+  background:var(--pink);
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  padding:14px 34px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:0.8px;
+  box-shadow:0 18px 60px rgba(233,30,132,0.22);
+}
+.section{padding:86px 0;}
+.section.warm{background:var(--warm);}
+.section.grad{background:linear-gradient(160deg,rgba(233,30,132,0.06),rgba(107,76,154,0.05));}
+.center{text-align:center;}
+.spacer{height:18px;}
+.spacer-2{height:42px;}
+.smallcaps{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);font-weight:800;}
+.quote{font-family:'Playfair Display', serif;font-style:italic;font-size:18px;color:var(--mid);line-height:1.7;}
+.footer{padding:48px 0;text-align:center;color:var(--mid);font-size:12px;}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;}
+.label{font-size:12px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mid);font-weight:800;}
+.input{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.12);font-size:14px;margin-top:6px;}
+
+/* Awards conditional formatting */
+.section-title{font-family:'Playfair Display', serif;font-size:clamp(24px,3.4vw,34px);font-weight:700;margin:0;}
+.section-sub{margin-top:10px;color:var(--mid);font-size:14px;line-height:1.7;}
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px;}
+.award-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 16px 14px;}
+.award-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mid);background:rgba(0,0,0,0.02);}
+.award-title{margin-top:10px;font-family:'Playfair Display', serif;font-size:16px;font-weight:700;line-height:1.25;}
+.award-meta{margin-top:6px;font-size:13px;color:var(--mid);line-height:1.5;}
+.gold .award-tag{color:#7A5A00;background:rgba(200,169,78,0.16);border-color:rgba(200,169,78,0.38);}
+.silver .award-tag{color:#4E5560;background:rgba(155,149,144,0.18);border-color:rgba(155,149,144,0.42);}
+.bronze .award-tag{color:#7A3E1A;background:rgba(175,104,63,0.16);border-color:rgba(175,104,63,0.38);}
+.finalist .award-tag{color:var(--purple);background:rgba(107,76,154,0.14);border-color:rgba(107,76,154,0.32);}
