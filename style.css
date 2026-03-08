@@ -1014,3 +1014,30 @@ input {
     font-size: clamp(2rem, 9vw, 2.6rem);
   }
 }
+@media (max-width: 480px) {
+  .btn,
+  .btn-dark {
+    width: 100%;
+  }
+
+  .hero-actions,
+  .button-row {
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: clamp(3rem, 14vw, 4.2rem);
+  }
+
+  .section-title-xl {
+    font-size: clamp(2.55rem, 11vw, 3.35rem);
+  }
+
+  .section-title-lg {
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .section-title-md {
+    font-size: clamp(2rem, 9vw, 2.6rem);
+  }
+}
