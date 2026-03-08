@@ -622,8 +622,7 @@
   selectedArrival = value;
 
   const buttons = document.querySelectorAll('[onclick^="setArrival"]');
-
-  buttons.forEach(btn => btn.classList.remove("selected"));
+  buttons.forEach((btn) => btn.classList.remove("selected"));
 
   el.classList.add("selected");
 }
