@@ -1194,3 +1194,34 @@ input {
   justify-content: center;
   align-items: center;
 }
+/* ---- Journey calming patch ---- */
+
+.tools-layout {
+  grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.tools-nav {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.tool-card {
+  min-height: auto;
+  padding: 1.75rem 1.5rem;
+}
+
+.tool-panel-wrap {
+  padding: 2.2rem;
+}
+
+@media (max-width: 1120px) {
+  .tools-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-nav {
+    grid-template-columns: 1fr;
+  }
+}
