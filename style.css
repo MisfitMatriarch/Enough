@@ -1041,3 +1041,44 @@ input {
     font-size: clamp(2rem, 9vw, 2.6rem);
   }
 }
+/* ---- Journey progress indicator ---- */
+
+.journey-progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 2rem;
+  padding: 0 1rem;
+}
+
+.journey-step {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+.journey-step.is-active {
+  color: var(--accent);
+}
+
+.journey-dot {
+  color: rgba(37, 25, 45, 0.28);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .journey-progress {
+    gap: 0.4rem 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-step,
+  .journey-dot {
+    font-size: 0.84rem;
+  }
+}
