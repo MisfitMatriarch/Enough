@@ -1168,3 +1168,29 @@ input {
     grid-template-columns: 1fr;
   }
 }
+/* ---- Portrait image fixes ---- */
+
+.portrait-frame {
+  position: relative;
+  width: min(100%, 560px);
+  aspect-ratio: 0.92 / 1.08;
+  overflow: hidden;
+  border-radius: 38px;
+  background: #eee6eb;
+  box-shadow: var(--shadow-card);
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+
+.feature-media,
+.about-media-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
