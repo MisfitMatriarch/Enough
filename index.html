@@ -247,28 +247,47 @@
 </p>
           </div>
 
-          <div class="tool-form active" id="tool-recognition">
-            <p class="body-copy">
-              You begin by noticing what has already been spent before the work even begins.
-            </p>
-            <div class="ledger-columns">
-              <div class="mini-panel">
-                <p class="mini-heading">You might notice</p>
-                <ul class="mini-list">
-                  <li>How much energy it costs just to enter a space</li>
-                  <li>How much has already been spent before the day begins</li>
-                  <li>How environments quietly drain capacity</li>
-                </ul>
-              </div>
-              <div class="mini-panel">
-                <p class="mini-heading">This stage opens with</p>
-                <ul class="mini-list">
-                  <li>Arrival Cost</li>
-                  <li>Energy Ledger</li>
-                </ul>
-              </div>
-            </div>
-            <p class="result-text">Start by seeing the cost clearly.</p>
+        <div class="tool-form active" id="tool-recognition">
+
+  <p class="body-copy">
+    Before anything begins, notice what it cost you just to arrive here today.
+  </p>
+
+  <label class="mini-heading">How did you arrive?</label>
+
+  <div class="choice-grid" id="arrivalChoices">
+    <button type="button" onclick="setArrival(this,'ready')">Ready</button>
+    <button type="button" onclick="setArrival(this,'braced')">Braced</button>
+    <button type="button" onclick="setArrival(this,'quiet')">Quiet</button>
+    <button type="button" onclick="setArrival(this,'drained')">Already drained</button>
+  </div>
+
+  <button class="btn btn-primary top-gap-sm" type="button" onclick="showArrival()">
+    See My Arrival Pattern
+  </button>
+
+  <p id="arrivalResult" class="result-text"></p>
+
+  <div class="ledger-columns top-gap-sm">
+    <div class="mini-panel">
+      <p class="mini-heading">You might notice</p>
+      <ul class="mini-list">
+        <li>How much energy it costs just to enter a space</li>
+        <li>How much has already been spent before the day begins</li>
+        <li>How environments quietly drain capacity</li>
+      </ul>
+    </div>
+
+    <div class="mini-panel">
+      <p class="mini-heading">This stage opens with</p>
+      <ul class="mini-list">
+        <li>Arrival Cost</li>
+        <li>Energy Ledger</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
             <div class="button-row top-gap-sm">
               <a class="btn btn-primary" href="#journey">See What It’s Costing You</a>
               <a class="btn btn-secondary" href="#book">Read the book</a>
