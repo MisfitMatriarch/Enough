@@ -4,913 +4,636 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ENOUGH | Tanya Hicks</title>
-  <meta name="description" content="ENOUGH by Tanya Hicks. Interactive tools, book, speaking, and waitlist." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg-top:#faf4f7;
-      --bg-mid:#fdfaf6;
-      --bg-bottom:#fffdfb;
-      --panel:#fffaf6;
-      --panel-2:#f8f1f5;
-      --cream:#fbf8f4;
-      --cream-2:#fdfbf8;
-      --plum:#24132f;
-      --muted:#6f627e;
-      --purple:#6f57b4;
-      --pink:#f542a7;
-      --line:rgba(36,19,47,.08);
-      --shadow-soft:0 18px 48px rgba(36,19,47,.08);
-      --shadow-card:0 24px 50px rgba(36,19,47,.10);
-      --radius-xl:40px;
-      --radius-lg:28px;
-      --radius-pill:999px;
-      --max:1400px;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,sans-serif;
-      color:var(--plum);
-      background:linear-gradient(180deg,var(--bg-top) 0%,var(--bg-mid) 20%,var(--bg-bottom) 100%);
-    }
-    img{max-width:100%;display:block}
-    button,input{font:inherit}
-    a{text-decoration:none;color:inherit}
-
-    .container{max-width:var(--max);margin:0 auto;padding:0 40px}
-    .section{padding:140px 0}
-    .section-tight{padding:90px 0}
-
-    .eyebrow{
-      font-size:14px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--purple);
-      font-weight:700;
-      margin-bottom:18px;
-    }
-
-    .display{
-      font-family:"Cormorant Garamond",serif;
-      font-weight:600;
-      line-height:.92;
-      letter-spacing:-.03em;
-      margin:0;
-    }
-
-    .body-lg{font-size:24px;line-height:1.48;color:var(--muted)}
-    .body-md{font-size:22px;line-height:1.45;color:var(--muted)}
-
-    .btn-primary,
-    .btn-secondary,
-    .small-btn,
-    .big-btn{
-      border:none;
-      border-radius:var(--radius-pill);
-      font-weight:700;
-      cursor:pointer;
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .btn-primary:hover,
-    .btn-secondary:hover,
-    .small-btn:hover,
-    .big-btn:hover{transform:translateY(-1px)}
-
-    .btn-primary,
-    .big-btn{
-      background:var(--pink);
-      color:#fff;
-      box-shadow:0 12px 28px rgba(245,66,167,.24);
-    }
-    .btn-secondary{
-      background:#fff;
-      color:var(--plum);
-      border:1px solid rgba(36,19,47,.10);
-    }
-    .btn-primary,.btn-secondary{padding:16px 26px;font-size:17px}
-    .small-btn{background:var(--plum);color:#fff;padding:0 24px;font-size:18px}
-    .big-btn{padding:18px 28px;font-size:20px}
-
-    .site-header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:blur(10px);
-      background:rgba(253,251,248,.86);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      max-width:var(--max);
-      margin:0 auto;
-      padding:24px 40px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-    }
-    .brand-top{
-      font-size:14px;
-      letter-spacing:.2em;
-      font-weight:700;
-      color:var(--purple);
-      text-transform:uppercase;
-      line-height:1;
-      margin-bottom:6px;
-    }
-    .brand-bottom{
-      font-family:"Cormorant Garamond",serif;
-      font-size:32px;
-      line-height:1;
-    }
-    .nav-links{display:flex;align-items:center;gap:34px;font-size:16px;font-weight:500}
-
-    .hero{padding:54px 0 110px}
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:46px;
-      align-items:center;
-      min-height:calc(100vh - 110px);
-    }
-    .hero-title{font-size:clamp(88px,9.5vw,150px);max-width:7.5ch}
-    .hero-title span{display:block}
-    .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:28px}
-    .hero-image-shell{position:relative;min-height:780px}
-    .hero-image{
-      position:absolute;right:0;bottom:0;height:100%;width:auto;object-fit:cover;
-      mask-image:linear-gradient(to left, black 68%, transparent 100%);
-      -webkit-mask-image:linear-gradient(to left, black 68%, transparent 100%);
-    }
-
-    .recognition{text-align:center}
-    .recognition-title{font-size:clamp(60px,7vw,112px);max-width:11ch;margin:0 auto 34px}
-    .recognition-title span{display:block}
-    .recognition .body-lg{max-width:34ch;margin:12px auto 0}
-
-    .question-grid{
-      display:grid;
-      grid-template-columns:.8fr 1.2fr;
-      gap:72px;
-      align-items:start;
-    }
-    .question-left{text-align:center}
-    .question-title{font-size:clamp(92px,8.6vw,150px);color:var(--pink)}
-    .question-title span{display:block}
-    .question-right{text-align:center;padding-top:8px}
-    .question-copy{font-size:28px;line-height:1.3;color:var(--plum);margin:0 0 14px}
-    .question-copy.strong{font-weight:700;margin-top:18px;margin-bottom:20px}
-    .question-copy.smaller{font-size:23px;color:var(--muted);margin-bottom:8px}
-
-    .dignity{text-align:center}
-    .dignity-title{font-size:clamp(70px,7vw,120px);margin-bottom:36px}
-    .dignity-title span{display:block}
-    .dignity-list,
-    .possibility-flow-inline{
-      display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;
-    }
-    .dignity-pill,
-    .flow-pill{
-      padding:14px 20px;border-radius:var(--radius-pill);
-      background:rgba(255,255,255,.7);border:1px solid var(--line);
-      box-shadow:var(--shadow-soft);font-size:28px;color:var(--plum);
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .dignity-pill:hover,
-    .flow-pill:hover{transform:scale(1.06);box-shadow:var(--shadow-card);background:#fff}
-    .dignity-close{margin-top:28px;font-size:26px;color:var(--muted)}
-
-    .thesis{text-align:center}
-    .thesis-title{font-size:clamp(80px,8vw,140px);margin-bottom:24px}
-    .thesis-title span{display:block}
-    .thesis-copy{font-size:25px;color:var(--muted);margin:10px 0}
-
-    .identity-panel{
-      background:linear-gradient(180deg,#f3ebf7 0%,#faf6f8 100%);
-      border:1px solid rgba(111,87,180,.10);
-      border-radius:42px;
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.7), var(--shadow-soft);
-      padding:58px 48px 44px;
-      text-align:center;
-    }
-    .identity-title{font-size:clamp(98px,8.2vw,170px);color:var(--purple);margin-bottom:12px}
-    .identity-title span{display:block}
-    .identity-copy{font-size:28px;color:var(--muted);margin:0}
-
-    .possibility{text-align:center}
-    .possibility-title{font-size:clamp(68px,6.8vw,118px);margin-bottom:30px}
-    .possibility-title span{display:block}
-    .flow-chart{
-      display:grid;
-      grid-template-columns:1fr auto 1.25fr auto 1fr;
-      gap:18px;
-      align-items:center;
-      margin-top:18px;
-    }
-    .flow-card{
-      background:rgba(255,255,255,.74);border:1px solid var(--line);border-radius:28px;
-      padding:24px 22px;min-height:170px;display:flex;align-items:center;justify-content:center;
-      box-shadow:var(--shadow-soft);text-align:center;
-    }
-    .flow-card p{margin:0;font-size:24px;line-height:1.28;color:var(--muted)}
-    .flow-arrow{font-size:42px;color:var(--purple)}
-    .possibility-close{font-size:24px;color:var(--plum);font-weight:600;max-width:32ch;margin:28px auto 0}
-
-    .tools-intro{text-align:center;padding-top:40px;padding-bottom:30px}
-    .tools-intro-title{font-size:clamp(72px,6.5vw,120px);margin-bottom:16px}
-    .tools-intro-copy{font-size:26px;color:var(--muted);margin:6px 0}
-    .tools-intro-copy.strong{font-weight:700;color:var(--plum)}
-
-    .tools-grid{
-      display:grid;grid-template-columns:.95fr 1.05fr;gap:28px;align-items:start;
-    }
-    .tools-cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .tool-card{
-      text-align:left;border:none;border-radius:34px;padding:32px 30px 28px;background:#f7f3ee;
-      box-shadow:var(--shadow-card);border:1px solid rgba(36,19,47,.05);cursor:pointer;color:var(--plum);
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
-    .tool-card:hover,.tool-card.active{transform:translateY(-3px);box-shadow:0 28px 54px rgba(36,19,47,.12)}
-    .tool-card.lavender{background:#f2ebf6}
-    .tool-card.sand{background:#f6f0e6}
-    .tool-card.blush{background:#f7edf3}
-    .tool-kicker,.tool-preview-kicker{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--purple);margin-bottom:20px}
-    .tool-card h3,.tool-preview h3{font-family:"Cormorant Garamond",serif;font-size:58px;line-height:.92;margin:0 0 18px}
-    .tool-card p,.tool-preview-text{font-size:23px;line-height:1.38;color:var(--muted);margin:0 0 22px}
-    .tool-card span{font-size:20px;font-weight:700}
-    .tool-preview{
-      background:#fffaf6;border-radius:40px;padding:34px 34px 38px;border:1px solid rgba(36,19,47,.05);
-      box-shadow:var(--shadow-card);
-    }
-    .tool-form{display:none}
-    .tool-form.active{display:block}
-    .tool-form label{display:block;font-size:18px;font-weight:700;margin:18px 0 10px}
-    .tool-input-row{display:grid;grid-template-columns:1fr auto;gap:12px;margin-bottom:22px}
-    .tool-input-row input,.waitlist-input{
-      border:1px solid rgba(36,19,47,.10);background:#fff;border-radius:18px;padding:16px 20px;font-size:18px;color:var(--plum);
-    }
-    .ledger-columns{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
-    .mini-heading{font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);font-weight:700;margin-bottom:10px}
-    .mini-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
-    .mini-list li{background:#fff;border:1px solid rgba(36,19,47,.07);border-radius:16px;padding:12px 14px;font-size:17px}
-    .balance-result{font-size:20px;color:var(--plum);margin-top:18px;font-weight:600}
-    .choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
-    .choice-grid button{
-      border:none;border-radius:20px;padding:16px 18px;background:#fff;color:var(--plum);
-      border:1px solid rgba(36,19,47,.10);font-weight:700;cursor:pointer;
-    }
-    .choice-grid button.selected{background:#efe3f3;color:var(--purple);border-color:rgba(111,87,180,.18)}
-    .tool-preview-text.small{font-size:20px;margin-top:18px;margin-bottom:0}
-    .tools-microcopy{text-align:center;max-width:960px;margin:34px auto 0}
-    .tools-microcopy p{font-size:24px;line-height:1.45;color:var(--muted);margin:8px 0}
-    .tools-microcopy p strong{color:var(--plum)}
-
-    .book-section,.authority-section,.about-section,.speaking-section,.waitlist-section,.closing-section{background:var(--cream-2)}
-    .book-wrap,
-    .about-wrap,
-    .speaking-wrap{display:grid;gap:74px;align-items:center}
-    .book-wrap{grid-template-columns:420px 1fr}
-    .about-wrap{grid-template-columns:1.05fr .95fr;align-items:start}
-    .speaking-wrap{grid-template-columns:1.05fr .95fr}
-
-    .book-cover-wrap{perspective:1200px}
-    .book-cover{
-      width:100%;border-radius:10px;box-shadow:0 40px 70px rgba(36,19,47,.35), -10px 0 18px rgba(0,0,0,.12);
-      transform:rotateY(-12deg);transform-origin:left center;
-    }
-    .book-title{font-size:clamp(72px,6vw,110px);margin:0 0 20px}
-    .book-sub{display:block;font-size:clamp(36px,3vw,52px);color:var(--muted)}
-    .book-copy{font-size:24px;color:var(--muted);line-height:1.5;max-width:34ch;margin:10px 0}
-    .book-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
-
-    .authority{text-align:center}
-    .authority-title{font-size:clamp(72px,6.5vw,110px);margin-bottom:40px}
-    .authority-title span{display:block}
-    .authority-copy{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 28px;margin-bottom:28px}
-    .authority-copy p{font-size:24px;color:var(--muted);margin:0}
-    .authority-close{font-size:26px;color:var(--plum);max-width:28ch;margin:24px auto 0}
-
-    .about-intro{text-align:center;margin-bottom:34px}
-    .about-left{display:flex;flex-direction:column;align-items:flex-start}
-    .about-image-shell,
-    .speaking-image-shell{
-      position:relative;min-height:760px;border-radius:40px;overflow:hidden;box-shadow:0 26px 60px rgba(36,19,47,.10);
-    }
-    .about-image,.speaking-image{width:100%;height:100%;object-fit:cover}
-    .about-image-fade,
-    .speaking-image-fade{
-      position:absolute;inset:0;pointer-events:none;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.66) 80%, var(--cream-2) 100%),
-        linear-gradient(180deg, rgba(255,255,255,0) 66%, var(--cream-2) 100%);
-    }
-    .about-title{font-size:clamp(72px,6vw,112px);margin:0}
-    .about-quote{font-size:clamp(40px,3vw,58px);line-height:1.12;color:var(--plum);margin:0 0 24px;max-width:26ch}
-    .about-role{font-size:22px;color:var(--purple);margin:0 0 28px;font-weight:600}
-    .about-expand{
-      width:100%;max-width:42rem;background:rgba(255,255,255,.78);border:1px solid rgba(36,19,47,.08);
-      border-radius:26px;padding:22px 24px;box-shadow:0 16px 36px rgba(36,19,47,.08);
-    }
-    .about-expand-trigger{
-      width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;border:none;background:none;
-      padding:0;cursor:pointer;font-family:"Cormorant Garamond",serif;font-size:clamp(38px,2.8vw,52px);line-height:1;color:var(--plum);text-align:left;
-    }
-    .about-expand-icon{
-      width:42px;height:42px;display:grid;place-items:center;border-radius:999px;background:#f1e8f4;color:var(--purple);
-      font-family:Inter,sans-serif;font-size:28px;flex:0 0 auto;
-    }
-    .about-expand-content{max-height:0;overflow:hidden;transition:max-height .45s ease, margin-top .45s ease}
-    .about-expand.open .about-expand-content{max-height:900px;margin-top:18px}
-    .about-copy{font-size:22px;color:var(--muted);line-height:1.48;max-width:34ch;margin:10px 0}
-    .about-orgs,.speaking-audience,.speaking-tools{display:flex;flex-wrap:wrap;gap:12px 14px;margin-top:28px}
-    .about-orgs span,.speaking-audience span,.speaking-tools span{
-      padding:12px 18px;border-radius:999px;background:#f1e8f4;color:var(--purple);font-weight:700;border:1px solid rgba(111,87,180,.10);
-    }
-
-    .speaking-title{font-size:clamp(70px,6vw,108px);margin:0 0 22px}
-    .speaking-title span{display:block}
-    .speaking-principle{font-size:28px;color:var(--purple);font-weight:700;margin:0 0 24px}
-    .speaking-copy{font-size:23px;color:var(--muted);line-height:1.45;max-width:36ch;margin:12px 0}
-    .speaking-close{font-size:24px;color:var(--plum);max-width:32ch;margin:20px 0 30px}
-
-    .waitlist-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.7) 0%, rgba(248,242,245,.9) 100%);
-      border:1px solid rgba(36,19,47,.06);border-radius:40px;box-shadow:0 26px 60px rgba(36,19,47,.10);
-      padding:52px 46px;text-align:center;max-width:1200px;margin:0 auto;
-    }
-    .waitlist-title{font-size:clamp(68px,6vw,108px);margin:0 0 22px}
-    .waitlist-title span{display:block}
-    .waitlist-copy{font-size:24px;color:var(--muted);margin:10px 0}
-    .waitlist-copy.strong{color:var(--plum);font-weight:700}
-    .waitlist-form-row{display:grid;grid-template-columns:1fr auto;gap:16px;max-width:780px;margin:30px auto 0}
-    .waitlist-input{border-radius:999px;padding:18px 22px;font-size:20px}
-
-    .closing{text-align:center}
-    .closing-title{font-size:clamp(72px,6.2vw,112px);margin:0 0 24px}
-    .closing-title span{display:block}
-    .closing-copy{font-size:28px;color:var(--muted);margin:0 0 12px}
-    .closing-final{font-size:40px;color:var(--plum);font-weight:700;margin:0 0 30px}
-    .closing-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-
-    @media (max-width:1200px){
-      .tools-grid{grid-template-columns:1fr}
-      .book-wrap,.about-wrap,.speaking-wrap,.hero-grid{grid-template-columns:1fr}
-      .book-cover{transform:none;max-width:420px;margin:auto}
-      .about-left,.speaking-text,.book-text{text-align:center;align-items:center}
-      .book-actions,.about-orgs,.speaking-audience,.speaking-tools{justify-content:center}
-      .about-image-shell,.speaking-image-shell,.hero-image-shell{min-height:520px}
-      .hero-image{position:relative;width:100%;height:100%;mask-image:none;-webkit-mask-image:none}
-    }
-
-    @media (max-width:1000px){
-      .question-grid{grid-template-columns:1fr;gap:40px}
-      .question-right{padding-top:0}
-      .tools-cards{grid-template-columns:1fr}
-      .flow-chart{grid-template-columns:1fr;gap:14px}
-      .flow-arrow{transform:rotate(90deg);justify-self:center}
-      .flow-card{min-height:auto}
-    }
-
-    @media (max-width:900px){
-      .container{padding:0 20px}
-      .nav{padding:20px}
-      .nav-links{display:none}
-      .section{padding:90px 0}
-      .section-tight{padding:70px 0}
-      .hero-title{font-size:clamp(64px,16vw,104px)}
-      .recognition-title,.dignity-title,.thesis-title,.possibility-title,.tools-intro-title,.book-title,.authority-title,.about-title,.speaking-title,.waitlist-title,.closing-title{font-size:clamp(46px,11vw,78px)}
-      .identity-title{font-size:clamp(56px,11vw,82px)}
-      .question-title{font-size:clamp(58px,14vw,92px)}
-      .body-lg,.body-md,.question-copy,.book-copy,.speaking-copy,.waitlist-copy,.about-copy,.authority-copy p,.authority-close,.closing-copy,.thesis-copy,.dignity-close,.question-copy.smaller,.possibility-close,.flow-card p{font-size:19px}
-      .about-expand-trigger{font-size:clamp(30px,8vw,42px)}
-      .waitlist-form-row{grid-template-columns:1fr}
-      .ledger-columns,.choice-grid{grid-template-columns:1fr}
-      .identity-panel,.waitlist-card,.tool-preview{padding:30px 22px}
-      .dignity-pill,.flow-pill{font-size:22px}
-    }
-  </style>
+  <meta
+    name="description"
+    content="ENOUGH by Tanya Hicks. Interactive tools, book, speaking, and waitlist."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="nav">
-      <a href="#top">
-        <div class="brand-top">Tanya Hicks</div>
-        <div class="brand-bottom">ENOUGH</div>
-      </a>
-      <nav class="nav-links">
-        <a href="#recognition">Recognition</a>
-        <a href="#tools">Tools</a>
-        <a href="#book">Book</a>
-        <a href="#speaking">Speaking</a>
-        <a href="#about">About</a>
-        <a class="btn-primary" href="#waitlist">Join Waitlist</a>
-      </nav>
+    <div class="container">
+      <div class="nav">
+        <a href="#top" class="brand" aria-label="Go to top">
+          <span class="brand-top">Tanya Hicks</span>
+          <span class="brand-bottom">ENOUGH</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#recognition">Recognition</a>
+          <a href="#tools">Tools</a>
+          <a href="#book">Book</a>
+          <a href="#speaking">Speaking</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <a class="btn btn-primary nav-cta" href="#waitlist">Join Waitlist</a>
+      </div>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero section-tight">
+    <section class="hero">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-copy">
+          <p class="eyebrow">ENOUGH · For the Enduring</p>
           <h1 class="display hero-title">
-            <span>You have</span>
-            <span>worked</span>
-            <span>too hard</span>
-            <span>for life</span>
-            <span>to still be</span>
-            <span>this hard.</span>
+            You have worked too hard for life to still be this hard.
           </h1>
+          <p class="lead hero-lead">
+            For the people who kept trying, kept learning, kept holding it together,
+            and still ended up paying a cost no one could explain.
+          </p>
           <div class="hero-actions">
-            <a class="btn-primary" href="#tools">Start the Tools</a>
-            <a class="btn-secondary" href="#book">Explore ENOUGH</a>
+            <a class="btn btn-primary" href="#tools">Start the Tools</a>
+            <a class="btn btn-secondary" href="#book">Explore ENOUGH</a>
           </div>
         </div>
-        <div class="hero-image-shell">
-          <img class="hero-image" src="assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg" alt="Tanya Hicks standing by a doorway" />
+
+        <div class="hero-media">
+          <div class="hero-image-frame">
+            <img
+              src="assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg"
+              alt="Tanya Hicks standing by a doorway"
+              class="hero-image"
+            />
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="recognition" class="recognition section">
-      <div class="container">
-        <h2 class="display recognition-title">
-          <span>You tried the therapy.</span>
-          <span>The routines.</span>
-          <span>The boundaries.</span>
-          <span>The books.</span>
+    <section id="recognition" class="section section-soft">
+      <div class="container narrow centre">
+        <p class="eyebrow">Recognition</p>
+        <h2 class="display section-title-xl">
+          You tried the therapy. The routines. The boundaries. The books.
         </h2>
-        <p class="body-lg">You keep doing what you were told would work.</p>
-        <p class="body-lg"><strong>And somehow it still costs more than it should.</strong></p>
+        <p class="lead">You keep doing what you were told would work.</p>
+        <p class="lead lead-strong">And somehow it still costs more than it should.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container question-grid">
         <div class="question-left">
-          <h2 class="display question-title">
-            <span>What if</span>
-            <span>nothing is</span>
-            <span>wrong with</span>
-            <span>you?</span>
+          <p class="eyebrow">The Question</p>
+          <h2 class="display section-title-lg accent-title">
+            What if nothing is wrong with you?
           </h2>
         </div>
+
         <div class="question-right">
-          <p class="question-copy">Before you spend more money on the next course,</p>
-          <p class="question-copy">the next coach,</p>
-          <p class="question-copy">the next strategy</p>
-          <p class="question-copy strong">do you actually have the tools to see what is really happening?</p>
-          <p class="question-copy smaller">Where your energy is going.</p>
-          <p class="question-copy smaller">Where your effort is wasted.</p>
-          <p class="question-copy smaller">Where your leverage actually is.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="dignity section">
-      <div class="container">
-        <h2 class="display dignity-title">
-          <span>For years</span>
-          <span>the message</span>
-          <span>has been</span>
-          <span>simple.</span>
-        </h2>
-        <div class="dignity-list">
-          <div class="dignity-pill">Try harder.</div>
-          <div class="dignity-pill">Push through.</div>
-          <div class="dignity-pill">Be more disciplined.</div>
-        </div>
-        <p class="dignity-close">But you already did that.</p>
-      </div>
-    </section>
-
-    <section class="thesis section-tight">
-      <div class="container">
-        <h2 class="display thesis-title">
-          <span>Wrong conditions</span>
-          <span>harm capable</span>
-          <span>people.</span>
-        </h2>
-        <p class="thesis-copy">Not because they lack discipline.</p>
-        <p class="thesis-copy">Because the environment quietly drains the capacity they rely on.</p>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="container">
-        <div class="identity-panel">
-          <h2 class="display identity-title">
-            <span>Misfit by Design.</span>
-            <span>Not Deficit.</span>
-          </h2>
-          <p class="identity-copy">Sometimes the system is the mismatch.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="possibility section">
-      <div class="container">
-        <h2 class="display possibility-title">
-          <span>When you can see</span>
-          <span>what is actually happening,</span>
-          <span>everything shifts.</span>
-        </h2>
-
-        <div class="flow-chart">
-          <div class="flow-card"><p>You stop blaming yourself.</p></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-card"><p>You start making decisions that work with how you are built.</p></div>
-          <div class="flow-arrow">→</div>
-          <div class="flow-card"><p>Life begins to open up again.</p></div>
-        </div>
-
-        <p class="possibility-close">That is what ENOUGH - For the Enduring is about.</p>
-      </div>
-    </section>
-
-    <section class="tools-intro section-tight">
-      <div class="container">
-        <div class="eyebrow">Tools Intro</div>
-        <h2 class="display tools-intro-title">Start Here</h2>
-        <p class="tools-intro-copy">If the problem is not simply effort,</p>
-        <p class="tools-intro-copy">the next question becomes</p>
-        <p class="tools-intro-copy strong">Where is your energy actually going?</p>
-        <p class="tools-intro-copy">The tools below help you see the pattern clearly.</p>
-      </div>
-    </section>
-
-    <section id="tools" class="section-tight">
-      <div class="container">
-        <div class="tools-grid">
-          <div class="tools-cards">
-            <button class="tool-card active" data-tool="ledger" type="button">
-              <div class="tool-kicker">Interactive Tool</div>
-              <h3>Energy Ledger</h3>
-              <p>Where is your energy actually going before the work even begins? Many capable people discover the work itself is only a small part of the energy equation.</p>
-              <span>Map Your Energy →</span>
-            </button>
-
-            <button class="tool-card lavender" data-tool="arrival" type="button">
-              <div class="tool-kicker">Interactive Tool</div>
-              <h3>Arrival Cost</h3>
-              <p>How expensive is it just to enter an environment? Some places cost energy before the work even begins.</p>
-              <span>Measure Arrival Cost →</span>
-            </button>
-
-            <button class="tool-card sand" data-tool="leverage" type="button">
-              <div class="tool-kicker">Interactive Tool</div>
-              <h3>Leverage Grid</h3>
-              <p>Which efforts actually change the outcome and which ones never will? Not everything deserves your effort.</p>
-              <span>Find Your Leverage →</span>
-            </button>
-
-            <button class="tool-card blush" data-tool="season" type="button">
-              <div class="tool-kicker">Interactive Tool</div>
-              <h3>Season Check</h3>
-              <p>What season of life are you actually in? The same strategy does not work in every season.</p>
-              <span>Check Your Season →</span>
-            </button>
+          <div class="question-stack">
+            <p>Before you spend more money on the next course, the next coach, the next strategy...</p>
+            <p class="question-emphasis">
+              do you actually have the tools to see what is really happening?
+            </p>
+            <ul class="clean-list">
+              <li>Where your energy is going</li>
+              <li>Where your effort is wasted</li>
+              <li>Where your leverage actually is</li>
+            </ul>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="tool-preview">
-            <div class="tool-preview-kicker">Tool Preview</div>
-            <h3 id="previewTitle">Energy Ledger</h3>
-            <p class="tool-preview-text" id="previewText">Map what adds and what takes. Not a productivity exercise. A structural audit. When the balance is visible, the exhaustion stops being personal.</p>
+    <section class="section section-soft">
+      <div class="container centre narrow">
+        <p class="eyebrow">For Years</p>
+        <h2 class="display section-title-lg">The message has been simple.</h2>
+        <div class="pill-row">
+          <span class="pill">Try harder.</span>
+          <span class="pill">Push through.</span>
+          <span class="pill">Be more disciplined.</span>
+        </div>
+        <p class="body-copy muted top-gap-sm">But you already did that.</p>
+      </div>
+    </section>
 
-            <div class="tool-form active" id="panel-ledger">
-              <label for="addInput">What adds to your energy</label>
-              <div class="tool-input-row">
-                <input id="addInput" placeholder="e.g. morning quiet, creative work" />
-                <button class="small-btn" type="button" onclick="addLedgerItem('add')">Add</button>
-              </div>
+    <section class="section section-tight">
+      <div class="container centre narrow">
+        <p class="eyebrow">Thesis</p>
+        <h2 class="display section-title-lg">Wrong conditions harm capable people.</h2>
+        <p class="body-copy muted">Not because they lack discipline.</p>
+        <p class="body-copy muted">
+          Because the environment quietly drains the capacity they rely on.
+        </p>
+      </div>
+    </section>
 
-              <label for="takeInput">What takes from your energy</label>
-              <div class="tool-input-row">
-                <input id="takeInput" placeholder="e.g. open-plan office, email volume" />
-                <button class="small-btn" type="button" onclick="addLedgerItem('take')">Add</button>
-              </div>
+    <section class="section section-tight">
+      <div class="container">
+        <div class="identity-panel centre">
+          <p class="eyebrow">Core Line</p>
+          <h2 class="display section-title-lg identity-title">Misfit by Design. Not Deficit.</h2>
+          <p class="body-copy muted">Sometimes the system is the mismatch.</p>
+        </div>
+      </div>
+    </section>
 
-              <div class="ledger-columns">
-                <div>
-                  <div class="mini-heading">Adds</div>
-                  <ul id="addList" class="mini-list"></ul>
-                </div>
-                <div>
-                  <div class="mini-heading">Takes</div>
-                  <ul id="takeList" class="mini-list"></ul>
-                </div>
-              </div>
+    <section class="section">
+      <div class="container centre">
+        <p class="eyebrow">What Changes</p>
+        <h2 class="display section-title-lg narrow">
+          When you can see what is actually happening, everything shifts.
+        </h2>
 
-              <button class="big-btn" type="button" onclick="showBalance()">See My Balance →</button>
-              <p id="balanceResult" class="balance-result"></p>
-            </div>
-
-            <div class="tool-form" id="panel-arrival">
-              <label>Before you enter this environment, how do you arrive?</label>
-              <div class="choice-grid">
-                <button type="button" onclick="setArrival(this,'ready')">Ready</button>
-                <button type="button" onclick="setArrival(this,'braced')">Braced</button>
-                <button type="button" onclick="setArrival(this,'quiet')">Quiet</button>
-                <button type="button" onclick="setArrival(this,'drained')">Already drained</button>
-              </div>
-              <button class="big-btn" type="button" onclick="showArrival()">See My Pattern →</button>
-              <p id="arrivalResult" class="balance-result"></p>
-            </div>
-
-            <div class="tool-form" id="panel-leverage">
-              <label for="levInput">What is taking your effort right now?</label>
-              <div class="tool-input-row">
-                <input id="levInput" placeholder="Type one thing at a time" />
-                <button class="small-btn" type="button" onclick="addLeverageItem()">Add</button>
-              </div>
-              <ul id="levList" class="mini-list"></ul>
-              <p class="tool-preview-text small">Ask of each item: Is this mine to carry? Does this effort change the outcome?</p>
-            </div>
-
-            <div class="tool-form" id="panel-season">
-              <label>Which line feels most true right now?</label>
-              <div class="choice-grid">
-                <button type="button" onclick="setSeason(this,'stabilising')">I am stabilising.</button>
-                <button type="button" onclick="setSeason(this,'rebuilding')">I am rebuilding.</button>
-                <button type="button" onclick="setSeason(this,'steady')">I feel steady.</button>
-                <button type="button" onclick="setSeason(this,'expanding')">I am ready to expand.</button>
-              </div>
-              <button class="big-btn" type="button" onclick="showSeason()">See My Season →</button>
-              <p id="seasonResult" class="balance-result"></p>
-            </div>
+        <div class="flow-grid">
+          <div class="flow-card">
+            <p>You stop blaming yourself.</p>
+          </div>
+          <div class="flow-card flow-card-feature">
+            <p>You start making decisions that work with how you are built.</p>
+          </div>
+          <div class="flow-card">
+            <p>Life begins to open up again.</p>
           </div>
         </div>
 
-        <div class="tools-microcopy">
-          <p>Most people have been told the solution is more effort.</p>
-          <p><strong>But effort without understanding the conditions is how capable people burn out.</strong></p>
-          <p>These tools help you see what is actually happening.</p>
-        </div>
+        <p class="body-copy top-gap-sm">That is what ENOUGH – For the Enduring is about.</p>
       </div>
     </section>
 
-    <section id="book" class="book-section section">
-      <div class="container book-wrap">
-        <div class="book-cover-wrap">
+    <section class="section section-soft section-tight-top">
+      <div class="container centre narrow">
+        <p class="eyebrow">Tools Intro</p>
+        <h2 class="display section-title-md">Start Here</h2>
+        <p class="body-copy muted">If the problem is not simply effort,</p>
+        <p class="body-copy muted">the next question becomes</p>
+        <p class="body-copy body-strong">Where is your energy actually going?</p>
+        <p class="body-copy muted">The tools below help you see the pattern clearly.</p>
+      </div>
+    </section>
+
+    <section id="tools" class="section section-tight">
+      <div class="container tools-layout">
+        <div class="tools-nav" role="tablist" aria-label="Interactive tools">
+          <button class="tool-card active" data-tool="ledger" type="button" role="tab" aria-selected="true">
+            <span class="tool-kicker">Interactive Tool</span>
+            <h3>Energy Ledger</h3>
+            <p>Map what adds and what takes. Not productivity. A structural audit.</p>
+            <span class="tool-link">Map Your Energy</span>
+          </button>
+
+          <button class="tool-card" data-tool="arrival" type="button" role="tab" aria-selected="false">
+            <span class="tool-kicker">Interactive Tool</span>
+            <h3>Arrival Cost</h3>
+            <p>See the hidden cost of entering a space before the work even begins.</p>
+            <span class="tool-link">Measure Arrival Cost</span>
+          </button>
+
+          <button class="tool-card" data-tool="leverage" type="button" role="tab" aria-selected="false">
+            <span class="tool-kicker">Interactive Tool</span>
+            <h3>Leverage Grid</h3>
+            <p>Separate what is outside your control from what is worth your effort.</p>
+            <span class="tool-link">Find Your Leverage</span>
+          </button>
+
+          <button class="tool-card" data-tool="season" type="button" role="tab" aria-selected="false">
+            <span class="tool-kicker">Interactive Tool</span>
+            <h3>Season Check</h3>
+            <p>Recalibrate to the season you are actually in, not the one you think you should be.</p>
+            <span class="tool-link">Check Your Season</span>
+          </button>
+        </div>
+
+        <div class="tool-panel-wrap">
+          <div class="tool-panel-header">
+            <p class="eyebrow">Tool Preview</p>
+            <h3 id="previewTitle" class="display tool-preview-title">Energy Ledger</h3>
+            <p id="previewText" class="body-copy muted">
+              Map what adds and what takes. Not a productivity exercise. A structural audit.
+              When the balance is visible, the exhaustion stops being personal.
+            </p>
+          </div>
+
+          <div class="tool-form active" id="panel-ledger">
+            <label for="addInput">What adds to your energy</label>
+            <div class="input-row">
+              <input id="addInput" type="text" placeholder="e.g. morning quiet, creative work" />
+              <button class="btn btn-dark" type="button" onclick="addLedgerItem('add')">Add</button>
+            </div>
+
+            <label for="takeInput">What takes from your energy</label>
+            <div class="input-row">
+              <input id="takeInput" type="text" placeholder="e.g. open-plan office, email volume" />
+              <button class="btn btn-dark" type="button" onclick="addLedgerItem('take')">Add</button>
+            </div>
+
+            <div class="ledger-columns">
+              <div class="mini-panel">
+                <p class="mini-heading">Adds</p>
+                <ul id="addList" class="mini-list"></ul>
+              </div>
+              <div class="mini-panel">
+                <p class="mini-heading">Takes</p>
+                <ul id="takeList" class="mini-list"></ul>
+              </div>
+            </div>
+
+            <button class="btn btn-primary top-gap-sm" type="button" onclick="showBalance()">See My Balance</button>
+            <p id="balanceResult" class="result-text"></p>
+          </div>
+
+          <div class="tool-form" id="panel-arrival">
+            <label>Before you enter this environment, how do you arrive?</label>
+            <div class="choice-grid" id="arrivalChoices">
+              <button type="button" onclick="setArrival(this,'ready')">Ready</button>
+              <button type="button" onclick="setArrival(this,'braced')">Braced</button>
+              <button type="button" onclick="setArrival(this,'quiet')">Quiet</button>
+              <button type="button" onclick="setArrival(this,'drained')">Already drained</button>
+            </div>
+            <button class="btn btn-primary top-gap-sm" type="button" onclick="showArrival()">See My Pattern</button>
+            <p id="arrivalResult" class="result-text"></p>
+          </div>
+
+          <div class="tool-form" id="panel-leverage">
+            <label for="levInput">What is taking your effort right now?</label>
+            <div class="input-row">
+              <input id="levInput" type="text" placeholder="Type one thing at a time" />
+              <button class="btn btn-dark" type="button" onclick="addLeverageItem()">Add</button>
+            </div>
+            <ul id="levList" class="mini-list"></ul>
+            <p class="body-copy muted top-gap-sm">
+              Ask of each item: Is this mine to carry? Does this effort change the outcome?
+            </p>
+          </div>
+
+          <div class="tool-form" id="panel-season">
+            <label>Which line feels most true right now?</label>
+            <div class="choice-grid" id="seasonChoices">
+              <button type="button" onclick="setSeason(this,'stabilising')">I am stabilising.</button>
+              <button type="button" onclick="setSeason(this,'rebuilding')">I am rebuilding.</button>
+              <button type="button" onclick="setSeason(this,'steady')">I feel steady.</button>
+              <button type="button" onclick="setSeason(this,'expanding')">I am ready to expand.</button>
+            </div>
+            <button class="btn btn-primary top-gap-sm" type="button" onclick="showSeason()">See My Season</button>
+            <p id="seasonResult" class="result-text"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container narrow centre top-gap-md">
+        <p class="body-copy muted">Most people have been told the solution is more effort.</p>
+        <p class="body-copy body-strong">
+          But effort without understanding the conditions is how capable people burn out.
+        </p>
+        <p class="body-copy muted">These tools help you see what is actually happening.</p>
+      </div>
+    </section>
+
+    <section id="book" class="section section-soft">
+      <div class="container split-feature">
+        <div class="feature-media book-media">
           <img src="assets/Book cover.png" alt="ENOUGH book cover" class="book-cover" />
         </div>
-        <div class="book-text">
-          <div class="eyebrow">Book</div>
-          <h2 class="display book-title">
-            <span>ENOUGH</span>
-            <span class="book-sub">For the Enduring</span>
-          </h2>
-          <p class="book-copy">The tools help you see the pattern. The book explains the architecture behind it.</p>
-          <p class="book-copy">ENOUGH is written for the people who kept trying.</p>
-          <p class="book-copy">The ones who learned the skills, did the work, held it together and still ended up paying a cost no one could explain.</p>
-          <p class="book-copy">This book names what has been happening and shows what changes when the conditions finally make sense.</p>
-          <div class="book-actions">
-            <a class="big-btn" href="#waitlist">Join the Waitlist</a>
-            <a class="btn-secondary" href="#top">Explore ENOUGH</a>
+
+        <div class="feature-copy">
+          <p class="eyebrow">Book</p>
+          <h2 class="display section-title-lg">ENOUGH <span class="sub-display">For the Enduring</span></h2>
+          <p class="body-copy muted">
+            The tools help you see the pattern. The book explains the architecture behind it.
+          </p>
+          <p class="body-copy muted">
+            ENOUGH is written for the people who kept trying.
+          </p>
+          <p class="body-copy muted">
+            The ones who learned the skills, did the work, held it together, and still ended
+            up paying a cost no one could explain.
+          </p>
+          <p class="body-copy muted">
+            This book names what has been happening and shows what changes when the conditions
+            finally make sense.
+          </p>
+
+          <div class="button-row top-gap-sm">
+            <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
+            <a class="btn btn-secondary" href="#top">Back to Top</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="authority section">
-      <div class="container">
-        <h2 class="display authority-title">
-          <span>This work was not built</span>
-          <span>as theory first.</span>
-        </h2>
-        <div class="authority-copy">
-          <p>It was built inside real systems.</p>
-          <p>Clinical practice.</p>
-          <p>Neurodivergent affirming support.</p>
-          <p>Community design.</p>
-          <p>Leadership work.</p>
-          <p>Advocacy.</p>
+    <section class="section">
+      <div class="container centre narrow">
+        <p class="eyebrow">Authority</p>
+        <h2 class="display section-title-lg">This work was not built as theory first.</h2>
+        <div class="pill-row pill-row-soft">
+          <span class="pill">Clinical practice</span>
+          <span class="pill">Neurodivergent affirming support</span>
+          <span class="pill">Community design</span>
+          <span class="pill">Leadership work</span>
+          <span class="pill">Advocacy</span>
         </div>
-        <p class="authority-close">Because when capable people keep struggling inside the same conditions, something deeper is happening.</p>
+        <p class="body-copy top-gap-sm">
+          Because when capable people keep struggling inside the same conditions,
+          something deeper is happening.
+        </p>
       </div>
     </section>
 
-    <section id="about" class="about-section section">
+    <section id="about" class="section section-soft">
       <div class="container">
-        <div class="about-intro">
-          <div class="eyebrow">About</div>
-          <h2 class="display about-title">Tanya Hicks</h2>
+        <div class="section-head centre">
+          <p class="eyebrow">About</p>
+          <h2 class="display section-title-md">Tanya Hicks</h2>
         </div>
 
-        <div class="about-wrap">
-          <div class="about-left">
-            <p class="about-quote">“I do not choose between soul and science, body and ethics, pleasure and responsibility. I work at the point where those false divides collapse.”</p>
+        <div class="about-grid">
+          <div class="about-copy-col">
+            <blockquote class="about-quote">
+              “I do not choose between soul and science, body and ethics, pleasure and responsibility.
+              I work at the point where those false divides collapse.”
+            </blockquote>
+
             <p class="about-role">Misfit Matriarch · Human Systems Architect · Author</p>
 
             <div class="about-expand" id="aboutExpand">
               <button class="about-expand-trigger" type="button" onclick="toggleAboutExpand()">
                 <span>Forty seven was a big year.</span>
-                <span class="about-expand-icon">+</span>
+                <span class="about-expand-icon" aria-hidden="true">+</span>
               </button>
+
               <div class="about-expand-content">
-                <p class="about-copy">I am a late diagnosed AuDHD counsellor, solo parent, and author, with PMDD and hypermobile Ehlers Danlos layered underneath everything I once called coping.</p>
-                <p class="about-copy">For most of my life I could hyper focus on skill development with surgical precision.</p>
-                <p class="about-copy">I trained exceptionally well.</p>
-                <p class="about-copy">And I was still paying a cost no one could explain.</p>
-                <p class="about-copy">So the work you see here began the way many important systems do.</p>
-                <p class="about-copy">Someone needed something the world had not built yet.</p>
-                <p class="about-copy">So it got built.</p>
+                <p class="body-copy muted">
+                  I am a late diagnosed AuDHD counsellor, solo parent, and author, with PMDD
+                  and hypermobile Ehlers Danlos layered underneath everything I once called coping.
+                </p>
+                <p class="body-copy muted">
+                  For most of my life I could hyper focus on skill development with surgical precision.
+                </p>
+                <p class="body-copy muted">I trained exceptionally well.</p>
+                <p class="body-copy muted">
+                  And I was still paying a cost no one could explain.
+                </p>
+                <p class="body-copy muted">
+                  So the work you see here began the way many important systems do.
+                </p>
+                <p class="body-copy muted">
+                  Someone needed something the world had not built yet.
+                </p>
+                <p class="body-copy muted">So it got built.</p>
               </div>
             </div>
 
-            <div class="about-orgs">
-              <span>Neurodivergent Empowered</span>
-              <span>Sparkly Aliens Inc.</span>
-              <span>The Nest</span>
+            <div class="pill-row top-gap-sm">
+              <span class="pill">Neurodivergent Empowered</span>
+              <span class="pill">Sparkly Aliens Inc.</span>
+              <span class="pill">The Nest</span>
             </div>
           </div>
 
-          <div class="about-image-shell">
-            <img src="assets/WCW Paris Eiffel Tower Picnic 2025-183_edited_edited.jpg" alt="Tanya Hicks portrait" class="about-image" />
-            <div class="about-image-fade"></div>
+          <div class="about-media-col">
+            <div class="portrait-frame portrait-frame-right">
+              <img
+                src="assets/WCW Paris Eiffel Tower Picnic 2025-183_edited_edited.jpg"
+                alt="Tanya Hicks portrait"
+                class="portrait-image"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="speaking" class="speaking-section section">
-      <div class="container speaking-wrap">
-        <div class="speaking-image-shell">
-          <img src="assets/WCW 2025 d1-152_edited.jpg" alt="Tanya Hicks speaking on stage" class="speaking-image" />
-          <div class="speaking-image-fade"></div>
+    <section id="speaking" class="section">
+      <div class="container split-feature speaking-feature">
+        <div class="feature-media portrait-tall">
+          <div class="portrait-frame portrait-frame-left">
+            <img
+              src="assets/WCW 2025 d1-152_edited.jpg"
+              alt="Tanya Hicks speaking on stage"
+              class="portrait-image"
+            />
+          </div>
         </div>
 
-        <div class="speaking-text">
-          <div class="eyebrow">Speaking</div>
-          <h2 class="display speaking-title">
-            <span>If you want to help people,</span>
-            <span>first understand the cost</span>
-            <span>of being here.</span>
+        <div class="feature-copy">
+          <p class="eyebrow">Speaking</p>
+          <h2 class="display section-title-lg">
+            If you want to help people, first understand the cost of being here.
           </h2>
-          <p class="speaking-principle">First, do no harm.</p>
-          <p class="speaking-copy">Most professionals enter their work because they want to help.</p>
-          <div class="speaking-audience">
-            <span>Teachers</span><span>Clinicians</span><span>Leaders</span><span>Parents</span>
+          <p class="body-copy body-strong accent-copy">First, do no harm.</p>
+          <p class="body-copy muted">
+            Most professionals enter their work because they want to help.
+          </p>
+
+          <div class="pill-row top-gap-sm">
+            <span class="pill">Teachers</span>
+            <span class="pill">Clinicians</span>
+            <span class="pill">Leaders</span>
+            <span class="pill">Parents</span>
           </div>
-          <p class="speaking-copy">But good intentions alone do not prevent harm.</p>
-          <p class="speaking-copy">When we do not understand the cost of operating inside an environment, the strategies designed to help people can become another source of pressure.</p>
-          <p class="speaking-copy">This work helps professionals see the conditions clearly.</p>
-          <div class="speaking-tools">
-            <span>Arrival Cost</span><span>Energy Ledger</span><span>Leverage Grid</span><span>Season Check</span>
+
+          <p class="body-copy muted top-gap-sm">
+            But good intentions alone do not prevent harm.
+          </p>
+          <p class="body-copy muted">
+            When we do not understand the cost of operating inside an environment,
+            the strategies designed to help people can become another source of pressure.
+          </p>
+          <p class="body-copy muted">
+            This work helps professionals see the conditions clearly.
+          </p>
+
+          <div class="pill-row top-gap-sm">
+            <span class="pill">Arrival Cost</span>
+            <span class="pill">Energy Ledger</span>
+            <span class="pill">Leverage Grid</span>
+            <span class="pill">Season Check</span>
           </div>
-          <p class="speaking-close">Because if capable people keep burning out in your system, the problem is probably not the people.</p>
-          <a class="big-btn" href="#waitlist">Speaking Enquiries →</a>
+
+          <p class="body-copy top-gap-sm">
+            Because if capable people keep burning out in your system,
+            the problem is probably not the people.
+          </p>
+
+          <div class="button-row top-gap-sm">
+            <a class="btn btn-primary" href="#waitlist">Speaking Enquiries</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="waitlist" class="waitlist-section section-tight">
+    <section id="waitlist" class="section section-soft">
       <div class="container">
-        <div class="waitlist-card">
-          <div class="eyebrow">Waitlist</div>
-          <h2 class="display waitlist-title">
-            <span>Be first to hear</span>
-            <span>when ENOUGH opens.</span>
-          </h2>
-          <p class="waitlist-copy">One email when pre-orders open. One email on launch week.</p>
-          <p class="waitlist-copy">No spam. No funnels. No daily inspiration.</p>
-          <p class="waitlist-copy strong">Just the book when it is ready.</p>
-          <div class="waitlist-form-row">
-            <input class="waitlist-input" type="email" placeholder="your@email.com" />
-            <button class="big-btn" type="button">Join the Waitlist →</button>
-          </div>
+        <div class="waitlist-card centre">
+          <p class="eyebrow">Waitlist</p>
+          <h2 class="display section-title-lg">Be first to hear when ENOUGH opens.</h2>
+          <p class="body-copy muted">One email when pre-orders open. One email on launch week.</p>
+          <p class="body-copy muted">No spam. No funnels. No daily inspiration.</p>
+          <p class="body-copy body-strong">Just the book when it is ready.</p>
+
+          <form class="waitlist-form" action="#" method="post">
+            <label class="sr-only" for="waitlistEmail">Email address</label>
+            <input
+              id="waitlistEmail"
+              name="email"
+              type="email"
+              placeholder="your@email.com"
+              autocomplete="email"
+            />
+            <button class="btn btn-primary" type="submit">Join the Waitlist</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <section class="closing section-tight">
-      <div class="container">
-        <h2 class="display closing-title">
-          <span>You do not have to</span>
-          <span>become someone new.</span>
-        </h2>
-        <p class="closing-copy">You only have to stop fighting the way you are built.</p>
-        <p class="closing-final">You were always enough.</p>
-        <div class="closing-actions">
-          <a class="big-btn" href="#book">Explore ENOUGH</a>
-          <a class="btn-secondary" href="#tools">Start the Tools</a>
+    <section class="section section-tight">
+      <div class="container centre narrow">
+        <h2 class="display section-title-lg">You do not have to become someone new.</h2>
+        <p class="body-copy muted">You only have to stop fighting the way you are built.</p>
+        <p class="closing-line">You were always enough.</p>
+        <div class="button-row top-gap-sm centre-buttons">
+          <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
+          <a class="btn btn-secondary" href="#tools">Start the Tools</a>
         </div>
       </div>
     </section>
   </main>
 
   <script>
-    let selectedArrival = '';
-    let selectedSeason = '';
+    let selectedArrival = "";
+    let selectedSeason = "";
 
     const previewMap = {
       ledger: {
-        title: 'Energy Ledger',
-        text: 'Map what adds and what takes. Not a productivity exercise. A structural audit. When the balance is visible, the exhaustion stops being personal.'
+        title: "Energy Ledger",
+        text: "Map what adds and what takes. Not a productivity exercise. A structural audit. When the balance is visible, the exhaustion stops being personal."
       },
       arrival: {
-        title: 'Arrival Cost',
-        text: 'See the hidden cost of entering a space before anything has even started. Some environments cost you before the work begins.'
+        title: "Arrival Cost",
+        text: "See the hidden cost of entering a space before anything has even started. Some environments cost you before the work begins."
       },
       leverage: {
-        title: 'Leverage Grid',
-        text: 'Separate what is outside your control from what is worth your energy. Not every effort deserves your capacity.'
+        title: "Leverage Grid",
+        text: "Separate what is outside your control from what is worth your energy. Not every effort deserves your capacity."
       },
       season: {
-        title: 'Season Check',
-        text: 'Recalibrate to the season you are actually in, not the one you think you should be. Strategy must fit the season.'
+        title: "Season Check",
+        text: "Recalibrate to the season you are actually in, not the one you think you should be. Strategy must fit the season."
       }
     };
 
-    document.querySelectorAll('.tool-card').forEach(card => {
-      card.addEventListener('click', () => {
-        document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('active'));
-        card.classList.add('active');
+    const toolCards = document.querySelectorAll(".tool-card");
+    const toolForms = document.querySelectorAll(".tool-form");
+
+    toolCards.forEach((card) => {
+      card.addEventListener("click", () => {
         const key = card.dataset.tool;
-        document.getElementById('previewTitle').textContent = previewMap[key].title;
-        document.getElementById('previewText').textContent = previewMap[key].text;
-        document.querySelectorAll('.tool-form').forEach(panel => panel.classList.remove('active'));
-        document.getElementById('panel-' + key).classList.add('active');
+
+        toolCards.forEach((c) => {
+          c.classList.remove("active");
+          c.setAttribute("aria-selected", "false");
+        });
+
+        card.classList.add("active");
+        card.setAttribute("aria-selected", "true");
+
+        document.getElementById("previewTitle").textContent = previewMap[key].title;
+        document.getElementById("previewText").textContent = previewMap[key].text;
+
+        toolForms.forEach((panel) => panel.classList.remove("active"));
+        document.getElementById("panel-" + key).classList.add("active");
       });
     });
 
-    function addLedgerItem(type){
-      const input = document.getElementById(type === 'add' ? 'addInput' : 'takeInput');
-      const list = document.getElementById(type === 'add' ? 'addList' : 'takeList');
+    function addLedgerItem(type) {
+      const input = document.getElementById(type === "add" ? "addInput" : "takeInput");
+      const list = document.getElementById(type === "add" ? "addList" : "takeList");
       const value = input.value.trim();
-      if(!value) return;
-      const li = document.createElement('li');
+
+      if (!value) return;
+
+      const li = document.createElement("li");
       li.textContent = value;
       list.appendChild(li);
-      input.value = '';
+      input.value = "";
     }
 
-    function showBalance(){
-      const adds = document.getElementById('addList').children.length;
-      const takes = document.getElementById('takeList').children.length;
-      const result = document.getElementById('balanceResult');
-      if(adds === 0 && takes === 0){
-        result.textContent = 'Start by naming what adds and what takes.';
+    function showBalance() {
+      const adds = document.getElementById("addList").children.length;
+      const takes = document.getElementById("takeList").children.length;
+      const result = document.getElementById("balanceResult");
+
+      if (adds === 0 && takes === 0) {
+        result.textContent = "Start by naming what adds and what takes.";
         return;
       }
-      result.textContent = adds >= takes
-        ? 'Your ledger suggests there is still something to protect. Keep building from what adds.'
-        : 'Your ledger suggests the current cost may be outweighing what this environment gives back.';
+
+      result.textContent =
+        adds >= takes
+          ? "Your ledger suggests there is still something to protect. Keep building from what adds."
+          : "Your ledger suggests the current cost may be outweighing what this environment gives back.";
     }
 
-    function setArrival(el, value){
+    function setArrival(el, value) {
       selectedArrival = value;
-      document.querySelectorAll('#panel-arrival .choice-grid button').forEach(b => b.classList.remove('selected'));
-      el.classList.add('selected');
+      document
+        .querySelectorAll("#arrivalChoices button")
+        .forEach((button) => button.classList.remove("selected"));
+      el.classList.add("selected");
     }
 
-    function showArrival(){
-      const result = document.getElementById('arrivalResult');
+    function showArrival() {
+      const result = document.getElementById("arrivalResult");
       const map = {
-        ready: 'This environment may be workable. The cost of entry appears relatively low.',
-        braced: 'Your body is preparing for impact. The cost of entry may already be too high.',
-        quiet: 'You may be shrinking before the work even starts. That is information, not failure.',
-        drained: 'You are arriving already depleted. The environment may be costing you before anything begins.'
+        ready: "This environment may be workable. The cost of entry appears relatively low.",
+        braced: "Your body is preparing for impact. The cost of entry may already be too high.",
+        quiet: "You may be shrinking before the work even starts. That is information, not failure.",
+        drained: "You are arriving already depleted. The environment may be costing you before anything begins."
       };
-      result.textContent = map[selectedArrival] || 'Choose the option that feels most true to see your pattern.';
+
+      result.textContent =
+        map[selectedArrival] || "Choose the option that feels most true to see your pattern.";
     }
 
-    function addLeverageItem(){
-      const input = document.getElementById('levInput');
-      const list = document.getElementById('levList');
+    function addLeverageItem() {
+      const input = document.getElementById("levInput");
+      const list = document.getElementById("levList");
       const value = input.value.trim();
-      if(!value) return;
-      const li = document.createElement('li');
+
+      if (!value) return;
+
+      const li = document.createElement("li");
       li.textContent = value;
       list.appendChild(li);
-      input.value = '';
+      input.value = "";
     }
 
-    function setSeason(el, value){
+    function setSeason(el, value) {
       selectedSeason = value;
-      document.querySelectorAll('#panel-season .choice-grid button').forEach(b => b.classList.remove('selected'));
-      el.classList.add('selected');
+      document
+        .querySelectorAll("#seasonChoices button")
+        .forEach((button) => button.classList.remove("selected"));
+      el.classList.add("selected");
     }
 
-    function showSeason(){
-      const result = document.getElementById('seasonResult');
+    function showSeason() {
+      const result = document.getElementById("seasonResult");
       const map = {
-        stabilising: 'This looks like a stabilising season. Simpler strategies may serve you better than bigger ones.',
-        rebuilding: 'This looks like a rebuilding season. Capacity may need protecting before it can expand.',
-        steady: 'This looks like a steadier season. You may have more room to work with than you have been assuming.',
-        expanding: 'This looks like an expanding season. The question becomes where your energy will matter most.'
+        stabilising: "This looks like a stabilising season. Simpler strategies may serve you better than bigger ones.",
+        rebuilding: "This looks like a rebuilding season. Capacity may need protecting before it can expand.",
+        steady: "This looks like a steadier season. You may have more room to work with than you have been assuming.",
+        expanding: "This looks like an expanding season. The question becomes where your energy will matter most."
       };
-      result.textContent = map[selectedSeason] || 'Choose the line that feels most true to see your season.';
+
+      result.textContent =
+        map[selectedSeason] || "Choose the line that feels most true to see your season.";
     }
 
-    function toggleAboutExpand(){
-      const box = document.getElementById('aboutExpand');
-      const icon = box.querySelector('.about-expand-icon');
-      box.classList.toggle('open');
-      icon.textContent = box.classList.contains('open') ? '−' : '+';
+    function toggleAboutExpand() {
+      const box = document.getElementById("aboutExpand");
+      const icon = box.querySelector(".about-expand-icon");
+      const isOpen = box.classList.toggle("open");
+      icon.textContent = isOpen ? "−" : "+";
     }
   </script>
 </body>
