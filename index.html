@@ -619,12 +619,14 @@
   let selectedSeason = "";
 
   function setArrival(el, value) {
-    selectedArrival = value;
-    document
-      .querySelectorAll("#arrivalChoices button")
-      .forEach((button) => button.classList.remove("selected"));
-    el.classList.add("selected");
-  }
+  selectedArrival = value;
+
+  const buttons = document.querySelectorAll('[onclick^="setArrival"]');
+
+  buttons.forEach(btn => btn.classList.remove("selected"));
+
+  el.classList.add("selected");
+}
 
   function showArrival() {
     const result = document.getElementById("arrivalResult");
