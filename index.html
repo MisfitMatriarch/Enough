@@ -694,5 +694,21 @@
       icon.textContent = isOpen ? "−" : "+";
     }
   </script>
+  const toolButtons = document.querySelectorAll('[data-tool]');
+const toolForms = document.querySelectorAll('.tool-form');
+
+toolButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const target = button.dataset.tool;
+
+    toolButtons.forEach((item) => item.classList.remove('active'));
+    toolForms.forEach((form) => form.classList.remove('active'));
+
+    button.classList.add('active');
+    const activeForm = document.getElementById(`tool-${target}`);
+    if (activeForm) activeForm.classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
