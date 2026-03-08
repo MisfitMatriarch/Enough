@@ -581,183 +581,101 @@
   </section>
 </main>
   <script>
-    let selectedArrival = "";
-    let selectedSeason = "";
+  let selectedArrival = "";
+  let selectedSeason = "";
 
-    const previewMap = {
-  recognition: {
-    title: "Recognition",
-    text: "Start by noticing what has already been spent before the work even begins."
-  },
-  clarity: {
-    title: "Clarity",
-    text: "See what is shaping your capacity and where the load is actually coming from."
-  },
-  acceptance: {
-    title: "Acceptance",
-    text: "Separate what effort can change from what it cannot."
-  },
-  intervention: {
-    title: "Intervention",
-    text: "Identify where leverage actually exists."
-  },
-  alignment: {
-    title: "Alignment",
-    text: "Build conditions that work with how you are built."
-  },
-  sustainability: {
-    title: "Sustainability",
-    text: "Learn how to recalibrate so capacity can hold over time."
+  function setArrival(el, value) {
+    selectedArrival = value;
+    document
+      .querySelectorAll("#arrivalChoices button")
+      .forEach((button) => button.classList.remove("selected"));
+    el.classList.add("selected");
   }
-};
 
-    const toolCards = document.querySelectorAll(".tool-card");
-    const toolForms = document.querySelectorAll(".tool-form");
+  function showArrival() {
+    const result = document.getElementById("arrivalResult");
+    if (!result) return;
 
-    toolCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const key = card.dataset.tool;
+    const map = {
+      ready: "This environment may be workable. The cost of entry appears relatively low.",
+      braced: "Your body is preparing for impact. The cost of entry may already be too high.",
+      quiet: "You may be shrinking before the work even starts. That is information, not failure.",
+      drained: "You are arriving already depleted. The environment may be costing you before anything begins."
+    };
 
-        toolCards.forEach((c) => {
-          c.classList.remove("active");
-          c.setAttribute("aria-selected", "false");
-        });
+    result.textContent =
+      map[selectedArrival] || "Choose the option that feels most true to see your pattern.";
+  }
 
-        card.classList.add("active");
-        card.setAttribute("aria-selected", "true");
+  function setSeason(el, value) {
+    selectedSeason = value;
+    document
+      .querySelectorAll("#seasonChoices button")
+      .forEach((button) => button.classList.remove("selected"));
+    el.classList.add("selected");
+  }
 
-        document.getElementById("previewTitle").textContent = previewMap[key].title;
-        document.getElementById("previewText").textContent = previewMap[key].text;
+  function showSeason() {
+    const result = document.getElementById("seasonResult");
+    if (!result) return;
 
-        toolForms.forEach((panel) => panel.classList.remove("active"));
-        document.getElementById("panel-" + key).classList.add("active");
+    const map = {
+      stabilising: "This looks like a stabilising season. Simpler strategies may serve you better than bigger ones.",
+      rebuilding: "This looks like a rebuilding season. Capacity may need protecting before it can expand.",
+      steady: "This looks like a steadier season. You may have more room to work with than you have been assuming.",
+      expanding: "This looks like an expanding season. The question becomes where your energy will matter most."
+    };
+
+    result.textContent =
+      map[selectedSeason] || "Choose the line that feels most true to see your season.";
+  }
+
+  function toggleAboutExpand() {
+    const box = document.getElementById("aboutExpand");
+    if (!box) return;
+
+    const trigger = box.querySelector(".about-expand-trigger");
+    const icon = box.querySelector(".about-expand-icon");
+    const isOpen = box.classList.toggle("open");
+
+    if (trigger) trigger.setAttribute("aria-expanded", String(isOpen));
+    if (icon) icon.textContent = isOpen ? "−" : "+";
+  }
+
+  const toolButtons = document.querySelectorAll("[data-tool]");
+  const toolForms = document.querySelectorAll(".tool-form");
+  const journeySteps = document.querySelectorAll(".journey-step");
+
+  const stageMap = {
+    recognition: "Recognition",
+    clarity: "Clarity",
+    acceptance: "Acceptance",
+    intervention: "Intervention",
+    alignment: "Alignment",
+    sustainability: "Sustainability"
+  };
+
+  toolButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = button.dataset.tool;
+
+      toolButtons.forEach((item) => item.classList.remove("active"));
+      toolForms.forEach((form) => form.classList.remove("active"));
+      journeySteps.forEach((step) => step.classList.remove("is-active"));
+
+      button.classList.add("active");
+
+      const activeForm = document.getElementById(`tool-${target}`);
+      if (activeForm) activeForm.classList.add("active");
+
+      const activeStage = stageMap[target];
+      journeySteps.forEach((step) => {
+        if (step.textContent.trim() === activeStage) {
+          step.classList.add("is-active");
+        }
       });
     });
-
-    function addLedgerItem(type) {
-      const input = document.getElementById(type === "add" ? "addInput" : "takeInput");
-      const list = document.getElementById(type === "add" ? "addList" : "takeList");
-      const value = input.value.trim();
-
-      if (!value) return;
-
-      const li = document.createElement("li");
-      li.textContent = value;
-      list.appendChild(li);
-      input.value = "";
-    }
-
-    function showBalance() {
-      const adds = document.getElementById("addList").children.length;
-      const takes = document.getElementById("takeList").children.length;
-      const result = document.getElementById("balanceResult");
-
-      if (adds === 0 && takes === 0) {
-        result.textContent = "Start by naming what adds and what takes.";
-        return;
-      }
-
-      result.textContent =
-        adds >= takes
-          ? "Your ledger suggests there is still something to protect. Keep building from what adds."
-          : "Your ledger suggests the current cost may be outweighing what this environment gives back.";
-    }
-
-    function setArrival(el, value) {
-      selectedArrival = value;
-      document
-        .querySelectorAll("#arrivalChoices button")
-        .forEach((button) => button.classList.remove("selected"));
-      el.classList.add("selected");
-    }
-
-    function showArrival() {
-      const result = document.getElementById("arrivalResult");
-      const map = {
-        ready: "This environment may be workable. The cost of entry appears relatively low.",
-        braced: "Your body is preparing for impact. The cost of entry may already be too high.",
-        quiet: "You may be shrinking before the work even starts. That is information, not failure.",
-        drained: "You are arriving already depleted. The environment may be costing you before anything begins."
-      };
-
-      result.textContent =
-        map[selectedArrival] || "Choose the option that feels most true to see your pattern.";
-    }
-
-    function addLeverageItem() {
-      const input = document.getElementById("levInput");
-      const list = document.getElementById("levList");
-      const value = input.value.trim();
-
-      if (!value) return;
-
-      const li = document.createElement("li");
-      li.textContent = value;
-      list.appendChild(li);
-      input.value = "";
-    }
-
-    function setSeason(el, value) {
-      selectedSeason = value;
-      document
-        .querySelectorAll("#seasonChoices button")
-        .forEach((button) => button.classList.remove("selected"));
-      el.classList.add("selected");
-    }
-
-    function showSeason() {
-      const result = document.getElementById("seasonResult");
-      const map = {
-        stabilising: "This looks like a stabilising season. Simpler strategies may serve you better than bigger ones.",
-        rebuilding: "This looks like a rebuilding season. Capacity may need protecting before it can expand.",
-        steady: "This looks like a steadier season. You may have more room to work with than you have been assuming.",
-        expanding: "This looks like an expanding season. The question becomes where your energy will matter most."
-      };
-
-      result.textContent =
-        map[selectedSeason] || "Choose the line that feels most true to see your season.";
-    }
-
-    function toggleAboutExpand() {
-      const box = document.getElementById("aboutExpand");
-      const icon = box.querySelector(".about-expand-icon");
-      const isOpen = box.classList.toggle("open");
-      icon.textContent = isOpen ? "−" : "+";
-    }
-const toolButtons = document.querySelectorAll('[data-tool]');
-const toolForms = document.querySelectorAll('.tool-form');
-const journeySteps = document.querySelectorAll('.journey-step');
-
-const stageMap = {
-  recognition: 'Recognition',
-  clarity: 'Clarity',
-  acceptance: 'Acceptance',
-  intervention: 'Intervention',
-  alignment: 'Alignment',
-  sustainability: 'Sustainability'
-};
-
-toolButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const target = button.dataset.tool;
-
-    toolButtons.forEach((item) => item.classList.remove('active'));
-    toolForms.forEach((form) => form.classList.remove('active'));
-    journeySteps.forEach((step) => step.classList.remove('is-active'));
-
-    button.classList.add('active');
-
-    const activeForm = document.getElementById(`tool-${target}`);
-    if (activeForm) activeForm.classList.add('active');
-
-    const activeStage = stageMap[target];
-    journeySteps.forEach((step) => {
-      if (step.textContent.trim() === activeStage) {
-        step.classList.add('is-active');
-      }
-    });
   });
-});
 </script>
 </body>
 </html>
