@@ -706,8 +706,18 @@
       icon.textContent = isOpen ? "−" : "+";
     }
   </script>
-  const toolButtons = document.querySelectorAll('[data-tool]');
+const toolButtons = document.querySelectorAll('[data-tool]');
 const toolForms = document.querySelectorAll('.tool-form');
+const journeySteps = document.querySelectorAll('.journey-step');
+
+const stageMap = {
+  recognition: 'Recognition',
+  clarity: 'Clarity',
+  acceptance: 'Acceptance',
+  intervention: 'Intervention',
+  alignment: 'Alignment',
+  sustainability: 'Sustainability'
+};
 
 toolButtons.forEach((button) => {
   button.addEventListener('click', () => {
@@ -715,10 +725,19 @@ toolButtons.forEach((button) => {
 
     toolButtons.forEach((item) => item.classList.remove('active'));
     toolForms.forEach((form) => form.classList.remove('active'));
+    journeySteps.forEach((step) => step.classList.remove('is-active'));
 
     button.classList.add('active');
+
     const activeForm = document.getElementById(`tool-${target}`);
     if (activeForm) activeForm.classList.add('active');
+
+    const activeStage = stageMap[target];
+    journeySteps.forEach((step) => {
+      if (step.textContent.trim() === activeStage) {
+        step.classList.add('is-active');
+      }
+    });
   });
 });
 </script>
