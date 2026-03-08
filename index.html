@@ -292,28 +292,47 @@
           </div>
 
           <div class="tool-form" id="tool-clarity">
-            <p class="body-copy">
-              Some of the load comes from the environment. Some comes from the roles you carry.
-              Some comes from the way life has taught you to adapt.
-            </p>
-            <div class="ledger-columns">
-              <div class="mini-panel">
-                <p class="mini-heading">This stage helps you see</p>
-                <ul class="mini-list">
-                  <li>What is shaping capacity now</li>
-                  <li>Which layers are carrying the most strain</li>
-                  <li>Where the pressure is actually coming from</li>
-                </ul>
-              </div>
-              <div class="mini-panel">
-                <p class="mini-heading">Inside this stage</p>
-                <ul class="mini-list">
-                  <li>Capacity Map</li>
-                  <li>Load Domains</li>
-                  <li>Capacity Drainers</li>
-                </ul>
-              </div>
-            </div>
+
+  <p class="body-copy">
+    Once the cost is visible, the next step is noticing what is shaping your capacity right now.
+  </p>
+
+  <label class="mini-heading">What is currently shaping your capacity most?</label>
+
+  <div class="choice-grid" id="clarityChoices">
+    <button type="button" onclick="setClarity(this,'environment')">Environment</button>
+    <button type="button" onclick="setClarity(this,'roles')">Roles I carry</button>
+    <button type="button" onclick="setClarity(this,'expectations')">Expectations</button>
+    <button type="button" onclick="setClarity(this,'adaptation')">How I learned to adapt</button>
+  </div>
+
+  <button class="btn btn-primary top-gap-sm" type="button" onclick="showClarity()">
+    See My Capacity Pattern
+  </button>
+
+  <p id="clarityResult" class="result-text"></p>
+
+  <div class="ledger-columns top-gap-sm">
+    <div class="mini-panel">
+      <p class="mini-heading">This stage helps you see</p>
+      <ul class="mini-list">
+        <li>What is shaping capacity now</li>
+        <li>Which layers carry the most strain</li>
+        <li>Where the pressure is actually coming from</li>
+      </ul>
+    </div>
+
+    <div class="mini-panel">
+      <p class="mini-heading">Inside this stage</p>
+      <ul class="mini-list">
+        <li>Capacity Map</li>
+        <li>Load Domains</li>
+        <li>Capacity Drainers</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
             <p class="result-text">Clarity reduces confusion.</p>
           </div>
 
