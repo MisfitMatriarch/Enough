@@ -1418,3 +1418,8 @@ input {
   border-color: rgba(116, 80, 182, 0.2);
   color: var(--accent-deep);
 }
+.choice-grid button.selected {
+  background: #efe5f6;
+  border-color: rgba(116, 80, 182, 0.3);
+  color: var(--accent-deep);
+}
