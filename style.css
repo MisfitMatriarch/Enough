@@ -1630,3 +1630,223 @@ input {
     border-radius: 28px;
   }
 }
+/* ---- Journey progress indicator ---- */
+
+.journey-progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 2.4rem;
+  padding: 0 1rem;
+}
+
+.journey-step {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  transition: color 0.18s ease, opacity 0.18s ease;
+}
+
+.journey-step.is-active {
+  color: var(--accent);
+}
+
+.journey-dot {
+  color: rgba(37, 25, 45, 0.28);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+/* ---- Visual cleanup patch ---- */
+
+.hero-grid {
+  align-items: start;
+  gap: clamp(2.5rem, 4vw, 4.5rem);
+}
+
+.hero-copy {
+  max-width: 34rem;
+}
+
+.hero-title {
+  max-width: none;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.hero-lead {
+  max-width: 32rem;
+}
+
+.hero-image-frame {
+  width: min(100%, 700px);
+  aspect-ratio: 0.88 / 1;
+  border-radius: 38px;
+  background: #efe7eb;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+
+.book-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-cover {
+  width: min(100%, 360px);
+  border-radius: 14px;
+  box-shadow: 0 36px 70px rgba(37, 25, 45, 0.2);
+  display: block;
+}
+
+.feature-media,
+.about-media-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portrait-frame {
+  position: relative;
+  width: min(100%, 560px);
+  aspect-ratio: 0.92 / 1.08;
+  overflow: hidden;
+  border-radius: 38px;
+  background: #eee6eb;
+  box-shadow: var(--shadow-card);
+}
+
+.portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  display: block;
+}
+
+.tools-layout {
+  grid-template-columns: minmax(320px, 430px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.tools-nav {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.tool-card {
+  min-height: auto;
+  padding: 1.75rem 1.5rem;
+}
+
+.tool-card h3 {
+  font-size: 1.55rem;
+  line-height: 1.05;
+  margin-bottom: 0.9rem;
+}
+
+.tool-card p {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.tool-panel-wrap {
+  padding: 2.2rem;
+}
+
+.tool-panel-header .tool-preview-title {
+  margin-bottom: 0.7rem;
+}
+
+.tool-panel-header .body-copy {
+  margin-top: 0.25rem;
+}
+
+.about-expand {
+  max-width: 42rem;
+}
+
+.about-expand-trigger {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.about-expand-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, margin-top 0.35s ease;
+}
+
+.about-expand.open .about-expand-content {
+  max-height: 900px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1120px) {
+  .tools-layout,
+  .about-grid,
+  .split-feature,
+  .speaking-feature,
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-copy,
+  .feature-copy,
+  .about-copy-col {
+    max-width: none;
+  }
+
+  .hero-media,
+  .feature-media,
+  .about-media-col {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .journey-progress {
+    gap: 0.4rem 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .journey-step,
+  .journey-dot {
+    font-size: 0.84rem;
+  }
+
+  .hero-title {
+    line-height: 0.94;
+  }
+
+  .tool-panel-wrap,
+  .waitlist-card,
+  .identity-panel {
+    padding: 1.4rem;
+    border-radius: 28px;
+  }
+
+  .portrait-frame,
+  .hero-image-frame {
+    border-radius: 28px;
+  }
+}
