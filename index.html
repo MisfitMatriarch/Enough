@@ -169,27 +169,61 @@
     }
 
     .question-emphasis {
-      margin-top: 1.8rem;
+      display: block;
+      margin-top: 2.5rem;
       margin-bottom: 0;
-      font-size: 1rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      color: var(--text);
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      color: var(--text);
     }
 
     .question-stack-body {
+      margin: 0;
       padding: 0.9rem 0;
-      font-size: 1.08rem;
+      font-size: 1.12rem;
       line-height: 1.55;
       color: var(--text);
       font-weight: 500;
       border-bottom: 1px solid var(--line);
     }
 
-    .question-stack-body:first-of-type {
+    .question-stack-body + .question-stack-body {
+      border-top: none;
+    }
+
+    .question-stack p.question-stack-body:first-of-type,
+    .mechanism-section p.question-stack-body:first-of-type {
       border-top: 1px solid var(--line);
       margin-top: 0.6rem;
+    }
+
+    .mechanism-intro {
+      margin-top: 1.2rem;
+      font-size: 1.12rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+
+    .mechanism-stadium {
+      margin-top: 2.5rem;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .mechanism-retort {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .mechanism-body {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
     }
 
     .mechanism-section {
@@ -227,13 +261,6 @@
     /* ── Mechanism section: no card ── */
     .mechanism-right {
       padding-top: 0.5rem;
-    }
-
-    .question-stack-body {
-      margin: 0.8rem 0 0;
-      font-size: 1.08rem;
-      line-height: 1.72;
-      color: var(--muted);
     }
 
     .mind-chatter {
@@ -328,8 +355,8 @@
     }
 
     .possibility-section {
-      padding-top: clamp(5rem, 8vw, 9rem);
-      padding-bottom: clamp(5rem, 8vw, 9rem);
+      padding-top: clamp(3rem, 5vw, 5rem);
+      padding-bottom: clamp(3rem, 5vw, 5rem);
     }
 
     .possibility-headline {
@@ -339,35 +366,24 @@
 
     .possibility-statements {
       margin: 2rem auto 0;
-      max-width: 680px;
+      max-width: 760px;
       display: flex;
       flex-direction: column;
       gap: 0;
     }
 
     .possibility-statement {
-      padding: 1.2rem 0;
+      margin: 0;
+      padding: 1.1rem 0;
       border-top: 1px solid var(--line);
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.4rem, 1.9vw, 1.9rem);
+      font-size: clamp(1.35rem, 1.8vw, 1.75rem);
       font-weight: 600;
       color: var(--text);
-      line-height: 1.25;
+      line-height: 1.3;
       letter-spacing: -0.01em;
       text-align: left;
-      opacity: 0;
-      transform: translateX(-18px);
-      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
     }
-
-    .possibility-statement.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .possibility-statement:nth-child(2) { transition-delay: 0.15s; }
-    .possibility-statement:nth-child(3) { transition-delay: 0.30s; }
 
     .possibility-statements .possibility-statement:last-child {
       border-bottom: 1px solid var(--line);
@@ -575,7 +591,100 @@
       letter-spacing: -0.01em;
     }
 
-    /* ── Tool panels: hide inactive, show active ── */
+    /* ── Journey / 6 Stages section ── */
+    #journey {
+      background: var(--bg);
+    }
+
+    .tools-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .tools-nav {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .tool-card {
+      width: 100%;
+      padding: 1.4rem 1.5rem;
+      text-align: left;
+      border: 1px solid rgba(37, 25, 45, 0.07);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.75);
+      box-shadow: 0 4px 16px rgba(37,25,45,0.04);
+      color: var(--text);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .tool-card:hover,
+    .tool-card.active {
+      background: #fff;
+      border-color: rgba(116, 80, 182, 0.18);
+      box-shadow: 0 8px 28px rgba(37,25,45,0.09);
+      transform: translateY(-1px);
+    }
+
+    .tool-card h3 {
+      margin: 0 0 0.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .tool-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .tool-kicker {
+      display: inline-block;
+      margin-bottom: 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .tool-link {
+      display: inline-block;
+      margin-top: 0.7rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .tool-panel-wrap {
+      padding: 2rem 2.2rem;
+      border-radius: 32px;
+      border: 1px solid rgba(37, 25, 45, 0.06);
+      background: linear-gradient(160deg, #fdf8ff 0%, #fff9f7 100%);
+      box-shadow: 0 16px 48px rgba(37,25,45,0.07);
+      min-height: 360px;
+    }
+
+    .tool-preview-title {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 860px) {
+      .tools-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Tool panels ── */
     .tool-form {
       display: none;
     }
@@ -694,39 +803,38 @@
          MECHANISM
     ════════════════════════════════════════════ -->
     <section class="section mechanism-section">
-      <div class="container question-grid">
+      <div class="container narrow">
 
-        <div class="question-stack">
-          <h2 class="display section-title-md">Not everyone starts from the same starting line.</h2>
-          <p>
-            Before you spend more money on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks? Or are you still strapping your ankles in the car park?
-          </p>
-          <p class="question-emphasis">Where your starting line actually is.</p>
-          <p class="question-stack-body">Does yours start a few blocks before even arriving at the field?</p>
-          <p class="question-stack-body">Are you carrying injuries that never healed?</p>
-          <p class="question-stack-body">Are you running the race with a baby on your hip, an elderly parent on your back, or a hangover from last night's all night rave?</p>
-          <p class="question-stack-body">Have you been coached by a world class expert in your unique brain and body, or just the well meaning parent of a friend you made in primary school?</p>
+        <h2 class="display section-title-md reveal">Not everyone starts from the same starting line.</h2>
+        <p class="mechanism-intro reveal reveal-delay-1">
+          Before you spend more money on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks? Or are you still strapping your ankles in the car park?
+        </p>
+
+        <p class="question-emphasis reveal reveal-delay-2">Where your starting line actually is.</p>
+        <p class="question-stack-body reveal">Does yours start a few blocks before even arriving at the field?</p>
+        <p class="question-stack-body reveal">Are you carrying injuries that never healed?</p>
+        <p class="question-stack-body reveal">Are you running the race with a baby on your hip, an elderly parent on your back, or a hangover from last night's all night rave?</p>
+        <p class="question-stack-body reveal">Have you been coached by a world class expert in your unique brain and body, or just the well meaning parent of a friend you made in primary school?</p>
+
+        <p class="mechanism-stadium reveal">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer regardless from a loved one:</p>
+
+        <div class="stacked-indictment reveal">
+          <span>Try harder.</span>
+          <span>Push through.</span>
+          <span>Be more disciplined.</span>
         </div>
 
-        <div class="mechanism-right">
-          <p class="mechanism-body">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer regardless from a loved one:</p>
-          <div class="stacked-indictment stacked-indictment--centre">
-            <span>Try harder.</span>
-            <span>Push through.</span>
-            <span>Be more disciplined.</span>
-          </div>
-          <p class="mechanism-body mechanism-body--centre">But you already doing that. Clearly.</p>
+        <p class="mechanism-retort reveal">But you already doing that. Clearly.</p>
 
-          <div class="mind-chatter">
-            <p class="mind-chatter-text">What's wrong with me?</p>
-            <p class="mind-chatter-text">Why am I failing?</p>
-            <p class="mind-chatter-text">I suck at this.</p>
-          </div>
-
-          <p class="mechanism-body top-gap-sm">Look around. Is everyone else carrying a baby on their hip? Struggling with sensory overload? Navigating what you are navigating?</p>
-
-          <p class="mechanism-body top-gap-sm">Have you ever considered that maybe there is not nothing wrong with you. That you may just be</p>
+        <div class="mind-chatter reveal">
+          <p class="mind-chatter-text">What's wrong with me?</p>
+          <p class="mind-chatter-text">Why am I failing?</p>
+          <p class="mind-chatter-text">I suck at this.</p>
         </div>
+
+        <p class="mechanism-body top-gap-sm reveal">Look around. Is everyone else carrying a baby on their hip? Struggling with sensory overload? Navigating what you are navigating?</p>
+
+        <p class="mechanism-body top-gap-sm reveal">Have you ever considered that maybe there is not nothing wrong with you. That you may just be</p>
 
       </div>
     </section>
