@@ -88,7 +88,13 @@
       font-size: clamp(3.2rem, 6vw, 6rem) !important;
     }
     .wrong-heat {
+      margin: 2.5rem 0 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.5rem, 6vw, 6.5rem) !important;
+      font-weight: 600;
       color: rgba(255,255,255,0.92) !important;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
     }
 
     /* ══════════════════════════════════════
@@ -134,10 +140,11 @@
     ══════════════════════════════════════ */
     @keyframes bookFloat {
       0%, 100% { transform: rotateY(-20deg) rotateX(2deg) translateY(0px); }
-      50%       { transform: rotateY(-20deg) rotateX(2deg) translateY(-8px); }
+      50%       { transform: rotateY(-20deg) rotateX(2deg) translateY(-7px); }
     }
     .book-3d {
       animation: bookFloat 4s ease-in-out infinite;
+      transform-style: preserve-3d;
     }
     .book-3d:hover {
       animation: none;
@@ -175,6 +182,11 @@
     ══════════════════════════════════════ */
     .closing-gold {
       color: var(--hot);
+    }
+
+    /* ── Tighten mechanism section top ── */
+    #recognition + .section {
+      padding-top: 2rem;
     }
 
     /* ── Hero: more breathing room ── */
@@ -667,7 +679,7 @@
         <div class="question-stack">
           <h2 class="display section-title-md">Not everyone starts from the same starting line.</h2>
           <p>
-            Before you spend more money on the next course, the next coach, the next strategy — do you actually have your feet in the starting blocks? Or are you still strapping your ankles in the car park?
+            Before you spend more money on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks? Or are you still strapping your ankles in the car park?
           </p>
           <p class="question-emphasis">Where your starting line actually is.</p>
           <p class="question-stack-body">Does yours start a few blocks before even arriving at the field?</p>
@@ -734,7 +746,7 @@
           <h2 class="display section-title-lg">On your marks!</h2>
           <p class="lead">
             If the problem is not simply effort, the next question is:
-            <span class="lead-strong">what is this actually costing you?</span>
+            <span class="lead-strong">what is actually taking from you?</span>
           </p>
           <p class="lead">This guided journey helps you see the pattern clearly, one stage at a time.</p>
         </div>
@@ -832,7 +844,7 @@
             <!-- STAGE 4: INTERVENTION -->
             <div class="tool-form" id="tool-intervention">
               <p class="body-copy">The race you could actually win is happening in the next lane. This stage is about finding it.</p>
-              <p class="body-copy">Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is costing you, protect what is working, restore what has been spent, and add what was always missing from your preparation.</p>
+              <p class="body-copy">Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
@@ -846,7 +858,7 @@
             <!-- STAGE 6: SUSTAINABILITY -->
             <div class="tool-form" id="tool-sustainability">
               <p class="body-copy">Knowing what to do is not enough if you cannot keep doing it. Elite athletes do not train the same way every day for their entire career. They read their body. They know when to push, when to stretch, when to take a season out, when to bulk up on carbs and rest before the next race.</p>
-              <p class="body-copy">This stage teaches you to read your own signals early. So you know what your body and your life are actually asking for right now. So the same collapse does not keep costing you the same ground.</p>
+              <p class="body-copy">This stage teaches you to read your own signals early. So you know what your body and your life are actually asking for right now. So the same collapse does not keep taking the same ground from you.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
@@ -915,7 +927,7 @@
           And then I birthed a little version of me and decided enough. Not on my watch will that happen again.
         </p>
         <p class="credibility-proof">
-          And then it was forged in clinical practice, neurodivergent affirming support, community design, leadership work, and advocacy — while we replicated getting clear on the unique podium each person was racing for instead of running the same race.
+          And then it was forged in clinical practice, neurodivergent affirming support, community design, leadership work, and advocacy, while we replicated getting clear on the unique podium each person was racing for instead of running the same race.
         </p>
       </div>
     </section>
