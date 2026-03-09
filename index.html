@@ -184,6 +184,42 @@
       color: var(--hot);
     }
 
+    .question-stack > p:not(.question-emphasis):not(.question-stack-body) {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.72;
+      margin: 0.8rem 0 0;
+    }
+
+    .question-emphasis {
+      margin-top: 1.8rem !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      color: var(--text) !important;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* ── Mechanism section: question redesign ── */
+    .question-stack-body {
+      margin: 0 !important;
+      padding: 1.2rem 0;
+      font-size: 1.12rem !important;
+      line-height: 1.6 !important;
+      color: var(--text) !important;
+      font-weight: 500;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .question-stack-body:first-of-type {
+      border-top: 1px solid var(--line);
+      margin-top: 1.2rem !important;
+    }
+
+    .mechanism-section {
+      padding-top: 3rem;
+    }
+
     /* ── Tighten mechanism section top ── */
     #recognition + .section {
       padding-top: 2rem;
@@ -673,7 +709,7 @@
     <!-- ═══════════════════════════════════════════
          MECHANISM
     ════════════════════════════════════════════ -->
-    <section class="section">
+    <section class="section mechanism-section">
       <div class="container question-grid">
 
         <div class="question-stack">
