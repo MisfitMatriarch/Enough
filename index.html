@@ -4,19 +4,349 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ENOUGH | Tanya Hicks</title>
-  <meta
-    name="description"
-    content="ENOUGH by Tanya Hicks. Guided tools, book, speaking, and waitlist."
-  />
+  <meta name="description" content="ENOUGH by Tanya Hicks. Guided tools, book, speaking, and waitlist." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Eyebrow: unified colour, no purple ── */
+    .eyebrow {
+      color: var(--muted);
+    }
+
+    /* ── Hero eyebrow: single line ── */
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      white-space: nowrap;
+    }
+
+    /* ── Hero: button parity ── */
+    .hero-actions .btn {
+      min-height: 52px;
+      padding: 0.9rem 1.6rem;
+    }
+
+    /* ── Mechanism section: no card ── */
+    .mechanism-right {
+      padding-top: 0.5rem;
+    }
+
+    .stacked-indictment {
+      margin: 1.4rem 0 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .stacked-indictment span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .mechanism-body {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+
+    .mechanism-body strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    /* ── Misfit line: full-width standalone ── */
+    .misfit-breakout {
+      padding: 4rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .misfit-breakout h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3rem, 5.5vw, 5.5rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      margin: 0 0 0.8rem;
+    }
+
+    .misfit-breakout p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    /* ── Possibility: statements sit directly ── */
+    .possibility-statements {
+      margin: 2.5rem auto 0;
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .possibility-statement {
+      padding: 1.4rem 0;
+      border-top: 1px solid var(--line);
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      text-align: left;
+    }
+
+    .possibility-statements .possibility-statement:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ── 3D Book ── */
+    .book-3d-scene {
+      perspective: 1400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem 2rem 3.5rem;
+    }
+
+    .book-3d {
+      position: relative;
+      transform: rotateY(-20deg) rotateX(2deg);
+      transform-style: preserve-3d;
+      transition: transform 0.55s ease;
+    }
+
+    .book-3d:hover {
+      transform: rotateY(-10deg) rotateX(1deg);
+    }
+
+    .book-face {
+      display: block;
+      width: min(100%, 300px);
+      border-radius: 2px 10px 10px 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .book-spine {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 38px;
+      height: 100%;
+      background: linear-gradient(to right, #480635, #831265, #580840);
+      transform: rotateY(-90deg);
+      transform-origin: right center;
+      border-radius: 4px 0 0 4px;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .book-spine-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: rgba(255, 215, 120, 0.85);
+      text-transform: uppercase;
+    }
+
+    .book-pages {
+      position: absolute;
+      top: 3px;
+      right: 0;
+      width: 38px;
+      height: calc(100% - 6px);
+      background: repeating-linear-gradient(
+        to bottom,
+        #f5f0e6,
+        #f5f0e6 1.5px,
+        #e4ddd0 1.5px,
+        #e4ddd0 3px
+      );
+      transform: rotateY(90deg);
+      transform-origin: left center;
+      border-radius: 0 3px 3px 0;
+      z-index: 1;
+    }
+
+    /* ── Credibility section ── */
+    .credibility-proof {
+      margin: 1.5rem 0 0;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .credibility-closing {
+      margin: 3rem 0 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Speaking section ── */
+    .speaking-lead {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.6rem;
+    }
+
+    .speaking-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin: 0 0 1.6rem;
+    }
+
+    .speaking-tools-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1.4rem 0;
+    }
+
+    .speaking-tool-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      background: rgba(255,255,255,0.7);
+    }
+
+    .speaking-closing {
+      margin: 2rem 0 1.8rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+    }
+
+    /* ── Closing section ── */
+    .closing-pre {
+      margin: 0 0 2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .closing-main {
+      margin: 0 0 2.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4.5rem, 9vw, 8.5rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 0.9;
+      letter-spacing: -0.035em;
+    }
+
+    .closing-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
+    .btn-subtle {
+      background: transparent;
+      color: var(--muted);
+      border-color: var(--line-strong);
+    }
+
+    .btn-subtle:hover {
+      color: var(--text);
+      background: rgba(255,255,255,0.6);
+    }
+
+    /* ── Acknowledgement ── */
+    .acknowledgement-wrap {
+      padding: 3rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .acknowledgement-label {
+      margin: 0 0 1rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .sovereignty-line {
+      margin: 1rem 0 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.4rem, 2vw, 1.9rem);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    @media (max-width: 1120px) {
+      .misfit-breakout {
+        padding: 3rem 0 2rem;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .book-3d-scene {
+        padding: 1.5rem;
+      }
+      .book-3d {
+        transform: rotateY(-12deg) rotateX(1deg);
+      }
+      .stacked-indictment span {
+        font-size: clamp(1.8rem, 8vw, 2.4rem);
+      }
+      .misfit-breakout h2 {
+        font-size: clamp(2.4rem, 10vw, 3.5rem);
+      }
+      .closing-main {
+        font-size: clamp(3.5rem, 15vw, 6rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-eyebrow {
+        white-space: normal;
+        font-size: 0.68rem;
+      }
+      .possibility-statement {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header class="site-header">
     <div class="container">
       <div class="nav">
@@ -24,7 +354,6 @@
           <span class="brand-top">Tanya Hicks</span>
           <span class="brand-bottom">ENOUGH</span>
         </a>
-
         <nav class="nav-links" aria-label="Primary">
           <a href="#recognition">Recognition</a>
           <a href="#journey">Journey</a>
@@ -32,17 +361,20 @@
           <a href="#speaking">Speaking</a>
           <a href="#about">About</a>
         </nav>
-
         <a class="btn btn-primary nav-cta" href="#waitlist">Join Waitlist</a>
       </div>
     </div>
   </header>
 
   <main>
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════ -->
     <section class="hero section-tight-top" id="top">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Author · Clinician · International Speaker · Misfit Matriarch</p>
+          <p class="eyebrow hero-eyebrow">Author · Clinician · International Speaker · Misfit Matriarch</p>
           <h1 class="display hero-title">
             You have worked<br />
             too hard for<br />
@@ -50,26 +382,24 @@
             be this hard.
           </h1>
           <p class="lead hero-lead">
-            ENOUGH names the cost no one could explain. The journey below helps you see what is being spent, what is shaping your capacity, and what may need to change first.
+            ENOUGH names the cost no one could explain. The tools below help you see where it is going and what needs to change first.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
             <a class="btn btn-secondary" href="#journey">Start the Tools</a>
           </div>
         </div>
-
         <div class="hero-media">
           <div class="hero-image-frame">
-            <img
-              class="hero-image"
-              src="assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg"
-              alt="Tanya Hicks portrait"
-            />
+            <img class="hero-image" src="assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg" alt="Tanya Hicks portrait" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         RECOGNITION
+    ════════════════════════════════════════════ -->
     <section class="section section-soft" id="recognition">
       <div class="container narrow centre">
         <h2 class="display section-title-lg">
@@ -83,86 +413,80 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         MECHANISM
+    ════════════════════════════════════════════ -->
     <section class="section">
       <div class="container question-grid">
+
         <div class="question-stack">
           <h2 class="display section-title-md">What if nothing is wrong with you?</h2>
           <p>
-            Before you spend more money on the next course, the next coach, the next strategy
+            Before you spend more money on the next course, the next coach, the next strategy —
             do you actually have the tools to see what is really happening?
           </p>
-        
-            <p class="question-emphasis">
-Where your energy is going.<br />
-Where your effort is wasted.<br />
-Where your leverage actually is.
-</p>
-        </div>
-
-        <div class="identity-panel">
-          <p class="body-copy">
-            For years the message has been simple.
-          </p>
-          <ul class="clean-list">
-            <li>Try harder.</li>
-            <li>Push through.</li>
-            <li>Be more disciplined.</li>
-          </ul>
-          <p class="body-copy top-gap-sm">
-            But you already did that.
-          </p>
-
-          <p class="body-copy top-gap-md">
-            <span class="body-strong">Wrong conditions harm capable people.</span>
-            Not because they lack discipline. Because the environment quietly drains the capacity they rely on.
-          </p>
-
-          <h3 class="display section-title-md identity-title top-gap-md">Misfit by Design. Not Deficit.</h3>
-          <p class="body-copy">
-            Sometimes the system is the mismatch.
+          <p class="question-emphasis">
+            Where the account is being drawn from.<br />
+            Where your effort changes nothing.<br />
+            Where your leverage actually is.
           </p>
         </div>
+
+        <div class="mechanism-right">
+          <p class="mechanism-body">For years the message has been simple.</p>
+          <div class="stacked-indictment">
+            <span>Try harder.</span>
+            <span>Push through.</span>
+            <span>Be more disciplined.</span>
+          </div>
+          <p class="mechanism-body">But you already did that.</p>
+          <p class="mechanism-body top-gap-sm">
+            <strong>Wrong conditions harm capable people.</strong>
+            Not because they lack discipline. Because the environment quietly takes from the capacity they rely on, and nobody shows them where it is going.
+          </p>
+        </div>
+
       </div>
     </section>
 
-   <section class="section section-soft">
-  <div class="container narrow centre">
-    <p class="eyebrow">Possibility</p>
-
-    <h2 class="display section-title-lg">
-      When you can see what is actually happening,
-      everything shifts.
-    </h2>
-
-    <button class="peek-trigger" type="button" onclick="togglePeek()">
-      Take a sneak peek at what that can look like →
-    </button>
-
-    <div id="peekResults" class="peek-results">
-      <span class="pill">You stop blaming yourself.</span>
-      <span class="pill">You start making decisions that work with how you are built.</span>
-      <span class="pill">Life begins to open up again.</span>
+    <!-- ═══════════════════════════════════════════
+         MISFIT BREAKOUT LINE
+    ════════════════════════════════════════════ -->
+    <div class="container misfit-breakout">
+      <h2>Misfit by Design. Not Deficit.</h2>
+      <p>The design was never wrong. The conditions were.</p>
     </div>
 
-    <p class="lead top-gap-md">
-      That is what <span class="lead-strong">ENOUGH</span> is about.
-    </p>
-  </div>
-</section>
+    <!-- ═══════════════════════════════════════════
+         POSSIBILITY
+    ════════════════════════════════════════════ -->
+    <section class="section section-soft">
+      <div class="container narrow centre">
+        <h2 class="display section-title-lg">
+          When you can see what is actually taking from you,<br />everything shifts.
+        </h2>
+        <div class="possibility-statements">
+          <p class="possibility-statement">You stop blaming yourself.</p>
+          <p class="possibility-statement">You start making decisions that work with how you are built.</p>
+          <p class="possibility-statement">Life begins to open up again.</p>
+        </div>
+        <p class="lead top-gap-md">That is what <strong>ENOUGH</strong> is about.</p>
+      </div>
+    </section>
 
+    <!-- ═══════════════════════════════════════════
+         JOURNEY / TOOLS
+    ════════════════════════════════════════════ -->
     <section class="section" id="journey">
       <div class="container">
+
         <div class="section-head centre narrow">
           <h2 class="display section-title-lg">Start Here</h2>
           <p class="lead">
-            If the problem is not simply effort, the next question becomes:
+            If the problem is not simply effort, the next question is:
+            <span class="lead-strong">what is this actually costing you?</span>
           </p>
-          <p class="lead lead-strong">
-            Where is your energy actually going?
-          </p>
-          <p class="lead">
-            The tools below help you see the pattern clearly.
-          </p>
+          <p class="lead">This guided journey helps you see the pattern clearly, one stage at a time.</p>
         </div>
 
         <div class="journey-progress" aria-label="Journey stages">
@@ -180,164 +504,227 @@ Where your leverage actually is.
         </div>
 
         <div class="tools-layout">
-          <div class="tools-nav" role="tablist" aria-label="Interactive tools">
-            <button class="tool-card active" type="button" data-tool="arrival" role="tab" aria-selected="true">
-              <span class="tool-kicker">Tool 1</span>
-              <h3>Arrival Cost</h3>
-              <p>
-                How much energy does it take just to show up in a place?
-                Some environments take energy before anything even begins.
-              </p>
-              <span class="tool-link">Measure Arrival Cost →</span>
+
+          <div class="tools-nav" role="tablist" aria-label="Guided reader journey">
+
+            <button class="tool-card active" type="button" data-tool="recognition" role="tab" aria-selected="true">
+              <span class="tool-kicker">Step 1</span>
+              <h3>See what today has already taken from you.</h3>
+              <p>Most people arrive at their day already running a deficit. Not because of anything they did wrong.</p>
+              <span class="tool-link">Arrival Ledger · Misfit Tax Ledger →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="ledger" role="tab" aria-selected="false">
-              <span class="tool-kicker">Tool 2</span>
-              <h3>Energy Ledger</h3>
-              <p>
-                Where does your energy actually go throughout the day?
-                Many people discover the work itself is only one small part of the energy equation.
-              </p>
-              <span class="tool-link">Map Your Energy →</span>
+            <button class="tool-card" type="button" data-tool="clarity" role="tab" aria-selected="false">
+              <span class="tool-kicker">Step 2</span>
+              <h3>See where the cost is actually coming from.</h3>
+              <p>Not all of it comes from the same place. Some comes from your wiring. Some from the conditions around you.</p>
+              <span class="tool-link">Capacity Map →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="leverage" role="tab" aria-selected="false">
-              <span class="tool-kicker">Tool 3</span>
-              <h3>Leverage Grid</h3>
-              <p>
-                Which efforts actually change things and which ones do not?
-                Some effort creates change. Some effort changes nothing.
-              </p>
-              <span class="tool-link">Find Your Leverage →</span>
+            <button class="tool-card" type="button" data-tool="acceptance" role="tab" aria-selected="false">
+              <span class="tool-kicker">Step 3</span>
+              <h3>See what belongs where.</h3>
+              <p>Some things change with effort. Some shift with support. Some are structural limits that effort will never move.</p>
+              <span class="tool-link">Structural Ceiling Map →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="season" role="tab" aria-selected="false">
-              <span class="tool-kicker">Tool 4</span>
-              <h3>Season Check</h3>
-              <p>
-                What season of life are you actually in right now?
-                Different seasons need different strategies.
-              </p>
-              <span class="tool-link">Check Your Season →</span>
+            <button class="tool-card" type="button" data-tool="intervention" role="tab" aria-selected="false">
+              <span class="tool-kicker">Step 4</span>
+              <h3>See where your effort will actually make a difference.</h3>
+              <p>When the account is limited, where you apply effort matters more than how much of it you use.</p>
+              <span class="tool-link">Four Levers →</span>
             </button>
+
+            <button class="tool-card" type="button" data-tool="alignment" role="tab" aria-selected="false">
+              <span class="tool-kicker">Step 5</span>
+              <h3>See what life could look like when it works with how you are built.</h3>
+              <p>The goal is not becoming someone different. The goal is building conditions that stop taking from what you rely on.</p>
+              <span class="tool-link">Calibration Map →</span>
+            </button>
+
+            <button class="tool-card" type="button" data-tool="sustainability" role="tab" aria-selected="false">
+              <span class="tool-kicker">Step 6</span>
+              <h3>See how capacity holds over time.</h3>
+              <p>Insight is not enough on its own. The goal is learning to notice the signals earlier.</p>
+              <span class="tool-link">Recalibration Loop →</span>
+            </button>
+
           </div>
 
           <div class="tool-panel-wrap">
             <div class="tool-panel-header">
-              <h3 id="previewTitle" class="display tool-preview-title">Arrival Cost</h3>
-              <p id="previewText" class="body-copy muted">
-                Some places ask more of you before anything even begins. This tool helps you notice the cost of simply getting there.
-              </p>
+              <h3 id="previewTitle" class="display tool-preview-title">Recognition</h3>
+              <p id="previewText" class="body-copy muted">Start by noticing what it cost you just to show up today.</p>
             </div>
 
-            <div class="tool-form active" id="tool-arrival">
-              <p class="body-copy">
-                <span class="body-strong">What this helps you see</span><br />
-                How much energy may already be spent just showing up.
-              </p>
-              <p class="body-copy">
-                <span class="body-strong">What this gives you</span><br />
-                A clearer picture of the hidden effort some environments demand before the real task has even started.
-              </p>
+            <!-- STEP 1: RECOGNITION -->
+            <div class="tool-form active" id="tool-recognition">
+              <p class="body-copy">Start by noticing what it cost you just to show up.</p>
+              <p class="body-copy">Most people have been told the answer is more effort. But effort without understanding the conditions is how capable people burn out.</p>
+              <p class="body-copy">This stage begins by helping you notice how much may already have been spent — the translating, the masking, the holding it together — before anything has even begun.</p>
               <div class="ledger-columns top-gap-sm">
                 <div class="mini-panel">
-                  <p class="mini-heading">In the book</p>
+                  <p class="mini-heading">Arrival Ledger</p>
                   <ul class="mini-list">
-                    <li>Readers of ENOUGH will have full access to the complete Arrival Cost tool.</li>
-                    <li>It is designed to help reveal how much energy is being spent before the work even begins.</li>
+                    <li>What did it cost you to get here today?</li>
+                    <li>Helps you see that your starting point is not the same as everyone else's.</li>
+                  </ul>
+                </div>
+                <div class="mini-panel">
+                  <p class="mini-heading">Misfit Tax Ledger</p>
+                  <ul class="mini-list">
+                    <li>Where is the rest of it going? Including the costs that never show up on any list.</li>
+                    <li>Readers of ENOUGH have full access to both tools.</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="tool-form" id="tool-ledger">
-              <p class="body-copy">
-                <span class="body-strong">What this helps you see</span><br />
-                Where your energy is actually going across the day.
-              </p>
-              <p class="body-copy">
-                <span class="body-strong">What this gives you</span><br />
-                A clearer understanding of what is taking from you and what is giving something back.
-              </p>
+            <!-- STEP 2: CLARITY -->
+            <div class="tool-form" id="tool-clarity">
+              <p class="body-copy">Once you can see what it is costing you, the next question is why.</p>
+              <p class="body-copy">Not all of it comes from the same place. Some comes from your wiring. Some from the conditions around you. Some from what life has required you to carry for a long time.</p>
+              <p class="body-copy">The Capacity Map moves through nine layers — from neurology to current state — so you can see which layers are bearing the most weight right now.</p>
               <div class="ledger-columns top-gap-sm">
                 <div class="mini-panel">
-                  <p class="mini-heading">In the book</p>
+                  <p class="mini-heading">What this helps you see</p>
                   <ul class="mini-list">
-                    <li>Readers of ENOUGH will have full access to the complete Energy Ledger.</li>
-                    <li>It is designed to help uncover hidden drains and restore clarity about where energy is really going.</li>
+                    <li>Which layers are shaping your capacity and where the account is actually being drawn from.</li>
+                    <li>Capacity is shaped by architecture, not just effort.</li>
+                  </ul>
+                </div>
+                <div class="mini-panel">
+                  <p class="mini-heading">Capacity Map</p>
+                  <ul class="mini-list">
+                    <li>Readers of ENOUGH have full access to the complete Capacity Map.</li>
+                    <li>Designed to show where the load is actually originating.</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="tool-form" id="tool-leverage">
-              <p class="body-copy">
-                <span class="body-strong">What this helps you see</span><br />
-                Which efforts can actually change things and which ones cannot.
-              </p>
-              <p class="body-copy">
-                <span class="body-strong">What this gives you</span><br />
-                Relief from wasting energy on problems that keep asking for effort without shifting the outcome.
-              </p>
+            <!-- STEP 3: ACCEPTANCE -->
+            <div class="tool-form" id="tool-acceptance">
+              <p class="body-copy">Some things change with effort. Some shift with the right support. Some are structural limits that effort alone will never move.</p>
+              <p class="body-copy">That distinction matters more than most people realise. A significant part of what exhausts capable people is spending what they have pushing against things that were never theirs to move alone.</p>
               <div class="ledger-columns top-gap-sm">
                 <div class="mini-panel">
-                  <p class="mini-heading">In the book</p>
+                  <p class="mini-heading">What this helps you see</p>
                   <ul class="mini-list">
-                    <li>Readers of ENOUGH will have full access to the complete Leverage Grid.</li>
-                    <li>It is designed to help separate useful effort from effort that never changes the outcome.</li>
+                    <li>What sits in your control, what sits in your influence, and what sits beyond both.</li>
+                    <li>Where to stop spending, and where change is actually possible.</li>
+                  </ul>
+                </div>
+                <div class="mini-panel">
+                  <p class="mini-heading">Structural Ceiling Map</p>
+                  <ul class="mini-list">
+                    <li>Readers of ENOUGH have full access to the Structural Ceiling Map.</li>
+                    <li>Not to create helplessness. To stop the account being spent on things that cannot shift.</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <div class="tool-form" id="tool-season">
-              <p class="body-copy">
-                <span class="body-strong">What this helps you see</span><br />
-                What season you are actually in right now.
-              </p>
-              <p class="body-copy">
-                <span class="body-strong">What this gives you</span><br />
-                A more realistic starting point for deciding what kind of support, pace, or strategy makes sense now.
-              </p>
+            <!-- STEP 4: INTERVENTION -->
+            <div class="tool-form" id="tool-intervention">
+              <p class="body-copy">When the account is limited, where you apply effort matters more than how much of it you use.</p>
+              <p class="body-copy">There are four moves that actually change the equation.</p>
               <div class="ledger-columns top-gap-sm">
                 <div class="mini-panel">
-                  <p class="mini-heading">In the book</p>
+                  <p class="mini-heading">The Four Levers</p>
                   <ul class="mini-list">
-                    <li>Readers of ENOUGH will have full access to the complete Season Check tool.</li>
-                    <li>It is designed to help match your strategy to the season you are actually living in.</li>
+                    <li>Reduce · Protect · Restore · Add</li>
+                    <li>Each works differently. Each applies at a different point in the architecture.</li>
+                  </ul>
+                </div>
+                <div class="mini-panel">
+                  <p class="mini-heading">What this gives you</p>
+                  <ul class="mini-list">
+                    <li>Clarity on which move fits where you actually are right now — not where you think you should be.</li>
+                    <li>Readers of ENOUGH have full access to the Four Levers tool.</li>
                   </ul>
                 </div>
               </div>
             </div>
+
+            <!-- STEP 5: ALIGNMENT -->
+            <div class="tool-form" id="tool-alignment">
+              <p class="body-copy">The goal is not becoming someone different.</p>
+              <p class="body-copy">The goal is building conditions that stop taking from what you rely on — that work with your design instead of against it.</p>
+              <p class="body-copy">The Calibration Map brings together what you have seen across the earlier stages and asks: given all of this, what do you build from here?</p>
+              <div class="ledger-columns top-gap-sm">
+                <div class="mini-panel">
+                  <p class="mini-heading">What this helps you see</p>
+                  <ul class="mini-list">
+                    <li>What conditions support capacity and where to focus first.</li>
+                    <li>This is not a goal-setting exercise. It is a map drawn from what is actually true about you.</li>
+                  </ul>
+                </div>
+                <div class="mini-panel">
+                  <p class="mini-heading">Calibration Map</p>
+                  <ul class="mini-list">
+                    <li>Readers of ENOUGH have full access to the complete Calibration Map.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 6: SUSTAINABILITY -->
+            <div class="tool-form" id="tool-sustainability">
+              <p class="body-copy">Insight is not enough on its own. Life moves. The account moves with it.</p>
+              <p class="body-copy">The Recalibration Loop is not about maintaining perfect balance. It is about learning to notice the signals earlier — before the cost becomes collapse — and knowing what to do when things start to shift.</p>
+              <div class="ledger-columns top-gap-sm">
+                <div class="mini-panel">
+                  <p class="mini-heading">The Loop</p>
+                  <ul class="mini-list">
+                    <li>Signal · Protect · Adjust · Stabilise · Begin again.</li>
+                    <li>The earlier the signal is caught, the less it costs to respond.</li>
+                  </ul>
+                </div>
+                <div class="mini-panel">
+                  <p class="mini-heading">Recalibration Loop</p>
+                  <ul class="mini-list">
+                    <li>Readers of ENOUGH have full access to the Recalibration Loop.</li>
+                    <li>Designed to reduce the cost of the same collapse repeating.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <div class="container narrow centre top-gap-md">
-          <p class="body-copy muted">
-            Most people have been told the solution is more effort.
-          </p>
-          <p class="body-copy body-strong">
-            But effort without understanding the conditions is how capable people burn out.
-          </p>
-          <p class="body-copy muted">
-            These tools help you see what is actually happening.
-          </p>
+          <p class="body-copy muted">The tools show the pattern.</p>
+          <p class="body-copy body-strong">The book explains the architecture behind it.</p>
+          <p class="body-copy muted">Together they turn what you have always sensed into something you can finally see clearly.</p>
         </div>
+
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         BOOK
+    ════════════════════════════════════════════ -->
     <section class="section section-soft" id="book">
       <div class="container split-feature book-media">
+
         <div class="feature-media">
-          <img class="book-cover" src="assets/Book cover.png" alt="Book cover for ENOUGH" />
+          <div class="book-3d-scene">
+            <div class="book-3d">
+              <div class="book-spine">
+                <span class="book-spine-text">ENOUGH · TANYA HICKS</span>
+              </div>
+              <img class="book-face" src="assets/Book cover.png" alt="Book cover for ENOUGH" />
+              <div class="book-pages"></div>
+            </div>
+          </div>
         </div>
 
         <div class="feature-copy">
           <p class="eyebrow">Book</p>
           <h2 class="display section-title-lg">ENOUGH</h2>
-          <p class="lead">
-            The tools help you see the pattern. The book explains the architecture behind it.
-          </p>
+          <p class="lead">The tools help you see the pattern. The book explains the architecture behind it.</p>
           <p class="body-copy">
             ENOUGH is written for the people who kept trying. The ones who learned the skills, did the work,
             held it together and still ended up paying a cost no one could explain.
@@ -347,31 +734,34 @@ Where your leverage actually is.
           </p>
           <div class="button-row top-gap-sm">
             <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
-            <a class="btn btn-secondary" href="#top">Explore ENOUGH</a>
+            <a class="btn btn-secondary" href="#journey">Start the Tools</a>
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         CREDIBILITY
+    ════════════════════════════════════════════ -->
     <section class="section">
       <div class="container narrow centre">
         <h2 class="display section-title-lg">This work was not built as theory first.</h2>
-        <p class="lead">
-          It was built inside real systems.
+        <p class="credibility-proof">
+          It was built inside clinical practice, neurodivergent affirming support, community design,
+          leadership work, and advocacy — because when capable people keep struggling inside the same conditions,
+          something deeper is happening.
         </p>
-        <div class="pill-row">
-          <span class="pill">Clinical practice</span>
-          <span class="pill">Neurodivergent affirming support</span>
-          <span class="pill">Community design</span>
-          <span class="pill">Leadership work</span>
-          <span class="pill">Advocacy</span>
-        </div>
-        <p class="lead top-gap-md">
-          Because when capable people keep struggling inside the same conditions, something deeper is happening.
+        <p class="credibility-closing">
+          The problem is rarely the people.<br />
+          It is almost always the conditions.
         </p>
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ════════════════════════════════════════════ -->
     <section class="section section-soft" id="about">
       <div class="container about-grid">
         <div class="about-copy-col">
@@ -391,24 +781,12 @@ Where your leverage actually is.
               <p class="body-copy">
                 I am a late diagnosed AuDHD counsellor, solo parent, and author, with PMDD and hypermobile Ehlers Danlos layered underneath everything I once called coping.
               </p>
-              <p class="body-copy">
-                For most of my life I could hyper focus on skill development with surgical precision.
-              </p>
-              <p class="body-copy">
-                I trained exceptionally well.
-              </p>
-              <p class="body-copy">
-                And I was still paying a cost no one could explain.
-              </p>
-              <p class="body-copy">
-                So the work you see here began the way many important systems do.
-              </p>
-              <p class="body-copy">
-                Someone needed something the world had not built yet.
-              </p>
-              <p class="body-copy">
-                So it got built.
-              </p>
+              <p class="body-copy">For most of my life I could hyper focus on skill development with surgical precision.</p>
+              <p class="body-copy">I trained exceptionally well.</p>
+              <p class="body-copy">And I was still paying a cost no one could explain.</p>
+              <p class="body-copy">So the work you see here began the way many important systems do.</p>
+              <p class="body-copy">Someone needed something the world had not built yet.</p>
+              <p class="body-copy">So it got built.</p>
               <div class="pill-row top-gap-sm">
                 <span class="pill">Neurodivergent Empowered</span>
                 <span class="pill">Sparkly Aliens Inc.</span>
@@ -426,40 +804,35 @@ Where your leverage actually is.
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         SPEAKING
+    ════════════════════════════════════════════ -->
     <section class="section" id="speaking">
       <div class="container split-feature speaking-feature">
+
         <div class="feature-copy">
           <p class="eyebrow">Speaking</p>
-          <h2 class="display section-title-lg">If you want to help people, first understand the cost of being here.</h2>
-          <p class="lead lead-strong">First, do no harm.</p>
+          <p class="speaking-lead">First,<br />do no harm.</p>
+          <h2 class="speaking-sub">If you want to help people, first understand what it costs them to be here.</h2>
           <p class="body-copy">
-            Most professionals enter their work because they want to help.
+            Most professionals enter their work because they want to help — teachers, clinicians, leaders, parents.
+            Good intentions alone do not prevent harm.
           </p>
-          <div class="pill-row top-gap-sm">
-            <span class="pill">Teachers</span>
-            <span class="pill">Clinicians</span>
-            <span class="pill">Leaders</span>
-            <span class="pill">Parents</span>
+          <p class="body-copy">
+            When we do not understand what it costs someone to operate inside an environment,
+            the strategies designed to help can become another source of pressure.
+          </p>
+          <p class="body-copy">This work helps professionals see the conditions clearly.</p>
+          <div class="speaking-tools-row">
+            <span class="speaking-tool-tag">Arrival Ledger</span>
+            <span class="speaking-tool-tag">Misfit Tax Ledger</span>
+            <span class="speaking-tool-tag">Structural Ceiling Map</span>
+            <span class="speaking-tool-tag">Four Levers</span>
           </div>
-          <p class="body-copy top-gap-sm">
-            But good intentions alone do not prevent harm.
+          <p class="speaking-closing">
+            If capable people keep struggling in your system,<br />the problem is probably not the people.
           </p>
-          <p class="body-copy">
-            When we do not understand the cost of operating inside an environment, the strategies designed to help people can become another source of pressure.
-          </p>
-          <p class="body-copy">
-            This work helps professionals see the conditions clearly.
-          </p>
-          <div class="pill-row top-gap-sm">
-            <span class="pill">Arrival Cost</span>
-            <span class="pill">Energy Ledger</span>
-            <span class="pill">Leverage Grid</span>
-            <span class="pill">Season Check</span>
-          </div>
-          <p class="body-copy top-gap-sm">
-            Because if capable people keep burning out in your system, the problem is probably not the people.
-          </p>
-          <div class="button-row top-gap-sm">
+          <div class="button-row">
             <a class="btn btn-primary" href="mailto:hello@tanyahicks.com">Speaking Enquiries</a>
           </div>
         </div>
@@ -469,24 +842,21 @@ Where your leverage actually is.
             <img class="portrait-image" src="assets/WCW 2025 d1-152_edited.jpg" alt="Tanya Hicks speaking" />
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════
+         WAITLIST
+    ════════════════════════════════════════════ -->
     <section class="section section-soft" id="waitlist">
       <div class="container">
         <div class="waitlist-card centre">
           <p class="eyebrow">Waitlist</p>
           <h2 class="display section-title-lg">Be first to hear when ENOUGH opens.</h2>
-          <p class="body-copy">
-            One email when pre orders open. One email on launch week.
-          </p>
-          <p class="body-copy">
-            No spam. No funnels. No daily inspiration.
-          </p>
-          <p class="body-copy body-strong">
-            Just the book when it is ready.
-          </p>
-
+          <p class="body-copy">One email when pre-orders open. One email on launch week.</p>
+          <p class="body-copy">No spam. No funnels. No daily inspiration.</p>
+          <p class="body-copy body-strong">Just the book when it is ready.</p>
           <form class="waitlist-form">
             <label class="sr-only" for="waitlist-email">Email address</label>
             <input id="waitlist-email" type="email" placeholder="Your email address" />
@@ -496,53 +866,62 @@ Where your leverage actually is.
       </div>
     </section>
 
-    <section class="section">
+    <!-- ═══════════════════════════════════════════
+         CLOSING
+    ════════════════════════════════════════════ -->
+    <section class="section closing-section">
       <div class="container narrow centre">
-        <p class="closing-line">
+        <p class="closing-pre">
           You do not have to become someone new.<br />
           You only have to stop fighting the way you are built.
         </p>
-        <p class="lead top-gap-sm">You were always enough.</p>
-        <div class="button-row centre-buttons top-gap-sm">
+        <p class="closing-main">You were<br />always<br />enough.</p>
+        <div class="closing-buttons">
           <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
-          <a class="btn btn-secondary" href="#journey">Start the Tools</a>
+          <a class="btn btn-subtle" href="#journey">Start the Tools</a>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft">
-      <div class="container narrow centre">
-        <p class="eyebrow">Acknowledgement of Country</p>
-        <p class="body-copy">
-          I live and work on Gubbi Gubbi Country on the Sunshine Coast.
-        </p>
-        <p class="body-copy">
-          I acknowledge the Traditional Custodians of this land and pay respect to Elders past and present.
-        </p>
-        <p class="body-copy body-strong">
-          Sovereignty was never ceded.
-        </p>
+    <!-- ═══════════════════════════════════════════
+         ACKNOWLEDGEMENT OF COUNTRY
+    ════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="acknowledgement-wrap narrow centre">
+        <p class="acknowledgement-label">Acknowledgement of Country</p>
+        <p class="body-copy muted">I live and work on Gubbi Gubbi Country on the Sunshine Coast.</p>
+        <p class="body-copy muted">I acknowledge the Traditional Custodians of this land and pay respect to Elders past and present.</p>
+        <p class="sovereignty-line">Sovereignty was never ceded.</p>
       </div>
-    </section>
+    </div>
+
   </main>
 
   <script>
     const previewMap = {
-      arrival: {
-        title: "Arrival Cost",
-        text: "Some places ask more of you before anything even begins. This tool helps you notice the cost of simply getting there."
+      recognition: {
+        title: "Recognition",
+        text: "Start by noticing what it cost you just to show up. The Arrival Ledger and Misfit Tax Ledger make visible what was always being spent."
       },
-      ledger: {
-        title: "Energy Ledger",
-        text: "This tool helps you see where your energy is actually going and what is giving something back."
+      clarity: {
+        title: "Clarity",
+        text: "The Capacity Map moves through nine layers — from neurology to current state — to show which layers are bearing the most weight right now."
       },
-      leverage: {
-        title: "Leverage Grid",
-        text: "This tool helps you see which efforts can change things and which ones keep draining you without shifting the outcome."
+      acceptance: {
+        title: "Acceptance",
+        text: "The Structural Ceiling Map sorts what sits in your control, your influence, and what sits beyond both. Not to create helplessness — to stop the account being spent on things that cannot shift."
       },
-      season: {
-        title: "Season Check",
-        text: "This tool helps you identify what season you are in so the strategy fits the reality you are living."
+      intervention: {
+        title: "Intervention",
+        text: "The Four Levers — Reduce, Protect, Restore, Add — help you see which move fits where you actually are right now, not where you think you should be."
+      },
+      alignment: {
+        title: "Alignment",
+        text: "The Calibration Map brings together what you have seen across the earlier stages and asks: given all of this, what do you build from here?"
+      },
+      sustainability: {
+        title: "Sustainability",
+        text: "The Recalibration Loop: Signal, Protect, Adjust, Stabilise. The earlier the signal is caught, the less it costs to respond."
       }
     };
 
@@ -559,7 +938,6 @@ Where your leverage actually is.
           item.classList.remove("active");
           item.setAttribute("aria-selected", "false");
         });
-
         toolForms.forEach((form) => form.classList.remove("active"));
 
         button.classList.add("active");
@@ -574,22 +952,17 @@ Where your leverage actually is.
         }
       });
     });
-function togglePeek() {
-  const box = document.getElementById("peekResults");
-  if (!box) return;
-  box.classList.toggle("open");
-}
+
     function toggleAboutExpand() {
       const box = document.getElementById("aboutExpand");
       if (!box) return;
-
       const trigger = box.querySelector(".about-expand-trigger");
       const icon = box.querySelector(".about-expand-icon");
       const isOpen = box.classList.toggle("open");
-
       if (trigger) trigger.setAttribute("aria-expanded", String(isOpen));
       if (icon) icon.textContent = isOpen ? "−" : "+";
     }
   </script>
+
 </body>
 </html>
