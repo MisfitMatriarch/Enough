@@ -98,22 +98,6 @@
     }
 
     /* ══════════════════════════════════════
-       POSSIBILITY: STAGGERED SCROLL-IN
-    ══════════════════════════════════════ */
-    .possibility-statement {
-      opacity: 0;
-      transform: translateX(-18px);
-      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .possibility-statement.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .possibility-statement:nth-child(2) { transition-delay: 0.15s; }
-    .possibility-statement:nth-child(3) { transition-delay: 0.30s; }
-
-    /* ══════════════════════════════════════
        SIX STAGES: TRACK LANE MARKER
     ══════════════════════════════════════ */
     .tool-card {
@@ -361,9 +345,8 @@
       line-height: 1.05;
     }
 
-    /* ── Possibility: statements sit directly ── */
     .possibility-statements {
-      margin: 2.5rem auto 0;
+      margin: 2rem auto 0;
       max-width: 680px;
       display: flex;
       flex-direction: column;
@@ -371,16 +354,28 @@
     }
 
     .possibility-statement {
-      padding: 1.6rem 0;
+      padding: 1.2rem 0;
       border-top: 1px solid var(--line);
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+      font-size: clamp(1.4rem, 1.9vw, 1.9rem);
       font-weight: 600;
       color: var(--text);
-      line-height: 1.2;
+      line-height: 1.25;
       letter-spacing: -0.01em;
       text-align: left;
+      opacity: 0;
+      transform: translateX(-18px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
     }
+
+    .possibility-statement.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .possibility-statement:nth-child(2) { transition-delay: 0.15s; }
+    .possibility-statement:nth-child(3) { transition-delay: 0.30s; }
 
     .possibility-statements .possibility-statement:last-child {
       border-bottom: 1px solid var(--line);
@@ -630,9 +625,6 @@
       .hero-eyebrow {
         white-space: normal;
         font-size: 0.68rem;
-      }
-      .possibility-statement {
-        font-size: clamp(1.5rem, 7vw, 2rem);
       }
     }
   </style>
