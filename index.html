@@ -574,7 +574,11 @@ Where your leverage actually is.
         }
       });
     });
-
+function togglePeek() {
+  const box = document.getElementById("peekResults");
+  if (!box) return;
+  box.classList.toggle("open");
+}
     function toggleAboutExpand() {
       const box = document.getElementById("aboutExpand");
       if (!box) return;
