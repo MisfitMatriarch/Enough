@@ -1922,3 +1922,14 @@ input {
   max-height: 900px;
   margin-top: 1rem;
 }
+.peek-results {
+  display: none;
+  margin-top: 24px;
+}
+
+.peek-results.open {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
