@@ -10,6 +10,178 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* ── Hero entrance animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow,
+    .hero-line,
+    .hero-lead,
+    .hero-actions {
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero-line-1  { animation-delay: 0.3s; }
+    .hero-line-2  { animation-delay: 0.48s; }
+    .hero-line-3  { animation-delay: 0.62s; }
+    .hero-line-4  { animation-delay: 0.76s; }
+    .hero-lead    { animation-delay: 0.95s; }
+    .hero-actions { animation-delay: 1.15s; }
+
+    .hero-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .hero-image { will-change: transform; }
+
+    /* ══════════════════════════════════════
+       SCROLL-TRIGGERED FADE UP (general)
+    ══════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
+    .reveal-delay-4 { transition-delay: 0.5s; }
+
+    /* ══════════════════════════════════════
+       MIND CHATTER TYPEWRITER
+    ══════════════════════════════════════ */
+    .mind-chatter-text {
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 0;
+      transition: max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mind-chatter-text.typing {
+      max-width: 100%;
+    }
+    .mind-chatter-text:nth-child(2) { transition-delay: 0.5s; }
+    .mind-chatter-text:nth-child(3) { transition-delay: 1.0s; }
+
+    /* ══════════════════════════════════════
+       MISFIT BREAKOUT: DARK BRAND SECTION
+    ══════════════════════════════════════ */
+    .misfit-breakout {
+      background: var(--text);
+      padding: 6rem 2rem 5rem !important;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
+    }
+    .misfit-breakout h2 {
+      color: var(--hot) !important;
+      font-size: clamp(3.2rem, 6vw, 6rem) !important;
+    }
+    .wrong-heat {
+      color: rgba(255,255,255,0.92) !important;
+    }
+
+    /* ══════════════════════════════════════
+       POSSIBILITY: STAGGERED SCROLL-IN
+    ══════════════════════════════════════ */
+    .possibility-statement {
+      opacity: 0;
+      transform: translateX(-18px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .possibility-statement.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .possibility-statement:nth-child(2) { transition-delay: 0.15s; }
+    .possibility-statement:nth-child(3) { transition-delay: 0.30s; }
+
+    /* ══════════════════════════════════════
+       SIX STAGES: TRACK LANE MARKER
+    ══════════════════════════════════════ */
+    .tool-card {
+      position: relative;
+    }
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--line);
+      border-radius: 2px;
+      transition: background 0.25s ease, height 0.25s ease;
+    }
+    .tool-card.active::before,
+    .tool-card:hover::before {
+      background: var(--accent);
+    }
+
+    /* ══════════════════════════════════════
+       BOOK: FLOATING BREATHE ANIMATION
+    ══════════════════════════════════════ */
+    @keyframes bookFloat {
+      0%, 100% { transform: rotateY(-20deg) rotateX(2deg) translateY(0px); }
+      50%       { transform: rotateY(-20deg) rotateX(2deg) translateY(-8px); }
+    }
+    .book-3d {
+      animation: bookFloat 4s ease-in-out infinite;
+    }
+    .book-3d:hover {
+      animation: none;
+      transform: rotateY(-10deg) rotateX(1deg);
+    }
+
+    /* ══════════════════════════════════════
+       CREDIBILITY: DISPLAY HEADLINE SIZE
+    ══════════════════════════════════════ */
+    .credibility-headline {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      margin: 0 0 2rem;
+    }
+
+    /* ══════════════════════════════════════
+       SPEAKING CLOSING: DISPLAY VERDICT
+    ══════════════════════════════════════ */
+    .speaking-closing {
+      margin: 2.5rem 0 1.8rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 3.2vw, 3.2rem) !important;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    /* ══════════════════════════════════════
+       CLOSING: "enough" IN BRAND HOT PINK
+    ══════════════════════════════════════ */
+    .closing-gold {
+      color: var(--hot);
+    }
+
+    /* ── Hero: more breathing room ── */
+    .hero {
+      padding-top: clamp(4rem, 7vw, 7rem) !important;
+    }
+
     /* ── Eyebrow: unified colour, no purple ── */
     .eyebrow {
       color: var(--muted);
@@ -33,8 +205,56 @@
       padding-top: 0.5rem;
     }
 
-    .stacked-indictment {
-      margin: 1.4rem 0 1.6rem;
+    .question-stack-body {
+      margin: 0.8rem 0 0;
+      font-size: 1.08rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+
+    .mind-chatter {
+      margin: 2rem auto 1.5rem;
+      max-width: 28rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 20px;
+      background: rgba(37, 25, 45, 0.03);
+      border: 1px solid var(--line);
+    }
+
+    .mind-chatter-text {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.2;
+    }
+
+    .wrong-heat {
+      margin: 2rem 0 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .stacked-indictment--centre {
+      align-items: center;
+      text-align: center;
+    }
+
+    .mechanism-body--centre {
+      text-align: center;
+    }
+
+    .stacked-indictment {      margin: 1.4rem 0 1.6rem;
       display: flex;
       flex-direction: column;
       gap: 0.3rem;
@@ -83,24 +303,34 @@
       color: var(--muted);
     }
 
+    .possibility-section {
+      padding-top: clamp(5rem, 8vw, 9rem);
+      padding-bottom: clamp(5rem, 8vw, 9rem);
+    }
+
+    .possibility-headline {
+      margin-bottom: 3rem;
+      line-height: 1.05;
+    }
+
     /* ── Possibility: statements sit directly ── */
     .possibility-statements {
       margin: 2.5rem auto 0;
-      max-width: 620px;
+      max-width: 680px;
       display: flex;
       flex-direction: column;
       gap: 0;
     }
 
     .possibility-statement {
-      padding: 1.4rem 0;
+      padding: 1.6rem 0;
       border-top: 1px solid var(--line);
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+      font-size: clamp(1.5rem, 2.2vw, 2.1rem);
       font-weight: 600;
       color: var(--text);
-      line-height: 1.1;
-      letter-spacing: -0.015em;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
       text-align: left;
     }
 
@@ -310,6 +540,20 @@
       letter-spacing: -0.01em;
     }
 
+    /* ── Tool panels: hide inactive, show active ── */
+    .tool-form {
+      display: none;
+    }
+
+    .tool-form.active {
+      display: block;
+    }
+
+    .body-strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
     @media (max-width: 1120px) {
       .misfit-breakout {
         padding: 3rem 0 2rem;
@@ -376,13 +620,13 @@
         <div class="hero-copy">
           <p class="eyebrow hero-eyebrow">Author · Clinician · International Speaker · Misfit Matriarch</p>
           <h1 class="display hero-title">
-            You have worked<br />
-            too hard for<br />
-            life to still<br />
-            be this hard.
+            <span class="hero-line hero-line-1">You have worked</span>
+            <span class="hero-line hero-line-2">too hard for</span>
+            <span class="hero-line hero-line-3">life to still</span>
+            <span class="hero-line hero-line-4">be this hard.</span>
           </h1>
           <p class="lead hero-lead">
-            ENOUGH names the cost no one could explain. The tools below help you see where it is going and what needs to change first.
+            A book that finally explains why effort stops being enough, and what actually needs to change.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
@@ -402,14 +646,15 @@
     ════════════════════════════════════════════ -->
     <section class="section section-soft" id="recognition">
       <div class="container narrow centre">
-        <h2 class="display section-title-lg">
+        <h2 class="display section-title-lg reveal">
           You tried the therapy.<br />
           The routines.<br />
           The boundaries.<br />
           The books.
         </h2>
-        <p class="lead">You keep doing what you were told would work.</p>
-        <p class="lead">And somehow it still costs more than it should.</p>
+        <p class="lead reveal reveal-delay-1">You keep doing what you were told would work.</p>
+        <p class="lead reveal reveal-delay-2">And it is still harder than it has any right to be.</p>
+        <p class="lead top-gap-md reveal reveal-delay-3">Did you ever stop to consider that</p>
       </div>
     </section>
 
@@ -420,30 +665,35 @@
       <div class="container question-grid">
 
         <div class="question-stack">
-          <h2 class="display section-title-md">What if nothing is wrong with you?</h2>
+          <h2 class="display section-title-md">Not everyone starts from the same starting line.</h2>
           <p>
-            Before you spend more money on the next course, the next coach, the next strategy —
-            do you actually have the tools to see what is really happening?
+            Before you spend more money on the next course, the next coach, the next strategy — do you actually have your feet in the starting blocks? Or are you still strapping your ankles in the car park?
           </p>
-          <p class="question-emphasis">
-            Where the account is being drawn from.<br />
-            Where your effort changes nothing.<br />
-            Where your leverage actually is.
-          </p>
+          <p class="question-emphasis">Where your starting line actually is.</p>
+          <p class="question-stack-body">Does yours start a few blocks before even arriving at the field?</p>
+          <p class="question-stack-body">Are you carrying injuries that never healed?</p>
+          <p class="question-stack-body">Are you running the race with a baby on your hip, an elderly parent on your back, or a hangover from last night's all night rave?</p>
+          <p class="question-stack-body">Have you been coached by a world class expert in your unique brain and body, or just the well meaning parent of a friend you made in primary school?</p>
         </div>
 
         <div class="mechanism-right">
-          <p class="mechanism-body">For years the message has been simple.</p>
-          <div class="stacked-indictment">
+          <p class="mechanism-body">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer regardless from a loved one:</p>
+          <div class="stacked-indictment stacked-indictment--centre">
             <span>Try harder.</span>
             <span>Push through.</span>
             <span>Be more disciplined.</span>
           </div>
-          <p class="mechanism-body">But you already did that.</p>
-          <p class="mechanism-body top-gap-sm">
-            <strong>Wrong conditions harm capable people.</strong>
-            Not because they lack discipline. Because the environment quietly takes from the capacity they rely on, and nobody shows them where it is going.
-          </p>
+          <p class="mechanism-body mechanism-body--centre">But you already doing that. Clearly.</p>
+
+          <div class="mind-chatter">
+            <p class="mind-chatter-text">What's wrong with me?</p>
+            <p class="mind-chatter-text">Why am I failing?</p>
+            <p class="mind-chatter-text">I suck at this.</p>
+          </div>
+
+          <p class="mechanism-body top-gap-sm">Look around. Is everyone else carrying a baby on their hip? Struggling with sensory overload? Navigating what you are navigating?</p>
+
+          <p class="mechanism-body top-gap-sm">Have you ever considered that maybe there is not nothing wrong with you. That you may just be</p>
         </div>
 
       </div>
@@ -454,21 +704,21 @@
     ════════════════════════════════════════════ -->
     <div class="container misfit-breakout">
       <h2>Misfit by Design. Not Deficit.</h2>
-      <p>The design was never wrong. The conditions were.</p>
+      <p class="wrong-heat">You are not failing.<br />You are just in the wrong heat.</p>
     </div>
 
     <!-- ═══════════════════════════════════════════
          POSSIBILITY
     ════════════════════════════════════════════ -->
-    <section class="section section-soft">
+    <section class="section section-soft possibility-section">
       <div class="container narrow centre">
-        <h2 class="display section-title-lg">
-          When you can see what is actually taking from you,<br />everything shifts.
+        <h2 class="display section-title-lg possibility-headline">
+          When you can finally see your actual reality clearly, everything shifts.
         </h2>
         <div class="possibility-statements">
-          <p class="possibility-statement">You stop blaming yourself.</p>
-          <p class="possibility-statement">You start making decisions that work with how you are built.</p>
-          <p class="possibility-statement">Life begins to open up again.</p>
+          <p class="possibility-statement">You stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
+          <p class="possibility-statement">You start making decisions that work with how you are actually built and the things that are actually important to you.</p>
+          <p class="possibility-statement">And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
         </div>
         <p class="lead top-gap-md">That is what <strong>ENOUGH</strong> is about.</p>
       </div>
@@ -481,7 +731,7 @@
       <div class="container">
 
         <div class="section-head centre narrow">
-          <h2 class="display section-title-lg">Start Here</h2>
+          <h2 class="display section-title-lg">On your marks!</h2>
           <p class="lead">
             If the problem is not simply effort, the next question is:
             <span class="lead-strong">what is this actually costing you?</span>
@@ -508,45 +758,45 @@
           <div class="tools-nav" role="tablist" aria-label="Guided reader journey">
 
             <button class="tool-card active" type="button" data-tool="recognition" role="tab" aria-selected="true">
-              <span class="tool-kicker">Step 1</span>
-              <h3>See what today has already taken from you.</h3>
-              <p>Most people arrive at their day already running a deficit. Not because of anything they did wrong.</p>
-              <span class="tool-link">Arrival Ledger · Misfit Tax Ledger →</span>
+              <span class="tool-kicker">Stage 1</span>
+              <h3>See where your starting line actually is.</h3>
+              <p>Before you can run, you need to know where you are actually starting from.</p>
+              <span class="tool-link">Recognition →</span>
             </button>
 
             <button class="tool-card" type="button" data-tool="clarity" role="tab" aria-selected="false">
-              <span class="tool-kicker">Step 2</span>
-              <h3>See where the cost is actually coming from.</h3>
-              <p>Not all of it comes from the same place. Some comes from your wiring. Some from the conditions around you.</p>
-              <span class="tool-link">Capacity Map →</span>
+              <span class="tool-kicker">Stage 2</span>
+              <h3>Understand what you are carrying into the race.</h3>
+              <p>Not everyone enters the race with the same load.</p>
+              <span class="tool-link">Clarity →</span>
             </button>
 
             <button class="tool-card" type="button" data-tool="acceptance" role="tab" aria-selected="false">
-              <span class="tool-kicker">Step 3</span>
-              <h3>See what belongs where.</h3>
-              <p>Some things change with effort. Some shift with support. Some are structural limits that effort will never move.</p>
-              <span class="tool-link">Structural Ceiling Map →</span>
+              <span class="tool-kicker">Stage 3</span>
+              <h3>Know which race you should be entering for this stage of training.</h3>
+              <p>Entering the wrong race does not make you a failure. It makes you someone who needed better information.</p>
+              <span class="tool-link">Acceptance →</span>
             </button>
 
             <button class="tool-card" type="button" data-tool="intervention" role="tab" aria-selected="false">
-              <span class="tool-kicker">Step 4</span>
-              <h3>See where your effort will actually make a difference.</h3>
-              <p>When the account is limited, where you apply effort matters more than how much of it you use.</p>
-              <span class="tool-link">Four Levers →</span>
+              <span class="tool-kicker">Stage 4</span>
+              <h3>Find where you actually have ground to gain.</h3>
+              <p>The race you could actually win is happening in the next lane.</p>
+              <span class="tool-link">Intervention →</span>
             </button>
 
             <button class="tool-card" type="button" data-tool="alignment" role="tab" aria-selected="false">
-              <span class="tool-kicker">Step 5</span>
-              <h3>See what life could look like when it works with how you are built.</h3>
-              <p>The goal is not becoming someone different. The goal is building conditions that stop taking from what you rely on.</p>
-              <span class="tool-link">Calibration Map →</span>
+              <span class="tool-kicker">Stage 5</span>
+              <h3>Run the race that fits your design.</h3>
+              <p>Not someone else's race. Not the race you were told you should want.</p>
+              <span class="tool-link">Alignment →</span>
             </button>
 
             <button class="tool-card" type="button" data-tool="sustainability" role="tab" aria-selected="false">
-              <span class="tool-kicker">Step 6</span>
-              <h3>See how capacity holds over time.</h3>
-              <p>Insight is not enough on its own. The goal is learning to notice the signals earlier.</p>
-              <span class="tool-link">Recalibration Loop →</span>
+              <span class="tool-kicker">Stage 6</span>
+              <h3>This is a marathon not a sprint. It is time to find out how you stay in it.</h3>
+              <p>Knowing what to do is not enough if you cannot keep doing it.</p>
+              <span class="tool-link">Sustainability →</span>
             </button>
 
           </div>
@@ -554,141 +804,50 @@
           <div class="tool-panel-wrap">
             <div class="tool-panel-header">
               <h3 id="previewTitle" class="display tool-preview-title">Recognition</h3>
-              <p id="previewText" class="body-copy muted">Start by noticing what it cost you just to show up today.</p>
+              <p id="previewText" class="body-copy muted">Before you can run, you need to know where you are actually starting from.</p>
             </div>
 
-            <!-- STEP 1: RECOGNITION -->
+            <!-- STAGE 1: RECOGNITION -->
             <div class="tool-form active" id="tool-recognition">
-              <p class="body-copy">Start by noticing what it cost you just to show up.</p>
-              <p class="body-copy">Most people have been told the answer is more effort. But effort without understanding the conditions is how capable people burn out.</p>
-              <p class="body-copy">This stage begins by helping you notice how much may already have been spent — the translating, the masking, the holding it together — before anything has even begun.</p>
-              <div class="ledger-columns top-gap-sm">
-                <div class="mini-panel">
-                  <p class="mini-heading">Arrival Ledger</p>
-                  <ul class="mini-list">
-                    <li>What did it cost you to get here today?</li>
-                    <li>Helps you see that your starting point is not the same as everyone else's.</li>
-                  </ul>
-                </div>
-                <div class="mini-panel">
-                  <p class="mini-heading">Misfit Tax Ledger</p>
-                  <ul class="mini-list">
-                    <li>Where is the rest of it going? Including the costs that never show up on any list.</li>
-                    <li>Readers of ENOUGH have full access to both tools.</li>
-                  </ul>
-                </div>
-              </div>
+              <p class="body-copy">Before you can run, you need to know where you are actually starting from. Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.</p>
+              <p class="body-copy top-gap-sm">This stage helps you see what it cost you just to show up today, and where the rest is going, including the costs that never appear on any list.</p>
+              <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
-            <!-- STEP 2: CLARITY -->
+            <!-- STAGE 2: CLARITY -->
             <div class="tool-form" id="tool-clarity">
-              <p class="body-copy">Once you can see what it is costing you, the next question is why.</p>
-              <p class="body-copy">Not all of it comes from the same place. Some comes from your wiring. Some from the conditions around you. Some from what life has required you to carry for a long time.</p>
-              <p class="body-copy">The Capacity Map moves through nine layers — from neurology to current state — so you can see which layers are bearing the most weight right now.</p>
-              <div class="ledger-columns top-gap-sm">
-                <div class="mini-panel">
-                  <p class="mini-heading">What this helps you see</p>
-                  <ul class="mini-list">
-                    <li>Which layers are shaping your capacity and where the account is actually being drawn from.</li>
-                    <li>Capacity is shaped by architecture, not just effort.</li>
-                  </ul>
-                </div>
-                <div class="mini-panel">
-                  <p class="mini-heading">Capacity Map</p>
-                  <ul class="mini-list">
-                    <li>Readers of ENOUGH have full access to the complete Capacity Map.</li>
-                    <li>Designed to show where the load is actually originating.</li>
-                  </ul>
-                </div>
-              </div>
+              <p class="body-copy">Not everyone enters the race with the same load. This stage helps you see what you are actually carrying, your wiring, your history, your conditions, and where the weight is really coming from.</p>
+              <p class="body-copy top-gap-sm">This stage moves through the layers of what shapes your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.</p>
+              <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
-            <!-- STEP 3: ACCEPTANCE -->
+            <!-- STAGE 3: ACCEPTANCE -->
             <div class="tool-form" id="tool-acceptance">
-              <p class="body-copy">Some things change with effort. Some shift with the right support. Some are structural limits that effort alone will never move.</p>
-              <p class="body-copy">That distinction matters more than most people realise. A significant part of what exhausts capable people is spending what they have pushing against things that were never theirs to move alone.</p>
-              <div class="ledger-columns top-gap-sm">
-                <div class="mini-panel">
-                  <p class="mini-heading">What this helps you see</p>
-                  <ul class="mini-list">
-                    <li>What sits in your control, what sits in your influence, and what sits beyond both.</li>
-                    <li>Where to stop spending, and where change is actually possible.</li>
-                  </ul>
-                </div>
-                <div class="mini-panel">
-                  <p class="mini-heading">Structural Ceiling Map</p>
-                  <ul class="mini-list">
-                    <li>Readers of ENOUGH have full access to the Structural Ceiling Map.</li>
-                    <li>Not to create helplessness. To stop the account being spent on things that cannot shift.</li>
-                  </ul>
-                </div>
-              </div>
+              <p class="body-copy">If you are a novice runner who ends up in a race with Usain Bolt, the most important thing you can learn is not how to run faster. It is that no amount of training, discipline or willpower is going to close that gap in the way the crowd expects. Bolt has the biology, the years, the specific physical architecture for that race. You do not. That is not failure. That is information.</p>
+              <p class="body-copy">Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything you have into a race you were never built for.</p>
+              <p class="body-copy">This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.</p>
+              <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
-            <!-- STEP 4: INTERVENTION -->
+            <!-- STAGE 4: INTERVENTION -->
             <div class="tool-form" id="tool-intervention">
-              <p class="body-copy">When the account is limited, where you apply effort matters more than how much of it you use.</p>
-              <p class="body-copy">There are four moves that actually change the equation.</p>
-              <div class="ledger-columns top-gap-sm">
-                <div class="mini-panel">
-                  <p class="mini-heading">The Four Levers</p>
-                  <ul class="mini-list">
-                    <li>Reduce · Protect · Restore · Add</li>
-                    <li>Each works differently. Each applies at a different point in the architecture.</li>
-                  </ul>
-                </div>
-                <div class="mini-panel">
-                  <p class="mini-heading">What this gives you</p>
-                  <ul class="mini-list">
-                    <li>Clarity on which move fits where you actually are right now — not where you think you should be.</li>
-                    <li>Readers of ENOUGH have full access to the Four Levers tool.</li>
-                  </ul>
-                </div>
-              </div>
+              <p class="body-copy">The race you could actually win is happening in the next lane. This stage is about finding it.</p>
+              <p class="body-copy">Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is costing you, protect what is working, restore what has been spent, and add what was always missing from your preparation.</p>
+              <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
-            <!-- STEP 5: ALIGNMENT -->
+            <!-- STAGE 5: ALIGNMENT -->
             <div class="tool-form" id="tool-alignment">
-              <p class="body-copy">The goal is not becoming someone different.</p>
-              <p class="body-copy">The goal is building conditions that stop taking from what you rely on — that work with your design instead of against it.</p>
-              <p class="body-copy">The Calibration Map brings together what you have seen across the earlier stages and asks: given all of this, what do you build from here?</p>
-              <div class="ledger-columns top-gap-sm">
-                <div class="mini-panel">
-                  <p class="mini-heading">What this helps you see</p>
-                  <ul class="mini-list">
-                    <li>What conditions support capacity and where to focus first.</li>
-                    <li>This is not a goal-setting exercise. It is a map drawn from what is actually true about you.</li>
-                  </ul>
-                </div>
-                <div class="mini-panel">
-                  <p class="mini-heading">Calibration Map</p>
-                  <ul class="mini-list">
-                    <li>Readers of ENOUGH have full access to the complete Calibration Map.</li>
-                  </ul>
-                </div>
-              </div>
+              <p class="body-copy">Not someone else's race. Not the race you were told you should want. The one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.</p>
+              <p class="body-copy top-gap-sm">This stage brings your design, your conditions and your pace together, and maps the relationships that restore against those that take from what you rely on.</p>
+              <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
-            <!-- STEP 6: SUSTAINABILITY -->
+            <!-- STAGE 6: SUSTAINABILITY -->
             <div class="tool-form" id="tool-sustainability">
-              <p class="body-copy">Insight is not enough on its own. Life moves. The account moves with it.</p>
-              <p class="body-copy">The Recalibration Loop is not about maintaining perfect balance. It is about learning to notice the signals earlier — before the cost becomes collapse — and knowing what to do when things start to shift.</p>
-              <div class="ledger-columns top-gap-sm">
-                <div class="mini-panel">
-                  <p class="mini-heading">The Loop</p>
-                  <ul class="mini-list">
-                    <li>Signal · Protect · Adjust · Stabilise · Begin again.</li>
-                    <li>The earlier the signal is caught, the less it costs to respond.</li>
-                  </ul>
-                </div>
-                <div class="mini-panel">
-                  <p class="mini-heading">Recalibration Loop</p>
-                  <ul class="mini-list">
-                    <li>Readers of ENOUGH have full access to the Recalibration Loop.</li>
-                    <li>Designed to reduce the cost of the same collapse repeating.</li>
-                  </ul>
-                </div>
-              </div>
+              <p class="body-copy">Knowing what to do is not enough if you cannot keep doing it. Elite athletes do not train the same way every day for their entire career. They read their body. They know when to push, when to stretch, when to take a season out, when to bulk up on carbs and rest before the next race.</p>
+              <p class="body-copy">This stage teaches you to read your own signals early. So you know what your body and your life are actually asking for right now. So the same collapse does not keep costing you the same ground.</p>
+              <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
           </div>
@@ -724,13 +883,15 @@
         <div class="feature-copy">
           <p class="eyebrow">Book</p>
           <h2 class="display section-title-lg">ENOUGH</h2>
-          <p class="lead">The tools help you see the pattern. The book explains the architecture behind it.</p>
+          <p class="lead">Did you know we all have a place on the podium?</p>
           <p class="body-copy">
-            ENOUGH is written for the people who kept trying. The ones who learned the skills, did the work,
-            held it together and still ended up paying a cost no one could explain.
+            Not in some airy fairy participation trophy way. But in a way that reveals we are all working towards different podiums when we get really clear and honest about what the six stages covered in this book actually show us.
           </p>
           <p class="body-copy">
-            This book names what has been happening and shows what changes when the conditions finally make sense.
+            ENOUGH is written for the people who kept trying. The ones who learned the skills, did the work, held it together and still ended up pulling a hamstring while in full speed down the straight.
+          </p>
+          <p class="body-copy">
+            This book names what has been happening and shows what changes when you actually follow your unique podium training program.
           </p>
           <div class="button-row top-gap-sm">
             <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
@@ -746,15 +907,15 @@
     ════════════════════════════════════════════ -->
     <section class="section">
       <div class="container narrow centre">
-        <h2 class="display section-title-lg">This work was not built as theory first.</h2>
+        <h2 class="credibility-headline reveal">This work was not built as theory first.</h2>
         <p class="credibility-proof">
-          It was built inside clinical practice, neurodivergent affirming support, community design,
-          leadership work, and advocacy — because when capable people keep struggling inside the same conditions,
-          something deeper is happening.
+          It was built on snapped ligaments, sensory overwhelm, a brain that could not understand the instruction manuals written in typical language, and a heart that was broken over and over again.
         </p>
-        <p class="credibility-closing">
-          The problem is rarely the people.<br />
-          It is almost always the conditions.
+        <p class="credibility-proof">
+          And then I birthed a little version of me and decided enough. Not on my watch will that happen again.
+        </p>
+        <p class="credibility-proof">
+          And then it was forged in clinical practice, neurodivergent affirming support, community design, leadership work, and advocacy — while we replicated getting clear on the unique podium each person was racing for instead of running the same race.
         </p>
       </div>
     </section>
@@ -814,23 +975,11 @@
           <p class="eyebrow">Speaking</p>
           <p class="speaking-lead">First,<br />do no harm.</p>
           <h2 class="speaking-sub">If you want to help people, first understand what it costs them to be here.</h2>
-          <p class="body-copy">
-            Most professionals enter their work because they want to help — teachers, clinicians, leaders, parents.
-            Good intentions alone do not prevent harm.
-          </p>
-          <p class="body-copy">
-            When we do not understand what it costs someone to operate inside an environment,
-            the strategies designed to help can become another source of pressure.
-          </p>
-          <p class="body-copy">This work helps professionals see the conditions clearly.</p>
-          <div class="speaking-tools-row">
-            <span class="speaking-tool-tag">Arrival Ledger</span>
-            <span class="speaking-tool-tag">Misfit Tax Ledger</span>
-            <span class="speaking-tool-tag">Structural Ceiling Map</span>
-            <span class="speaking-tool-tag">Four Levers</span>
-          </div>
+          <p class="body-copy">Most professionals enter their work because they want to help. Teachers, clinicians, leaders, parents. Good intentions alone do not prevent harm. When you cannot see the full load someone is carrying, you cannot teach them how to have wings and fly.</p>
+          <p class="body-copy">Be the coach the person in front of you actually needs. Not the coach you were trained to be for someone else.</p>
+          <p class="body-copy">This work helps professionals see the person clearly.</p>
           <p class="speaking-closing">
-            If capable people keep struggling in your system,<br />the problem is probably not the people.
+            If capable people keep struggling in your system,<br />the problem is probably not the people.<br />It is probably that you are looking at the race and not the runner.
           </p>
           <div class="button-row">
             <a class="btn btn-primary" href="mailto:hello@tanyahicks.com">Speaking Enquiries</a>
@@ -875,7 +1024,7 @@
           You do not have to become someone new.<br />
           You only have to stop fighting the way you are built.
         </p>
-        <p class="closing-main">You were<br />always<br />enough.</p>
+        <p class="closing-main">You were<br />always<br /><span class="closing-gold">enough.</span></p>
         <div class="closing-buttons">
           <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
           <a class="btn btn-subtle" href="#journey">Start the Tools</a>
@@ -901,27 +1050,27 @@
     const previewMap = {
       recognition: {
         title: "Recognition",
-        text: "Start by noticing what it cost you just to show up. The Arrival Ledger and Misfit Tax Ledger make visible what was always being spent."
+        text: "See where your starting line actually is. Before you can run, you need to know where you are actually starting from."
       },
       clarity: {
         title: "Clarity",
-        text: "The Capacity Map moves through nine layers — from neurology to current state — to show which layers are bearing the most weight right now."
+        text: "Understand what you are carrying into the race. Not everyone enters with the same load."
       },
       acceptance: {
         title: "Acceptance",
-        text: "The Structural Ceiling Map sorts what sits in your control, your influence, and what sits beyond both. Not to create helplessness — to stop the account being spent on things that cannot shift."
+        text: "Know which race you should be entering for this stage of training. Acceptance is not giving up. It is stopping the bleeding."
       },
       intervention: {
         title: "Intervention",
-        text: "The Four Levers — Reduce, Protect, Restore, Add — help you see which move fits where you actually are right now, not where you think you should be."
+        text: "Find where you actually have ground to gain. The race you could actually win is happening in the next lane."
       },
       alignment: {
         title: "Alignment",
-        text: "The Calibration Map brings together what you have seen across the earlier stages and asks: given all of this, what do you build from here?"
+        text: "Run the race that fits your design. Not someone else's race. Not the race you were told you should want."
       },
       sustainability: {
         title: "Sustainability",
-        text: "The Recalibration Loop: Signal, Protect, Adjust, Stabilise. The earlier the signal is caught, the less it costs to respond."
+        text: "This is a marathon not a sprint. It is time to find out how you stay in it."
       }
     };
 
@@ -952,6 +1101,57 @@
         }
       });
     });
+
+    // Scroll reveal observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Possibility statements observer
+    document.querySelectorAll('.possibility-statement').forEach(el => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      obs.observe(el);
+    });
+
+    // Mind chatter typewriter
+    const mindChatter = document.querySelector('.mind-chatter');
+    if (mindChatter) {
+      const chatterObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const lines = mindChatter.querySelectorAll('.mind-chatter-text');
+            lines.forEach((line, i) => {
+              setTimeout(() => line.classList.add('typing'), i * 520);
+            });
+            chatterObs.unobserve(mindChatter);
+          }
+        });
+      }, { threshold: 0.3 });
+      chatterObs.observe(mindChatter);
+    }
+
+    // Hero portrait parallax
+    const heroImg = document.querySelector('.hero-image');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        heroImg.style.transform = `translateY(${scrolled * 0.12}px)`;
+      }, { passive: true });
+    }
 
     function toggleAboutExpand() {
       const box = document.getElementById("aboutExpand");
