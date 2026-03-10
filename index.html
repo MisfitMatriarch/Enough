@@ -184,7 +184,6 @@
       padding-top: clamp(5rem, 9vw, 10rem);
       padding-bottom: clamp(5rem, 9vw, 10rem);
     }
-    .possibility-headline { margin-bottom: 4rem; line-height: 1.05; }
     .possibility-statements {
       margin: 2rem auto 0;
       max-width: 760px;
@@ -395,10 +394,51 @@
       color: var(--muted);
     }
 
-    /* ── Speaking ── */
-    .speaking-header {
-      max-width: 900px;
+    /* ── Mechanism tail section ── */
+    .mechanism-tail {
+      padding-top: clamp(3rem, 5vw, 5rem);
+      padding-bottom: clamp(3rem, 5vw, 5rem);
+    }
+    .mechanism-retort {
+      margin: 0 0 2rem;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .mechanism-lookaround {
+      margin: 2rem auto 0;
+      max-width: 52rem;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      line-height: 1.7;
+      color: var(--text);
+      font-weight: 500;
+      text-align: center;
+    }
+    .mechanism-pivot {
+      margin: 1.4rem auto 0;
+      max-width: 52rem;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      line-height: 1.7;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ── Possibility headline: constrained width, left-aligned ── */
+    .possibility-headline {
       margin-bottom: 3rem;
+      line-height: 1.05;
+      font-size: clamp(2.2rem, 3.8vw, 4rem) !important;
+    }
+
+    /* ── Speaking: header centred, closing spans full column ── */
+    .speaking-header.centre {
+      text-align: center;
+      max-width: 100%;
+      margin-bottom: 4rem;
     }
     .speaking-lead {
       font-family: "Cormorant Garamond", serif !important;
@@ -407,24 +447,20 @@
       color: var(--text) !important;
       line-height: 0.88 !important;
       letter-spacing: -0.03em !important;
-      margin: 0.5rem 0 1.6rem !important;
+      margin: 0.5rem 0 1.4rem !important;
     }
     .speaking-sub {
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+      font-size: clamp(1.6rem, 2.4vw, 2.6rem);
       font-weight: 600;
       color: var(--text);
       line-height: 1.15;
       letter-spacing: -0.01em;
       margin: 0;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .speaking-body {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(300px, 500px);
-      gap: clamp(3rem, 6vw, 6rem);
-      align-items: start;
-    }
-    .speaking-copy { max-width: 44rem; }
     .speaking-closing {
       margin: 2rem 0 1.8rem;
       font-family: "Cormorant Garamond", serif;
@@ -433,7 +469,16 @@
       color: var(--text);
       line-height: 1.1;
       letter-spacing: -0.015em;
+      width: 100%;
     }
+
+    .speaking-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 500px);
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .speaking-copy { max-width: 100%; }
 
     /* ── Closing ── */
     .closing-gold { color: var(--hot); }
@@ -742,7 +787,7 @@
     <!-- ═══════════════════════════════════════════
          MECHANISM — tail
     ════════════════════════════════════════════ -->
-    <section class="section mechanism-section">
+    <section class="section mechanism-tail">
       <div class="container narrow centre">
 
         <p class="mechanism-retort reveal">But you are already doing that. Clearly.</p>
@@ -753,9 +798,9 @@
           <p class="mind-chatter-text">I suck at this.</p>
         </div>
 
-        <p class="mechanism-body mechanism-body--centre top-gap-sm reveal">Look around. Is everyone else carrying a baby on their hip? Struggling with sensory overload? Navigating what you are navigating?</p>
+        <p class="mechanism-lookaround reveal">Look around. Is everyone else carrying a baby on their hip? Struggling with sensory overload? Navigating what you are navigating?</p>
 
-        <p class="mechanism-body mechanism-body--centre top-gap-sm reveal">Have you ever considered that maybe there is not nothing wrong with you. That you may just be</p>
+        <p class="mechanism-pivot reveal">Have you ever considered that maybe there is not nothing wrong with you. That you may just be</p>
 
       </div>
     </section>
@@ -766,7 +811,6 @@
     <section class="spotlight" id="spotlight-misfit" aria-label="Misfit by Design. Not Deficit.">
       <div class="spotlight-inner">
         <p class="spotlight-text"><span class="spotlight-hot">Misfit by Design.</span><br />Not Deficit.</p>
-        <span class="spotlight-sub">You are not failing.<br />You are just in the wrong heat.</span>
       </div>
     </section>
 
@@ -774,8 +818,8 @@
          POSSIBILITY
     ════════════════════════════════════════════ -->
     <section class="section section-soft possibility-section">
-      <div class="container narrow centre">
-        <h2 class="display section-title-lg possibility-headline">
+      <div class="container narrow">
+        <h2 class="display possibility-headline reveal">
           When you can finally see your actual reality clearly, everything shifts.
         </h2>
         <div class="possibility-statements">
@@ -783,7 +827,7 @@
           <p class="possibility-statement">You start making decisions that work with how you are actually built and the things that are actually important to you.</p>
           <p class="possibility-statement">And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
         </div>
-        <p class="lead top-gap-md">That is what <strong>ENOUGH</strong> is about.</p>
+        <p class="lead top-gap-md centre">That is what <strong>ENOUGH</strong> is about.</p>
       </div>
     </section>
 
@@ -795,11 +839,8 @@
 
         <div class="section-head centre narrow">
           <h2 class="display section-title-lg">On your marks!</h2>
-          <p class="lead">
-            If the problem is not simply effort, the next question is:
-            <span class="lead-strong">what is taking from you before you even reach the blocks?</span>
-          </p>
-          <p class="lead">This guided journey helps you see the pattern clearly, one stage at a time.</p>
+          <p class="lead">If the problem is not simply effort, the next question is: <span class="lead-strong">what is taking from you before you even reach the blocks?</span></p>
+          <p class="lead" style="margin-top:0.6rem;">Six stages. One clear picture.</p>
         </div>
 
         <div class="journey-progress" aria-label="Journey stages">
@@ -911,7 +952,7 @@
         </div>
 
         <div class="container narrow centre top-gap-md">
-          <p class="body-copy body-strong">The six stages in ENOUGH map the full picture — from where your starting line actually is, to the podium that actually means something to you.</p>
+          <p class="body-copy body-strong">The six stages in ENOUGH map the full picture. From where your starting line actually is, to the podium that actually means something to you.</p>
         </div>
 
       </div>
@@ -1026,8 +1067,8 @@
     <section class="section" id="speaking">
       <div class="container">
 
-        <!-- Full-width header -->
-        <div class="speaking-header">
+        <!-- Full-width centred header -->
+        <div class="speaking-header centre">
           <p class="eyebrow">Speaking</p>
           <p class="speaking-lead">First,<br />do no harm.</p>
           <h2 class="speaking-sub">If you want to help people, first understand what it costs them to be here.</h2>
@@ -1040,7 +1081,7 @@
             <p class="body-copy">Be the coach the person in front of you actually needs. Not the coach you were trained to be for someone else.</p>
             <p class="body-copy">This work helps professionals see the person clearly.</p>
             <p class="speaking-closing">
-              If capable people keep struggling in your system,<br />the problem is probably not the people.<br />It is probably that you are looking at the race and not the runner.
+              If capable people keep struggling in your system, the problem is probably not the people. It is probably that you are looking at the race and not the runner.
             </p>
             <div class="button-row">
               <a class="btn btn-primary" href="mailto:hello@tanyahicks.com">Speaking Enquiries</a>
