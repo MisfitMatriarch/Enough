@@ -295,6 +295,23 @@
       line-height: 1.7;
       margin-top: 1rem;
     }
+    /* ── Exoneration verdict box ── */
+    .exoneration-box {
+      margin: 2rem 0 0;
+      padding: 1.6rem 2rem;
+      background: var(--text);
+      border-radius: 16px;
+    }
+    .exoneration-text {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+    }
+
     .mechanism-questions {
       background: var(--bg-soft);
       padding-top: clamp(3rem, 5vw, 5rem);
@@ -905,7 +922,7 @@
 
         <p class="mechanism-lookaround reveal">Look around.<br />Is everyone else carrying a baby on their hip?<br />Struggling with sensory overload?<br />Navigating what you are navigating?</p>
 
-        <p class="mechanism-pivot reveal">Have you ever considered that maybe there is not nothing wrong with you.<br /><br /><br />That you may just be</p>
+        <p class="mechanism-pivot reveal">Have you ever considered that maybe there is nothing wrong with you.<br /><br /><br />That you may just be</p>
 
       </div>
     </section>
@@ -929,27 +946,27 @@
         </h2>
         <div class="podium-wrap reveal">
 
-          <!-- Step 3 (shortest, left) -->
-          <div class="podium-col">
-            <p class="podium-text">You stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
-            <div class="podium-block podium-block--3">
-              <span class="podium-num">3</span>
-            </div>
-          </div>
-
-          <!-- Step 2 (medium, centre-left) -->
+          <!-- 2nd place (left) -->
           <div class="podium-col">
             <p class="podium-text">You start making decisions that work with how you are actually built and the things that are actually important to you.</p>
             <div class="podium-block podium-block--2">
-              <span class="podium-num">2</span>
+              <span class="podium-num">2nd</span>
             </div>
           </div>
 
-          <!-- Step 1 (tallest, right) — the winner -->
+          <!-- 1st place (centre, tallest) -->
           <div class="podium-col">
             <p class="podium-text podium-text--winner">And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
             <div class="podium-block podium-block--1">
-              <span class="podium-num">1</span>
+              <span class="podium-num">1st</span>
+            </div>
+          </div>
+
+          <!-- 3rd place (right, shortest) -->
+          <div class="podium-col">
+            <p class="podium-text">You stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
+            <div class="podium-block podium-block--3">
+              <span class="podium-num">3rd</span>
             </div>
           </div>
 
@@ -1013,8 +1030,8 @@
 
             <button class="stage-card" type="button" data-stage="sustainability" role="tab" aria-selected="false">
               <span class="stage-kicker">Stage 6</span>
-              <h3>This is a marathon not a sprint. It is time to find out how you stay in it.</h3>
-              <p>Knowing what to do is not enough if you cannot keep doing it.</p>
+              <h3>This is where you get to arrive.</h3>
+              <p>Knowing how to stay in the race is only the beginning. This stage is about what you build once you are no longer spending everything just to survive it.</p>
             </button>
 
           </div><!-- /stages-col col-2 -->
@@ -1032,6 +1049,9 @@
             <div class="stage-form active" id="stage-recognition">
               <p class="body-copy">Before you can run, you need to know where you are actually starting from. Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.</p>
               <p class="body-copy top-gap-sm">This stage helps you see what it cost you just to show up today, and where the rest is going, including the costs that never appear on any list.</p>
+              <div class="exoneration-box">
+                <p class="exoneration-text">You were not lazy. Not undisciplined. Not broken in ways that more effort would fix. You were running a different race in someone else's shoes on a track that was never built for your stride. That is not a personal failing. That is a structural problem. And structural problems have structural solutions.</p>
+              </div>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
@@ -1064,10 +1084,13 @@
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
-            <!-- STAGE 6: SUSTAINABILITY -->
+            <!-- STAGE 6: SUSTAINABILITY + ARRIVAL -->
             <div class="stage-form" id="stage-sustainability">
-              <p class="body-copy">Knowing what to do is not enough if you cannot keep doing it. Elite athletes do not train the same way every day for their entire career. They read their body. They know when to push, when to stretch, when to take a season out, when to bulk up on carbs and rest before the next race.</p>
-              <p class="body-copy">This stage teaches you to read your own signals early. So you know what your body and your life are actually asking for right now. So the same collapse does not keep taking the same ground from you.</p>
+              <p class="body-copy">Sustainability is not the destination. It is the floor you build so something real can stand on it.</p>
+              <p class="body-copy top-gap-sm">Most people never get here. Not because the work is too hard, but because they run out of ground before they reach it. Every stage before this one was clearing that ground.</p>
+              <p class="body-copy top-gap-sm">This stage teaches you to read your own signals early. So the same collapse does not keep taking the same ground from you. So you stop white-knuckling through seasons that were asking you to rest.</p>
+              <p class="body-copy top-gap-sm">And then, once the ground holds, this is where expression becomes possible. Where you start building intentionally rather than reactively. Where "enough" stops being a consolation and becomes a standard you actually set.</p>
+              <p class="body-copy top-gap-sm">Not enough as settling. Enough as sufficiency. As the thing you were always allowed to have.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
@@ -1297,7 +1320,7 @@
       },
       sustainability: {
         title: "Sustainability",
-        text: "This is a marathon not a sprint. It is time to find out how you stay in it."
+        text: "This is where you get to arrive. Knowing how to stay in the race is only the beginning."
       }
     };
 
