@@ -463,6 +463,143 @@
     @media (max-width: 480px) {
       .hero-eyebrow { white-space: normal; font-size: 0.68rem; }
     }
+    /* ════════════════════════════════════════════
+       SPOTLIGHT SECTIONS — theatrical dark moments
+    ════════════════════════════════════════════ */
+    .spotlight {
+      min-height: 100vh;
+      background: var(--text);
+      background-image: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,255,255,0.025) 0%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+      position: relative;
+    }
+
+    .spotlight-inner {
+      text-align: center;
+      max-width: 880px;
+      width: 100%;
+    }
+
+    /* Each piece of spotlight content starts hidden */
+    .spotlight-eyebrow,
+    .spotlight-text,
+    .spotlight-sub,
+    .spotlight-pre,
+    .spotlight-line,
+    .spotlight-cta {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Stagger delays per element */
+    .spotlight-eyebrow  { transition-delay: 0.1s; }
+    .spotlight-pre      { transition-delay: 0.15s; }
+    .spotlight-text     { transition-delay: 0.25s; }
+    .spotlight-sub      { transition-delay: 0.55s; }
+    .spotlight-cta      { transition-delay: 0.7s; }
+
+    /* Staggered indictment lines */
+    .spotlight-line:nth-child(1) { transition-delay: 0.15s; }
+    .spotlight-line:nth-child(2) { transition-delay: 0.65s; }
+    .spotlight-line:nth-child(3) { transition-delay: 1.15s; }
+
+    /* Lit state — triggered by JS IntersectionObserver */
+    .spotlight.is-lit .spotlight-eyebrow,
+    .spotlight.is-lit .spotlight-text,
+    .spotlight.is-lit .spotlight-sub,
+    .spotlight.is-lit .spotlight-pre,
+    .spotlight.is-lit .spotlight-line,
+    .spotlight.is-lit .spotlight-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Typography within spotlights */
+    .spotlight-eyebrow {
+      display: block;
+      margin: 0 0 2.5rem;
+      font-family: "Inter", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .spotlight-text {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 7vw, 7.5rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+    }
+
+    .spotlight-line {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 7vw, 7.5rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+    }
+
+    .spotlight-sub {
+      display: block;
+      margin-top: 2.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.6rem, 5vw, 5.5rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .spotlight-pre {
+      display: block;
+      margin: 0 0 3rem;
+      font-family: "Inter", sans-serif;
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+
+    .spotlight-hot {
+      color: var(--hot);
+    }
+
+    .spotlight-cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-top: 3.5rem;
+    }
+
+    /* Buttons inside spotlights */
+    .spotlight .btn-primary {
+      background: var(--hot);
+      border-color: var(--hot);
+    }
+    .spotlight .btn-secondary {
+      background: transparent;
+      color: rgba(255,255,255,0.65);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .spotlight .btn-secondary:hover {
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.08);
+    }
+
   </style>
 </head>
 <body>
@@ -520,7 +657,7 @@
     <!-- ═══════════════════════════════════════════
          RECOGNITION
     ════════════════════════════════════════════ -->
-    <section class="section section-soft" id="recognition">
+    <section class="section section-soft" id="recognition" style="padding-bottom: 0;">
       <div class="container narrow centre">
         <h2 class="display section-title-lg reveal">
           You tried the therapy.<br />
@@ -530,17 +667,25 @@
         </h2>
         <p class="lead reveal reveal-delay-1">You keep doing what you were told would work.</p>
         <p class="lead reveal reveal-delay-2">And it is still harder than it has any right to be.</p>
-        <p class="lead top-gap-md reveal reveal-delay-3">Did you ever stop to consider that</p>
+        <p class="lead top-gap-md reveal reveal-delay-3" style="padding-bottom: 2rem;">Did you ever stop to consider that</p>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════
-         MECHANISM
+         SPOTLIGHT 1 — Not everyone starts from the same starting line.
+    ════════════════════════════════════════════ -->
+    <section class="spotlight" id="spotlight-starting-line" aria-label="Not everyone starts from the same starting line">
+      <div class="spotlight-inner">
+        <p class="spotlight-text">Not everyone starts from the same starting line.</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MECHANISM — questions
     ════════════════════════════════════════════ -->
     <section class="section mechanism-section">
       <div class="container narrow centre">
 
-        <h2 class="display section-title-md reveal">Not everyone starts from the same starting line.</h2>
         <p class="mechanism-intro reveal reveal-delay-1">
           Before you spend more money on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks? Or are you still strapping your ankles in the car park?
         </p>
@@ -553,11 +698,26 @@
 
         <p class="mechanism-stadium reveal">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer regardless from a loved one:</p>
 
-        <div class="stacked-indictment stacked-indictment--centre reveal">
-          <span>Try harder.</span>
-          <span>Push through.</span>
-          <span>Be more disciplined.</span>
-        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SPOTLIGHT 2 — Try harder. Push through. Be more disciplined.
+    ════════════════════════════════════════════ -->
+    <section class="spotlight" id="spotlight-indictment" aria-label="The indictment">
+      <div class="spotlight-inner">
+        <p class="spotlight-eyebrow">From the stadium</p>
+        <span class="spotlight-line">Try harder.</span>
+        <span class="spotlight-line">Push through.</span>
+        <span class="spotlight-line">Be more disciplined.</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MECHANISM — tail
+    ════════════════════════════════════════════ -->
+    <section class="section mechanism-section">
+      <div class="container narrow centre">
 
         <p class="mechanism-retort reveal">But you already doing that. Clearly.</p>
 
@@ -575,12 +735,14 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         MISFIT BREAKOUT LINE
+         SPOTLIGHT 3 — Misfit by Design. Not Deficit.
     ════════════════════════════════════════════ -->
-    <div class="container misfit-breakout">
-      <h2>Misfit by Design. Not Deficit.</h2>
-      <p class="wrong-heat">You are not failing.<br />You are just in the wrong heat.</p>
-    </div>
+    <section class="spotlight" id="spotlight-misfit" aria-label="Misfit by Design. Not Deficit.">
+      <div class="spotlight-inner">
+        <p class="spotlight-eyebrow">Misfit by Design. Not Deficit.</p>
+        <p class="spotlight-text">You are not failing.<br />You are just in<br />the wrong heat.</p>
+      </div>
+    </section>
 
     <!-- ═══════════════════════════════════════════
          POSSIBILITY
@@ -609,7 +771,7 @@
           <h2 class="display section-title-lg">On your marks!</h2>
           <p class="lead">
             If the problem is not simply effort, the next question is:
-            <span class="lead-strong">what is actually taking from you?</span>
+            <span class="lead-strong">what is taking from you before you even reach the blocks?</span>
           </p>
           <p class="lead">This guided journey helps you see the pattern clearly, one stage at a time.</p>
         </div>
@@ -898,18 +1060,20 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         CLOSING
+         SPOTLIGHT 4 — You were always enough.
     ════════════════════════════════════════════ -->
-    <section class="section closing-section">
-      <div class="container narrow centre">
-        <p class="closing-pre">
+    <section class="spotlight" id="spotlight-enough" aria-label="You were always enough">
+      <div class="spotlight-inner">
+        <p class="spotlight-pre">
           You do not have to become someone new.<br />
           You only have to stop fighting the way you are built.
         </p>
-        <p class="closing-main">You were<br />always<br /><span class="closing-gold">enough.</span></p>
-        <div class="closing-buttons">
+        <p class="spotlight-text">
+          You were<br />always<br /><span class="spotlight-hot">enough.</span>
+        </p>
+        <div class="spotlight-cta">
           <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
-          <a class="btn btn-subtle" href="#journey">Start the Tools</a>
+          <a class="btn btn-secondary" href="#journey">Start the Tools</a>
         </div>
       </div>
     </section>
@@ -983,6 +1147,17 @@
         }
       });
     });
+
+    // ── Spotlight sections: theatrical dark moments ──
+    const spotlightObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-lit');
+        }
+      });
+    }, { threshold: 0.35 });
+
+    document.querySelectorAll('.spotlight').forEach(el => spotlightObserver.observe(el));
 
     // Scroll reveal observer
     const revealObserver = new IntersectionObserver((entries) => {
