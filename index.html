@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ENOUGH | Tanya Hicks</title>
-  <meta name="description" content="ENOUGH by Tanya Hicks. Guided tools, book, speaking, and waitlist." />
+  <meta name="description" content="ENOUGH by Tanya Hicks. Guided stages, book, speaking, and waitlist." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -181,10 +181,10 @@
 
     /* ── Possibility ── */
     .possibility-section {
-      padding-top: clamp(3rem, 5vw, 5rem);
-      padding-bottom: clamp(3rem, 5vw, 5rem);
+      padding-top: clamp(5rem, 9vw, 10rem);
+      padding-bottom: clamp(5rem, 9vw, 10rem);
     }
-    .possibility-headline { margin-bottom: 3rem; line-height: 1.05; }
+    .possibility-headline { margin-bottom: 4rem; line-height: 1.05; }
     .possibility-statements {
       margin: 2rem auto 0;
       max-width: 760px;
@@ -208,17 +208,41 @@
       border-bottom: 1px solid var(--line);
     }
 
+    /* ── Questions section: visual treatment ── */
+    .mechanism-questions {
+      background: var(--bg-soft);
+      padding-top: clamp(3rem, 5vw, 5rem);
+      padding-bottom: clamp(3rem, 5vw, 5rem);
+    }
+    .question-stack {
+      position: relative;
+      margin-top: 0.6rem;
+      padding-left: 1.8rem;
+      border-left: 3px solid var(--accent);
+    }
+    .question-stack .question-stack-body {
+      text-align: left;
+      border-bottom: 1px solid rgba(37,25,45,0.08);
+      padding: 1.1rem 0;
+    }
+    .question-stack .question-stack-body:first-child { padding-top: 0.6rem; }
+    .question-stack .question-stack-body:last-child { border-bottom: none; }
+
     /* ── Journey / 6 stages ── */
-    #journey { background: var(--bg); }
-    .tools-layout {
+    #journey {
+      background: var(--bg);
+      padding-top: clamp(4rem, 7vw, 8rem);
+      padding-bottom: clamp(4rem, 7vw, 8rem);
+    }
+    .stages-layout {
       display: grid;
       grid-template-columns: minmax(260px, 380px) minmax(0, 1fr);
       gap: 2rem;
       align-items: start;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
-    .tools-nav { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
-    .tool-card {
+    .stages-nav { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+    .stage-card {
       width: 100%;
       padding: 1.4rem 1.5rem;
       text-align: left;
@@ -230,7 +254,7 @@
       position: relative;
       transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
-    .tool-card::before {
+    .stage-card::before {
       content: '';
       position: absolute;
       left: 0; top: 0; bottom: 0;
@@ -239,14 +263,14 @@
       border-radius: 2px;
       transition: background 0.25s ease;
     }
-    .tool-card:hover, .tool-card.active {
+    .stage-card:hover, .stage-card.active {
       background: #fff;
       border-color: rgba(116,80,182,0.18);
       box-shadow: 0 8px 28px rgba(37,25,45,0.09);
       transform: translateY(-1px);
     }
-    .tool-card.active::before, .tool-card:hover::before { background: var(--accent); }
-    .tool-card h3 {
+    .stage-card.active::before, .stage-card:hover::before { background: var(--accent); }
+    .stage-card h3 {
       margin: 0 0 0.5rem;
       font-family: "Cormorant Garamond", serif;
       font-size: 1.35rem;
@@ -254,8 +278,8 @@
       font-weight: 600;
       color: var(--text);
     }
-    .tool-card p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--muted); }
-    .tool-kicker {
+    .stage-card p { margin: 0; font-size: 0.95rem; line-height: 1.6; color: var(--muted); }
+    .stage-kicker {
       display: inline-block;
       margin-bottom: 0.6rem;
       font-size: 0.7rem;
@@ -264,8 +288,8 @@
       text-transform: uppercase;
       color: var(--accent);
     }
-    .tool-link { display: inline-block; margin-top: 0.7rem; font-size: 0.88rem; font-weight: 700; color: var(--accent); }
-    .tool-panel-wrap {
+    .stage-link { display: inline-block; margin-top: 0.7rem; font-size: 0.88rem; font-weight: 700; color: var(--accent); }
+    .stage-panel-wrap {
       padding: 2rem 2.2rem;
       border-radius: 32px;
       border: 1px solid rgba(37,25,45,0.06);
@@ -273,9 +297,9 @@
       box-shadow: 0 16px 48px rgba(37,25,45,0.07);
       min-height: 360px;
     }
-    .tool-preview-title { font-size: 2rem; margin-bottom: 0.8rem; }
-    .tool-form { display: none; }
-    .tool-form.active { display: block; }
+    .stage-preview-title { font-size: 2rem; margin-bottom: 0.8rem; }
+    .stage-form { display: none; }
+    .stage-form.active { display: block; }
     .body-strong { font-weight: 600; color: var(--text); }
 
     /* ── Book 3D ── */
@@ -450,7 +474,7 @@
     /* ── Responsive ── */
     @media (max-width: 1120px) {
       .speaking-body { grid-template-columns: 1fr; }
-      .tools-layout  { grid-template-columns: 1fr; }
+      .stages-layout  { grid-template-columns: 1fr; }
       .misfit-breakout { padding: 4rem 2rem 3rem; }
     }
     @media (max-width: 760px) {
@@ -643,7 +667,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
-            <a class="btn btn-secondary" href="#journey">Start the Tools</a>
+            <a class="btn btn-secondary" href="#journey">Explore the Stages</a>
           </div>
         </div>
         <div class="hero-media">
@@ -683,7 +707,7 @@
     <!-- ═══════════════════════════════════════════
          MECHANISM — questions
     ════════════════════════════════════════════ -->
-    <section class="section mechanism-section">
+    <section class="section mechanism-section mechanism-questions">
       <div class="container narrow centre">
 
         <p class="mechanism-intro reveal reveal-delay-1">
@@ -691,10 +715,12 @@
         </p>
 
         <p class="question-emphasis reveal reveal-delay-2">Where your starting line actually is.</p>
-        <p class="question-stack-body reveal">Does yours start a few blocks before even arriving at the field?</p>
-        <p class="question-stack-body reveal">Are you carrying injuries that never healed?</p>
-        <p class="question-stack-body reveal">Are you running the race with a baby on your hip, an elderly parent on your back, or a hangover from last night's all night rave?</p>
-        <p class="question-stack-body reveal">Have you been coached by a world class expert in your unique brain and body, or just the well meaning parent of a friend you made in primary school?</p>
+        <div class="question-stack reveal">
+          <p class="question-stack-body">Does yours start a few blocks before even arriving at the field?</p>
+          <p class="question-stack-body">Are you carrying injuries that never healed?</p>
+          <p class="question-stack-body">Are you running the race with a baby on your hip, an elderly parent on your back, or a hangover from last night's all night rave?</p>
+          <p class="question-stack-body">Have you been coached by a world class expert in your unique brain and body, or just the well meaning parent of a friend you made in primary school?</p>
+        </div>
 
         <p class="mechanism-stadium reveal">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer regardless from a loved one:</p>
 
@@ -706,10 +732,10 @@
     ════════════════════════════════════════════ -->
     <section class="spotlight" id="spotlight-indictment" aria-label="The indictment">
       <div class="spotlight-inner">
-        <p class="spotlight-eyebrow">From the stadium</p>
         <span class="spotlight-line">Try harder.</span>
         <span class="spotlight-line">Push through.</span>
         <span class="spotlight-line">Be more disciplined.</span>
+        <span class="spotlight-sub">What the stadium has been telling you.</span>
       </div>
     </section>
 
@@ -719,7 +745,7 @@
     <section class="section mechanism-section">
       <div class="container narrow centre">
 
-        <p class="mechanism-retort reveal">But you already doing that. Clearly.</p>
+        <p class="mechanism-retort reveal">But you are already doing that. Clearly.</p>
 
         <div class="mind-chatter reveal">
           <p class="mind-chatter-text">What's wrong with me?</p>
@@ -739,8 +765,8 @@
     ════════════════════════════════════════════ -->
     <section class="spotlight" id="spotlight-misfit" aria-label="Misfit by Design. Not Deficit.">
       <div class="spotlight-inner">
-        <p class="spotlight-eyebrow">Misfit by Design. Not Deficit.</p>
-        <p class="spotlight-text">You are not failing.<br />You are just in<br />the wrong heat.</p>
+        <p class="spotlight-text"><span class="spotlight-hot">Misfit by Design.</span><br />Not Deficit.</p>
+        <span class="spotlight-sub">You are not failing.<br />You are just in the wrong heat.</span>
       </div>
     </section>
 
@@ -790,76 +816,70 @@
           <span class="journey-step">Sustainability</span>
         </div>
 
-        <div class="tools-layout">
+        <div class="stages-layout">
 
-          <div class="tools-nav" role="tablist" aria-label="Guided reader journey">
+          <div class="stages-nav" role="tablist" aria-label="Guided reader journey">
 
-            <button class="tool-card active" type="button" data-tool="recognition" role="tab" aria-selected="true">
-              <span class="tool-kicker">Stage 1</span>
+            <button class="stage-card active" type="button" data-stage="recognition" role="tab" aria-selected="true">
+              <span class="stage-kicker">Stage 1</span>
               <h3>See where your starting line actually is.</h3>
               <p>Before you can run, you need to know where you are actually starting from.</p>
-              <span class="tool-link">Recognition →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="clarity" role="tab" aria-selected="false">
-              <span class="tool-kicker">Stage 2</span>
+            <button class="stage-card" type="button" data-stage="clarity" role="tab" aria-selected="false">
+              <span class="stage-kicker">Stage 2</span>
               <h3>Understand what you are carrying into the race.</h3>
               <p>Not everyone enters the race with the same load.</p>
-              <span class="tool-link">Clarity →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="acceptance" role="tab" aria-selected="false">
-              <span class="tool-kicker">Stage 3</span>
+            <button class="stage-card" type="button" data-stage="acceptance" role="tab" aria-selected="false">
+              <span class="stage-kicker">Stage 3</span>
               <h3>Know which race you should be entering for this stage of training.</h3>
               <p>Entering the wrong race does not make you a failure. It makes you someone who needed better information.</p>
-              <span class="tool-link">Acceptance →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="intervention" role="tab" aria-selected="false">
-              <span class="tool-kicker">Stage 4</span>
+            <button class="stage-card" type="button" data-stage="intervention" role="tab" aria-selected="false">
+              <span class="stage-kicker">Stage 4</span>
               <h3>Find where you actually have ground to gain.</h3>
               <p>The race you could actually win is happening in the next lane.</p>
-              <span class="tool-link">Intervention →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="alignment" role="tab" aria-selected="false">
-              <span class="tool-kicker">Stage 5</span>
+            <button class="stage-card" type="button" data-stage="alignment" role="tab" aria-selected="false">
+              <span class="stage-kicker">Stage 5</span>
               <h3>Run the race that fits your design.</h3>
               <p>Not someone else's race. Not the race you were told you should want.</p>
-              <span class="tool-link">Alignment →</span>
             </button>
 
-            <button class="tool-card" type="button" data-tool="sustainability" role="tab" aria-selected="false">
-              <span class="tool-kicker">Stage 6</span>
+            <button class="stage-card" type="button" data-stage="sustainability" role="tab" aria-selected="false">
+              <span class="stage-kicker">Stage 6</span>
               <h3>This is a marathon not a sprint. It is time to find out how you stay in it.</h3>
               <p>Knowing what to do is not enough if you cannot keep doing it.</p>
-              <span class="tool-link">Sustainability →</span>
             </button>
 
           </div>
 
-          <div class="tool-panel-wrap">
-            <div class="tool-panel-header">
-              <h3 id="previewTitle" class="display tool-preview-title">Recognition</h3>
+          <div class="stage-panel-wrap">
+            <div class="stage-panel-header">
+              <h3 id="previewTitle" class="display stage-preview-title">Recognition</h3>
               <p id="previewText" class="body-copy muted">Before you can run, you need to know where you are actually starting from.</p>
             </div>
 
             <!-- STAGE 1: RECOGNITION -->
-            <div class="tool-form active" id="tool-recognition">
+            <div class="stage-form active" id="stage-recognition">
               <p class="body-copy">Before you can run, you need to know where you are actually starting from. Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.</p>
               <p class="body-copy top-gap-sm">This stage helps you see what it cost you just to show up today, and where the rest is going, including the costs that never appear on any list.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
             <!-- STAGE 2: CLARITY -->
-            <div class="tool-form" id="tool-clarity">
+            <div class="stage-form" id="stage-clarity">
               <p class="body-copy">Not everyone enters the race with the same load. This stage helps you see what you are actually carrying, your wiring, your history, your conditions, and where the weight is really coming from.</p>
               <p class="body-copy top-gap-sm">This stage moves through the layers of what shapes your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
             <!-- STAGE 3: ACCEPTANCE -->
-            <div class="tool-form" id="tool-acceptance">
+            <div class="stage-form" id="stage-acceptance">
               <p class="body-copy">If you are a novice runner who ends up in a race with Usain Bolt, the most important thing you can learn is not how to run faster. It is that no amount of training, discipline or willpower is going to close that gap in the way the crowd expects. Bolt has the biology, the years, the specific physical architecture for that race. You do not. That is not failure. That is information.</p>
               <p class="body-copy">Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything you have into a race you were never built for.</p>
               <p class="body-copy">This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.</p>
@@ -867,21 +887,21 @@
             </div>
 
             <!-- STAGE 4: INTERVENTION -->
-            <div class="tool-form" id="tool-intervention">
+            <div class="stage-form" id="stage-intervention">
               <p class="body-copy">The race you could actually win is happening in the next lane. This stage is about finding it.</p>
               <p class="body-copy">Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
             <!-- STAGE 5: ALIGNMENT -->
-            <div class="tool-form" id="tool-alignment">
+            <div class="stage-form" id="stage-alignment">
               <p class="body-copy">Not someone else's race. Not the race you were told you should want. The one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.</p>
               <p class="body-copy top-gap-sm">This stage brings your design, your conditions and your pace together, and maps the relationships that restore against those that take from what you rely on.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
             </div>
 
             <!-- STAGE 6: SUSTAINABILITY -->
-            <div class="tool-form" id="tool-sustainability">
+            <div class="stage-form" id="stage-sustainability">
               <p class="body-copy">Knowing what to do is not enough if you cannot keep doing it. Elite athletes do not train the same way every day for their entire career. They read their body. They know when to push, when to stretch, when to take a season out, when to bulk up on carbs and rest before the next race.</p>
               <p class="body-copy">This stage teaches you to read your own signals early. So you know what your body and your life are actually asking for right now. So the same collapse does not keep taking the same ground from you.</p>
               <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
@@ -891,9 +911,7 @@
         </div>
 
         <div class="container narrow centre top-gap-md">
-          <p class="body-copy muted">The tools show the pattern.</p>
-          <p class="body-copy body-strong">The book explains the architecture behind it.</p>
-          <p class="body-copy muted">Together they turn what you have always sensed into something you can finally see clearly.</p>
+          <p class="body-copy body-strong">The six stages in ENOUGH map the full picture — from where your starting line actually is, to the podium that actually means something to you.</p>
         </div>
 
       </div>
@@ -932,7 +950,7 @@
           </p>
           <div class="button-row top-gap-sm">
             <a class="btn btn-primary" href="#waitlist">Join the Waitlist</a>
-            <a class="btn btn-secondary" href="#journey">Start the Tools</a>
+            <a class="btn btn-secondary" href="#journey">Explore the Stages</a>
           </div>
         </div>
 
@@ -1073,7 +1091,7 @@
         </p>
         <div class="spotlight-cta">
           <a class="btn btn-primary" href="#book">Explore ENOUGH</a>
-          <a class="btn btn-secondary" href="#journey">Start the Tools</a>
+          <a class="btn btn-secondary" href="#journey">Explore the Stages</a>
         </div>
       </div>
     </section>
@@ -1120,25 +1138,25 @@
       }
     };
 
-    const toolButtons = document.querySelectorAll("[data-tool]");
-    const toolForms = document.querySelectorAll(".tool-form");
+    const stageButtons = document.querySelectorAll("[data-stage]");
+    const stageForms = document.querySelectorAll(".stage-form");
     const previewTitle = document.getElementById("previewTitle");
     const previewText = document.getElementById("previewText");
 
-    toolButtons.forEach((button) => {
+    stageButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        const target = button.dataset.tool;
+        const target = button.dataset.stage;
 
-        toolButtons.forEach((item) => {
+        stageButtons.forEach((item) => {
           item.classList.remove("active");
           item.setAttribute("aria-selected", "false");
         });
-        toolForms.forEach((form) => form.classList.remove("active"));
+        stageForms.forEach((form) => form.classList.remove("active"));
 
         button.classList.add("active");
         button.setAttribute("aria-selected", "true");
 
-        const activeForm = document.getElementById(`tool-${target}`);
+        const activeForm = document.getElementById(`stage-${target}`);
         if (activeForm) activeForm.classList.add("active");
 
         if (previewMap[target]) {
