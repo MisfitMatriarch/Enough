@@ -207,7 +207,41 @@
       border-bottom: 1px solid var(--line);
     }
 
-    /* ── Questions section: visual treatment ── */
+    .stadium-label {
+      margin: 1.8rem auto 0;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .poss-marker {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .speaking-emphasis {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 1.4rem 0 1rem;
+    }
+    .speaking-intro { margin-bottom: 1.2rem; }
+    .speaking-closing-body {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
     .mechanism-questions {
       background: var(--bg-soft);
       padding-top: clamp(3rem, 5vw, 5rem);
@@ -775,7 +809,7 @@
       <div class="container narrow centre">
 
         <p class="mechanism-intro reveal reveal-delay-1">
-          Before you spend more money on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks? Or are you still strapping your ankles in the car park?
+          Before you spend more money on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks?<br />Or are you still strapping your ankles in the car park?
         </p>
 
         <p class="question-emphasis reveal reveal-delay-2">Where your starting line actually is.</p>
@@ -788,6 +822,8 @@
 
         <p class="mechanism-stadium reveal">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer regardless from a loved one:</p>
 
+        <p class="stadium-label reveal">What the stadium has been telling you.</p>
+
       </div>
     </section>
 
@@ -799,7 +835,6 @@
         <span class="spotlight-line spotlight-hot">Try harder.</span>
         <span class="spotlight-line spotlight-hot">Push through.</span>
         <span class="spotlight-line spotlight-hot">Be more disciplined.</span>
-        <span class="spotlight-sub" style="color:rgba(255,255,255,0.85);margin-top:1.5rem;display:block;">What the stadium has been telling you.</span>
       </div>
     </section>
 
@@ -819,7 +854,7 @@
 
         <p class="mechanism-lookaround reveal">Look around.<br />Is everyone else carrying a baby on their hip?<br />Struggling with sensory overload?<br />Navigating what you are navigating?</p>
 
-        <p class="mechanism-pivot reveal">Have you ever considered that maybe there is not nothing wrong with you.<br />That you may just be</p>
+        <p class="mechanism-pivot reveal">Have you ever considered that maybe there is not nothing wrong with you.<br /><br /><br />That you may just be</p>
 
       </div>
     </section>
@@ -838,13 +873,13 @@
     ════════════════════════════════════════════ -->
     <section class="section section-soft possibility-section">
       <div class="container narrow">
-        <h2 class="display possibility-headline reveal">
+        <h2 class="display possibility-headline centre reveal">
           When you can finally see your actual reality clearly, everything shifts.
         </h2>
         <div class="possibility-statements">
-          <p class="possibility-statement">You stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
-          <p class="possibility-statement">You start making decisions that work with how you are actually built and the things that are actually important to you.</p>
-          <p class="possibility-statement">And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
+          <p class="possibility-statement"><span class="poss-marker">01</span>You stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
+          <p class="possibility-statement"><span class="poss-marker">02</span>You start making decisions that work with how you are actually built and the things that are actually important to you.</p>
+          <p class="possibility-statement"><span class="poss-marker">03</span>And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
         </div>
         <p class="lead top-gap-md centre">That is what <strong>ENOUGH</strong> is about.</p>
       </div>
@@ -857,9 +892,8 @@
       <div class="container">
 
         <div class="section-head centre narrow">
-          <h2 class="display section-title-lg">On your marks!</h2>
-          <p class="lead">If the problem is not simply effort, the next question is: <span class="lead-strong">what is taking from you before you even reach the blocks?</span></p>
-          <p class="lead" style="margin-top:0.6rem;">Six stages. One clear picture.</p>
+          <h2 class="display section-title-lg">Six stages. One clear picture.</h2>
+          <p class="lead">If the problem is not simply effort, the next question is:<br /><span class="lead-strong">what is taking from you before you even reach the blocks?</span></p>
         </div>
 
         <div class="stages-layout">
@@ -968,7 +1002,7 @@
         </div>
 
         <div class="container narrow centre top-gap-md">
-          <p class="body-copy body-strong">The six stages in ENOUGH map the full picture. From where your starting line actually is, to the podium that actually means something to you.</p>
+          <p class="body-copy body-strong">The six stages in ENOUGH map the full picture.<br />From where your starting line actually is, to the podium that actually means something to you.</p>
         </div>
 
       </div>
@@ -1086,17 +1120,17 @@
         <!-- Full-width banner header -->
         <div class="speaking-header centre speaking-banner">
           <p class="eyebrow">Speaking</p>
-          <p class="speaking-lead"><span class="speaking-lead-hot">First,</span><br /><span class="speaking-lead-white">do no harm.</span></p>
+          <p class="speaking-lead"><span class="speaking-lead-white">First,</span><br /><span class="speaking-lead-hot">do no harm.</span></p>
           <h2 class="speaking-sub">If you want to help people,<br />first understand what it costs them to be here.</h2>
         </div>
 
         <!-- Two-column body -->
         <div class="speaking-body">
           <div class="speaking-copy">
-            <p class="body-copy">Most professionals enter their work because they want to help. Teachers, clinicians, leaders, parents. Good intentions alone do not prevent harm. When you cannot see the full load someone is carrying, you cannot teach them how to have wings and fly.</p>
-            <p class="body-copy">Be the coach the person in front of you actually needs. Not the coach you were trained to be for someone else.</p>
+            <p class="body-copy speaking-intro">Most professionals enter their work because they want to help.<br />Teachers, clinicians, leaders, parents.<br />Good intentions alone do not prevent harm.<br />When you cannot see the full load someone is carrying, you cannot teach them how to have wings and fly.</p>
+            <p class="speaking-emphasis">Be the coach the person in front of you actually needs.<br />Not the coach you were trained to be for someone else.</p>
             <p class="body-copy">This work helps professionals see the person clearly.</p>
-            <p class="speaking-closing">
+            <p class="body-copy speaking-closing-body">
               If capable people keep struggling in your system, the problem is probably not the people. It is probably that you are looking at the race and not the runner.
             </p>
             <div class="button-row">
