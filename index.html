@@ -897,52 +897,77 @@
     ════════════════════════════════════════════ -->
     <section id="starting-line-section" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
       <style>
-        #sl-root { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
+        /* ── Full-width container — no max-width cap ── */
+        #sl-root { width: 100%; padding: 0 clamp(1.5rem, 5vw, 4rem); box-sizing: border-box; }
 
-        .sl-top { max-width: 680px; margin: 0 auto; text-align: center; padding-bottom: 3.5rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        /* ── Top copy — centred, readable ── */
+        .sl-top { max-width: 720px; margin: 0 auto; text-align: center; padding-bottom: 4rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .sl-top.sl-visible { opacity: 1; transform: translateY(0); }
-        .sl-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.6rem; }
-        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 500; line-height: 1.12; margin: 0 0 1.4rem; color: var(--text); }
+        .sl-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.6rem; }
+        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 500; line-height: 1.1; margin: 0 0 1.4rem; color: var(--text); }
         .sl-headline em { color: var(--hot); font-style: italic; }
-        .sl-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.65; color: var(--muted); margin: 0; }
+        .sl-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.65; color: var(--muted); margin: 0; font-weight: 500; }
 
-        .sl-section-label { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: 1.4rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
+        /* ── Section label ── */
+        .sl-section-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: 2rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
         .sl-section-label.sl-visible { opacity: 1; transform: translateY(0); }
 
-        /* Track — stays dark as a stadium surface */
-        .sl-track-wrap { position: relative; width: 100%; height: 320px; background: linear-gradient(180deg, #1a1528 0%, #211d30 40%, #1a1528 100%); border-radius: 20px; border: 1px solid rgba(116,80,182,0.3); overflow: visible; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; }
-        .sl-track-inner { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 20px; }
-        .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
-        .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(116,80,182,0.08) 99px, rgba(116,80,182,0.08) 100px); pointer-events: none; }
-        .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(116,80,182,0.18) 20%, rgba(116,80,182,0.18) 80%, transparent); pointer-events: none; }
-        .sl-startline { position: absolute; left: 64%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent 5%, #c8a94e 20%, #c8a94e 80%, transparent 95%); box-shadow: 0 0 16px rgba(200,169,78,0.5); pointer-events: none; }
-        /* START label — above the track, no overlap */
-        .sl-startline-label { position: absolute; left: 64%; top: -28px; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; color: #c8a94e; white-space: nowrap; pointer-events: none; }
-        .sl-startline-sub { position: absolute; left: 64%; bottom: -22px; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 9px; color: rgba(200,169,78,0.6); letter-spacing: 1px; white-space: nowrap; pointer-events: none; }
-        .sl-label-left { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 9px; color: rgba(255,255,255,0.2); letter-spacing: 2px; white-space: nowrap; pointer-events: none; }
-        .sl-label-right { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 9px; color: rgba(255,255,255,0.2); letter-spacing: 2px; pointer-events: none; }
+        /* ── START / FINISH labels outside track ── */
+        .sl-track-header { position: relative; width: 100%; margin-bottom: 0; }
+        .sl-start-flag { position: absolute; left: 64%; transform: translateX(-50%); bottom: 0; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: #c8a94e; white-space: nowrap; text-align: center; line-height: 1; padding-bottom: 8px; }
+        .sl-start-flag span { display: block; font-size: 0.62rem; font-weight: 500; color: rgba(200,169,78,0.65); letter-spacing: 0.12em; margin-top: 3px; }
 
-        /* Runners */
+        /* ── Track — LIGHT background ── */
+        .sl-track-wrap {
+          position: relative; width: 100%; height: 340px;
+          background: linear-gradient(180deg, var(--bg-soft) 0%, #ede8f0 50%, var(--bg-soft) 100%);
+          border-radius: 20px;
+          border: 1.5px solid rgba(116,80,182,0.18);
+          overflow: hidden;
+          opacity: 0; transform: translateY(16px);
+          transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease;
+          box-shadow: 0 4px 32px rgba(37,25,45,0.07);
+        }
+        .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
+
+        /* Lane grid — light purple lines */
+        .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(116,80,182,0.07) 99px, rgba(116,80,182,0.07) 100px); pointer-events: none; }
+        .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(116,80,182,0.12) 15%, rgba(116,80,182,0.12) 85%, transparent); pointer-events: none; }
+
+        /* Gold start line */
+        .sl-startline { position: absolute; left: 64%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent 2%, #c8a94e 15%, #c8a94e 85%, transparent 98%); box-shadow: 0 0 12px rgba(200,169,78,0.35); pointer-events: none; }
+
+        /* Edge labels */
+        .sl-label-left { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; white-space: nowrap; pointer-events: none; }
+        .sl-label-right { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; pointer-events: none; }
+
+        /* ── Runners ── */
         .sl-runner { position: absolute; transform: translate(-50%, -50%); cursor: pointer; z-index: 5; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); }
         .sl-runner.is-active { z-index: 10; }
-        .sl-runner-label { position: absolute; top: -52px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
-        .sl-runner-label-main { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.2; }
-        .sl-runner-label-sub { font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; margin-top: 2px; }
-        .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2px solid; }
+        .sl-runner-label { position: absolute; top: -58px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
+        .sl-runner-label-main { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.2; }
+        .sl-runner-label-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--muted); letter-spacing: 0.5px; margin-top: 3px; }
+        .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2.5px solid; }
         .sl-icon-forward { display: inline-block; transform: scaleX(-1); }
         .sl-connector { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); width: 2px; transition: opacity 0.3s; }
 
-        .sl-prompt { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-top: 2.8rem; opacity: 0; transition: opacity 0.6s 0.5s ease; }
+        /* ── Prompt ── */
+        .sl-prompt { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-top: 1.4rem; opacity: 0; transition: opacity 0.6s 0.5s ease; }
         .sl-prompt.sl-visible { opacity: 1; }
 
-        /* Detail panel */
-        .sl-detail { max-width: 760px; margin: 2.5rem auto 0; padding: 0; min-height: 140px; }
-        .sl-detail-card { border-radius: 16px; padding: 2rem 2.4rem; display: flex; align-items: flex-start; gap: 1.8rem; animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94); background: var(--bg-soft); border: 1px solid var(--line); }
+        /* ── Detail card — full width below track ── */
+        .sl-detail { max-width: 860px; margin: 2.5rem auto 0; }
+        .sl-detail-card {
+          border-radius: 18px; padding: 2.2rem 2.8rem;
+          display: flex; align-items: flex-start; gap: 2rem;
+          animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94);
+          background: var(--bg-soft); border: 1px solid var(--line);
+        }
         @keyframes slSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-        .sl-detail-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; border: 2px solid; }
-        .sl-detail-tag { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.6rem; }
-        .sl-detail-copy { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 1.8vw, 1.5rem); line-height: 1.6; color: var(--text); margin: 0 0 0.8rem; font-style: italic; font-weight: 500; }
-        .sl-detail-body { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.7; color: var(--muted); margin: 0; }
+        .sl-detail-icon { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0; border: 2.5px solid; }
+        .sl-detail-tag { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.7rem; }
+        .sl-detail-copy { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.35rem, 2vw, 1.65rem); line-height: 1.6; color: var(--text); margin: 0 0 0.9rem; font-style: italic; font-weight: 500; }
+        .sl-detail-body { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.75; color: var(--muted); margin: 0; }
       </style>
 
       <div id="sl-root">
@@ -954,20 +979,20 @@
 
         <div class="sl-section-label" id="sl-section-label">Where your starting line actually is</div>
 
+        <!-- START label sits above track, outside overflow clip -->
+        <div class="sl-track-header" style="height:38px;">
+          <div class="sl-start-flag">START<span>assumed equal</span></div>
+        </div>
+
         <div class="sl-track-wrap" id="sl-track-wrap">
-          <!-- START label above track, outside overflow clip -->
-          <div class="sl-startline-label">START</div>
-          <div class="sl-startline-sub">assumed equal</div>
-          <div class="sl-track-inner">
-            <div class="sl-lane-grid"></div>
-            <div class="sl-lane-line" style="top:38%"></div>
-            <div class="sl-lane-line" style="top:60%"></div>
-            <div class="sl-lane-line" style="top:82%"></div>
-            <div class="sl-startline"></div>
-            <div class="sl-label-left">← NOT EVEN ON THE TRACK</div>
-            <div class="sl-label-right">FINISH →</div>
-            <div id="sl-runners-mount"></div>
-          </div>
+          <div class="sl-lane-grid"></div>
+          <div class="sl-lane-line" style="top:33%"></div>
+          <div class="sl-lane-line" style="top:55%"></div>
+          <div class="sl-lane-line" style="top:77%"></div>
+          <div class="sl-startline"></div>
+          <div class="sl-label-left">← NOT EVEN ON THE TRACK</div>
+          <div class="sl-label-right">FINISH →</div>
+          <div id="sl-runners-mount"></div>
         </div>
 
         <p class="sl-prompt" id="sl-prompt">↑ tap any runner to read their starting line</p>
@@ -1034,12 +1059,12 @@
               el.className = 'sl-runner' + (isActive ? ' is-active' : '');
               el.style.cssText = `left:${r.position}%;top:${y}%;`;
               el.innerHTML = `
-                <div class="sl-runner-label" style="opacity:${isActive ? 1 : 0.55}">
+                <div class="sl-runner-label" style="opacity:${isActive ? 1 : 0.65}">
                   <div class="sl-runner-label-main" style="color:${r.color}">${r.label}</div>
                   <div class="sl-runner-label-sub">${r.sublabel}</div>
                 </div>
                 <div class="sl-connector" style="height:24px;background:${r.color};opacity:${isActive ? 0.8 : 0};"></div>
-                <div class="sl-bubble" style="width:${size}px;height:${size}px;font-size:${isActive ? 28 : 22}px;background:${isActive ? r.color : 'rgba(255,255,255,0.06)'};border-color:${r.color};box-shadow:${isActive ? `0 0 28px ${r.color}60, 0 0 56px ${r.color}30` : 'none'};">
+                <div class="sl-bubble" style="width:${size}px;height:${size}px;font-size:${isActive ? 28 : 22}px;background:${isActive ? r.color : '#fff'};border-color:${r.color};box-shadow:${isActive ? `0 0 24px ${r.color}50, 0 0 48px ${r.color}25` : `0 2px 8px rgba(37,25,45,0.1)`};">
                   ${iconHtml}
                 </div>`;
               el.addEventListener('click', () => {
