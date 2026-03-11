@@ -1884,36 +1884,138 @@
          BOOK
     ════════════════════════════════════════════ -->
     <section class="section section-soft" id="book">
-      <div class="container split-feature book-media">
+      <style>
+        .book2-wrap {
+          max-width: 1100px; margin: 0 auto;
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: clamp(40px,6vw,80px); align-items: center;
+          padding: 0 clamp(1.5rem,5vw,4rem);
+        }
+        .book2-left {
+          display: flex; justify-content: center;
+          padding: 20px 20px 40px 60px;
+        }
+        .book2-scene { position: relative; }
+        .book2-glow {
+          position: absolute; inset: -30px -20px;
+          background: radial-gradient(ellipse at 40% 50%, rgba(240,74,167,0.22) 0%, transparent 65%);
+          filter: blur(30px); pointer-events: none;
+        }
+        .book2-body {
+          display: flex; flex-direction: row; align-items: stretch;
+          transform: perspective(1200px) rotateY(-22deg) rotateX(3deg);
+          transition: transform 0.5s ease;
+          filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5)) drop-shadow(0 10px 24px rgba(0,0,0,0.35)) drop-shadow(0 4px 10px rgba(240,74,167,0.4));
+          cursor: pointer;
+        }
+        .book2-body:hover {
+          transform: perspective(1200px) rotateY(-10deg) rotateX(2deg) translateY(-8px);
+        }
+        .book2-cover { position: relative; flex-shrink: 0; }
+        .book2-cover img { display: block; width: 240px; height: auto; border-radius: 3px 0 0 3px; }
+        .book2-cover-shadow {
+          position: absolute; top: 0; left: 0; bottom: 0; width: 32px;
+          background: linear-gradient(90deg, rgba(0,0,0,0.38) 0%, transparent 100%);
+          border-radius: 3px 0 0 0; pointer-events: none;
+        }
+        .book2-pages {
+          width: 6px; flex-shrink: 0; border-radius: 0 2px 2px 0;
+          background: repeating-linear-gradient(180deg, #f5efe8 0px, #f5efe8 1px, #e8e0d4 1.5px, #e8e0d4 2px);
+          box-shadow: inset -2px 0 4px rgba(0,0,0,0.08);
+        }
+        .book2-floor-shadow {
+          position: absolute; bottom: -20px; left: 20px; right: 0; height: 20px;
+          background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+          filter: blur(10px);
+        }
+        .book2-badge {
+          position: absolute; bottom: 8px; right: -55px;
+          background: #fff; border: 1.5px solid rgba(240,74,167,0.18);
+          border-radius: 12px; padding: 10px 16px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.1); z-index: 10;
+        }
+        .book2-badge-label {
+          font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700;
+          letter-spacing: 2px; color: var(--hot); text-transform: uppercase;
+        }
+        .book2-badge-text {
+          font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+          color: var(--text); margin-top: 3px;
+        }
 
-        <div class="feature-media" style="background: linear-gradient(135deg, #f3edf8 0%, #fdf5fb 60%, #f7f1f3 100%); border-radius: 24px; overflow: visible;">
-          <div class="book-3d-scene">
-            <div class="book-3d">
-              <div class="book-spine">
-                <span class="book-spine-text">ENOUGH · TANYA HICKS</span>
+        .book2-copy .book2-eyebrow {
+          font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+          letter-spacing: 3px; text-transform: uppercase; color: var(--hot); margin-bottom: 14px;
+        }
+        .book2-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(3.5rem, 7vw, 5.5rem);
+          font-weight: 700; color: var(--text); line-height: 1;
+          margin: 0 0 18px; letter-spacing: -0.02em;
+        }
+        .book2-lead {
+          font-family: 'Cormorant Garamond', serif; font-style: italic;
+          font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--hot);
+          line-height: 1.45; margin: 0 0 22px;
+        }
+        .book2-body-copy {
+          font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 300;
+          color: var(--muted); line-height: 1.8; margin: 0 0 12px;
+        }
+        .book2-body-copy.strong { color: var(--text); font-weight: 400; margin-bottom: 30px; }
+        .book2-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+        .book2-btn-primary {
+          background: var(--hot); color: #fff; border: none; border-radius: 50px;
+          padding: 14px 32px; font-family: 'Inter', sans-serif; font-size: 14px;
+          font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block;
+          box-shadow: 0 8px 24px rgba(240,74,167,0.38);
+        }
+        .book2-btn-secondary {
+          background: #fff; color: var(--text); border: 2px solid var(--line);
+          border-radius: 50px; padding: 12px 28px; font-family: 'Inter', sans-serif;
+          font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none;
+          display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+          .book2-wrap { grid-template-columns: 1fr; }
+          .book2-left { padding: 20px; }
+          .book2-badge { right: -10px; }
+        }
+      </style>
+
+      <div class="book2-wrap">
+
+        <!-- Book visual -->
+        <div class="book2-left">
+          <div class="book2-scene">
+            <div class="book2-glow"></div>
+            <div class="book2-body" id="book2body">
+              <div class="book2-cover">
+                <img src="assets/Book cover.png" alt="ENOUGH by Tanya Hicks" />
+                <div class="book2-cover-shadow"></div>
               </div>
-              <img class="book-face" src="assets/Book cover.png" alt="Book cover for ENOUGH" />
-              <div class="book-pages"></div>
+              <div class="book2-pages"></div>
+            </div>
+            <div class="book2-floor-shadow"></div>
+            <div class="book2-badge">
+              <div class="book2-badge-label">Now available</div>
+              <div class="book2-badge-text">Pre-order your copy</div>
             </div>
           </div>
         </div>
 
-        <div class="feature-copy">
-          <p class="eyebrow">Book</p>
-          <h2 class="display section-title-lg">ENOUGH</h2>
-          <p class="lead">Did you know we all have a place on the podium?</p>
-          <p class="body-copy">
-            Not in some airy fairy participation trophy way. But in a way that reveals we are all working towards different podiums when we get really clear and honest about what the six stages covered in this book actually show us.
-          </p>
-          <p class="body-copy">
-            ENOUGH is written for the people who kept trying. The ones who learned the skills, did the work, held it together and still ended up pulling a hamstring while in full speed down the straight.
-          </p>
-          <p class="body-copy">
-            This book names what has been happening and shows what changes when you actually follow your unique podium training program.
-          </p>
-          <div class="button-row top-gap-sm">
-            <a class="btn btn-primary" href="#waitlist">Pre-order</a>
-            <a class="btn btn-secondary" href="#journey">Explore the Stages</a>
+        <!-- Copy -->
+        <div class="book2-copy">
+          <p class="book2-eyebrow">Book</p>
+          <h2 class="book2-title">ENOUGH</h2>
+          <p class="book2-lead">Did you know we all have a place on the podium?</p>
+          <p class="book2-body-copy">Not in some airy fairy participation trophy way. But in a way that reveals we are all working towards different podiums when we get really clear and honest about what the six stages covered in this book actually show us.</p>
+          <p class="book2-body-copy">ENOUGH is written for the people who kept trying. The ones who learned the skills, did the work, held it together and still ended up pulling a hamstring while in full speed down the straight.</p>
+          <p class="book2-body-copy strong">This book names what has been happening and shows what changes when you actually follow your unique podium training program.</p>
+          <div class="book2-btns">
+            <a class="book2-btn-primary" href="#waitlist">Pre-order</a>
+            <a class="book2-btn-secondary" href="#journey">Explore the Stages</a>
           </div>
         </div>
 
