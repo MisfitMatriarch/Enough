@@ -893,37 +893,375 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         MECHANISM — questions
+         STARTING LINE — interactive track
     ════════════════════════════════════════════ -->
-    <section class="section mechanism-section mechanism-questions">
-      <div class="container narrow centre">
+    <section id="starting-line-section" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+      <style>
+        #sl-root { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); font-family: 'Inter', sans-serif; color: var(--text); }
 
-        <p class="mechanism-intro reveal reveal-delay-1">
-          Before you spend more money on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks?<br />Or are you still strapping your ankles in the car park?
-        </p>
+        .sl-top { max-width: 680px; margin: 0 auto; text-align: center; padding-bottom: 3.5rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .sl-top.sl-visible { opacity: 1; transform: translateY(0); }
+        .sl-eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
+        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 500; line-height: 1.15; margin: 0 0 1.2rem; color: var(--text); }
+        .sl-headline em { color: var(--hot); font-style: italic; }
+        .sl-sub { font-size: 1.1rem; line-height: 1.65; color: var(--muted); margin: 0; font-family: 'Cormorant Garamond', serif; }
 
-        <p class="question-emphasis reveal reveal-delay-2">Where your starting line actually is.</p>
-        <div class="question-stack reveal">
-          <p class="question-stack-body">Does yours start a few blocks before even arriving at the field?</p>
-          <p class="question-stack-body">Are you carrying injuries that never healed?</p>
-          <p class="question-stack-body">Are you running the race with a baby on your hip, an elderly parent on your back, or a hangover from last night's all night rave?</p>
-          <p class="question-stack-body">Have you been coached by a world class expert in your unique brain and body, or just the well meaning parent of a friend you made in primary school?</p>
+        .sl-section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: 1.2rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
+        .sl-section-label.sl-visible { opacity: 1; transform: translateY(0); }
+
+        .sl-track-wrap { position: relative; width: 100%; height: 260px; background: linear-gradient(180deg, #1a1528 0%, #211d30 40%, #1a1528 100%); border-radius: 16px; border: 1px solid rgba(116,80,182,0.25); overflow: hidden; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; }
+        .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
+        .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(116,80,182,0.08) 99px, rgba(116,80,182,0.08) 100px); pointer-events: none; }
+        .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(116,80,182,0.2) 20%, rgba(116,80,182,0.2) 80%, transparent); pointer-events: none; }
+        .sl-startline { position: absolute; left: 64%; top: 25%; bottom: 10%; width: 3px; background: linear-gradient(180deg, transparent, #c8a94e, #c8a94e, transparent); box-shadow: 0 0 12px rgba(200,169,78,0.6); pointer-events: none; }
+        .sl-startline-label { position: absolute; left: 64%; top: 8%; transform: translateX(-50%); font-size: 8px; font-weight: 800; letter-spacing: 2px; color: #c8a94e; white-space: nowrap; pointer-events: none; font-family: 'Inter', sans-serif; }
+        .sl-startline-sub { position: absolute; left: 64%; bottom: 4%; transform: translateX(-50%); font-size: 7px; color: rgba(200,169,78,0.55); letter-spacing: 1px; white-space: nowrap; pointer-events: none; font-family: 'Inter', sans-serif; }
+        .sl-label-left { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 7px; color: rgba(255,255,255,0.25); letter-spacing: 2px; white-space: nowrap; pointer-events: none; font-family: 'Inter', sans-serif; }
+        .sl-label-right { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 8px; color: rgba(255,255,255,0.25); letter-spacing: 2px; pointer-events: none; font-family: 'Inter', sans-serif; }
+
+        .sl-runner { position: absolute; transform: translate(-50%, -50%); cursor: pointer; z-index: 5; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); }
+        .sl-runner.is-active { z-index: 10; }
+        .sl-runner-label { position: absolute; top: -44px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
+        .sl-runner-label-main { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.1; font-family: 'Inter', sans-serif; }
+        .sl-runner-label-sub { font-size: 8px; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; font-family: 'Inter', sans-serif; }
+        .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2px solid; }
+        .sl-icon-forward { display: inline-block; transform: scaleX(-1); }
+        .sl-connector { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); width: 2px; transition: opacity 0.3s; }
+
+        .sl-prompt { font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; text-align: center; margin-top: 0.8rem; opacity: 0; transition: opacity 0.6s 0.5s ease; font-family: 'Inter', sans-serif; }
+        .sl-prompt.sl-visible { opacity: 1; }
+
+        .sl-detail { max-width: 720px; margin: 2.5rem auto 0; padding: 0 1rem; min-height: 120px; }
+        .sl-detail-card { border-radius: 12px; padding: 1.8rem 2rem; display: flex; align-items: flex-start; gap: 1.4rem; animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94); background: #fff; }
+        @keyframes slSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .sl-detail-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; border: 2px solid; }
+        .sl-detail-tag { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; text-transform: uppercase; }
+        .sl-detail-copy { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.65; color: var(--text); margin: 0 0 0.8rem; font-style: italic; }
+        .sl-detail-body { font-size: 0.92rem; line-height: 1.7; color: var(--muted); margin: 0; }
+
+        .sl-payoff { max-width: 640px; margin: 4rem auto 0; text-align: center; opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; padding: 0 1rem; }
+        .sl-payoff.sl-visible { opacity: 1; transform: translateY(0); }
+        .sl-payoff-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.75; color: var(--muted); margin: 0; }
+      </style>
+
+      <div id="sl-root">
+        <div class="sl-top" id="sl-top">
+          <p class="sl-eyebrow">Before you spend more money on the next course, the next coach, the next strategy</p>
+          <h2 class="sl-headline">Do you actually have your feet<br><em>in the starting blocks?</em></h2>
+          <p class="sl-sub">Or are you still strapping your ankles in the car park?</p>
         </div>
 
-        <p class="mechanism-stadium reveal">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer regardless from a loved one:</p>
+        <div class="sl-section-label" id="sl-section-label">Where your starting line actually is</div>
 
+        <div class="sl-track-wrap" id="sl-track-wrap">
+          <div class="sl-lane-grid"></div>
+          <div class="sl-lane-line" style="top:38%"></div>
+          <div class="sl-lane-line" style="top:60%"></div>
+          <div class="sl-lane-line" style="top:82%"></div>
+          <div class="sl-startline"></div>
+          <div class="sl-startline-label">START</div>
+          <div class="sl-startline-sub">assumed equal</div>
+          <div class="sl-label-left">← NOT EVEN ON THE TRACK</div>
+          <div class="sl-label-right">FINISH →</div>
+          <div id="sl-runners-mount"></div>
+        </div>
+
+        <p class="sl-prompt" id="sl-prompt">↑ tap any runner to read their starting line</p>
+        <div class="sl-detail" id="sl-detail"></div>
       </div>
+
+      <script>
+        (function() {
+          const runners = [
+            {
+              id: 'carpark', label: 'IN THE CAR PARK', sublabel: 'Still getting here',
+              position: 4, lane: 0, icon: '🚗', flip: false, color: '#9b93ab',
+              copy: 'Your starting line starts a few blocks before even arriving at the field. You are spending capacity just getting to the race everyone else started at.',
+              detail: 'Chronic illness. Housing insecurity. A body that has not been safe. You have not got a head start deficit. You are running a completely different race.',
+            },
+            {
+              id: 'injured', label: 'CARRYING INJURIES', sublabel: 'That never healed',
+              position: 16, lane: 1, icon: '🩹', flip: false, color: '#c67a50',
+              copy: 'Old wounds nobody stitched properly. Nervous systems still in threat-response. You are at the blocks, but you have been running on a fracture for years.',
+              detail: 'Trauma. Chronic pain. Burnout that became baseline. The race assumes a body that was repaired. Yours was not.',
+            },
+            {
+              id: 'loaded', label: 'CARRYING THE WEIGHT', sublabel: 'Nobody else is holding',
+              position: 30, lane: 2, icon: '👶', flip: false, color: '#7450b6',
+              copy: 'Baby on your hip. Elderly parent on your back. A hangover from last night because that was the only hour that was yours.',
+              detail: 'You showed up. You are running. The race pretends everyone starts with two free hands and a full night\'s sleep. You do not.',
+            },
+            {
+              id: 'badcoach', label: 'COACHED BY ACCIDENT', sublabel: 'Not by design',
+              position: 46, lane: 1, icon: '📣', flip: true, color: '#5b8db8',
+              copy: 'Your coach is the well meaning parent of a friend you made in primary school. Not a world class expert in your unique brain and body.',
+              detail: 'Advice built for someone else\'s architecture. Strategies that worked for someone with a different design. It was not bad faith. It was the wrong map.',
+            },
+            {
+              id: 'startingblocks', label: 'AT THE BLOCKS', sublabel: 'The assumed start',
+              position: 64, lane: 0, icon: '🏃', flip: true, color: '#c8a94e',
+              copy: 'This is where the race assumes you begin. Two free hands. A repaired body. Slept well. Expert coached. No one depending on you right now.',
+              detail: 'This is the only starting position the race was designed for. Everyone else is running a harder race and being judged by the same finish line.',
+              isDefault: true,
+            },
+            {
+              id: 'headstart', label: 'AHEAD OF THE LINE', sublabel: 'Before the gun',
+              position: 78, lane: 2, icon: '⚡', flip: false, color: '#f04aa7',
+              copy: 'Inherited advantages. Early expert support. A system built around your design from birth. The race already started before the gun went off.',
+              detail: 'This is not a moral judgement. It is an architecture observation. Some people began accumulating capacity before anyone else was allowed on the track.',
+            },
+          ];
+
+          const laneY = [38, 60, 82];
+          let activeId = 'startingblocks';
+
+          function renderRunners() {
+            const mount = document.getElementById('sl-runners-mount');
+            mount.innerHTML = '';
+            runners.forEach(r => {
+              const isActive = r.id === activeId;
+              const size = isActive ? 56 : 44;
+              const y = laneY[r.lane];
+              const iconHtml = r.flip
+                ? `<span class="sl-icon-forward">${r.icon}</span>`
+                : r.icon;
+
+              const el = document.createElement('div');
+              el.className = 'sl-runner' + (isActive ? ' is-active' : '');
+              el.style.cssText = `left:${r.position}%;top:${y}%;`;
+              el.innerHTML = `
+                <div class="sl-runner-label" style="opacity:${isActive ? 1 : 0.55}">
+                  <div class="sl-runner-label-main" style="color:${r.color}">${r.label}</div>
+                  <div class="sl-runner-label-sub">${r.sublabel}</div>
+                </div>
+                <div class="sl-connector" style="height:24px;background:${r.color};opacity:${isActive ? 0.8 : 0};"></div>
+                <div class="sl-bubble" style="width:${size}px;height:${size}px;font-size:${isActive ? 24 : 18}px;background:${isActive ? r.color : 'rgba(255,255,255,0.06)'};border-color:${r.color};box-shadow:${isActive ? `0 0 24px ${r.color}60, 0 0 48px ${r.color}30` : 'none'};">
+                  ${iconHtml}
+                </div>`;
+              el.addEventListener('click', () => {
+                activeId = r.id;
+                renderRunners();
+                renderDetail();
+              });
+              mount.appendChild(el);
+            });
+          }
+
+          function renderDetail() {
+            const panel = document.getElementById('sl-detail');
+            const r = runners.find(x => x.id === activeId);
+            if (!r) { panel.innerHTML = ''; return; }
+            const iconHtml = r.flip
+              ? `<span style="display:inline-block;transform:scaleX(-1)">${r.icon}</span>`
+              : r.icon;
+            panel.innerHTML = `
+              <div class="sl-detail-card" style="border:1px solid ${r.color}30;border-left:4px solid ${r.color};">
+                <div class="sl-detail-icon" style="background:${r.color}15;border-color:${r.color};">${iconHtml}</div>
+                <div style="flex:1">
+                  <div class="sl-detail-tag" style="color:${r.color}">${r.label}</div>
+                  <p class="sl-detail-copy">"${r.copy}"</p>
+                  <p class="sl-detail-body">${r.detail}</p>
+                </div>
+              </div>`;
+          }
+
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('sl-visible'); });
+          }, { threshold: 0.2 });
+
+          const payoffObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('sl-visible'); });
+          }, { threshold: 0.15 });
+
+          function init() {
+            renderRunners();
+            renderDetail();
+            ['sl-top','sl-section-label','sl-track-wrap','sl-prompt'].forEach(id => {
+              const el = document.getElementById(id);
+              if (el) observer.observe(el);
+            });
+            const payoff = document.getElementById('sl-payoff');
+            if (payoff) payoffObserver.observe(payoff);
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+          } else {
+            init();
+          }
+        })();
+      </script>
     </section>
 
     <!-- ═══════════════════════════════════════════
-         SPOTLIGHT 2 — Try harder. Push through. Be more disciplined.
+         STADIUM — fog horn figures
     ════════════════════════════════════════════ -->
-    <section class="spotlight" id="spotlight-indictment" aria-label="The indictment">
-      <div class="spotlight-inner">
-        <span class="spotlight-line spotlight-hot">Try harder.</span>
-        <span class="spotlight-line spotlight-hot">Push through.</span>
-        <span class="spotlight-line spotlight-hot">Be more disciplined.</span>
+    <section id="stadium-section" style="background:var(--bg-soft); padding: clamp(4rem,7vw,7rem) 0;">
+      <style>
+        #stadium-root { max-width: 820px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
+
+        .std-intro { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.05rem,2vw,1.25rem); line-height: 1.75; color: var(--muted); max-width: 640px; margin: 0 0 2.5rem; }
+
+        /* Stadium illustrated scene */
+        .std-scene { position: relative; border-radius: 20px; overflow: hidden; margin-bottom: 3rem; min-height: 300px; border: 1px solid rgba(37,25,45,0.08); box-shadow: 0 8px 40px rgba(37,25,45,0.08); }
+
+        /* Sky */
+        .std-sky { position: absolute; top:0; left:0; right:0; height:35%; background: linear-gradient(180deg,#c8e6f7 0%,#e8f4ff 100%); }
+
+        /* Cloud */
+        .std-cloud { position: absolute; background: rgba(255,255,255,0.85); border-radius: 999px; }
+
+        /* Seating tiers */
+        .std-tiers { position: absolute; top:28%; left:0; right:0; height:27%; background-image: repeating-linear-gradient(90deg, rgba(116,80,182,0.12) 0px, rgba(116,80,182,0.12) 12px, rgba(240,74,167,0.08) 12px, rgba(240,74,167,0.08) 24px, rgba(37,25,45,0.1) 24px, rgba(37,25,45,0.1) 36px, rgba(116,80,182,0.12) 36px, rgba(116,80,182,0.12) 48px); opacity: 0.6; pointer-events: none; }
+
+        /* Tier divider lines */
+        .std-tier-line { position: absolute; left:0; right:0; height:1px; background:rgba(37,25,45,0.08); pointer-events:none; }
+
+        /* Concrete stand */
+        .std-stand { position: absolute; top:28%; bottom:45%; left:0; right:0; background: linear-gradient(180deg,#d4cec8 0%,#b8b0a8 100%); pointer-events:none; }
+
+        /* Field */
+        .std-field { position: absolute; bottom:0; left:0; right:0; height:45%; overflow:hidden; }
+        .std-field-stripes { position: absolute; inset:0; background-image: repeating-linear-gradient(180deg,#3a6b1e 0px,#3a6b1e 22px,#2d5016 22px,#2d5016 44px); }
+        .std-track-oval { position: absolute; left:15%; right:15%; top:10%; bottom:10%; border:2px solid rgba(255,255,255,0.3); border-radius:50%; }
+        .std-centre-line { position: absolute; left:50%; top:5%; bottom:5%; width:1px; background:rgba(255,255,255,0.2); }
+        .std-start-line { position: absolute; left:43%; right:43%; bottom:23%; height:3px; background:rgba(255,255,255,0.6); z-index:3; }
+        .std-start-label { position: absolute; left:50%; bottom:28%; transform:translateX(-50%); font-size:8px; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.7); font-family:'Inter',sans-serif; z-index:3; white-space:nowrap; }
+        .std-runner { position: absolute; left:48%; bottom:24%; font-size:20px; z-index:4; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3)); display:inline-block; transform:scaleX(-1); }
+
+        /* Figures */
+        .std-figure { position: absolute; transform: translate(-50%,-50%); cursor: pointer; z-index:5; }
+        .std-figure.is-hovered { z-index: 20; }
+        .std-avatar { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; transition: all 0.25s ease; border:3px solid; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        .std-seats { display:flex; gap:3px; margin-top:4px; justify-content:center; }
+        .std-seat { width:10px; height:8px; border-radius:2px 2px 0 0; opacity:0.7; transition:background 0.3s; background:#1e3a5f; }
+        .std-foghorn { position:absolute; top:-28px; left:50%; transform:translateX(-50%) scale(0) rotate(0deg); font-size:20px; transition:transform 0.25s cubic-bezier(.34,1.56,.64,1); transform-origin:center bottom; user-select:none; }
+        .std-figure.is-hovered .std-foghorn { transform:translateX(-50%) scale(1.3) rotate(-15deg); }
+        .std-figure.is-hovered .std-avatar { transform: scale(1.15) translateY(-4px); }
+
+        /* Speech bubble */
+        .std-bubble { position:absolute; bottom:calc(100% + 12px); background:#fff; border-radius:12px; padding:12px 16px; width:200px; box-shadow:0 8px 24px rgba(37,25,45,0.12); animation: stdPopIn 0.2s cubic-bezier(.34,1.56,.64,1); z-index:30; border:2px solid; }
+        .std-bubble--right { left:50%; transform:translateX(-8px); }
+        .std-bubble--left { right:50%; transform:translateX(8px); }
+        .std-bubble-tail-outer { position:absolute; bottom:-10px; width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; }
+        .std-bubble-tail-inner { position:absolute; bottom:-7px; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:8px solid #fff; }
+        .std-bubble--right .std-bubble-tail-outer, .std-bubble--right .std-bubble-tail-inner { left:20px; }
+        .std-bubble--left .std-bubble-tail-outer, .std-bubble--left .std-bubble-tail-inner { right:20px; }
+        .std-bubble-label { font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; font-family:'Inter',sans-serif; }
+        .std-bubble-phrase { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:4px; font-style:italic; }
+        .std-bubble-sub { font-size:11px; color:var(--muted); font-family:'Inter',sans-serif; line-height:1.4; }
+
+        .std-hover-prompt { position:absolute; bottom:12px; right:16px; font-size:10px; color:rgba(255,255,255,0.55); font-family:'Inter',sans-serif; letter-spacing:1.5px; text-transform:uppercase; pointer-events:none; }
+
+        @keyframes stdPopIn { from { opacity:0; transform:scale(0.85) translateY(4px); } to { opacity:1; transform:scale(1) translateY(0); } }
+
+        /* Payoff */
+        .std-payoff { max-width:600px; }
+        .std-rule { width:48px; height:3px; background:linear-gradient(90deg,var(--hot),#c8a94e); border-radius:2px; margin-bottom:1.8rem; }
+        .std-payoff-headline { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,2.5vw,1.9rem); line-height:1.5; color:var(--text); margin:0 0 1rem; font-weight:500; }
+        .std-payoff-headline em { color:var(--hot); font-style:italic; }
+        .std-payoff-body { font-family:'Cormorant Garamond',serif; font-size:1.05rem; line-height:1.7; color:var(--muted); margin:0; }
+      </style>
+
+      <div id="stadium-root">
+        <p class="std-intro">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer from a loved one:</p>
+
+        <div class="std-scene" id="std-scene">
+          <!-- Sky -->
+          <div class="std-sky"></div>
+          <!-- Clouds -->
+          <div class="std-cloud" style="left:8%;top:6%;width:80px;height:32px;box-shadow:20px -12px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:55%;top:4%;width:60px;height:24px;box-shadow:15px -9px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:78%;top:10%;width:50px;height:20px;box-shadow:12px -7px 0 rgba(255,255,255,0.7);"></div>
+          <!-- Stand -->
+          <div class="std-stand"></div>
+          <!-- Tier lines -->
+          <div class="std-tier-line" style="top:36%"></div>
+          <div class="std-tier-line" style="top:42%"></div>
+          <div class="std-tier-line" style="top:48%"></div>
+          <div class="std-tier-line" style="top:54%"></div>
+          <!-- Crowd filler -->
+          <div class="std-tiers"></div>
+          <!-- Field -->
+          <div class="std-field">
+            <div class="std-field-stripes"></div>
+            <div class="std-track-oval"></div>
+            <div class="std-centre-line"></div>
+            <div class="std-start-line"></div>
+            <div class="std-start-label">START</div>
+            <div class="std-runner">🏃</div>
+          </div>
+          <!-- Hover prompt -->
+          <div class="std-hover-prompt">hover the crowd ↑</div>
+          <!-- Figures injected by JS -->
+          <div id="std-figures"></div>
+        </div>
+
+        <div class="std-payoff">
+          <div class="std-rule"></div>
+          <p class="std-payoff-headline">Nobody asked where your <em>actual</em> starting line was.</p>
+          <p class="std-payoff-body"><em>ENOUGH</em> is the first honest map of the race you are actually running.</p>
+        </div>
       </div>
+
+      <script>
+        (function() {
+          const voices = [
+            { id:0, x:'18%', y:'38%', color:'#c0392b', phrase:'Try harder.', subphrase:'You just need to want it more.', person:'👩‍💼', label:'The Manager', dir:'right' },
+            { id:1, x:'38%', y:'28%', color:'#7450b6', phrase:'Just get up earlier.', subphrase:'Five AM club. That\'s the answer.', person:'👨‍⚕️', label:'The Wellness Guru', dir:'right' },
+            { id:2, x:'62%', y:'33%', color:'#2a8c5a', phrase:'Be more disciplined.', subphrase:'Push through. No excuses.', person:'🧑‍🏫', label:'The Coach', dir:'left' },
+            { id:3, x:'80%', y:'42%', color:'#f04aa7', phrase:'Have you tried journalling?', subphrase:'Just five minutes each morning.', person:'👩‍🔬', label:'The Expert', dir:'left' },
+          ];
+
+          let hovered = null;
+
+          function render() {
+            const mount = document.getElementById('std-figures');
+            if (!mount) return;
+            mount.innerHTML = '';
+
+            voices.forEach(v => {
+              const isH = hovered === v.id;
+              const fig = document.createElement('div');
+              fig.className = 'std-figure' + (isH ? ' is-hovered' : '');
+              fig.style.cssText = `left:${v.x};top:${v.y};`;
+
+              const bubbleTailBorderColor = `border-top-color:${v.color}`;
+
+              fig.innerHTML = `
+                ${isH ? `
+                  <div class="std-bubble std-bubble--${v.dir}" style="border-color:${v.color};">
+                    <div class="std-bubble-tail-outer" style="${bubbleTailBorderColor};border-top-width:10px;border-top-style:solid;"></div>
+                    <div class="std-bubble-tail-inner"></div>
+                    <div class="std-bubble-label" style="color:${v.color}">${v.label}</div>
+                    <div class="std-bubble-phrase">"${v.phrase}"</div>
+                    <div class="std-bubble-sub">${v.subphrase}</div>
+                  </div>` : ''}
+                <div class="std-foghorn">📣</div>
+                <div class="std-avatar" style="background:${isH ? `linear-gradient(135deg,${v.color}20,${v.color}40)` : '#f7f1f3'};border-color:${isH ? v.color : '#d4cec8'};box-shadow:${isH ? `0 4px 16px ${v.color}40` : '0 2px 8px rgba(37,25,45,0.1)'};">
+                  ${v.person}
+                </div>
+                <div class="std-seats">
+                  <div class="std-seat" style="${isH ? `background:${v.color};` : ''}"></div>
+                  <div class="std-seat" style="${isH ? `background:${v.color};` : ''}"></div>
+                  <div class="std-seat" style="${isH ? `background:${v.color};` : ''}"></div>
+                </div>`;
+
+              fig.addEventListener('mouseenter', () => { hovered = v.id; render(); });
+              fig.addEventListener('mouseleave', () => { hovered = null; render(); });
+              fig.addEventListener('click', () => { hovered = hovered === v.id ? null : v.id; render(); });
+
+              mount.appendChild(fig);
+            });
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', render);
+          } else {
+            render();
+          }
+        })();
+      </script>
     </section>
 
     <!-- ═══════════════════════════════════════════
@@ -964,7 +1302,7 @@
         <h2 class="display possibility-headline centre reveal">
           When you can finally see your actual reality clearly, everything shifts.
         </h2>
-        <div class="podium-wrap reveal">
+        <div class="podium-wrap reveal" style="margin-top: 5rem;">
 
           <!-- 2nd place (left) -->
           <div class="podium-col">
