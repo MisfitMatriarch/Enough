@@ -1111,8 +1111,9 @@
           line-height: 1.7;
           color: var(--muted);
           max-width: 680px;
-          margin: 0 0 3rem;
+          margin: 0 auto 3rem;
           font-weight: 500;
+          text-align: center;
         }
 
         /* Stadium scene — full container width, taller */
@@ -1122,17 +1123,17 @@
           border-radius: 20px;
           overflow: hidden;
           margin-bottom: 4rem;
-          height: 420px;
+          height: 520px;
           border: 1px solid rgba(37,25,45,0.08);
           box-shadow: 0 8px 48px rgba(37,25,45,0.1);
         }
 
-        .std-sky { position: absolute; top:0; left:0; right:0; height:35%; background: linear-gradient(180deg,#c8e6f7 0%,#e8f4ff 100%); }
-        .std-cloud { position: absolute; background: rgba(255,255,255,0.88); border-radius: 999px; }
-        .std-tiers { position: absolute; top:28%; left:0; right:0; height:27%; background-image: repeating-linear-gradient(90deg, rgba(116,80,182,0.12) 0px, rgba(116,80,182,0.12) 14px, rgba(240,74,167,0.08) 14px, rgba(240,74,167,0.08) 28px, rgba(37,25,45,0.1) 28px, rgba(37,25,45,0.1) 42px, rgba(116,80,182,0.12) 42px, rgba(116,80,182,0.12) 56px); opacity: 0.65; pointer-events: none; }
+        .std-sky { position: absolute; top:0; left:0; right:0; height:48%; background: linear-gradient(180deg,#b8dff5 0%,#ddf0ff 70%,#eef7ff 100%); }
+        .std-cloud { position: absolute; background: rgba(255,255,255,0.9); border-radius: 999px; }
+        .std-tiers { position: absolute; top:42%; left:0; right:0; height:22%; background-image: repeating-linear-gradient(90deg, rgba(116,80,182,0.12) 0px, rgba(116,80,182,0.12) 14px, rgba(240,74,167,0.08) 14px, rgba(240,74,167,0.08) 28px, rgba(37,25,45,0.1) 28px, rgba(37,25,45,0.1) 42px, rgba(116,80,182,0.12) 42px, rgba(116,80,182,0.12) 56px); opacity: 0.65; pointer-events: none; }
         .std-tier-line { position: absolute; left:0; right:0; height:1px; background:rgba(37,25,45,0.07); pointer-events:none; }
-        .std-stand { position: absolute; top:28%; bottom:45%; left:0; right:0; background: linear-gradient(180deg,#d4cec8 0%,#b8b0a8 100%); pointer-events:none; }
-        .std-field { position: absolute; bottom:0; left:0; right:0; height:45%; overflow:hidden; }
+        .std-stand { position: absolute; top:42%; bottom:36%; left:0; right:0; background: linear-gradient(180deg,#d4cec8 0%,#b8b0a8 100%); pointer-events:none; }
+        .std-field { position: absolute; bottom:0; left:0; right:0; height:36%; overflow:hidden; }
         .std-field-stripes { position: absolute; inset:0; background-image: repeating-linear-gradient(180deg,#3a6b1e 0px,#3a6b1e 26px,#2d5016 26px,#2d5016 52px); }
         .std-track-oval { position: absolute; left:12%; right:12%; top:8%; bottom:8%; border:2px solid rgba(255,255,255,0.28); border-radius:50%; }
         .std-centre-line { position: absolute; left:50%; top:5%; bottom:5%; width:1px; background:rgba(255,255,255,0.18); }
@@ -1178,8 +1179,8 @@
         @keyframes stdPopIn { from { opacity:0; transform:scale(0.88) translateY(6px); } to { opacity:1; transform:scale(1) translateY(0); } }
 
         /* Payoff — match site heading scale */
-        .std-payoff { max-width: 680px; }
-        .std-rule { width:52px; height:4px; background:linear-gradient(90deg,var(--hot),#c8a94e); border-radius:2px; margin-bottom:2rem; }
+        .std-payoff { max-width: 680px; margin: 0 auto; text-align: center; }
+        .std-rule { width:52px; height:4px; background:linear-gradient(90deg,var(--hot),#c8a94e); border-radius:2px; margin: 0 auto 2rem; }
         .std-payoff-headline {
           font-family:'Cormorant Garamond',serif;
           font-size: clamp(1.9rem, 3.5vw, 2.8rem);
@@ -1205,14 +1206,14 @@
 
         <div class="std-scene" id="std-scene">
           <div class="std-sky"></div>
-          <div class="std-cloud" style="left:6%;top:5%;width:100px;height:40px;box-shadow:25px -15px 0 rgba(255,255,255,0.7);"></div>
-          <div class="std-cloud" style="left:48%;top:3%;width:80px;height:32px;box-shadow:20px -12px 0 rgba(255,255,255,0.7);"></div>
-          <div class="std-cloud" style="left:76%;top:9%;width:66px;height:26px;box-shadow:16px -10px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:6%;top:8%;width:110px;height:44px;box-shadow:28px -16px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:46%;top:6%;width:90px;height:36px;box-shadow:22px -14px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:74%;top:12%;width:72px;height:28px;box-shadow:18px -11px 0 rgba(255,255,255,0.7);"></div>
           <div class="std-stand"></div>
-          <div class="std-tier-line" style="top:34%"></div>
-          <div class="std-tier-line" style="top:40%"></div>
           <div class="std-tier-line" style="top:46%"></div>
-          <div class="std-tier-line" style="top:52%"></div>
+          <div class="std-tier-line" style="top:51%"></div>
+          <div class="std-tier-line" style="top:56%"></div>
+          <div class="std-tier-line" style="top:61%"></div>
           <div class="std-tiers"></div>
           <div class="std-field">
             <div class="std-field-stripes"></div>
@@ -1236,10 +1237,10 @@
       <script>
         (function() {
           const voices = [
-            { id:0, x:'18%', y:'38%', color:'#c0392b', phrase:'Try harder.', subphrase:'You just need to want it more.', person:'👩‍💼', label:'The Manager', dir:'right' },
-            { id:1, x:'38%', y:'28%', color:'#7450b6', phrase:'Just get up earlier.', subphrase:'Five AM club. That\'s the answer.', person:'👨‍⚕️', label:'The Wellness Guru', dir:'right' },
-            { id:2, x:'62%', y:'33%', color:'#2a8c5a', phrase:'Be more disciplined.', subphrase:'Push through. No excuses.', person:'🧑‍🏫', label:'The Coach', dir:'left' },
-            { id:3, x:'80%', y:'42%', color:'#f04aa7', phrase:'Have you tried journalling?', subphrase:'Just five minutes each morning.', person:'👩‍🔬', label:'The Expert', dir:'left' },
+            { id:0, x:'18%', y:'56%', color:'#c0392b', phrase:'Try harder.', subphrase:'You just need to want it more.', person:'👩‍💼', label:'The Manager', dir:'right' },
+            { id:1, x:'38%', y:'48%', color:'#7450b6', phrase:'Just get up earlier.', subphrase:'Five AM club. That\'s the answer.', person:'👨‍⚕️', label:'The Wellness Guru', dir:'right' },
+            { id:2, x:'62%', y:'52%', color:'#2a8c5a', phrase:'Be more disciplined.', subphrase:'Push through. No excuses.', person:'🧑‍🏫', label:'The Coach', dir:'left' },
+            { id:3, x:'80%', y:'60%', color:'#f04aa7', phrase:'Have you tried journalling?', subphrase:'Just five minutes each morning.', person:'👩‍🔬', label:'The Expert', dir:'left' },
           ];
 
           let hovered = null;
@@ -1324,37 +1325,275 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         POSSIBILITY
+         POSSIBILITY — interactive podium
     ════════════════════════════════════════════ -->
-    <section class="section section-soft possibility-section">
-      <div class="container narrow">
-        <h2 class="display possibility-headline centre reveal">
+    <section class="section section-soft possibility-section" id="possibility">
+      <style>
+        .pod-section { max-width: 860px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
+
+        .pod-heading {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.9rem, 4vw, 3.2rem);
+          font-weight: 500;
+          line-height: 1.2;
+          color: var(--text);
+          text-align: center;
+          max-width: 680px;
+          margin: 0 auto 1.2rem;
+          letter-spacing: -0.01em;
+        }
+
+        .pod-hint {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.68rem;
+          font-weight: 600;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: var(--muted);
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .pod-stage {
+          display: flex;
+          align-items: flex-end;
+          gap: 8px;
+          max-width: 640px;
+          margin: 0 auto;
+        }
+
+        .pod-col {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          flex: 1;
+        }
+        .pod-col--gold { flex: 1.2; }
+
+        /* Tooltip bubble — sits above the figure */
+        .pod-tooltip {
+          position: absolute;
+          bottom: calc(100% + 18px);
+          left: 50%;
+          transform: translateX(-50%) translateY(10px);
+          width: 240px;
+          background: #fff;
+          border-radius: 14px;
+          padding: 18px 20px;
+          box-shadow: 0 12px 40px rgba(37,25,45,0.14);
+          z-index: 30;
+          opacity: 0;
+          transition: opacity 0.25s ease, transform 0.25s ease;
+          pointer-events: none;
+          text-align: center;
+          border: 2px solid;
+        }
+        .pod-tooltip.is-visible {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        .pod-tooltip-tail-outer {
+          position: absolute; bottom: -11px; left: 50%; transform: translateX(-50%);
+          width: 0; height: 0;
+          border-left: 9px solid transparent; border-right: 9px solid transparent;
+        }
+        .pod-tooltip-tail-inner {
+          position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%);
+          width: 0; height: 0;
+          border-left: 7px solid transparent; border-right: 7px solid transparent;
+          border-top: 8px solid #fff;
+        }
+        .pod-tooltip-label {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+          text-transform: uppercase; margin-bottom: 10px;
+        }
+        .pod-tooltip-text {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 1.05rem; font-style: italic; font-weight: 500;
+          line-height: 1.6; color: var(--text); margin: 0;
+        }
+
+        /* Figure on top */
+        .pod-figure {
+          font-size: 2rem;
+          margin-bottom: 8px;
+          transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), filter 0.25s ease;
+          user-select: none;
+          line-height: 1;
+        }
+        .pod-col--gold .pod-figure { font-size: 2.4rem; }
+        .pod-col:hover .pod-figure {
+          transform: translateY(-10px) scale(1.18);
+          filter: drop-shadow(0 8px 14px rgba(0,0,0,0.22));
+        }
+
+        /* Podium block */
+        .pod-block {
+          width: 100%;
+          border-radius: 8px 8px 0 0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding-top: 16px;
+        }
+        .pod-block::after {
+          content: '';
+          position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+          background: rgba(255,255,255,0.18);
+          transition: background 0.3s;
+        }
+        .pod-col:hover .pod-block::after { background: rgba(255,255,255,0.5); }
+
+        /* Shimmer sweep on hover */
+        .pod-block::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%);
+          transform: translateX(-100%);
+          transition: transform 0s;
+        }
+        .pod-col:hover .pod-block::before {
+          animation: podShimmer 0.55s ease forwards;
+        }
+        @keyframes podShimmer {
+          from { transform: translateX(-100%); }
+          to { transform: translateX(200%); }
+        }
+
+        .pod-block-num {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 700;
+          color: rgba(255,255,255,0.22);
+          line-height: 1;
+          user-select: none;
+        }
+        .pod-col--gold .pod-block-num { font-size: 3.2rem; }
+        .pod-block-num { font-size: 2.4rem; }
+
+        .pod-block-label {
+          font-family: 'Inter', sans-serif;
+          font-size: 9px; font-weight: 700;
+          letter-spacing: 2.5px; color: rgba(255,255,255,0.55);
+          text-transform: uppercase; margin-top: 4px;
+        }
+
+        /* Floor */
+        .pod-floor {
+          max-width: 640px; margin: 0 auto; height: 3px;
+          background: linear-gradient(90deg, transparent, var(--line), transparent);
+        }
+
+        /* Bottom copy */
+        .pod-footer {
+          text-align: center;
+          padding: 4rem 0 0;
+        }
+        .pod-footer-lead {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+          color: var(--muted); margin: 0 0 1.8rem; font-weight: 500;
+        }
+        .pod-footer-rule {
+          width: 48px; height: 3px;
+          background: linear-gradient(90deg, var(--hot), #c8a94e);
+          border-radius: 2px; margin: 0 auto 1.8rem;
+        }
+        .pod-footer-italic {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.2rem, 2vw, 1.6rem);
+          font-style: italic; line-height: 1.75;
+          color: var(--text); margin: 0; font-weight: 500;
+        }
+      </style>
+
+      <div class="pod-section">
+
+        <h2 class="pod-heading reveal">
           When you can finally see your actual reality clearly, everything shifts.
         </h2>
-        <div class="podium-wrap reveal" style="margin-top: 5rem;">
+        <p class="pod-hint reveal">hover each step ↓</p>
 
-          <!-- 2nd place (left) -->
-          <div class="podium-col">
-            <p class="podium-text">Then, you start making decisions that work with how you are actually built and the things that are actually important to you.</p>
-            <div class="podium-block podium-block--2"></div>
+        <div class="pod-stage reveal">
+
+          <!-- 2nd — Silver -->
+          <div class="pod-col pod-col--silver" data-pod="silver">
+            <div class="pod-tooltip" id="pod-tip-silver" style="border-color:#a0a0a8;">
+              <div class="pod-tooltip-tail-outer" style="border-top:11px solid #a0a0a8;"></div>
+              <div class="pod-tooltip-tail-inner"></div>
+              <div class="pod-tooltip-label" style="color:#a0a0a8;">🥈 2nd place</div>
+              <p class="pod-tooltip-text">Then, you start making decisions that work with how you are actually built and the things that are actually important to you.</p>
+            </div>
+            <div class="pod-figure">🥈</div>
+            <div class="pod-block" style="height:160px; background:linear-gradient(180deg,#c8c8d0,#787880);">
+              <div class="pod-block-num">2</div>
+              <div class="pod-block-label">2ND</div>
+            </div>
           </div>
 
-          <!-- 1st place (centre, tallest) -->
-          <div class="podium-col">
-            <p class="podium-text podium-text--winner">And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
-            <div class="podium-block podium-block--1"></div>
+          <!-- 1st — Gold -->
+          <div class="pod-col pod-col--gold" data-pod="gold">
+            <div class="pod-tooltip" id="pod-tip-gold" style="border-color:var(--hot);">
+              <div class="pod-tooltip-tail-outer" style="border-top:11px solid var(--hot);"></div>
+              <div class="pod-tooltip-tail-inner"></div>
+              <div class="pod-tooltip-label" style="color:var(--hot);">🏆 1st place</div>
+              <p class="pod-tooltip-text">And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
+            </div>
+            <div class="pod-figure">🏆</div>
+            <div class="pod-block" style="height:220px; background:linear-gradient(180deg,#e8c84e,#c8a94e);">
+              <div class="pod-block-num" style="color:rgba(255,255,255,0.25);">1</div>
+              <div class="pod-block-label">1ST</div>
+            </div>
           </div>
 
-          <!-- 3rd place (right, shortest) -->
-          <div class="podium-col">
-            <p class="podium-text">First, you stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
-            <div class="podium-block podium-block--3"></div>
+          <!-- 3rd — Bronze -->
+          <div class="pod-col pod-col--bronze" data-pod="bronze">
+            <div class="pod-tooltip" id="pod-tip-bronze" style="border-color:#b87333;">
+              <div class="pod-tooltip-tail-outer" style="border-top:11px solid #b87333;"></div>
+              <div class="pod-tooltip-tail-inner"></div>
+              <div class="pod-tooltip-label" style="color:#b87333;">🥉 3rd place</div>
+              <p class="pod-tooltip-text">First, you stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
+            </div>
+            <div class="pod-figure">🥉</div>
+            <div class="pod-block" style="height:110px; background:linear-gradient(180deg,#d4894a,#8b5a2b);">
+              <div class="pod-block-num">3</div>
+              <div class="pod-block-label">3RD</div>
+            </div>
           </div>
 
         </div>
-        <p class="lead centre" style="margin-top: 6rem;">That is what <strong>ENOUGH</strong> is about.</p>
-        <p class="body-copy centre" style="max-width:640px; margin-left:auto; margin-right:auto; margin-top: 2rem;">This is not about getting it perfect.<br />It is not about becoming someone different.<br />It is about finally running your race.</p>
+
+        <div class="pod-floor"></div>
+
+        <div class="pod-footer">
+          <p class="pod-footer-lead">That is what <strong>ENOUGH</strong> is about.</p>
+          <div class="pod-footer-rule"></div>
+          <p class="pod-footer-italic">
+            This is not about getting it perfect.<br />
+            It is not about becoming someone different.<br />
+            It is about finally running your race.
+          </p>
+        </div>
+
       </div>
+
+      <script>
+        (function() {
+          document.querySelectorAll('.pod-col').forEach(col => {
+            const tip = col.querySelector('.pod-tooltip');
+            if (!tip) return;
+            col.addEventListener('mouseenter', () => tip.classList.add('is-visible'));
+            col.addEventListener('mouseleave', () => tip.classList.remove('is-visible'));
+            col.addEventListener('click', () => tip.classList.toggle('is-visible'));
+          });
+        })();
+      </script>
     </section>
 
     <!-- ═══════════════════════════════════════════
