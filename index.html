@@ -903,8 +903,8 @@
         /* ── Top copy — centred, readable ── */
         .sl-top { max-width: 720px; margin: 0 auto; text-align: center; padding-bottom: 4rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .sl-top.sl-visible { opacity: 1; transform: translateY(0); }
-        .sl-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.6rem; }
-        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 500; line-height: 1.1; margin: 0 0 1.4rem; color: var(--text); }
+        .sl-eyebrow { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 500; color: var(--muted); margin-bottom: 1.6rem; line-height: 1.65; letter-spacing: 0; text-transform: none; }
+        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; line-height: 1.05; margin: 0 0 1.4rem; color: var(--text); letter-spacing: -0.02em; }
         .sl-headline em { color: var(--hot); font-style: italic; }
         .sl-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.65; color: var(--muted); margin: 0; font-weight: 500; }
 
@@ -920,9 +920,9 @@
         /* ── Track — LIGHT background ── */
         .sl-track-wrap {
           position: relative; width: 100%; height: 340px;
-          background: linear-gradient(180deg, var(--bg-soft) 0%, #ede8f0 50%, var(--bg-soft) 100%);
+          background: linear-gradient(180deg, #e8f5e4 0%, #ddefd8 50%, #e8f5e4 100%);
           border-radius: 20px;
-          border: 1.5px solid rgba(116,80,182,0.18);
+          border: 1.5px solid rgba(58,107,30,0.15);
           overflow: hidden;
           opacity: 0; transform: translateY(16px);
           transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease;
@@ -972,8 +972,8 @@
 
       <div id="sl-root">
         <div class="sl-top" id="sl-top">
-          <p class="sl-eyebrow">Before you spend more money on the next course, the next coach, the next strategy</p>
-          <h2 class="sl-headline">Do you actually have your feet<br><em>in the starting blocks?</em></h2>
+          <p class="sl-eyebrow">Before you spend more money on<br>the next course, the next coach, the next strategy</p>
+          <h2 class="sl-headline">Do you actually have your feet<br><em style="color:var(--hot);font-style:italic;">in the starting blocks?</em></h2>
           <p class="sl-sub">Or are you still strapping your ankles in the car park?</p>
         </div>
 
@@ -1184,10 +1184,10 @@
         /* Speech bubbles */
         .std-bubble {
           position:absolute; bottom:calc(100% + 14px); background:#fff;
-          border-radius:14px; padding:16px 20px; width:230px;
+          border-radius:14px; padding:20px 24px; width:260px;
           box-shadow:0 10px 32px rgba(37,25,45,0.15);
           animation: stdPopIn 0.2s cubic-bezier(.34,1.56,.64,1);
-          z-index:30; border:2px solid;
+          z-index:30; border:2px solid; text-align:center;
         }
         .std-bubble--right { left:50%; transform:translateX(-10px); }
         .std-bubble--left { right:50%; transform:translateX(10px); }
@@ -1195,9 +1195,9 @@
         .std-bubble-tail-inner { position:absolute; bottom:-8px; width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:9px solid #fff; }
         .std-bubble--right .std-bubble-tail-outer, .std-bubble--right .std-bubble-tail-inner { left:22px; }
         .std-bubble--left .std-bubble-tail-outer, .std-bubble--left .std-bubble-tail-inner { right:22px; }
-        .std-bubble-label { font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
-        .std-bubble-phrase { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:6px; font-style:italic; }
-        .std-bubble-sub { font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); line-height:1.5; }
+        .std-bubble-label { font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; text-align:center; }
+        .std-bubble-phrase { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:8px; font-style:italic; text-align:center; }
+        .std-bubble-sub { font-family:'Inter',sans-serif; font-size:14px; color:var(--muted); line-height:1.5; text-align:center; }
 
         .std-hover-prompt { position:absolute; bottom:14px; right:18px; font-family:'Inter',sans-serif; font-size:11px; color:rgba(255,255,255,0.5); letter-spacing:1.5px; text-transform:uppercase; pointer-events:none; }
 
