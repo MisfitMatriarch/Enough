@@ -897,51 +897,52 @@
     ════════════════════════════════════════════ -->
     <section id="starting-line-section" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
       <style>
-        #sl-root { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); font-family: 'Inter', sans-serif; color: var(--text); }
+        #sl-root { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
 
         .sl-top { max-width: 680px; margin: 0 auto; text-align: center; padding-bottom: 3.5rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .sl-top.sl-visible { opacity: 1; transform: translateY(0); }
-        .sl-eyebrow { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.4rem; }
-        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 500; line-height: 1.15; margin: 0 0 1.2rem; color: var(--text); }
+        .sl-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.6rem; }
+        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 500; line-height: 1.12; margin: 0 0 1.4rem; color: var(--text); }
         .sl-headline em { color: var(--hot); font-style: italic; }
-        .sl-sub { font-size: 1.1rem; line-height: 1.65; color: var(--muted); margin: 0; font-family: 'Cormorant Garamond', serif; }
+        .sl-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 2vw, 1.45rem); line-height: 1.65; color: var(--muted); margin: 0; }
 
-        .sl-section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: 1.2rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
+        .sl-section-label { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: 1.4rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
         .sl-section-label.sl-visible { opacity: 1; transform: translateY(0); }
 
-        .sl-track-wrap { position: relative; width: 100%; height: 260px; background: linear-gradient(180deg, #1a1528 0%, #211d30 40%, #1a1528 100%); border-radius: 16px; border: 1px solid rgba(116,80,182,0.25); overflow: hidden; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; }
+        /* Track — stays dark as a stadium surface */
+        .sl-track-wrap { position: relative; width: 100%; height: 320px; background: linear-gradient(180deg, #1a1528 0%, #211d30 40%, #1a1528 100%); border-radius: 20px; border: 1px solid rgba(116,80,182,0.3); overflow: visible; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; }
+        .sl-track-inner { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 20px; }
         .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
         .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(116,80,182,0.08) 99px, rgba(116,80,182,0.08) 100px); pointer-events: none; }
-        .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(116,80,182,0.2) 20%, rgba(116,80,182,0.2) 80%, transparent); pointer-events: none; }
-        .sl-startline { position: absolute; left: 64%; top: 25%; bottom: 10%; width: 3px; background: linear-gradient(180deg, transparent, #c8a94e, #c8a94e, transparent); box-shadow: 0 0 12px rgba(200,169,78,0.6); pointer-events: none; }
-        .sl-startline-label { position: absolute; left: 64%; top: 8%; transform: translateX(-50%); font-size: 8px; font-weight: 800; letter-spacing: 2px; color: #c8a94e; white-space: nowrap; pointer-events: none; font-family: 'Inter', sans-serif; }
-        .sl-startline-sub { position: absolute; left: 64%; bottom: 4%; transform: translateX(-50%); font-size: 7px; color: rgba(200,169,78,0.55); letter-spacing: 1px; white-space: nowrap; pointer-events: none; font-family: 'Inter', sans-serif; }
-        .sl-label-left { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 7px; color: rgba(255,255,255,0.25); letter-spacing: 2px; white-space: nowrap; pointer-events: none; font-family: 'Inter', sans-serif; }
-        .sl-label-right { position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 8px; color: rgba(255,255,255,0.25); letter-spacing: 2px; pointer-events: none; font-family: 'Inter', sans-serif; }
+        .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(116,80,182,0.18) 20%, rgba(116,80,182,0.18) 80%, transparent); pointer-events: none; }
+        .sl-startline { position: absolute; left: 64%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent 5%, #c8a94e 20%, #c8a94e 80%, transparent 95%); box-shadow: 0 0 16px rgba(200,169,78,0.5); pointer-events: none; }
+        /* START label — above the track, no overlap */
+        .sl-startline-label { position: absolute; left: 64%; top: -28px; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; color: #c8a94e; white-space: nowrap; pointer-events: none; }
+        .sl-startline-sub { position: absolute; left: 64%; bottom: -22px; transform: translateX(-50%); font-family: 'Inter', sans-serif; font-size: 9px; color: rgba(200,169,78,0.6); letter-spacing: 1px; white-space: nowrap; pointer-events: none; }
+        .sl-label-left { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 9px; color: rgba(255,255,255,0.2); letter-spacing: 2px; white-space: nowrap; pointer-events: none; }
+        .sl-label-right { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 9px; color: rgba(255,255,255,0.2); letter-spacing: 2px; pointer-events: none; }
 
+        /* Runners */
         .sl-runner { position: absolute; transform: translate(-50%, -50%); cursor: pointer; z-index: 5; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); }
         .sl-runner.is-active { z-index: 10; }
-        .sl-runner-label { position: absolute; top: -44px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
-        .sl-runner-label-main { font-size: 9px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.1; font-family: 'Inter', sans-serif; }
-        .sl-runner-label-sub { font-size: 8px; color: rgba(255,255,255,0.35); letter-spacing: 0.5px; font-family: 'Inter', sans-serif; }
+        .sl-runner-label { position: absolute; top: -52px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
+        .sl-runner-label-main { font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.2; }
+        .sl-runner-label-sub { font-family: 'Inter', sans-serif; font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; margin-top: 2px; }
         .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2px solid; }
         .sl-icon-forward { display: inline-block; transform: scaleX(-1); }
         .sl-connector { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); width: 2px; transition: opacity 0.3s; }
 
-        .sl-prompt { font-size: 11px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; text-align: center; margin-top: 0.8rem; opacity: 0; transition: opacity 0.6s 0.5s ease; font-family: 'Inter', sans-serif; }
+        .sl-prompt { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-top: 2.8rem; opacity: 0; transition: opacity 0.6s 0.5s ease; }
         .sl-prompt.sl-visible { opacity: 1; }
 
-        .sl-detail { max-width: 720px; margin: 2.5rem auto 0; padding: 0 1rem; min-height: 120px; }
-        .sl-detail-card { border-radius: 12px; padding: 1.8rem 2rem; display: flex; align-items: flex-start; gap: 1.4rem; animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94); background: #fff; }
+        /* Detail panel */
+        .sl-detail { max-width: 760px; margin: 2.5rem auto 0; padding: 0; min-height: 140px; }
+        .sl-detail-card { border-radius: 16px; padding: 2rem 2.4rem; display: flex; align-items: flex-start; gap: 1.8rem; animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94); background: var(--bg-soft); border: 1px solid var(--line); }
         @keyframes slSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-        .sl-detail-icon { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; border: 2px solid; }
-        .sl-detail-tag { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; text-transform: uppercase; }
-        .sl-detail-copy { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.65; color: var(--text); margin: 0 0 0.8rem; font-style: italic; }
-        .sl-detail-body { font-size: 0.92rem; line-height: 1.7; color: var(--muted); margin: 0; }
-
-        .sl-payoff { max-width: 640px; margin: 4rem auto 0; text-align: center; opacity: 0; transform: translateY(16px); transition: opacity 0.7s ease, transform 0.7s ease; padding: 0 1rem; }
-        .sl-payoff.sl-visible { opacity: 1; transform: translateY(0); }
-        .sl-payoff-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.75; color: var(--muted); margin: 0; }
+        .sl-detail-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; border: 2px solid; }
+        .sl-detail-tag { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.6rem; }
+        .sl-detail-copy { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.2rem, 1.8vw, 1.5rem); line-height: 1.6; color: var(--text); margin: 0 0 0.8rem; font-style: italic; font-weight: 500; }
+        .sl-detail-body { font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.7; color: var(--muted); margin: 0; }
       </style>
 
       <div id="sl-root">
@@ -954,16 +955,19 @@
         <div class="sl-section-label" id="sl-section-label">Where your starting line actually is</div>
 
         <div class="sl-track-wrap" id="sl-track-wrap">
-          <div class="sl-lane-grid"></div>
-          <div class="sl-lane-line" style="top:38%"></div>
-          <div class="sl-lane-line" style="top:60%"></div>
-          <div class="sl-lane-line" style="top:82%"></div>
-          <div class="sl-startline"></div>
+          <!-- START label above track, outside overflow clip -->
           <div class="sl-startline-label">START</div>
           <div class="sl-startline-sub">assumed equal</div>
-          <div class="sl-label-left">← NOT EVEN ON THE TRACK</div>
-          <div class="sl-label-right">FINISH →</div>
-          <div id="sl-runners-mount"></div>
+          <div class="sl-track-inner">
+            <div class="sl-lane-grid"></div>
+            <div class="sl-lane-line" style="top:38%"></div>
+            <div class="sl-lane-line" style="top:60%"></div>
+            <div class="sl-lane-line" style="top:82%"></div>
+            <div class="sl-startline"></div>
+            <div class="sl-label-left">← NOT EVEN ON THE TRACK</div>
+            <div class="sl-label-right">FINISH →</div>
+            <div id="sl-runners-mount"></div>
+          </div>
         </div>
 
         <p class="sl-prompt" id="sl-prompt">↑ tap any runner to read their starting line</p>
@@ -1020,7 +1024,7 @@
             mount.innerHTML = '';
             runners.forEach(r => {
               const isActive = r.id === activeId;
-              const size = isActive ? 56 : 44;
+              const size = isActive ? 62 : 48;
               const y = laneY[r.lane];
               const iconHtml = r.flip
                 ? `<span class="sl-icon-forward">${r.icon}</span>`
@@ -1035,7 +1039,7 @@
                   <div class="sl-runner-label-sub">${r.sublabel}</div>
                 </div>
                 <div class="sl-connector" style="height:24px;background:${r.color};opacity:${isActive ? 0.8 : 0};"></div>
-                <div class="sl-bubble" style="width:${size}px;height:${size}px;font-size:${isActive ? 24 : 18}px;background:${isActive ? r.color : 'rgba(255,255,255,0.06)'};border-color:${r.color};box-shadow:${isActive ? `0 0 24px ${r.color}60, 0 0 48px ${r.color}30` : 'none'};">
+                <div class="sl-bubble" style="width:${size}px;height:${size}px;font-size:${isActive ? 28 : 22}px;background:${isActive ? r.color : 'rgba(255,255,255,0.06)'};border-color:${r.color};box-shadow:${isActive ? `0 0 28px ${r.color}60, 0 0 56px ${r.color}30` : 'none'};">
                   ${iconHtml}
                 </div>`;
               el.addEventListener('click', () => {
@@ -1096,93 +1100,120 @@
     <!-- ═══════════════════════════════════════════
          STADIUM — fog horn figures
     ════════════════════════════════════════════ -->
-    <section id="stadium-section" style="background:var(--bg-soft); padding: clamp(4rem,7vw,7rem) 0;">
+    <section id="stadium-section" style="background:var(--bg-soft); padding: clamp(5rem,8vw,8rem) 0;">
       <style>
-        #stadium-root { max-width: 820px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
+        #stadium-root { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
 
-        .std-intro { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.05rem,2vw,1.25rem); line-height: 1.75; color: var(--muted); max-width: 640px; margin: 0 0 2.5rem; }
+        /* Intro copy — matches site's lead class scale */
+        .std-intro {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+          line-height: 1.7;
+          color: var(--muted);
+          max-width: 680px;
+          margin: 0 0 3rem;
+          font-weight: 500;
+        }
 
-        /* Stadium illustrated scene */
-        .std-scene { position: relative; border-radius: 20px; overflow: hidden; margin-bottom: 3rem; min-height: 300px; border: 1px solid rgba(37,25,45,0.08); box-shadow: 0 8px 40px rgba(37,25,45,0.08); }
+        /* Stadium scene — full container width, taller */
+        .std-scene {
+          position: relative;
+          width: 100%;
+          border-radius: 20px;
+          overflow: hidden;
+          margin-bottom: 4rem;
+          height: 420px;
+          border: 1px solid rgba(37,25,45,0.08);
+          box-shadow: 0 8px 48px rgba(37,25,45,0.1);
+        }
 
-        /* Sky */
         .std-sky { position: absolute; top:0; left:0; right:0; height:35%; background: linear-gradient(180deg,#c8e6f7 0%,#e8f4ff 100%); }
-
-        /* Cloud */
-        .std-cloud { position: absolute; background: rgba(255,255,255,0.85); border-radius: 999px; }
-
-        /* Seating tiers */
-        .std-tiers { position: absolute; top:28%; left:0; right:0; height:27%; background-image: repeating-linear-gradient(90deg, rgba(116,80,182,0.12) 0px, rgba(116,80,182,0.12) 12px, rgba(240,74,167,0.08) 12px, rgba(240,74,167,0.08) 24px, rgba(37,25,45,0.1) 24px, rgba(37,25,45,0.1) 36px, rgba(116,80,182,0.12) 36px, rgba(116,80,182,0.12) 48px); opacity: 0.6; pointer-events: none; }
-
-        /* Tier divider lines */
-        .std-tier-line { position: absolute; left:0; right:0; height:1px; background:rgba(37,25,45,0.08); pointer-events:none; }
-
-        /* Concrete stand */
+        .std-cloud { position: absolute; background: rgba(255,255,255,0.88); border-radius: 999px; }
+        .std-tiers { position: absolute; top:28%; left:0; right:0; height:27%; background-image: repeating-linear-gradient(90deg, rgba(116,80,182,0.12) 0px, rgba(116,80,182,0.12) 14px, rgba(240,74,167,0.08) 14px, rgba(240,74,167,0.08) 28px, rgba(37,25,45,0.1) 28px, rgba(37,25,45,0.1) 42px, rgba(116,80,182,0.12) 42px, rgba(116,80,182,0.12) 56px); opacity: 0.65; pointer-events: none; }
+        .std-tier-line { position: absolute; left:0; right:0; height:1px; background:rgba(37,25,45,0.07); pointer-events:none; }
         .std-stand { position: absolute; top:28%; bottom:45%; left:0; right:0; background: linear-gradient(180deg,#d4cec8 0%,#b8b0a8 100%); pointer-events:none; }
-
-        /* Field */
         .std-field { position: absolute; bottom:0; left:0; right:0; height:45%; overflow:hidden; }
-        .std-field-stripes { position: absolute; inset:0; background-image: repeating-linear-gradient(180deg,#3a6b1e 0px,#3a6b1e 22px,#2d5016 22px,#2d5016 44px); }
-        .std-track-oval { position: absolute; left:15%; right:15%; top:10%; bottom:10%; border:2px solid rgba(255,255,255,0.3); border-radius:50%; }
-        .std-centre-line { position: absolute; left:50%; top:5%; bottom:5%; width:1px; background:rgba(255,255,255,0.2); }
-        .std-start-line { position: absolute; left:43%; right:43%; bottom:23%; height:3px; background:rgba(255,255,255,0.6); z-index:3; }
-        .std-start-label { position: absolute; left:50%; bottom:28%; transform:translateX(-50%); font-size:8px; font-weight:700; letter-spacing:2px; color:rgba(255,255,255,0.7); font-family:'Inter',sans-serif; z-index:3; white-space:nowrap; }
-        .std-runner { position: absolute; left:48%; bottom:24%; font-size:20px; z-index:4; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3)); display:inline-block; transform:scaleX(-1); }
+        .std-field-stripes { position: absolute; inset:0; background-image: repeating-linear-gradient(180deg,#3a6b1e 0px,#3a6b1e 26px,#2d5016 26px,#2d5016 52px); }
+        .std-track-oval { position: absolute; left:12%; right:12%; top:8%; bottom:8%; border:2px solid rgba(255,255,255,0.28); border-radius:50%; }
+        .std-centre-line { position: absolute; left:50%; top:5%; bottom:5%; width:1px; background:rgba(255,255,255,0.18); }
+        .std-start-line { position: absolute; left:42%; right:42%; bottom:25%; height:3px; background:rgba(255,255,255,0.65); z-index:3; }
+        .std-start-label { position: absolute; left:50%; bottom:32%; transform:translateX(-50%); font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:2.5px; color:rgba(255,255,255,0.7); z-index:3; white-space:nowrap; }
+        .std-runner { position: absolute; left:48%; bottom:26%; font-size:26px; z-index:4; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.35)); display:inline-block; transform:scaleX(-1); }
 
-        /* Figures */
+        /* Crowd figures */
         .std-figure { position: absolute; transform: translate(-50%,-50%); cursor: pointer; z-index:5; }
         .std-figure.is-hovered { z-index: 20; }
-        .std-avatar { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:22px; transition: all 0.25s ease; border:3px solid; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
-        .std-seats { display:flex; gap:3px; margin-top:4px; justify-content:center; }
-        .std-seat { width:10px; height:8px; border-radius:2px 2px 0 0; opacity:0.7; transition:background 0.3s; background:#1e3a5f; }
-        .std-foghorn { position:absolute; top:-28px; left:50%; transform:translateX(-50%) scale(0) rotate(0deg); font-size:20px; transition:transform 0.25s cubic-bezier(.34,1.56,.64,1); transform-origin:center bottom; user-select:none; }
-        .std-figure.is-hovered .std-foghorn { transform:translateX(-50%) scale(1.3) rotate(-15deg); }
-        .std-figure.is-hovered .std-avatar { transform: scale(1.15) translateY(-4px); }
+        .std-avatar {
+          width: 60px; height: 60px; border-radius: 50%;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 28px; transition: all 0.25s ease; border: 3px solid;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.14);
+        }
+        .std-seats { display:flex; gap:4px; margin-top:5px; justify-content:center; }
+        .std-seat { width:13px; height:10px; border-radius:3px 3px 0 0; opacity:0.7; transition:background 0.3s; background:#1e3a5f; }
+        .std-foghorn { position:absolute; top:-32px; left:50%; transform:translateX(-50%) scale(0) rotate(0deg); font-size:24px; transition:transform 0.25s cubic-bezier(.34,1.56,.64,1); transform-origin:center bottom; user-select:none; }
+        .std-figure.is-hovered .std-foghorn { transform:translateX(-50%) scale(1.35) rotate(-15deg); }
+        .std-figure.is-hovered .std-avatar { transform: scale(1.18) translateY(-5px); }
 
-        /* Speech bubble */
-        .std-bubble { position:absolute; bottom:calc(100% + 12px); background:#fff; border-radius:12px; padding:12px 16px; width:200px; box-shadow:0 8px 24px rgba(37,25,45,0.12); animation: stdPopIn 0.2s cubic-bezier(.34,1.56,.64,1); z-index:30; border:2px solid; }
-        .std-bubble--right { left:50%; transform:translateX(-8px); }
-        .std-bubble--left { right:50%; transform:translateX(8px); }
-        .std-bubble-tail-outer { position:absolute; bottom:-10px; width:0; height:0; border-left:8px solid transparent; border-right:8px solid transparent; }
-        .std-bubble-tail-inner { position:absolute; bottom:-7px; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:8px solid #fff; }
-        .std-bubble--right .std-bubble-tail-outer, .std-bubble--right .std-bubble-tail-inner { left:20px; }
-        .std-bubble--left .std-bubble-tail-outer, .std-bubble--left .std-bubble-tail-inner { right:20px; }
-        .std-bubble-label { font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; font-family:'Inter',sans-serif; }
-        .std-bubble-phrase { font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:4px; font-style:italic; }
-        .std-bubble-sub { font-size:11px; color:var(--muted); font-family:'Inter',sans-serif; line-height:1.4; }
+        /* Speech bubbles */
+        .std-bubble {
+          position:absolute; bottom:calc(100% + 14px); background:#fff;
+          border-radius:14px; padding:16px 20px; width:230px;
+          box-shadow:0 10px 32px rgba(37,25,45,0.15);
+          animation: stdPopIn 0.2s cubic-bezier(.34,1.56,.64,1);
+          z-index:30; border:2px solid;
+        }
+        .std-bubble--right { left:50%; transform:translateX(-10px); }
+        .std-bubble--left { right:50%; transform:translateX(10px); }
+        .std-bubble-tail-outer { position:absolute; bottom:-11px; width:0; height:0; border-left:9px solid transparent; border-right:9px solid transparent; border-top-width:11px; border-top-style:solid; }
+        .std-bubble-tail-inner { position:absolute; bottom:-8px; width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:9px solid #fff; }
+        .std-bubble--right .std-bubble-tail-outer, .std-bubble--right .std-bubble-tail-inner { left:22px; }
+        .std-bubble--left .std-bubble-tail-outer, .std-bubble--left .std-bubble-tail-inner { right:22px; }
+        .std-bubble-label { font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+        .std-bubble-phrase { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:6px; font-style:italic; }
+        .std-bubble-sub { font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); line-height:1.5; }
 
-        .std-hover-prompt { position:absolute; bottom:12px; right:16px; font-size:10px; color:rgba(255,255,255,0.55); font-family:'Inter',sans-serif; letter-spacing:1.5px; text-transform:uppercase; pointer-events:none; }
+        .std-hover-prompt { position:absolute; bottom:14px; right:18px; font-family:'Inter',sans-serif; font-size:11px; color:rgba(255,255,255,0.5); letter-spacing:1.5px; text-transform:uppercase; pointer-events:none; }
 
-        @keyframes stdPopIn { from { opacity:0; transform:scale(0.85) translateY(4px); } to { opacity:1; transform:scale(1) translateY(0); } }
+        @keyframes stdPopIn { from { opacity:0; transform:scale(0.88) translateY(6px); } to { opacity:1; transform:scale(1) translateY(0); } }
 
-        /* Payoff */
-        .std-payoff { max-width:600px; }
-        .std-rule { width:48px; height:3px; background:linear-gradient(90deg,var(--hot),#c8a94e); border-radius:2px; margin-bottom:1.8rem; }
-        .std-payoff-headline { font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,2.5vw,1.9rem); line-height:1.5; color:var(--text); margin:0 0 1rem; font-weight:500; }
+        /* Payoff — match site heading scale */
+        .std-payoff { max-width: 680px; }
+        .std-rule { width:52px; height:4px; background:linear-gradient(90deg,var(--hot),#c8a94e); border-radius:2px; margin-bottom:2rem; }
+        .std-payoff-headline {
+          font-family:'Cormorant Garamond',serif;
+          font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+          line-height:1.2;
+          color:var(--text);
+          margin:0 0 1.2rem;
+          font-weight:500;
+          letter-spacing:-0.01em;
+        }
         .std-payoff-headline em { color:var(--hot); font-style:italic; }
-        .std-payoff-body { font-family:'Cormorant Garamond',serif; font-size:1.05rem; line-height:1.7; color:var(--muted); margin:0; }
+        .std-payoff-body {
+          font-family:'Cormorant Garamond',serif;
+          font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+          line-height:1.7;
+          color:var(--muted);
+          margin:0;
+          font-weight:500;
+        }
       </style>
 
       <div id="stadium-root">
         <p class="std-intro">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer from a loved one:</p>
 
         <div class="std-scene" id="std-scene">
-          <!-- Sky -->
           <div class="std-sky"></div>
-          <!-- Clouds -->
-          <div class="std-cloud" style="left:8%;top:6%;width:80px;height:32px;box-shadow:20px -12px 0 rgba(255,255,255,0.7);"></div>
-          <div class="std-cloud" style="left:55%;top:4%;width:60px;height:24px;box-shadow:15px -9px 0 rgba(255,255,255,0.7);"></div>
-          <div class="std-cloud" style="left:78%;top:10%;width:50px;height:20px;box-shadow:12px -7px 0 rgba(255,255,255,0.7);"></div>
-          <!-- Stand -->
+          <div class="std-cloud" style="left:6%;top:5%;width:100px;height:40px;box-shadow:25px -15px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:48%;top:3%;width:80px;height:32px;box-shadow:20px -12px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:76%;top:9%;width:66px;height:26px;box-shadow:16px -10px 0 rgba(255,255,255,0.7);"></div>
           <div class="std-stand"></div>
-          <!-- Tier lines -->
-          <div class="std-tier-line" style="top:36%"></div>
-          <div class="std-tier-line" style="top:42%"></div>
-          <div class="std-tier-line" style="top:48%"></div>
-          <div class="std-tier-line" style="top:54%"></div>
-          <!-- Crowd filler -->
+          <div class="std-tier-line" style="top:34%"></div>
+          <div class="std-tier-line" style="top:40%"></div>
+          <div class="std-tier-line" style="top:46%"></div>
+          <div class="std-tier-line" style="top:52%"></div>
           <div class="std-tiers"></div>
-          <!-- Field -->
           <div class="std-field">
             <div class="std-field-stripes"></div>
             <div class="std-track-oval"></div>
@@ -1191,9 +1222,7 @@
             <div class="std-start-label">START</div>
             <div class="std-runner">🏃</div>
           </div>
-          <!-- Hover prompt -->
           <div class="std-hover-prompt">hover the crowd ↑</div>
-          <!-- Figures injected by JS -->
           <div id="std-figures"></div>
         </div>
 
