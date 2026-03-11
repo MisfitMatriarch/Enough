@@ -419,6 +419,20 @@
     .stage-form.active { display: block; }
     .body-strong { font-weight: 600; color: var(--text); }
 
+    @media (max-width: 768px) {
+      #ma-root > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
     /* ── Book 3D ── */
     @keyframes bookFloat {
       0%, 100% { transform: rotateY(-22deg) rotateX(3deg) translateY(0); }
@@ -984,132 +998,8 @@
     <!-- ═══════════════════════════════════════════
          JOURNEY / TOOLS
     ════════════════════════════════════════════ -->
-    <section class="section" id="journey">
-      <div class="container">
-
-        <div class="section-head centre narrow">
-          <h2 class="display section-title-lg">Six stages. One clear picture.</h2>
-          <p class="lead">If the problem is not simply effort, the next question is:<br /><span class="lead-strong">what is taking from you before you even reach the blocks?</span></p>
-        </div>
-
-        <div class="stages-layout">
-
-          <div class="stages-cards-wrap">
-
-          <!-- Column 1: Stages 1–3 -->
-          <div class="stages-col" role="tablist" aria-label="Journey stages 1 to 3">
-
-            <button class="stage-card active" type="button" data-stage="recognition" role="tab" aria-selected="true">
-              <span class="stage-kicker">Stage 1</span>
-              <h3>See where your starting line actually is.</h3>
-              <p>Before you can run, you need to know where you are actually starting from.</p>
-            </button>
-
-            <button class="stage-card" type="button" data-stage="clarity" role="tab" aria-selected="false">
-              <span class="stage-kicker">Stage 2</span>
-              <h3>Understand what you are carrying into the race.</h3>
-              <p>Not everyone enters the race with the same load.</p>
-            </button>
-
-            <button class="stage-card" type="button" data-stage="acceptance" role="tab" aria-selected="false">
-              <span class="stage-kicker">Stage 3</span>
-              <h3>Know which race you should be entering for this stage of training.</h3>
-              <p>Entering the wrong race does not make you a failure. It makes you someone who needed better information.</p>
-            </button>
-
-          </div>
-
-          <!-- Column 2: Stages 4–6 -->
-          <div class="stages-col" role="tablist" aria-label="Journey stages 4 to 6">
-
-            <button class="stage-card" type="button" data-stage="intervention" role="tab" aria-selected="false">
-              <span class="stage-kicker">Stage 4</span>
-              <h3>Find where you actually have ground to gain.</h3>
-              <p>The race you could actually win is happening in the next lane.</p>
-            </button>
-
-            <button class="stage-card" type="button" data-stage="alignment" role="tab" aria-selected="false">
-              <span class="stage-kicker">Stage 5</span>
-              <h3>Run the race that fits your design.</h3>
-              <p>Not someone else's race. Not the race you were told you should want.</p>
-            </button>
-
-            <button class="stage-card" type="button" data-stage="sustainability" role="tab" aria-selected="false">
-              <span class="stage-kicker">Stage 6</span>
-              <h3>This is where you get to arrive.</h3>
-              <p>Knowing how to stay in the race is only the beginning. This stage is about what you build once you are no longer spending everything just to survive it.</p>
-            </button>
-
-          </div><!-- /stages-col col-2 -->
-
-          </div><!-- /stages-cards-wrap -->
-
-          <!-- Column 3: Sticky content panel -->
-          <div class="stage-panel-wrap">
-            <div class="stage-panel-header">
-              <h3 id="previewTitle" class="display stage-preview-title">Recognition</h3>
-              <p id="previewText" class="body-copy muted">Before you can run, you need to know where you are actually starting from.</p>
-            </div>
-
-            <!-- STAGE 1: RECOGNITION -->
-            <div class="stage-form active" id="stage-recognition">
-              <p class="body-copy">Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.</p>
-              <p class="body-copy top-gap-sm">This stage helps you see what it cost you just to show up today, and where the rest is going, including the costs that never appear on any list.</p>
-              <div class="exoneration-box">
-                <p class="exoneration-text">You were not lazy. Not undisciplined. Not broken in ways that more effort would fix. You were running a different race in someone else's shoes on a track that was never built for your stride. That is not a personal failing. That is a structural problem. And structural problems have structural solutions.</p>
-              </div>
-              <p class="body-copy stage-forward-pull top-gap-sm">Next: find out what you are actually carrying into it.</p>
-            </div>
-
-            <!-- STAGE 2: CLARITY -->
-            <div class="stage-form" id="stage-clarity">
-              <p class="body-copy">Not everyone enters the race with the same load. This stage helps you see what you are actually carrying, your wiring, your history, your conditions, and where the weight is really coming from.</p>
-              <p class="body-copy top-gap-sm">This stage moves through the layers of what shapes your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.</p>
-              <p class="body-copy stage-forward-pull top-gap-sm">Next: find out which race is actually yours to run.</p>
-            </div>
-
-            <!-- STAGE 3: ACCEPTANCE -->
-            <div class="stage-form" id="stage-acceptance">
-              <p class="body-copy">If you are a novice runner who ends up in a race with Usain Bolt, the most important thing you can learn is not how to run faster. It is that no amount of training, discipline or willpower is going to close that gap in the way the crowd expects. Bolt has the biology, the years, the specific physical architecture for that race. You do not. That is not failure. That is information.</p>
-              <p class="body-copy top-gap-sm">Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything you have into a race you were never built for.</p>
-              <p class="body-copy top-gap-sm">This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.</p>
-              <p class="body-copy stage-forward-pull top-gap-sm">Next: find out where you actually have ground to gain.</p>
-            </div>
-
-            <!-- STAGE 4: INTERVENTION -->
-            <div class="stage-form" id="stage-intervention">
-              <p class="body-copy">The race you could actually win is happening in the next lane. This stage is about finding it.</p>
-              <p class="body-copy top-gap-sm">Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.</p>
-              <p class="body-copy stage-forward-pull top-gap-sm">Next: find out what the race that fits your design looks like.</p>
-            </div>
-
-            <!-- STAGE 5: ALIGNMENT -->
-            <div class="stage-form" id="stage-alignment">
-              <p class="body-copy">Not someone else's race. Not the race you were told you should want. The one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.</p>
-              <p class="body-copy top-gap-sm">This stage brings your design, your conditions and your pace together, and maps the relationships that restore against those that take from what you rely on.</p>
-              <p class="body-copy top-gap-sm">This stage also asks what you are actually running toward. Not the goal you inherited. Not the one you chose because it seemed achievable. The one that holds when everything else is stripped back. Without that, you can be perfectly aligned with your design and still be running toward someone else's finish line.</p>
-              <p class="body-copy stage-forward-pull top-gap-sm">Next: find out how you stay in it, and what you build once you do.</p>
-            </div>
-
-            <!-- STAGE 6: SUSTAINABILITY + ARRIVAL -->
-            <div class="stage-form" id="stage-sustainability">
-              <p class="body-copy">Sustainability is not the destination. It is the floor you build so something real can stand on it.</p>
-              <p class="body-copy top-gap-sm">Most people never get here. Not because the work is too hard, but because they run out of ground before they reach it. Every stage before this one was clearing that ground.</p>
-              <p class="body-copy top-gap-sm">This stage teaches you to read your own signals early. So the same collapse does not keep taking the same ground from you. So you stop white-knuckling through seasons that were asking you to rest.</p>
-              <p class="body-copy top-gap-sm">The loop is simple. You learn to read the signal before it becomes a collapse. You protect the ground you have cleared rather than waiting until it is gone. You adjust what you are carrying before the weight decides for you. And you stabilise, so the next season starts from here rather than from the beginning.</p>
-              <p class="body-copy top-gap-sm">And then, once the ground holds, this is where expression becomes possible. Where you start building intentionally rather than reactively. Where enough stops being a consolation and becomes a standard you actually set.</p>
-              <p class="body-copy top-gap-sm">Not enough as settling. Enough as sufficiency. As the thing you were always allowed to have.</p>
-              <p class="body-copy body-strong top-gap-sm">Your guide to the podium that means something to you is mapped out in ENOUGH.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="container narrow centre top-gap-md">
-          <p class="body-copy body-strong">The six stages in ENOUGH map the full picture.<br />From where your starting line actually is, to the podium that actually means something to you.</p>
-        </div>
-
-      </div>
+    <section id="journey" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+      <div id="ma-root" style="max-width:1100px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);"></div>
     </section>
 
     <!-- ═══════════════════════════════════════════
@@ -1305,60 +1195,348 @@
   </main>
 
   <script>
-    const previewMap = {
-      recognition: {
-        title: "Recognition",
-        text: "See where your starting line actually is. Before you can run, you need to know where you are actually starting from."
-      },
-      clarity: {
-        title: "Clarity",
-        text: "Understand what you are carrying into the race. Not everyone enters with the same load."
-      },
-      acceptance: {
-        title: "Acceptance",
-        text: "Know which race you should be entering for this stage of training. Acceptance is not giving up. It is stopping the bleeding."
-      },
-      intervention: {
-        title: "Intervention",
-        text: "Find where you actually have ground to gain. The race you could actually win is happening in the next lane."
-      },
-      alignment: {
-        title: "Alignment",
-        text: "Run the race that fits your design. Not someone else's race. Not the race you were told you should want."
-      },
-      sustainability: {
-        title: "Sustainability",
-        text: "This is where you get to arrive. Knowing how to stay in the race is only the beginning."
+    // ── Misfit Architecture Interactive Component ──
+    (function() {
+      const C = {
+        bg:       '#fcf8f6',
+        bgCard:   '#ffffff',
+        bgSubtle: '#f7f1f3',
+        text:     '#25192d',
+        textMid:  '#63596d',
+        textDim:  '#9b93ab',
+        border:   'rgba(37,25,45,0.10)',
+      };
+
+      const stages = [
+        {
+          id: 'recognition', label: 'Recognition', number: '01',
+          color: '#f04aa7', icon: '⊙',
+          subtitle: 'See where your starting line actually is.',
+          raceTag: 'Before the gun fires',
+          tools: ['Arrival Ledger', 'Misfit Tax Ledger'],
+          insight: 'You were not lazy. You were running a different race in someone else\'s shoes on a track never built for your stride.',
+          body: [
+            'Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.',
+            'This stage helps you see what it cost you just to show up today, and where the rest is going — including the costs that never appear on any list.',
+          ],
+          exoneration: 'You were not lazy. Not undisciplined. Not broken in ways that more effort would fix. You were running a different race in someone else\'s shoes on a track that was never built for your stride. That is not a personal failing. That is a structural problem. And structural problems have structural solutions.',
+          forward: 'Next: find out what you are actually carrying into it.',
+          flow: [
+            { node: 'Where did you start today?', type: 'question' },
+            { node: 'Arrival Cost', type: 'measure', sub: 'What it cost before the race begins' },
+            { node: 'Visible Costs', type: 'branch', sub: 'What you can name' },
+            { node: 'Invisible Taxes', type: 'branch', sub: 'Masking · Translation · Structural friction' },
+            { node: 'Your actual starting position', type: 'output' },
+          ],
+        },
+        {
+          id: 'clarity', label: 'Clarity', number: '02',
+          color: '#1a9fc0', icon: '◈',
+          subtitle: 'Not everyone enters the race with the same load.',
+          raceTag: 'What you\'re carrying',
+          tools: ['Capacity Map', 'Load Domain Diagnostic', 'Capacity Drainers'],
+          insight: 'Capacity is shaped by architecture, not just effort. Your wiring, your history, your conditions — all of it is weight.',
+          body: [
+            'Not everyone enters the race with the same load. This stage helps you see what you are actually carrying — your wiring, your history, your conditions — and where the weight is really coming from.',
+            'This stage moves through the layers of what shapes your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.',
+          ],
+          forward: 'Next: find out which race is actually yours to run.',
+          flow: [
+            { node: 'What are you carrying?', type: 'question' },
+            { node: 'Nine Layers of Capacity', type: 'measure', sub: 'Neurology through to current state' },
+            { node: 'Load Domain', type: 'branch', sub: 'Work · Body · Relationships · Identity · Environment' },
+            { node: 'Capacity Drainers', type: 'branch', sub: 'Patterns taking from what you rely on' },
+            { node: 'Your actual load entering the race', type: 'output' },
+          ],
+        },
+        {
+          id: 'acceptance', label: 'Acceptance', number: '03',
+          color: '#7450b6', icon: '◎',
+          subtitle: 'Know which race you should be entering right now.',
+          raceTag: 'Choosing the right race',
+          tools: ['Structural Ceiling Map'],
+          insight: 'Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything into a race you were never built for.',
+          body: [
+            'If you are a novice runner who ends up in a race with Usain Bolt, the most important thing you can learn is not how to run faster. It is that no amount of training, discipline or willpower is going to close that gap in the way the crowd expects. Bolt has the biology, the years, the specific physical architecture for that race. You do not. That is not failure. That is information.',
+            'This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.',
+          ],
+          forward: 'Next: find out where you actually have ground to gain.',
+          flow: [
+            { node: 'What are you pushing against?', type: 'question' },
+            { node: 'Control', type: 'branch', sub: 'Changes with your direct effort' },
+            { node: 'Influence', type: 'branch', sub: 'Shifts with conditions or support' },
+            { node: 'Structural Ceiling', type: 'branch', sub: 'Not your race to run right now' },
+            { node: 'Where your effort stops bleeding', type: 'output' },
+          ],
+        },
+        {
+          id: 'intervention', label: 'Intervention', number: '04',
+          color: '#c49a2a', icon: '⊕',
+          subtitle: 'The race you could actually win is in the next lane.',
+          raceTag: 'Finding your lane',
+          tools: ['Four Levers'],
+          insight: 'Not all effort moves you forward. Small shifts in the right place change the entire system.',
+          body: [
+            'The race you could actually win is happening in the next lane. This stage is about finding it.',
+            'Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.',
+          ],
+          forward: 'Next: find out what the race that fits your design looks like.',
+          flow: [
+            { node: 'Where is there ground to gain?', type: 'question' },
+            { node: 'Reduce', type: 'branch', sub: 'What is taking without returning' },
+            { node: 'Protect', type: 'branch', sub: 'What is working right now' },
+            { node: 'Restore', type: 'branch', sub: 'What has been spent' },
+            { node: 'Add', type: 'branch', sub: 'What was always missing' },
+            { node: 'Your leverage points', type: 'output' },
+          ],
+        },
+        {
+          id: 'alignment', label: 'Alignment', number: '05',
+          color: '#2a8c5a', icon: '⊞',
+          subtitle: 'Run the race that fits your design.',
+          raceTag: 'Running your race',
+          tools: ['Calibration Map', 'Relational Energy Ledger'],
+          insight: 'Without knowing what you are actually running toward, you can be perfectly aligned with your design and still be running toward someone else\'s finish line.',
+          body: [
+            'Not someone else\'s race. Not the race you were told you should want. The one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.',
+            'This stage also asks what you are actually running toward. Not the goal you inherited. Not the one you chose because it seemed achievable. The one that holds when everything else is stripped back.',
+          ],
+          forward: 'Next: find out how you stay in it, and what you build once you do.',
+          flow: [
+            { node: 'What are you actually running toward?', type: 'question' },
+            { node: 'Design', type: 'branch', sub: 'How you are actually built' },
+            { node: 'Conditions', type: 'branch', sub: 'What your environment supports' },
+            { node: 'Pace', type: 'branch', sub: 'What this season asks for' },
+            { node: 'Relational Energy', type: 'branch', sub: 'Who restores vs who takes' },
+            { node: 'Your actual finish line', type: 'output' },
+          ],
+        },
+        {
+          id: 'sustainability', label: 'Sustainability', number: '06',
+          color: '#63596d', icon: '↻',
+          subtitle: 'This is where you get to arrive.',
+          raceTag: 'Staying in the race',
+          tools: ['Recalibration Loop'],
+          insight: 'Sustainability is not the destination. It is the floor you build so something real can stand on it.',
+          body: [
+            'Sustainability is not the destination. It is the floor you build so something real can stand on it.',
+            'Most people never get here. Not because the work is too hard, but because they run out of ground before they reach it. Every stage before this one was clearing that ground.',
+            'The loop is simple. You learn to read the signal before it becomes a collapse. You protect the ground you have cleared rather than waiting until it is gone. You adjust what you are carrying before the weight decides for you. And you stabilise, so the next season starts from here rather than from the beginning.',
+          ],
+          closing: 'Your guide to the podium that means something to you is mapped out in ENOUGH.',
+          flow: [
+            { node: 'Signal', type: 'loop', sub: 'Read it before it becomes collapse' },
+            { node: 'Protect', type: 'loop', sub: 'Guard the ground you have cleared' },
+            { node: 'Adjust', type: 'loop', sub: 'Change the load before it decides for you' },
+            { node: 'Stabilise', type: 'loop', sub: 'Next season starts from here' },
+            { node: 'Expression · Building · Enough', type: 'output' },
+          ],
+        },
+      ];
+
+      let activeIdx = 0;
+
+      function arrow(color) {
+        return `<div style="display:flex;flex-direction:column;align-items:center;margin:4px 0;">
+          <div style="width:1px;height:16px;background:${color}60;"></div>
+          <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid ${color}60;"></div>
+        </div>`;
       }
-    };
 
-    const stageButtons = document.querySelectorAll("[data-stage]");
-    const stageForms = document.querySelectorAll(".stage-form");
-    const previewTitle = document.getElementById("previewTitle");
-    const previewText = document.getElementById("previewText");
+      function flowDiagram(stage) {
+        const color = stage.color;
+        const flow = stage.flow;
+        const isLoop = flow[0].type === 'loop';
 
-    stageButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const target = button.dataset.stage;
-
-        stageButtons.forEach((item) => {
-          item.classList.remove("active");
-          item.setAttribute("aria-selected", "false");
-        });
-        stageForms.forEach((form) => form.classList.remove("active"));
-
-        button.classList.add("active");
-        button.setAttribute("aria-selected", "true");
-
-        const activeForm = document.getElementById(`stage-${target}`);
-        if (activeForm) activeForm.classList.add("active");
-
-        if (previewMap[target]) {
-          previewTitle.textContent = previewMap[target].title;
-          previewText.textContent = previewMap[target].text;
+        if (isLoop) {
+          const loopItems = flow.filter(f => f.type === 'loop');
+          const output = flow.find(f => f.type === 'output');
+          return `
+            <div style="position:relative;padding:24px 0;">
+              <div style="display:flex;justify-content:center;margin-bottom:28px;">
+                <div style="position:relative;width:210px;height:210px;">
+                  <div style="position:absolute;inset:0;border-radius:50%;border:2px dashed ${color}35;"></div>
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;color:${color}70;font-family:'Cormorant Garamond',serif;">↻</div>
+                  ${loopItems.map((item, i) => {
+                    const positions = [{top:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',right:'4px',transform:'translateY(-50%)'},{bottom:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',left:'4px',transform:'translateY(-50%)'}];
+                    const pos = positions[i];
+                    const posStr = Object.entries(pos).map(([k,v])=>`${k}:${v}`).join(';');
+                    return `<div style="position:absolute;${posStr};width:82px;background:${color}12;border:1px solid ${color}45;border-radius:8px;padding:6px 6px;text-align:center;">
+                      <div style="font-size:10px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;line-height:1.1;margin-bottom:3px;">${item.node}</div>
+                      <div style="font-size:8px;color:${C.textDim};font-family:'Inter',sans-serif;line-height:1.3;">${item.sub}</div>
+                    </div>`;
+                  }).join('')}
+                </div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:9px;letter-spacing:2px;color:${C.textDim};font-family:'Inter',sans-serif;text-transform:uppercase;margin-bottom:8px;">then</div>
+                <div style="display:inline-block;padding:10px 20px;background:${color}15;border:1px solid ${color}55;border-radius:20px;font-size:12px;color:${color};font-family:'Cormorant Garamond',serif;letter-spacing:0.3px;">${output.node}</div>
+              </div>
+            </div>`;
         }
-      });
-    });
+
+        const question = flow.find(f => f.type === 'question');
+        const measure = flow.find(f => f.type === 'measure');
+        const branches = flow.filter(f => f.type === 'branch');
+        const output = flow.find(f => f.type === 'output');
+
+        return `
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 0;">
+            <div style="padding:10px 20px;background:${C.bgSubtle};border:1px solid ${color};border-radius:24px;font-size:12px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;font-style:italic;max-width:90%;">${question.node}</div>
+            ${arrow(color)}
+            ${measure ? `
+              <div style="padding:8px 16px;background:${color}12;border:1px solid ${color}35;border-radius:8px;font-size:11px;color:${color};font-family:'Inter',sans-serif;letter-spacing:0.3px;text-align:center;max-width:90%;">
+                <div style="font-weight:700;margin-bottom:2px;">${measure.node}</div>
+                <div style="font-size:9px;color:${C.textDim};letter-spacing:0.5px;">${measure.sub}</div>
+              </div>
+              ${arrow(color)}
+            ` : ''}
+            <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;width:100%;">
+              ${branches.map(b => `
+                <div style="flex:1 1 80px;min-width:70px;max-width:${branches.length > 3 ? '90px' : '120px'};padding:10px 6px;background:${C.bgCard};border:1px solid ${color}30;border-top:2px solid ${color};border-radius:0 0 8px 8px;text-align:center;">
+                  <div style="font-size:10px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;margin-bottom:4px;line-height:1.2;">${b.node}</div>
+                  <div style="font-size:8px;color:${C.textDim};line-height:1.35;font-family:'Inter',sans-serif;">${b.sub}</div>
+                </div>`).join('')}
+            </div>
+            ${arrow(color)}
+            <div style="padding:10px 24px;background:${color}15;border:1px solid ${color};border-radius:24px;font-size:12px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;letter-spacing:0.2px;max-width:90%;">${output.node}</div>
+          </div>`;
+      }
+
+      function renderTrack() {
+        const dots = stages.map((s, i) => {
+          const pct = (i / (stages.length - 1)) * 100;
+          const active = i <= activeIdx;
+          const current = i === activeIdx;
+          return `<div style="position:absolute;left:${pct}%;transform:translateX(-50%);width:${current?13:active?10:8}px;height:${current?13:active?10:8}px;border-radius:50%;background:${active?s.color:C.border};border:2px solid ${active?s.color:C.bgCard};transition:all 0.3s ease;box-shadow:${current?`0 0 12px ${s.color}`:  'none'};z-index:2;top:50%;margin-top:${current?-6.5:active?-5:-4}px;"></div>`;
+        }).join('');
+        const progressPct = ((activeIdx + 1) / stages.length) * 100;
+        const currentColor = stages[activeIdx].color;
+        return `
+          <div style="position:relative;height:40px;margin:0 0 28px;display:flex;align-items:center;">
+            <div style="position:absolute;left:0;right:0;height:2px;background:${C.border};border-radius:2px;"></div>
+            <div style="position:absolute;left:0;height:2px;width:${progressPct}%;background:linear-gradient(90deg,#f04aa7,${currentColor});transition:width 0.5s ease;box-shadow:0 0 8px ${currentColor}60;border-radius:2px;"></div>
+            ${dots}
+            <div style="position:absolute;left:0;top:-16px;font-family:'Inter',sans-serif;font-size:8px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Start</div>
+            <div style="position:absolute;right:0;top:-16px;font-family:'Inter',sans-serif;font-size:8px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Enough</div>
+          </div>`;
+      }
+
+      function renderCards() {
+        return `<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">
+          ${stages.map((s, i) => {
+            const active = i === activeIdx;
+            return `<button onclick="maSetStage(${i})" style="cursor:pointer;padding:16px 12px;background:${active?C.bgCard:C.bg};border:1px solid ${active?s.color:C.border};border-top:3px solid ${active?s.color:C.border};border-radius:10px;transition:all 0.2s ease;box-shadow:${active?`0 0 20px ${s.color}18`:'none'};text-align:left;width:100%;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+                <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:2px;">${s.number}</div>
+                <div style="font-size:14px;opacity:${active?1:0.4};">${s.icon}</div>
+              </div>
+              <div style="font-size:13px;font-family:'Cormorant Garamond',serif;color:${active?s.color:C.textMid};font-weight:600;margin-bottom:4px;line-height:1.2;">${s.label}</div>
+              <div style="font-size:8px;font-family:'Inter',sans-serif;color:${C.textDim};letter-spacing:0.8px;text-transform:uppercase;line-height:1.3;">${s.raceTag}</div>
+            </button>`;
+          }).join('')}
+        </div>`;
+      }
+
+      function renderLeft(stage) {
+        const color = stage.color;
+        const bodyParas = stage.body.map(p => `<p style="margin:0 0 1rem;font-size:0.95rem;font-family:'Cormorant Garamond',serif;line-height:1.7;color:${C.text};">${p}</p>`).join('');
+        const exon = stage.exoneration ? `
+          <div style="margin:1.2rem 0;padding:1.4rem 1.8rem;background:${C.text};border-radius:14px;">
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.55;letter-spacing:-0.01em;">${stage.exoneration}</p>
+          </div>` : '';
+        const forward = stage.forward ? `<p style="margin:1rem 0 0;font-size:0.92rem;font-style:italic;color:${color};font-weight:500;font-family:'Cormorant Garamond',serif;">${stage.forward}</p>` : '';
+        const closing = stage.closing ? `<p style="margin:1rem 0 0;font-size:0.95rem;font-weight:600;color:${C.text};font-family:'Cormorant Garamond',serif;">${stage.closing}</p>` : '';
+
+        const prev = activeIdx > 0 ? `<button onclick="maSetStage(${activeIdx-1})" style="padding:8px 18px;background:transparent;border:1px solid ${C.border};border-radius:20px;color:${C.textMid};font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;letter-spacing:0.8px;">← ${stages[activeIdx-1].label}</button>` : '';
+        const next = activeIdx < stages.length - 1 ? `<button onclick="maSetStage(${activeIdx+1})" style="padding:8px 18px;background:${color};border:none;border-radius:20px;color:#fff;font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;font-weight:700;letter-spacing:0.8px;">Next: ${stages[activeIdx+1].label} →</button>` : `<div style="padding:8px 18px;background:${color}18;border:1px solid ${color};border-radius:20px;font-size:11px;font-family:'Cormorant Garamond',serif;color:${color};font-style:italic;">You were always enough.</div>`;
+
+        return `
+          <div>
+            <div style="margin-bottom:20px;">
+              <div style="display:inline-block;padding:4px 12px;background:${color}12;border:1px solid ${color}35;border-radius:20px;font-family:'Inter',sans-serif;font-size:9px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">${stage.raceTag}</div>
+              <h2 style="margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.4rem);font-family:'Cormorant Garamond',serif;font-weight:500;color:${color};line-height:1.1;">${stage.label}</h2>
+              <p style="margin:0;font-size:1rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.65;">${stage.subtitle}</p>
+            </div>
+
+            <div style="margin-bottom:22px;">
+              <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Tools in this stage</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                ${stage.tools.map(t => `<span style="padding:5px 12px;background:${C.bgSubtle};border:1px solid ${color}30;border-radius:20px;font-size:11px;color:${C.textMid};font-family:'Cormorant Garamond',serif;">${t}</span>`).join('')}
+              </div>
+            </div>
+
+            <div style="margin-bottom:22px;">${bodyParas}${exon}${forward}${closing}</div>
+
+            <div style="padding:18px 22px;background:${color}08;border:1px solid ${color}25;border-left:3px solid ${color};border-radius:0 12px 12px 0;margin-bottom:24px;">
+              <div style="font-family:'Inter',sans-serif;font-size:8px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">The verdict</div>
+              <p style="margin:0;font-size:0.9rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.7;font-style:italic;">"${stage.insight}"</p>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">${prev}${next}</div>
+          </div>`;
+      }
+
+      function renderRight(stage) {
+        const color = stage.color;
+        const miniMap = stages.map((s, i) => {
+          const isActive = i === activeIdx;
+          return `<div onclick="maSetStage(${i})" style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:5px 8px;border-radius:6px;background:${isActive?`${s.color}12`:'transparent'};transition:background 0.2s;">
+            <div style="width:6px;height:6px;border-radius:50%;background:${i<=activeIdx?s.color:C.border};flex-shrink:0;"></div>
+            <div style="font-size:10px;font-family:'Cormorant Garamond',serif;color:${isActive?s.color:C.textDim};">${s.label}</div>
+            <div style="font-size:8px;font-family:'Inter',sans-serif;color:${C.textDim};margin-left:auto;letter-spacing:0.3px;">${s.raceTag}</div>
+          </div>`;
+        }).join('');
+
+        return `
+          <div>
+            <div style="background:${C.bgCard};border:1px solid ${C.border};border-radius:16px;padding:22px 18px;min-height:360px;margin-bottom:14px;">
+              <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;">How this stage works</div>
+              ${flowDiagram(stage)}
+            </div>
+            <div style="padding:14px 16px;background:${C.bgCard};border:1px solid ${C.border};border-radius:12px;">
+              <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Where this fits</div>
+              ${miniMap}
+            </div>
+          </div>`;
+      }
+
+      function render() {
+        const stage = stages[activeIdx];
+        const root = document.getElementById('ma-root');
+        if (!root) return;
+
+        root.innerHTML = `
+          <div style="border-bottom:1px solid ${C.border};padding:28px 0 24px;background:${C.bgSubtle};margin:0 calc(-1 * clamp(1.2rem,4vw,2.5rem));padding-left:clamp(1.2rem,4vw,2.5rem);padding-right:clamp(1.2rem,4vw,2.5rem);border-radius:18px 18px 0 0;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
+              <div>
+                <div style="font-family:'Inter',sans-serif;font-size:9px;letter-spacing:2.5px;color:${C.textDim};text-transform:uppercase;margin-bottom:6px;">The Misfit Architecture</div>
+                <h2 style="margin:0 0 4px;font-size:clamp(1.4rem,2.5vw,2rem);font-family:'Cormorant Garamond',serif;font-weight:500;color:${C.text};letter-spacing:-0.3px;">ENOUGH</h2>
+                <div style="font-size:11px;color:${C.textMid};font-family:'Cormorant Garamond',serif;font-style:italic;">Six stages. One race. Your design.</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1px;margin-bottom:4px;">STAGE ${stage.number} OF 06</div>
+                <div style="font-size:13px;font-family:'Cormorant Garamond',serif;color:${stage.color};">${stage.label}</div>
+              </div>
+            </div>
+            ${renderTrack()}
+            ${renderCards()}
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:36px;">
+            ${renderLeft(stage)}
+            ${renderRight(stage)}
+          </div>`;
+      }
+
+      window.maSetStage = function(idx) {
+        activeIdx = idx;
+        render();
+      };
+
+      document.addEventListener('DOMContentLoaded', render);
+      if (document.readyState !== 'loading') render();
+    })();
 
     // ── Spotlight sections: theatrical dark moments ──
     const spotlightObserver = new IntersectionObserver((entries) => {
