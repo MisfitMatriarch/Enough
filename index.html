@@ -1356,21 +1356,21 @@
               <div style="display:flex;justify-content:center;margin-bottom:28px;">
                 <div style="position:relative;width:210px;height:210px;">
                   <div style="position:absolute;inset:0;border-radius:50%;border:2px dashed ${color}35;"></div>
-                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:28px;color:${color}70;font-family:'Cormorant Garamond',serif;">↻</div>
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:32px;color:${color}70;font-family:'Cormorant Garamond',serif;">↻</div>
                   ${loopItems.map((item, i) => {
                     const positions = [{top:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',right:'4px',transform:'translateY(-50%)'},{bottom:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',left:'4px',transform:'translateY(-50%)'}];
                     const pos = positions[i];
                     const posStr = Object.entries(pos).map(([k,v])=>`${k}:${v}`).join(';');
-                    return `<div style="position:absolute;${posStr};width:82px;background:${color}12;border:1px solid ${color}45;border-radius:8px;padding:6px 6px;text-align:center;">
-                      <div style="font-size:10px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;line-height:1.1;margin-bottom:3px;">${item.node}</div>
-                      <div style="font-size:8px;color:${C.textDim};font-family:'Inter',sans-serif;line-height:1.3;">${item.sub}</div>
+                    return `<div style="position:absolute;${posStr};width:88px;background:${color}12;border:1px solid ${color}45;border-radius:8px;padding:7px 6px;text-align:center;">
+                      <div style="font-size:13px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;line-height:1.1;margin-bottom:4px;">${item.node}</div>
+                      <div style="font-size:10px;color:${C.textDim};font-family:'Inter',sans-serif;line-height:1.3;">${item.sub}</div>
                     </div>`;
                   }).join('')}
                 </div>
               </div>
               <div style="text-align:center;">
-                <div style="font-size:9px;letter-spacing:2px;color:${C.textDim};font-family:'Inter',sans-serif;text-transform:uppercase;margin-bottom:8px;">then</div>
-                <div style="display:inline-block;padding:10px 20px;background:${color}15;border:1px solid ${color}55;border-radius:20px;font-size:12px;color:${color};font-family:'Cormorant Garamond',serif;letter-spacing:0.3px;">${output.node}</div>
+                <div style="font-size:11px;letter-spacing:2px;color:${C.textDim};font-family:'Inter',sans-serif;text-transform:uppercase;margin-bottom:8px;">then</div>
+                <div style="display:inline-block;padding:10px 20px;background:${color}15;border:1px solid ${color}55;border-radius:20px;font-size:15px;color:${color};font-family:'Cormorant Garamond',serif;letter-spacing:0.3px;">${output.node}</div>
               </div>
             </div>`;
         }
@@ -1382,24 +1382,24 @@
 
         return `
           <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 0;">
-            <div style="padding:10px 20px;background:${C.bgSubtle};border:1px solid ${color};border-radius:24px;font-size:12px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;font-style:italic;max-width:90%;">${question.node}</div>
+            <div style="padding:12px 22px;background:${C.bgSubtle};border:1px solid ${color};border-radius:24px;font-size:15px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;font-style:italic;max-width:90%;">${question.node}</div>
             ${arrow(color)}
             ${measure ? `
-              <div style="padding:8px 16px;background:${color}12;border:1px solid ${color}35;border-radius:8px;font-size:11px;color:${color};font-family:'Inter',sans-serif;letter-spacing:0.3px;text-align:center;max-width:90%;">
-                <div style="font-weight:700;margin-bottom:2px;">${measure.node}</div>
-                <div style="font-size:9px;color:${C.textDim};letter-spacing:0.5px;">${measure.sub}</div>
+              <div style="padding:10px 18px;background:${color}12;border:1px solid ${color}35;border-radius:8px;font-size:14px;color:${color};font-family:'Inter',sans-serif;letter-spacing:0.3px;text-align:center;max-width:90%;">
+                <div style="font-weight:700;margin-bottom:3px;">${measure.node}</div>
+                <div style="font-size:11px;color:${C.textDim};letter-spacing:0.5px;">${measure.sub}</div>
               </div>
               ${arrow(color)}
             ` : ''}
             <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;width:100%;">
               ${branches.map(b => `
-                <div style="flex:1 1 80px;min-width:70px;max-width:${branches.length > 3 ? '90px' : '120px'};padding:10px 6px;background:${C.bgCard};border:1px solid ${color}30;border-top:2px solid ${color};border-radius:0 0 8px 8px;text-align:center;">
-                  <div style="font-size:10px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;margin-bottom:4px;line-height:1.2;">${b.node}</div>
-                  <div style="font-size:8px;color:${C.textDim};line-height:1.35;font-family:'Inter',sans-serif;">${b.sub}</div>
+                <div style="flex:1 1 80px;min-width:70px;max-width:${branches.length > 3 ? '90px' : '120px'};padding:12px 8px;background:${C.bgCard};border:1px solid ${color}30;border-top:2px solid ${color};border-radius:0 0 8px 8px;text-align:center;">
+                  <div style="font-size:13px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;margin-bottom:5px;line-height:1.2;">${b.node}</div>
+                  <div style="font-size:11px;color:${C.textDim};line-height:1.35;font-family:'Inter',sans-serif;">${b.sub}</div>
                 </div>`).join('')}
             </div>
             ${arrow(color)}
-            <div style="padding:10px 24px;background:${color}15;border:1px solid ${color};border-radius:24px;font-size:12px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;letter-spacing:0.2px;max-width:90%;">${output.node}</div>
+            <div style="padding:12px 26px;background:${color}15;border:1px solid ${color};border-radius:24px;font-size:15px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;letter-spacing:0.2px;max-width:90%;">${output.node}</div>
           </div>`;
       }
 
@@ -1417,8 +1417,8 @@
             <div style="position:absolute;left:0;right:0;height:2px;background:${C.border};border-radius:2px;"></div>
             <div style="position:absolute;left:0;height:2px;width:${progressPct}%;background:linear-gradient(90deg,#f04aa7,${currentColor});transition:width 0.5s ease;box-shadow:0 0 8px ${currentColor}60;border-radius:2px;"></div>
             ${dots}
-            <div style="position:absolute;left:0;top:-16px;font-family:'Inter',sans-serif;font-size:8px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Start</div>
-            <div style="position:absolute;right:0;top:-16px;font-family:'Inter',sans-serif;font-size:8px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Enough</div>
+            <div style="position:absolute;left:0;top:-18px;font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Start</div>
+            <div style="position:absolute;right:0;top:-18px;font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Enough</div>
           </div>`;
       }
 
@@ -1428,11 +1428,11 @@
             const active = i === activeIdx;
             return `<button onclick="maSetStage(${i})" style="cursor:pointer;padding:16px 12px;background:${active?C.bgCard:C.bg};border:1px solid ${active?s.color:C.border};border-top:3px solid ${active?s.color:C.border};border-radius:10px;transition:all 0.2s ease;box-shadow:${active?`0 0 20px ${s.color}18`:'none'};text-align:left;width:100%;">
               <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
-                <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:2px;">${s.number}</div>
-                <div style="font-size:14px;opacity:${active?1:0.4};">${s.icon}</div>
+                <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:2px;">${s.number}</div>
+                <div style="font-size:18px;opacity:${active?1:0.4};">${s.icon}</div>
               </div>
-              <div style="font-size:13px;font-family:'Cormorant Garamond',serif;color:${active?s.color:C.textMid};font-weight:600;margin-bottom:4px;line-height:1.2;">${s.label}</div>
-              <div style="font-size:8px;font-family:'Inter',sans-serif;color:${C.textDim};letter-spacing:0.8px;text-transform:uppercase;line-height:1.3;">${s.raceTag}</div>
+              <div style="font-size:16px;font-family:'Cormorant Garamond',serif;color:${active?s.color:C.textMid};font-weight:600;margin-bottom:5px;line-height:1.2;">${s.label}</div>
+              <div style="font-size:10px;font-family:'Inter',sans-serif;color:${C.textDim};letter-spacing:0.8px;text-transform:uppercase;line-height:1.3;">${s.raceTag}</div>
             </button>`;
           }).join('')}
         </div>`;
@@ -1440,37 +1440,37 @@
 
       function renderLeft(stage) {
         const color = stage.color;
-        const bodyParas = stage.body.map(p => `<p style="margin:0 0 1rem;font-size:0.95rem;font-family:'Cormorant Garamond',serif;line-height:1.7;color:${C.text};">${p}</p>`).join('');
+        const bodyParas = stage.body.map(p => `<p style="margin:0 0 1rem;font-size:1.1rem;font-family:'Cormorant Garamond',serif;line-height:1.7;color:${C.text};">${p}</p>`).join('');
         const exon = stage.exoneration ? `
           <div style="margin:1.2rem 0;padding:1.4rem 1.8rem;background:${C.text};border-radius:14px;">
-            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.55;letter-spacing:-0.01em;">${stage.exoneration}</p>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.55;letter-spacing:-0.01em;">${stage.exoneration}</p>
           </div>` : '';
-        const forward = stage.forward ? `<p style="margin:1rem 0 0;font-size:0.92rem;font-style:italic;color:${color};font-weight:500;font-family:'Cormorant Garamond',serif;">${stage.forward}</p>` : '';
-        const closing = stage.closing ? `<p style="margin:1rem 0 0;font-size:0.95rem;font-weight:600;color:${C.text};font-family:'Cormorant Garamond',serif;">${stage.closing}</p>` : '';
+        const forward = stage.forward ? `<p style="margin:1rem 0 0;font-size:1.05rem;font-style:italic;color:${color};font-weight:500;font-family:'Cormorant Garamond',serif;">${stage.forward}</p>` : '';
+        const closing = stage.closing ? `<p style="margin:1rem 0 0;font-size:1.1rem;font-weight:600;color:${C.text};font-family:'Cormorant Garamond',serif;">${stage.closing}</p>` : '';
 
-        const prev = activeIdx > 0 ? `<button onclick="maSetStage(${activeIdx-1})" style="padding:8px 18px;background:transparent;border:1px solid ${C.border};border-radius:20px;color:${C.textMid};font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;letter-spacing:0.8px;">← ${stages[activeIdx-1].label}</button>` : '';
-        const next = activeIdx < stages.length - 1 ? `<button onclick="maSetStage(${activeIdx+1})" style="padding:8px 18px;background:${color};border:none;border-radius:20px;color:#fff;font-size:11px;font-family:'Inter',sans-serif;cursor:pointer;font-weight:700;letter-spacing:0.8px;">Next: ${stages[activeIdx+1].label} →</button>` : `<div style="padding:8px 18px;background:${color}18;border:1px solid ${color};border-radius:20px;font-size:11px;font-family:'Cormorant Garamond',serif;color:${color};font-style:italic;">You were always enough.</div>`;
+        const prev = activeIdx > 0 ? `<button onclick="maSetStage(${activeIdx-1})" style="padding:10px 22px;background:transparent;border:1px solid ${C.border};border-radius:20px;color:${C.textMid};font-size:14px;font-family:'Inter',sans-serif;cursor:pointer;letter-spacing:0.8px;">← ${stages[activeIdx-1].label}</button>` : '';
+        const next = activeIdx < stages.length - 1 ? `<button onclick="maSetStage(${activeIdx+1})" style="padding:10px 22px;background:${color};border:none;border-radius:20px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;cursor:pointer;font-weight:700;letter-spacing:0.8px;">Next: ${stages[activeIdx+1].label} →</button>` : `<div style="padding:10px 22px;background:${color}18;border:1px solid ${color};border-radius:20px;font-size:15px;font-family:'Cormorant Garamond',serif;color:${color};font-style:italic;">You were always enough.</div>`;
 
         return `
           <div>
             <div style="margin-bottom:20px;">
-              <div style="display:inline-block;padding:4px 12px;background:${color}12;border:1px solid ${color}35;border-radius:20px;font-family:'Inter',sans-serif;font-size:9px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">${stage.raceTag}</div>
+              <div style="display:inline-block;padding:4px 12px;background:${color}12;border:1px solid ${color}35;border-radius:20px;font-family:'Inter',sans-serif;font-size:11px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">${stage.raceTag}</div>
               <h2 style="margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.4rem);font-family:'Cormorant Garamond',serif;font-weight:500;color:${color};line-height:1.1;">${stage.label}</h2>
-              <p style="margin:0;font-size:1rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.65;">${stage.subtitle}</p>
+              <p style="margin:0;font-size:1.15rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.65;">${stage.subtitle}</p>
             </div>
 
             <div style="margin-bottom:22px;">
-              <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Tools in this stage</div>
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Tools in this stage</div>
               <div style="display:flex;flex-wrap:wrap;gap:6px;">
-                ${stage.tools.map(t => `<span style="padding:5px 12px;background:${C.bgSubtle};border:1px solid ${color}30;border-radius:20px;font-size:11px;color:${C.textMid};font-family:'Cormorant Garamond',serif;">${t}</span>`).join('')}
+                ${stage.tools.map(t => `<span style="padding:6px 14px;background:${C.bgSubtle};border:1px solid ${color}30;border-radius:20px;font-size:14px;color:${C.textMid};font-family:'Cormorant Garamond',serif;">${t}</span>`).join('')}
               </div>
             </div>
 
             <div style="margin-bottom:22px;">${bodyParas}${exon}${forward}${closing}</div>
 
             <div style="padding:18px 22px;background:${color}08;border:1px solid ${color}25;border-left:3px solid ${color};border-radius:0 12px 12px 0;margin-bottom:24px;">
-              <div style="font-family:'Inter',sans-serif;font-size:8px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">The verdict</div>
-              <p style="margin:0;font-size:0.9rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.7;font-style:italic;">"${stage.insight}"</p>
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">The verdict</div>
+              <p style="margin:0;font-size:1.05rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.7;font-style:italic;">"${stage.insight}"</p>
             </div>
 
             <div style="display:flex;gap:10px;flex-wrap:wrap;">${prev}${next}</div>
@@ -1483,19 +1483,19 @@
           const isActive = i === activeIdx;
           return `<div onclick="maSetStage(${i})" style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:5px 8px;border-radius:6px;background:${isActive?`${s.color}12`:'transparent'};transition:background 0.2s;">
             <div style="width:6px;height:6px;border-radius:50%;background:${i<=activeIdx?s.color:C.border};flex-shrink:0;"></div>
-            <div style="font-size:10px;font-family:'Cormorant Garamond',serif;color:${isActive?s.color:C.textDim};">${s.label}</div>
-            <div style="font-size:8px;font-family:'Inter',sans-serif;color:${C.textDim};margin-left:auto;letter-spacing:0.3px;">${s.raceTag}</div>
+            <div style="font-size:14px;font-family:'Cormorant Garamond',serif;color:${isActive?s.color:C.textDim};">${s.label}</div>
+            <div style="font-size:11px;font-family:'Inter',sans-serif;color:${C.textDim};margin-left:auto;letter-spacing:0.3px;">${s.raceTag}</div>
           </div>`;
         }).join('');
 
         return `
           <div>
             <div style="background:${C.bgCard};border:1px solid ${C.border};border-radius:16px;padding:22px 18px;min-height:360px;margin-bottom:14px;">
-              <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;">How this stage works</div>
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;">How this stage works</div>
               ${flowDiagram(stage)}
             </div>
             <div style="padding:14px 16px;background:${C.bgCard};border:1px solid ${C.border};border-radius:12px;">
-              <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Where this fits</div>
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Where this fits</div>
               ${miniMap}
             </div>
           </div>`;
@@ -1510,13 +1510,13 @@
           <div style="border-bottom:1px solid ${C.border};padding:28px 0 24px;background:${C.bgSubtle};margin:0 calc(-1 * clamp(1.2rem,4vw,2.5rem));padding-left:clamp(1.2rem,4vw,2.5rem);padding-right:clamp(1.2rem,4vw,2.5rem);border-radius:18px 18px 0 0;">
             <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
               <div>
-                <div style="font-family:'Inter',sans-serif;font-size:9px;letter-spacing:2.5px;color:${C.textDim};text-transform:uppercase;margin-bottom:6px;">The Misfit Architecture</div>
+                <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:2.5px;color:${C.textDim};text-transform:uppercase;margin-bottom:6px;">The Misfit Architecture</div>
                 <h2 style="margin:0 0 4px;font-size:clamp(1.4rem,2.5vw,2rem);font-family:'Cormorant Garamond',serif;font-weight:500;color:${C.text};letter-spacing:-0.3px;">ENOUGH</h2>
-                <div style="font-size:11px;color:${C.textMid};font-family:'Cormorant Garamond',serif;font-style:italic;">Six stages. One race. Your design.</div>
+                <div style="font-size:15px;color:${C.textMid};font-family:'Cormorant Garamond',serif;font-style:italic;">Six stages. One race. Your design.</div>
               </div>
               <div style="text-align:right;">
-                <div style="font-family:'Inter',sans-serif;font-size:9px;color:${C.textDim};letter-spacing:1px;margin-bottom:4px;">STAGE ${stage.number} OF 06</div>
-                <div style="font-size:13px;font-family:'Cormorant Garamond',serif;color:${stage.color};">${stage.label}</div>
+                <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1px;margin-bottom:4px;">STAGE ${stage.number} OF 06</div>
+                <div style="font-size:16px;font-family:'Cormorant Garamond',serif;color:${stage.color};">${stage.label}</div>
               </div>
             </div>
             ${renderTrack()}
