@@ -108,34 +108,277 @@
       </div>
     </section>
 
-    <section id="starting-line-section" style="background:var(--bg);padding:clamp(4rem,7vw,8rem) 0;">
-      <div id="sl-root" style="width:100%;padding:0 clamp(1.5rem,5vw,4rem);box-sizing:border-box;">
-        <div class="reveal" style="max-width:720px;margin:0 auto;text-align:center;padding-bottom:4rem;">
-          <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2.2vw,1.6rem);font-weight:500;color:var(--muted);margin-bottom:1.6rem;line-height:1.65;">Before you spend more money on the next course, the next coach, the next strategy</p>
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:600;line-height:1.05;margin:0 0 1.4rem;color:var(--text);letter-spacing:-0.02em;">Do you actually have your feet <em style="color:var(--hot);">in the starting blocks?</em></h2>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2.2vw,1.6rem);line-height:1.65;color:var(--muted);font-weight:500;">Or are you still strapping your ankles in the car park?</p>
+    <section id="starting-line-section" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+      <style>
+        #sl-root { width: 100%; padding: 0 clamp(1.5rem, 5vw, 4rem); box-sizing: border-box; }
+        .sl-top { max-width: 720px; margin: 0 auto; text-align: center; padding-bottom: 6rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .sl-top.sl-visible { opacity: 1; transform: translateY(0); }
+        .sl-eyebrow { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 500; color: var(--muted); margin-bottom: 1.6rem; line-height: 1.65; letter-spacing: 0; text-transform: none; }
+        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; line-height: 1.05; margin: 0 0 1.4rem; color: var(--text); letter-spacing: -0.02em; }
+        .sl-headline em { color: var(--hot); font-style: italic; }
+        .sl-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.65; color: var(--muted); margin: 0; font-weight: 500; }
+        .sl-section-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: 2rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
+        .sl-section-label.sl-visible { opacity: 1; transform: translateY(0); }
+        .sl-track-header { position: relative; width: 100%; margin-bottom: 0; }
+        .sl-start-flag { position: absolute; left: 64%; transform: translateX(-50%); bottom: 0; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: #c8a94e; white-space: nowrap; text-align: center; line-height: 1; padding-bottom: 8px; }
+        .sl-start-flag span { display: block; font-size: 0.62rem; font-weight: 500; color: rgba(200,169,78,0.65); letter-spacing: 0.12em; margin-top: 3px; }
+        .sl-track-wrap { position: relative; width: 100%; height: 340px; background: linear-gradient(180deg, #e8f5e4 0%, #ddefd8 50%, #e8f5e4 100%); border-radius: 20px; border: 1.5px solid rgba(58,107,30,0.15); overflow: hidden; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease; box-shadow: 0 4px 32px rgba(37,25,45,0.07); }
+        .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
+        .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(116,80,182,0.07) 99px, rgba(116,80,182,0.07) 100px); pointer-events: none; }
+        .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(116,80,182,0.12) 15%, rgba(116,80,182,0.12) 85%, transparent); pointer-events: none; }
+        .sl-startline { position: absolute; left: 64%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent 2%, #c8a94e 15%, #c8a94e 85%, transparent 98%); box-shadow: 0 0 12px rgba(200,169,78,0.35); pointer-events: none; }
+        .sl-label-left { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; white-space: nowrap; pointer-events: none; }
+        .sl-label-right { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; pointer-events: none; }
+        .sl-runner { position: absolute; transform: translate(-50%, -50%); cursor: pointer; z-index: 5; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); }
+        .sl-runner.is-active { z-index: 10; }
+        .sl-runner-label { position: absolute; top: -58px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
+        .sl-runner-label-main { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.2; }
+        .sl-runner-label-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--muted); letter-spacing: 0.5px; margin-top: 3px; }
+        .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2.5px solid; }
+        .sl-icon-forward { display: inline-block; transform: scaleX(-1); }
+        .sl-connector { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); width: 2px; transition: opacity 0.3s; }
+        .sl-prompt { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-top: 1.4rem; opacity: 0; transition: opacity 0.6s 0.5s ease; }
+        .sl-prompt.sl-visible { opacity: 1; }
+        .sl-detail { max-width: 860px; margin: 2.5rem auto 0; }
+        .sl-detail-card { border-radius: 18px; padding: 2.2rem 2.8rem; display: flex; align-items: flex-start; gap: 2rem; animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94); background: var(--bg-soft); border: 1px solid var(--line); }
+        @keyframes slSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .sl-detail-icon { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0; border: 2.5px solid; }
+        .sl-detail-tag { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.7rem; }
+        .sl-detail-copy { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.35rem, 2vw, 1.65rem); line-height: 1.6; color: var(--text); margin: 0 0 0.9rem; font-style: italic; font-weight: 500; }
+        .sl-detail-body { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.75; color: var(--muted); margin: 0; }
+      </style>
+      <div id="sl-root">
+        <div class="sl-top" id="sl-top">
+          <p class="sl-eyebrow">Before you spend more money on<br>the next course,<br>the next coach,<br>the next strategy</p>
+          <h2 class="sl-headline">Do you actually<br>have your feet<br><em style="color:var(--hot);font-style:italic;">in the starting blocks?</em></h2>
+          <p class="sl-sub">Or are you still strapping your ankles in the car park?</p>
         </div>
-        <p class="reveal" style="text-align:center;font-family:'Inter',sans-serif;font-size:0.75rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;">Where your starting line actually is</p>
-        <div class="reveal" style="position:relative;width:100%;height:280px;background:linear-gradient(180deg,#e8f5e4,#ddefd8 50%,#e8f5e4);border-radius:20px;border:1.5px solid rgba(58,107,30,0.15);overflow:hidden;box-shadow:0 4px 32px rgba(37,25,45,0.07);display:flex;align-items:center;justify-content:center;">
-          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(37,25,45,0.35);font-size:1.1rem;">Interactive starting line visualization</p>
+        <div class="sl-section-label" id="sl-section-label">Where your starting line actually is</div>
+        <div class="sl-track-header" style="height:38px;">
+          <div class="sl-start-flag">START<span>assumed equal</span></div>
         </div>
+        <div class="sl-track-wrap" id="sl-track-wrap">
+          <div class="sl-lane-grid"></div>
+          <div class="sl-lane-line" style="top:33%"></div>
+          <div class="sl-lane-line" style="top:55%"></div>
+          <div class="sl-lane-line" style="top:77%"></div>
+          <div class="sl-startline"></div>
+          <div class="sl-label-left">← NOT EVEN ON THE TRACK</div>
+          <div class="sl-label-right">FINISH →</div>
+          <div id="sl-runners-mount"></div>
+        </div>
+        <p class="sl-prompt" id="sl-prompt">↑ tap any runner to read their starting line</p>
+        <div class="sl-detail" id="sl-detail"></div>
       </div>
+      <script>
+        (function() {
+          const runners = [
+            { id:'carpark', label:'IN THE CAR PARK', sublabel:'Still getting here', position:4, lane:0, icon:'🚗', flip:false, color:'#9b93ab', copy:'Your starting line starts a few blocks before even arriving at the field. You are spending capacity just getting to the race everyone else started at.', detail:'Chronic illness. Housing insecurity. A body that has not been safe. You have not got a head start deficit. You are running a completely different race.' },
+            { id:'injured', label:'CARRYING INJURIES', sublabel:'That never healed', position:16, lane:1, icon:'🩹', flip:false, color:'#c67a50', copy:'Old wounds nobody stitched properly. Nervous systems still in threat-response. You are at the blocks, but you have been running on a fracture for years.', detail:'Trauma. Chronic pain. Burnout that became baseline. The race assumes a body that was repaired. Yours was not.' },
+            { id:'loaded', label:'CARRYING THE WEIGHT', sublabel:'Nobody else is holding', position:30, lane:2, icon:'👶', flip:false, color:'#7450b6', copy:'Baby on your hip. Elderly parent on your back. A hangover from last night because that was the only hour that was yours.', detail:'You showed up. You are running. The race pretends everyone starts with two free hands and a full night's sleep. You do not.' },
+            { id:'badcoach', label:'COACHED BY ACCIDENT', sublabel:'Not by design', position:46, lane:1, icon:'📣', flip:true, color:'#5b8db8', copy:'Your coach is the well meaning parent of a friend you made in primary school. Not a world class expert in your unique brain and body.', detail:'Advice built for someone else's architecture. Strategies that worked for someone with a different design. It was not bad faith. It was the wrong map.' },
+            { id:'startingblocks', label:'AT THE BLOCKS', sublabel:'The assumed start', position:64, lane:0, icon:'🏃', flip:true, color:'#c8a94e', copy:'This is where the race assumes you begin. Two free hands. A repaired body. Slept well. Expert coached. No one depending on you right now.', detail:'This is the only starting position the race was designed for. Everyone else is running a harder race and being judged by the same finish line.', isDefault:true },
+            { id:'headstart', label:'AHEAD OF THE LINE', sublabel:'Before the gun', position:78, lane:2, icon:'⚡', flip:false, color:'#f04aa7', copy:'Inherited advantages. Early expert support. A system built around your design from birth. The race already started before the gun went off.', detail:'This is not a moral judgement. It is an architecture observation. Some people began accumulating capacity before anyone else was allowed on the track.' },
+          ];
+          const laneY = [38, 60, 82];
+          let activeId = 'startingblocks';
+          function renderRunners() {
+            const mount = document.getElementById('sl-runners-mount');
+            mount.innerHTML = '';
+            runners.forEach(r => {
+              const isActive = r.id === activeId;
+              const size = isActive ? 62 : 48;
+              const y = laneY[r.lane];
+              const iconHtml = r.flip ? '<span class="sl-icon-forward">'+r.icon+'</span>' : r.icon;
+              const el = document.createElement('div');
+              el.className = 'sl-runner' + (isActive ? ' is-active' : '');
+              el.style.cssText = 'left:'+r.position+'%;top:'+y+'%;';
+              el.innerHTML = '<div class="sl-runner-label" style="opacity:'+(isActive?1:0.65)+'"><div class="sl-runner-label-main" style="color:'+r.color+'">'+r.label+'</div><div class="sl-runner-label-sub">'+r.sublabel+'</div></div><div class="sl-connector" style="height:24px;background:'+r.color+';opacity:'+(isActive?0.8:0)+';"></div><div class="sl-bubble" style="width:'+size+'px;height:'+size+'px;font-size:'+(isActive?28:22)+'px;background:'+(isActive?r.color:'#fff')+';border-color:'+r.color+';box-shadow:'+(isActive?'0 0 24px '+r.color+'50, 0 0 48px '+r.color+'25':'0 2px 8px rgba(37,25,45,0.1)')+';"> '+iconHtml+'</div>';
+              el.addEventListener('click', () => { activeId = r.id; renderRunners(); renderDetail(); });
+              mount.appendChild(el);
+            });
+          }
+          function renderDetail() {
+            const panel = document.getElementById('sl-detail');
+            const r = runners.find(x => x.id === activeId);
+            if (!r) { panel.innerHTML = ''; return; }
+            const iconHtml = r.flip ? '<span style="display:inline-block;transform:scaleX(-1)">'+r.icon+'</span>' : r.icon;
+            panel.innerHTML = '<div class="sl-detail-card" style="border:1px solid '+r.color+'30;border-left:4px solid '+r.color+';"><div class="sl-detail-icon" style="background:'+r.color+'15;border-color:'+r.color+';">'+iconHtml+'</div><div style="flex:1"><div class="sl-detail-tag" style="color:'+r.color+'">'+r.label+'</div><p class="sl-detail-copy">"'+r.copy+'"</p><p class="sl-detail-body">'+r.detail+'</p></div></div>';
+          }
+          const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('sl-visible'); }); }, { threshold: 0.2 });
+          function init() {
+            renderRunners(); renderDetail();
+            ['sl-top','sl-section-label','sl-track-wrap','sl-prompt'].forEach(id => { const el = document.getElementById(id); if (el) observer.observe(el); });
+          }
+          if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+        })();
+      </script>
     </section>
 
-    <section id="stadium-section" style="background:var(--bg-soft);padding:clamp(5rem,8vw,8rem) 0;">
-      <div style="max-width:1100px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem);">
-        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.35rem,2.2vw,1.75rem);line-height:1.7;color:var(--muted);max-width:680px;margin:0 auto 3rem;font-weight:500;text-align:center;">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer from a loved one.</p>
-        <div class="reveal" style="max-width:680px;margin:0 auto;text-align:center;">
-          <div style="width:52px;height:4px;background:linear-gradient(90deg,var(--hot),#c8a94e);border-radius:2px;margin:0 auto 2rem;"></div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2vw,1.5rem);line-height:1.2;color:var(--muted);margin:0 0 1.6rem;font-weight:500;">But you have already tried that.</p>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.2;color:var(--text);margin:0 0 1.2rem;font-weight:500;">Nobody asked where <em style="color:var(--hot);font-style:italic;">YOUR</em> actual starting line was.</p>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.7;color:var(--muted);margin:0;font-weight:500;"><em>ENOUGH</em> is the first honest map of the race you are actually running.</p>
+    <section id="stadium-section" style="background:var(--bg-soft); padding: clamp(5rem,8vw,8rem) 0;">
+      <style>
+        #stadium-root { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
+        .std-intro { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.7; color: var(--muted); max-width: 680px; margin: 0 auto 3rem; font-weight: 500; text-align: center; }
+        .std-scene { position: relative; width: 100%; border-radius: 20px; overflow: hidden; margin-bottom: 4rem; height: 520px; border: 1px solid rgba(37,25,45,0.08); box-shadow: 0 8px 48px rgba(37,25,45,0.1); }
+        .std-sky { position: absolute; top:0; left:0; right:0; height:48%; background: linear-gradient(180deg,#b8dff5 0%,#ddf0ff 70%,#eef7ff 100%); }
+        .std-cloud { position: absolute; background: rgba(255,255,255,0.9); border-radius: 999px; }
+        .std-tiers { position: absolute; top:42%; left:0; right:0; height:22%; background-image: repeating-linear-gradient(90deg, rgba(116,80,182,0.12) 0px, rgba(116,80,182,0.12) 14px, rgba(240,74,167,0.08) 14px, rgba(240,74,167,0.08) 28px, rgba(37,25,45,0.1) 28px, rgba(37,25,45,0.1) 42px, rgba(116,80,182,0.12) 42px, rgba(116,80,182,0.12) 56px); opacity: 0.65; pointer-events: none; }
+        .std-tier-line { position: absolute; left:0; right:0; height:1px; background:rgba(37,25,45,0.07); pointer-events:none; }
+        .std-stand { position: absolute; top:42%; bottom:36%; left:0; right:0; background: linear-gradient(180deg,#d4cec8 0%,#b8b0a8 100%); pointer-events:none; }
+        .std-field { position: absolute; bottom:0; left:0; right:0; height:36%; overflow:hidden; }
+        .std-field-stripes { position: absolute; inset:0; background-image: repeating-linear-gradient(180deg,#3a6b1e 0px,#3a6b1e 26px,#2d5016 26px,#2d5016 52px); }
+        .std-track-oval { position: absolute; left:12%; right:12%; top:8%; bottom:8%; border:2px solid rgba(255,255,255,0.28); border-radius:50%; }
+        .std-centre-line { position: absolute; left:50%; top:5%; bottom:5%; width:1px; background:rgba(255,255,255,0.18); }
+        .std-start-line { position: absolute; left:42%; right:42%; bottom:25%; height:3px; background:rgba(255,255,255,0.65); z-index:3; }
+        .std-start-label { position: absolute; left:50%; bottom:32%; transform:translateX(-50%); font-family:'Inter',sans-serif; font-size:10px; font-weight:700; letter-spacing:2.5px; color:rgba(255,255,255,0.7); z-index:3; white-space:nowrap; }
+        .std-runner { position: absolute; left:48%; bottom:26%; font-size:26px; z-index:4; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.35)); display:inline-block; transform:scaleX(-1); }
+        .std-figure { position: absolute; transform: translate(-50%,-50%); cursor: pointer; z-index:5; }
+        .std-figure.is-hovered { z-index: 20; }
+        .std-avatar { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; transition: all 0.25s ease; border: 3px solid; box-shadow: 0 2px 10px rgba(0,0,0,0.14); }
+        .std-seats { display:flex; gap:4px; margin-top:5px; justify-content:center; }
+        .std-seat { width:13px; height:10px; border-radius:3px 3px 0 0; opacity:0.7; transition:background 0.3s; background:#1e3a5f; }
+        .std-foghorn { position:absolute; top:-32px; left:50%; transform:translateX(-50%) scale(0) rotate(0deg); font-size:24px; transition:transform 0.25s cubic-bezier(.34,1.56,.64,1); transform-origin:center bottom; user-select:none; }
+        .std-figure.is-hovered .std-foghorn { transform:translateX(-50%) scale(1.35) rotate(-15deg); }
+        .std-figure.is-hovered .std-avatar { transform: scale(1.18) translateY(-5px); }
+        .std-bubble { position:absolute; bottom:calc(100% + 14px); background:#fff; border-radius:14px; padding:20px 24px; width:260px; box-shadow:0 10px 32px rgba(37,25,45,0.15); animation: stdPopIn 0.2s cubic-bezier(.34,1.56,.64,1); z-index:30; border:2px solid; text-align:center; }
+        .std-bubble--right { left:50%; transform:translateX(-10px); }
+        .std-bubble--left { right:50%; transform:translateX(10px); }
+        .std-bubble-tail-outer { position:absolute; bottom:-11px; width:0; height:0; border-left:9px solid transparent; border-right:9px solid transparent; border-top-width:11px; border-top-style:solid; }
+        .std-bubble-tail-inner { position:absolute; bottom:-8px; width:0; height:0; border-left:7px solid transparent; border-right:7px solid transparent; border-top:9px solid #fff; }
+        .std-bubble--right .std-bubble-tail-outer, .std-bubble--right .std-bubble-tail-inner { left:22px; }
+        .std-bubble--left .std-bubble-tail-outer, .std-bubble--left .std-bubble-tail-inner { right:22px; }
+        .std-bubble-label { font-family:'Inter',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; text-align:center; }
+        .std-bubble-phrase { font-family:'Cormorant Garamond',serif; font-size:1.55rem; font-weight:600; color:var(--text); line-height:1.3; margin-bottom:8px; font-style:italic; text-align:center; }
+        .std-bubble-sub { font-family:'Inter',sans-serif; font-size:14px; color:var(--muted); line-height:1.5; text-align:center; }
+        .std-hover-prompt { position:absolute; bottom:14px; right:18px; font-family:'Inter',sans-serif; font-size:11px; color:rgba(255,255,255,0.5); letter-spacing:1.5px; text-transform:uppercase; pointer-events:none; }
+        @keyframes stdPopIn { from { opacity:0; transform:scale(0.88) translateY(6px); } to { opacity:1; transform:scale(1) translateY(0); } }
+        .std-payoff { max-width: 680px; margin: 0 auto; text-align: center; }
+        .std-rule { width:52px; height:4px; background:linear-gradient(90deg,var(--hot),#c8a94e); border-radius:2px; margin: 0 auto 2rem; }
+        .std-payoff-headline { font-family:'Cormorant Garamond',serif; font-size: clamp(1.2rem,2vw,1.5rem); line-height:1.2; color:var(--muted); margin:0 0 1.6rem; font-weight:500; }
+        .std-payoff-headline em { color:var(--hot); font-style:italic; }
+        .std-payoff-body { font-family:'Cormorant Garamond',serif; font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height:1.7; color:var(--muted); margin:0; font-weight:500; }
+      </style>
+      <div id="stadium-root">
+        <p class="std-intro">For years people with their fog horns have screamed from the stadium among boos and hisses and the occasional unconditional cheer from a loved one:</p>
+        <div class="std-scene" id="std-scene">
+          <div class="std-sky"></div>
+          <div class="std-cloud" style="left:6%;top:8%;width:110px;height:44px;box-shadow:28px -16px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:46%;top:6%;width:90px;height:36px;box-shadow:22px -14px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-cloud" style="left:74%;top:12%;width:72px;height:28px;box-shadow:18px -11px 0 rgba(255,255,255,0.7);"></div>
+          <div class="std-stand"></div>
+          <div class="std-tier-line" style="top:46%"></div>
+          <div class="std-tier-line" style="top:51%"></div>
+          <div class="std-tier-line" style="top:56%"></div>
+          <div class="std-tier-line" style="top:61%"></div>
+          <div class="std-tiers"></div>
+          <div class="std-field">
+            <div class="std-field-stripes"></div>
+            <div class="std-track-oval"></div>
+            <div class="std-centre-line"></div>
+            <div class="std-start-line"></div>
+            <div class="std-start-label">START</div>
+            <div class="std-runner">🏃</div>
+          </div>
+          <div class="std-hover-prompt">hover the crowd ↑</div>
+          <div id="std-figures"></div>
+        </div>
+        <div class="std-payoff">
+          <div class="std-rule"></div>
+          <p class="std-payoff-headline" style="font-size:clamp(1.2rem,2vw,1.5rem); color:var(--muted); font-weight:500; margin-bottom:1.6rem;">But you have already tried that.</p>
+          <p class="std-payoff-headline">Nobody asked where <em>YOUR</em> actual starting line was.</p>
+          <p class="std-payoff-body"><em>ENOUGH</em> is the first honest map of the race you are actually running.</p>
         </div>
       </div>
+      <script>
+        (function() {
+          const voices = [
+            { id:0, x:'18%', y:'56%', color:'#c0392b', phrase:'Try harder.', subphrase:'You just need to want it more.', person:'👩‍💼', label:'The Manager', dir:'right' },
+            { id:1, x:'38%', y:'48%', color:'#7450b6', phrase:'Just get up earlier.', subphrase:'Five AM club. That's the answer.', person:'👨‍⚕️', label:'The Wellness Guru', dir:'right' },
+            { id:2, x:'62%', y:'52%', color:'#2a8c5a', phrase:'Be more disciplined.', subphrase:'Push through. No excuses.', person:'🧑‍🏫', label:'The Coach', dir:'left' },
+            { id:3, x:'80%', y:'60%', color:'#f04aa7', phrase:'Have you tried journalling?', subphrase:'Just five minutes each morning.', person:'👩‍🔬', label:'The Expert', dir:'left' },
+          ];
+          let hovered = null;
+          function render() {
+            const mount = document.getElementById('std-figures');
+            if (!mount) return;
+            mount.innerHTML = '';
+            voices.forEach(v => {
+              const isH = hovered === v.id;
+              const fig = document.createElement('div');
+              fig.className = 'std-figure' + (isH ? ' is-hovered' : '');
+              fig.style.cssText = 'left:'+v.x+';top:'+v.y+';';
+              const bubbleTailBorderColor = 'border-top-color:'+v.color;
+              fig.innerHTML = (isH ? '<div class="std-bubble std-bubble--'+v.dir+'" style="border-color:'+v.color+';"><div class="std-bubble-tail-outer" style="'+bubbleTailBorderColor+';border-top-width:10px;border-top-style:solid;"></div><div class="std-bubble-tail-inner"></div><div class="std-bubble-label" style="color:'+v.color+'">'+v.label+'</div><div class="std-bubble-phrase">"'+v.phrase+'"</div><div class="std-bubble-sub">'+v.subphrase+'</div></div>' : '') + '<div class="std-foghorn">📣</div><div class="std-avatar" style="background:'+(isH?'linear-gradient(135deg,'+v.color+'20,'+v.color+'40)':'#f7f1f3')+';border-color:'+(isH?v.color:'#d4cec8')+';box-shadow:'+(isH?'0 4px 16px '+v.color+'40':'0 2px 8px rgba(37,25,45,0.1)')+';"> '+v.person+'</div><div class="std-seats"><div class="std-seat" style="'+(isH?'background:'+v.color+';':'')+'"></div><div class="std-seat" style="'+(isH?'background:'+v.color+';':'')+'"></div><div class="std-seat" style="'+(isH?'background:'+v.color+';':'')+'"></div></div>';
+              fig.addEventListener('mouseenter', () => { hovered = v.id; render(); });
+              fig.addEventListener('mouseleave', () => { hovered = null; render(); });
+              fig.addEventListener('click', () => { hovered = hovered === v.id ? null : v.id; render(); });
+              mount.appendChild(fig);
+            });
+          }
+          if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', render); } else { render(); }
+        })();
+      </script>
     </section>
 
-    <section id="walk-section" style="background:var(--bg);overflow:hidden;">
-      <p class="walk-pivot reveal" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,2vw,1.65rem);font-weight:500;line-height:1.75;color:var(--text);text-align:center;max-width:640px;margin:0 auto;padding:clamp(4rem,7vw,7rem) clamp(1.5rem,5vw,4rem);">Have you ever considered that maybe there is nothing wrong with you.<br/><br/>That you may just be</p>
+    <section id="walk-section" style="background:var(--bg); overflow:hidden;">
+      <style>
+        .walk-scene { position: relative; width: 100%; height: 320px; background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
+        .walk-zone-label { position: absolute; top: 18px; left: 28px; font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; transition: opacity 0.6s; }
+        .walk-divider { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, transparent, var(--line) 20%, var(--line) 80%, transparent); }
+        .walk-ground { position: absolute; bottom: 76px; left: 3%; right: 3%; height: 1px; background: var(--line); }
+        .walk-bubble { position: absolute; background: #fff; border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 18px; font-family: 'Cormorant Garamond', serif; font-size: clamp(0.95rem, 1.4vw, 1.15rem); font-style: italic; color: var(--muted); box-shadow: 0 4px 16px rgba(0,0,0,0.06); pointer-events: none; white-space: nowrap; z-index: 5; opacity: 0; transition: opacity 0.4s; }
+        .walk-bubble.is-visible { opacity: 1; animation: wbPop 0.4s ease both; }
+        .walk-bubble-tail { position: absolute; bottom: -7px; right: 22px; width: 10px; height: 10px; background: #fff; border: 1.5px solid var(--line); border-top: none; border-left: none; transform: rotate(45deg); }
+        @keyframes wbPop { from { opacity:0; transform:scale(0.75) translateY(10px); } to { opacity:1; transform:scale(1) translateY(0); } }
+        .walk-figure { position: absolute; bottom: 77px; font-size: 54px; line-height: 1; z-index: 10; display: inline-block; transition: none; will-change: left; }
+        .walk-right { position: absolute; left: 50%; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 28px 40px 100px 32px; }
+        .walk-look-around { font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; color: var(--hot); text-transform: uppercase; margin-bottom: 24px; text-align: center; width: 100%; opacity: 0; transition: opacity 0.4s ease; }
+        .walk-question { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.05rem, 1.8vw, 1.4rem); font-weight: 600; color: var(--text); line-height: 1.5; margin: 0 0 14px; width: 100%; opacity: 0; }
+        .walk-question em { color: var(--hot); font-style: normal; margin-right: 6px; }
+        .walk-question.is-visible { animation: wqIn 0.55s ease both; }
+        @keyframes wqIn { from { opacity:0; transform:translateX(-16px); } to { opacity:1; transform:translateX(0); } }
+        .walk-cta-wrap { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 12; }
+        .walk-btn { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, var(--hot), #ff4da6); color: #fff; border: none; border-radius: 30px; padding: 12px 32px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; animation: walkPulse 2s ease-in-out infinite; }
+        .walk-btn:disabled { background: var(--line); color: var(--muted); animation: none; cursor: default; }
+        @keyframes walkPulse { 0%,100% { box-shadow:0 0 0 0 rgba(240,74,167,0.35); } 50% { box-shadow:0 0 0 12px rgba(240,74,167,0); } }
+        .walk-reset { position: absolute; bottom: 14px; left: 18px; background: none; border: none; font-family: 'Inter', sans-serif; font-size: 9px; color: var(--muted); letter-spacing: 1.5px; cursor: pointer; text-transform: uppercase; padding: 4px 8px; }
+        .walk-pivot { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2vw, 1.65rem); font-weight: 500; line-height: 1.75; color: var(--text); text-align: center; max-width: 640px; margin: 0 auto; padding: clamp(4rem,7vw,7rem) clamp(1.5rem,5vw,4rem); }
+      </style>
+      <div class="walk-scene" id="walk-scene">
+        <div class="walk-zone-label" id="walk-zone-label">Inside your head</div>
+        <div class="walk-divider"></div>
+        <div class="walk-ground"></div>
+        <div class="walk-bubble" id="wb-0" style="left:8%;top:14%;">What's wrong with me?<div class="walk-bubble-tail"></div></div>
+        <div class="walk-bubble" id="wb-1" style="left:22%;top:55%;">Why am I failing?<div class="walk-bubble-tail"></div></div>
+        <div class="walk-bubble" id="wb-2" style="left:5%;top:75%;">I suck at this.<div class="walk-bubble-tail"></div></div>
+        <div class="walk-figure" id="walk-figure" style="left:10%;">🧍‍♀️</div>
+        <div class="walk-right">
+          <div class="walk-look-around" id="walk-look-around">Look around.</div>
+          <p class="walk-question" id="wq-0" style="animation-delay:0.15s"><em>Q.</em>Is everyone else carrying a baby on their hip?</p>
+          <p class="walk-question" id="wq-1" style="animation-delay:0.5s"><em>Q.</em>Struggling with sensory overload?</p>
+          <p class="walk-question" id="wq-2" style="animation-delay:0.85s"><em>Q.</em>Navigating what you are navigating?</p>
+        </div>
+        <div class="walk-cta-wrap" id="walk-cta">
+          <button class="walk-btn" id="walk-btn">Look around →</button>
+        </div>
+        <button class="walk-reset" id="walk-reset" style="display:none">↺ reset</button>
+      </div>
+      <p class="walk-pivot reveal">
+        Have you ever considered that maybe there is nothing wrong with you.<br /><br />
+        That you may just be
+      </p>
+      <script>
+        (function() {
+          let walked=false,walking=false,figureX=10,animId=null;
+          const WALK_MS=1800;
+          const scene=document.getElementById('walk-scene'),figure=document.getElementById('walk-figure'),btn=document.getElementById('walk-btn'),resetBtn=document.getElementById('walk-reset'),ctaWrap=document.getElementById('walk-cta'),zoneLabel=document.getElementById('walk-zone-label'),lookAround=document.getElementById('walk-look-around'),bubbles=[0,1,2].map(i=>document.getElementById('wb-'+i)),questions=[0,1,2].map(i=>document.getElementById('wq-'+i)),triggers=[0.1,0.35,0.6];
+          function onScroll(){if(walked)return;const rect=scene.getBoundingClientRect(),ratio=Math.min(1,Math.max(0,(window.innerHeight-rect.top)/(window.innerHeight*0.85)));bubbles.forEach((b,i)=>{if(ratio>=triggers[i])b.classList.add('is-visible');});}
+          window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+          function startWalk(){if(walked||walking)return;walking=true;btn.disabled=true;btn.textContent='Walking...';bubbles.forEach(b=>{b.style.opacity='0';b.classList.remove('is-visible');});zoneLabel.style.opacity='0.15';figure.textContent='🚶‍♀️';figure.style.transform='scaleX(-1)';const start=performance.now(),from=10,to=76;function tick(now){const t=Math.min(1,(now-start)/WALK_MS),ease=t<0.5?2*t*t:-1+(4-2*t)*t;figureX=from+(to-from)*ease;figure.style.left=figureX+'%';if(t<1){animId=requestAnimationFrame(tick);}else{figure.textContent='🧍‍♀️';figure.style.transform='scaleX(-1)';walking=false;walked=true;ctaWrap.style.display='none';resetBtn.style.display='block';lookAround.style.opacity='1';questions.forEach(q=>q.classList.add('is-visible'));}}animId=requestAnimationFrame(tick);}
+          function reset(){cancelAnimationFrame(animId);walked=false;walking=false;figureX=10;figure.style.left='10%';figure.textContent='🧍‍♀️';figure.style.transform='scaleX(1)';zoneLabel.style.opacity='0.6';lookAround.style.opacity='0';questions.forEach(q=>{q.classList.remove('is-visible');q.style.opacity='0';});ctaWrap.style.display='block';resetBtn.style.display='none';btn.disabled=false;btn.textContent='Look around →';onScroll();}
+          btn.addEventListener('click',startWalk);resetBtn.addEventListener('click',reset);
+        })();
+      </script>
     </section>
 
     <section class="spotlight" id="spotlight-misfit" aria-label="Misfit by Design. Not Deficit.">
@@ -144,29 +387,75 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="possibility" style="padding-top:clamp(5rem,9vw,10rem);padding-bottom:clamp(5rem,9vw,10rem);">
-      <div style="max-width:860px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem);">
-        <h2 class="reveal" style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,3.2rem);font-weight:500;line-height:1.2;color:var(--text);text-align:center;max-width:680px;margin:0 auto 3rem;letter-spacing:-0.01em;">When you can finally see your actual reality clearly, everything shifts.</h2>
-        <div class="reveal" style="display:flex;align-items:flex-end;gap:8px;max-width:640px;margin:0 auto 2rem;">
-          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-            <div style="font-size:2rem;margin-bottom:8px;">&#129352;</div>
-            <div style="width:100%;height:160px;background:linear-gradient(180deg,#c8c8d0,#787880);border-radius:8px 8px 0 0;"></div>
+    <section class="section section-soft possibility-section" id="possibility" style="padding-top:clamp(5rem,9vw,10rem);padding-bottom:clamp(5rem,9vw,10rem);">
+      <style>
+        .pod-section{max-width:860px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem);}
+        .pod-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,3.2rem);font-weight:500;line-height:1.2;color:var(--text);text-align:center;max-width:680px;margin:0 auto 1.2rem;letter-spacing:-0.01em;}
+        .pod-hint{font-family:'Inter',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:3rem;}
+        .pod-stage{display:flex;align-items:flex-end;gap:8px;max-width:640px;margin:0 auto;}
+        .pod-col{display:flex;flex-direction:column;align-items:center;position:relative;flex:1;}
+        .pod-col--gold{flex:1.2;}
+        .pod-tooltip{position:absolute;bottom:calc(100% + 18px);left:50%;transform:translateX(-50%) translateY(10px);width:240px;background:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 12px 40px rgba(37,25,45,0.14);z-index:30;opacity:0;transition:opacity 0.25s ease,transform 0.25s ease;pointer-events:none;text-align:center;border:2px solid;}
+        .pod-tooltip.is-visible{opacity:1;transform:translateX(-50%) translateY(0);}
+        .pod-tooltip-tail-outer{position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;}
+        .pod-tooltip-tail-inner{position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:7px solid transparent;border-right:7px solid transparent;border-top:8px solid #fff;}
+        .pod-tooltip-label{font-family:'Inter',sans-serif;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;}
+        .pod-tooltip-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;font-weight:500;line-height:1.6;color:var(--text);margin:0;}
+        .pod-figure{font-size:2rem;margin-bottom:8px;transition:transform 0.25s cubic-bezier(.34,1.56,.64,1),filter 0.25s ease;user-select:none;line-height:1;}
+        .pod-col--gold .pod-figure{font-size:2.4rem;}
+        .pod-col:hover .pod-figure{transform:translateY(-10px) scale(1.18);filter:drop-shadow(0 8px 14px rgba(0,0,0,0.22));}
+        .pod-block{width:100%;border-radius:8px 8px 0 0;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:16px;}
+        .pod-floor{max-width:640px;margin:0 auto;height:3px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+        .pod-footer{text-align:center;padding:4rem 0 0;}
+        .pod-footer-lead{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,1.8vw,1.5rem);color:var(--muted);margin:0 0 1.8rem;font-weight:500;}
+        .pod-footer-rule{width:48px;height:3px;background:linear-gradient(90deg,var(--hot),#c8a94e);border-radius:2px;margin:0 auto 1.8rem;}
+        .pod-footer-italic{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2vw,1.6rem);font-style:italic;line-height:1.75;color:var(--text);margin:0;font-weight:500;}
+      </style>
+      <div class="pod-section">
+        <h2 class="pod-heading reveal">When you can finally see your actual reality clearly,<br>everything shifts.</h2>
+        <p class="pod-hint reveal">hover each step ↓</p>
+        <div class="pod-stage reveal">
+          <div class="pod-col pod-col--silver" data-pod="silver">
+            <div class="pod-tooltip" id="pod-tip-silver" style="border-color:#a0a0a8;">
+              <div class="pod-tooltip-tail-outer" style="border-top:11px solid #a0a0a8;"></div>
+              <div class="pod-tooltip-tail-inner"></div>
+              <div class="pod-tooltip-label" style="color:#a0a0a8;">🥈 2nd place</div>
+              <p class="pod-tooltip-text">Then, you start making decisions that work with how you are actually built and the things that are actually important to you.</p>
+            </div>
+            <div class="pod-figure">🥈</div>
+            <div class="pod-block" style="height:160px;background:linear-gradient(180deg,#c8c8d0,#787880);"></div>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:center;flex:1.2;">
-            <div style="font-size:2.4rem;margin-bottom:8px;">&#127942;</div>
-            <div style="width:100%;height:220px;background:linear-gradient(180deg,#e8c84e,#c8a94e);border-radius:8px 8px 0 0;"></div>
+          <div class="pod-col pod-col--gold" data-pod="gold">
+            <div class="pod-tooltip" id="pod-tip-gold" style="border-color:var(--hot);">
+              <div class="pod-tooltip-tail-outer" style="border-top:11px solid var(--hot);"></div>
+              <div class="pod-tooltip-tail-inner"></div>
+              <div class="pod-tooltip-label" style="color:var(--hot);">🏆 1st place</div>
+              <p class="pod-tooltip-text">And perhaps for the first time, your podium spot starts to come into view. The real one. The one that actually matters to you.</p>
+            </div>
+            <div class="pod-figure">🏆</div>
+            <div class="pod-block" style="height:220px;background:linear-gradient(180deg,#e8c84e,#c8a94e);"></div>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-            <div style="font-size:2rem;margin-bottom:8px;">&#129353;</div>
-            <div style="width:100%;height:110px;background:linear-gradient(180deg,#d4894a,#8b5a2b);border-radius:8px 8px 0 0;"></div>
+          <div class="pod-col pod-col--bronze" data-pod="bronze">
+            <div class="pod-tooltip" id="pod-tip-bronze" style="border-color:#b87333;">
+              <div class="pod-tooltip-tail-outer" style="border-top:11px solid #b87333;"></div>
+              <div class="pod-tooltip-tail-inner"></div>
+              <div class="pod-tooltip-label" style="color:#b87333;">🥉 3rd place</div>
+              <p class="pod-tooltip-text">First, you stop blaming yourself for losing a race that not only were you never set up to win, but you never should have entered.</p>
+            </div>
+            <div class="pod-figure">🥉</div>
+            <div class="pod-block" style="height:110px;background:linear-gradient(180deg,#d4894a,#8b5a2b);"></div>
           </div>
         </div>
-        <div style="text-align:center;padding-top:3rem;" class="reveal">
-          <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,1.8vw,1.5rem);color:var(--muted);margin:0 0 1.8rem;font-weight:500;">That is what <strong>ENOUGH</strong> is about.</p>
-          <div style="width:48px;height:3px;background:linear-gradient(90deg,var(--hot),#c8a94e);border-radius:2px;margin:0 auto 1.8rem;"></div>
-          <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2vw,1.6rem);font-style:italic;line-height:1.75;color:var(--text);margin:0;font-weight:500;">This is not about getting it perfect.<br/>It is not about becoming someone different.<br/>It is about finally running your race.</p>
+        <div class="pod-floor"></div>
+        <div class="pod-footer">
+          <p class="pod-footer-lead">That is what <strong>ENOUGH</strong> is about.</p>
+          <div class="pod-footer-rule"></div>
+          <p class="pod-footer-italic">This is not about getting it perfect.<br/>It is not about becoming someone different.<br/>It is about finally running your race.</p>
         </div>
       </div>
+      <script>
+        (function(){document.querySelectorAll('.pod-col').forEach(col=>{const tip=col.querySelector('.pod-tooltip');if(!tip)return;col.addEventListener('mouseenter',()=>tip.classList.add('is-visible'));col.addEventListener('mouseleave',()=>tip.classList.remove('is-visible'));col.addEventListener('click',()=>tip.classList.toggle('is-visible'));});})();
+      </script>
     </section>
 
     <section class="spotlight" id="spotlight-podium" aria-label="You get to advance the steps of your own Podium.">
@@ -175,8 +464,36 @@
       </div>
     </section>
 
-    <section id="journey" style="background:var(--bg);padding:clamp(4rem,7vw,8rem) 0;">
-      <div id="ma-root" style="max-width:1100px;margin:0 auto;padding:0 clamp(1.2rem,4vw,2.5rem);"></div>
+    <section id="journey" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+      <div id="ma-root" style="max-width:1100px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);"></div>
+      <script>
+    (function() {
+      const C = {bg:'#fcf8f6',bgCard:'#ffffff',bgSubtle:'#f7f1f3',text:'#25192d',textMid:'#63596d',textDim:'#9b93ab',border:'rgba(37,25,45,0.10)'};
+      const stages = [
+        {id:'recognition',label:'Recognition',number:'01',color:'#f04aa7',icon:'⊙',subtitle:'See where your starting line actually is.',raceTag:'Before the gun fires',tools:['Arrival Ledger','Misfit Tax Ledger'],insight:'You were not lazy. You were running a different race in someone else's shoes on a track never built for your stride.',body:['Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.','This stage helps you see what it cost you just to show up today, and where the rest is going, including the costs that never appear on any list.'],exoneration:'You were not lazy. Not undisciplined. Not broken in ways that more effort would fix. You were running a different race in someone else's shoes on a track that was never built for your stride. That is not a personal failing. That is a structural problem. And structural problems have structural solutions.',forward:'Next: find out what you are actually carrying into it.',flow:[{node:'Where did you start today?',type:'question'},{node:'Arrival Cost',type:'measure',sub:'What it cost before the race begins'},{node:'Visible Costs',type:'branch',sub:'What you can name'},{node:'Invisible Taxes',type:'branch',sub:'Masking · Translation · Structural friction'},{node:'Your actual starting position',type:'output'}]},
+        {id:'clarity',label:'Clarity',number:'02',color:'#1a9fc0',icon:'◈',subtitle:'Not everyone enters the race with the same load.',raceTag:'What you're carrying',tools:['Capacity Map','Load Domain Diagnostic','Capacity Drainers'],insight:'Capacity is shaped by architecture, not just effort. Your wiring, your history, your conditions. All of it is weight.',body:['Not everyone enters the race with the same load. This stage helps you see what you are actually carrying: your wiring, your history, your conditions, and where the weight is really coming from.','This stage moves through the layers of what shapes your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.'],forward:'Next: find out which race is actually yours to run.',flow:[{node:'What are you carrying?',type:'question'},{node:'Nine Layers of Capacity',type:'measure',sub:'Neurology through to current state'},{node:'Load Domain',type:'branch',sub:'Work · Body · Relationships · Identity · Environment'},{node:'Capacity Drainers',type:'branch',sub:'Patterns taking from what you rely on'},{node:'Your actual load entering the race',type:'output'}]},
+        {id:'acceptance',label:'Acceptance',number:'03',color:'#7450b6',icon:'◎',subtitle:'Know which race you should be entering right now.',raceTag:'Choosing the right race',tools:['Structural Ceiling Map'],insight:'Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything into a race you were never built for.',body:['If you are a novice runner who ends up in a race with Usain Bolt, the most important thing you can learn is not how to run faster. It is that no amount of training, discipline or willpower is going to close that gap in the way the crowd expects.','This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.'],forward:'Next: find out where you actually have ground to gain.',flow:[{node:'What are you pushing against?',type:'question'},{node:'Control',type:'branch',sub:'Changes with your direct effort'},{node:'Influence',type:'branch',sub:'Shifts with conditions or support'},{node:'Structural Ceiling',type:'branch',sub:'Not your race to run right now'},{node:'Where your effort stops bleeding',type:'output'}]},
+        {id:'intervention',label:'Intervention',number:'04',color:'#c49a2a',icon:'⊕',subtitle:'The race you could actually win is in the next lane.',raceTag:'Finding your lane',tools:['Four Levers'],insight:'Not all effort moves you forward. Small shifts in the right place change the entire system.',body:['The race you could actually win is happening in the next lane. This stage is about finding it.','Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.'],forward:'Next: find out what the race that fits your design looks like.',flow:[{node:'Where is there ground to gain?',type:'question'},{node:'Reduce',type:'branch',sub:'What is taking without returning'},{node:'Protect',type:'branch',sub:'What is working right now'},{node:'Restore',type:'branch',sub:'What has been spent'},{node:'Add',type:'branch',sub:'What was always missing'},{node:'Your leverage points',type:'output'}]},
+        {id:'alignment',label:'Alignment',number:'05',color:'#2a8c5a',icon:'⊞',subtitle:'Run the race that fits your design.',raceTag:'Running your race',tools:['Calibration Map','Relational Energy Ledger'],insight:'Without knowing what you are actually running toward, you can be perfectly aligned with your design and still be running toward someone else's finish line.',body:['Not someone else's race. Not the race you were told you should want. The one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.','This stage also asks what you are actually running toward. Not the goal you inherited. Not the one you chose because it seemed achievable. The one that holds when everything else is stripped back.'],forward:'Next: find out how you stay in it, and what you build once you do.',flow:[{node:'What are you actually running toward?',type:'question'},{node:'Design',type:'branch',sub:'How you are actually built'},{node:'Conditions',type:'branch',sub:'What your environment supports'},{node:'Pace',type:'branch',sub:'What this season asks for'},{node:'Relational Energy',type:'branch',sub:'Who restores vs who takes'},{node:'Your actual finish line',type:'output'}]},
+        {id:'sustainability',label:'Sustainability',number:'06',color:'#63596d',icon:'↻',subtitle:'This is where you get to arrive.',raceTag:'Staying in the race',tools:['Recalibration Loop'],insight:'Sustainability is not the destination. It is the floor you build so something real can stand on it.',body:['Sustainability is not the destination. It is the floor you build so something real can stand on it.','Most people never get here. Not because the work is too hard, but because they run out of ground before they reach it. Every stage before this one was clearing that ground.','The loop is simple. You learn to read the signal before it becomes a collapse. You protect the ground you have cleared rather than waiting until it is gone. You adjust what you are carrying before the weight decides for you. And you stabilise, so the next season starts from here rather than from the beginning.'],closing:'Your guide to the podium that means something to you is mapped out in ENOUGH.',flow:[{node:'Signal',type:'loop',sub:'Read it before it becomes collapse'},{node:'Protect',type:'loop',sub:'Guard the ground you have cleared'},{node:'Adjust',type:'loop',sub:'Change the load before it decides for you'},{node:'Stabilise',type:'loop',sub:'Next season starts from here'},{node:'Expression · Building · Enough',type:'output'}]},
+      ];
+      let activeIdx=0;
+      function arrow(color){return '<div style="display:flex;flex-direction:column;align-items:center;margin:4px 0;"><div style="width:1px;height:16px;background:'+color+'60;"></div><div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid '+color+'60;"></div></div>';}
+      function flowDiagram(stage){const color=stage.color,flow=stage.flow,isLoop=flow[0].type==='loop';if(isLoop){const loopItems=flow.filter(f=>f.type==='loop'),output=flow.find(f=>f.type==='output');return '<div style="position:relative;padding:24px 0;"><div style="display:flex;justify-content:center;margin-bottom:28px;"><div style="position:relative;width:210px;height:210px;"><div style="position:absolute;inset:0;border-radius:50%;border:2px dashed '+color+'35;"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:32px;color:'+color+'70;font-family:Cormorant Garamond,serif;">&#8635;</div>'+loopItems.map((item,i)=>{const positions=[{top:"4px",left:"50%",transform:"translateX(-50%)"},{top:"50%",right:"4px",transform:"translateY(-50%)"},{bottom:"4px",left:"50%",transform:"translateX(-50%)"},{top:"50%",left:"4px",transform:"translateY(-50%)"}];const pos=positions[i];const posStr=Object.entries(pos).map(([k,v])=>k+":"+v).join(";");return '<div style="position:absolute;'+posStr+';width:88px;background:'+color+'12;border:1px solid '+color+'45;border-radius:8px;padding:7px 6px;text-align:center;"><div style="font-size:13px;font-weight:700;color:'+color+';font-family:Cormorant Garamond,serif;line-height:1.1;margin-bottom:4px;">'+item.node+'</div><div style="font-size:10px;color:'+C.textDim+';font-family:Inter,sans-serif;line-height:1.3;">'+item.sub+'</div></div>';}).join('')+'</div></div><div style="text-align:center;"><div style="font-size:11px;letter-spacing:2px;color:'+C.textDim+';font-family:Inter,sans-serif;text-transform:uppercase;margin-bottom:8px;">then</div><div style="display:inline-block;padding:10px 20px;background:'+color+'15;border:1px solid '+color+'55;border-radius:20px;font-size:15px;color:'+color+';font-family:Cormorant Garamond,serif;">'+output.node+'</div></div></div>';}
+      const question=flow.find(f=>f.type==='question'),measure=flow.find(f=>f.type==='measure'),branches=flow.filter(f=>f.type==='branch'),output=flow.find(f=>f.type==='output');
+      return '<div style="display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 0;"><div style="padding:12px 22px;background:'+C.bgSubtle+';border:1px solid '+color+';border-radius:24px;font-size:15px;color:'+C.text+';font-family:Cormorant Garamond,serif;text-align:center;font-style:italic;max-width:90%;">'+question.node+'</div>'+arrow(color)+(measure?'<div style="padding:10px 18px;background:'+color+'12;border:1px solid '+color+'35;border-radius:8px;font-size:14px;color:'+color+';font-family:Inter,sans-serif;letter-spacing:0.3px;text-align:center;max-width:90%;"><div style="font-weight:700;margin-bottom:3px;">'+measure.node+'</div><div style="font-size:11px;color:'+C.textDim+';letter-spacing:0.5px;">'+measure.sub+'</div></div>'+arrow(color):'')+
+      '<div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;width:100%;">'+branches.map(b=>'<div style="flex:1 1 80px;min-width:70px;max-width:'+(branches.length>3?'90px':'120px')+';padding:12px 8px;background:'+C.bgCard+';border:1px solid '+color+'30;border-top:2px solid '+color+';border-radius:0 0 8px 8px;text-align:center;"><div style="font-size:13px;font-weight:700;color:'+color+';font-family:Cormorant Garamond,serif;margin-bottom:5px;line-height:1.2;">'+b.node+'</div><div style="font-size:11px;color:'+C.textDim+';line-height:1.35;font-family:Inter,sans-serif;">'+b.sub+'</div></div>').join('')+'</div>'+arrow(color)+
+      '<div style="padding:12px 26px;background:'+color+'15;border:1px solid '+color+';border-radius:24px;font-size:15px;color:'+C.text+';font-family:Cormorant Garamond,serif;text-align:center;letter-spacing:0.2px;max-width:90%;">'+output.node+'</div></div>';}
+      function renderTrack(){const dots=stages.map((s,i)=>{const pct=(i/(stages.length-1))*100,active=i<=activeIdx,current=i===activeIdx;return '<div style="position:absolute;left:'+pct+'%;transform:translateX(-50%);width:'+(current?13:active?10:8)+'px;height:'+(current?13:active?10:8)+'px;border-radius:50%;background:'+(active?s.color:C.border)+';border:2px solid '+(active?s.color:C.bgCard)+';transition:all 0.3s ease;box-shadow:'+(current?'0 0 12px '+s.color:'none')+';z-index:2;top:50%;margin-top:'+(current?-6.5:active?-5:-4)+'px;"></div>';}).join(''),progressPct=((activeIdx+1)/stages.length)*100,currentColor=stages[activeIdx].color;return '<div style="position:relative;height:40px;margin:0 0 28px;display:flex;align-items:center;"><div style="position:absolute;left:0;right:0;height:2px;background:'+C.border+';border-radius:2px;"></div><div style="position:absolute;left:0;height:2px;width:'+progressPct+'%;background:linear-gradient(90deg,#f04aa7,'+currentColor+');transition:width 0.5s ease;box-shadow:0 0 8px '+currentColor+'60;border-radius:2px;"></div>'+dots+'<div style="position:absolute;left:0;top:-18px;font-family:Inter,sans-serif;font-size:11px;color:'+C.textDim+';letter-spacing:1px;text-transform:uppercase;">Start</div><div style="position:absolute;right:0;top:-18px;font-family:Inter,sans-serif;font-size:11px;color:'+C.textDim+';letter-spacing:1px;text-transform:uppercase;">Enough</div></div>';}
+      function renderCards(){return '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">'+stages.map((s,i)=>{const active=i===activeIdx;return '<button onclick="maSetStage('+i+')" style="cursor:pointer;padding:16px 12px;background:'+(active?C.bgCard:C.bg)+';border:1px solid '+(active?s.color:C.border)+';border-top:3px solid '+(active?s.color:C.border)+';border-radius:10px;transition:all 0.2s ease;box-shadow:'+(active?'0 0 20px '+s.color+'18':'none')+';text-align:left;width:100%;"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;"><div style="font-family:Inter,sans-serif;font-size:11px;color:'+C.textDim+';letter-spacing:2px;">'+s.number+'</div><div style="font-size:18px;opacity:'+(active?1:0.4)+';">'+s.icon+'</div></div><div style="font-size:16px;font-family:Cormorant Garamond,serif;color:'+(active?s.color:C.textMid)+';font-weight:600;margin-bottom:5px;line-height:1.2;">'+s.label+'</div><div style="font-size:10px;font-family:Inter,sans-serif;color:'+C.textDim+';letter-spacing:0.8px;text-transform:uppercase;line-height:1.3;">'+s.raceTag+'</div></button>';}).join('')+'</div>';}
+      function renderLeft(stage){const color=stage.color,bodyParas=stage.body.map(p=>'<p style="margin:0 0 1rem;font-size:1.1rem;font-family:Cormorant Garamond,serif;line-height:1.7;color:'+C.text+';">'+p+'</p>').join(''),exon=stage.exoneration?'<div style="margin:1.2rem 0;padding:1.4rem 1.8rem;background:'+C.text+';border-radius:14px;"><p style="margin:0;font-family:Cormorant Garamond,serif;font-size:1.2rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.55;letter-spacing:-0.01em;">'+stage.exoneration+'</p></div>':'',forward=stage.forward?'<p style="margin:1rem 0 0;font-size:1.05rem;font-style:italic;color:'+color+';font-weight:500;font-family:Cormorant Garamond,serif;">'+stage.forward+'</p>':'',closing=stage.closing?'<p style="margin:1rem 0 0;font-size:1.1rem;font-weight:600;color:'+C.text+';font-family:Cormorant Garamond,serif;">'+stage.closing+'</p>':'',prev=activeIdx>0?'<button onclick="maSetStage('+(activeIdx-1)+')" style="padding:10px 22px;background:transparent;border:1px solid '+C.border+';border-radius:20px;color:'+C.textMid+';font-size:14px;font-family:Inter,sans-serif;cursor:pointer;letter-spacing:0.8px;">&larr; '+stages[activeIdx-1].label+'</button>':'',next=activeIdx<stages.length-1?'<button onclick="maSetStage('+(activeIdx+1)+')" style="padding:10px 22px;background:'+color+';border:none;border-radius:20px;color:#fff;font-size:14px;font-family:Inter,sans-serif;cursor:pointer;font-weight:700;letter-spacing:0.8px;">Next: '+stages[activeIdx+1].label+' &rarr;</button>':'<div style="padding:10px 22px;background:'+color+'18;border:1px solid '+color+';border-radius:20px;font-size:15px;font-family:Cormorant Garamond,serif;color:'+color+';font-style:italic;">You were always enough.</div>';
+      return '<div><div style="margin-bottom:20px;"><div style="display:inline-block;padding:4px 12px;background:'+color+'12;border:1px solid '+color+'35;border-radius:20px;font-family:Inter,sans-serif;font-size:11px;color:'+color+';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">'+stage.raceTag+'</div><h2 style="margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.4rem);font-family:Cormorant Garamond,serif;font-weight:500;color:'+color+';line-height:1.1;">'+stage.label+'</h2><p style="margin:0;font-size:1.15rem;color:'+C.text+';font-family:Cormorant Garamond,serif;line-height:1.65;">'+stage.subtitle+'</p></div><div style="margin-bottom:22px;"><div style="font-family:Inter,sans-serif;font-size:11px;color:'+C.textDim+';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Tools in this stage</div><div style="display:flex;flex-wrap:wrap;gap:6px;">'+stage.tools.map(t=>'<span style="padding:6px 14px;background:'+C.bgSubtle+';border:1px solid '+color+'30;border-radius:20px;font-size:14px;color:'+C.textMid+';font-family:Cormorant Garamond,serif;">'+t+'</span>').join('')+'</div></div><div style="margin-bottom:22px;">'+bodyParas+exon+forward+closing+'</div><div style="padding:18px 22px;background:'+color+'08;border:1px solid '+color+'25;border-left:3px solid '+color+';border-radius:0 12px 12px 0;margin-bottom:24px;"><div style="font-family:Inter,sans-serif;font-size:11px;color:'+color+';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">The verdict</div><p style="margin:0;font-size:1.05rem;color:'+C.text+';font-family:Cormorant Garamond,serif;line-height:1.7;font-style:italic;">"'+stage.insight+'"</p></div><div style="display:flex;gap:10px;flex-wrap:wrap;">'+prev+next+'</div></div>';}
+      function renderRight(stage){const color=stage.color,miniMap=stages.map((s,i)=>{const isActive=i===activeIdx;return '<div onclick="maSetStage('+i+')" style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:5px 8px;border-radius:6px;background:'+(isActive?s.color+'12':'transparent')+';transition:background 0.2s;"><div style="width:6px;height:6px;border-radius:50%;background:'+(i<=activeIdx?s.color:C.border)+';flex-shrink:0;"></div><div style="font-size:14px;font-family:Cormorant Garamond,serif;color:'+(isActive?s.color:C.textDim)+';">'+s.label+'</div><div style="font-size:11px;font-family:Inter,sans-serif;color:'+C.textDim+';margin-left:auto;letter-spacing:0.3px;">'+s.raceTag+'</div></div>';}).join('');return '<div><div style="background:'+C.bgCard+';border:1px solid '+C.border+';border-radius:16px;padding:22px 18px;min-height:360px;margin-bottom:14px;"><div style="font-family:Inter,sans-serif;font-size:11px;color:'+C.textDim+';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;">How this stage works</div>'+flowDiagram(stage)+'</div><div style="padding:14px 16px;background:'+C.bgCard+';border:1px solid '+C.border+';border-radius:12px;"><div style="font-family:Inter,sans-serif;font-size:11px;color:'+C.textDim+';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Where this fits</div>'+miniMap+'</div></div>';}
+      function render(){const stage=stages[activeIdx],root=document.getElementById('ma-root');if(!root)return;root.innerHTML='<div style="border-bottom:1px solid '+C.border+';padding:28px 0 24px;background:'+C.bgSubtle+';margin:0 calc(-1 * clamp(1.2rem,4vw,2.5rem));padding-left:clamp(1.2rem,4vw,2.5rem);padding-right:clamp(1.2rem,4vw,2.5rem);border-radius:18px 18px 0 0;"><div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px;"><div><div style="font-family:Inter,sans-serif;font-size:11px;letter-spacing:2.5px;color:'+C.textDim+';text-transform:uppercase;margin-bottom:6px;">The Misfit Architecture</div><h2 style="margin:0 0 4px;font-size:clamp(1.4rem,2.5vw,2rem);font-family:Cormorant Garamond,serif;font-weight:500;color:'+C.text+';letter-spacing:-0.3px;">ENOUGH</h2><div style="font-size:15px;color:'+C.textMid+';font-family:Cormorant Garamond,serif;font-style:italic;">Six stages. One race. Your design.</div></div><div style="text-align:right;"><div style="font-family:Inter,sans-serif;font-size:11px;color:'+C.textDim+';letter-spacing:1px;margin-bottom:4px;">STAGE '+stage.number+' OF 06</div><div style="font-size:16px;font-family:Cormorant Garamond,serif;color:'+stage.color+';">'+stage.label+'</div></div></div>'+renderTrack()+renderCards()+'</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:36px;">'+renderLeft(stage)+renderRight(stage)+'</div>';}
+      window.maSetStage=function(idx){activeIdx=idx;render();};
+      document.addEventListener('DOMContentLoaded',render);if(document.readyState!=='loading')render();
+    })();
+      </script>
     </section>
 
     <section class="section section-soft" id="book">
@@ -319,7 +636,7 @@
             <p class="sp-statement">Be the coach the person in front of you actually needs.<br/>Not the coach you were trained to be for someone else.</p>
             <p class="sp-body-copy">Most professionals enter their work because they want to help. Teachers, clinicians, leaders, parents. Good intentions alone do not prevent harm. When you cannot see the full load someone is carrying, you cannot teach them how to have wings and fly.</p>
             <p class="sp-italic">If capable people keep struggling in your system, the problem is probably not the people. It is probably that you are looking at the race and not the runner.</p>
-            <a class="btn btn-primary" href="mailto:hello@tanyahicks.com">Speaking Enquiries</a>
+            <a class="btn btn-primary" href="/cdn-cgi/l/email-protection#a6cec3cacac9e6d2c7c8dfc7cecfc5cdd588c5c9cb">Speaking Enquiries</a>
           </div>
 
           <div class="sp-right">
@@ -840,7 +1157,7 @@
 
   </main>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Spotlight observer
     const spotlightObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-lit'); });
@@ -880,9 +1197,4 @@
       const trigger = box.querySelector(".about-expand-trigger");
       const icon = box.querySelector(".about-expand-icon");
       const isOpen = box.classList.toggle("open");
-      if (trigger) trigger.setAttribute("aria-expanded", String(isOpen));
-      if (icon) icon.textContent = isOpen ? "-" : "+";
-    }
-  </script>
-</body>
-</html>
+      if (t
