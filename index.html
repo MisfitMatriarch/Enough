@@ -2091,15 +2091,15 @@
     <!-- ═══════════════════════════════════════════
          SPEAKING
     ════════════════════════════════════════════ -->
-    <section class="section" id="speaking">
-      <div class="container">
+    <!-- Full-width banner header — outside container -->
+    <div class="speaking-header centre reveal" style="background:var(--text); width:100vw; margin-left:calc(-50vw + 50%); padding:clamp(3rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem); text-align:center;">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.35);">Speaking</p>
+      <p class="speaking-lead"><span class="speaking-lead-hot">First,</span><br /><span class="speaking-lead-hot">do no harm.</span></p>
+      <h2 class="speaking-sub">If you want to help people,<br />first understand what it costs them to be here.</h2>
+    </div>
 
-        <!-- Full-width banner header -->
-        <div class="speaking-header centre speaking-banner reveal">
-          <p class="eyebrow">Speaking</p>
-          <p class="speaking-lead"><span class="speaking-lead-hot">First,</span><br /><span class="speaking-lead-hot">do no harm.</span></p>
-          <h2 class="speaking-sub">If you want to help people,<br />first understand what it costs them to be here.</h2>
-        </div>
+    <section class="section" id="speaking" style="padding-top:clamp(2rem, 4vw, 4rem);">
+      <div class="container">
 
         <!-- Full-width two-column card -->
         <div class="reveal" style="display:grid; grid-template-columns:1fr 1fr; border-radius:16px; overflow:hidden; background:#F5F1ED; min-height:520px;">
@@ -2143,6 +2143,113 @@
 
         </div>
 
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         AWARDS CAROUSEL
+    ════════════════════════════════════════════ -->
+    <section class="section" style="padding-bottom:2rem; overflow:hidden;">
+      <div class="container" style="margin-bottom:2rem;">
+        <p class="eyebrow" style="text-align:center;">Recognition</p>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-size:clamp(2rem, 3vw, 3rem); font-weight:600; color:var(--text); text-align:center; margin:0.5rem 0 0; letter-spacing:-0.02em;">Awards &amp; Achievements</h2>
+      </div>
+      <style>
+        .awards-scroll { display:flex; gap:1.5rem; animation:scrollAwards 60s linear infinite; width:max-content; }
+        .awards-scroll:hover { animation-play-state:paused; }
+        .awards-scroll img { height:220px; width:auto; border-radius:10px; flex-shrink:0; transition:transform 0.3s; }
+        .awards-scroll img:hover { transform:scale(1.05); }
+        @keyframes scrollAwards {
+          0% { transform:translateX(0); }
+          100% { transform:translateX(-50%); }
+        }
+      </style>
+      <div style="overflow:hidden; width:100vw; margin-left:calc(-50vw + 50%); padding:0 0 1rem;">
+        <div class="awards-scroll">
+          <img src="assets/awards/1.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/2.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/3.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/4.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/5.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/6.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/7.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/8.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/9.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/10.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/11.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/12.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/13.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/14.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/15.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/16.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/17.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/18.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/19.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/20.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/21.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/22.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/23.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/24.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/25.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/26.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/27.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/28.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/29.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/30.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/31.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/32.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/33.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/34.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/35.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/36.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/37.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/38.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/39.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/40.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/41.png" alt="Award" loading="lazy" />
+          <!-- Duplicate for seamless loop -->
+          <img src="assets/awards/1.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/2.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/3.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/4.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/5.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/6.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/7.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/8.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/9.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/10.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/11.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/12.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/13.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/14.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/15.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/16.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/17.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/18.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/19.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/20.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/21.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/22.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/23.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/24.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/25.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/26.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/27.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/28.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/29.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/30.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/31.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/32.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/33.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/34.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/35.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/36.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/37.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/38.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/39.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/40.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/41.png" alt="Award" loading="lazy" />
+        </div>
       </div>
     </section>
 
