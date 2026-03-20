@@ -574,7 +574,7 @@
       padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem);
       border-radius: 0;
     }
-    .speaking-banner .eyebrow { color: rgba(255,255,255,0.35); }
+    .speaking-banner .eyebrow { color: rgba(255,255,255,0.55); }
     .speaking-lead-hot { color: var(--hot); }
     .speaking-lead-white { color: rgba(255,255,255,0.92); }
     .speaking-header.centre {
@@ -743,7 +743,7 @@
       font-weight: 600;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.55);
     }
 
     .spotlight-text {
@@ -815,9 +815,17 @@
       background: rgba(255,255,255,0.08);
     }
 
+    /* ── Focus visible styles for accessibility ── */
+    .btn:focus-visible, button:focus-visible, a:focus-visible, input:focus-visible {
+      outline: 2px solid #E91D8C;
+      outline-offset: 2px;
+    }
+
   </style>
 </head>
 <body>
+
+  <a href="#main-content" class="sr-only" style="position:absolute;top:-100px;left:0;z-index:9999;background:#fff;padding:8px 16px;font-size:14px;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Skip to content</a>
 
   <header class="site-header">
     <div class="container">
@@ -826,7 +834,7 @@
           <span class="brand-top">Tanya Hicks</span>
           <span class="brand-bottom">ENOUGH</span>
         </a>
-        <nav class="nav-links" aria-label="Primary">
+        <nav class="nav-links" aria-label="Primary navigation">
           <a href="#recognition">Recognition</a>
           <a href="#journey">Journey</a>
           <a href="#book">Book</a>
@@ -838,12 +846,12 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
 
     <!-- ═══════════════════════════════════════════
          HERO
     ════════════════════════════════════════════ -->
-    <section class="hero section-tight-top" id="top">
+    <section class="hero section-tight-top" id="top" role="region" aria-label="Hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow hero-eyebrow">Author · Clinician · International Speaker · Misfit Matriarch</p>
@@ -872,7 +880,7 @@
     <!-- ═══════════════════════════════════════════
          RECOGNITION
     ════════════════════════════════════════════ -->
-    <section class="section section-soft" id="recognition" style="padding-bottom: 0;">
+    <section class="section section-soft" id="recognition" role="region" aria-label="Recognition" style="padding-bottom: 0;">
       <div class="container narrow centre">
         <h2 class="display section-title-lg reveal">
           You tried the therapy.<br />
@@ -1463,11 +1471,6 @@
         }
       </style>
 
-      <!-- Heading -->
-      <div class="walk-heading" style="padding-top: clamp(4rem,7vw,7rem); padding-bottom: 0; display:none;">
-        <h2>But you have already tried that.</h2>
-      </div>
-
       <!-- Scene -->
       <div class="walk-scene" id="walk-scene">
         <div class="walk-zone-label" id="walk-zone-label">Inside your head</div>
@@ -1598,7 +1601,7 @@
     <!-- ═══════════════════════════════════════════
          POSSIBILITY — interactive podium
     ════════════════════════════════════════════ -->
-    <section class="section section-soft possibility-section" id="possibility">
+    <section class="section section-soft possibility-section" id="possibility" role="region" aria-label="Possibility">
       <style>
         .pod-section { max-width: 860px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
 
@@ -1879,14 +1882,14 @@
     <!-- ═══════════════════════════════════════════
          JOURNEY / TOOLS
     ════════════════════════════════════════════ -->
-    <section id="journey" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+    <section id="journey" role="region" aria-label="Journey" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
       <div id="ma-root" style="max-width:1100px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);"></div>
     </section>
 
     <!-- ═══════════════════════════════════════════
          BOOK
     ════════════════════════════════════════════ -->
-    <section class="section section-soft" id="book">
+    <section class="section section-soft" id="book" role="region" aria-label="Book">
       <style>
         .book2-wrap {
           max-width: 1100px; margin: 0 auto;
@@ -2046,7 +2049,7 @@
     <!-- ═══════════════════════════════════════════
          ABOUT
     ════════════════════════════════════════════ -->
-    <section class="section section-soft" id="about">
+    <section class="section section-soft" id="about" role="region" aria-label="About Tanya Hicks">
       <div class="container about-grid">
         <div class="about-copy-col">
           <p class="eyebrow">Tanya Hicks</p>
@@ -2093,12 +2096,12 @@
     ════════════════════════════════════════════ -->
     <!-- Full-width banner header — outside container -->
     <div class="speaking-header centre reveal" style="background:var(--text); width:100vw; margin-left:calc(-50vw + 50%); padding:clamp(3rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem); text-align:center;">
-      <p class="eyebrow" style="color:rgba(255,255,255,0.35);">Speaking</p>
+      <p class="eyebrow" style="color:rgba(255,255,255,0.55);">Speaking</p>
       <p class="speaking-lead"><span class="speaking-lead-hot">First,</span><br /><span class="speaking-lead-hot">do no harm.</span></p>
       <h2 class="speaking-sub">If you want to help people,<br />first understand what it costs them to be here.</h2>
     </div>
 
-    <section class="section" id="speaking" style="padding-top:clamp(2rem, 4vw, 4rem);">
+    <section class="section" id="speaking" role="region" aria-label="Speaking" style="padding-top:clamp(2rem, 4vw, 4rem);">
       <div class="container">
 
         <!-- Full-width two-column card -->
@@ -2165,90 +2168,90 @@
         }
       </style>
       <div style="overflow:hidden; width:100vw; margin-left:calc(-50vw + 50%); padding:0 0 1rem;">
-        <div class="awards-scroll">
-          <img src="assets/awards/1.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/2.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/3.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/4.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/5.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/6.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/7.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/8.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/9.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/10.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/11.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/12.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/13.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/14.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/15.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/16.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/17.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/18.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/19.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/20.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/21.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/22.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/23.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/24.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/25.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/26.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/27.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/28.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/29.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/30.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/31.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/32.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/33.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/34.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/35.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/36.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/37.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/38.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/39.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/40.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/41.png" alt="Award" loading="lazy" />
+        <div class="awards-scroll" aria-label="Awards carousel">
+          <img src="assets/awards/1.png" alt="2021 Finalist - Best Childrens Disability Service, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/2.png" alt="2022 Finalist - Community Leadership Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/3.png" alt="2022 Finalist - Social Commitment Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/4.png" alt="2023 Finalist - Fisher Business of the Year, Fisher Community Awards" loading="lazy" />
+          <img src="assets/awards/5.png" alt="2024 Finalist - Outstanding Growth, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/6.png" alt="2024 Finalist - Championing Health, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/7.png" alt="2024 Finalist - Woman of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/8.png" alt="2024 Finalist - Excellence in Diversity and Inclusion, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/9.png" alt="2025 Honourable Mention - Thought Leader of the Year, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/10.png" alt="2026 Finalist - Community Group of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/11.png" alt="2026 Finalist - Citizen of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/12.png" alt="2026 Finalist - Girl of the Year Under 16, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/13.png" alt="2026 Finalist - Rising Star, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/14.png" alt="2026 Finalist - Woman in Education, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/15.png" alt="2026 Finalist - Woman in Therapy and Counselling Services, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/16.png" alt="2026 Finalist - Disability Inclusion Impact, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/17.png" alt="2026 Finalist - Human Rights, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/18.png" alt="2026 Finalist - Innovation, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/19.png" alt="2026 Finalist - Thought Leader of the Year, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/20.png" alt="2026 Finalist - Big Idea, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/21.png" alt="2025 Bronze Winner - Most Resilient Woman Owned Business, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/22.png" alt="2025 Bronze Winner - Advocacy and Impact, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/23.png" alt="2024 Silver Winner - Disabled Business Excellence, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/24.png" alt="2024 Silver Winner - Global Woman of the Year, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/25.png" alt="2024 Silver Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/26.png" alt="2025 Silver Winner - Emerging AusMumPreneur of the Year, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/27.png" alt="2025 Silver Winner - Women in Education, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/28.png" alt="2025 Silver Winner - Achievement in Diversity and Inclusion, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/29.png" alt="2025 Silver Winner - Childrens Education, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/30.png" alt="2022 Gold Winner - Emerging Community Leader Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/31.png" alt="2023 Gold Winner - Community Inclusion Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/32.png" alt="2023 Gold Winner - ND Autistic Excellence Provider of the Year, Divergantz Awards" loading="lazy" />
+          <img src="assets/awards/33.png" alt="2024 Gold Winner - Education Provider of the Year, Sunshine Coast Business Awards" loading="lazy" />
+          <img src="assets/awards/34.png" alt="2024 Gold Winner - Community Leader of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/35.png" alt="2024 Gold Winner - Overcoming the Odds Award, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/36.png" alt="2024 Gold Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/37.png" alt="2025 Gold Winner - Childrens Education, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/38.png" alt="2025 Gold Winner - Emerging Non Profit Business Excellence, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/39.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/40.png" alt="2025 Gold Winner - Rising Star, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/41.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
           <!-- Duplicate for seamless loop -->
-          <img src="assets/awards/1.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/2.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/3.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/4.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/5.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/6.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/7.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/8.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/9.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/10.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/11.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/12.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/13.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/14.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/15.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/16.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/17.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/18.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/19.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/20.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/21.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/22.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/23.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/24.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/25.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/26.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/27.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/28.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/29.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/30.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/31.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/32.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/33.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/34.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/35.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/36.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/37.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/38.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/39.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/40.png" alt="Award" loading="lazy" />
-          <img src="assets/awards/41.png" alt="Award" loading="lazy" />
+          <img src="assets/awards/1.png" alt="2021 Finalist - Best Childrens Disability Service, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/2.png" alt="2022 Finalist - Community Leadership Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/3.png" alt="2022 Finalist - Social Commitment Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/4.png" alt="2023 Finalist - Fisher Business of the Year, Fisher Community Awards" loading="lazy" />
+          <img src="assets/awards/5.png" alt="2024 Finalist - Outstanding Growth, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/6.png" alt="2024 Finalist - Championing Health, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/7.png" alt="2024 Finalist - Woman of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/8.png" alt="2024 Finalist - Excellence in Diversity and Inclusion, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/9.png" alt="2025 Honourable Mention - Thought Leader of the Year, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/10.png" alt="2026 Finalist - Community Group of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/11.png" alt="2026 Finalist - Citizen of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/12.png" alt="2026 Finalist - Girl of the Year Under 16, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/13.png" alt="2026 Finalist - Rising Star, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/14.png" alt="2026 Finalist - Woman in Education, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/15.png" alt="2026 Finalist - Woman in Therapy and Counselling Services, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/16.png" alt="2026 Finalist - Disability Inclusion Impact, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/17.png" alt="2026 Finalist - Human Rights, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/18.png" alt="2026 Finalist - Innovation, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/19.png" alt="2026 Finalist - Thought Leader of the Year, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/20.png" alt="2026 Finalist - Big Idea, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/21.png" alt="2025 Bronze Winner - Most Resilient Woman Owned Business, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/22.png" alt="2025 Bronze Winner - Advocacy and Impact, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/23.png" alt="2024 Silver Winner - Disabled Business Excellence, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/24.png" alt="2024 Silver Winner - Global Woman of the Year, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/25.png" alt="2024 Silver Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/26.png" alt="2025 Silver Winner - Emerging AusMumPreneur of the Year, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/27.png" alt="2025 Silver Winner - Women in Education, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/28.png" alt="2025 Silver Winner - Achievement in Diversity and Inclusion, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/29.png" alt="2025 Silver Winner - Childrens Education, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/30.png" alt="2022 Gold Winner - Emerging Community Leader Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/31.png" alt="2023 Gold Winner - Community Inclusion Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/32.png" alt="2023 Gold Winner - ND Autistic Excellence Provider of the Year, Divergantz Awards" loading="lazy" />
+          <img src="assets/awards/33.png" alt="2024 Gold Winner - Education Provider of the Year, Sunshine Coast Business Awards" loading="lazy" />
+          <img src="assets/awards/34.png" alt="2024 Gold Winner - Community Leader of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/35.png" alt="2024 Gold Winner - Overcoming the Odds Award, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/36.png" alt="2024 Gold Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/37.png" alt="2025 Gold Winner - Childrens Education, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/38.png" alt="2025 Gold Winner - Emerging Non Profit Business Excellence, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/39.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/40.png" alt="2025 Gold Winner - Rising Star, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/41.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
         </div>
       </div>
     </section>
@@ -2256,7 +2259,7 @@
     <!-- ═══════════════════════════════════════════
          WAITLIST
     ════════════════════════════════════════════ -->
-    <section class="section section-soft" id="waitlist">
+    <section class="section section-soft" id="waitlist" role="region" aria-label="Pre-order waitlist">
       <div class="container">
         <div class="waitlist-card centre">
           <p class="eyebrow">Pre-order</p>
@@ -2264,9 +2267,9 @@
           <p class="body-copy">Pre-orders are now available.</p>
           <p class="body-copy">No spam. No funnels. No daily inspiration.</p>
           <p class="body-copy body-strong">Just the book.</p>
-          <form class="waitlist-form">
+          <form class="waitlist-form" action="mailto:tanya@neurodivergentempowered.com" method="POST" enctype="text/plain">
             <label class="sr-only" for="waitlist-email">Email address</label>
-            <input id="waitlist-email" type="email" placeholder="Your email address" />
+            <input id="waitlist-email" name="email" type="email" placeholder="Your email address" required />
             <button class="btn btn-dark" type="submit">Pre-order ENOUGH</button>
           </form>
         </div>
