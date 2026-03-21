@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENOUGH | Tanya Hicks</title>
+  <meta name="description" content="ENOUGH by Tanya Hicks. You were never the only thing that needed fixing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #E91D8C;
+      --pink-dark: #C4106B;
+      --purple: #6D4C9B;
+      --teal: #4FCEC5;
+      --teal-text: #2BA898;
+      --gold: #C4A96A;
+      --dark-text: #1A1A1A;
+      --body-text: #3D3D3D;
+      --muted: #7A7570;
+      --bg-warm: #F5F1ED;
+      --bg-white: #FFFFFF;
+      --bg-light: #FAF8F6;
+      --border: #E8E4DE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg-warm); color: var(--body-text); -webkit-font-smoothing: antialiased; }
+
+    .section { padding: clamp(72px, 10vw, 120px) clamp(20px, 5vw, 80px); }
+    .section-warm { background: var(--bg-warm); }
+    .section-white { background: var(--bg-white); }
+    .section-dark { background: var(--dark-text); color: #fff; }
+    .container-sm { max-width: 720px; margin: 0 auto; }
+    .container-md { max-width: 960px; margin: 0 auto; }
+    .container-lg { max-width: 1100px; margin: 0 auto; }
+
+    .display-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(64px, 10vw, 120px); line-height: 1.05; color: var(--dark-text); }
+    .section-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.1; color: var(--dark-text); }
+    .sub-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(20px, 2.5vw, 28px); line-height: 1.2; color: var(--dark-text); }
+
+    .eyebrow { display: block; font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+    .divider-line { width: 40px; height: 3px; background: var(--pink); margin-bottom: 16px; }
+
+    .body-large { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.75; color: var(--body-text); }
+    .body-light { font-family: 'Inter', -apple-system, sans-serif; font-weight: 300; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.75; color: var(--body-text); }
+    .body { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: var(--body-text); }
+    .body-sm { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; font-size: 14px; line-height: 1.6; color: var(--body-text); }
+    .caption { font-family: 'Inter', -apple-system, sans-serif; font-weight: 400; font-size: 12px; line-height: 1.5; }
+
+    .btn-primary { display: inline-block; background: var(--pink); color: #fff; border: none; border-radius: 8px; padding: 15px 32px; font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; cursor: pointer; transition: background 0.2s ease; text-decoration: none; }
+    .btn-primary:hover { background: var(--pink-dark); }
+    .btn-secondary { display: inline-block; background: transparent; color: var(--purple); border: 2px solid var(--purple); border-radius: 8px; padding: 13px 28px; font-family: 'Inter', -apple-system, sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s ease; text-decoration: none; }
+    .btn-secondary:hover { background: var(--purple); color: #fff; }
+
+    .btn-primary:focus-visible, .btn-secondary:focus-visible, a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+
+    /* Nav */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,241,237,0.95); backdrop-filter: blur(12px); padding: 16px clamp(20px, 5vw, 80px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+    nav .nav-brand { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 22px; color: var(--dark-text); text-decoration: none; letter-spacing: 3px; }
+    nav .nav-links { display: flex; gap: 24px; list-style: none; }
+    nav .nav-links a { font-family: 'Inter', -apple-system, sans-serif; font-weight: 500; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    nav .nav-links a:hover { color: var(--dark-text); }
+    @media (max-width: 768px) { nav .nav-links { display: none; } }
+
+    /* Skip to content */
+    .skip-link { position: absolute; top: -100px; left: 0; z-index: 9999; background: #fff; padding: 8px 16px; font-size: 14px; }
+    .skip-link:focus { top: 0; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive hero grid */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr !important; }
+      .hero-grid > div:last-child { order: -1; margin-bottom: 24px; }
+      .pillars-grid { grid-template-columns: 1fr !important; }
+    }
+
+    /* ── Starting Line styles ── */
+    #sl-root { width: 100%; padding: 0; box-sizing: border-box; }
+    .sl-section-label { font-family: 'Inter', -apple-system, sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); text-align: center; margin-bottom: 2rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
+    .sl-section-label.sl-visible { opacity: 1; transform: translateY(0); }
+    .sl-track-header { position: relative; width: 100%; margin-bottom: 0; }
+    .sl-start-flag { position: absolute; left: 64%; transform: translateX(-50%); bottom: 0; font-family: 'Inter', -apple-system, sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--gold); white-space: nowrap; text-align: center; line-height: 1; padding-bottom: 8px; }
+    .sl-start-flag span { display: block; font-size: 0.62rem; font-weight: 500; color: rgba(196,169,106,0.65); letter-spacing: 0.12em; margin-top: 3px; }
+    .sl-track-wrap {
+      position: relative; width: 100%; height: 340px;
+      background: linear-gradient(180deg, #e8f5e4 0%, #ddefd8 50%, #e8f5e4 100%);
+      border-radius: 12px;
+      border: 1.5px solid rgba(58,107,30,0.15);
+      overflow: hidden;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease;
+      box-shadow: 0 4px 32px rgba(37,25,45,0.07);
+    }
+    .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
+    .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(109,76,155,0.07) 99px, rgba(109,76,155,0.07) 100px); pointer-events: none; }
+    .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(109,76,155,0.12) 15%, rgba(109,76,155,0.12) 85%, transparent); pointer-events: none; }
+    .sl-startline { position: absolute; left: 64%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent 2%, var(--gold) 15%, var(--gold) 85%, transparent 98%); box-shadow: 0 0 12px rgba(196,169,106,0.35); pointer-events: none; }
+    .sl-label-left { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', -apple-system, sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; white-space: nowrap; pointer-events: none; }
+    .sl-label-right { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', -apple-system, sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; pointer-events: none; }
+    .sl-runner { position: absolute; transform: translate(-50%, -50%); cursor: pointer; z-index: 5; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); }
+    .sl-runner.is-active { z-index: 10; }
+    .sl-runner-label { position: absolute; top: -58px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
+    .sl-runner-label-main { font-family: 'Inter', -apple-system, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.2; }
+    .sl-runner-label-sub { font-family: 'Inter', -apple-system, sans-serif; font-size: 11px; color: var(--muted); letter-spacing: 0.5px; margin-top: 3px; }
+    .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2.5px solid; }
+    .sl-icon-forward { display: inline-block; transform: scaleX(-1); }
+    .sl-connector { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); width: 2px; transition: opacity 0.3s; }
+    .sl-prompt { font-family: 'Inter', -apple-system, sans-serif; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-top: 1.4rem; opacity: 0; transition: opacity 0.6s 0.5s ease; }
+    .sl-prompt.sl-visible { opacity: 1; }
+    .sl-detail { max-width: 860px; margin: 2.5rem auto 0; }
+    .sl-detail-card {
+      border-radius: 18px; padding: 2.2rem 2.8rem;
+      display: flex; align-items: flex-start; gap: 2rem;
+      animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94);
+      background: var(--bg-light); border: 1px solid var(--border);
+    }
+    @keyframes slSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .sl-detail-icon { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0; border: 2.5px solid; }
+    .sl-detail-tag { font-family: 'Inter', -apple-system, sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.7rem; }
+    .sl-detail-copy { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; color: var(--dark-text); margin: 0 0 0.9rem; font-style: italic; font-weight: 700; }
+    .sl-detail-body { font-family: 'Inter', -apple-system, sans-serif; font-size: 1rem; line-height: 1.75; color: var(--muted); margin: 0; }
+
+
+    /* ── MA interactive responsive ── */
+    @media (max-width: 768px) {
+      #book .container-md > div:first-child {
+        grid-template-columns: 1fr !important;
+      }
+      #book .container-md img {
+        margin: 0 auto;
+      }
+      #ma-root > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+      .sl-detail-card {
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<nav>
+  <a href="#" class="nav-brand">ENOUGH</a>
+  <ul class="nav-links">
+    <li><a href="#manifesto">Why</a></li>
+    <li><a href="#feeling">Feeling</a></li>
+    <li><a href="#book">Book</a></li>
+    <li><a href="#stages">Stages</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+<!-- SECTION 1 — HERO -->
+<section class="section" style="background: linear-gradient(135deg, #FFFFFF 0%, #FFF0F8 50%, #F5F1ED 100%); padding-top: calc(clamp(72px, 10vw, 120px) + 80px); position: relative; overflow: hidden;">
+  <div style="position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(233,29,140,0.06) 0%, transparent 70%); pointer-events: none; z-index: 0;"></div>
+  <div class="container-lg hero-grid" style="display: grid; grid-template-columns: 1fr 340px; gap: clamp(32px, 5vw, 64px); align-items: center; position: relative; z-index: 1;">
+    <div>
+      <span class="eyebrow">The Misfit Matriarch</span>
+      <h1 class="display-heading" style="margin-bottom: 16px;">Enough<span style="color: #E91D8C;">.</span></h1>
+      <p class="sub-heading" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-style: italic; color: var(--body-text); margin-bottom: 24px;">One word. Four truths.<br>You already know which one brought you here.</p>
+      <p class="body-light" style="max-width: 520px;">You have worked too hard for life to still be this hard. You tried the therapy. The routines. The boundaries. The books. And you are still exhausted in ways that none of it explains. That is not a you problem. Nobody ever showed you what you were actually working with. Every strategy you were handed was built for someone else. It was not bad faith. It was the wrong map. This book is the right one.</p>
+      <p style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 15px; color: var(--muted); margin-top: 32px;">Misfits don't fit the mould. They forge it.</p>
+      <div style="margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="#book" class="btn-primary">Pre-order ENOUGH</a>
+        <a href="#manifesto" class="btn-secondary">Read on &#8595;</a>
+      </div>
+    </div>
+    <div style="position: relative;">
+      <img src="assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg" alt="Tanya Hicks" style="width: clamp(280px, 28vw, 420px); height: clamp(320px, 32vw, 480px); object-fit: cover; object-position: center top; border-radius: 0; display: block; mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%); -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 100%), linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 85%, rgba(0,0,0,0) 100%); mask-composite: intersect; -webkit-mask-composite: source-in;" />
+    </div>
+  </div>
+  <div style="max-width: 1100px; margin: 48px auto 0; border-top: 1px solid var(--border); padding-top: 24px;">
+    <p style="font-size: 13px; color: var(--muted); letter-spacing: 0.3px;">Matriarch. Viking. Misfit. Clinician. Scholar. Human. Birther of the Enduring. Author of ENOUGH.</p>
+  </div>
+</section>
+
+<!-- SECTION 2 — MANIFESTO -->
+<section class="section section-white" id="manifesto">
+  <div class="container-sm">
+    <div class="divider-line"></div>
+    <span class="eyebrow">Why this book exists</span>
+    <h2 class="section-heading" style="margin-bottom: 32px;">You were never the only thing that needed fixing.</h2>
+    <p class="body-light" style="margin-bottom: 24px;">You are not lazy. You are not weak. You are not bad at being a person. You are running on half your energy before the day even starts, and nobody has ever shown you where the rest of it is going.</p>
+    <p class="body-light" style="margin-bottom: 24px;">Every strategy. Every protocol. Every try harder. Aimed at you. As if you were the thing that needed fixing.</p>
+    <p class="body-light">You were never the only thing that needed fixing. And you have had enough of not knowing what the rest of it actually is.</p>
+  </div>
+</section>
+
+<!-- SECTION 3 — YOU KNOW THIS FEELING -->
+<section class="section" id="feeling" style="background: #FFF0F8;">
+  <div class="container-sm">
+    <div class="divider-line"></div>
+    <span class="eyebrow">You know this feeling</span>
+    <h2 class="section-heading" style="margin-bottom: 40px;">Both of those things can be true.</h2>
+    <div style="border-left: 2px solid var(--pink); padding-left: 20px; margin-bottom: 20px;">
+      <p style="font-size: 17px; line-height: 1.7; color: var(--body-text);">You are in the meeting. You are performing fine. Your body left twenty minutes ago.</p>
+    </div>
+    <div style="border-left: 2px solid var(--pink); padding-left: 20px; margin-bottom: 20px;">
+      <p style="font-size: 17px; line-height: 1.7; color: var(--body-text);">Rest does not bring you back. It just makes the gap quieter.</p>
+    </div>
+    <div style="border-left: 2px solid var(--pink); padding-left: 20px; margin-bottom: 20px;">
+      <p style="font-size: 17px; line-height: 1.7; color: var(--body-text);">You know what to do. You cannot sustain doing it.</p>
+    </div>
+    <div style="border-left: 2px solid var(--pink); padding-left: 20px; margin-bottom: 20px;">
+      <p style="font-size: 17px; line-height: 1.7; color: var(--body-text);">You compare yourself to someone who manages the same load with less cost, and you cannot work out what you are doing wrong.</p>
+    </div>
+    <div style="border-left: 2px solid var(--pink); padding-left: 20px; margin-bottom: 20px;">
+      <p style="font-size: 17px; line-height: 1.7; color: var(--body-text);">You lay on the floor at the end of a day that should not have been that hard, wondering what is wrong with you.</p>
+    </div>
+    <div style="border-left: 2px solid var(--purple); padding-left: 20px;">
+      <p style="font-size: 17px; line-height: 1.7; color: var(--dark-text); font-style: italic;">The thing that needed fixing was never just you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4 — STARTING LINE -->
+<section class="section section-white" id="starting-line">
+  <div class="container-md">
+    <div class="divider-line"></div>
+    <span class="eyebrow">What nobody told you</span>
+    <h2 class="section-heading" style="margin-bottom: 24px;">Not everyone starts from the same starting line.</h2>
+    <p style="font-size: 17px; line-height: 1.7; color: var(--body-text); max-width: 640px; margin-bottom: 40px;">Before you spend more on the next course, the next coach, the next strategy — do you actually have your feet in the starting blocks? Or are you still making your way across the car park?</p>
+
+    <div style="border-radius: 12px; overflow: visible; border: 1px solid var(--border); margin: 40px 0; background: var(--bg-warm); padding: 32px 28px; width: 100vw; margin-left: calc(-50vw + 50%); border-radius: 0; border-left: none; border-right: none;">
+      <div id="sl-root">
+        <div class="sl-section-label" id="sl-section-label">Where your starting line actually is</div>
+        <div class="sl-track-header" style="height:38px;">
+          <div class="sl-start-flag">START<span>assumed equal</span></div>
+        </div>
+        <div class="sl-track-wrap" id="sl-track-wrap">
+          <div class="sl-lane-grid"></div>
+          <div class="sl-lane-line" style="top:33%"></div>
+          <div class="sl-lane-line" style="top:55%"></div>
+          <div class="sl-lane-line" style="top:77%"></div>
+          <div class="sl-startline"></div>
+          <div class="sl-label-left">&larr; NOT EVEN ON THE TRACK</div>
+          <div class="sl-label-right">FINISH &rarr;</div>
+          <div id="sl-runners-mount"></div>
+        </div>
+        <p class="sl-prompt" id="sl-prompt">&uarr; tap any runner to read their starting line</p>
+        <div class="sl-detail" id="sl-detail"></div>
+      </div>
+    </div>
+
+    <p style="font-size: 17px; line-height: 1.7; color: var(--body-text); max-width: 640px; margin-top: 40px;">The advice you were given was built for someone else's starting position. Someone else's nervous system. Someone else's load. It was not bad faith. It was the wrong map. Nobody asked where your actual starting line was. Enough of running someone else's race. ENOUGH is the first honest map of the one you are actually running.</p>
+  </div>
+</section>
+
+<!-- SECTION 5 — THREE PILLARS -->
+<section class="section section-warm" id="pillars">
+  <div class="container-md">
+    <div class="divider-line"></div>
+    <span class="eyebrow">What this book shows you</span>
+    <h2 class="section-heading" style="margin-bottom: 32px;">Here is what ENOUGH actually does.</h2>
+    <div class="pillars-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div style="background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border); padding: 32px; border-top: 3px solid #E91D8C;">
+        <span style="font-weight: 600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--pink);">Where your energy is actually going</span>
+        <p class="body" style="margin-top: 12px;">The invisible costs that drain you before your day begins. The ones no blood test, no therapist, no morning routine has ever named. Enough of paying costs you cannot even see.</p>
+      </div>
+      <div style="background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border); padding: 32px; border-top: 3px solid #6D4C9B;">
+        <span style="font-weight: 600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--purple);">How you were actually built</span>
+        <p class="body" style="margin-top: 12px;">Your nervous system. Your wiring. Not the version you have been performing. The real one. And why it was never the deficit.</p>
+      </div>
+      <div style="background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border); padding: 32px; border-top: 3px solid #4FCEC5;">
+        <span style="font-weight: 600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-text);">What to do with what you know</span>
+        <p class="body" style="margin-top: 12px;">Not try harder. Not push through. Four precise moves that work with your design instead of against it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6 — BOOK -->
+<section class="section section-white" id="book">
+  <div class="container-md">
+    <div style="display: grid; grid-template-columns: 1fr auto; gap: clamp(32px, 5vw, 64px); align-items: start;">
+      <div>
+        <div class="divider-line"></div>
+        <span class="eyebrow">The book</span>
+        <h2 class="section-heading" style="margin-bottom: 24px; color: #E91D8C;">ENOUGH</h2>
+        <p class="body-light" style="font-size: 19px; margin-bottom: 24px;">This is the book that explains why you are this tired.</p>
+        <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); margin-bottom: 24px;">Not the tired that sleep fixes. The tired that borrows from your patience, your creativity, your hope, and spends it all on getting through a Tuesday. This book shows you where the drain is, what it has cost you, and what becomes possible when you stop fighting your own design and start building from it.</p>
+        <div style="border-left: 3px solid var(--gold); padding-left: 20px; margin: 32px 0;">
+          <p style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 17px; color: var(--body-text);">Written for the people who kept going. The ones who did the work, held it together, and are still here. The enduring.</p>
+        </div>
+        <a href="#closing" class="btn-primary" style="margin-top: 32px;">Pre-order ENOUGH &rarr;</a>
+      </div>
+      <img src="assets/Book cover.png" alt="ENOUGH by Tanya Hicks" style="width: clamp(160px, 18vw, 240px); border-radius: 12px; box-shadow: 0 20px 56px rgba(233,29,140,0.2), 0 8px 20px rgba(0,0,0,0.1); flex-shrink: 0;" />
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 — SIX STAGES -->
+<section class="section section-warm" id="stages">
+  <div class="container-md">
+    <div class="divider-line"></div>
+    <span class="eyebrow">The architecture behind the book</span>
+    <h2 class="section-heading" style="margin-bottom: 24px;">Six stages. One race. Your design.</h2>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 32px;">
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Recognition</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Clarity</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Acceptance</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Intervention</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Alignment</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Sustainability</span>
+    </div>
+    <div style="background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+      <div id="ma-root" style="padding: clamp(1.2rem, 4vw, 2.5rem);"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8 — ABOUT -->
+<section class="section section-white" id="about">
+  <div class="container-sm">
+    <div class="divider-line"></div>
+    <span class="eyebrow">About Tanya</span>
+    <h2 class="section-heading" style="margin-bottom: 32px;">This work was not built as theory first.</h2>
+    <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); margin-bottom: 24px;">It was built on snapped ligaments, sensory overwhelm, a brain that could not understand instruction manuals written in typical language, and a heart that broke over and over again.</p>
+    <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); margin-bottom: 24px;">And then I had a daughter who was built like me. And I decided: not on my watch.</p>
+    <p style="font-size: 17px; line-height: 1.8; color: var(--body-text);">What came next was forged in clinical practice, neurodivergent-affirming support, community design, leadership, and advocacy, until a framework emerged that actually worked, for people who were never the whole problem.</p>
+    <p style="font-weight: 500; font-size: 14px; color: var(--muted); margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);">Matriarch. Viking. Misfit. Clinician. Scholar. Human. Birther of the Enduring. Author of ENOUGH.</p>
+  </div>
+</section>
+
+<!-- SECTION 9 — SPEAKING -->
+<section class="section" id="speaking" style="background: #FFF0F8;">
+  <div class="container-sm">
+    <img src="assets/WCW 2025 d1-152_edited.jpg" alt="Tanya Hicks speaking" style="width: 100%; max-width: 720px; height: clamp(200px, 28vw, 360px); object-fit: cover; object-position: center 20%; border-radius: 12px; margin-bottom: 40px; display: block;" />
+    <div class="divider-line"></div>
+    <span class="eyebrow">Speaking</span>
+    <h2 class="section-heading" style="margin-bottom: 32px;">If capable people keep struggling in your system, the problem is probably not the people.</h2>
+    <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); margin-bottom: 24px;">Good intentions do not prevent harm. When you cannot see the full load someone is carrying, you cannot give them what they actually need, no matter how much you want to help.</p>
+    <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); margin-bottom: 32px;">First, understand what it costs them to be here. Be the coach the person in front of you actually needs. Not the coach you were trained to be for someone else.</p>
+    <a href="mailto:hello@tanyahicks.com" class="btn-secondary">Speaking enquiries &rarr;</a>
+  </div>
+</section>
+
+<!-- AWARDS TICKER -->
+<style>
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+</style>
+<div style="overflow: hidden; border-top: 1px solid #E8E4DE; border-bottom: 1px solid #E8E4DE; background: #FFFFFF; padding: 16px 0; margin: 48px 0 0;">
+  <div style="display: flex; gap: 48px; animation: ticker 60s linear infinite; white-space: nowrap; width: max-content;">
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2021 Finalist · Best Childrens Disability Service · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2022 Finalist · Community Leadership · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2022 Finalist · Social Commitment · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2022 Gold · Emerging Community Leader · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2023 Finalist · Fisher Business of the Year · Fisher Community Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2023 Gold · Community Inclusion · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2023 Gold · ND/Autistic Excellence Provider · Divergantz Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Outstanding Growth · Telstra Best of Business</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Championing Health · Telstra Best of Business</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Woman of the Year · Beam National Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Excellence in Diversity · Beam National Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Silver · Disabled Business Excellence · AusMumPreneur</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Silver · Global Woman of the Year · International Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Silver · Global Female Executive · International Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Education Provider of the Year · SC Business Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Community Leader · Beam National Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Overcoming the Odds · AusMumPreneur</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Global Female Executive · International Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Bronze · Most Resilient Woman Owned Business · Global Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Bronze · Advocacy & Impact · London Global WCW Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Achievement in Diversity · Global Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Women in Education · WCW APAC</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Childrens Education · London Global WCW</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Emerging AusMumPreneur · London Global WCW</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Non Profit Organisation of the Year · Global Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Childrens Education · Global WCW London</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Emerging Non Profit Excellence · Global WCW London</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Rising Star · WCW APAC</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Honourable Mention · Thought Leader · WCW APAC</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2026 Finalist · Community Group of the Year · SC Australia Day Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2026 Finalist · Citizen of the Year · SC Australia Day Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <!-- Duplicate set for seamless looping -->
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2021 Finalist · Best Childrens Disability Service · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2022 Finalist · Community Leadership · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2022 Finalist · Social Commitment · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2022 Gold · Emerging Community Leader · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2023 Finalist · Fisher Business of the Year · Fisher Community Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2023 Gold · Community Inclusion · SC Community Gala</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2023 Gold · ND/Autistic Excellence Provider · Divergantz Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Outstanding Growth · Telstra Best of Business</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Championing Health · Telstra Best of Business</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Woman of the Year · Beam National Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Finalist · Excellence in Diversity · Beam National Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Silver · Disabled Business Excellence · AusMumPreneur</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Silver · Global Woman of the Year · International Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Silver · Global Female Executive · International Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Education Provider of the Year · SC Business Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Community Leader · Beam National Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Overcoming the Odds · AusMumPreneur</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2024 Gold · Global Female Executive · International Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Bronze · Most Resilient Woman Owned Business · Global Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Bronze · Advocacy & Impact · London Global WCW Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Achievement in Diversity · Global Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Women in Education · WCW APAC</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Childrens Education · London Global WCW</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Silver · Emerging AusMumPreneur · London Global WCW</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Non Profit Organisation of the Year · Global Stevies</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Childrens Education · Global WCW London</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Emerging Non Profit Excellence · Global WCW London</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Gold · Rising Star · WCW APAC</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2025 Honourable Mention · Thought Leader · WCW APAC</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2026 Finalist · Community Group of the Year · SC Australia Day Awards</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">·</span>
+    <span style="font: 400 13px 'Inter', -apple-system, sans-serif; color: #7A7570; letter-spacing: 0.2px;">2026 Finalist · Citizen of the Year · SC Australia Day Awards</span>
+  </div>
+</div>
+
+<!-- SECTION 10 — CLOSING + CTA -->
+<section class="section section-dark" id="closing">
+  <div class="container-sm" style="text-align: center;">
+    <h2 class="section-heading" style="color: #fff; margin-bottom: 24px;">You do not have to become someone new.</h2>
+    <p style="font-weight: 300; font-size: 19px; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 24px;">You were never broken. You were running on someone else's operating system your entire life. This book gives you back your own.</p>
+    <p style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 22px; color: var(--pink); margin: 40px 0 32px;">You were always enough. You just needed the right operating manual. Here it is.</p>
+    <form action="mailto:tanya@neurodivergentempowered.com" method="POST" enctype="text/plain" style="max-width: 360px; margin: 0 auto;">
+      <input type="email" name="email" placeholder="Your email address" required style="width: 100%; padding: 15px 18px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: #fff; font-family: 'Inter', -apple-system, sans-serif; font-size: 15px; outline: none; margin-bottom: 12px;" />
+      <button type="submit" class="btn-primary" style="width: 100%;">Pre-order ENOUGH</button>
+    </form>
+    <p class="caption" style="color: rgba(255,255,255,0.4); margin-top: 16px;">No spam. No funnels. No daily inspiration. Just the book.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: var(--dark-text); padding: 32px clamp(20px, 5vw, 80px); border-top: 1px solid rgba(255,255,255,0.1);">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; max-width: 1100px; margin: 0 auto;">
+    <p class="caption" style="color: rgba(255,255,255,0.4);">&copy; Tanya Hicks</p>
+    <p class="caption" style="color: rgba(255,255,255,0.4); text-align: center; max-width: 500px;">I live and work on Gubbi Gubbi Country. I acknowledge the Traditional Custodians and pay respect to Elders past and present. Sovereignty was never ceded.</p>
+    <p class="caption" style="color: rgba(255,255,255,0.4);">tanyahicks.com</p>
+  </div>
+</footer>
+
+</main>
+
+<!-- ── Starting Line Interactive Script ── -->
+<script>
+(function() {
+  const runners = [
+    {
+      id: 'carpark', label: 'IN THE CAR PARK', sublabel: 'Still getting here',
+      position: 4, lane: 0, icon: '\uD83D\uDE97', flip: false, color: '#9b93ab',
+      copy: 'Your starting line starts a few blocks before even arriving at the field. You are spending capacity just getting to the race everyone else started at.',
+      detail: 'Chronic illness. Housing insecurity. A body that has not been safe. You have not got a head start deficit. You are running a completely different race.',
+    },
+    {
+      id: 'injured', label: 'CARRYING INJURIES', sublabel: 'That never healed',
+      position: 16, lane: 1, icon: '\uD83E\uDE79', flip: false, color: '#c67a50',
+      copy: 'Old wounds nobody stitched properly. Nervous systems still in threat-response. You are at the blocks, but you have been running on a fracture for years.',
+      detail: 'Trauma. Chronic pain. Burnout that became baseline. The race assumes a body that was repaired. Yours was not.',
+    },
+    {
+      id: 'loaded', label: 'CARRYING THE WEIGHT', sublabel: 'Nobody else is holding',
+      position: 30, lane: 2, icon: '\uD83D\uDC76', flip: false, color: '#7450b6',
+      copy: 'Baby on your hip. Elderly parent on your back. A hangover from last night because that was the only hour that was yours.',
+      detail: 'You showed up. You are running. The race pretends everyone starts with two free hands and a full night\'s sleep. You do not.',
+    },
+    {
+      id: 'badcoach', label: 'COACHED BY ACCIDENT', sublabel: 'Not by design',
+      position: 46, lane: 1, icon: '\uD83D\uDCE3', flip: true, color: '#5b8db8',
+      copy: 'Your coach is the well meaning parent of a friend you made in primary school. Not a world class expert in your unique brain and body.',
+      detail: 'Advice built for someone else\'s architecture. Strategies that worked for someone with a different design. It was not bad faith. It was the wrong map.',
+    },
+    {
+      id: 'startingblocks', label: 'AT THE BLOCKS', sublabel: 'The assumed start',
+      position: 64, lane: 0, icon: '\uD83C\uDFC3', flip: true, color: '#c8a94e',
+      copy: 'This is where the race assumes you begin. Two free hands. A repaired body. Slept well. Expert coached. No one depending on you right now.',
+      detail: 'This is the only starting position the race was designed for. Everyone else is running a harder race and being judged by the same finish line.',
+      isDefault: true,
+    },
+    {
+      id: 'headstart', label: 'AHEAD OF THE LINE', sublabel: 'Before the gun',
+      position: 78, lane: 2, icon: '\u26A1', flip: false, color: '#f04aa7',
+      copy: 'Inherited advantages. Early expert support. A system built around your design from birth. The race already started before the gun went off.',
+      detail: 'This is not a moral judgement. It is an architecture observation. Some people began accumulating capacity before anyone else was allowed on the track.',
+    },
+  ];
+
+  const laneY = [38, 60, 82];
+  let activeId = 'startingblocks';
+
+  function renderRunners() {
+    const mount = document.getElementById('sl-runners-mount');
+    if (!mount) return;
+    mount.innerHTML = '';
+    runners.forEach(r => {
+      const isActive = r.id === activeId;
+      const size = isActive ? 62 : 48;
+      const y = laneY[r.lane];
+      const iconHtml = r.flip
+        ? '<span class="sl-icon-forward">' + r.icon + '</span>'
+        : r.icon;
+
+      const el = document.createElement('div');
+      el.className = 'sl-runner' + (isActive ? ' is-active' : '');
+      el.style.cssText = 'left:' + r.position + '%;top:' + y + '%;';
+      el.innerHTML =
+        '<div class="sl-runner-label" style="opacity:' + (isActive ? 1 : 0.65) + '">' +
+          '<div class="sl-runner-label-main" style="color:' + r.color + '">' + r.label + '</div>' +
+          '<div class="sl-runner-label-sub">' + r.sublabel + '</div>' +
+        '</div>' +
+        '<div class="sl-connector" style="height:24px;background:' + r.color + ';opacity:' + (isActive ? 0.8 : 0) + ';"></div>' +
+        '<div class="sl-bubble" style="width:' + size + 'px;height:' + size + 'px;font-size:' + (isActive ? 28 : 22) + 'px;background:' + (isActive ? r.color : '#fff') + ';border-color:' + r.color + ';box-shadow:' + (isActive ? '0 0 24px ' + r.color + '50, 0 0 48px ' + r.color + '25' : '0 2px 8px rgba(37,25,45,0.1)') + ';">' +
+          iconHtml +
+        '</div>';
+      el.addEventListener('click', function() {
+        activeId = r.id;
+        renderRunners();
+        renderDetail();
+      });
+      mount.appendChild(el);
+    });
+  }
+
+  function renderDetail() {
+    const panel = document.getElementById('sl-detail');
+    if (!panel) return;
+    const r = runners.find(function(x) { return x.id === activeId; });
+    if (!r) { panel.innerHTML = ''; return; }
+    const iconHtml = r.flip
+      ? '<span style="display:inline-block;transform:scaleX(-1)">' + r.icon + '</span>'
+      : r.icon;
+    panel.innerHTML =
+      '<div class="sl-detail-card" style="border:1px solid ' + r.color + '30;border-left:4px solid ' + r.color + ';">' +
+        '<div class="sl-detail-icon" style="background:' + r.color + '15;border-color:' + r.color + ';">' + iconHtml + '</div>' +
+        '<div style="flex:1">' +
+          '<div class="sl-detail-tag" style="color:' + r.color + '">' + r.label + '</div>' +
+          '<p class="sl-detail-copy">"' + r.copy + '"</p>' +
+          '<p class="sl-detail-body">' + r.detail + '</p>' +
+        '</div>' +
+      '</div>';
+  }
+
+  var slObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('sl-visible'); });
+  }, { threshold: 0.2 });
+
+  function slInit() {
+    renderRunners();
+    renderDetail();
+    ['sl-section-label','sl-track-wrap','sl-prompt'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) slObserver.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', slInit);
+  } else {
+    slInit();
+  }
+})();
+</script>
+
+<!-- ── Misfit Architecture Interactive Component ── -->
+<script>
+(function() {
+  const C = {
+    bg:       '#fcf8f6',
+    bgCard:   '#ffffff',
+    bgSubtle: '#f7f1f3',
+    text:     '#1A1A1A',
+    textMid:  '#3D3D3D',
+    textDim:  '#7A7570',
+    border:   'rgba(37,25,45,0.10)',
+  };
+
+  const stages = [
+    {
+      id: 'recognition', label: 'Recognition', number: '01',
+      color: '#E91D8C', icon: '\u2299',
+      subtitle: 'See where your starting line actually is.',
+      raceTag: 'Before the gun fires',
+      tools: ['Arrival Ledger', 'Misfit Tax Ledger'],
+      insight: 'You were not lazy. You were running a different race in someone else\'s shoes on a track never built for your stride.',
+      body: [
+        'Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.',
+        'This stage helps you see what it cost you just to show up today, and where the rest is going, including the costs that never appear on any list.',
+      ],
+      exoneration: 'You were not lazy. Not undisciplined. Not broken in ways that more effort would fix. You were running a different race in someone else\'s shoes on a track that was never built for your stride. That is not a personal failing. That is a structural problem. And structural problems have structural solutions.',
+      forward: 'Next: find out what you are actually carrying into it.',
+      flow: [
+        { node: 'Where did you start today?', type: 'question' },
+        { node: 'Arrival Cost', type: 'measure', sub: 'What it cost before the race begins' },
+        { node: 'Visible Costs', type: 'branch', sub: 'What you can name' },
+        { node: 'Invisible Taxes', type: 'branch', sub: 'Masking \u00B7 Translation \u00B7 Structural friction' },
+        { node: 'Your actual starting position', type: 'output' },
+      ],
+    },
+    {
+      id: 'clarity', label: 'Clarity', number: '02',
+      color: '#1a9fc0', icon: '\u25C8',
+      subtitle: 'Not everyone enters the race with the same load.',
+      raceTag: 'What you\'re carrying',
+      tools: ['Capacity Map', 'Load Domain Diagnostic', 'Capacity Drainers'],
+      insight: 'Capacity is shaped by architecture, not just effort. Your wiring, your history, your conditions. All of it is weight.',
+      body: [
+        'Not everyone enters the race with the same load. This stage helps you see what you are actually carrying: your wiring, your history, your conditions, and where the weight is really coming from.',
+        'This stage moves through the layers of what shapes your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.',
+      ],
+      forward: 'Next: find out which race is actually yours to run.',
+      flow: [
+        { node: 'What are you carrying?', type: 'question' },
+        { node: 'Nine Layers of Capacity', type: 'measure', sub: 'Neurology through to current state' },
+        { node: 'Load Domain', type: 'branch', sub: 'Work \u00B7 Body \u00B7 Relationships \u00B7 Identity \u00B7 Environment' },
+        { node: 'Capacity Drainers', type: 'branch', sub: 'Patterns taking from what you rely on' },
+        { node: 'Your actual load entering the race', type: 'output' },
+      ],
+    },
+    {
+      id: 'acceptance', label: 'Acceptance', number: '03',
+      color: '#6D4C9B', icon: '\u25CE',
+      subtitle: 'Know which race you should be entering right now.',
+      raceTag: 'Choosing the right race',
+      tools: ['Structural Ceiling Map'],
+      insight: 'Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything into a race you were never built for.',
+      body: [
+        'If you are a novice runner who ends up in a race with Usain Bolt, the most important thing you can learn is not how to run faster. It is that no amount of training, discipline or willpower is going to close that gap in the way the crowd expects. Bolt has the biology, the years, the specific physical architecture for that race. You do not. That is not failure. That is information.',
+        'This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.',
+      ],
+      forward: 'Next: find out where you actually have ground to gain.',
+      flow: [
+        { node: 'What are you pushing against?', type: 'question' },
+        { node: 'Control', type: 'branch', sub: 'Changes with your direct effort' },
+        { node: 'Influence', type: 'branch', sub: 'Shifts with conditions or support' },
+        { node: 'Structural Ceiling', type: 'branch', sub: 'Not your race to run right now' },
+        { node: 'Where your effort stops bleeding', type: 'output' },
+      ],
+    },
+    {
+      id: 'intervention', label: 'Intervention', number: '04',
+      color: '#C4A96A', icon: '\u2295',
+      subtitle: 'The race you could actually win is in the next lane.',
+      raceTag: 'Finding your lane',
+      tools: ['Four Levers'],
+      insight: 'Not all effort moves you forward. Small shifts in the right place change the entire system.',
+      body: [
+        'The race you could actually win is happening in the next lane. This stage is about finding it.',
+        'Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.',
+      ],
+      forward: 'Next: find out what the race that fits your design looks like.',
+      flow: [
+        { node: 'Where is there ground to gain?', type: 'question' },
+        { node: 'Reduce', type: 'branch', sub: 'What is taking without returning' },
+        { node: 'Protect', type: 'branch', sub: 'What is working right now' },
+        { node: 'Restore', type: 'branch', sub: 'What has been spent' },
+        { node: 'Add', type: 'branch', sub: 'What was always missing' },
+        { node: 'Your leverage points', type: 'output' },
+      ],
+    },
+    {
+      id: 'alignment', label: 'Alignment', number: '05',
+      color: '#2BA898', icon: '\u229E',
+      subtitle: 'Run the race that fits your design.',
+      raceTag: 'Running your race',
+      tools: ['Calibration Map', 'Relational Energy Ledger'],
+      insight: 'Without knowing what you are actually running toward, you can be perfectly aligned with your design and still be running toward someone else\'s finish line.',
+      body: [
+        'Not someone else\'s race. Not the race you were told you should want. The one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.',
+        'This stage also asks what you are actually running toward. Not the goal you inherited. Not the one you chose because it seemed achievable. The one that holds when everything else is stripped back.',
+      ],
+      forward: 'Next: find out how you stay in it, and what you build once you do.',
+      flow: [
+        { node: 'What are you actually running toward?', type: 'question' },
+        { node: 'Design', type: 'branch', sub: 'How you are actually built' },
+        { node: 'Conditions', type: 'branch', sub: 'What your environment supports' },
+        { node: 'Pace', type: 'branch', sub: 'What this season asks for' },
+        { node: 'Relational Energy', type: 'branch', sub: 'Who restores vs who takes' },
+        { node: 'Your actual finish line', type: 'output' },
+      ],
+    },
+    {
+      id: 'sustainability', label: 'Sustainability', number: '06',
+      color: '#7A7570', icon: '\u21BB',
+      subtitle: 'This is where you get to arrive.',
+      raceTag: 'Staying in the race',
+      tools: ['Recalibration Loop'],
+      insight: 'Sustainability is not the destination. It is the floor you build so something real can stand on it.',
+      body: [
+        'Sustainability is not the destination. It is the floor you build so something real can stand on it.',
+        'Most people never get here. Not because the work is too hard, but because they run out of ground before they reach it. Every stage before this one was clearing that ground.',
+        'The loop is simple. You learn to read the signal before it becomes a collapse. You protect the ground you have cleared rather than waiting until it is gone. You adjust what you are carrying before the weight decides for you. And you stabilise, so the next season starts from here rather than from the beginning.',
+      ],
+      closing: 'Your guide to the podium that means something to you is mapped out in ENOUGH.',
+      flow: [
+        { node: 'Signal', type: 'loop', sub: 'Read it before it becomes collapse' },
+        { node: 'Protect', type: 'loop', sub: 'Guard the ground you have cleared' },
+        { node: 'Adjust', type: 'loop', sub: 'Change the load before it decides for you' },
+        { node: 'Stabilise', type: 'loop', sub: 'Next season starts from here' },
+        { node: 'Expression \u00B7 Building \u00B7 Enough', type: 'output' },
+      ],
+    },
+  ];
+
+  let activeIdx = 0;
+
+  function arrow(color) {
+    return '<div style="display:flex;flex-direction:column;align-items:center;margin:4px 0;">' +
+      '<div style="width:1px;height:16px;background:' + color + '60;"></div>' +
+      '<div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid ' + color + '60;"></div>' +
+    '</div>';
+  }
+
+  function flowDiagram(stage) {
+    const color = stage.color;
+    const flow = stage.flow;
+    const isLoop = flow[0].type === 'loop';
+
+    if (isLoop) {
+      const loopItems = flow.filter(function(f) { return f.type === 'loop'; });
+      const output = flow.find(function(f) { return f.type === 'output'; });
+      const positions = [{top:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',right:'4px',transform:'translateY(-50%)'},{bottom:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',left:'4px',transform:'translateY(-50%)'}];
+      let loopHtml = '';
+      loopItems.forEach(function(item, i) {
+        const pos = positions[i];
+        const posStr = Object.entries(pos).map(function(kv) { return kv[0] + ':' + kv[1]; }).join(';');
+        loopHtml += '<div style="position:absolute;' + posStr + ';width:88px;background:' + color + '12;border:1px solid ' + color + '45;border-radius:8px;padding:7px 6px;text-align:center;">' +
+          '<div style="font-size:13px;font-weight:700;color:' + color + ';font-family:\'Playfair Display\',Georgia,serif;line-height:1.1;margin-bottom:4px;">' + item.node + '</div>' +
+          '<div style="font-size:10px;color:' + C.textDim + ';font-family:\'Inter\',-apple-system,sans-serif;line-height:1.3;">' + item.sub + '</div>' +
+        '</div>';
+      });
+      return '<div style="position:relative;padding:24px 0;">' +
+        '<div style="display:flex;justify-content:center;margin-bottom:28px;">' +
+          '<div style="position:relative;width:210px;height:210px;">' +
+            '<div style="position:absolute;inset:0;border-radius:50%;border:2px dashed ' + color + '35;"></div>' +
+            '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:32px;color:' + color + '70;font-family:\'Playfair Display\',Georgia,serif;">\u21BB</div>' +
+            loopHtml +
+          '</div>' +
+        '</div>' +
+        '<div style="text-align:center;">' +
+          '<div style="font-size:11px;letter-spacing:2px;color:' + C.textDim + ';font-family:\'Inter\',-apple-system,sans-serif;text-transform:uppercase;margin-bottom:8px;">then</div>' +
+          '<div style="display:inline-block;padding:10px 20px;background:' + color + '15;border:1px solid ' + color + '55;border-radius:20px;font-size:15px;color:' + color + ';font-family:\'Playfair Display\',Georgia,serif;letter-spacing:0.3px;">' + output.node + '</div>' +
+        '</div>' +
+      '</div>';
+    }
+
+    const question = flow.find(function(f) { return f.type === 'question'; });
+    const measure = flow.find(function(f) { return f.type === 'measure'; });
+    const branches = flow.filter(function(f) { return f.type === 'branch'; });
+    const output = flow.find(function(f) { return f.type === 'output'; });
+
+    let html = '<div style="display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 0;">';
+    html += '<div style="padding:12px 22px;background:' + C.bgSubtle + ';border:1px solid ' + color + ';border-radius:24px;font-size:15px;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;text-align:center;font-style:italic;max-width:90%;">' + question.node + '</div>';
+    html += arrow(color);
+    if (measure) {
+      html += '<div style="padding:10px 18px;background:' + color + '12;border:1px solid ' + color + '35;border-radius:8px;font-size:14px;color:' + color + ';font-family:\'Inter\',-apple-system,sans-serif;letter-spacing:0.3px;text-align:center;max-width:90%;">' +
+        '<div style="font-weight:700;margin-bottom:3px;">' + measure.node + '</div>' +
+        '<div style="font-size:11px;color:' + C.textDim + ';letter-spacing:0.5px;">' + measure.sub + '</div>' +
+      '</div>';
+      html += arrow(color);
+    }
+    html += '<div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;width:100%;">';
+    branches.forEach(function(b) {
+      html += '<div style="flex:1 1 80px;min-width:70px;max-width:' + (branches.length > 3 ? '90px' : '120px') + ';padding:12px 8px;background:' + C.bgCard + ';border:1px solid ' + color + '30;border-top:2px solid ' + color + ';border-radius:0 0 8px 8px;text-align:center;">' +
+        '<div style="font-size:13px;font-weight:700;color:' + color + ';font-family:\'Playfair Display\',Georgia,serif;margin-bottom:5px;line-height:1.2;">' + b.node + '</div>' +
+        '<div style="font-size:11px;color:' + C.textDim + ';line-height:1.35;font-family:\'Inter\',-apple-system,sans-serif;">' + b.sub + '</div>' +
+      '</div>';
+    });
+    html += '</div>';
+    html += arrow(color);
+    html += '<div style="padding:12px 26px;background:' + color + '15;border:1px solid ' + color + ';border-radius:24px;font-size:15px;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;text-align:center;letter-spacing:0.2px;max-width:90%;">' + output.node + '</div>';
+    html += '</div>';
+    return html;
+  }
+
+  function renderTrack() {
+    let dots = '';
+    stages.forEach(function(s, i) {
+      const pct = (i / (stages.length - 1)) * 100;
+      const active = i <= activeIdx;
+      const current = i === activeIdx;
+      dots += '<div style="position:absolute;left:' + pct + '%;transform:translateX(-50%);width:' + (current ? 13 : active ? 10 : 8) + 'px;height:' + (current ? 13 : active ? 10 : 8) + 'px;border-radius:50%;background:' + (active ? s.color : C.border) + ';border:2px solid ' + (active ? s.color : C.bgCard) + ';transition:all 0.3s ease;box-shadow:' + (current ? '0 0 12px ' + s.color : 'none') + ';z-index:2;top:50%;margin-top:' + (current ? -6.5 : active ? -5 : -4) + 'px;"></div>';
+    });
+    const progressPct = ((activeIdx + 1) / stages.length) * 100;
+    const currentColor = stages[activeIdx].color;
+    return '<div style="position:relative;height:40px;margin:0 0 28px;display:flex;align-items:center;">' +
+      '<div style="position:absolute;left:0;right:0;height:2px;background:' + C.border + ';border-radius:2px;"></div>' +
+      '<div style="position:absolute;left:0;height:2px;width:' + progressPct + '%;background:linear-gradient(90deg,#E91D8C,' + currentColor + ');transition:width 0.5s ease;box-shadow:0 0 8px ' + currentColor + '60;border-radius:2px;"></div>' +
+      dots +
+      '<div style="position:absolute;left:0;top:-18px;font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1px;text-transform:uppercase;">Start</div>' +
+      '<div style="position:absolute;right:0;top:-18px;font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1px;text-transform:uppercase;">Enough</div>' +
+    '</div>';
+  }
+
+  function renderCards() {
+    let html = '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">';
+    stages.forEach(function(s, i) {
+      const active = i === activeIdx;
+      html += '<button onclick="maSetStage(' + i + ')" style="cursor:pointer;padding:16px 12px;background:' + (active ? C.bgCard : C.bg) + ';border:1px solid ' + (active ? s.color : C.border) + ';border-top:3px solid ' + (active ? s.color : C.border) + ';border-radius:10px;transition:all 0.2s ease;box-shadow:' + (active ? '0 0 20px ' + s.color + '18' : 'none') + ';text-align:left;width:100%;">' +
+        '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">' +
+          '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:2px;">' + s.number + '</div>' +
+          '<div style="font-size:18px;opacity:' + (active ? 1 : 0.4) + ';">' + s.icon + '</div>' +
+        '</div>' +
+        '<div style="font-size:16px;font-family:\'Playfair Display\',Georgia,serif;color:' + (active ? s.color : C.textMid) + ';font-weight:700;margin-bottom:5px;line-height:1.2;">' + s.label + '</div>' +
+        '<div style="font-size:10px;font-family:\'Inter\',-apple-system,sans-serif;color:' + C.textDim + ';letter-spacing:0.8px;text-transform:uppercase;line-height:1.3;">' + s.raceTag + '</div>' +
+      '</button>';
+    });
+    html += '</div>';
+    return html;
+  }
+
+  function renderLeft(stage) {
+    const color = stage.color;
+    let bodyParas = '';
+    stage.body.forEach(function(p) {
+      bodyParas += '<p style="margin:0 0 1rem;font-size:1.05rem;font-family:\'Inter\',-apple-system,sans-serif;font-weight:300;line-height:1.75;color:' + C.text + ';">' + p + '</p>';
+    });
+    const exon = stage.exoneration ? '<div style="margin:1.2rem 0;padding:1.4rem 1.8rem;background:' + C.text + ';border-radius:14px;"><p style="margin:0;font-family:\'Playfair Display\',Georgia,serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,0.92);line-height:1.55;letter-spacing:-0.01em;">' + stage.exoneration + '</p></div>' : '';
+    const forward = stage.forward ? '<p style="margin:1rem 0 0;font-size:1.05rem;font-style:italic;color:' + color + ';font-weight:500;font-family:\'Playfair Display\',Georgia,serif;">' + stage.forward + '</p>' : '';
+    const closing = stage.closing ? '<p style="margin:1rem 0 0;font-size:1.05rem;font-weight:700;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;">' + stage.closing + '</p>' : '';
+
+    const prev = activeIdx > 0 ? '<button onclick="maSetStage(' + (activeIdx-1) + ')" style="padding:10px 22px;background:transparent;border:1px solid ' + C.border + ';border-radius:20px;color:' + C.textMid + ';font-size:14px;font-family:\'Inter\',-apple-system,sans-serif;cursor:pointer;letter-spacing:0.8px;">\u2190 ' + stages[activeIdx-1].label + '</button>' : '';
+    const next = activeIdx < stages.length - 1 ? '<button onclick="maSetStage(' + (activeIdx+1) + ')" style="padding:10px 22px;background:' + color + ';border:none;border-radius:20px;color:#fff;font-size:14px;font-family:\'Inter\',-apple-system,sans-serif;cursor:pointer;font-weight:700;letter-spacing:0.8px;">Next: ' + stages[activeIdx+1].label + ' \u2192</button>' : '<div style="padding:10px 22px;background:' + color + '18;border:1px solid ' + color + ';border-radius:20px;font-size:15px;font-family:\'Playfair Display\',Georgia,serif;color:' + color + ';font-style:italic;">You were always enough.</div>';
+
+    return '<div>' +
+      '<div style="margin-bottom:20px;">' +
+        '<div style="display:inline-block;padding:4px 12px;background:' + color + '12;border:1px solid ' + color + '35;border-radius:20px;font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + color + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">' + stage.raceTag + '</div>' +
+        '<h2 style="margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.4rem);font-family:\'Playfair Display\',Georgia,serif;font-weight:700;color:' + color + ';line-height:1.1;">' + stage.label + '</h2>' +
+        '<p style="margin:0;font-size:1.1rem;color:' + C.text + ';font-family:\'Inter\',-apple-system,sans-serif;font-weight:300;line-height:1.65;">' + stage.subtitle + '</p>' +
+      '</div>' +
+      '<div style="margin-bottom:22px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Tools in this stage</div>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
+          stage.tools.map(function(t) { return '<span style="padding:6px 14px;background:' + C.bgSubtle + ';border:1px solid ' + color + '30;border-radius:20px;font-size:14px;color:' + C.textMid + ';font-family:\'Inter\',-apple-system,sans-serif;">' + t + '</span>'; }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div style="margin-bottom:22px;">' + bodyParas + exon + forward + closing + '</div>' +
+      '<div style="padding:18px 22px;background:' + color + '08;border:1px solid ' + color + '25;border-left:3px solid ' + color + ';border-radius:0 12px 12px 0;margin-bottom:24px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + color + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">The verdict</div>' +
+        '<p style="margin:0;font-size:1.05rem;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;line-height:1.7;font-style:italic;">\u201C' + stage.insight + '\u201D</p>' +
+      '</div>' +
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;">' + prev + next + '</div>' +
+    '</div>';
+  }
+
+  function renderRight(stage) {
+    const color = stage.color;
+    let miniMap = '';
+    stages.forEach(function(s, i) {
+      const isActive = i === activeIdx;
+      miniMap += '<div onclick="maSetStage(' + i + ')" style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:5px 8px;border-radius:6px;background:' + (isActive ? s.color + '12' : 'transparent') + ';transition:background 0.2s;">' +
+        '<div style="width:6px;height:6px;border-radius:50%;background:' + (i <= activeIdx ? s.color : C.border) + ';flex-shrink:0;"></div>' +
+        '<div style="font-size:14px;font-family:\'Playfair Display\',Georgia,serif;color:' + (isActive ? s.color : C.textDim) + ';">' + s.label + '</div>' +
+        '<div style="font-size:11px;font-family:\'Inter\',-apple-system,sans-serif;color:' + C.textDim + ';margin-left:auto;letter-spacing:0.3px;">' + s.raceTag + '</div>' +
+      '</div>';
+    });
+
+    return '<div>' +
+      '<div style="background:' + C.bgCard + ';border:1px solid ' + C.border + ';border-radius:16px;padding:22px 18px;min-height:360px;margin-bottom:14px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;">How this stage works</div>' +
+        flowDiagram(stage) +
+      '</div>' +
+      '<div style="padding:14px 16px;background:' + C.bgCard + ';border:1px solid ' + C.border + ';border-radius:12px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Where this fits</div>' +
+        miniMap +
+      '</div>' +
+    '</div>';
+  }
+
+  function render() {
+    const stage = stages[activeIdx];
+    const root = document.getElementById('ma-root');
+    if (!root) return;
+
+    root.innerHTML =
+      '<div style="border-bottom:1px solid ' + C.border + ';padding:28px 0 24px;background:' + C.bgSubtle + ';margin:0 calc(-1 * clamp(1.2rem,4vw,2.5rem));padding-left:clamp(1.2rem,4vw,2.5rem);padding-right:clamp(1.2rem,4vw,2.5rem);border-radius:12px 12px 0 0;">' +
+        '<div style="display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px;">' +
+          '<div style="text-align:right;">' +
+            '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1px;margin-bottom:4px;">STAGE ' + stage.number + ' OF 06</div>' +
+            '<div style="font-size:16px;font-family:\'Playfair Display\',Georgia,serif;color:' + stage.color + ';">' + stage.label + '</div>' +
+          '</div>' +
+        '</div>' +
+        renderTrack() +
+        renderCards() +
+      '</div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:36px;">' +
+        renderLeft(stage) +
+        renderRight(stage) +
+      '</div>';
+  }
+
+  window.maSetStage = function(idx) {
+    activeIdx = idx;
+    render();
+  };
+
+  document.addEventListener('DOMContentLoaded', render);
+  if (document.readyState !== 'loading') render();
+})();
+</script>
+
+<!-- ── Smooth scroll + Scroll reveal ── -->
+<script>
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Scroll reveal
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+</script>
+
+</body>
+</html>

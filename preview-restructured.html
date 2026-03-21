@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENOUGH | Tanya Hicks</title>
+  <meta name="description" content="ENOUGH by Tanya Hicks. Guided stages, book, speaking, and waitlist." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ════════════════════════════════════════════
+       INLINE OVERRIDES — single source of truth
+    ════════════════════════════════════════════ */
+
+    /* ── Hero entrance ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow, .hero-line, .hero-lead, .hero-actions {
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .hero-eyebrow  { animation-delay: 0.10s; }
+    .hero-line-1   { animation-delay: 0.30s; }
+    .hero-line-2   { animation-delay: 0.48s; }
+    .hero-line-3   { animation-delay: 0.62s; }
+    .hero-line-4   { animation-delay: 0.76s; }
+    .hero-lead     { animation-delay: 0.95s; }
+    .hero-actions  { animation-delay: 1.15s; }
+    .hero-title    { display: flex; flex-direction: column; gap: 0; }
+    .hero-image    { will-change: transform; }
+    .hero          { padding-top: clamp(4rem, 7vw, 7rem) !important; }
+    .hero-eyebrow  { font-size: 0.72rem; letter-spacing: 0.18em; white-space: nowrap; }
+    .hero-actions .btn { min-height: 52px; padding: 0.9rem 1.6rem; }
+
+    /* ── Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.10s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.36s; }
+    .reveal-delay-4 { transition-delay: 0.50s; }
+
+    /* ── Eyebrow unified muted colour ── */
+    .eyebrow { color: var(--muted); }
+
+    /* ── Section flow: recognition bleeds into mechanism ── */
+    #manifesto { padding-bottom: 0; }
+    .mechanism-section { padding-top: 1rem; }
+
+    /* ── Mechanism section ── */
+    .mechanism-intro {
+      margin-top: 1.2rem;
+      font-size: 1.12rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+    .question-emphasis {
+      display: block;
+      margin-top: 2.5rem;
+      margin-bottom: 0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .question-stack-body {
+      margin: 0;
+      padding: 0.9rem 0;
+      font-size: 1.12rem;
+      line-height: 1.55;
+      color: var(--text);
+      font-weight: 500;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+    .mechanism-section p.question-stack-body:first-of-type {
+      border-top: 1px solid var(--line);
+      margin-top: 0.6rem;
+    }
+    .mechanism-stadium {
+      margin-top: 2.5rem;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .stacked-indictment {
+      margin: 1.4rem 0 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .stacked-indictment--centre { align-items: center; text-align: center; }
+    .stacked-indictment span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .mechanism-retort {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+    .mechanism-body {
+      margin: 0 0 1rem;
+      font-size: 1.05rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+    .mechanism-body--centre { text-align: center; }
+
+    /* ── Mind chatter typewriter ── */
+    .mind-chatter {
+      margin: 2rem auto 1.5rem;
+      max-width: 28rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 20px;
+      background: rgba(37,25,45,0.03);
+      border: 1px solid var(--line);
+    }
+    .mind-chatter-text {
+      overflow: hidden;
+      white-space: nowrap;
+      max-width: 0;
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.2;
+      transition: max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .mind-chatter-text.typing { max-width: 100%; }
+    .mind-chatter-text:nth-child(2) { transition-delay: 0.5s; }
+    .mind-chatter-text:nth-child(3) { transition-delay: 1.0s; }
+
+    /* ── Misfit breakout ── */
+    .misfit-breakout {
+      background: var(--text);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
+    }
+    .misfit-breakout h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: -0.025em;
+      margin: 0;
+      color: var(--hot);
+    }
+    .wrong-heat {
+      margin: 2.5rem 0 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.5rem, 6vw, 6.5rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Possibility ── */
+    .possibility-section {
+      padding-top: clamp(5rem, 9vw, 10rem);
+      padding-bottom: clamp(5rem, 9vw, 10rem);
+    }
+    /* ── Podium visual ── */
+    .podium-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: end;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .podium-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .podium-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.05rem, 1.4vw, 1.35rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      margin: 0 0 1.2rem;
+      padding: 0 0.4rem;
+    }
+    .podium-text--winner {
+      color: var(--hot);
+    }
+    .podium-block {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .podium-block--3 {
+      height: 70px;
+      background: rgba(37,25,45,0.10);
+    }
+    .podium-block--2 {
+      height: 120px;
+      background: var(--accent);
+      opacity: 0.75;
+    }
+    .podium-block--1 {
+      height: 180px;
+      background: var(--hot);
+    }
+    .podium-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      line-height: 1;
+    }
+    .podium-block--3 .podium-num { color: rgba(37,25,45,0.35); }
+
+    /* ── Speaking emphasis hot variant ── */
+    .speaking-emphasis--hot {
+      color: var(--hot);
+      font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+      margin: 2rem 0 1.4rem;
+    }
+    .speaking-close-italic {
+      font-family: "Cormorant Garamond", serif;
+      font-style: italic;
+      font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+      font-weight: 500;
+      color: var(--muted);
+      line-height: 1.45;
+      letter-spacing: -0.005em;
+      margin: 0 0 1.6rem;
+    }
+
+    .stadium-label {
+      margin: 1.8rem auto 0;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .poss-marker {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+    .speaking-emphasis {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 1.4rem 0 1rem;
+    }
+    .speaking-intro { margin-bottom: 1.2rem; }
+    .speaking-closing-body {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+    .stage-forward-pull {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* ── Exoneration verdict box ── */
+    .exoneration-box {
+      margin: 2rem 0 0;
+      padding: 1.6rem 2rem;
+      background: var(--text);
+      border-radius: 16px;
+    }
+    .exoneration-text {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+    }
+
+    .mechanism-questions {
+      background: var(--bg-soft);
+      padding-top: clamp(3rem, 5vw, 5rem);
+      padding-bottom: clamp(3rem, 5vw, 5rem);
+    }
+    .question-stack {
+      position: relative;
+      margin-top: 0.6rem;
+      padding-left: 1.8rem;
+      border-left: 3px solid var(--accent);
+    }
+    .question-stack .question-stack-body {
+      text-align: left;
+      border-bottom: 1px solid rgba(37,25,45,0.08);
+      padding: 1.1rem 0;
+    }
+    .question-stack .question-stack-body:first-child { padding-top: 0.6rem; }
+    .question-stack .question-stack-body:last-child { border-bottom: none; }
+
+    /* ── Journey / 6 stages — 3-column layout ── */
+    #journey {
+      background: var(--bg);
+      padding-top: clamp(4rem, 7vw, 8rem);
+      padding-bottom: clamp(4rem, 7vw, 8rem);
+    }
+    .stages-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 1.5rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .stages-cards-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
+      gap: 1rem;
+    }
+    .stages-col { display: contents; }
+    .stage-card {
+      width: 100%;
+      padding: 1.4rem 1.5rem;
+      text-align: left;
+      border: 1px solid rgba(37,25,45,0.07);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.75);
+      box-shadow: 0 2px 12px rgba(37,25,45,0.04);
+      color: var(--text);
+      position: relative;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+    }
+    .stage-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      border-radius: 2px 0 0 2px;
+      background: var(--line);
+      transition: background 0.25s ease;
+    }
+    .stage-card:hover, .stage-card.active {
+      background: #fff;
+      border-color: rgba(116,80,182,0.18);
+      box-shadow: 0 6px 24px rgba(37,25,45,0.09);
+      transform: translateY(-1px);
+    }
+    .stage-card.active::before, .stage-card:hover::before { background: var(--accent); }
+    .stage-card h3 {
+      margin: 0 0 0.4rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.2rem;
+      line-height: 1.15;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .stage-card p { margin: 0; font-size: 0.88rem; line-height: 1.55; color: var(--muted); }
+    .stage-kicker {
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .stage-panel-wrap {
+      position: sticky;
+      top: 6rem;
+      padding: 2.2rem 2.4rem;
+      border-radius: 24px;
+      border: 1px solid rgba(37,25,45,0.06);
+      background: linear-gradient(160deg, #fdf8ff 0%, #fff9f7 100%);
+      box-shadow: 0 16px 48px rgba(37,25,45,0.07);
+      min-height: 420px;
+    }
+    .stage-preview-title { font-size: 2rem; margin-bottom: 0.8rem; }
+    .stage-form { display: none; }
+    .stage-form.active { display: block; }
+    .body-strong { font-weight: 600; color: var(--text); }
+
+    @media (max-width: 768px) {
+      #ma-root > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+    }
+    @media (max-width: 480px) {
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    /* ── Book 3D ── */
+    @keyframes bookFloat {
+      0%, 100% { transform: rotateY(-22deg) rotateX(3deg) translateY(0); }
+      50%       { transform: rotateY(-22deg) rotateX(3deg) translateY(-10px); }
+    }
+    .book-3d-scene {
+      perspective: 1000px;
+      perspective-origin: 50% 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 1rem 3rem 6rem;
+    }
+    .book-3d {
+      position: relative;
+      width: 280px;
+      transform-style: preserve-3d;
+      animation: bookFloat 4s ease-in-out infinite;
+      filter: drop-shadow(-8px 30px 40px rgba(37,25,45,0.4)) drop-shadow(0 8px 20px rgba(37,25,45,0.2));
+    }
+    .book-3d:hover {
+      animation: none;
+      transform: rotateY(-12deg) rotateX(1deg);
+    }
+    .book-face {
+      display: block;
+      width: 280px;
+      border-radius: 2px 10px 10px 2px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 8px 0 20px rgba(0,0,0,0.35);
+    }
+    .book-spine {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 42px;
+      height: 100%;
+      background: linear-gradient(to right, #200115, #750d56, #200115);
+      transform: rotateY(90deg);
+      transform-origin: right center;
+      border-radius: 5px 0 0 5px;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: -6px 0 16px rgba(0,0,0,0.5);
+    }
+    .book-spine-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      color: rgba(255,215,120,0.85);
+      text-transform: uppercase;
+    }
+    .book-pages {
+      position: absolute;
+      top: 3px;
+      left: 100%;
+      width: 42px;
+      height: calc(100% - 6px);
+      background: repeating-linear-gradient(
+        to bottom,
+        #f8f3e8, #f8f3e8 1.5px,
+        #ddd5c0 1.5px, #ddd5c0 3px
+      );
+      transform: rotateY(-90deg);
+      transform-origin: left center;
+      border-radius: 0 3px 3px 0;
+      z-index: 1;
+      box-shadow: 4px 0 12px rgba(0,0,0,0.18);
+    }
+
+    /* ── Credibility ── */
+    .credibility-headline {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      margin: 0 0 2rem;
+    }
+    .credibility-proof {
+      margin: 1.5rem 0 0;
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    /* ── Mechanism tail section ── */
+    .mechanism-tail {
+      padding-top: clamp(3rem, 5vw, 5rem);
+      padding-bottom: clamp(3rem, 5vw, 5rem);
+    }
+    .mechanism-retort {
+      margin: 0 0 2rem;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .mechanism-lookaround {
+      margin: 2rem auto 0;
+      max-width: 52rem;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      line-height: 1.7;
+      color: var(--text);
+      font-weight: 500;
+      text-align: center;
+    }
+    .mechanism-pivot {
+      margin: 1.4rem auto 0;
+      max-width: 52rem;
+      font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+      line-height: 1.7;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* ── Possibility headline: constrained width, left-aligned ── */
+    .possibility-headline {
+      margin-bottom: 3rem;
+      line-height: 1.05;
+      font-size: clamp(2.2rem, 3.8vw, 4rem) !important;
+    }
+
+    /* ── Speaking: header centred, banner treatment ── */
+    .speaking-banner {
+      background: var(--text);
+      margin-left: calc(-1 * var(--page-pad, 2rem));
+      margin-right: calc(-1 * var(--page-pad, 2rem));
+      padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem);
+      border-radius: 0;
+    }
+    .speaking-banner .eyebrow { color: rgba(255,255,255,0.55); }
+    .speaking-lead-hot { color: var(--hot); }
+    .speaking-lead-white { color: rgba(255,255,255,0.92); }
+    .speaking-header.centre {
+      text-align: center;
+      max-width: 100%;
+      margin-bottom: 4rem;
+    }
+    .speaking-lead {
+      font-family: "Cormorant Garamond", serif !important;
+      font-size: clamp(4rem, 7vw, 7.5rem) !important;
+      font-weight: 600 !important;
+      line-height: 0.88 !important;
+      letter-spacing: -0.03em !important;
+      margin: 0.5rem 0 1.4rem !important;
+    }
+    .speaking-sub {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.6rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin: 0;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .speaking-closing {
+      margin: 2rem 0 1.8rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      width: 100%;
+    }
+
+    .speaking-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 500px);
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .speaking-copy { max-width: 100%; }
+
+    /* ── Closing ── */
+    .closing-gold { color: var(--hot); }
+    .closing-pre {
+      margin: 0 0 2rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+    .closing-main {
+      margin: 0 0 2.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4.5rem, 9vw, 8.5rem);
+      font-weight: 600;
+      color: var(--text);
+      line-height: 0.9;
+      letter-spacing: -0.035em;
+    }
+    .closing-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.85rem; }
+    .btn-subtle { background: transparent; color: var(--muted); border-color: var(--line-strong); }
+    .btn-subtle:hover { color: var(--text); background: rgba(255,255,255,0.6); }
+
+    /* ── Acknowledgement ── */
+    .acknowledgement-wrap { padding: 3rem 0; border-top: 1px solid var(--line); }
+    .acknowledgement-label {
+      margin: 0 0 1rem;
+      font-size: 0.76rem; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .sovereignty-line {
+      margin: 1rem 0 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(1.4rem, 2vw, 1.9rem);
+      font-weight: 600; color: var(--text); letter-spacing: -0.01em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1120px) {
+      .speaking-body { grid-template-columns: 1fr; }
+      .stages-layout  { grid-template-columns: 1fr; }
+      .stages-cards-wrap { grid-template-columns: 1fr; }
+      .stage-panel-wrap { position: static; }
+      .misfit-breakout { padding: 4rem 2rem 3rem; }
+    }
+    @media (max-width: 760px) {
+      .book-3d-scene { padding: 1.5rem; }
+      .book-3d { transform: rotateY(-14deg) rotateX(1deg); animation: none; width: 220px; }
+      .book-face { width: 220px; }
+      .stacked-indictment span { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+      .closing-main { font-size: clamp(3.5rem, 15vw, 6rem); }
+      #speaking .reveal { grid-template-columns: 1fr !important; }
+      #speaking .reveal > div:first-child { padding: 32px 24px 24px !important; }
+      #speaking .reveal > div:last-child { min-height: 300px; }
+    }
+    @media (max-width: 480px) {
+      .hero-eyebrow { white-space: normal; font-size: 0.68rem; }
+    }
+    /* ════════════════════════════════════════════
+       SPOTLIGHT SECTIONS — theatrical dark moments
+    ════════════════════════════════════════════ */
+    .spotlight {
+      min-height: 100vh;
+      background: var(--text);
+      background-image: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(255,255,255,0.025) 0%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+      position: relative;
+    }
+
+    .spotlight-inner {
+      text-align: center;
+      max-width: 880px;
+      width: 100%;
+    }
+
+    /* Each piece of spotlight content starts hidden */
+    .spotlight-eyebrow,
+    .spotlight-text,
+    .spotlight-sub,
+    .spotlight-pre,
+    .spotlight-line,
+    .spotlight-cta {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Stagger delays per element */
+    .spotlight-eyebrow  { transition-delay: 0.1s; }
+    .spotlight-pre      { transition-delay: 0.15s; }
+    .spotlight-text     { transition-delay: 0.25s; }
+    .spotlight-sub      { transition-delay: 0.55s; }
+    .spotlight-cta      { transition-delay: 0.7s; }
+
+    /* Staggered indictment lines */
+    .spotlight-line:nth-child(1) { transition-delay: 0.15s; }
+    .spotlight-line:nth-child(2) { transition-delay: 0.65s; }
+    .spotlight-line:nth-child(3) { transition-delay: 1.15s; }
+
+    /* Lit state — triggered by JS IntersectionObserver */
+    .spotlight.is-lit .spotlight-eyebrow,
+    .spotlight.is-lit .spotlight-text,
+    .spotlight.is-lit .spotlight-sub,
+    .spotlight.is-lit .spotlight-pre,
+    .spotlight.is-lit .spotlight-line,
+    .spotlight.is-lit .spotlight-cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Typography within spotlights */
+    .spotlight-eyebrow {
+      display: block;
+      margin: 0 0 2.5rem;
+      font-family: "Inter", sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .spotlight-text {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 7vw, 7.5rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+    }
+
+    .spotlight-line {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.2rem, 7vw, 7.5rem);
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+    }
+
+    .spotlight-sub {
+      display: block;
+      margin-top: 2.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.6rem, 5vw, 5.5rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .spotlight-pre {
+      display: block;
+      margin: 0 0 3rem;
+      font-family: "Inter", sans-serif;
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+
+    .spotlight-hot {
+      color: var(--hot);
+    }
+
+    .spotlight-cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-top: 3.5rem;
+    }
+
+    /* Buttons inside spotlights */
+    .spotlight .btn-primary {
+      background: var(--hot);
+      border-color: var(--hot);
+    }
+    .spotlight .btn-secondary {
+      background: transparent;
+      color: rgba(255,255,255,0.65);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .spotlight .btn-secondary:hover {
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* ── Focus visible styles for accessibility ── */
+    .btn:focus-visible, button:focus-visible, a:focus-visible, input:focus-visible {
+      outline: 2px solid #E91D8C;
+      outline-offset: 2px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="sr-only" style="position:absolute;top:-100px;left:0;z-index:9999;background:#fff;padding:8px 16px;font-size:14px;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="nav">
+        <a href="#top" class="brand" aria-label="Go to top">
+          <span class="brand-top">Tanya Hicks</span>
+          <span class="brand-bottom">ENOUGH</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#manifesto">Recognition</a>
+          <a href="#journey">Journey</a>
+          <a href="#book">Book</a>
+          <a href="#speaking">Speaking</a>
+          <a href="#about">About</a>
+        </nav>
+        <a class="btn btn-primary nav-cta" href="#waitlist">Pre-order</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+
+
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ════════════════════════════════════════════ -->
+    <section class="hero section-tight-top" id="top" role="region" aria-label="Hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">Author · Clinician · International Speaker · Misfit Matriarch</p>
+          <h1 class="display hero-title">
+            <span class="hero-line hero-line-1">Enough.</span>
+          </h1>
+          <p class="hero-line hero-line-2" style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.4rem,2.4vw,2rem); font-weight:500; color:var(--text); margin:0.5rem 0 0.2rem;">One word. Four truths.</p>
+          <p class="hero-line hero-line-3" style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.1rem,1.6vw,1.3rem); font-weight:500; color:var(--muted); margin:0 0 1.2rem;">You already know which one brought you here.</p>
+          <p class="lead hero-lead">
+            You have worked too hard for life to still be this hard.
+          </p>
+          <p class="hero-line hero-line-4" style="font-size:1.05rem; line-height:1.75; color:var(--muted); margin:0 0 0.8rem;">You tried the therapy. The routines. The boundaries. The books. And you are still exhausted in ways that none of it explains.</p>
+          <p style="font-size:1.05rem; line-height:1.75; color:var(--text); font-weight:600; margin:0 0 0.8rem;">That is not a you problem.</p>
+          <p style="font-size:1.05rem; line-height:1.75; color:var(--muted); margin:0 0 0.8rem;">Nobody ever showed you what you were actually working with. Every strategy you were handed was built for someone else. It was not bad faith. It was the wrong map.</p>
+          <p style="font-size:1.05rem; line-height:1.75; color:var(--text); font-weight:600; margin:0 0 0.8rem;">This book is the right one.</p>
+          <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.3rem,2vw,1.7rem); font-weight:600; color:var(--hot); font-style:italic; margin:0 0 1.4rem;">Misfits don't fit the mould. They forge it.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#manifesto">Read on ↓</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="hero-image-frame">
+            <img class="hero-image" src="assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg" alt="Tanya Hicks portrait" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         RECOGNITION
+    ════════════════════════════════════════════ -->
+    <section class="section section-soft" id="manifesto" role="region" aria-label="Recognition" style="padding-bottom: 0;">
+      <div class="container narrow centre">
+        <h2 class="display section-title-lg reveal">
+          You are not lazy.<br />
+          You are not weak.<br />
+          You are not bad at being a person.
+        </h2>
+        <p class="lead reveal reveal-delay-1">You are running on half your energy before the day even starts, and nobody has ever shown you where the rest of it is going.</p>
+        <p class="lead reveal reveal-delay-2">Every strategy. Every protocol. Every try harder. Aimed at you. As if you were the thing that needed fixing.</p>
+        <p class="lead reveal reveal-delay-3" style="font-weight:600; color:var(--text);">You were never the only thing that needed fixing.</p>
+        <p class="lead top-gap-md reveal reveal-delay-4" style="padding-bottom: 2rem;">And you have had enough of not knowing what the rest of it actually is.</p>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         POSSIBILITY — interactive podium
+    ════════════════════════════════════════════ -->
+    <section class="section section-soft possibility-section" id="possibility" role="region" aria-label="Possibility">
+      <style>
+        .pod-section { max-width: 860px; margin: 0 auto; padding: 0 clamp(1.2rem,4vw,2.5rem); }
+
+        .pod-heading {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.9rem, 4vw, 3.2rem);
+          font-weight: 500;
+          line-height: 1.2;
+          color: var(--text);
+          text-align: center;
+          max-width: 680px;
+          margin: 0 auto 1.2rem;
+          letter-spacing: -0.01em;
+        }
+
+        .pod-hint {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.68rem;
+          font-weight: 600;
+          letter-spacing: 0.22em;
+          text-transform: uppercase;
+          color: var(--muted);
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .pod-stage {
+          display: flex;
+          align-items: flex-end;
+          gap: 8px;
+          max-width: 640px;
+          margin: 0 auto;
+        }
+
+        .pod-col {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative;
+          flex: 1;
+        }
+        .pod-col--gold { flex: 1.2; }
+
+        /* Tooltip bubble — sits above the figure */
+        .pod-tooltip {
+          position: absolute;
+          bottom: calc(100% + 18px);
+          left: 50%;
+          transform: translateX(-50%) translateY(10px);
+          width: 240px;
+          background: #fff;
+          border-radius: 14px;
+          padding: 18px 20px;
+          box-shadow: 0 12px 40px rgba(37,25,45,0.14);
+          z-index: 30;
+          opacity: 0;
+          transition: opacity 0.25s ease, transform 0.25s ease;
+          pointer-events: none;
+          text-align: center;
+          border: 2px solid;
+        }
+        .pod-tooltip.is-visible {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        .pod-tooltip-tail-outer {
+          position: absolute; bottom: -11px; left: 50%; transform: translateX(-50%);
+          width: 0; height: 0;
+          border-left: 9px solid transparent; border-right: 9px solid transparent;
+        }
+        .pod-tooltip-tail-inner {
+          position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%);
+          width: 0; height: 0;
+          border-left: 7px solid transparent; border-right: 7px solid transparent;
+          border-top: 8px solid #fff;
+        }
+        .pod-tooltip-label {
+          font-family: 'Inter', sans-serif;
+          font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+          text-transform: uppercase; margin-bottom: 10px;
+        }
+        .pod-tooltip-text {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: 1.05rem; font-style: italic; font-weight: 500;
+          line-height: 1.6; color: var(--text); margin: 0;
+        }
+
+        /* Figure on top */
+        .pod-figure {
+          font-size: 2rem;
+          margin-bottom: 8px;
+          transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), filter 0.25s ease;
+          user-select: none;
+          line-height: 1;
+        }
+        .pod-col--gold .pod-figure { font-size: 2.4rem; }
+        .pod-col:hover .pod-figure {
+          transform: translateY(-10px) scale(1.18);
+          filter: drop-shadow(0 8px 14px rgba(0,0,0,0.22));
+        }
+
+        /* Podium block */
+        .pod-block {
+          width: 100%;
+          border-radius: 8px 8px 0 0;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding-top: 16px;
+        }
+        .pod-block::after {
+          content: '';
+          position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+          background: rgba(255,255,255,0.18);
+          transition: background 0.3s;
+        }
+        .pod-col:hover .pod-block::after { background: rgba(255,255,255,0.5); }
+
+        /* Shimmer sweep on hover */
+        .pod-block::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%);
+          transform: translateX(-100%);
+          transition: transform 0s;
+        }
+        .pod-col:hover .pod-block::before {
+          animation: podShimmer 0.55s ease forwards;
+        }
+        @keyframes podShimmer {
+          from { transform: translateX(-100%); }
+          to { transform: translateX(200%); }
+        }
+
+        .pod-block-num {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 700;
+          color: rgba(255,255,255,0.22);
+          line-height: 1;
+          user-select: none;
+        }
+        .pod-col--gold .pod-block-num { font-size: 3.2rem; }
+        .pod-block-num { font-size: 2.4rem; }
+
+        .pod-block-label {
+          font-family: 'Inter', sans-serif;
+          font-size: 9px; font-weight: 700;
+          letter-spacing: 2.5px; color: rgba(255,255,255,0.55);
+          text-transform: uppercase; margin-top: 4px;
+        }
+
+        /* Floor */
+        .pod-floor {
+          max-width: 640px; margin: 0 auto; height: 3px;
+          background: linear-gradient(90deg, transparent, var(--line), transparent);
+        }
+
+        /* Bottom copy */
+        .pod-footer {
+          text-align: center;
+          padding: 4rem 0 0;
+        }
+        .pod-footer-lead {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+          color: var(--muted); margin: 0 0 1.8rem; font-weight: 500;
+        }
+        .pod-footer-rule {
+          width: 48px; height: 3px;
+          background: linear-gradient(90deg, var(--hot), #c8a94e);
+          border-radius: 2px; margin: 0 auto 1.8rem;
+        }
+        .pod-footer-italic {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(1.2rem, 2vw, 1.6rem);
+          font-style: italic; line-height: 1.75;
+          color: var(--text); margin: 0; font-weight: 500;
+        }
+      </style>
+
+      <div class="pod-section">
+
+        <h2 class="pod-heading reveal">
+          You know this feeling.
+        </h2>
+        <div style="max-width:680px; margin:2rem auto;">
+          <p class="body-copy" style="margin-bottom:1.5rem;">You are in the meeting. You are performing fine. Your body left twenty minutes ago.</p>
+          <p class="body-copy" style="margin-bottom:1.5rem;">Rest does not bring you back. It just makes the gap quieter.</p>
+          <p class="body-copy" style="margin-bottom:1.5rem;">You know what to do. You cannot sustain doing it.</p>
+          <p class="body-copy" style="margin-bottom:1.5rem;">You compare yourself to someone who manages the same load with less cost, and you cannot work out what you are doing wrong.</p>
+          <p class="body-copy" style="margin-bottom:1.5rem;">You lay on the floor at the end of a day that should not have been that hard, wondering what is wrong with you.</p>
+          <p class="body-copy" style="font-weight:600; margin-bottom:0.5rem;">Enough of that question.</p>
+          <p class="body-copy" style="font-weight:600; font-size:1.15rem;">There was never anything wrong with you.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         STARTING LINE — interactive track
+    ════════════════════════════════════════════ -->
+    <section id="starting-line-section" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+      <style>
+        /* ── Full-width container — no max-width cap ── */
+        #sl-root { width: 100%; padding: 0 clamp(1.5rem, 5vw, 4rem); box-sizing: border-box; }
+
+        /* ── Top copy — centred, readable ── */
+        .sl-top { max-width: 720px; margin: 0 auto; text-align: center; padding-bottom: 6rem; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .sl-top.sl-visible { opacity: 1; transform: translateY(0); }
+        .sl-eyebrow { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 500; color: var(--muted); margin-bottom: 1.6rem; line-height: 1.65; letter-spacing: 0; text-transform: none; }
+        .sl-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; line-height: 1.05; margin: 0 0 1.4rem; color: var(--text); letter-spacing: -0.02em; }
+        .sl-headline em { color: var(--hot); font-style: italic; }
+        .sl-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.65; color: var(--muted); margin: 0; font-weight: 500; }
+
+        /* ── Section label ── */
+        .sl-section-label { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); text-align: center; margin-bottom: 2rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
+        .sl-section-label.sl-visible { opacity: 1; transform: translateY(0); }
+
+        /* ── START / FINISH labels outside track ── */
+        .sl-track-header { position: relative; width: 100%; margin-bottom: 0; }
+        .sl-start-flag { position: absolute; left: 64%; transform: translateX(-50%); bottom: 0; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: #c8a94e; white-space: nowrap; text-align: center; line-height: 1; padding-bottom: 8px; }
+        .sl-start-flag span { display: block; font-size: 0.62rem; font-weight: 500; color: rgba(200,169,78,0.65); letter-spacing: 0.12em; margin-top: 3px; }
+
+        /* ── Track — LIGHT background ── */
+        .sl-track-wrap {
+          position: relative; width: 100%; height: 340px;
+          background: linear-gradient(180deg, #e8f5e4 0%, #ddefd8 50%, #e8f5e4 100%);
+          border-radius: 20px;
+          border: 1.5px solid rgba(58,107,30,0.15);
+          overflow: hidden;
+          opacity: 0; transform: translateY(16px);
+          transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease;
+          box-shadow: 0 4px 32px rgba(37,25,45,0.07);
+        }
+        .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
+
+        /* Lane grid — light purple lines */
+        .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(116,80,182,0.07) 99px, rgba(116,80,182,0.07) 100px); pointer-events: none; }
+        .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(116,80,182,0.12) 15%, rgba(116,80,182,0.12) 85%, transparent); pointer-events: none; }
+
+        /* Gold start line */
+        .sl-startline { position: absolute; left: 64%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent 2%, #c8a94e 15%, #c8a94e 85%, transparent 98%); box-shadow: 0 0 12px rgba(200,169,78,0.35); pointer-events: none; }
+
+        /* Edge labels */
+        .sl-label-left { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; white-space: nowrap; pointer-events: none; }
+        .sl-label-right { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; pointer-events: none; }
+
+        /* ── Runners ── */
+        .sl-runner { position: absolute; transform: translate(-50%, -50%); cursor: pointer; z-index: 5; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); }
+        .sl-runner.is-active { z-index: 10; }
+        .sl-runner-label { position: absolute; top: -58px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
+        .sl-runner-label-main { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.2; }
+        .sl-runner-label-sub { font-family: 'Inter', sans-serif; font-size: 11px; color: var(--muted); letter-spacing: 0.5px; margin-top: 3px; }
+        .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2.5px solid; }
+        .sl-icon-forward { display: inline-block; transform: scaleX(-1); }
+        .sl-connector { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); width: 2px; transition: opacity 0.3s; }
+
+        /* ── Prompt ── */
+        .sl-prompt { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-top: 1.4rem; opacity: 0; transition: opacity 0.6s 0.5s ease; }
+        .sl-prompt.sl-visible { opacity: 1; }
+
+        /* ── Detail card — full width below track ── */
+        .sl-detail { max-width: 860px; margin: 2.5rem auto 0; }
+        .sl-detail-card {
+          border-radius: 18px; padding: 2.2rem 2.8rem;
+          display: flex; align-items: flex-start; gap: 2rem;
+          animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94);
+          background: var(--bg-soft); border: 1px solid var(--line);
+        }
+        @keyframes slSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .sl-detail-icon { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0; border: 2.5px solid; }
+        .sl-detail-tag { font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.7rem; }
+        .sl-detail-copy { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.35rem, 2vw, 1.65rem); line-height: 1.6; color: var(--text); margin: 0 0 0.9rem; font-style: italic; font-weight: 500; }
+        .sl-detail-body { font-family: 'Inter', sans-serif; font-size: 1rem; line-height: 1.75; color: var(--muted); margin: 0; }
+      </style>
+
+      <div id="sl-root">
+        <div class="sl-top" id="sl-top">
+          <p class="sl-eyebrow">Here is what nobody told you. Not everyone starts from the same starting line. Before you spend more on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks?</p>
+          <h2 class="sl-headline">Or are you still<br>making your way<br><em style="color:var(--hot);font-style:italic;">across the car park?</em></h2>
+        </div>
+
+        <div class="sl-section-label" id="sl-section-label">Where your starting line actually is</div>
+
+        <!-- START label sits above track, outside overflow clip -->
+        <div class="sl-track-header" style="height:38px;">
+          <div class="sl-start-flag">START<span>assumed equal</span></div>
+        </div>
+
+        <div class="sl-track-wrap" id="sl-track-wrap">
+          <div class="sl-lane-grid"></div>
+          <div class="sl-lane-line" style="top:33%"></div>
+          <div class="sl-lane-line" style="top:55%"></div>
+          <div class="sl-lane-line" style="top:77%"></div>
+          <div class="sl-startline"></div>
+          <div class="sl-label-left">← NOT EVEN ON THE TRACK</div>
+          <div class="sl-label-right">FINISH →</div>
+          <div id="sl-runners-mount"></div>
+        </div>
+
+        <p class="sl-prompt" id="sl-prompt">↑ tap any runner to read their starting line</p>
+        <div class="sl-detail" id="sl-detail"></div>
+      </div>
+
+      <script>
+        (function() {
+          const runners = [
+            {
+              id: 'carpark', label: 'IN THE CAR PARK', sublabel: 'Still getting here',
+              position: 4, lane: 0, icon: '🚗', flip: false, color: '#9b93ab',
+              copy: 'Your starting line starts a few blocks before even arriving at the field. You are spending capacity just getting to the race everyone else started at.',
+              detail: 'Chronic illness. Housing insecurity. A body that has not been safe. You have not got a head start deficit. You are running a completely different race.',
+            },
+            {
+              id: 'injured', label: 'CARRYING INJURIES', sublabel: 'That never healed',
+              position: 16, lane: 1, icon: '🩹', flip: false, color: '#c67a50',
+              copy: 'Old wounds nobody stitched properly. Nervous systems still in threat-response. You are at the blocks, but you have been running on a fracture for years.',
+              detail: 'Trauma. Chronic pain. Burnout that became baseline. The race assumes a body that was repaired. Yours was not.',
+            },
+            {
+              id: 'loaded', label: 'CARRYING THE WEIGHT', sublabel: 'Nobody else is holding',
+              position: 30, lane: 2, icon: '👶', flip: false, color: '#7450b6',
+              copy: 'Baby on your hip. Elderly parent on your back. A hangover from last night because that was the only hour that was yours.',
+              detail: 'You showed up. You are running. The race pretends everyone starts with two free hands and a full night\'s sleep. You do not.',
+            },
+            {
+              id: 'badcoach', label: 'COACHED BY ACCIDENT', sublabel: 'Not by design',
+              position: 46, lane: 1, icon: '📣', flip: true, color: '#5b8db8',
+              copy: 'Your coach is the well meaning parent of a friend you made in primary school. Not a world class expert in your unique brain and body.',
+              detail: 'Advice built for someone else\'s architecture. Strategies that worked for someone with a different design. It was not bad faith. It was the wrong map.',
+            },
+            {
+              id: 'startingblocks', label: 'AT THE BLOCKS', sublabel: 'The assumed start',
+              position: 64, lane: 0, icon: '🏃', flip: true, color: '#c8a94e',
+              copy: 'This is where the race assumes you begin. Two free hands. A repaired body. Slept well. Expert coached. No one depending on you right now.',
+              detail: 'This is the only starting position the race was designed for. Everyone else is running a harder race and being judged by the same finish line.',
+              isDefault: true,
+            },
+            {
+              id: 'headstart', label: 'AHEAD OF THE LINE', sublabel: 'Before the gun',
+              position: 78, lane: 2, icon: '⚡', flip: false, color: '#f04aa7',
+              copy: 'Inherited advantages. Early expert support. A system built around your design from birth. The race already started before the gun went off.',
+              detail: 'This is not a moral judgement. It is an architecture observation. Some people began accumulating capacity before anyone else was allowed on the track.',
+            },
+          ];
+
+          const laneY = [38, 60, 82];
+          let activeId = 'startingblocks';
+
+          function renderRunners() {
+            const mount = document.getElementById('sl-runners-mount');
+            mount.innerHTML = '';
+            runners.forEach(r => {
+              const isActive = r.id === activeId;
+              const size = isActive ? 62 : 48;
+              const y = laneY[r.lane];
+              const iconHtml = r.flip
+                ? `<span class="sl-icon-forward">${r.icon}</span>`
+                : r.icon;
+
+              const el = document.createElement('div');
+              el.className = 'sl-runner' + (isActive ? ' is-active' : '');
+              el.style.cssText = `left:${r.position}%;top:${y}%;`;
+              el.innerHTML = `
+                <div class="sl-runner-label" style="opacity:${isActive ? 1 : 0.65}">
+                  <div class="sl-runner-label-main" style="color:${r.color}">${r.label}</div>
+                  <div class="sl-runner-label-sub">${r.sublabel}</div>
+                </div>
+                <div class="sl-connector" style="height:24px;background:${r.color};opacity:${isActive ? 0.8 : 0};"></div>
+                <div class="sl-bubble" style="width:${size}px;height:${size}px;font-size:${isActive ? 28 : 22}px;background:${isActive ? r.color : '#fff'};border-color:${r.color};box-shadow:${isActive ? `0 0 24px ${r.color}50, 0 0 48px ${r.color}25` : `0 2px 8px rgba(37,25,45,0.1)`};">
+                  ${iconHtml}
+                </div>`;
+              el.addEventListener('click', () => {
+                activeId = r.id;
+                renderRunners();
+                renderDetail();
+              });
+              mount.appendChild(el);
+            });
+          }
+
+          function renderDetail() {
+            const panel = document.getElementById('sl-detail');
+            const r = runners.find(x => x.id === activeId);
+            if (!r) { panel.innerHTML = ''; return; }
+            const iconHtml = r.flip
+              ? `<span style="display:inline-block;transform:scaleX(-1)">${r.icon}</span>`
+              : r.icon;
+            panel.innerHTML = `
+              <div class="sl-detail-card" style="border:1px solid ${r.color}30;border-left:4px solid ${r.color};">
+                <div class="sl-detail-icon" style="background:${r.color}15;border-color:${r.color};">${iconHtml}</div>
+                <div style="flex:1">
+                  <div class="sl-detail-tag" style="color:${r.color}">${r.label}</div>
+                  <p class="sl-detail-copy">"${r.copy}"</p>
+                  <p class="sl-detail-body">${r.detail}</p>
+                </div>
+              </div>`;
+          }
+
+          const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('sl-visible'); });
+          }, { threshold: 0.2 });
+
+          const payoffObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('sl-visible'); });
+          }, { threshold: 0.15 });
+
+          function init() {
+            renderRunners();
+            renderDetail();
+            ['sl-top','sl-section-label','sl-track-wrap','sl-prompt'].forEach(id => {
+              const el = document.getElementById(id);
+              if (el) observer.observe(el);
+            });
+            const payoff = document.getElementById('sl-payoff');
+            if (payoff) payoffObserver.observe(payoff);
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+          } else {
+            init();
+          }
+        })();
+      </script>
+
+      <div style="max-width:680px; margin:3rem auto 0; text-align:center; padding:0 clamp(1.2rem,4vw,2.5rem);">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,2vw,1.5rem); line-height:1.7; color:var(--muted); font-weight:500; margin:0 0 1.2rem;">The advice you were given was built for someone else's starting position. Someone else's nervous system. Someone else's load. It was not bad faith. It was the wrong map.</p>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,3.5vw,2.8rem); line-height:1.2; color:var(--text); font-weight:500; letter-spacing:-0.01em; margin:0 0 1.2rem;">Nobody asked where <em style="color:var(--hot); font-style:italic;">your</em> actual starting line was.</p>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.2rem,2vw,1.5rem); line-height:1.2; color:var(--text); font-weight:600; margin:0 0 1rem;">Enough of running someone else's race.</p>
+        <p style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.15rem,1.8vw,1.4rem); line-height:1.7; color:var(--muted); font-weight:500; margin:0;"><em>ENOUGH</em> is the first honest map of the one you are actually running.</p>
+      </div>
+
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         MECHANISM — three pillars (static)
+    ════════════════════════════════════════════ -->
+    <section id="walk-section" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+      <div style="text-align:center; padding:0 clamp(1.5rem,5vw,4rem) 2.5rem;">
+        <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(1.9rem,4vw,3.2rem); font-weight:600; color:var(--text); margin:0; letter-spacing:-0.02em; line-height:1.1;">Here is what this book shows you.</h2>
+      </div>
+
+      <div style="max-width:680px; margin:2rem auto;">
+        <div style="margin-bottom:2.5rem;">
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:600; color:var(--text); margin-bottom:0.5rem;">Where your energy is actually going.</h3>
+          <p class="body-copy">The invisible costs that drain you before your day begins. The ones no blood test, no therapist, no morning routine has ever named. Enough of paying costs you cannot even see.</p>
+        </div>
+        <div style="margin-bottom:2.5rem;">
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:600; color:var(--text); margin-bottom:0.5rem;">How you were actually built.</h3>
+          <p class="body-copy">Your nervous system. Your wiring. Not the version you have been performing. The real one. And why it was never the deficit.</p>
+        </div>
+        <div style="margin-bottom:2.5rem;">
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.4rem; font-weight:600; color:var(--text); margin-bottom:0.5rem;">What to do with what you know.</h3>
+          <p class="body-copy">Not try harder. Not push through. Four precise moves that work with your design instead of against it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         BOOK
+    ════════════════════════════════════════════ -->
+    <section class="section section-soft" id="book" role="region" aria-label="Book">
+      <style>
+        .book2-wrap {
+          max-width: 1100px; margin: 0 auto;
+          display: grid; grid-template-columns: 1fr 1fr;
+          gap: clamp(40px,6vw,80px); align-items: center;
+          padding: 0 clamp(1.5rem,5vw,4rem);
+        }
+        .book2-left {
+          display: flex; justify-content: center;
+          padding: 20px 20px 40px 60px;
+        }
+        .book2-scene { position: relative; }
+        .book2-glow {
+          position: absolute; inset: -30px -20px;
+          background: radial-gradient(ellipse at 40% 50%, rgba(240,74,167,0.22) 0%, transparent 65%);
+          filter: blur(30px); pointer-events: none;
+        }
+        .book2-body {
+          display: flex; flex-direction: row; align-items: stretch;
+          transform: perspective(1200px) rotateY(-22deg) rotateX(3deg);
+          transition: transform 0.5s ease;
+          filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5)) drop-shadow(0 10px 24px rgba(0,0,0,0.35)) drop-shadow(0 4px 10px rgba(240,74,167,0.4));
+          cursor: pointer;
+        }
+        .book2-body:hover {
+          transform: perspective(1200px) rotateY(-10deg) rotateX(2deg) translateY(-8px);
+        }
+        .book2-cover { position: relative; flex-shrink: 0; }
+        .book2-cover img { display: block; width: 240px; height: auto; border-radius: 3px 0 0 3px; }
+        .book2-cover-shadow {
+          position: absolute; top: 0; left: 0; bottom: 0; width: 32px;
+          background: linear-gradient(90deg, rgba(0,0,0,0.38) 0%, transparent 100%);
+          border-radius: 3px 0 0 0; pointer-events: none;
+        }
+        .book2-pages {
+          width: 6px; flex-shrink: 0; border-radius: 0 2px 2px 0;
+          background: repeating-linear-gradient(180deg, #f5efe8 0px, #f5efe8 1px, #e8e0d4 1.5px, #e8e0d4 2px);
+          box-shadow: inset -2px 0 4px rgba(0,0,0,0.08);
+        }
+        .book2-floor-shadow {
+          position: absolute; bottom: -20px; left: 20px; right: 0; height: 20px;
+          background: radial-gradient(ellipse, rgba(0,0,0,0.15) 0%, transparent 70%);
+          filter: blur(10px);
+        }
+        .book2-badge {
+          position: absolute; bottom: 8px; right: -55px;
+          background: #fff; border: 1.5px solid rgba(240,74,167,0.18);
+          border-radius: 12px; padding: 10px 16px;
+          box-shadow: 0 8px 24px rgba(0,0,0,0.1); z-index: 10;
+        }
+        .book2-badge-label {
+          font-family: 'Inter', sans-serif; font-size: 9px; font-weight: 700;
+          letter-spacing: 2px; color: var(--hot); text-transform: uppercase;
+        }
+        .book2-badge-text {
+          font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
+          color: var(--text); margin-top: 3px;
+        }
+
+        .book2-copy .book2-eyebrow {
+          font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+          letter-spacing: 3px; text-transform: uppercase; color: var(--hot); margin-bottom: 14px;
+        }
+        .book2-title {
+          font-family: 'Cormorant Garamond', serif;
+          font-size: clamp(3.5rem, 7vw, 5.5rem);
+          font-weight: 700; color: var(--text); line-height: 1;
+          margin: 0 0 18px; letter-spacing: -0.02em;
+        }
+        .book2-lead {
+          font-family: 'Cormorant Garamond', serif; font-style: italic;
+          font-size: clamp(1.15rem, 2vw, 1.4rem); color: var(--hot);
+          line-height: 1.45; margin: 0 0 22px;
+        }
+        .book2-body-copy {
+          font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 300;
+          color: var(--muted); line-height: 1.8; margin: 0 0 12px;
+        }
+        .book2-body-copy.strong { color: var(--text); font-weight: 400; margin-bottom: 30px; }
+        .book2-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+        .book2-btn-primary {
+          background: var(--hot); color: #fff; border: none; border-radius: 50px;
+          padding: 14px 32px; font-family: 'Inter', sans-serif; font-size: 14px;
+          font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block;
+          box-shadow: 0 8px 24px rgba(240,74,167,0.38);
+        }
+        .book2-btn-secondary {
+          background: #fff; color: var(--text); border: 2px solid var(--line);
+          border-radius: 50px; padding: 12px 28px; font-family: 'Inter', sans-serif;
+          font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none;
+          display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+          .book2-wrap { grid-template-columns: 1fr; }
+          .book2-left { padding: 20px; }
+          .book2-badge { right: -10px; }
+        }
+      </style>
+
+      <div class="book2-wrap">
+
+        <!-- Book visual -->
+        <div class="book2-left">
+          <div class="book2-scene">
+            <div class="book2-glow"></div>
+            <div class="book2-body" id="book2body">
+              <div class="book2-cover">
+                <img src="assets/Book cover.png" alt="ENOUGH by Tanya Hicks" />
+                <div class="book2-cover-shadow"></div>
+              </div>
+              <div class="book2-pages"></div>
+            </div>
+            <div class="book2-floor-shadow"></div>
+            <div class="book2-badge">
+              <div class="book2-badge-label">Now available</div>
+              <div class="book2-badge-text">Pre-order your copy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copy -->
+        <div class="book2-copy">
+          <p class="book2-eyebrow">Book</p>
+          <h2 class="book2-title">ENOUGH</h2>
+          <p class="book2-lead">This is the book that explains why you are this tired.</p>
+          <p class="book2-body-copy">Not the tired that sleep fixes. The tired that borrows from your patience, your creativity, your hope, and spends it all on getting through a Tuesday.</p>
+          <p class="book2-body-copy">This book shows you where the drain is, what it has cost you, and what becomes possible when you stop fighting your own design and start building from it.</p>
+          <p class="book2-body-copy">Written for the people who kept going. The ones who did the work, held it together, and are still here.</p>
+          <p class="book2-body-copy strong">The enduring.</p>
+          <div class="book2-btns">
+            <a class="book2-btn-primary" href="#waitlist">Pre-order ENOUGH →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         JOURNEY / TOOLS
+    ════════════════════════════════════════════ -->
+    <section id="journey" role="region" aria-label="Journey" style="background:var(--bg); padding: clamp(4rem,7vw,8rem) 0;">
+      <div id="ma-root" style="max-width:1100px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem);"></div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         CREDIBILITY
+    ════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="container narrow centre">
+        <h2 class="credibility-headline reveal">This work was not built as theory first.</h2>
+        <p class="credibility-proof">
+          It was built on snapped ligaments, sensory overwhelm, a brain that could not understand instruction manuals written in typical language, and a heart that broke over and over again.
+        </p>
+        <p class="credibility-proof">
+          And then I had a daughter who was built like me. And I decided: not on my watch.
+        </p>
+        <p class="credibility-proof">
+          What came next was forged in clinical practice, neurodivergent-affirming support, community design, leadership, and advocacy, until a framework emerged that actually worked, for people who were never the whole problem.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ABOUT
+    ════════════════════════════════════════════ -->
+    <section class="section section-soft" id="about" role="region" aria-label="About Tanya Hicks">
+      <div class="container about-grid">
+        <div class="about-copy-col">
+          <p class="eyebrow">Tanya Hicks</p>
+          <blockquote class="about-quote">
+            "I do not choose between soul and science, body and ethics, pleasure and responsibility.
+            I work at the point where those false divides collapse."
+          </blockquote>
+          <p class="about-role">Matriarch. Viking. Misfit. Clinician. Scholar. Human. Birther of the Enduring. Author of ENOUGH.</p>
+
+          <div class="about-expand" id="aboutExpand">
+            <button class="about-expand-trigger" type="button" onclick="toggleAboutExpand()" aria-expanded="false">
+              <span>Forty seven was a big year.</span>
+              <span class="about-expand-icon">+</span>
+            </button>
+            <div class="about-expand-content">
+              <p class="body-copy">
+                I am a late diagnosed AuDHD counsellor, solo parent, and author, with PMDD and hypermobile Ehlers Danlos layered underneath everything I once called coping.
+              </p>
+              <p class="body-copy">For most of my life I could hyper focus on skill development with surgical precision.</p>
+              <p class="body-copy">I trained exceptionally well.</p>
+              <p class="body-copy">And I was still paying a cost no one could explain.</p>
+              <p class="body-copy">So the work you see here began the way many important systems do.</p>
+              <p class="body-copy">Someone needed something the world had not built yet.</p>
+              <p class="body-copy">So it got built.</p>
+              <div class="pill-row top-gap-sm">
+                <span class="pill">Neurodivergent Empowered</span>
+                <span class="pill">Sparkly Aliens Inc.</span>
+                <span class="pill">The Nest</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-media-col portrait-tall">
+          <div class="portrait-frame portrait-frame-right">
+            <img class="portrait-image" src="assets/WCW Paris Eiffel Tower Picnic 2025-183_edited_edited.jpg" alt="Portrait of Tanya Hicks" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SPEAKING
+    ════════════════════════════════════════════ -->
+    <!-- Full-width banner header — outside container -->
+    <div class="speaking-header centre reveal" style="background:var(--text); width:100vw; margin-left:calc(-50vw + 50%); padding:clamp(3rem, 6vw, 6rem) clamp(2rem, 8vw, 8rem); text-align:center;">
+      <p class="eyebrow" style="color:rgba(255,255,255,0.55);">Speaking</p>
+      <p class="speaking-lead"><span class="speaking-lead-hot">First,</span><br /><span class="speaking-lead-hot">do no harm.</span></p>
+      <h2 class="speaking-sub">If you want to help people,<br />first understand what it costs them to be here.</h2>
+    </div>
+
+    <section class="section" id="speaking" role="region" aria-label="Speaking" style="padding-top:clamp(2rem, 4vw, 4rem);">
+      <div class="container">
+
+        <!-- Full-width two-column card -->
+        <div class="reveal" style="display:grid; grid-template-columns:1fr 1fr; border-radius:16px; overflow:hidden; background:#F5F1ED; min-height:520px;">
+
+          <!-- LEFT — text -->
+          <div style="padding:clamp(32px, 4vw, 52px) clamp(24px, 4vw, 48px); display:flex; flex-direction:column; justify-content:space-evenly; gap:0;">
+
+            <h2 style="font-family:'Cormorant Garamond', serif; font-size:clamp(2.4rem, 3.5vw, 3.6rem); font-weight:600; color:var(--text); line-height:1.1; margin:0;">
+              Misfits don't fit the mould.<br />
+              <em style="color:#E91D8C; font-style:italic;">They forge it.</em>
+            </h2>
+
+            <div>
+              <p class="body-copy">If capable people keep struggling in your system, the problem is probably not the people.</p>
+              <p class="body-copy">Good intentions do not prevent harm. When you cannot see the full load someone is carrying, you cannot give them what they actually need, no matter how much you want to help.</p>
+              <p class="body-copy">First, understand what it costs them to be here.</p>
+            </div>
+
+            <p style="font-family:'Cormorant Garamond', serif; font-size:clamp(1.2rem, 1.8vw, 1.5rem); font-weight:600; color:var(--text); line-height:1.35; margin:0;">
+              Be the coach the person in front of you actually needs.<br />
+              Not the coach you were trained to be for someone else.
+            </p>
+
+            <div>
+              <a href="mailto:hello@tanyahicks.com" class="btn" style="background:#E91D8C; color:#fff; border:none; border-radius:40px; padding:13px 28px; font-size:0.9rem; font-weight:600; text-decoration:none;">Speaking enquiries</a>
+            </div>
+          </div>
+
+          <!-- RIGHT — image with edge fades -->
+          <div style="position:relative; overflow:hidden;">
+            <img src="assets/WCW 2025 d1-152_edited.jpg" alt="Tanya Hicks speaking" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;" />
+            <div style="position:absolute; inset:0; background:linear-gradient(to right, #F5F1ED 0%, transparent 18%);"></div>
+            <div style="position:absolute; inset:0; background:linear-gradient(to top, #F5F1ED 0%, transparent 20%);"></div>
+            <div style="position:absolute; inset:0; background:linear-gradient(to bottom, #F5F1ED 0%, transparent 14%);"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         AWARDS CAROUSEL
+    ════════════════════════════════════════════ -->
+    <section class="section" style="padding-bottom:2rem; overflow:hidden;">
+      <div class="container" style="margin-bottom:2rem;">
+        <p class="eyebrow" style="text-align:center;">Recognition</p>
+        <h2 style="font-family:'Cormorant Garamond', serif; font-size:clamp(2rem, 3vw, 3rem); font-weight:600; color:var(--text); text-align:center; margin:0.5rem 0 0; letter-spacing:-0.02em;">Awards &amp; Achievements</h2>
+      </div>
+      <style>
+        .awards-scroll { display:flex; gap:1.5rem; animation:scrollAwards 60s linear infinite; width:max-content; }
+        .awards-scroll:hover { animation-play-state:paused; }
+        .awards-scroll img { height:220px; width:auto; border-radius:10px; flex-shrink:0; transition:transform 0.3s; }
+        .awards-scroll img:hover { transform:scale(1.05); }
+        @keyframes scrollAwards {
+          0% { transform:translateX(0); }
+          100% { transform:translateX(-50%); }
+        }
+      </style>
+      <div style="overflow:hidden; width:100vw; margin-left:calc(-50vw + 50%); padding:0 0 1rem;">
+        <div class="awards-scroll" aria-label="Awards carousel">
+          <img src="assets/awards/1.png" alt="2021 Finalist - Best Childrens Disability Service, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/2.png" alt="2022 Finalist - Community Leadership Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/3.png" alt="2022 Finalist - Social Commitment Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/4.png" alt="2023 Finalist - Fisher Business of the Year, Fisher Community Awards" loading="lazy" />
+          <img src="assets/awards/5.png" alt="2024 Finalist - Outstanding Growth, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/6.png" alt="2024 Finalist - Championing Health, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/7.png" alt="2024 Finalist - Woman of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/8.png" alt="2024 Finalist - Excellence in Diversity and Inclusion, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/9.png" alt="2025 Honourable Mention - Thought Leader of the Year, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/10.png" alt="2026 Finalist - Community Group of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/11.png" alt="2026 Finalist - Citizen of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/12.png" alt="2026 Finalist - Girl of the Year Under 16, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/13.png" alt="2026 Finalist - Rising Star, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/14.png" alt="2026 Finalist - Woman in Education, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/15.png" alt="2026 Finalist - Woman in Therapy and Counselling Services, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/16.png" alt="2026 Finalist - Disability Inclusion Impact, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/17.png" alt="2026 Finalist - Human Rights, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/18.png" alt="2026 Finalist - Innovation, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/19.png" alt="2026 Finalist - Thought Leader of the Year, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/20.png" alt="2026 Finalist - Big Idea, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/21.png" alt="2025 Bronze Winner - Most Resilient Woman Owned Business, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/22.png" alt="2025 Bronze Winner - Advocacy and Impact, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/23.png" alt="2024 Silver Winner - Disabled Business Excellence, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/24.png" alt="2024 Silver Winner - Global Woman of the Year, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/25.png" alt="2024 Silver Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/26.png" alt="2025 Silver Winner - Emerging AusMumPreneur of the Year, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/27.png" alt="2025 Silver Winner - Women in Education, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/28.png" alt="2025 Silver Winner - Achievement in Diversity and Inclusion, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/29.png" alt="2025 Silver Winner - Childrens Education, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/30.png" alt="2022 Gold Winner - Emerging Community Leader Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/31.png" alt="2023 Gold Winner - Community Inclusion Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/32.png" alt="2023 Gold Winner - ND Autistic Excellence Provider of the Year, Divergantz Awards" loading="lazy" />
+          <img src="assets/awards/33.png" alt="2024 Gold Winner - Education Provider of the Year, Sunshine Coast Business Awards" loading="lazy" />
+          <img src="assets/awards/34.png" alt="2024 Gold Winner - Community Leader of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/35.png" alt="2024 Gold Winner - Overcoming the Odds Award, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/36.png" alt="2024 Gold Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/37.png" alt="2025 Gold Winner - Childrens Education, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/38.png" alt="2025 Gold Winner - Emerging Non Profit Business Excellence, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/39.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/40.png" alt="2025 Gold Winner - Rising Star, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/41.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
+          <!-- Duplicate for seamless loop -->
+          <img src="assets/awards/1.png" alt="2021 Finalist - Best Childrens Disability Service, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/2.png" alt="2022 Finalist - Community Leadership Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/3.png" alt="2022 Finalist - Social Commitment Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/4.png" alt="2023 Finalist - Fisher Business of the Year, Fisher Community Awards" loading="lazy" />
+          <img src="assets/awards/5.png" alt="2024 Finalist - Outstanding Growth, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/6.png" alt="2024 Finalist - Championing Health, Telstra Best of Business Awards" loading="lazy" />
+          <img src="assets/awards/7.png" alt="2024 Finalist - Woman of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/8.png" alt="2024 Finalist - Excellence in Diversity and Inclusion, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/9.png" alt="2025 Honourable Mention - Thought Leader of the Year, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/10.png" alt="2026 Finalist - Community Group of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/11.png" alt="2026 Finalist - Citizen of the Year, Sunshine Coast Council Australia Day Awards" loading="lazy" />
+          <img src="assets/awards/12.png" alt="2026 Finalist - Girl of the Year Under 16, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/13.png" alt="2026 Finalist - Rising Star, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/14.png" alt="2026 Finalist - Woman in Education, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/15.png" alt="2026 Finalist - Woman in Therapy and Counselling Services, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/16.png" alt="2026 Finalist - Disability Inclusion Impact, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/17.png" alt="2026 Finalist - Human Rights, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/18.png" alt="2026 Finalist - Innovation, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/19.png" alt="2026 Finalist - Thought Leader of the Year, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/20.png" alt="2026 Finalist - Big Idea, Women Changing the World Global Awards Paris" loading="lazy" />
+          <img src="assets/awards/21.png" alt="2025 Bronze Winner - Most Resilient Woman Owned Business, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/22.png" alt="2025 Bronze Winner - Advocacy and Impact, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/23.png" alt="2024 Silver Winner - Disabled Business Excellence, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/24.png" alt="2024 Silver Winner - Global Woman of the Year, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/25.png" alt="2024 Silver Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/26.png" alt="2025 Silver Winner - Emerging AusMumPreneur of the Year, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/27.png" alt="2025 Silver Winner - Women in Education, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/28.png" alt="2025 Silver Winner - Achievement in Diversity and Inclusion, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/29.png" alt="2025 Silver Winner - Childrens Education, London Global Women Changing the World Awards" loading="lazy" />
+          <img src="assets/awards/30.png" alt="2022 Gold Winner - Emerging Community Leader Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/31.png" alt="2023 Gold Winner - Community Inclusion Award, Sunshine Coast Community Gala Awards" loading="lazy" />
+          <img src="assets/awards/32.png" alt="2023 Gold Winner - ND Autistic Excellence Provider of the Year, Divergantz Awards" loading="lazy" />
+          <img src="assets/awards/33.png" alt="2024 Gold Winner - Education Provider of the Year, Sunshine Coast Business Awards" loading="lazy" />
+          <img src="assets/awards/34.png" alt="2024 Gold Winner - Community Leader of the Year, Beam National Awards" loading="lazy" />
+          <img src="assets/awards/35.png" alt="2024 Gold Winner - Overcoming the Odds Award, AusMumPreneur National Awards" loading="lazy" />
+          <img src="assets/awards/36.png" alt="2024 Gold Winner - Global Female Executive, International Stevies Awards" loading="lazy" />
+          <img src="assets/awards/37.png" alt="2025 Gold Winner - Childrens Education, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/38.png" alt="2025 Gold Winner - Emerging Non Profit Business Excellence, Global Women Changing the World Awards London" loading="lazy" />
+          <img src="assets/awards/39.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
+          <img src="assets/awards/40.png" alt="2025 Gold Winner - Rising Star, Women Changing the World APAC" loading="lazy" />
+          <img src="assets/awards/41.png" alt="2025 Gold Winner - Non Profit Organisation of the Year, Global Stevies Awards" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════
+         SPOTLIGHT 4 — You were always enough.
+    ════════════════════════════════════════════ -->
+    <section class="spotlight" id="waitlist" aria-label="You were always enough">
+      <div class="spotlight-inner">
+        <p class="spotlight-pre">
+          You do not have to become someone new.<br />
+          You were never broken.<br />
+          You were running on someone else's operating system your entire life.<br />
+          This book gives you back your own.
+        </p>
+        <p class="spotlight-text">
+          You were<br />always<br /><span class="spotlight-hot">enough.</span>
+        </p>
+        <span class="spotlight-sub">You just needed the right operating manual. Here it is.</span>
+        <p class="spotlight-sub" style="margin-top:1rem;font-weight:600;">No spam. No funnels. No daily inspiration. Just the book.</p>
+        <div class="spotlight-cta" style="margin-top:1.5rem;">
+          <form class="waitlist-form" action="mailto:tanya@neurodivergentempowered.com" method="POST" enctype="text/plain" style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;align-items:center;">
+            <label class="sr-only" for="waitlist-email">Email address</label>
+            <input id="waitlist-email" name="email" type="email" placeholder="Your email address" required />
+            <button class="btn btn-primary" type="submit">Pre-order ENOUGH</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         ACKNOWLEDGEMENT OF COUNTRY
+    ════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="acknowledgement-wrap narrow centre">
+        <p class="acknowledgement-label">Acknowledgement of Country</p>
+        <p class="body-copy muted">I live and work on Gubbi Gubbi Country on the Sunshine Coast.</p>
+        <p class="body-copy muted">I acknowledge the Traditional Custodians of this land and pay respect to Elders past and present.</p>
+        <p class="sovereignty-line">Sovereignty was never ceded.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // ── Misfit Architecture Interactive Component ──
+    (function() {
+      const C = {
+        bg:       '#fcf8f6',
+        bgCard:   '#ffffff',
+        bgSubtle: '#f7f1f3',
+        text:     '#25192d',
+        textMid:  '#63596d',
+        textDim:  '#9b93ab',
+        border:   'rgba(37,25,45,0.10)',
+      };
+
+      const stages = [
+        {
+          id: 'recognition', label: 'Recognition', number: '01',
+          color: '#f04aa7', icon: '⊙',
+          subtitle: 'See where your starting line actually is.',
+          raceTag: 'Before the gun fires',
+          tools: ['Arrival Ledger', 'Misfit Tax Ledger'],
+          insight: 'You were not lazy. You were running a different race in someone else\'s shoes on a track never built for your stride.',
+          body: [
+            'Not where you think you should be. Not where everyone else seems to be. Where you actually are, today, right now, and what it has already cost you just to get to the start line.',
+            'This stage helps you see what it cost you just to show up today, and where the rest is going, including the costs that never appear on any list.',
+          ],
+          exoneration: 'You were not lazy. Not undisciplined. Not broken in ways that more effort would fix. You were running a different race in someone else\'s shoes on a track that was never built for your stride. That is not a personal failing. That is a structural problem. And structural problems have structural solutions.',
+          forward: 'Next: find out what you are actually carrying into it.',
+          flow: [
+            { node: 'Where did you start today?', type: 'question' },
+            { node: 'Arrival Cost', type: 'measure', sub: 'What it cost before the race begins' },
+            { node: 'Visible Costs', type: 'branch', sub: 'What you can name' },
+            { node: 'Invisible Taxes', type: 'branch', sub: 'Masking · Translation · Structural friction' },
+            { node: 'Your actual starting position', type: 'output' },
+          ],
+        },
+        {
+          id: 'clarity', label: 'Clarity', number: '02',
+          color: '#1a9fc0', icon: '◈',
+          subtitle: 'Not everyone enters the race with the same load.',
+          raceTag: 'What you\'re carrying',
+          tools: ['Capacity Map', 'Load Domain Diagnostic', 'Capacity Drainers'],
+          insight: 'Capacity is shaped by architecture, not just effort. Your wiring, your history, your conditions. All of it is weight.',
+          body: [
+            'Not everyone enters the race with the same load. This stage helps you see what you are actually carrying: your wiring, your history, your conditions, and where the weight is really coming from.',
+            'This stage moves through the layers of what shapes your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.',
+          ],
+          forward: 'Next: find out which race is actually yours to run.',
+          flow: [
+            { node: 'What are you carrying?', type: 'question' },
+            { node: 'Nine Layers of Capacity', type: 'measure', sub: 'Neurology through to current state' },
+            { node: 'Load Domain', type: 'branch', sub: 'Work · Body · Relationships · Identity · Environment' },
+            { node: 'Capacity Drainers', type: 'branch', sub: 'Patterns taking from what you rely on' },
+            { node: 'Your actual load entering the race', type: 'output' },
+          ],
+        },
+        {
+          id: 'acceptance', label: 'Acceptance', number: '03',
+          color: '#7450b6', icon: '◎',
+          subtitle: 'Know which race you should be entering right now.',
+          raceTag: 'Choosing the right race',
+          tools: ['Structural Ceiling Map'],
+          insight: 'Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything into a race you were never built for.',
+          body: [
+            'If you are a novice runner who ends up in a race with Usain Bolt, the most important thing you can learn is not how to run faster. It is that no amount of training, discipline or willpower is going to close that gap in the way the crowd expects. Bolt has the biology, the years, the specific physical architecture for that race. You do not. That is not failure. That is information.',
+            'This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.',
+          ],
+          forward: 'Next: find out where you actually have ground to gain.',
+          flow: [
+            { node: 'What are you pushing against?', type: 'question' },
+            { node: 'Control', type: 'branch', sub: 'Changes with your direct effort' },
+            { node: 'Influence', type: 'branch', sub: 'Shifts with conditions or support' },
+            { node: 'Structural Ceiling', type: 'branch', sub: 'Not your race to run right now' },
+            { node: 'Where your effort stops bleeding', type: 'output' },
+          ],
+        },
+        {
+          id: 'intervention', label: 'Intervention', number: '04',
+          color: '#c49a2a', icon: '⊕',
+          subtitle: 'The race you could actually win is in the next lane.',
+          raceTag: 'Finding your lane',
+          tools: ['Four Levers'],
+          insight: 'Not all effort moves you forward. Small shifts in the right place change the entire system.',
+          body: [
+            'The race you could actually win is happening in the next lane. This stage is about finding it.',
+            'Not all effort moves you forward. Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.',
+          ],
+          forward: 'Next: find out what the race that fits your design looks like.',
+          flow: [
+            { node: 'Where is there ground to gain?', type: 'question' },
+            { node: 'Reduce', type: 'branch', sub: 'What is taking without returning' },
+            { node: 'Protect', type: 'branch', sub: 'What is working right now' },
+            { node: 'Restore', type: 'branch', sub: 'What has been spent' },
+            { node: 'Add', type: 'branch', sub: 'What was always missing' },
+            { node: 'Your leverage points', type: 'output' },
+          ],
+        },
+        {
+          id: 'alignment', label: 'Alignment', number: '05',
+          color: '#2a8c5a', icon: '⊞',
+          subtitle: 'Run the race that fits your design.',
+          raceTag: 'Running your race',
+          tools: ['Calibration Map', 'Relational Energy Ledger'],
+          insight: 'Without knowing what you are actually running toward, you can be perfectly aligned with your design and still be running toward someone else\'s finish line.',
+          body: [
+            'Not someone else\'s race. Not the race you were told you should want. The one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.',
+            'This stage also asks what you are actually running toward. Not the goal you inherited. Not the one you chose because it seemed achievable. The one that holds when everything else is stripped back.',
+          ],
+          forward: 'Next: find out how you stay in it, and what you build once you do.',
+          flow: [
+            { node: 'What are you actually running toward?', type: 'question' },
+            { node: 'Design', type: 'branch', sub: 'How you are actually built' },
+            { node: 'Conditions', type: 'branch', sub: 'What your environment supports' },
+            { node: 'Pace', type: 'branch', sub: 'What this season asks for' },
+            { node: 'Relational Energy', type: 'branch', sub: 'Who restores vs who takes' },
+            { node: 'Your actual finish line', type: 'output' },
+          ],
+        },
+        {
+          id: 'sustainability', label: 'Sustainability', number: '06',
+          color: '#63596d', icon: '↻',
+          subtitle: 'This is where you get to arrive.',
+          raceTag: 'Staying in the race',
+          tools: ['Recalibration Loop'],
+          insight: 'Sustainability is not the destination. It is the floor you build so something real can stand on it.',
+          body: [
+            'Sustainability is not the destination. It is the floor you build so something real can stand on it.',
+            'Most people never get here. Not because the work is too hard, but because they run out of ground before they reach it. Every stage before this one was clearing that ground.',
+            'The loop is simple. You learn to read the signal before it becomes a collapse. You protect the ground you have cleared rather than waiting until it is gone. You adjust what you are carrying before the weight decides for you. And you stabilise, so the next season starts from here rather than from the beginning.',
+          ],
+          closing: 'Your guide to the podium that means something to you is mapped out in ENOUGH.',
+          flow: [
+            { node: 'Signal', type: 'loop', sub: 'Read it before it becomes collapse' },
+            { node: 'Protect', type: 'loop', sub: 'Guard the ground you have cleared' },
+            { node: 'Adjust', type: 'loop', sub: 'Change the load before it decides for you' },
+            { node: 'Stabilise', type: 'loop', sub: 'Next season starts from here' },
+            { node: 'Expression · Building · Enough', type: 'output' },
+          ],
+        },
+      ];
+
+      let activeIdx = 0;
+
+      function arrow(color) {
+        return `<div style="display:flex;flex-direction:column;align-items:center;margin:4px 0;">
+          <div style="width:1px;height:16px;background:${color}60;"></div>
+          <div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid ${color}60;"></div>
+        </div>`;
+      }
+
+      function flowDiagram(stage) {
+        const color = stage.color;
+        const flow = stage.flow;
+        const isLoop = flow[0].type === 'loop';
+
+        if (isLoop) {
+          const loopItems = flow.filter(f => f.type === 'loop');
+          const output = flow.find(f => f.type === 'output');
+          return `
+            <div style="position:relative;padding:24px 0;">
+              <div style="display:flex;justify-content:center;margin-bottom:28px;">
+                <div style="position:relative;width:210px;height:210px;">
+                  <div style="position:absolute;inset:0;border-radius:50%;border:2px dashed ${color}35;"></div>
+                  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:32px;color:${color}70;font-family:'Cormorant Garamond',serif;">↻</div>
+                  ${loopItems.map((item, i) => {
+                    const positions = [{top:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',right:'4px',transform:'translateY(-50%)'},{bottom:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',left:'4px',transform:'translateY(-50%)'}];
+                    const pos = positions[i];
+                    const posStr = Object.entries(pos).map(([k,v])=>`${k}:${v}`).join(';');
+                    return `<div style="position:absolute;${posStr};width:88px;background:${color}12;border:1px solid ${color}45;border-radius:8px;padding:7px 6px;text-align:center;">
+                      <div style="font-size:13px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;line-height:1.1;margin-bottom:4px;">${item.node}</div>
+                      <div style="font-size:10px;color:${C.textDim};font-family:'Inter',sans-serif;line-height:1.3;">${item.sub}</div>
+                    </div>`;
+                  }).join('')}
+                </div>
+              </div>
+              <div style="text-align:center;">
+                <div style="font-size:11px;letter-spacing:2px;color:${C.textDim};font-family:'Inter',sans-serif;text-transform:uppercase;margin-bottom:8px;">then</div>
+                <div style="display:inline-block;padding:10px 20px;background:${color}15;border:1px solid ${color}55;border-radius:20px;font-size:15px;color:${color};font-family:'Cormorant Garamond',serif;letter-spacing:0.3px;">${output.node}</div>
+              </div>
+            </div>`;
+        }
+
+        const question = flow.find(f => f.type === 'question');
+        const measure = flow.find(f => f.type === 'measure');
+        const branches = flow.filter(f => f.type === 'branch');
+        const output = flow.find(f => f.type === 'output');
+
+        return `
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 0;">
+            <div style="padding:12px 22px;background:${C.bgSubtle};border:1px solid ${color};border-radius:24px;font-size:15px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;font-style:italic;max-width:90%;">${question.node}</div>
+            ${arrow(color)}
+            ${measure ? `
+              <div style="padding:10px 18px;background:${color}12;border:1px solid ${color}35;border-radius:8px;font-size:14px;color:${color};font-family:'Inter',sans-serif;letter-spacing:0.3px;text-align:center;max-width:90%;">
+                <div style="font-weight:700;margin-bottom:3px;">${measure.node}</div>
+                <div style="font-size:11px;color:${C.textDim};letter-spacing:0.5px;">${measure.sub}</div>
+              </div>
+              ${arrow(color)}
+            ` : ''}
+            <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;width:100%;">
+              ${branches.map(b => `
+                <div style="flex:1 1 80px;min-width:70px;max-width:${branches.length > 3 ? '90px' : '120px'};padding:12px 8px;background:${C.bgCard};border:1px solid ${color}30;border-top:2px solid ${color};border-radius:0 0 8px 8px;text-align:center;">
+                  <div style="font-size:13px;font-weight:700;color:${color};font-family:'Cormorant Garamond',serif;margin-bottom:5px;line-height:1.2;">${b.node}</div>
+                  <div style="font-size:11px;color:${C.textDim};line-height:1.35;font-family:'Inter',sans-serif;">${b.sub}</div>
+                </div>`).join('')}
+            </div>
+            ${arrow(color)}
+            <div style="padding:12px 26px;background:${color}15;border:1px solid ${color};border-radius:24px;font-size:15px;color:${C.text};font-family:'Cormorant Garamond',serif;text-align:center;letter-spacing:0.2px;max-width:90%;">${output.node}</div>
+          </div>`;
+      }
+
+      function renderTrack() {
+        const dots = stages.map((s, i) => {
+          const pct = (i / (stages.length - 1)) * 100;
+          const active = i <= activeIdx;
+          const current = i === activeIdx;
+          return `<div style="position:absolute;left:${pct}%;transform:translateX(-50%);width:${current?13:active?10:8}px;height:${current?13:active?10:8}px;border-radius:50%;background:${active?s.color:C.border};border:2px solid ${active?s.color:C.bgCard};transition:all 0.3s ease;box-shadow:${current?`0 0 12px ${s.color}`:  'none'};z-index:2;top:50%;margin-top:${current?-6.5:active?-5:-4}px;"></div>`;
+        }).join('');
+        const progressPct = ((activeIdx + 1) / stages.length) * 100;
+        const currentColor = stages[activeIdx].color;
+        return `
+          <div style="position:relative;height:40px;margin:0 0 28px;display:flex;align-items:center;">
+            <div style="position:absolute;left:0;right:0;height:2px;background:${C.border};border-radius:2px;"></div>
+            <div style="position:absolute;left:0;height:2px;width:${progressPct}%;background:linear-gradient(90deg,#f04aa7,${currentColor});transition:width 0.5s ease;box-shadow:0 0 8px ${currentColor}60;border-radius:2px;"></div>
+            ${dots}
+            <div style="position:absolute;left:0;top:-18px;font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Start</div>
+            <div style="position:absolute;right:0;top:-18px;font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1px;text-transform:uppercase;">Enough</div>
+          </div>`;
+      }
+
+      function renderCards() {
+        return `<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">
+          ${stages.map((s, i) => {
+            const active = i === activeIdx;
+            return `<button onclick="maSetStage(${i})" style="cursor:pointer;padding:16px 12px;background:${active?C.bgCard:C.bg};border:1px solid ${active?s.color:C.border};border-top:3px solid ${active?s.color:C.border};border-radius:10px;transition:all 0.2s ease;box-shadow:${active?`0 0 20px ${s.color}18`:'none'};text-align:left;width:100%;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+                <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:2px;">${s.number}</div>
+                <div style="font-size:18px;opacity:${active?1:0.4};">${s.icon}</div>
+              </div>
+              <div style="font-size:16px;font-family:'Cormorant Garamond',serif;color:${active?s.color:C.textMid};font-weight:600;margin-bottom:5px;line-height:1.2;">${s.label}</div>
+              <div style="font-size:10px;font-family:'Inter',sans-serif;color:${C.textDim};letter-spacing:0.8px;text-transform:uppercase;line-height:1.3;">${s.raceTag}</div>
+            </button>`;
+          }).join('')}
+        </div>`;
+      }
+
+      function renderLeft(stage) {
+        const color = stage.color;
+        const bodyParas = stage.body.map(p => `<p style="margin:0 0 1rem;font-size:1.1rem;font-family:'Cormorant Garamond',serif;line-height:1.7;color:${C.text};">${p}</p>`).join('');
+        const exon = stage.exoneration ? `
+          <div style="margin:1.2rem 0;padding:1.4rem 1.8rem;background:${C.text};border-radius:14px;">
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:rgba(255,255,255,0.92);line-height:1.55;letter-spacing:-0.01em;">${stage.exoneration}</p>
+          </div>` : '';
+        const forward = stage.forward ? `<p style="margin:1rem 0 0;font-size:1.05rem;font-style:italic;color:${color};font-weight:500;font-family:'Cormorant Garamond',serif;">${stage.forward}</p>` : '';
+        const closing = stage.closing ? `<p style="margin:1rem 0 0;font-size:1.1rem;font-weight:600;color:${C.text};font-family:'Cormorant Garamond',serif;">${stage.closing}</p>` : '';
+
+        const prev = activeIdx > 0 ? `<button onclick="maSetStage(${activeIdx-1})" style="padding:10px 22px;background:transparent;border:1px solid ${C.border};border-radius:20px;color:${C.textMid};font-size:14px;font-family:'Inter',sans-serif;cursor:pointer;letter-spacing:0.8px;">← ${stages[activeIdx-1].label}</button>` : '';
+        const next = activeIdx < stages.length - 1 ? `<button onclick="maSetStage(${activeIdx+1})" style="padding:10px 22px;background:${color};border:none;border-radius:20px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;cursor:pointer;font-weight:700;letter-spacing:0.8px;">Next: ${stages[activeIdx+1].label} →</button>` : `<div style="padding:10px 22px;background:${color}18;border:1px solid ${color};border-radius:20px;font-size:15px;font-family:'Cormorant Garamond',serif;color:${color};font-style:italic;">You were always enough.</div>`;
+
+        return `
+          <div>
+            <div style="margin-bottom:20px;">
+              <div style="display:inline-block;padding:4px 12px;background:${color}12;border:1px solid ${color}35;border-radius:20px;font-family:'Inter',sans-serif;font-size:11px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">${stage.raceTag}</div>
+              <h2 style="margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.4rem);font-family:'Cormorant Garamond',serif;font-weight:500;color:${color};line-height:1.1;">${stage.label}</h2>
+              <p style="margin:0;font-size:1.15rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.65;">${stage.subtitle}</p>
+            </div>
+
+            <div style="margin-bottom:22px;">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Tools in this stage</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px;">
+                ${stage.tools.map(t => `<span style="padding:6px 14px;background:${C.bgSubtle};border:1px solid ${color}30;border-radius:20px;font-size:14px;color:${C.textMid};font-family:'Cormorant Garamond',serif;">${t}</span>`).join('')}
+              </div>
+            </div>
+
+            <div style="margin-bottom:22px;">${bodyParas}${exon}${forward}${closing}</div>
+
+            <div style="padding:18px 22px;background:${color}08;border:1px solid ${color}25;border-left:3px solid ${color};border-radius:0 12px 12px 0;margin-bottom:24px;">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${color};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">The verdict</div>
+              <p style="margin:0;font-size:1.05rem;color:${C.text};font-family:'Cormorant Garamond',serif;line-height:1.7;font-style:italic;">"${stage.insight}"</p>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">${prev}${next}</div>
+          </div>`;
+      }
+
+      function renderRight(stage) {
+        const color = stage.color;
+        const miniMap = stages.map((s, i) => {
+          const isActive = i === activeIdx;
+          return `<div onclick="maSetStage(${i})" style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:5px 8px;border-radius:6px;background:${isActive?`${s.color}12`:'transparent'};transition:background 0.2s;">
+            <div style="width:6px;height:6px;border-radius:50%;background:${i<=activeIdx?s.color:C.border};flex-shrink:0;"></div>
+            <div style="font-size:14px;font-family:'Cormorant Garamond',serif;color:${isActive?s.color:C.textDim};">${s.label}</div>
+            <div style="font-size:11px;font-family:'Inter',sans-serif;color:${C.textDim};margin-left:auto;letter-spacing:0.3px;">${s.raceTag}</div>
+          </div>`;
+        }).join('');
+
+        return `
+          <div>
+            <div style="background:${C.bgCard};border:1px solid ${C.border};border-radius:16px;padding:22px 18px;min-height:360px;margin-bottom:14px;">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;">How this stage works</div>
+              ${flowDiagram(stage)}
+            </div>
+            <div style="padding:14px 16px;background:${C.bgCard};border:1px solid ${C.border};border-radius:12px;">
+              <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Where this fits</div>
+              ${miniMap}
+            </div>
+          </div>`;
+      }
+
+      function render() {
+        const stage = stages[activeIdx];
+        const root = document.getElementById('ma-root');
+        if (!root) return;
+
+        root.innerHTML = `
+          <div style="border-bottom:1px solid ${C.border};padding:28px 0 24px;background:${C.bgSubtle};margin:0 calc(-1 * clamp(1.2rem,4vw,2.5rem));padding-left:clamp(1.2rem,4vw,2.5rem);padding-right:clamp(1.2rem,4vw,2.5rem);border-radius:18px 18px 0 0;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
+              <div>
+                <div style="font-family:'Inter',sans-serif;font-size:11px;letter-spacing:2.5px;color:${C.textDim};text-transform:uppercase;margin-bottom:6px;">The Misfit Architecture</div>
+                <h2 style="margin:0 0 4px;font-size:clamp(1.4rem,2.5vw,2rem);font-family:'Cormorant Garamond',serif;font-weight:500;color:${C.text};letter-spacing:-0.3px;">Six stages. One race. Your design.</h2>
+                <div style="font-size:15px;color:${C.textMid};font-family:'Cormorant Garamond',serif;font-style:italic;">Recognition, Clarity, Acceptance, Intervention, Alignment, Sustainability.</div>
+              </div>
+              <div style="text-align:right;">
+                <div style="font-family:'Inter',sans-serif;font-size:11px;color:${C.textDim};letter-spacing:1px;margin-bottom:4px;">STAGE ${stage.number} OF 06</div>
+                <div style="font-size:16px;font-family:'Cormorant Garamond',serif;color:${stage.color};">${stage.label}</div>
+              </div>
+            </div>
+            ${renderTrack()}
+            ${renderCards()}
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:36px;">
+            ${renderLeft(stage)}
+            ${renderRight(stage)}
+          </div>`;
+      }
+
+      window.maSetStage = function(idx) {
+        activeIdx = idx;
+        render();
+      };
+
+      document.addEventListener('DOMContentLoaded', render);
+      if (document.readyState !== 'loading') render();
+    })();
+
+    // ── Spotlight sections: theatrical dark moments ──
+    const spotlightObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-lit');
+        }
+      });
+    }, { threshold: 0.35 });
+
+    document.querySelectorAll('.spotlight').forEach(el => spotlightObserver.observe(el));
+
+    // Scroll reveal observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Possibility statements observer
+    document.querySelectorAll('.possibility-statement').forEach(el => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      obs.observe(el);
+    });
+
+    // Mind chatter typewriter
+    const mindChatter = document.querySelector('.mind-chatter');
+    if (mindChatter) {
+      const chatterObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const lines = mindChatter.querySelectorAll('.mind-chatter-text');
+            lines.forEach((line, i) => {
+              setTimeout(() => line.classList.add('typing'), i * 520);
+            });
+            chatterObs.unobserve(mindChatter);
+          }
+        });
+      }, { threshold: 0.3 });
+      chatterObs.observe(mindChatter);
+    }
+
+    // Hero portrait parallax
+    const heroImg = document.querySelector('.hero-image');
+    if (heroImg) {
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY;
+        heroImg.style.transform = `translateY(${scrolled * 0.12}px)`;
+      }, { passive: true });
+    }
+
+    function toggleAboutExpand() {
+      const box = document.getElementById("aboutExpand");
+      if (!box) return;
+      const trigger = box.querySelector(".about-expand-trigger");
+      const icon = box.querySelector(".about-expand-icon");
+      const isOpen = box.classList.toggle("open");
+      if (trigger) trigger.setAttribute("aria-expanded", String(isOpen));
+      if (icon) icon.textContent = isOpen ? "−" : "+";
+    }
+  </script>
+
+</body>
+</html>
