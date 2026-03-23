@@ -295,13 +295,17 @@
     }
 
     /* High contrast */
-    body.high-contrast { background: #000 !important; color: #FFFFFF !important; }
-    body.high-contrast p, body.high-contrast span, body.high-contrast div, body.high-contrast li { color: #FFFFFF !important; }
-    body.high-contrast h1, body.high-contrast h2, body.high-contrast h3 { color: #FFFF00 !important; }
+    body.high-contrast, body.high-contrast * { background-color: #000 !important; }
+    body.high-contrast { color: #fff !important; }
+    body.high-contrast p, body.high-contrast span, body.high-contrast div, body.high-contrast li, body.high-contrast td, body.high-contrast th, body.high-contrast label, body.high-contrast small, body.high-contrast blockquote { color: #fff !important; }
+    body.high-contrast h1, body.high-contrast h2, body.high-contrast h3, body.high-contrast h4, body.high-contrast h5, body.high-contrast h6 { color: #FFFF00 !important; }
     body.high-contrast a { color: #00FFFF !important; text-decoration: underline !important; }
-    body.high-contrast .section-white, body.high-contrast .section-warm { background: #000 !important; }
-    body.high-contrast nav { background: #000 !important; border-color: #FFFF00 !important; }
-    body.high-contrast .btn-primary { background: #FFFF00 !important; color: #000 !important; }
+    body.high-contrast img { outline: 1px solid #fff !important; }
+    body.high-contrast input, body.high-contrast textarea, body.high-contrast select { background: #111 !important; color: #fff !important; border: 2px solid #FFFF00 !important; }
+    body.high-contrast section, body.high-contrast header, body.high-contrast nav, body.high-contrast #nav, body.high-contrast footer, body.high-contrast main { background: #000 !important; }
+    body.high-contrast [style*="background"], body.high-contrast [style*="Background"] { background: #000 !important; background-color: #000 !important; background-image: none !important; }
+    body.high-contrast .btn-primary, body.high-contrast .btn-secondary, body.high-contrast .nav-cta { background: #FFFF00 !important; color: #000 !important; border: 2px solid #FFFF00 !important; }
+    body.high-contrast .card, body.high-contrast [class*="card"], body.high-contrast [class*="section"] { background: #000 !important; border-color: #fff !important; }
 
     /* Increased line spacing */
     body.spacing-mode p { line-height: 2.4 !important; letter-spacing: 0.5px !important; word-spacing: 3px !important; }
@@ -318,14 +322,17 @@
     }
 
     /* Dark mode */
-    body.dark-mode .section-white { background: #111 !important; }
-    body.dark-mode .section-warm, body.dark-mode [style*="background: #F5F1ED"], body.dark-mode [style*="background: #FFF0F8"] { background: #1a1a1a !important; }
-    body.dark-mode p, body.dark-mode span:not(.eyebrow):not(.counter), body.dark-mode div { color: rgba(255,255,255,0.85); }
-    body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 { color: #FFFFFF; }
-    body.dark-mode nav { background: rgba(26,26,26,0.95) !important; }
+    body.dark-mode, body.dark-mode * { background-color: #1a1a2e !important; }
+    body.dark-mode { color: #ddd !important; }
+    body.dark-mode p, body.dark-mode span:not(.eyebrow):not(.counter), body.dark-mode div, body.dark-mode li, body.dark-mode td, body.dark-mode th, body.dark-mode label, body.dark-mode small { color: rgba(255,255,255,0.85) !important; }
+    body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 { color: #fff !important; }
+    body.dark-mode a { color: #E091C0 !important; }
+    body.dark-mode section, body.dark-mode header, body.dark-mode nav, body.dark-mode footer, body.dark-mode main { background: #1a1a2e !important; }
+    body.dark-mode [style*="background"], body.dark-mode [style*="Background"] { background: #1a1a2e !important; background-color: #1a1a2e !important; background-image: none !important; }
     body.dark-mode nav .nav-brand, body.dark-mode nav a { color: #fff !important; }
-    body.dark-mode .pillar-card, body.dark-mode .flip-front, body.dark-mode .flip-back { background: #222 !important; border-color: #333 !important; }
-    body.dark-mode #battery-container { border-color: #444 !important; background: #222 !important; }
+    body.dark-mode .pillar-card, body.dark-mode .flip-front, body.dark-mode .flip-back, body.dark-mode [class*="card"] { background: #222238 !important; border-color: #333 !important; }
+    body.dark-mode #battery-container { border-color: #444 !important; background: #222238 !important; }
+    body.dark-mode .btn-primary, body.dark-mode .btn-secondary { background: #E91D8C !important; color: #fff !important; }
 
     /* Prefers reduced motion auto-detect */
     @media (prefers-reduced-motion: reduce) {
