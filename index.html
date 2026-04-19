@@ -327,12 +327,14 @@
     /* Dark mode */
     body.dark-mode { background-color: #1a1a2e !important; color: #ddd !important; --text: #ddd; --text-mid: rgba(255,255,255,0.75); --text-light: rgba(255,255,255,0.6); --purple-light: #222238; }
     body.dark-mode p, body.dark-mode span, body.dark-mode li, body.dark-mode td, body.dark-mode th, body.dark-mode label, body.dark-mode small, body.dark-mode blockquote { color: rgba(255,255,255,0.85) !important; background-color: #1a1a2e !important; }
-    body.dark-mode div:not(#a11y-panel) { background-color: #1a1a2e !important; color: rgba(255,255,255,0.85) !important; }
+    body.dark-mode div:not(#a11y-panel):not(#battery-container):not(#battery-fill):not(#battery-percent) { background-color: #1a1a2e !important; color: rgba(255,255,255,0.85) !important; }
     body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6, body.dark-mode .card-title, body.dark-mode .section-heading, body.dark-mode [class*="title"] { color: #fff !important; }
     body.dark-mode .card-text, body.dark-mode [class*="text"], body.dark-mode [class*="desc"], body.dark-mode [class*="body"], body.dark-mode [class*="sub"] { color: rgba(255,255,255,0.85) !important; }
     body.dark-mode a { color: #b89adb !important; }
     body.dark-mode section, body.dark-mode header, body.dark-mode nav, body.dark-mode #nav, body.dark-mode footer, body.dark-mode main, body.dark-mode article, body.dark-mode aside { background: #1a1a2e !important; }
-    body.dark-mode [style*="background"]:not(#a11y-panel):not(#a11y-toggle):not(.a11y-switch) { background: #1a1a2e !important; background-color: #1a1a2e !important; background-image: none !important; }
+    body.dark-mode [style*="background"]:not(#a11y-panel):not(#a11y-toggle):not(.a11y-switch):not(#battery-container):not(#battery-fill) { background: #1a1a2e !important; background-color: #1a1a2e !important; background-image: none !important; }
+    body.dark-mode #battery-container { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.25) !important; }
+    body.dark-mode #battery-percent { color: #fff !important; background: transparent !important; }
     body.dark-mode input, body.dark-mode textarea, body.dark-mode select { background: #2a2a3e !important; color: #fff !important; border-color: #444 !important; }
     body.dark-mode .card, body.dark-mode [class*="card"], body.dark-mode [class*="box"], body.dark-mode [class*="wrapper"], body.dark-mode [class*="hero"], body.dark-mode [class*="banner"] { background: #222238 !important; }
     body.dark-mode .btn-primary, body.dark-mode .nav-cta { background: #6B3FA0 !important; color: #fff !important; }
