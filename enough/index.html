@@ -1,0 +1,2304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ENOUGH | Tanya Hicks</title>
+  <meta name="description" content="ENOUGH by Tanya Hicks. What if you were never the thing that needed fixing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #E91D8C;
+      --pink-dark: #C4106B;
+      --purple: #6D4C9B;
+      --teal: #4FCEC5;
+      --teal-text: #2BA898;
+      --gold: #C4A96A;
+      --dark-text: #1A1A1A;
+      --body-text: #3D3D3D;
+      --muted: #7A7570;
+      --bg-warm: #F5F1ED;
+      --bg-white: #FFFFFF;
+      --bg-light: #FAF8F6;
+      --border: #E8E4DE;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, p {
+      font-family: 'Literata', Georgia, serif;
+    }
+    span, div, li, input, button, nav, label {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    body { background: var(--bg-warm); color: var(--body-text); -webkit-font-smoothing: antialiased; }
+
+    .section { padding: clamp(72px, 10vw, 120px) clamp(20px, 5vw, 80px); }
+    .section-warm { background: var(--bg-warm); }
+    .section-white { background: var(--bg-white); }
+    .section-dark { background: var(--dark-text); color: #fff; }
+    .container-sm { max-width: 720px; margin: 0 auto; }
+    .container-md { max-width: 960px; margin: 0 auto; }
+    .container-lg { max-width: 1100px; margin: 0 auto; }
+
+    .display-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(64px, 10vw, 120px); line-height: 1.05; color: var(--dark-text); }
+    .section-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(32px, 4.5vw, 56px); line-height: 1.1; color: var(--dark-text); }
+    .sub-heading { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(20px, 2.5vw, 28px); line-height: 1.2; color: var(--dark-text); }
+
+    .eyebrow { display: block; font-weight: 600; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+    .divider-line { width: 40px; height: 3px; background: var(--pink); margin-bottom: 16px; }
+
+    .body-large { font-weight: 400; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.75; color: var(--body-text); }
+    .body-light { font-weight: 300; font-size: clamp(17px, 1.8vw, 20px); line-height: 1.75; color: var(--body-text); }
+    .body { font-weight: 400; font-size: 16px; line-height: 1.7; color: var(--body-text); }
+    .body-sm { font-weight: 400; font-size: 14px; line-height: 1.6; color: var(--body-text); }
+    .caption { font-weight: 400; font-size: 12px; line-height: 1.5; }
+
+    .btn-primary { display: inline-block; background: var(--pink); color: #fff; border: none; border-radius: 8px; padding: 15px 32px; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; cursor: pointer; transition: background 0.2s ease; text-decoration: none; }
+    .btn-primary:hover { background: var(--pink-dark); }
+    .btn-secondary { display: inline-block; background: transparent; color: var(--purple); border: 2px solid var(--purple); border-radius: 8px; padding: 13px 28px; font-weight: 600; font-size: 14px; letter-spacing: 0.5px; cursor: pointer; transition: all 0.2s ease; text-decoration: none; }
+    .btn-secondary:hover { background: var(--purple); color: #fff; }
+
+    .btn-primary:focus-visible, .btn-secondary:focus-visible, a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+
+    /* Nav */
+    nav { position: fixed; top: 32px; left: 0; right: 0; z-index: 100; background: rgba(245,241,237,0.95); backdrop-filter: blur(12px); padding: 16px clamp(20px, 5vw, 80px); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); transition: background 0.3s ease, border-color 0.3s ease; }
+    nav .nav-brand { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 22px; color: var(--dark-text); text-decoration: none; letter-spacing: 3px; }
+    nav .nav-links { display: flex; gap: 24px; list-style: none; }
+    nav .nav-links a { font-weight: 500; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    nav .nav-links a:hover { color: var(--dark-text); }
+    @media (max-width: 768px) { nav .nav-links { display: none; } }
+
+    /* Skip to content */
+    .skip-link { position: absolute; top: -100px; left: 0; z-index: 9999; background: #fff; padding: 8px 16px; font-size: 14px; }
+    .skip-link:focus { top: 0; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), transform 0.75s cubic-bezier(0.22, 1, 0.36, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Scroll animations */
+    .section-hidden {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    .section-visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+    .stagger-5 { transition-delay: 0.5s; }
+    .stagger-6 { transition-delay: 0.6s; }
+
+    /* Pillar card hover — replaced by flip card behavior */
+
+    /* Responsive hero grid */
+    @media (max-width: 768px) {
+      .hero-grid { grid-template-columns: 1fr !important; }
+      .hero-grid > div:last-child { order: -1; height: 300px; position: relative; align-self: auto !important; margin-bottom: 0; }
+      .hero-img-abs { position: absolute !important; width: 100% !important; height: 100% !important; }
+      .pillars-grid { grid-template-columns: 1fr !important; }
+    }
+
+    /* ── Starting Line styles ── */
+    #sl-root { width: 100%; padding: 0; box-sizing: border-box; }
+    .sl-section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); text-align: center; margin-bottom: 2rem; opacity: 0; transform: translateY(16px); transition: opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease; }
+    .sl-section-label.sl-visible { opacity: 1; transform: translateY(0); }
+    .sl-track-header { position: relative; width: 100%; margin-bottom: 0; }
+    .sl-start-flag { position: absolute; left: 64%; transform: translateX(-50%); bottom: 0; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; color: var(--gold); white-space: nowrap; text-align: center; line-height: 1; padding-bottom: 8px; }
+    .sl-start-flag span { display: block; font-size: 0.62rem; font-weight: 500; color: rgba(196,169,106,0.65); letter-spacing: 0.12em; margin-top: 3px; }
+    .sl-track-wrap {
+      position: relative; width: 100%; height: 340px;
+      background: linear-gradient(180deg, #e8f5e4 0%, #ddefd8 50%, #e8f5e4 100%);
+      border-radius: 12px;
+      border: 1.5px solid rgba(58,107,30,0.15);
+      overflow: hidden;
+      opacity: 0; transform: translateY(16px);
+      transition: opacity 0.7s 0.3s ease, transform 0.7s 0.3s ease;
+      box-shadow: 0 4px 32px rgba(37,25,45,0.07);
+    }
+    .sl-track-wrap.sl-visible { opacity: 1; transform: translateY(0); }
+    .sl-lane-grid { position: absolute; inset: 0; background-image: repeating-linear-gradient(90deg, transparent, transparent 99px, rgba(109,76,155,0.07) 99px, rgba(109,76,155,0.07) 100px); pointer-events: none; }
+    .sl-lane-line { position: absolute; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(109,76,155,0.12) 15%, rgba(109,76,155,0.12) 85%, transparent); pointer-events: none; }
+    .sl-startline { position: absolute; left: 64%; top: 0; bottom: 0; width: 3px; background: linear-gradient(180deg, transparent 2%, var(--gold) 15%, var(--gold) 85%, transparent 98%); box-shadow: 0 0 12px rgba(196,169,106,0.35); pointer-events: none; }
+    .sl-label-left { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; white-space: nowrap; pointer-events: none; }
+    .sl-label-right { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 10px; font-weight: 600; color: rgba(37,25,45,0.25); letter-spacing: 2px; pointer-events: none; }
+    .sl-runner { position: absolute; transform: translate(-50%, -50%); cursor: pointer; z-index: 5; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); }
+    .sl-runner.is-active { z-index: 10; }
+    .sl-runner-label { position: absolute; top: -58px; left: 50%; transform: translateX(-50%); white-space: nowrap; text-align: center; transition: opacity 0.3s; }
+    .sl-runner-label-main { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; line-height: 1.2; }
+    .sl-runner-label-sub { font-size: 11px; color: var(--muted); letter-spacing: 0.5px; margin-top: 3px; }
+    .sl-bubble { border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s cubic-bezier(.25,.46,.45,.94); border: 2.5px solid; }
+    .sl-icon-forward { display: inline-block; transform: scaleX(-1); }
+    .sl-connector { position: absolute; left: 50%; top: 100%; transform: translateX(-50%); width: 2px; transition: opacity 0.3s; }
+    .sl-prompt { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.18em; text-transform: uppercase; text-align: center; margin-top: 1.4rem; opacity: 0; transition: opacity 0.6s 0.5s ease; }
+    .sl-prompt.sl-visible { opacity: 1; }
+    .sl-detail { max-width: 860px; margin: 2.5rem auto 0; }
+    .sl-detail-card {
+      border-radius: 18px; padding: 2.2rem 2.8rem;
+      display: flex; align-items: flex-start; gap: 2rem;
+      animation: slSlideIn 0.35s cubic-bezier(.25,.46,.45,.94);
+      background: var(--bg-light); border: 1px solid var(--border);
+    }
+    @keyframes slSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .sl-detail-icon { width: 68px; height: 68px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; flex-shrink: 0; border: 2.5px solid; }
+    .sl-detail-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 0.7rem; }
+    .sl-detail-copy { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; color: var(--dark-text); margin: 0 0 0.9rem; font-style: italic; font-weight: 700; }
+    .sl-detail-body { font-size: 1rem; line-height: 1.75; color: var(--muted); margin: 0; }
+
+
+    /* ── MA interactive responsive ── */
+    @media (max-width: 768px) {
+      #book .container-md > div:first-child {
+        grid-template-columns: 1fr !important;
+      }
+      #book .container-md img {
+        margin: 0 auto;
+      }
+      #ma-root > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+      }
+      .sl-detail-card {
+        flex-direction: column;
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      #ma-root [style*="grid-template-columns: repeat(6"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    p + p {
+      margin-top: 20px;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 1.8;
+    }
+
+    /* Film grain overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* Typewriter blink cursor */
+    @keyframes blinkCursor {
+      0%, 100% { border-color: #E91D8C; }
+      50% { border-color: transparent; }
+    }
+
+    /* Pillar flip cards */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card .flip-card-inner:hover {
+      box-shadow: 0 16px 40px rgba(233,29,140,0.15);
+    }
+
+    /* Feature 1: Race bar mobile hide */
+    @media (max-width: 768px) {
+      #race-bar { display: none !important; }
+      nav { top: 0 !important; }
+    }
+
+    /* Feature 2: Word reveal */
+    .word-reveal {
+      color: rgba(61, 61, 61, 0.15);
+      transition: color 0.3s ease;
+      display: inline;
+      font-family: 'Literata', Georgia, serif !important;
+    }
+    .word-reveal.lit {
+      color: #1A1A1A;
+    }
+
+    /* Feature 5: Counter transition */
+    .counter {
+      transition: transform 0.2s ease;
+    }
+
+    /* Feature 6: Timeline dot pulse */
+    @keyframes dotPulse {
+      0%, 100% { box-shadow: 0 0 0 2px currentColor; }
+      50% { box-shadow: 0 0 0 6px transparent; }
+    }
+
+    /* Feature 7: Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F5F1ED;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E91D8C;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C4106B;
+    }
+    /* Firefox */
+    html {
+      scrollbar-width: thin;
+      scrollbar-color: #E91D8C #F5F1ED;
+    }
+
+    /* Accessibility toggles */
+    @keyframes a11yPulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(233,29,140,0.4); }
+      50% { box-shadow: 0 4px 30px rgba(233,29,140,0.7), 0 0 0 8px rgba(233,29,140,0.15); }
+    }
+    #a11y-toggle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(233,29,140,0.5);
+    }
+    .a11y-switch[aria-pressed="true"] {
+      background: #E91D8C !important;
+    }
+    .a11y-switch[aria-pressed="true"] span {
+      transform: translateX(20px);
+    }
+    .a11y-btn:hover {
+      background: rgba(255,255,255,0.1) !important;
+    }
+
+    /* Dyslexia font */
+    @import url('https://fonts.cdnfonts.com/css/opendyslexic');
+    body.dyslexia-mode, body.dyslexia-mode p, body.dyslexia-mode span, body.dyslexia-mode div, body.dyslexia-mode li, body.dyslexia-mode input, body.dyslexia-mode button {
+      font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+    }
+    body.dyslexia-mode h1, body.dyslexia-mode h2, body.dyslexia-mode h3 {
+      font-family: 'OpenDyslexic', 'Comic Sans MS', sans-serif !important;
+    }
+
+    /* High contrast */
+    body.high-contrast { background-color: #000 !important; color: #fff !important; --text: #fff; --text-mid: #fff; --text-light: #fff; --purple: #fff; --purple-light: #000; }
+    body.high-contrast p, body.high-contrast span, body.high-contrast li, body.high-contrast td, body.high-contrast th, body.high-contrast label, body.high-contrast small, body.high-contrast blockquote { color: #fff !important; background-color: #000 !important; }
+    body.high-contrast div:not(#a11y-panel) { background-color: #000 !important; color: #fff !important; }
+    body.high-contrast h1, body.high-contrast h2, body.high-contrast h3, body.high-contrast h4, body.high-contrast h5, body.high-contrast h6, body.high-contrast .card-title, body.high-contrast .section-heading, body.high-contrast [class*="title"] { color: #fff !important; background-color: #000 !important; }
+    body.high-contrast .card-text, body.high-contrast [class*="text"], body.high-contrast [class*="desc"], body.high-contrast [class*="body"], body.high-contrast [class*="sub"] { color: #fff !important; }
+    body.high-contrast a:not(#a11y-panel a) { color: #FFD700 !important; text-decoration: underline !important; }
+    body.high-contrast img { outline: 1px solid #fff !important; }
+    body.high-contrast input, body.high-contrast textarea, body.high-contrast select { background: #111 !important; color: #fff !important; border: 2px solid #fff !important; }
+    body.high-contrast section, body.high-contrast header, body.high-contrast nav, body.high-contrast footer, body.high-contrast main, body.high-contrast article, body.high-contrast aside, body.high-contrast form { background: #000 !important; }
+    body.high-contrast [style*="background"]:not(#a11y-panel):not(#a11y-toggle):not(.a11y-switch) { background: #000 !important; background-color: #000 !important; background-image: none !important; }
+    body.high-contrast .btn-primary, body.high-contrast .btn-secondary, body.high-contrast .btn-ghost, body.high-contrast .nav-cta, body.high-contrast button[type="submit"], body.high-contrast .modal-close, body.high-contrast .linkish, body.high-contrast a[class*="btn"] { background: #fff !important; color: #000 !important; border: 2px solid #fff !important; }
+    body.high-contrast .tts-btn { background: #000 !important; color: #fff !important; border: 2px solid #fff !important; }
+    body.high-contrast #a11y-toggle { background: #fff !important; color: #000 !important; }
+    body.high-contrast .card, body.high-contrast [class*="card"], body.high-contrast [class*="box"], body.high-contrast [class*="wrapper"], body.high-contrast [class*="hero"], body.high-contrast [class*="banner"] { background: #000 !important; border-color: #fff !important; }
+
+    /* Increased line spacing */
+    body.spacing-mode p { line-height: 2.4 !important; letter-spacing: 0.5px !important; word-spacing: 3px !important; }
+
+    /* Highlight links */
+    body.highlight-links a { outline: 2px solid #E91D8C !important; outline-offset: 2px; background: rgba(233,29,140,0.1) !important; }
+
+    /* Reduced motion */
+    body.reduced-motion *, body.reduced-motion *::before, body.reduced-motion *::after {
+      animation-duration: 0.001s !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001s !important;
+      scroll-behavior: auto !important;
+    }
+
+    /* Dark mode */
+    body.dark-mode { background-color: #1a1a2e !important; color: #ddd !important; --text: #ddd; --text-mid: rgba(255,255,255,0.75); --text-light: rgba(255,255,255,0.6); --purple-light: #222238; }
+    body.dark-mode p, body.dark-mode span, body.dark-mode li, body.dark-mode td, body.dark-mode th, body.dark-mode label, body.dark-mode small, body.dark-mode blockquote { color: rgba(255,255,255,0.85) !important; background-color: #1a1a2e !important; }
+    body.dark-mode div:not(#a11y-panel):not(#battery-container):not(#battery-fill):not(#battery-percent) { background-color: #1a1a2e !important; color: rgba(255,255,255,0.85) !important; }
+    body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6, body.dark-mode .card-title, body.dark-mode .section-heading, body.dark-mode [class*="title"] { color: #fff !important; }
+    body.dark-mode .card-text, body.dark-mode [class*="text"], body.dark-mode [class*="desc"], body.dark-mode [class*="body"], body.dark-mode [class*="sub"] { color: rgba(255,255,255,0.85) !important; }
+    body.dark-mode a { color: #b89adb !important; }
+    body.dark-mode section, body.dark-mode header, body.dark-mode nav, body.dark-mode #nav, body.dark-mode footer, body.dark-mode main, body.dark-mode article, body.dark-mode aside { background: #1a1a2e !important; }
+    body.dark-mode [style*="background"]:not(#a11y-panel):not(#a11y-toggle):not(.a11y-switch):not(#battery-container):not(#battery-fill) { background: #1a1a2e !important; background-color: #1a1a2e !important; background-image: none !important; }
+    body.dark-mode #battery-container { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.25) !important; }
+    body.dark-mode #battery-percent { color: #fff !important; background: transparent !important; }
+    body.dark-mode input, body.dark-mode textarea, body.dark-mode select { background: #2a2a3e !important; color: #fff !important; border-color: #444 !important; }
+    body.dark-mode .card, body.dark-mode [class*="card"], body.dark-mode [class*="box"], body.dark-mode [class*="wrapper"], body.dark-mode [class*="hero"], body.dark-mode [class*="banner"] { background: #222238 !important; }
+    body.dark-mode .btn-primary, body.dark-mode .nav-cta { background: #6B3FA0 !important; color: #fff !important; }
+
+    /* Prefers reduced motion auto-detect */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001s !important;
+      }
+    }
+
+    /* Focus visible */
+    *:focus-visible {
+      outline: 2px solid #E91D8C !important;
+      outline-offset: 3px;
+    }
+    .flip-card:focus-within .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* TTS button */
+    .tts-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent; border: 1px solid var(--border, #E8E4DE); border-radius: 20px;
+      padding: 6px 14px; cursor: pointer; font-size: 12px; color: var(--muted, #7A7570);
+      transition: all 0.2s; margin-bottom: 16px;
+    }
+    .tts-btn:hover { background: rgba(233,29,140,0.08); border-color: #E91D8C; color: #E91D8C; }
+    .tts-btn.speaking { background: #E91D8C; color: #fff; border-color: #E91D8C; }
+    body.dark-mode .tts-btn, [style*="background: #1A1A1A"] .tts-btn, .section-dark .tts-btn { border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); }
+
+    /* Content warning */
+    .content-warning summary::-webkit-details-marker { display: none; }
+    .content-warning summary::after { content: ' \25B8'; font-size: 10px; }
+    .content-warning[open] summary::after { content: ' \25BE'; }
+
+    /* Book section — stage card hover */
+    #book .stagger-1:hover, #book .stagger-2:hover, #book .stagger-3:hover,
+    #book .stagger-4:hover, #book .stagger-5:hover, #book .stagger-6:hover {
+      background: rgba(255,255,255,0.18) !important;
+      transform: translateY(-4px);
+    }
+    #book div[style*="overflow-x: auto"]::-webkit-scrollbar {
+      height: 4px;
+    }
+    #book div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.05);
+      border-radius: 2px;
+    }
+    #book div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.2);
+      border-radius: 2px;
+    }
+
+    /* Book section — mobile responsive */
+    @media (max-width: 768px) {
+      #book .container-md > div:first-child,
+      #book > div:nth-child(2) {
+        grid-template-columns: 1fr !important;
+      }
+      #book [style*="position: sticky"] {
+        position: static !important;
+        text-align: center;
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="sr-announcements" aria-live="polite" aria-atomic="true" class="sr-only" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0);"></div>
+
+<!-- FEATURE 1: Race Bar -->
+<div id="race-bar" style="position: fixed; top: 0; left: 0; right: 0; height: 32px; background: #1A1A1A; z-index: 10000; display: flex; align-items: center; padding: 0 clamp(20px, 5vw, 80px); overflow: hidden;">
+  <div id="race-progress" style="position: absolute; top: 0; left: 0; height: 100%; width: 0%; background: linear-gradient(90deg, #E91D8C 0%, #6D4C9B 50%, #4FCEC5 100%); transition: width 0.1s linear; opacity: 0.15;"></div>
+  <div style="position: relative; display: flex; justify-content: space-between; width: 100%; z-index: 1;">
+    <span class="race-stage" data-section="manifesto" style="font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); transition: color 0.4s ease;">Recognition</span>
+    <span class="race-stage" data-section="feeling" style="font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); transition: color 0.4s ease;">Clarity</span>
+    <span class="race-stage" data-section="starting-line" style="font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); transition: color 0.4s ease;">Acceptance</span>
+    <span class="race-stage" data-section="pillars" style="font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); transition: color 0.4s ease;">Intervention</span>
+    <span class="race-stage" data-section="book" style="font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); transition: color 0.4s ease;">Alignment</span>
+    <span class="race-stage" data-section="closing" style="font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.25); transition: color 0.4s ease;">Sustainability</span>
+  </div>
+</div>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<nav>
+  <a href="#" class="nav-brand">ENOUGH</a>
+  <ul class="nav-links">
+    <li><a href="#manifesto">Why</a></li>
+    <li><a href="#feeling">Feeling</a></li>
+    <li><a href="#book">Book</a></li>
+    <li><a href="#stages">Stages</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+<!-- SECTION 1, HERO -->
+<section style="background: linear-gradient(135deg, #FFFFFF 0%, #FFF0F8 50%, #F5F1ED 100%); position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 45vw; align-items: start;" class="hero-grid">
+  <div style="position: absolute; top: -120px; left: -120px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(233,29,140,0.08) 0%, transparent 70%); pointer-events: none; z-index: 0;"></div>
+  <div style="padding-top: clamp(80px, 10vw, 120px); padding-bottom: clamp(80px, 10vw, 120px); padding-left: clamp(20px, 5vw, 80px); padding-right: clamp(20px, 5vw, 40px); position: relative; z-index: 1;">
+      <span class="eyebrow">The Misfit Matriarch</span>
+      <h1 class="display-heading" style="margin-bottom: 16px; font-size: clamp(72px, 11vw, 140px);">Enough<span style="color: #E91D8C;">.</span></h1>
+      <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+      <p style="font-family: 'Inter', -apple-system, sans-serif; font-style: italic; font-weight: 300; font-size: clamp(18px, 2.2vw, 26px); color: #3D3D3D; line-height: 1.5; letter-spacing: -0.2px; margin-bottom: 24px;"><strong>One word. Four truths.</strong><br><strong>You already know which one brought you here.</strong></p>
+      <p class="body-light" style="max-width: 520px; margin-bottom: 24px;"><strong>A framework for measuring what it actually costs you to be here.</strong><br><br>Because until someone measures it, the cost keeps looking like your fault.<br><br>It was never your fault. It was never measured.</p>
+      <p class="body-light" style="max-width: 520px;">You have worked too hard for life to still be this hard.<br><br>You tried the therapy.
+<br>The routines.
+<br>The boundaries.
+<br>The books.
+<br><em>And you are still exhausted in ways that none of it explains.</em>
+<br><strong>What if that is not a you problem.</strong>
+<br><strong>What if nobody ever showed you what you were actually working with.</strong> What if every strategy you were handed was built for someone else.
+<br>What if it was not bad faith. Just the wrong map. <strong>This book is the right one.</strong></p>
+      <p style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(18px, 2vw, 24px); color: var(--muted); margin-top: 32px; margin-bottom: 16px;">Misfits don't fit the mould. They forge it.</p>
+      <p style="font-size: 13px; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px;">Book. Speaking. Learning. Tools. Community.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://buy.stripe.com/bJe8wO7bJ3xRcTteLP7IY00" class="btn-primary" target="_blank" rel="noopener">Explore ENOUGH</a>
+        <a href="#stages" class="btn-secondary">Explore the framework &#8595;</a>
+      </div>
+  </div>
+  <div style="position: relative; align-self: stretch;">
+    <img src="/assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg" alt="Tanya Hicks" class="hero-img-abs" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%); mask-image: linear-gradient(to right, transparent 0%, black 15%);" />
+  </div>
+  <div style="grid-column: 1 / -1; max-width: 1100px; margin: 0 auto; width: 100%; border-top: 1px solid var(--border); padding: 24px clamp(20px, 5vw, 80px) clamp(20px, 3vw, 40px); position: relative; z-index: 1;">
+    <p style="font-size: 12px; color: var(--muted, #7A7570); margin-top: 0; display: flex; align-items: center; gap: 6px;">
+      <span style="display: inline-block; width: 14px; height: 14px; border: 1.5px solid #7A7570; border-radius: 50%; position: relative;">
+        <span style="position: absolute; top: 3px; left: 50%; width: 1px; height: 4px; background: #7A7570; transform-origin: bottom;"></span>
+        <span style="position: absolute; top: 50%; left: 50%; width: 4px; height: 1px; background: #7A7570;"></span>
+      </span>
+      8 min read · 10 sections
+    </p>
+  </div>
+</section>
+
+<!-- The Enduring - pulled up near hero -->
+<section class="section" style="background: #1A1A1A; padding: clamp(48px, 8vw, 88px) 0;">
+  <div class="container-sm" style="text-align: center;">
+    <p class="animate-in" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(22px, 3vw, 32px); color: #FFFFFF; line-height: 1.5; margin-bottom: 12px;">Written for the people who kept going.</p>
+    <p class="animate-in" style="font-family: 'Literata', Georgia, serif; font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 12px;">The ones who learned the skills, did the work, held it together, and still ended up pulling a hamstring at full speed down the straight.</p>
+    <p class="animate-in" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(24px, 3.5vw, 36px); color: #C4A96A; margin-top: 24px;">The enduring.</p>
+  </div>
+</section>
+
+<!-- SECTION 2, MANIFESTO -->
+<section class="section section-white" id="manifesto">
+  <div class="container-sm" style="border-left: 3px solid #E91D8C; padding-left: 32px;">
+    <div class="divider-line"></div>
+    <span class="eyebrow">Why the framework exists</span>
+    <h2 class="section-heading animate-in" style="margin-bottom: 32px;">What if you were never the thing that needed fixing.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+    <p class="body-light animate-in" style="margin-bottom: 24px;">What if every strategy, every protocol, every try harder, was aimed at you. As if you were the thing that needed fixing.</p>
+    <p class="body-light animate-in" style="margin-bottom: 24px;">What if you were never the thing that needed fixing.</p>
+    <p class="body-light animate-in" style="margin-bottom: 32px;">And what if you have had enough of not knowing what the rest of it actually is.</p>
+    <a href="#speaking-form" style="font-size: 14px; font-weight: 500; color: #E91D8C; text-decoration: none; border-bottom: 1px solid rgba(233,29,140,0.3); padding-bottom: 2px;">Book Tanya to speak &rarr;</a>
+  </div>
+</section>
+
+<!-- SECTION 3, YOU KNOW THIS FEELING -->
+<section class="section" id="feeling" style="background: #1A1A1A;">
+  <div style="max-width: 720px; margin: 0 auto 32px; padding: 0 clamp(20px, 5vw, 80px);">
+    <details class="content-warning" style="background: rgba(233,29,140,0.08); border: 1px solid rgba(233,29,140,0.2); border-radius: 8px; padding: 16px 20px;">
+      <summary style="font-size: 13px; font-weight: 600; color: #E91D8C; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px;">
+        <span>&#9888;</span> Content note
+      </summary>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 12px; line-height: 1.6;">The following section describes experiences of exhaustion, burnout, and feeling like something is wrong with you. These descriptions are written with care, but they may resonate deeply. Take your time.</p>
+    </details>
+  </div>
+  <div class="container-sm">
+    <div class="divider-line"></div>
+    <span class="eyebrow">You know this feeling</span>
+    <h2 class="section-heading animate-in" style="margin-bottom: 40px; color: #FFFFFF;">The exhaustion that rest does not fix.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+    <div class="feeling-statement" data-text="You are in the meeting. You are performing fine. Your body left twenty minutes ago." style="opacity: 0; margin-bottom: 28px; padding-left: 20px; border-left: 2px solid rgba(233,29,140,0.4);">
+      <p style="font-size: clamp(17px, 1.8vw, 20px); font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.75;"></p>
+    </div>
+    <div class="feeling-statement" data-text="Rest does not bring you back. It just makes the gap quieter." style="opacity: 0; margin-bottom: 28px; padding-left: 20px; border-left: 2px solid rgba(233,29,140,0.4);">
+      <p style="font-size: clamp(17px, 1.8vw, 20px); font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.75;"></p>
+    </div>
+    <div class="feeling-statement" data-text="You know what to do. You cannot sustain doing it." style="opacity: 0; margin-bottom: 28px; padding-left: 20px; border-left: 2px solid rgba(233,29,140,0.4);">
+      <p style="font-size: clamp(17px, 1.8vw, 20px); font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.75;"></p>
+    </div>
+    <div class="feeling-statement" data-text="You compare yourself to someone who manages the same load with less cost, and you cannot work out what you are doing wrong." style="opacity: 0; margin-bottom: 28px; padding-left: 20px; border-left: 2px solid rgba(233,29,140,0.4);">
+      <p style="font-size: clamp(17px, 1.8vw, 20px); font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.75;"></p>
+    </div>
+    <div class="feeling-statement" data-text="You lay on the floor at the end of a day that should not have been that hard, wondering what is wrong with you." style="opacity: 0; margin-bottom: 28px; padding-left: 20px; border-left: 2px solid rgba(233,29,140,0.4);">
+      <p style="font-size: clamp(17px, 1.8vw, 20px); font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.75;"></p>
+    </div>
+    <div class="feeling-statement" data-text="There is a difference between needing fixing and continuous improvement." style="opacity: 0; margin-bottom: 28px; padding-left: 20px; border-left: 2px solid rgba(233,29,140,0.4);">
+      <p style="font-size: clamp(17px, 1.8vw, 20px); font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.75;"></p>
+    </div>
+    <div class="feeling-statement" data-text="The thing that needed fixing was never you." style="opacity: 0; margin-bottom: 28px; padding-left: 20px; border-left: 2px solid #6D4C9B;">
+      <p style="font-size: clamp(17px, 1.8vw, 20px); font-weight: 400; font-style: italic; color: #E91D8C; line-height: 1.75;"></p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4, STARTING LINE -->
+<section class="section section-white" id="starting-line">
+  <div class="container-md">
+    <div class="divider-line"></div>
+    <span class="eyebrow">What nobody told you</span>
+    <h2 class="section-heading animate-in" style="margin-bottom: 24px;">Not everyone starts from the same starting line.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+    <p class="animate-in" style="font-size: 17px; line-height: 1.7; color: var(--body-text); margin-bottom: 40px;">Before you spend more on the next course, the next coach, the next strategy, do you actually have your feet in the starting blocks? Or are you still making your way across the car park?</p>
+
+    <div style="border-radius: 12px; overflow: visible; border: 1px solid var(--border); margin: 40px 0; background: var(--bg-warm); padding: 32px 28px; width: 100vw; margin-left: calc(-50vw + 50%); border-radius: 0; border-left: none; border-right: none;">
+      <div id="sl-root">
+        <div class="sl-section-label" id="sl-section-label">Where your starting line actually is</div>
+        <div class="sl-track-header" style="height:38px;">
+          <div class="sl-start-flag">START<span>assumed equal</span></div>
+        </div>
+        <div class="sl-track-wrap" id="sl-track-wrap">
+          <div class="sl-lane-grid"></div>
+          <div class="sl-lane-line" style="top:33%"></div>
+          <div class="sl-lane-line" style="top:55%"></div>
+          <div class="sl-lane-line" style="top:77%"></div>
+          <div class="sl-startline"></div>
+          <div class="sl-label-left">&larr; NOT EVEN ON THE TRACK</div>
+          <div class="sl-label-right">FINISH &rarr;</div>
+          <div id="sl-runners-mount"></div>
+        </div>
+        <p class="sl-prompt" id="sl-prompt">&uarr; tap any runner to read their starting line</p>
+        <div class="sl-detail" id="sl-detail"></div>
+      </div>
+    </div>
+
+    <div style="max-width: 640px; margin: 48px auto 0; text-align: center; padding-top: 40px; border-top: 1px solid #E8E4DE;">
+      <p style="font-size: clamp(16px, 1.6vw, 18px); color: #3D3D3D; line-height: 1.8; margin-bottom: 24px;">The advice you were given was built for someone else's starting position.<br>Someone else's nervous system. Someone else's load. It was not bad faith. It was the wrong map.</p>
+      <p style="font-size: clamp(16px, 1.6vw, 18px); color: #3D3D3D; line-height: 1.8; margin-bottom: 24px;">Nobody asked where your actual starting line was.</p>
+      <p style="font-size: clamp(16px, 1.6vw, 18px); font-weight: 500; color: #E91D8C; line-height: 1.8; margin-bottom: 8px;">Enough of running someone else's race.</p>
+      <p style="font-size: clamp(16px, 1.6vw, 18px); font-weight: 500; color: #1A1A1A; line-height: 1.8;">ENOUGH is the first honest map of the one you are actually running.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7, SIX STAGES - moved up before Pillars -->
+<section class="section section-warm" id="stages">
+  <div class="container-md">
+    <div class="divider-line"></div>
+    <span class="eyebrow">The Framework</span>
+    <h2 class="section-heading animate-in" style="margin-bottom: 24px;">What if the thing that has been missing is not another strategy.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+    <p style="font-size: 17px; color: #3D3D3D; max-width: 640px; line-height: 1.75; margin-bottom: 20px;">The framework has six stages. It does not tell you what to do. It shows you where you actually are, what you are actually carrying, and what is actually taking from you before your day begins.</p>
+    <p style="font-size: 17px; color: #3D3D3D; max-width: 640px; line-height: 1.75; margin-bottom: 20px;">Six stages. One map. You can enter at any of them. The framework does not require you to be ready. It requires you to be accurate.</p>
+    <p style="font-size: 17px; color: #3D3D3D; max-width: 640px; line-height: 1.75; margin-bottom: 20px; font-weight: 500;">Framework is universal. Configuration is individual.</p>
+    <p style="font-size: 17px; color: #3D3D3D; max-width: 640px; line-height: 1.75; margin-bottom: 40px;">The book teaches it. Speaking brings it into rooms where conditions are decided. Learning will put the tools in your hands. The clinical practice keeps it honest.</p>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 32px;">
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Recognition</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Clarity</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Acceptance</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Intervention</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Alignment</span>
+      <span style="color: var(--muted); font-size: 14px;">&rarr;</span>
+      <span style="font-weight: 500; font-size: 13px; padding: 8px 16px; border-radius: 20px; background: var(--bg-white); border: 1px solid var(--border); color: var(--body-text);">Sustainability</span>
+    </div>
+    <div style="background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border); overflow: hidden;">
+      <div id="ma-root" style="padding: clamp(1.2rem, 4vw, 2.5rem);"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5, THREE PILLARS -->
+<section class="section section-warm" id="pillars">
+  <div class="container-md">
+    <div class="divider-line"></div>
+    <span class="eyebrow">What the framework shows you</span>
+    <h2 class="section-heading animate-in" style="margin-bottom: 32px;">What if you could finally measure: where your energy is actually going, how you were actually built, what it actually costs you to show up.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+    <div class="pillars-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div class="pillar-card flip-card" style="perspective: 1000px; height: 380px;">
+        <div class="flip-card-inner" style="position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; cursor: pointer;">
+          <div class="flip-front" style="position: absolute; inset: 0; backface-visibility: hidden; background: linear-gradient(135deg, #FFFFFF 0%, #FFF0F7 100%); border-radius: 12px; border: 1px solid var(--border); border-top: 4px solid #E91D8C; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <span style="font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #E91D8C; margin-bottom: 16px;">WHERE YOUR ENERGY IS ACTUALLY GOING</span>
+            <p style="font-size: 14px; color: var(--muted);">Click to explore &rarr;</p>
+          </div>
+          <div class="flip-back" style="position: absolute; inset: 0; backface-visibility: hidden; transform: rotateY(180deg); background: linear-gradient(135deg, #FFFFFF 0%, #FFF0F7 100%); border-radius: 12px; border: 1px solid var(--border); border-top: 4px solid #E91D8C; padding: 32px; overflow-y: auto;">
+            <span style="font-weight: 600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #E91D8C; margin-bottom: 12px; display: block;">WHERE YOUR ENERGY IS ACTUALLY GOING</span>
+            <p style="font-size: 15px; color: #3D3D3D; line-height: 1.75;">You are not lazy. You are not broken. You are running on a fraction of what you should have access to, and the drain is happening before your day even begins. This part of the book shows you exactly where it is going. The costs that never appear on any list. The ones no diagnosis, no blood test, no morning routine has ever named. Once you can see them, you can stop paying them.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-card flip-card" style="perspective: 1000px; height: 380px;">
+        <div class="flip-card-inner" style="position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; cursor: pointer;">
+          <div class="flip-front" style="position: absolute; inset: 0; backface-visibility: hidden; background: linear-gradient(135deg, #FFFFFF 0%, #F4F0FF 100%); border-radius: 12px; border: 1px solid var(--border); border-top: 4px solid #6D4C9B; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <span style="font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #6D4C9B; margin-bottom: 16px;">HOW YOU WERE ACTUALLY BUILT</span>
+            <p style="font-size: 14px; color: var(--muted);">Click to explore &rarr;</p>
+          </div>
+          <div class="flip-back" style="position: absolute; inset: 0; backface-visibility: hidden; transform: rotateY(180deg); background: linear-gradient(135deg, #FFFFFF 0%, #F4F0FF 100%); border-radius: 12px; border: 1px solid var(--border); border-top: 4px solid #6D4C9B; padding: 32px; overflow-y: auto;">
+            <span style="font-weight: 600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #6D4C9B; margin-bottom: 12px; display: block;">HOW YOU WERE ACTUALLY BUILT</span>
+            <p style="font-size: 15px; color: #3D3D3D; line-height: 1.75;">Not the version you have been performing. Not the version the instruction manuals were written for. Your actual nervous system. Your wiring. Your design. This is not a chapter about acceptance. It is a chapter about accuracy. Because until you can see what you are actually working with, every strategy you try is aimed at the wrong thing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pillar-card flip-card" style="perspective: 1000px; height: 380px;">
+        <div class="flip-card-inner" style="position: relative; width: 100%; height: 100%; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; cursor: pointer;">
+          <div class="flip-front" style="position: absolute; inset: 0; backface-visibility: hidden; background: linear-gradient(135deg, #FFFFFF 0%, #F0FFFE 100%); border-radius: 12px; border: 1px solid var(--border); border-top: 4px solid #4FCEC5; padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+            <span style="font-weight: 600; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #4FCEC5; margin-bottom: 16px;">WHAT TO DO WITH WHAT YOU KNOW</span>
+            <p style="font-size: 14px; color: var(--muted);">Click to explore &rarr;</p>
+          </div>
+          <div class="flip-back" style="position: absolute; inset: 0; backface-visibility: hidden; transform: rotateY(180deg); background: linear-gradient(135deg, #FFFFFF 0%, #F0FFFE 100%); border-radius: 12px; border: 1px solid var(--border); border-top: 4px solid #4FCEC5; padding: 32px; overflow-y: auto;">
+            <span style="font-weight: 600; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #4FCEC5; margin-bottom: 12px; display: block;">WHAT TO DO WITH WHAT YOU KNOW</span>
+            <p style="font-size: 15px; color: #3D3D3D; line-height: 1.75;">Not try harder. Not push through. Not another protocol built for someone else's architecture. Four precise moves that work with your design instead of against it. This is where the work gets specific, and for the first time, it actually fits.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE 3: ENERGY DRAIN VISUALIZATION -->
+<section class="section section-white" id="energy-drain" style="text-align: center;">
+  <div style="max-width: 480px; margin: 0 auto;">
+    <span class="eyebrow">Before your day begins</span>
+    <h2 class="section-heading" style="margin-bottom: 48px;">Where it all goes.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+
+    <!-- Battery visualization -->
+    <div id="battery-container" style="position: relative; width: 200px; height: 360px; margin: 0 auto 48px; border: 3px solid #E8E4DE; border-radius: 12px; overflow: hidden; background: #FAF8F6;">
+      <!-- Battery cap -->
+      <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); width: 60px; height: 12px; background: #E8E4DE; border-radius: 4px 4px 0 0;"></div>
+      <!-- Fill level -->
+      <div id="battery-fill" style="position: absolute; bottom: 0; left: 0; right: 0; height: 100%; background: linear-gradient(to top, #E91D8C, #6D4C9B, #4FCEC5); transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1); border-radius: 0 0 9px 9px;"></div>
+      <!-- Percentage text -->
+      <div id="battery-percent" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 700; color: #1A1A1A; z-index: 1;">100%</div>
+    </div>
+
+    <!-- Drain labels that appear one by one -->
+    <div id="drain-labels" style="text-align: left; max-width: 320px; margin: 0 auto;">
+    </div>
+
+    <!-- Final message -->
+    <p id="drain-final" style="font-style: italic; font-size: 18px; color: #E91D8C; margin-top: 32px; opacity: 0; transition: opacity 0.6s ease;">And your day hasn't started yet.</p>
+  </div>
+</section>
+
+<!-- SECTION 6, BOOK -->
+<!-- SECTION 6 — BOOK (cinematic) -->
+<section class="section" id="book" style="background: linear-gradient(135deg, #E91D8C 0%, #6D4C9B 100%); padding: clamp(72px, 10vw, 120px) 0;">
+
+  <!-- Opening — title -->
+  <div style="text-align: center; padding: 0 clamp(20px, 5vw, 80px); margin-bottom: clamp(48px, 8vw, 80px);">
+    <span class="eyebrow animate-in" style="color: rgba(255,255,255,0.5);">The book</span>
+    <div class="divider-line" style="background: rgba(255,255,255,0.3); margin: 0 auto 16px;"></div>
+    <h2 class="animate-in" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(64px, 9vw, 110px); color: #FFFFFF; line-height: 1; margin-bottom: 12px; letter-spacing: -0.02em;">ENOUGH</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section" style="border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.6);">&#128266; Listen</button>
+    <p class="animate-in" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(18px, 2.2vw, 26px); color: rgba(255,255,255,0.7); margin-bottom: 0;">Tanya Hicks</p>
+  </div>
+
+  <!-- Two column: text left, sticky book right -->
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px); display: grid; grid-template-columns: 1fr 300px; gap: clamp(40px, 6vw, 80px); align-items: start;">
+
+    <!-- Left — scrolling text -->
+    <div style="min-width: 0;">
+      <!-- Hook -->
+      <p class="animate-in" style="font-family: 'Literata', Georgia, serif; font-style: italic; font-size: clamp(20px, 2.4vw, 28px); color: #FFFFFF; line-height: 1.6; margin-bottom: 40px;">You have worked too hard for life to still be this hard.</p>
+
+      <p class="animate-in" style="font-family: 'Literata', Georgia, serif; font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 24px;">You tried the therapy. The routines. The boundaries. The books. You kept doing what you were told would work. And it is still harder than it has any right to be.</p>
+
+      <p class="animate-in" style="font-family: 'Literata', Georgia, serif; font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 24px;">ENOUGH is not another self-help book that tells you to try differently. It is the book that shows you why the trying kept failing. And what was actually happening the whole time you blamed yourself for the gap.</p>
+
+      <p class="animate-in" style="font-family: 'Literata', Georgia, serif; font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 48px;">The exhaustion is not evidence of failure. It is evidence of a mismatch between how you are designed and the conditions you are operating in. The gap between your effort and your outcome is not a character problem. It is a structural one. And structural problems have structural solutions.</p>
+
+      <!-- Six stages — moved to full-width below the grid -->
+      <div id="six-stages-placeholder"></div>
+
+      <!-- The landing — pull quote -->
+      <div class="animate-in" style="border-left: 3px solid #C4A96A; padding-left: 24px; margin: 40px 0;">
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.8;">It does not let you off the hook. It shows you which hook you are actually on. It separates the weight that was never yours from the patterns that are. It names what has been happening. The invisible taxes, the wrong map, the advice built for someone else's architecture. And it shows what becomes possible when you stop fighting your own design and start building from it.</p>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="animate-in" style="border-top: 1px solid rgba(255,255,255,0.15); margin-top: 48px; padding-top: 32px;">
+        <div style="display: flex; justify-content: space-between; max-width: 480px; margin-bottom: 16px;">
+          <div style="text-align: center;">
+            <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: #FFFFFF; display: block;">5</span>
+            <span style="font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Parts</span>
+          </div>
+          <div style="text-align: center;">
+            <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: #FFFFFF; display: block;">13</span>
+            <span style="font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Chapters</span>
+          </div>
+          <div style="text-align: center;">
+            <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 28px; font-weight: 700; color: #FFFFFF; display: block;">6</span>
+            <span style="font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Stages</span>
+          </div>
+        </div>
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.6;">Built from clinical practice, lived experience, and a framework that actually works for people who were never the problem. Published by KMD Books.</p>
+      </div>
+
+      <!-- CTA -->
+      <div style="margin-top: 40px;">
+        <a href="https://buy.stripe.com/bJe8wO7bJ3xRcTteLP7IY00" class="btn-primary" target="_blank" rel="noopener" style="background: #FFFFFF; color: #E91D8C; border: none; border-radius: 8px; padding: 16px 36px; font-weight: 600; font-size: 15px; text-decoration: none; display: inline-block; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(0,0,0,0.15);">Pre-order ENOUGH →</a>
+      </div>
+    </div>
+
+    <!-- Right — sticky book cover -->
+    <div class="book-sticky-col" style="position: sticky; top: 120px; min-width: 280px;">
+      <div class="book-3d-container" style="perspective: 800px;">
+        <img src="/assets/Book cover.png" alt="ENOUGH by Tanya Hicks" class="book-3d" style="width: 280px; border-radius: 12px; box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 8px 24px rgba(0,0,0,0.2); transition: transform 0.15s ease-out; transform-style: preserve-3d; display: block;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Six stages — full width -->
+  <div style="max-width: 1100px; margin: 48px auto 0; padding: 0 clamp(20px, 5vw, 80px);">
+    <p class="animate-in" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(22px, 2.5vw, 30px); color: #FFFFFF; margin-bottom: 24px;">Six stages. One race.</p>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+      <div class="animate-in stagger-1" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.2); display: block; margin-bottom: 8px;">01</span>
+        <p style="font-weight: 600; font-size: 14px; color: #FFFFFF; letter-spacing: 0.5px; margin-bottom: 8px;">Recognition</p>
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Seeing where your starting line actually is, and what it cost you just to get there.</p>
+      </div>
+      <div class="animate-in stagger-2" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.2); display: block; margin-bottom: 8px;">02</span>
+        <p style="font-weight: 600; font-size: 14px; color: #FFFFFF; letter-spacing: 0.5px; margin-bottom: 8px;">Clarity</p>
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Understanding what you are actually carrying, and where the weight is really coming from.</p>
+      </div>
+      <div class="animate-in stagger-3" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.2); display: block; margin-bottom: 8px;">03</span>
+        <p style="font-weight: 600; font-size: 14px; color: #FFFFFF; letter-spacing: 0.5px; margin-bottom: 8px;">Acceptance</p>
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Choosing the right race instead of running harder in the wrong one.</p>
+      </div>
+      <div class="animate-in stagger-4" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.2); display: block; margin-bottom: 8px;">04</span>
+        <p style="font-weight: 600; font-size: 14px; color: #FFFFFF; letter-spacing: 0.5px; margin-bottom: 8px;">Intervention</p>
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Four precise moves that work with your design instead of against it.</p>
+      </div>
+      <div class="animate-in stagger-5" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.2); display: block; margin-bottom: 8px;">05</span>
+        <p style="font-weight: 600; font-size: 14px; color: #FFFFFF; letter-spacing: 0.5px; margin-bottom: 8px;">Alignment</p>
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Building conditions that match how you are actually built.</p>
+      </div>
+      <div class="animate-in stagger-6" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 24px; transition: transform 0.3s, background 0.3s;">
+        <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 32px; font-weight: 700; color: rgba(255,255,255,0.2); display: block; margin-bottom: 8px;">06</span>
+        <p style="font-weight: 600; font-size: 14px; color: #FFFFFF; letter-spacing: 0.5px; margin-bottom: 8px;">Sustainability</p>
+        <p style="font-family: 'Literata', Georgia, serif; font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Staying in the race without burning the person who runs it.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SECTION 8, ABOUT -->
+<section class="section section-white" id="about" style="position: relative; overflow: hidden;">
+  <div style="position: absolute; right: -100px; top: 50%; transform: translateY(-50%); width: 500px; height: 600px; background-image: url('/assets/WCW Paris Eiffel Tower Picnic 2025-151_edited.jpg'); background-size: cover; opacity: 0.06; pointer-events: none;"></div>
+  <div class="container-sm" style="position: relative; z-index: 1;">
+    <span class="eyebrow">About Tanya</span>
+    <div class="divider-line"></div>
+    <h2 class="section-heading animate-in" style="margin-bottom: 48px;">This work was not built as theory first.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+
+    <div class="timeline" style="position: relative; padding-left: 40px; border-left: 2px solid #E8E4DE;">
+      <!-- Timeline dot -->
+      <div class="timeline-item animate-in stagger-1" style="position: relative; margin-bottom: 40px;">
+        <div style="position: absolute; left: -47px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #E91D8C; border: 3px solid #FFFFFF; box-shadow: 0 0 0 2px #E91D8C; transition: transform 0.4s ease;"></div>
+        <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); max-width: 640px;">It was built on snapped ligaments, sensory overwhelm, a brain that could not understand instruction manuals written in typical language, and a heart that broke over and over again.</p>
+      </div>
+
+      <div class="timeline-item animate-in stagger-2" style="position: relative; margin-bottom: 40px;">
+        <div style="position: absolute; left: -47px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #6D4C9B; border: 3px solid #FFFFFF; box-shadow: 0 0 0 2px #6D4C9B; transition: transform 0.4s ease;"></div>
+        <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); max-width: 640px;">And then I had a daughter who was built like me. And I decided: not on my watch.</p>
+      </div>
+
+      <div class="timeline-item animate-in stagger-3" style="position: relative; margin-bottom: 40px;">
+        <div style="position: absolute; left: -47px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: #4FCEC5; border: 3px solid #FFFFFF; box-shadow: 0 0 0 2px #4FCEC5; transition: transform 0.4s ease;"></div>
+        <p style="font-size: 17px; line-height: 1.8; color: var(--body-text); max-width: 640px;">What came next was forged in clinical practice, neurodivergent-affirming support, community design, leadership, and advocacy, until a framework emerged that actually worked, for people who were never the whole problem.</p>
+      </div>
+    </div>
+
+    <p class="animate-in stagger-4" style="font-weight: 500; font-size: 14px; color: var(--muted); margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); max-width: 640px;">Matriarch. Viking. Misfit. Clinician. Scholar. Human. Birther of the Enduring. Author of ENOUGH.</p>
+  </div>
+</section>
+
+<!-- AWARDS TICKER -->
+<style>
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+</style>
+<div style="overflow: hidden; border-top: 1px solid #E8E4DE; border-bottom: 1px solid #E8E4DE; background: #FFFFFF; padding: 20px 0; margin: 0;">
+  <div style="display: flex; gap: 0; animation: ticker 90s linear infinite; white-space: nowrap; width: max-content;">
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2021 Finalist · Best Childrens Disability Service · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2022 Finalist · Community Leadership · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2022 Finalist · Social Commitment · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2022 Gold · Emerging Community Leader · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2023 Finalist · Fisher Business of the Year · Fisher Community Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2023 Gold · Community Inclusion · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2023 Gold · ND/Autistic Excellence Provider · Divergantz Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Outstanding Growth · Telstra Best of Business</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Championing Health · Telstra Best of Business</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Woman of the Year · Beam National Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Excellence in Diversity · Beam National Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Silver · Disabled Business Excellence · AusMumPreneur</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Silver · Global Woman of the Year · International Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Silver · Global Female Executive · International Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Education Provider of the Year · SC Business Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Community Leader · Beam National Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Overcoming the Odds · AusMumPreneur</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Global Female Executive · International Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Bronze · Most Resilient Woman Owned Business · Global Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Bronze · Advocacy & Impact · London Global WCW Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Achievement in Diversity · Global Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Women in Education · WCW APAC</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Childrens Education · London Global WCW</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Emerging AusMumPreneur · London Global WCW</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Non Profit Organisation of the Year · Global Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Childrens Education · Global WCW London</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Emerging Non Profit Excellence · Global WCW London</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Rising Star · WCW APAC</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Honourable Mention · Thought Leader · WCW APAC</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2026 Finalist · Community Group of the Year · SC Australia Day Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2026 Finalist · Citizen of the Year · SC Australia Day Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <!-- Duplicate set for seamless looping -->
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2021 Finalist · Best Childrens Disability Service · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2022 Finalist · Community Leadership · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2022 Finalist · Social Commitment · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2022 Gold · Emerging Community Leader · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2023 Finalist · Fisher Business of the Year · Fisher Community Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2023 Gold · Community Inclusion · SC Community Gala</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2023 Gold · ND/Autistic Excellence Provider · Divergantz Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Outstanding Growth · Telstra Best of Business</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Championing Health · Telstra Best of Business</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Woman of the Year · Beam National Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Finalist · Excellence in Diversity · Beam National Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Silver · Disabled Business Excellence · AusMumPreneur</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Silver · Global Woman of the Year · International Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Silver · Global Female Executive · International Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Education Provider of the Year · SC Business Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Community Leader · Beam National Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Overcoming the Odds · AusMumPreneur</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2024 Gold · Global Female Executive · International Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Bronze · Most Resilient Woman Owned Business · Global Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Bronze · Advocacy & Impact · London Global WCW Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Achievement in Diversity · Global Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Women in Education · WCW APAC</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Childrens Education · London Global WCW</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Silver · Emerging AusMumPreneur · London Global WCW</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Non Profit Organisation of the Year · Global Stevies</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Childrens Education · Global WCW London</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Emerging Non Profit Excellence · Global WCW London</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Gold · Rising Star · WCW APAC</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2025 Honourable Mention · Thought Leader · WCW APAC</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2026 Finalist · Community Group of the Year · SC Australia Day Awards</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">·</span>
+    <span style="font-size: 13px; font-weight: 400; color: #7A7570; letter-spacing: 0.3px; padding-right: 48px;">2026 Finalist · Citizen of the Year · SC Australia Day Awards</span>
+  </div>
+</div>
+
+
+<!-- SECTION 9, SPEAKING -->
+<section class="section" id="speaking" style="background: #1A1A1A;">
+  <div class="container-sm">
+    <div style="position: relative; margin-bottom: 40px;">
+      <img src="/assets/WCW 2025 d1-152_edited.jpg" alt="Tanya Hicks speaking" style="width: 100%; max-width: 720px; height: clamp(280px, 35vw, 480px); object-fit: cover; object-position: center 20%; border-radius: 12px; display: block;" />
+    </div>
+    <div class="divider-line"></div>
+    <span class="eyebrow">Speaking</span>
+    <h2 class="section-heading animate-in" style="margin-bottom: 32px; color: #FFFFFF;">If capable people keep struggling in your system, the problem is probably not the people.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section">&#128266; Listen</button>
+    <p class="animate-in" style="font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 24px;">Good intentions do not prevent harm. When you cannot see the full load someone is carrying, you cannot give them what they actually need, no matter how much you want to help.</p>
+    <p class="animate-in" style="font-size: 17px; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 32px;">First, understand what it costs them to be here. Be the coach the person in front of you actually needs. Not the coach you were trained to be for someone else.</p>
+    <form name="speaking-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="speaking-form" style="margin-top: 24px; display: grid; gap: 16px; max-width: 640px;">
+      <input type="hidden" name="form-name" value="speaking-booking">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Name</span>
+          <input type="text" name="name" required style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+        </label>
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Email</span>
+          <input type="email" name="email" required style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+        </label>
+      </div>
+
+      <label style="display: block;">
+        <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Organisation</span>
+        <input type="text" name="organisation" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+      </label>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Event name</span>
+          <input type="text" name="event-name" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+        </label>
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Event date</span>
+          <input type="date" name="event-date" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+        </label>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Format</span>
+          <select name="format" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;">
+            <option value="">Select...</option>
+            <option value="in-person">In-person</option>
+            <option value="virtual">Virtual</option>
+            <option value="hybrid">Hybrid</option>
+          </select>
+        </label>
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Location</span>
+          <input type="text" name="location" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+        </label>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Audience size</span>
+          <input type="text" name="audience-size" placeholder="Approx" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+        </label>
+        <label style="display: block;">
+          <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Audience type</span>
+          <select name="audience-type" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;">
+            <option value="">Select...</option>
+            <option value="leaders">Leaders</option>
+            <option value="clinicians">Clinicians</option>
+            <option value="educators">Educators</option>
+            <option value="community">Community</option>
+            <option value="other">Other</option>
+          </select>
+        </label>
+      </div>
+
+      <label style="display: block;">
+        <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">Budget range</span>
+        <input type="text" name="budget" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+      </label>
+
+      <label style="display: block;">
+        <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">What you want the talk to do</span>
+        <textarea name="talk-purpose" rows="4" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box; font-family: inherit; resize: vertical;"></textarea>
+      </label>
+
+      <label style="display: block;">
+        <span style="font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px;">How did you hear about Tan?</span>
+        <input type="text" name="referral-source" style="width: 100%; padding: 12px 14px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: #fff; font-size: 14px; box-sizing: border-box;" />
+      </label>
+
+      <button type="submit" class="btn-primary" style="margin-top: 8px; justify-self: start;">Send booking enquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- Content warning before Closing section -->
+<div style="max-width: 720px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 80px) 16px;">
+  <details class="content-warning" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 20px;">
+    <summary style="font-size: 13px; font-weight: 600; color: #E91D8C; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px;">
+      <span>&#9888;</span> Content note
+    </summary>
+    <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 8px; line-height: 1.6;">This section speaks directly to your experience. It is not clinical. It is personal. If you need a moment, take it. This page will be here when you come back.</p>
+  </details>
+</div>
+
+<!-- SECTION 10, CLOSING + CTA -->
+<section class="section section-dark" id="closing">
+  <div class="container-sm" style="text-align: center;">
+    <!-- Feature 5: Closing Counters -->
+    <div id="closing-stats" style="display: flex; justify-content: center; gap: clamp(32px, 6vw, 80px); margin-bottom: 48px; flex-wrap: wrap;">
+      <div style="text-align: center;">
+        <span class="counter" data-target="5" style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: #FFFFFF; display: block;">0</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Parts</span>
+      </div>
+      <div style="text-align: center;">
+        <span class="counter" data-target="13" style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: #FFFFFF; display: block;">0</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Chapters</span>
+      </div>
+      <div style="text-align: center;">
+        <span class="counter" data-target="6" style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: #FFFFFF; display: block;">0</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Stages</span>
+      </div>
+      <div style="text-align: center;">
+        <span class="counter" data-target="1" style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: #E91D8C; display: block;">0</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.4);">Framework</span>
+      </div>
+    </div>
+    <h2 class="section-heading animate-in" style="color: #fff; margin-bottom: 24px;">You do not have to become someone new.</h2>
+    <button class="tts-btn" onclick="speakSection(this)" aria-label="Listen to this section" style="border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.6);">&#128266; Listen</button>
+    <p class="animate-in" style="font-weight: 300; font-size: 19px; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 24px;">You were never broken. You were running on someone else's operating system your entire life. This book gives you back your own.</p>
+    <p class="animate-in" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: clamp(22px, 3vw, 32px); color: var(--pink); margin: 40px 0 32px;">You were always enough.<br>You just needed the right operating manual.<br>Here it is.</p>
+    <div style="max-width: 360px; margin: 0 auto;">
+      <a href="https://buy.stripe.com/bJe8wO7bJ3xRcTteLP7IY00" class="btn-primary" target="_blank" rel="noopener" style="display: block; width: 100%; text-align: center; box-sizing: border-box;">Pre-order ENOUGH</a>
+    </div>
+    <p class="caption" style="color: rgba(255,255,255,0.4); margin-top: 16px;">No spam. No funnels. No daily inspiration. Just the book.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: var(--dark-text); padding: 32px clamp(20px, 5vw, 80px); border-top: 1px solid rgba(255,255,255,0.1);">
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; max-width: 1100px; margin: 0 auto;">
+    <p class="caption" style="color: rgba(255,255,255,0.4);">&copy; Tanya Hicks</p>
+    <p class="caption" style="color: rgba(255,255,255,0.4); text-align: center; max-width: 500px;">I live and work on Gubbi Gubbi Country. I acknowledge the Traditional Custodians and pay respect to Elders past and present. Sovereignty was never ceded.</p>
+    <p class="caption" style="color: rgba(255,255,255,0.4);">tanyahicks.com</p>
+  </div>
+</footer>
+
+</main>
+
+<!-- ── Starting Line Interactive Script ── -->
+<script>
+(function() {
+  const runners = [
+    {
+      id: 'carpark', label: 'IN THE CAR PARK', sublabel: 'Still getting here',
+      position: 4, lane: 0, icon: '\uD83D\uDE97', flip: false, color: '#9b93ab',
+      copy: 'Your starting line starts a few blocks before even arriving at the field. You are spending capacity just getting to the race everyone else started at.',
+      detail: 'Chronic illness. Housing insecurity. A body that has not been safe. You have not got a head start deficit. You are running a completely different race.',
+    },
+    {
+      id: 'injured', label: 'CARRYING INJURIES', sublabel: 'That never healed',
+      position: 16, lane: 1, icon: '\uD83E\uDE79', flip: false, color: '#c67a50',
+      copy: 'Old wounds nobody stitched properly. Nervous systems still in threat-response. You are at the blocks, but you have been running on a fracture for years.',
+      detail: 'Trauma. Chronic pain. Burnout that became baseline. The race assumes a body that was repaired. Yours was not.',
+    },
+    {
+      id: 'loaded', label: 'CARRYING THE WEIGHT', sublabel: 'Nobody else is holding',
+      position: 30, lane: 2, icon: '\uD83D\uDC76', flip: false, color: '#7450b6',
+      copy: 'Baby on your hip. Elderly parent on your back. A hangover from last night because that was the only hour that was yours.',
+      detail: 'You showed up. You are running. The race pretends everyone starts with two free hands and a full night\'s sleep. You do not.',
+    },
+    {
+      id: 'badcoach', label: 'COACHED BY ACCIDENT', sublabel: 'Not by design',
+      position: 46, lane: 1, icon: '\uD83D\uDCE3', flip: true, color: '#5b8db8',
+      copy: 'Your coach is the well meaning parent of a friend you made in primary school. Not a world class expert in your unique brain and body.',
+      detail: 'Advice built for someone else\'s architecture. Strategies that worked for someone with a different design. It was not bad faith. It was the wrong map.',
+    },
+    {
+      id: 'startingblocks', label: 'AT THE BLOCKS', sublabel: 'The assumed start',
+      position: 64, lane: 0, icon: '\uD83C\uDFC3', flip: true, color: '#c8a94e',
+      copy: 'This is where the race assumes you begin. Two free hands. A repaired body. Slept well. Expert coached. No one depending on you right now.',
+      detail: 'This is the only starting position the race was designed for. Everyone else is running a harder race and being judged by the same finish line.',
+      isDefault: true,
+    },
+    {
+      id: 'headstart', label: 'AHEAD OF THE LINE', sublabel: 'Before the gun',
+      position: 78, lane: 2, icon: '\u26A1', flip: false, color: '#f04aa7',
+      copy: 'Inherited advantages. Early expert support. A system built around your design from birth. The race already started before the gun went off.',
+      detail: 'This is not a moral judgement. It is an architecture observation. Some people began accumulating capacity before anyone else was allowed on the track.',
+    },
+  ];
+
+  const laneY = [38, 60, 82];
+  let activeId = 'startingblocks';
+
+  function renderRunners() {
+    const mount = document.getElementById('sl-runners-mount');
+    if (!mount) return;
+    mount.innerHTML = '';
+    runners.forEach(r => {
+      const isActive = r.id === activeId;
+      const size = isActive ? 62 : 48;
+      const y = laneY[r.lane];
+      const iconHtml = r.flip
+        ? '<span class="sl-icon-forward">' + r.icon + '</span>'
+        : r.icon;
+
+      const el = document.createElement('div');
+      el.className = 'sl-runner' + (isActive ? ' is-active' : '');
+      el.style.cssText = 'left:' + r.position + '%;top:' + y + '%;';
+      el.innerHTML =
+        '<div class="sl-runner-label" style="opacity:' + (isActive ? 1 : 0.65) + '">' +
+          '<div class="sl-runner-label-main" style="color:' + r.color + '">' + r.label + '</div>' +
+          '<div class="sl-runner-label-sub">' + r.sublabel + '</div>' +
+        '</div>' +
+        '<div class="sl-connector" style="height:24px;background:' + r.color + ';opacity:' + (isActive ? 0.8 : 0) + ';"></div>' +
+        '<div class="sl-bubble" style="width:' + size + 'px;height:' + size + 'px;font-size:' + (isActive ? 28 : 22) + 'px;background:' + (isActive ? r.color : '#fff') + ';border-color:' + r.color + ';box-shadow:' + (isActive ? '0 0 24px ' + r.color + '50, 0 0 48px ' + r.color + '25' : '0 2px 8px rgba(37,25,45,0.1)') + ';">' +
+          iconHtml +
+        '</div>';
+      el.addEventListener('click', function() {
+        activeId = r.id;
+        renderRunners();
+        renderDetail();
+      });
+      mount.appendChild(el);
+    });
+  }
+
+  function renderDetail() {
+    const panel = document.getElementById('sl-detail');
+    if (!panel) return;
+    const r = runners.find(function(x) { return x.id === activeId; });
+    if (!r) { panel.innerHTML = ''; return; }
+    const iconHtml = r.flip
+      ? '<span style="display:inline-block;transform:scaleX(-1)">' + r.icon + '</span>'
+      : r.icon;
+    panel.innerHTML =
+      '<div class="sl-detail-card" style="border:1px solid ' + r.color + '30;border-left:4px solid ' + r.color + ';">' +
+        '<div class="sl-detail-icon" style="background:' + r.color + '15;border-color:' + r.color + ';">' + iconHtml + '</div>' +
+        '<div style="flex:1">' +
+          '<div class="sl-detail-tag" style="color:' + r.color + '">' + r.label + '</div>' +
+          '<p class="sl-detail-copy">"' + r.copy + '"</p>' +
+          '<p class="sl-detail-body">' + r.detail + '</p>' +
+        '</div>' +
+      '</div>';
+  }
+
+  var slObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('sl-visible'); });
+  }, { threshold: 0.2 });
+
+  function slInit() {
+    renderRunners();
+    renderDetail();
+    ['sl-section-label','sl-track-wrap','sl-prompt'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) slObserver.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', slInit);
+  } else {
+    slInit();
+  }
+})();
+</script>
+
+<!-- ── Misfit Architecture Interactive Component ── -->
+<script>
+(function() {
+  const C = {
+    bg:       '#fcf8f6',
+    bgCard:   '#ffffff',
+    bgSubtle: '#f7f1f3',
+    text:     '#1A1A1A',
+    textMid:  '#3D3D3D',
+    textDim:  '#7A7570',
+    border:   'rgba(37,25,45,0.10)',
+  };
+
+  const stages = [
+    {
+      id: 'recognition', label: 'Recognition', number: '01',
+      color: '#E91D8C', icon: '\u2299',
+      subtitle: 'See where your starting line actually is.',
+      raceTag: 'Before the gun fires',
+      tools: ['Arrival Ledger', 'Misfit Tax Ledger'],
+      insight: 'You were not lazy. You were running a different race in someone else\'s shoes on a track never built for your stride.',
+      body: [
+        'What if you were not lazy. Not undisciplined. Not broken in ways that more effort would fix.',
+        'What if you were running a different race in someone else\'s shoes on a track that was never built for your stride.',
+        'That is not a personal failing. That is a structural problem. And structural problems have structural solutions.',
+      ],
+      exoneration: 'You were not lazy. Not undisciplined. Not broken in ways that more effort would fix. You were running a different race in someone else\'s shoes on a track that was never built for your stride. That is not a personal failing. That is a structural problem. And structural problems have structural solutions.',
+      forward: 'Next: find out what you are actually carrying into it.',
+      flow: [
+        { node: 'Where did you start today?', type: 'question' },
+        { node: 'Arrival Cost', type: 'measure', sub: 'What it cost before the race begins' },
+        { node: 'Visible Costs', type: 'branch', sub: 'What you can name' },
+        { node: 'Invisible Taxes', type: 'branch', sub: 'Masking \u00B7 Translation \u00B7 Structural friction' },
+        { node: 'Your actual starting position', type: 'output' },
+      ],
+    },
+    {
+      id: 'clarity', label: 'Clarity', number: '02',
+      color: '#1a9fc0', icon: '\u25C8',
+      subtitle: 'Not everyone enters the race with the same load.',
+      raceTag: 'What you\'re carrying',
+      tools: ['Capacity Map', 'Load Domain Diagnostic', 'Capacity Drainers'],
+      insight: 'Capacity is shaped by architecture, not just effort. Your wiring, your history, your conditions. All of it is weight.',
+      body: [
+        'What if not everyone enters the race with the same load. What if the weight you have been carrying is not a measure of how strong or weak you are. It is what you arrived with.',
+        'This stage shows you what you are actually carrying: your wiring, your history, your conditions, and where the weight is really coming from. It moves through the layers that shape your capacity, from neurology to current state, identifies which domain is creating the most strain, and maps the daily patterns quietly taking from what you rely on.',
+      ],
+      forward: 'Next: find out which race is actually yours to run.',
+      flow: [
+        { node: 'What are you carrying?', type: 'question' },
+        { node: 'Nine Layers of Capacity', type: 'measure', sub: 'Neurology through to current state' },
+        { node: 'Load Domain', type: 'branch', sub: 'Work \u00B7 Body \u00B7 Relationships \u00B7 Identity \u00B7 Environment' },
+        { node: 'Capacity Drainers', type: 'branch', sub: 'Patterns taking from what you rely on' },
+        { node: 'Your actual load entering the race', type: 'output' },
+      ],
+    },
+    {
+      id: 'acceptance', label: 'Acceptance', number: '03',
+      color: '#6D4C9B', icon: '\u25CE',
+      subtitle: 'Know which race you should be entering right now.',
+      raceTag: 'Choosing the right race',
+      tools: ['Structural Ceiling Map'],
+      insight: 'Acceptance is not giving up. It is stopping the bleeding that happens when you keep pouring everything into a race you were never built for.',
+      body: [
+        'What if you are a novice runner who ended up in a race with Usain Bolt. What if no amount of training, discipline, or willpower was ever going to close that gap in the way the crowd expected.',
+        'Bolt has the biology. The years. The specific physical architecture for that race. You do not. That is not failure. That is information.',
+        'This stage helps you see what is genuinely within your control, what needs different conditions to shift, and what is simply not your race to run right now.',
+      ],
+      forward: 'Next: find out where you actually have ground to gain.',
+      flow: [
+        { node: 'What are you pushing against?', type: 'question' },
+        { node: 'Control', type: 'branch', sub: 'Changes with your direct effort' },
+        { node: 'Influence', type: 'branch', sub: 'Shifts with conditions or support' },
+        { node: 'Structural Ceiling', type: 'branch', sub: 'Not your race to run right now' },
+        { node: 'Where your effort stops bleeding', type: 'output' },
+      ],
+    },
+    {
+      id: 'intervention', label: 'Intervention', number: '04',
+      color: '#C4A96A', icon: '\u2295',
+      subtitle: 'The race you could actually win is in the next lane.',
+      raceTag: 'Finding your lane',
+      tools: ['Four Levers'],
+      insight: 'Not all effort moves you forward. Small shifts in the right place change the entire system.',
+      body: [
+        'What if the race you could actually win is happening in the next lane. What if not all effort moves you forward. What if the small shifts in the right place change more than the large shifts in the wrong one.',
+        'Once you know which race is yours, you can start to see where to reduce what is taking from you, protect what is working, restore what has been spent, and add what was always missing from your preparation.',
+      ],
+      forward: 'Next: find out what the race that fits your design looks like.',
+      flow: [
+        { node: 'Where is there ground to gain?', type: 'question' },
+        { node: 'Reduce', type: 'branch', sub: 'What is taking without returning' },
+        { node: 'Protect', type: 'branch', sub: 'What is working right now' },
+        { node: 'Restore', type: 'branch', sub: 'What has been spent' },
+        { node: 'Add', type: 'branch', sub: 'What was always missing' },
+        { node: 'Your leverage points', type: 'output' },
+      ],
+    },
+    {
+      id: 'alignment', label: 'Alignment', number: '05',
+      color: '#2BA898', icon: '\u229E',
+      subtitle: 'Run the race that fits your design.',
+      raceTag: 'Running your race',
+      tools: ['Calibration Map', 'Relational Energy Ledger'],
+      insight: 'Without knowing what you are actually running toward, you can be perfectly aligned with your design and still be running toward someone else\'s finish line.',
+      body: [
+        'What if this is not someone else\'s race. Not the race you were told you should want. What if it is the one that works with how you are actually built, at the pace your actual conditions support, with the people who restore rather than take from you.',
+        'And what if the finish line you have been running toward was never yours either. Not the goal you inherited. Not the one you chose because it seemed achievable. The one that holds when everything else is stripped back.',
+        'This stage asks both questions. The race, and what you are running toward inside it.',
+      ],
+      forward: 'Next: find out how you stay in it, and what you build once you do.',
+      flow: [
+        { node: 'What are you actually running toward?', type: 'question' },
+        { node: 'Design', type: 'branch', sub: 'How you are actually built' },
+        { node: 'Conditions', type: 'branch', sub: 'What your environment supports' },
+        { node: 'Pace', type: 'branch', sub: 'What this season asks for' },
+        { node: 'Relational Energy', type: 'branch', sub: 'Who restores vs who takes' },
+        { node: 'Your actual finish line', type: 'output' },
+      ],
+    },
+    {
+      id: 'sustainability', label: 'Sustainability', number: '06',
+      color: '#7A7570', icon: '\u21BB',
+      subtitle: 'This is where you get to arrive.',
+      raceTag: 'Staying in the race',
+      tools: ['Recalibration Loop'],
+      insight: 'Sustainability is not the destination. It is the floor you build so something real can stand on it.',
+      body: [
+        'What if sustainability was never the destination. What if it was the floor you build so something real can finally stand on it.',
+        'Most people never get here. Not because the work is too hard, but because they run out of ground before they reach it. Every stage before this one was clearing that ground.',
+        'The loop is simple. You learn to read the signal before it becomes a collapse. You protect the ground you have cleared rather than waiting until it is gone. You adjust what you are carrying before the weight decides for you. And you stabilise, so the next season starts from here rather than from the beginning.',
+      ],
+      closing: 'Your guide to the podium that means something to you lives inside this framework. ENOUGH is the first way to meet it.',
+      flow: [
+        { node: 'Signal', type: 'loop', sub: 'Read it before it becomes collapse' },
+        { node: 'Protect', type: 'loop', sub: 'Guard the ground you have cleared' },
+        { node: 'Adjust', type: 'loop', sub: 'Change the load before it decides for you' },
+        { node: 'Stabilise', type: 'loop', sub: 'Next season starts from here' },
+        { node: 'Expression \u00B7 Building \u00B7 Enough', type: 'output' },
+      ],
+    },
+  ];
+
+  let activeIdx = 0;
+
+  function arrow(color) {
+    return '<div style="display:flex;flex-direction:column;align-items:center;margin:4px 0;">' +
+      '<div style="width:1px;height:16px;background:' + color + '60;"></div>' +
+      '<div style="width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:6px solid ' + color + '60;"></div>' +
+    '</div>';
+  }
+
+  function flowDiagram(stage) {
+    const color = stage.color;
+    const flow = stage.flow;
+    const isLoop = flow[0].type === 'loop';
+
+    if (isLoop) {
+      const loopItems = flow.filter(function(f) { return f.type === 'loop'; });
+      const output = flow.find(function(f) { return f.type === 'output'; });
+      const positions = [{top:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',right:'4px',transform:'translateY(-50%)'},{bottom:'4px',left:'50%',transform:'translateX(-50%)'},{top:'50%',left:'4px',transform:'translateY(-50%)'}];
+      let loopHtml = '';
+      loopItems.forEach(function(item, i) {
+        const pos = positions[i];
+        const posStr = Object.entries(pos).map(function(kv) { return kv[0] + ':' + kv[1]; }).join(';');
+        loopHtml += '<div style="position:absolute;' + posStr + ';width:88px;background:' + color + '12;border:1px solid ' + color + '45;border-radius:8px;padding:7px 6px;text-align:center;">' +
+          '<div style="font-size:13px;font-weight:700;color:' + color + ';font-family:\'Playfair Display\',Georgia,serif;line-height:1.1;margin-bottom:4px;">' + item.node + '</div>' +
+          '<div style="font-size:10px;color:' + C.textDim + ';font-family:\'Inter\',-apple-system,sans-serif;line-height:1.3;">' + item.sub + '</div>' +
+        '</div>';
+      });
+      return '<div style="position:relative;padding:24px 0;">' +
+        '<div style="display:flex;justify-content:center;margin-bottom:28px;">' +
+          '<div style="position:relative;width:210px;height:210px;">' +
+            '<div style="position:absolute;inset:0;border-radius:50%;border:2px dashed ' + color + '35;"></div>' +
+            '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:32px;color:' + color + '70;font-family:\'Playfair Display\',Georgia,serif;">\u21BB</div>' +
+            loopHtml +
+          '</div>' +
+        '</div>' +
+        '<div style="text-align:center;">' +
+          '<div style="font-size:11px;letter-spacing:2px;color:' + C.textDim + ';font-family:\'Inter\',-apple-system,sans-serif;text-transform:uppercase;margin-bottom:8px;">then</div>' +
+          '<div style="display:inline-block;padding:10px 20px;background:' + color + '15;border:1px solid ' + color + '55;border-radius:20px;font-size:15px;color:' + color + ';font-family:\'Playfair Display\',Georgia,serif;letter-spacing:0.3px;">' + output.node + '</div>' +
+        '</div>' +
+      '</div>';
+    }
+
+    const question = flow.find(function(f) { return f.type === 'question'; });
+    const measure = flow.find(function(f) { return f.type === 'measure'; });
+    const branches = flow.filter(function(f) { return f.type === 'branch'; });
+    const output = flow.find(function(f) { return f.type === 'output'; });
+
+    let html = '<div style="display:flex;flex-direction:column;align-items:center;gap:0;padding:8px 0;">';
+    html += '<div style="padding:12px 22px;background:' + C.bgSubtle + ';border:1px solid ' + color + ';border-radius:24px;font-size:15px;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;text-align:center;font-style:italic;max-width:90%;">' + question.node + '</div>';
+    html += arrow(color);
+    if (measure) {
+      html += '<div style="padding:10px 18px;background:' + color + '12;border:1px solid ' + color + '35;border-radius:8px;font-size:14px;color:' + color + ';font-family:\'Inter\',-apple-system,sans-serif;letter-spacing:0.3px;text-align:center;max-width:90%;">' +
+        '<div style="font-weight:700;margin-bottom:3px;">' + measure.node + '</div>' +
+        '<div style="font-size:11px;color:' + C.textDim + ';letter-spacing:0.5px;">' + measure.sub + '</div>' +
+      '</div>';
+      html += arrow(color);
+    }
+    html += '<div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;width:100%;">';
+    branches.forEach(function(b) {
+      html += '<div style="flex:1 1 80px;min-width:70px;max-width:' + (branches.length > 3 ? '90px' : '120px') + ';padding:12px 8px;background:' + C.bgCard + ';border:1px solid ' + color + '30;border-top:2px solid ' + color + ';border-radius:0 0 8px 8px;text-align:center;">' +
+        '<div style="font-size:13px;font-weight:700;color:' + color + ';font-family:\'Playfair Display\',Georgia,serif;margin-bottom:5px;line-height:1.2;">' + b.node + '</div>' +
+        '<div style="font-size:11px;color:' + C.textDim + ';line-height:1.35;font-family:\'Inter\',-apple-system,sans-serif;">' + b.sub + '</div>' +
+      '</div>';
+    });
+    html += '</div>';
+    html += arrow(color);
+    html += '<div style="padding:12px 26px;background:' + color + '15;border:1px solid ' + color + ';border-radius:24px;font-size:15px;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;text-align:center;letter-spacing:0.2px;max-width:90%;">' + output.node + '</div>';
+    html += '</div>';
+    return html;
+  }
+
+  function renderTrack() {
+    let dots = '';
+    stages.forEach(function(s, i) {
+      const pct = (i / (stages.length - 1)) * 100;
+      const active = i <= activeIdx;
+      const current = i === activeIdx;
+      dots += '<div style="position:absolute;left:' + pct + '%;transform:translateX(-50%);width:' + (current ? 13 : active ? 10 : 8) + 'px;height:' + (current ? 13 : active ? 10 : 8) + 'px;border-radius:50%;background:' + (active ? s.color : C.border) + ';border:2px solid ' + (active ? s.color : C.bgCard) + ';transition:all 0.3s ease;box-shadow:' + (current ? '0 0 12px ' + s.color : 'none') + ';z-index:2;top:50%;margin-top:' + (current ? -6.5 : active ? -5 : -4) + 'px;"></div>';
+    });
+    const progressPct = ((activeIdx + 1) / stages.length) * 100;
+    const currentColor = stages[activeIdx].color;
+    return '<div style="position:relative;height:40px;margin:0 0 28px;display:flex;align-items:center;">' +
+      '<div style="position:absolute;left:0;right:0;height:2px;background:' + C.border + ';border-radius:2px;"></div>' +
+      '<div style="position:absolute;left:0;height:2px;width:' + progressPct + '%;background:linear-gradient(90deg,#E91D8C,' + currentColor + ');transition:width 0.5s ease;box-shadow:0 0 8px ' + currentColor + '60;border-radius:2px;"></div>' +
+      dots +
+      '<div style="position:absolute;left:0;top:-18px;font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1px;text-transform:uppercase;">Start</div>' +
+      '<div style="position:absolute;right:0;top:-18px;font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1px;text-transform:uppercase;">Enough</div>' +
+    '</div>';
+  }
+
+  function renderCards() {
+    let html = '<div style="display:grid;grid-template-columns:repeat(6,1fr);gap:8px;">';
+    stages.forEach(function(s, i) {
+      const active = i === activeIdx;
+      html += '<button onclick="maSetStage(' + i + ')" style="cursor:pointer;padding:16px 12px;background:' + (active ? C.bgCard : C.bg) + ';border:1px solid ' + (active ? s.color : C.border) + ';border-top:3px solid ' + (active ? s.color : C.border) + ';border-radius:10px;transition:all 0.2s ease;box-shadow:' + (active ? '0 0 20px ' + s.color + '18' : 'none') + ';text-align:left;width:100%;">' +
+        '<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">' +
+          '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:2px;">' + s.number + '</div>' +
+          '<div style="font-size:18px;opacity:' + (active ? 1 : 0.4) + ';">' + s.icon + '</div>' +
+        '</div>' +
+        '<div style="font-size:16px;font-family:\'Playfair Display\',Georgia,serif;color:' + (active ? s.color : C.textMid) + ';font-weight:700;margin-bottom:5px;line-height:1.2;">' + s.label + '</div>' +
+        '<div style="font-size:10px;font-family:\'Inter\',-apple-system,sans-serif;color:' + C.textDim + ';letter-spacing:0.8px;text-transform:uppercase;line-height:1.3;">' + s.raceTag + '</div>' +
+      '</button>';
+    });
+    html += '</div>';
+    return html;
+  }
+
+  function renderLeft(stage) {
+    const color = stage.color;
+    let bodyParas = '';
+    stage.body.forEach(function(p) {
+      bodyParas += '<p style="margin:0 0 1rem;font-size:1.05rem;font-family:\'Inter\',-apple-system,sans-serif;font-weight:300;line-height:1.75;color:' + C.text + ';">' + p + '</p>';
+    });
+    const exon = stage.exoneration ? '<div style="margin:1.2rem 0;padding:1.4rem 1.8rem;background:' + C.text + ';border-radius:14px;"><p style="margin:0;font-family:\'Playfair Display\',Georgia,serif;font-size:1.1rem;font-weight:700;color:rgba(255,255,255,0.92);line-height:1.55;letter-spacing:-0.01em;">' + stage.exoneration + '</p></div>' : '';
+    const forward = stage.forward ? '<p style="margin:1rem 0 0;font-size:1.05rem;font-style:italic;color:' + color + ';font-weight:500;font-family:\'Playfair Display\',Georgia,serif;">' + stage.forward + '</p>' : '';
+    const closing = stage.closing ? '<p style="margin:1rem 0 0;font-size:1.05rem;font-weight:700;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;">' + stage.closing + '</p>' : '';
+
+    const prev = activeIdx > 0 ? '<button onclick="maSetStage(' + (activeIdx-1) + ')" style="padding:10px 22px;background:transparent;border:1px solid ' + C.border + ';border-radius:20px;color:' + C.textMid + ';font-size:14px;font-family:\'Inter\',-apple-system,sans-serif;cursor:pointer;letter-spacing:0.8px;">\u2190 ' + stages[activeIdx-1].label + '</button>' : '';
+    const next = activeIdx < stages.length - 1 ? '<button onclick="maSetStage(' + (activeIdx+1) + ')" style="padding:10px 22px;background:' + color + ';border:none;border-radius:20px;color:#fff;font-size:14px;font-family:\'Inter\',-apple-system,sans-serif;cursor:pointer;font-weight:700;letter-spacing:0.8px;">Next: ' + stages[activeIdx+1].label + ' \u2192</button>' : '<div style="padding:10px 22px;background:' + color + '18;border:1px solid ' + color + ';border-radius:20px;font-size:15px;font-family:\'Playfair Display\',Georgia,serif;color:' + color + ';font-style:italic;">You were always enough.</div>';
+
+    return '<div>' +
+      '<div style="margin-bottom:20px;">' +
+        '<div style="display:inline-block;padding:4px 12px;background:' + color + '12;border:1px solid ' + color + '35;border-radius:20px;font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + color + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;">' + stage.raceTag + '</div>' +
+        '<h2 style="margin:0 0 10px;font-size:clamp(1.8rem,3vw,2.4rem);font-family:\'Playfair Display\',Georgia,serif;font-weight:700;color:' + color + ';line-height:1.1;">' + stage.label + '</h2>' +
+        '<p style="margin:0;font-size:1.1rem;color:' + C.text + ';font-family:\'Inter\',-apple-system,sans-serif;font-weight:300;line-height:1.65;">' + stage.subtitle + '</p>' +
+      '</div>' +
+      '<div style="margin-bottom:22px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Tools in this stage</div>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:6px;">' +
+          stage.tools.map(function(t) { return '<span style="padding:6px 14px;background:' + C.bgSubtle + ';border:1px solid ' + color + '30;border-radius:20px;font-size:14px;color:' + C.textMid + ';font-family:\'Inter\',-apple-system,sans-serif;">' + t + '</span>'; }).join('') +
+        '</div>' +
+      '</div>' +
+      '<div style="margin-bottom:22px;">' + bodyParas + exon + forward + closing + '</div>' +
+      '<div style="padding:18px 22px;background:' + color + '08;border:1px solid ' + color + '25;border-left:3px solid ' + color + ';border-radius:0 12px 12px 0;margin-bottom:24px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + color + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;">The verdict</div>' +
+        '<p style="margin:0;font-size:1.05rem;color:' + C.text + ';font-family:\'Playfair Display\',Georgia,serif;line-height:1.7;font-style:italic;">\u201C' + stage.insight + '\u201D</p>' +
+      '</div>' +
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;">' + prev + next + '</div>' +
+    '</div>';
+  }
+
+  function renderRight(stage) {
+    const color = stage.color;
+    let miniMap = '';
+    stages.forEach(function(s, i) {
+      const isActive = i === activeIdx;
+      miniMap += '<div onclick="maSetStage(' + i + ')" style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:5px 8px;border-radius:6px;background:' + (isActive ? s.color + '12' : 'transparent') + ';transition:background 0.2s;">' +
+        '<div style="width:6px;height:6px;border-radius:50%;background:' + (i <= activeIdx ? s.color : C.border) + ';flex-shrink:0;"></div>' +
+        '<div style="font-size:14px;font-family:\'Playfair Display\',Georgia,serif;color:' + (isActive ? s.color : C.textDim) + ';">' + s.label + '</div>' +
+        '<div style="font-size:11px;font-family:\'Inter\',-apple-system,sans-serif;color:' + C.textDim + ';margin-left:auto;letter-spacing:0.3px;">' + s.raceTag + '</div>' +
+      '</div>';
+    });
+
+    return '<div>' +
+      '<div style="background:' + C.bgCard + ';border:1px solid ' + C.border + ';border-radius:16px;padding:22px 18px;min-height:360px;margin-bottom:14px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px;">How this stage works</div>' +
+        flowDiagram(stage) +
+      '</div>' +
+      '<div style="padding:14px 16px;background:' + C.bgCard + ';border:1px solid ' + C.border + ';border-radius:12px;">' +
+        '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;">Where this fits</div>' +
+        miniMap +
+      '</div>' +
+    '</div>';
+  }
+
+  function render() {
+    const stage = stages[activeIdx];
+    const root = document.getElementById('ma-root');
+    if (!root) return;
+
+    root.innerHTML =
+      '<div style="border-bottom:1px solid ' + C.border + ';padding:28px 0 24px;background:' + C.bgSubtle + ';margin:0 calc(-1 * clamp(1.2rem,4vw,2.5rem));padding-left:clamp(1.2rem,4vw,2.5rem);padding-right:clamp(1.2rem,4vw,2.5rem);border-radius:12px 12px 0 0;">' +
+        '<div style="display:flex;justify-content:flex-end;align-items:flex-end;margin-bottom:28px;flex-wrap:wrap;gap:12px;">' +
+          '<div style="text-align:right;">' +
+            '<div style="font-family:\'Inter\',-apple-system,sans-serif;font-size:11px;color:' + C.textDim + ';letter-spacing:1px;margin-bottom:4px;">STAGE ' + stage.number + ' OF 06</div>' +
+            '<div style="font-size:16px;font-family:\'Playfair Display\',Georgia,serif;color:' + stage.color + ';">' + stage.label + '</div>' +
+          '</div>' +
+        '</div>' +
+        renderTrack() +
+        renderCards() +
+      '</div>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:36px;">' +
+        renderLeft(stage) +
+        renderRight(stage) +
+      '</div>';
+  }
+
+  window.maSetStage = function(idx) {
+    activeIdx = idx;
+    render();
+  };
+
+  document.addEventListener('DOMContentLoaded', render);
+  if (document.readyState !== 'loading') render();
+})();
+</script>
+
+<!-- ── Smooth scroll + Scroll reveal ── -->
+<script>
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Scroll reveal
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+</script>
+
+<!-- ── Section scroll animations ── -->
+<script>
+const sectionObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.remove('section-hidden');
+      e.target.classList.add('section-visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.animate-in').forEach(el => {
+  el.classList.add('section-hidden');
+  sectionObs.observe(el);
+});
+</script>
+
+<!-- ── Nav scroll behavior ── -->
+<script>
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    nav.style.background = 'rgba(233,29,140,0.95)';
+    nav.style.borderBottomColor = 'transparent';
+    nav.querySelectorAll('a').forEach(a => a.style.color = '#fff');
+  } else {
+    nav.style.background = 'rgba(245,241,237,0.95)';
+    nav.style.borderBottomColor = '#E8E4DE';
+    nav.querySelector('.nav-brand').style.color = '#1A1A1A';
+    nav.querySelectorAll('.nav-links a').forEach(a => a.style.color = '#7A7570');
+  }
+});
+</script>
+
+<!-- ── Feature 1: Typewriter effect for Feeling section ── -->
+<script>
+(function() {
+  function initTypewriter() {
+    const feelingSection = document.getElementById('feeling');
+    if (!feelingSection) return;
+
+    const statements = feelingSection.querySelectorAll('.feeling-statement');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          typeStatements(statements);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(feelingSection);
+  }
+
+  function typeStatements(statements) {
+    let delay = 0;
+    statements.forEach((el, index) => {
+      const text = el.getAttribute('data-text');
+      const p = el.querySelector('p');
+      p.textContent = '';
+
+      setTimeout(() => {
+        el.style.opacity = '1';
+        let i = 0;
+        const cursor = document.createElement('span');
+        cursor.style.cssText = 'border-right: 2px solid #E91D8C; padding-right: 2px; animation: blinkCursor 0.75s step-end infinite;';
+        p.appendChild(cursor);
+
+        const typeInterval = setInterval(() => {
+          if (i < text.length) {
+            cursor.before(document.createTextNode(text.charAt(i)));
+            i++;
+          } else {
+            clearInterval(typeInterval);
+            setTimeout(() => cursor.remove(), 500);
+            document.getElementById('sr-announcements').textContent = text;
+          }
+        }, 25);
+      }, delay);
+
+      delay += text.length * 25 + 800;
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTypewriter);
+  } else {
+    initTypewriter();
+  }
+})();
+</script>
+
+<!-- ── Feature 2: 3D Book tilt on mouse move ── -->
+<script>
+(function() {
+  function initBookTilt() {
+    const container = document.querySelector('.book-3d-container');
+    const book = document.querySelector('.book-3d');
+    if (!container || !book) return;
+
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      book.style.transform = 'rotateY(' + (x * 20) + 'deg) rotateX(' + (-y * 15) + 'deg) scale(1.03)';
+      book.style.boxShadow = (-x * 30) + 'px ' + (y * 20 + 20) + 'px 56px rgba(0,0,0,0.35), ' + (-x * 10) + 'px ' + (y * 8 + 8) + 'px 20px rgba(0,0,0,0.2)';
+    });
+
+    container.addEventListener('mouseleave', () => {
+      book.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+      book.style.boxShadow = '0 20px 56px rgba(0,0,0,0.3), 0 8px 20px rgba(0,0,0,0.2)';
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBookTilt);
+  } else {
+    initBookTilt();
+  }
+})();
+</script>
+
+<!-- ── Feature 4: Starting Line runner entrance animation ── -->
+<script>
+(function() {
+  function initRunnerAnimation() {
+    const slSection = document.getElementById('starting-line');
+    if (!slSection) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateRunners();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(slSection);
+  }
+
+  function animateRunners() {
+    const slSection = document.getElementById('starting-line');
+    if (!slSection) return;
+
+    function doAnimate() {
+      const runners = slSection.querySelectorAll('.sl-runner');
+      if (runners.length === 0) {
+        setTimeout(doAnimate, 500);
+        return;
+      }
+      runners.forEach((runner, i) => {
+        runner.style.transform = 'translate(-50%, -50%) translateX(-300px)';
+        runner.style.opacity = '0';
+        runner.style.transition = 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease';
+        setTimeout(() => {
+          runner.style.transform = 'translate(-50%, -50%) translateX(0)';
+          runner.style.opacity = '1';
+        }, 200 + i * 300);
+      });
+    }
+
+    doAnimate();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initRunnerAnimation);
+  } else {
+    initRunnerAnimation();
+  }
+})();
+</script>
+
+<!-- ── Feature 1: Race Bar Scroll Progress ── -->
+<script>
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  const raceProgress = document.getElementById('race-progress');
+  if (raceProgress) raceProgress.style.width = progress + '%';
+
+  // Light up stage labels as you pass their sections
+  document.querySelectorAll('.race-stage').forEach(stage => {
+    const sectionId = stage.getAttribute('data-section');
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.5) {
+        stage.style.color = '#E91D8C';
+      }
+    }
+  });
+});
+</script>
+
+<!-- ── Feature 2: Manifesto Word-Highlight Reveal ── -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const manifesto = document.getElementById('manifesto');
+  if (!manifesto) return;
+
+  // Find paragraphs with body-light class in manifesto
+  const paragraphs = manifesto.querySelectorAll('.body-light, p:not(.eyebrow):not([class])');
+
+  paragraphs.forEach(p => {
+    const text = p.textContent;
+    const words = text.split(/(\s+)/);
+    p.innerHTML = '';
+    words.forEach(word => {
+      if (word.trim()) {
+        const span = document.createElement('span');
+        span.className = 'word-reveal';
+        span.textContent = word;
+        p.appendChild(span);
+      } else {
+        p.appendChild(document.createTextNode(word));
+      }
+    });
+  });
+
+  // Scroll handler to light up words
+  const wordObserver = () => {
+    const words = manifesto.querySelectorAll('.word-reveal');
+    words.forEach(word => {
+      const rect = word.getBoundingClientRect();
+      const viewportCenter = window.innerHeight * 0.7;
+      if (rect.top < viewportCenter) {
+        word.classList.add('lit');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', wordObserver, { passive: true });
+  wordObserver(); // initial check
+});
+</script>
+
+<!-- ── Feature 3: Energy Drain Animation ── -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const drainSection = document.getElementById('energy-drain');
+  if (!drainSection) return;
+
+  const drains = [
+    { label: 'Masking', cost: 15 },
+    { label: 'Sensory overload', cost: 12 },
+    { label: 'Executive function tax', cost: 18 },
+    { label: 'Performing "normal"', cost: 14 },
+    { label: 'Processing delay compensation', cost: 11 },
+    { label: 'Social scripting', cost: 10 },
+    { label: 'Recovery from yesterday', cost: 12 },
+  ];
+
+  let drainActive = false;
+  let drainTimeouts = [];
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !drainActive) {
+        drainActive = true;
+        runDrain(drains);
+      } else if (!entry.isIntersecting && drainActive) {
+        drainActive = false;
+        resetDrain();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(drainSection);
+});
+
+function resetDrain() {
+  // Clear any running timeouts
+  drainTimeouts.forEach(t => clearTimeout(t));
+  drainTimeouts = [];
+
+  const fill = document.getElementById('battery-fill');
+  const percent = document.getElementById('battery-percent');
+  const labelsContainer = document.getElementById('drain-labels');
+  const final = document.getElementById('drain-final');
+
+  // Animate refill
+  fill.style.transition = 'height 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+  fill.style.height = '100%';
+  percent.style.color = '#1A1A1A';
+
+  // Count back up to 100
+  let current = parseInt(percent.textContent) || 0;
+  const refillInterval = setInterval(() => {
+    current += 2;
+    if (current >= 100) {
+      current = 100;
+      clearInterval(refillInterval);
+    }
+    percent.textContent = current + '%';
+  }, 25);
+
+  // Fade out labels
+  const labels = labelsContainer.querySelectorAll('div');
+  labels.forEach((label, i) => {
+    setTimeout(() => {
+      label.style.opacity = '0';
+      label.style.transform = 'translateY(-10px)';
+      setTimeout(() => label.remove(), 300);
+    }, i * 80);
+  });
+
+  // Hide final message
+  final.style.opacity = '0';
+}
+
+var drainTimeouts = [];
+function runDrain(drains) {
+  const fill = document.getElementById('battery-fill');
+  const percent = document.getElementById('battery-percent');
+  const labelsContainer = document.getElementById('drain-labels');
+  const final = document.getElementById('drain-final');
+  let remaining = 100;
+
+  fill.style.transition = 'height 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+
+  drains.forEach((drain, i) => {
+    const t = setTimeout(() => {
+      remaining -= drain.cost;
+      if (remaining < 0) remaining = 0;
+
+      fill.style.height = remaining + '%';
+      percent.textContent = remaining + '%';
+
+      // Change color as it drains
+      if (remaining < 30) {
+        percent.style.color = '#E91D8C';
+      } else if (remaining < 60) {
+        percent.style.color = '#6D4C9B';
+      }
+
+      // Add label
+      const label = document.createElement('div');
+      label.style.cssText = 'display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #E8E4DE; opacity: 0; transform: translateY(10px); transition: all 0.4s ease;';
+      label.innerHTML = '<span style="font-size: 14px; color: #3D3D3D;">' + drain.label + '</span><span style="font-size: 14px; font-weight: 600; color: #E91D8C;">-' + drain.cost + '%</span>';
+      labelsContainer.appendChild(label);
+
+      requestAnimationFrame(() => {
+        label.style.opacity = '1';
+        label.style.transform = 'translateY(0)';
+      });
+
+      document.getElementById('sr-announcements').textContent = drain.label + ' costs ' + drain.cost + ' percent. ' + remaining + ' percent remaining.';
+
+      // Show final message when done
+      if (i === drains.length - 1) {
+        const t2 = setTimeout(() => {
+          final.style.opacity = '1';
+        }, 600);
+        drainTimeouts.push(t2);
+      }
+    }, 600 + i * 700);
+    drainTimeouts.push(t);
+  });
+}
+</script>
+
+<!-- ── Feature 4: Magnetic Buttons ── -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+    btn.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.2s ease';
+
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = 'translate(' + (x * 0.3) + 'px, ' + (y * 0.3) + 'px)';
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+});
+</script>
+
+<!-- ── Feature 5: Closing Counters ── -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const closingSection = document.getElementById('closing');
+  if (!closingSection) return;
+
+  let counterTriggered = false;
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !counterTriggered) {
+        counterTriggered = true;
+        document.querySelectorAll('.counter').forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target'));
+          let current = 0;
+          const increment = 1;
+          const duration = 1500;
+          const stepTime = duration / target;
+
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+              // Bounce effect
+              counter.style.transform = 'scale(1.15)';
+              setTimeout(() => counter.style.transform = 'scale(1)', 200);
+              // SR announcement for last counter
+              if (target === 1) {
+                document.getElementById('sr-announcements').textContent = 'Five parts. Thirteen chapters. Six stages. One framework.';
+              }
+            }
+            counter.textContent = current;
+          }, stepTime);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  counterObserver.observe(closingSection);
+});
+</script>
+
+<!-- ── Feature 6: Timeline Dot Pulse on Scroll ── -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.timeline-item').forEach(item => {
+    const dot = item.querySelector('div[style*="border-radius: 50%"]');
+    if (!dot) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          dot.style.animation = 'dotPulse 2s ease-in-out 1';
+          dot.style.transform = 'scale(1.3)';
+          setTimeout(() => { dot.style.transform = 'scale(1)'; }, 400);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(item);
+  });
+});
+</script>
+
+<!-- Accessibility Widget -->
+<button id="a11y-toggle" aria-label="Accessibility options" style="position: fixed; bottom: 24px; right: 24px; z-index: 99999; height: 52px; border-radius: 26px; background: #E91D8C; color: #fff; border: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; gap: 8px; padding: 0 20px 0 16px; box-shadow: 0 4px 20px rgba(233,29,140,0.4); transition: all 0.3s ease; animation: a11yPulse 2s ease-in-out 3;">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><circle cx="12" cy="4.5" r="2.5"/><path d="M12 7v5"/><path d="M8 10l4 2 4-2"/><path d="M9 19l3-7 3 7"/></svg>
+  <span style="font-weight: 600; letter-spacing: 0.5px;">Accessibility</span>
+</button>
+
+<div id="a11y-panel" style="position: fixed; bottom: 88px; right: 24px; z-index: 99999; width: 320px; background: #1A1A1A; border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 24px; display: none; box-shadow: 0 20px 60px rgba(0,0,0,0.4); color: #fff;" role="dialog" aria-label="Accessibility settings">
+  <p style="font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #E91D8C; margin-bottom: 20px;">Accessibility</p>
+
+  <!-- Font Size -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Font Size</span>
+    <div style="display: flex; gap: 8px;">
+      <button class="a11y-btn" onclick="changeFontSize(-1)" aria-label="Decrease font size" style="width: 32px; height: 32px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; cursor: pointer; font-size: 16px;">A-</button>
+      <button class="a11y-btn" onclick="changeFontSize(0)" aria-label="Reset font size" style="width: 32px; height: 32px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; cursor: pointer; font-size: 13px;">&#8634;</button>
+      <button class="a11y-btn" onclick="changeFontSize(1)" aria-label="Increase font size" style="width: 32px; height: 32px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; cursor: pointer; font-size: 16px;">A+</button>
+    </div>
+  </div>
+
+  <!-- Dyslexia Font -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Dyslexia-friendly font</span>
+    <button id="dyslexia-toggle" class="a11y-switch" onclick="toggleDyslexia()" aria-pressed="false" style="width: 44px; height: 24px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); cursor: pointer; position: relative; transition: background 0.2s;">
+      <span style="position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s;"></span>
+    </button>
+  </div>
+
+  <!-- High Contrast -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">High contrast</span>
+    <button id="contrast-toggle" class="a11y-switch" onclick="toggleContrast()" aria-pressed="false" style="width: 44px; height: 24px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); cursor: pointer; position: relative; transition: background 0.2s;">
+      <span style="position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s;"></span>
+    </button>
+  </div>
+
+  <!-- Reduced Motion -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Reduce motion</span>
+    <button id="motion-toggle" class="a11y-switch" onclick="toggleReducedMotion()" aria-pressed="false" style="width: 44px; height: 24px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); cursor: pointer; position: relative; transition: background 0.2s;">
+      <span style="position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s;"></span>
+    </button>
+  </div>
+
+  <!-- Reading Guide -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Reading guide</span>
+    <button id="guide-toggle" class="a11y-switch" onclick="toggleReadingGuide()" aria-pressed="false" style="width: 44px; height: 24px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); cursor: pointer; position: relative; transition: background 0.2s;">
+      <span style="position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s;"></span>
+    </button>
+  </div>
+
+  <!-- Line Spacing -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Line spacing</span>
+    <button id="spacing-toggle" class="a11y-switch" onclick="toggleLineSpacing()" aria-pressed="false" style="width: 44px; height: 24px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); cursor: pointer; position: relative; transition: background 0.2s;">
+      <span style="position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s;"></span>
+    </button>
+  </div>
+
+  <!-- Highlight Links -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Highlight links</span>
+    <button id="links-toggle" class="a11y-switch" onclick="toggleHighlightLinks()" aria-pressed="false" style="width: 44px; height: 24px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); cursor: pointer; position: relative; transition: background 0.2s;">
+      <span style="position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s;"></span>
+    </button>
+  </div>
+
+  <!-- Dark Mode -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <span style="font-size: 13px; color: rgba(255,255,255,0.7);">Dark mode</span>
+    <button id="dark-toggle" class="a11y-switch" onclick="toggleDarkMode()" aria-pressed="false" style="width: 44px; height: 24px; border-radius: 12px; border: none; background: rgba(255,255,255,0.2); cursor: pointer; position: relative; transition: background 0.2s;">
+      <span style="position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: #fff; transition: transform 0.2s;"></span>
+    </button>
+  </div>
+</div>
+
+<!-- Reading Guide Ruler -->
+<div id="reading-guide" style="display: none; position: fixed; left: 0; right: 0; height: 40px; background: rgba(233,29,140,0.08); border-top: 1px solid rgba(233,29,140,0.2); border-bottom: 1px solid rgba(233,29,140,0.2); pointer-events: none; z-index: 99990; transition: top 0.05s linear;"></div>
+
+<!-- ── Accessibility Widget Script ── -->
+<script>
+// Accessibility Widget
+document.getElementById('a11y-toggle').addEventListener('click', () => {
+  const panel = document.getElementById('a11y-panel');
+  const isOpen = panel.style.display === 'block';
+  panel.style.display = isOpen ? 'none' : 'block';
+  document.getElementById('a11y-toggle').setAttribute('aria-expanded', !isOpen);
+});
+
+// Close panel on Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.getElementById('a11y-panel').style.display = 'none';
+  }
+});
+
+let fontSizeLevel = 0;
+function changeFontSize(dir) {
+  if (dir === 0) { fontSizeLevel = 0; }
+  else { fontSizeLevel = Math.max(-2, Math.min(4, fontSizeLevel + dir)); }
+  document.documentElement.style.fontSize = (100 + fontSizeLevel * 12.5) + '%';
+}
+
+function toggleSwitch(id) {
+  const btn = document.getElementById(id);
+  const pressed = btn.getAttribute('aria-pressed') === 'true';
+  btn.setAttribute('aria-pressed', !pressed);
+  return !pressed;
+}
+
+function toggleDyslexia() {
+  const on = toggleSwitch('dyslexia-toggle');
+  document.body.classList.toggle('dyslexia-mode', on);
+}
+
+function toggleContrast() {
+  const on = toggleSwitch('contrast-toggle');
+  document.body.classList.toggle('high-contrast', on);
+}
+
+function toggleReducedMotion() {
+  const on = toggleSwitch('motion-toggle');
+  document.body.classList.toggle('reduced-motion', on);
+}
+
+function toggleReadingGuide() {
+  const on = toggleSwitch('guide-toggle');
+  const guide = document.getElementById('reading-guide');
+  guide.style.display = on ? 'block' : 'none';
+  if (on) {
+    document.addEventListener('mousemove', moveGuide);
+  } else {
+    document.removeEventListener('mousemove', moveGuide);
+  }
+}
+
+function moveGuide(e) {
+  document.getElementById('reading-guide').style.top = (e.clientY - 20) + 'px';
+}
+
+function toggleLineSpacing() {
+  const on = toggleSwitch('spacing-toggle');
+  document.body.classList.toggle('spacing-mode', on);
+}
+
+function toggleHighlightLinks() {
+  const on = toggleSwitch('links-toggle');
+  document.body.classList.toggle('highlight-links', on);
+}
+
+function toggleDarkMode() {
+  const on = toggleSwitch('dark-toggle');
+  document.body.classList.toggle('dark-mode', on);
+}
+
+// Auto-detect prefers-reduced-motion
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.body.classList.add('reduced-motion');
+  const motionToggle = document.getElementById('motion-toggle');
+  if (motionToggle) motionToggle.setAttribute('aria-pressed', 'true');
+}
+
+// Persist preferences in localStorage
+function savePrefs() {
+  const prefs = {
+    fontSize: fontSizeLevel,
+    dyslexia: document.body.classList.contains('dyslexia-mode'),
+    contrast: document.body.classList.contains('high-contrast'),
+    motion: document.body.classList.contains('reduced-motion'),
+    spacing: document.body.classList.contains('spacing-mode'),
+    links: document.body.classList.contains('highlight-links'),
+    dark: document.body.classList.contains('dark-mode'),
+  };
+  localStorage.setItem('a11y-prefs', JSON.stringify(prefs));
+}
+
+// Save on any toggle
+document.querySelectorAll('.a11y-switch, .a11y-btn').forEach(btn => {
+  btn.addEventListener('click', () => setTimeout(savePrefs, 100));
+});
+
+// Load saved preferences
+try {
+  const saved = JSON.parse(localStorage.getItem('a11y-prefs'));
+  if (saved) {
+    if (saved.fontSize) { fontSizeLevel = saved.fontSize; changeFontSize(0); fontSizeLevel = saved.fontSize; document.documentElement.style.fontSize = (100 + fontSizeLevel * 12.5) + '%'; }
+    if (saved.dyslexia) { toggleDyslexia(); }
+    if (saved.contrast) { toggleContrast(); }
+    if (saved.motion) { toggleReducedMotion(); }
+    if (saved.spacing) { toggleLineSpacing(); }
+    if (saved.links) { toggleHighlightLinks(); }
+    if (saved.dark) { toggleDarkMode(); }
+  }
+} catch(e) {}
+</script>
+
+<!-- ── Text-to-Speech Script ── -->
+<script>
+let currentUtterance = null;
+// Preload voices (Chrome loads them async)
+if (window.speechSynthesis) {
+  window.speechSynthesis.getVoices();
+  window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+}
+function speakSection(btn) {
+  if (window.speechSynthesis.speaking) {
+    window.speechSynthesis.cancel();
+    document.querySelectorAll('.tts-btn').forEach(b => b.classList.remove('speaking'));
+    if (currentUtterance === btn) { currentUtterance = null; return; }
+  }
+
+  // Get the section text
+  const section = btn.closest('section') || btn.closest('div[class*="container"]').closest('section');
+  if (!section) return;
+
+  const textElements = section.querySelectorAll('h2, p:not(.eyebrow)');
+  let text = '';
+  textElements.forEach(el => { text += el.textContent + '. '; });
+
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 0.92;
+  utterance.pitch = 1.05;
+
+  // Pick the most natural voice available
+  const voices = window.speechSynthesis.getVoices();
+  const preferredVoices = [
+    'Samantha', 'Karen', 'Moira', 'Tessa',           // macOS natural voices
+    'Google UK English Female', 'Google US English',   // Chrome
+    'Microsoft Zira', 'Microsoft Hazel',               // Windows
+    'English (Australia)',                              // Australian accent preferred
+  ];
+  let bestVoice = null;
+  for (const name of preferredVoices) {
+    bestVoice = voices.find(v => v.name.includes(name));
+    if (bestVoice) break;
+  }
+  // Fallback: any English female voice
+  if (!bestVoice) bestVoice = voices.find(v => v.lang.startsWith('en') && v.name.toLowerCase().includes('female'));
+  // Fallback: any English voice
+  if (!bestVoice) bestVoice = voices.find(v => v.lang.startsWith('en'));
+  if (bestVoice) utterance.voice = bestVoice;
+
+  utterance.onend = () => { btn.classList.remove('speaking'); currentUtterance = null; };
+
+  btn.classList.add('speaking');
+  currentUtterance = btn;
+  window.speechSynthesis.speak(utterance);
+}
+</script>
+
+<!-- ── Keyboard Navigation for Flip Cards ── -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.flip-card').forEach(card => {
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'Flip card to read more');
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const inner = card.querySelector('.flip-card-inner');
+        const isFlipped = inner.style.transform === 'rotateY(180deg)';
+        inner.style.transform = isFlipped ? '' : 'rotateY(180deg)';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
