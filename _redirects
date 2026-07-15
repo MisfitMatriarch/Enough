@@ -1,11 +1,10 @@
-# Netlify redirects — TanyaHicks.com
+# Netlify redirects - TanyaHicks.com
 #
-# Do NOT activate the ENOUGH redirect until the valuable interactive sections
-# (starting-line visual, exhaustion section, ledger/levers interactive) have been
-# migrated into /books/it-shouldnt-be-this-hard/. Until then /enough/ stays live
-# (noindex,follow + canonical to the new route). Uncomment the line below only
-# after that migration is complete.
-# /enough/  /books/it-shouldnt-be-this-hard/  301
+# ENOUGH interactive content (starting-line visual, exhaustion, energy-drain,
+# the six-stage ledger interactive) migrated into /books/it-shouldnt-be-this-hard/
+# on 2026-07-16. The /enough/ route now redirects there. The trailing "!" forces
+# the redirect even though a small /enough/index.html stub still exists.
+/enough/*  /books/it-shouldnt-be-this-hard/  301!
 
 # Preserve historical external links while titles are migrated.
 /designed-for-more/*  /books/  301
