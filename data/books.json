@@ -1,0 +1,152 @@
+{
+  "library": {
+    "name": "Free 2 B Me Practice Library",
+    "descriptor": "Four books for people. Four books for practice. One coherent way of working.",
+    "editorial_status": "locked",
+    "editorial_lock_date": "2026-07-15",
+    "publisher_contract_status": "review_required",
+    "title_clearance_status": "publisher_and_legal_clearance_required",
+    "governing_principle": "Access",
+    "shared_promise": "Free 2 B Me"
+  },
+  "pairs": [
+    {
+      "id": "access-and-conditions",
+      "territory": "Access, hidden cost and conditions",
+      "person": {
+        "title": "IT SHOULDN'T BE THIS HARD",
+        "subtitle": "The Hidden Cost of Living in Conditions That Don't Fit",
+        "slug": "it-shouldnt-be-this-hard",
+        "status": "in_development",
+        "promise": "The difficulty is not proof that you have failed. It is information about conditions, access and fit.",
+        "source_reservoirs": [
+          "ENOUGH",
+          "UNMASKED",
+          "UNTANGLED",
+          "Arrival Ledger",
+          "Misfit Tax Ledgers"
+        ]
+      },
+      "practice": {
+        "title": "ACCESS BEFORE INTERVENTION",
+        "subtitle": "A Neuroaffirming Framework for Counselling, Positive Behaviour Support and Disability Practice",
+        "slug": "access-before-intervention",
+        "status": "in_development",
+        "promise": "Create and protect access before interpreting reduced engagement, distress or behaviour as resistance or incapacity."
+      },
+      "ne_application": "Universal practice foundation across all four support streams."
+    },
+    {
+      "id": "behaviour-and-communication",
+      "territory": "Behaviour, communication and quality of life",
+      "person": {
+        "title": "YOU MAKE SENSE",
+        "subtitle": "A Rights-Based Guide to Distress, Communication and Support That Helps",
+        "slug": "you-make-sense",
+        "status": "co_design_and_development",
+        "promise": "Your distress, communication and behaviour make sense in context. Support should improve quality of life, not erase who you are.",
+        "source_reservoirs": [
+          "The Sparkly Alien's Guide",
+          "PBS participant resources",
+          "Free 2 B Me",
+          "communication and sensory material"
+        ]
+      },
+      "practice": {
+        "title": "BEHAVIOUR MAKES SENSE",
+        "subtitle": "Rights-Based Positive Behaviour Support Beyond Compliance",
+        "slug": "behaviour-makes-sense",
+        "status": "in_development",
+        "promise": "Deliver neuroaffirming Positive Behaviour Support from assessment and formulation through implementation, review and restrictive-practice reduction."
+      },
+      "ne_application": "Specialist Behaviour Support participant orientation, team education and professional partnerships."
+    },
+    {
+      "id": "bodymind-access",
+      "territory": "Bodymind access and nourishment",
+      "person": {
+        "title": "NERVOUS SYSTEM NOURISHMENT",
+        "subtitle": "Finding What Supports Your Brain and Body",
+        "slug": "nervous-system-nourishment",
+        "status": "in_development",
+        "promise": "Explore what supports access beyond forced calm, stillness, body awareness or conventional regulation.",
+        "source_reservoirs": [
+          "UNBURDENED",
+          "The Power of Feeling Safe",
+          "Hear Me Roar chapter",
+          "NSN programmes",
+          "yoga and mindfulness",
+          "EDS and POTS material"
+        ]
+      },
+      "practice": {
+        "title": "BEYOND REGULATION",
+        "subtitle": "Nervous System Nourishment in Counselling and Positive Behaviour Support",
+        "slug": "beyond-regulation",
+        "status": "research_and_practice_development",
+        "promise": "Use evidence-graded, consent-led sensory, relational, communication, movement, rest and bodymind practices within professional scope."
+      },
+      "ne_application": "Neuroaffirming Counselling, Specialist Behaviour Support and Participation & Everyday Life."
+    },
+    {
+      "id": "person-practice-and-systems",
+      "territory": "Self-determination, belonging and a life that fits",
+      "person": {
+        "title": "BUILT WITH YOU",
+        "subtitle": "Why You Belong in the Design of Your Support and Your Life",
+        "slug": "built-with-you",
+        "status": "in_development",
+        "promise": "Your communication, body, interests, relationships, supports and real-life conditions belong inside the design.",
+        "source_reservoirs": [
+          "Part of the Equation chapter",
+          "Authenticity Architecture chapter",
+          "Hear Me Roar chapter",
+          "UNBOUND",
+          "UNHIDDEN",
+          "UNCONTAINED",
+          "UNLEASHED",
+          "The Nest model"
+        ]
+      },
+      "practice": {
+        "title": "PRACTICE THAT HOLDS",
+        "subtitle": "Supervision, Teams and Systems for Neuroaffirming Practice",
+        "slug": "practice-that-holds",
+        "status": "in_development",
+        "promise": "Build the supervision, workforce, evidence, digital access and organisational systems that keep neuroaffirming values alive in daily practice."
+      },
+      "ne_application": "Universal client welcome, participation and navigation; professional supervision, team and organisational relationships."
+    }
+  ],
+  "distribution_rules": {
+    "optional": "No client has to accept, read, finish or agree with a book to receive support.",
+    "not_plan_funded": "Complimentary welcome and relationship copies are not claimed from a participant's NDIS plan.",
+    "not_referral_inducement": "Professional copies are not linked to referrals, exclusivity or reciprocal benefit.",
+    "accessible_formats": [
+      "print",
+      "ebook",
+      "audio",
+      "Easy Read or visual summary",
+      "large print",
+      "chapter sampler"
+    ],
+    "service_boundary": "Books do not replace service agreements, consent, rights information, complaints pathways, crisis information, assessment or current service information."
+  },
+  "anthology_sources": [
+    {
+      "publication": "Hear Me Roar",
+      "chapter": "I Am the Roar and the Rest: She Didn't Tame Herself to Be Understood",
+      "rights_status": "agreement_and_reprint_rights_to_confirm"
+    },
+    {
+      "publication": "Authenticity and Action",
+      "chapter": "Authenticity Architecture: Your Sparkly Reset",
+      "rights_status": "agreement_and_reprint_rights_to_confirm"
+    },
+    {
+      "publication": "Resilience and Reinvention",
+      "chapter": "Part of the Equation",
+      "rights_status": "agreement_publication_details_and_reprint_rights_to_confirm"
+    }
+  ]
+}
