@@ -6,6 +6,7 @@
 .pair-head{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
 .pair-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-dim)}
 .pair-territory{font-family:var(--serif);font-size:22px;margin-top:4px}
+.pair-descriptor{font-size:14px;color:var(--muted);margin-top:3px}
 .pair-body{display:grid;grid-template-columns:1fr 1fr}
 .book-side{padding:25px;min-height:250px;display:flex;flex-direction:column}
 .book-side+.book-side{border-left:1px solid var(--line)}
