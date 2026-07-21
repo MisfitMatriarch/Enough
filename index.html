@@ -189,7 +189,8 @@
   .portrait-wrap{position:relative;max-width:440px}
   .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;
     border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(216,178,122,.16),transparent 72%);filter:blur(22px)}
-  .portrait-img{position:relative;z-index:1;width:100%;border-radius:18px;border:1px solid var(--line);display:block;
+  .portrait-img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
+    border-radius:18px;border:1px solid var(--line);display:block;
     box-shadow:0 24px 60px -34px rgba(0,0,0,.85)}
   .person h2{font-family:var(--serif);font-weight:400;font-size:clamp(27px,3.4vw,38px);margin:14px 0 18px}
   .person p{margin:0 0 15px}
@@ -295,14 +296,6 @@
     </div>
   </section>
 
-  <!-- CORRIDOR FILM -->
-  <div class="film corridor">
-    <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_corridor.jpg" aria-hidden="true">
-      <source src="/assets/keynote/kv_corridor.mp4" type="video/mp4">
-    </video>
-    <button class="motion" type="button" data-motion>Pause motion</button>
-  </div>
-
   <!-- THE CENTRAL QUESTION -->
   <section id="question">
     <div class="wrap">
@@ -318,6 +311,14 @@
       <p class="lead" style="text-align:center;max-width:640px;margin:24px auto 0">They are all prerequisites for sovereignty.</p>
     </div>
   </section>
+
+  <!-- CORRIDOR FILM -->
+  <div class="film corridor">
+    <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_corridor.jpg" aria-hidden="true">
+      <source src="/assets/keynote/kv_corridor.mp4" type="video/mp4">
+    </video>
+    <button class="motion" type="button" data-motion>Pause motion</button>
+  </div>
 
   <!-- WHAT MY WORK IS REALLY ABOUT -->
   <section id="really-about">
