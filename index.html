@@ -4,28 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tanya Hicks | Human Sovereignty</title>
-<meta name="description" content="People cannot truly become authentically themselves unless they have sovereignty over their own lives. My work explores the conditions that make this possible.">
-<link rel="canonical" href="https://tanyahicks.com/">
+<meta name="description" content="People cannot truly become their authentic selves unless they have sovereignty over their own lives. My work explores the conditions that make this possible.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tanya Hicks">
 <meta property="og:url" content="https://tanyahicks.com/">
 <meta property="og:title" content="Tanya Hicks | Human Sovereignty">
-<meta property="og:description" content="People cannot truly become authentically themselves unless they have sovereignty over their own lives.">
+<meta property="og:description" content="People cannot truly become their authentic selves unless they have sovereignty over their own lives.">
 <meta property="og:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Tanya Hicks - Capacity follows conditions. Sovereignty follows safety.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tanya Hicks | Human Sovereignty">
-<meta name="twitter:description" content="People cannot truly become authentically themselves unless they have sovereignty over their own lives.">
+<meta name="twitter:description" content="People cannot truly become their authentic selves unless they have sovereignty over their own lives.">
 <meta name="twitter:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0b10'/><circle cx='16' cy='16' r='6' fill='%236bd0c6'/></svg>">
+<link rel="canonical" href="https://tanyahicks.com/">
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  /* ─── Self-hosted type. All three files are SIL OFL (self-hosting permitted).
-     Figtree is a variable face covering 300-900 in a single file. Cormorant
-     Garamond is the Light optical cut (400 + 500), used for display only. ─── */
+  /* Self-hosted type. All three files are SIL OFL (self-hosting permitted).
+     Figtree is a variable face (300-900) in one file; Cormorant Garamond is
+     the Light optical cut (400 + 500), used for display only. */
   @font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
   @font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
   @font-face{font-family:'Figtree';src:url('/assets/fonts/figtree-var.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
@@ -40,7 +40,8 @@
     --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
     --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
     --wrap:1140px;
-    /* One fluid type scale. Every text role maps here - no per-section clamps. */
+    /* One fluid scale (spaces around every calc operator - a missing space
+       is invalid CSS and silently drops the whole clamp). */
     --fs-eyebrow:12px;
     --fs-small:clamp(13px,.3vw + 12px,14px);
     --fs-body:clamp(16px,.2vw + 15.2px,17px);
@@ -49,7 +50,6 @@
     --fs-pull:clamp(27px,2vw + 19px,35px);
     --fs-h2:clamp(34px,4vw + 16px,50px);
     --fs-hero:clamp(42px,6vw + 18px,70px);
-    /* Section rhythm - three deliberate levels. */
     --sp-major:clamp(88px,10vw,144px);
     --sp-standard:clamp(68px,7.5vw,108px);
     --sp-compact:clamp(52px,5vw,76px);
@@ -64,10 +64,8 @@
   .skip{position:absolute;left:-9999px;top:0;background:var(--teal);color:#052018;padding:10px 16px;z-index:200}
   .skip:focus{left:12px;top:12px}
 
-  /* Visible keyboard focus everywhere. */
   a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
-  .tool:focus-visible,.path:focus-visible,.home:focus-visible{
-    outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+  .tool:focus-visible,.path:focus-visible,.home:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
 
   header{position:sticky;top:0;z-index:60;background:rgba(10,11,16,.76);
     backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
@@ -80,17 +78,14 @@
   .navlinks>a:hover{color:var(--cream)}
   .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-size:14px;font-weight:500;
     padding:11px 20px;border-radius:100px;transition:.2s;cursor:pointer;border:1px solid transparent;white-space:nowrap}
-  .navlinks>a.btn-teal,.btn-teal{background:var(--teal);color:#052018;font-weight:600;
-    box-shadow:0 6px 22px -8px rgba(107,208,198,.5)}
+  .navlinks>a.btn-teal,.btn-teal{background:var(--teal);color:#052018;font-weight:600;box-shadow:0 6px 22px -8px rgba(107,208,198,.5)}
   .navlinks>a.btn-teal:hover,.btn-teal:hover{background:#83ded5;color:#052018;transform:translateY(-1px)}
   .btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(255,255,255,.02)}
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
 
-  /* Hamburger drawn in CSS - no glyph dependency, and a proper 44px target. */
-  .menu-toggle{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px;
-    padding:0;position:relative}
-  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{
-    content:"";position:absolute;left:11px;width:22px;height:2px;background:var(--cream);border-radius:2px}
+  /* Hamburger drawn in CSS - no glyph dependency, proper 44px target. */
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px;padding:0;position:relative}
+  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:11px;width:22px;height:2px;background:var(--cream);border-radius:2px}
   .menu-toggle span{top:50%;transform:translateY(-1px)}
   .menu-toggle span::before{top:-7px}
   .menu-toggle span::after{top:7px}
@@ -110,26 +105,21 @@
   .cta-row .btn{padding:15px 26px;font-size:15px}
   .credentials{display:flex;flex-wrap:wrap;gap:8px 24px;margin:42px 0 0;padding:0;list-style:none;
     font-size:var(--fs-small);color:var(--faint);position:relative;z-index:2}
-  .credentials li+li::before{content:"\00b7";margin-right:12px;color:var(--faint)}
+  .credentials li+li::before{content:"·";margin-right:12px;color:var(--faint)}
 
   section{padding:var(--sp-standard) 0;border-top:1px solid var(--line2)}
-  .section-major{padding-block:var(--sp-major)}
-  .section-standard{padding-block:var(--sp-standard)}
-  .section-compact{padding-block:var(--sp-compact)}
-  .sec-head{margin-bottom:42px;max-width:20ch}
-  .sec-head.wide{max-width:34ch}
+  /* Vertical rhythm by section id - no markup change required. */
+  #question,#really-about,#library,#about{padding-block:var(--sp-major)}
+  #outward,#keynote,#frameworks,#speaking,#homes{padding-block:var(--sp-standard)}
+  .sec-head{margin-bottom:42px;max-width:760px}
   .sec-head h2{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);margin:12px 0 0;
     line-height:1.1;letter-spacing:-.012em;text-wrap:balance}
-  .lead{color:var(--muted);font-size:var(--fs-lead);margin-top:18px;line-height:1.66;
-    max-width:56ch;text-wrap:pretty}
-  .note{color:var(--faint);font-size:var(--fs-small);line-height:1.6;border-left:1px solid var(--line);
-    padding-left:18px;max-width:72ch}
+  .lead{color:var(--muted);font-size:var(--fs-lead);margin-top:18px;line-height:1.66;max-width:56ch;text-wrap:pretty}
+  .note{color:var(--faint);font-size:var(--fs-small);line-height:1.6;border-left:1px solid var(--line);padding-left:18px;max-width:72ch}
 
-  /* Pull statements: first sentence as a block lede, elaboration softer beneath. */
+  /* Pull statements */
   .statement{font-family:var(--serif);font-size:var(--fs-pull);line-height:1.34;color:var(--soft);
     max-width:46ch;margin:36px 0 0;text-wrap:pretty;hyphens:none}
-  .statement--narrow{max-width:30ch}
-  .statement--wide{max-width:52ch}
   .statement .lede{display:block;color:var(--cream);margin-bottom:.42em;text-wrap:balance}
   .statement--rule{padding-top:30px;border-top:1px solid rgba(216,178,122,.32)}
 
@@ -140,23 +130,12 @@
     -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 82%,transparent 100%);
     mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 82%,transparent 100%)}
   .film.seed video{object-position:center 45%;filter:brightness(.86) contrast(1.08)}
-  .film.seed{max-width:1000px;margin:0 auto;height:auto;min-height:0;max-height:none;
-    border:1px solid var(--line2);border-radius:18px}
-  .film.seed video{aspect-ratio:620/348;height:auto;border-radius:17px;
-    -webkit-mask-image:none;mask-image:none}
-  .film.corridor video{object-position:center 42%;filter:brightness(.6) contrast(1.06) saturate(.9)}
-  /* Corridor thesis overlay: absolutely centred over the video (not a flex
-     sibling, which would push it off-screen), static and readable when paused. */
-  .film.corridor .scrim{position:absolute;inset:0;z-index:2;pointer-events:none;
-    background:radial-gradient(80% 120% at 50% 50%,rgba(10,11,16,.78),rgba(10,11,16,.5) 60%,rgba(10,11,16,.72))}
-  .film-thesis{position:absolute;z-index:3;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:min(22ch,86vw);font-family:var(--serif);font-weight:500;
-    font-size:var(--fs-pull);line-height:1.3;color:var(--cream);text-align:center;
-    margin:0;text-wrap:balance;text-shadow:0 2px 24px rgba(0,0,0,.6)}
+  .film.seed{max-width:1000px;margin:0 auto;height:auto;min-height:0;max-height:none;border:1px solid var(--line2);border-radius:18px}
+  .film.seed video{aspect-ratio:620/348;height:auto;border-radius:17px;-webkit-mask-image:none;mask-image:none}
+  .film.corridor video{object-position:center 42%;filter:brightness(.72) contrast(1.06) saturate(.9)}
   .motion{position:absolute;right:18px;bottom:16px;z-index:4;background:rgba(10,11,16,.7);
     border:1px solid var(--line);color:var(--soft);border-radius:100px;padding:9px 16px;font-size:12px;
-    min-height:40px;display:inline-flex;align-items:center;letter-spacing:.08em;cursor:pointer;
-    backdrop-filter:blur(6px);font-family:var(--sans)}
+    min-height:40px;display:inline-flex;align-items:center;letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(6px);font-family:var(--sans)}
   .motion:hover{border-color:var(--teal);color:var(--teal)}
   .motion[aria-pressed="true"]{border-color:var(--teal-dim)}
 
@@ -164,20 +143,15 @@
   .conditions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;list-style:none;
     margin:48px 0 0;padding:42px 22px;position:relative;
     border-top:1px solid rgba(216,178,122,.28);border-bottom:1px solid rgba(216,178,122,.28)}
-  .conditions::before{content:"";position:absolute;inset:0;pointer-events:none;
-    background:radial-gradient(60% 120% at 50% 50%,rgba(216,178,122,.09),transparent 72%)}
-  .conditions li{font-family:var(--serif);font-size:clamp(19px,2.6vw,31px);color:var(--cream);
-    padding:9px 22px;position:relative;line-height:1.2}
-  .conditions li+li::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;
-    border-radius:50%;background:var(--gold);opacity:.75;transform:translate(-50%,-50%)}
+  .conditions::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 120% at 50% 50%,rgba(216,178,122,.09),transparent 72%)}
+  .conditions li{font-family:var(--serif);font-size:clamp(19px,2.6vw,31px);color:var(--cream);padding:9px 22px;position:relative;line-height:1.2}
+  .conditions li+li::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.75;transform:translate(-50%,-50%)}
 
-  /* Manifesto (inversion) */
+  /* Manifesto */
   .inversion{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
   .inversion li{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);align-items:baseline}
-  .inversion .a{padding:24px 28px 24px 0;color:var(--faint);font-family:var(--serif);
-    font-size:clamp(17px,2vw,22px);line-height:1.3}
-  .inversion .b{padding:24px 0 24px 28px;color:var(--cream);font-family:var(--serif);
-    font-size:clamp(17px,2vw,22px);line-height:1.3;border-left:1px solid rgba(216,178,122,.3)}
+  .inversion .a{padding:24px 28px 24px 0;color:var(--faint);font-family:var(--serif);font-size:clamp(17px,2vw,22px);line-height:1.3}
+  .inversion .b{padding:24px 0 24px 28px;color:var(--cream);font-family:var(--serif);font-size:clamp(17px,2vw,22px);line-height:1.3;border-left:1px solid rgba(216,178,122,.3)}
 
   /* The work moves outward */
   .outward{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
@@ -187,23 +161,19 @@
   .outward h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;color:var(--cream);line-height:1.16}
   .outward p{color:var(--muted);font-size:var(--fs-body);margin:0;max-width:34ch}
 
-  /* Practice Library - paired editorial architecture */
+  /* Practice Library (main taxonomy: per-book rows with sovereignty labels) */
   .terr{border-top:1px solid var(--line)}
-  .pair{border-bottom:1px solid var(--line)}
-  .pair-head{display:flex;align-items:baseline;gap:16px;padding:26px 0 6px;flex-wrap:wrap}
-  .pair-head .num{font-size:var(--fs-eyebrow);letter-spacing:.24em;text-transform:uppercase;color:var(--teal-dim)}
-  .pair-head .terr-name{font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);color:var(--gold);line-height:1.1}
-  .terr-row{display:grid;grid-template-columns:1fr 1fr}
-  .terr-row .bk{padding:22px 30px 30px 0}
-  .terr-row .bk+.bk{padding:22px 0 30px 30px;border-left:1px solid var(--line);background:rgba(255,255,255,.012)}
-  .terr-row .aud{font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:11px}
+  .terr-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+  .terr-row .bk{padding:30px 30px 30px 0}
+  .terr-row .bk+.bk{padding:30px 0 30px 30px;border-left:1px solid var(--line);background:rgba(255,255,255,.012)}
+  .terr-row .aud{font-size:var(--fs-eyebrow);letter-spacing:.24em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:11px}
   .terr-row h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 6px;line-height:1.2;color:var(--cream)}
   .terr-row .st{color:var(--faint);font-size:var(--fs-small);line-height:1.5;margin:0 0 13px}
-  .terr-row p{color:var(--muted);font-size:var(--fs-body);margin:0;max-width:42ch}
+  .terr-row p{color:var(--muted);font-size:var(--fs-body);margin:0 0 13px;max-width:42ch}
+  .terr-row .sov{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.85}
 
   /* Featured keynote */
-  .feature{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--line);
-    border-radius:20px;overflow:hidden}
+  .feature{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--line);border-radius:20px;overflow:hidden}
   .feature .l{padding:46px;background:linear-gradient(180deg,var(--panel),var(--ground2))}
   .feature .r{position:relative;background:#090b10;min-height:330px;overflow:hidden}
   .feature .r video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
@@ -214,8 +184,7 @@
 
   /* Frameworks */
   .tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .tool{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
-    border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:.22s}
+  .tool{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:.22s}
   .tool:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
   .tool h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.18}
   .tool p{color:var(--muted);font-size:var(--fs-small);margin:0 0 16px;max-width:42ch}
@@ -223,8 +192,7 @@
 
   /* Pathway cards */
   .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .path{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
-    border-radius:16px;padding:28px;transition:.22s;display:flex;flex-direction:column}
+  .path{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);border-radius:16px;padding:28px;transition:.22s;display:flex;flex-direction:column}
   .path:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
   .path h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.18}
   .path p{color:var(--muted);font-size:var(--fs-small);margin:0;max-width:42ch}
@@ -233,32 +201,25 @@
   /* About */
   .person{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
   .portrait-wrap{position:relative;max-width:460px}
-  .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;
-    border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(216,178,122,.16),transparent 72%);filter:blur(22px)}
-  .portrait-img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;
-    border-radius:18px;border:1px solid var(--line);display:block;
-    box-shadow:0 24px 60px -34px rgba(0,0,0,.85)}
+  .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(216,178,122,.16),transparent 72%);filter:blur(22px)}
+  .portrait-img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:1px solid var(--line);display:block;box-shadow:0 24px 60px -34px rgba(0,0,0,.85)}
   .person h2{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);margin:14px 0 18px;line-height:1.08;letter-spacing:-.012em}
   .person p{margin:0 0 15px;max-width:56ch}
   .memberships{margin:22px 0 26px}
   .memberships .cap{font-size:var(--fs-eyebrow);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
   .memberships .marks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-  .scope{color:var(--faint);font-size:var(--fs-small);line-height:1.55;max-width:66ch}
 
   /* Where the work lives */
   .homes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .home{border:1px solid var(--line);border-radius:16px;padding:28px;
-    background:linear-gradient(180deg,var(--panel),var(--ground2));display:flex;flex-direction:column;transition:.22s}
+  .home{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,var(--panel),var(--ground2));display:flex;flex-direction:column;transition:.22s}
   .home:hover{border-color:rgba(216,178,122,.35);transform:translateY(-2px)}
   .home h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.16}
   .home p{color:var(--muted);font-size:var(--fs-small);margin:0;max-width:38ch}
   .home .go{margin-top:auto;padding-top:18px;font-size:14px;color:var(--teal)}
 
   .closer{text-align:center;padding-block:var(--sp-major);border-top:1px solid var(--line2)}
-  .closer .q{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,52px);line-height:1.12;
-    letter-spacing:-.012em;text-wrap:balance;margin:0 auto;max-width:20ch}
-  .closer .senses{font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);color:var(--gold);
-    margin:26px auto 0;max-width:44ch;opacity:.92;line-height:1.4;text-wrap:balance}
+  .closer .q{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,52px);line-height:1.12;letter-spacing:-.012em;text-wrap:balance;margin:0 auto;max-width:20ch}
+  .closer .senses{font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);color:var(--gold);margin:26px auto 0;max-width:44ch;opacity:.92;line-height:1.4;text-wrap:balance}
   .closer .body{color:var(--muted);font-size:var(--fs-body);max-width:62ch;margin:24px auto 0;text-wrap:pretty}
   .closer .cta-row{justify-content:center}
   footer{border-top:1px solid var(--line2);padding:42px 0;color:var(--faint);font-size:var(--fs-small)}
@@ -273,11 +234,8 @@
   @media (max-width:860px){
     .navlinks{display:none}
     .menu-toggle{display:block}
-    .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;
-      align-items:flex-start;gap:0;background:var(--ground2);border-bottom:1px solid var(--line);padding:10px 26px 18px}
+    .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--ground2);border-bottom:1px solid var(--line);padding:10px 26px 18px}
     .navlinks.open>a{padding:11px 0;width:100%;min-height:44px;display:flex;align-items:center}
-    /* minmax(0,1fr): a plain 1fr track cannot shrink below its content's
-       min-content width, so long nowrap button text forced the grid wider. */
     .inversion li,.terr-row,.feature,.person,.outward,.tools,.paths,.homes{grid-template-columns:minmax(0,1fr)}
     .feature .l{padding:28px 22px}
     .btn{white-space:normal;text-align:center;min-height:44px}
@@ -285,11 +243,10 @@
     .foot .fl{gap:0 20px}
     .foot .fl a,.brand{min-height:44px;display:inline-flex;align-items:center}
     .outward article,.outward article+article{padding:26px 0;border-left:0}
-    .terr-row .bk,.terr-row .bk+.bk{padding:22px 0 26px;border-left:0}
+    .terr-row .bk,.terr-row .bk+.bk{padding:26px 0;border-left:0}
     .terr-row .bk+.bk{border-top:1px solid var(--line)}
     .inversion .a{padding:22px 0 6px}
     .inversion .b{padding:0 0 22px 18px;border-left:1px solid rgba(216,178,122,.3);margin-bottom:22px}
-    .sec-head,.sec-head.wide{max-width:none}
     .person{gap:32px}
     .hero{padding:76px 0 60px}
     .hero h1{max-width:none}
@@ -301,7 +258,6 @@
     .hero::after{background:linear-gradient(180deg,rgba(10,11,16,.5),rgba(10,11,16,.88) 55%,var(--ground))}
     .conditions{padding:30px 8px}
     .conditions li{padding:8px 15px}
-    .film-thesis{font-size:clamp(22px,6.4vw,28px)}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -339,11 +295,11 @@
     <button class="motion" type="button" data-motion aria-pressed="false">Pause motion</button>
     <div class="wrap hero-inner">
       <span class="eyebrow">Tanya Hicks</span>
-      <h1 class="serif">People cannot truly become authentically themselves unless they have sovereignty over their own lives.</h1>
+      <h1 class="serif">People cannot truly become their authentic selves unless they have sovereignty over their own lives.</h1>
       <div class="cta-row">
-        <a class="btn btn-teal" href="#question">Explore Human Sovereignty</a>
+        <a class="btn btn-teal" href="#question">Explore My Work</a>
         <a class="btn btn-ghost" href="/speaking/from-support-to-sovereignty/">Watch From Support to Sovereignty</a>
-        <a class="btn btn-ghost" href="/books/">Explore the Practice Library</a>
+        <a class="btn btn-ghost" href="/books/">Explore the Books</a>
       </div>
       <ul class="credentials">
         <li>Author &amp; speaker</li>
@@ -356,12 +312,12 @@
   </section>
 
   <!-- THE CENTRAL QUESTION -->
-  <section id="question" class="section-major">
+  <section id="question">
     <div class="wrap">
-      <div class="sec-head wide">
+      <div class="sec-head">
         <span class="eyebrow">The central question</span>
         <h2 class="serif">Who gets to decide what a person&rsquo;s life should look like?</h2>
-        <p class="lead">Human sovereignty means remaining the primary authority over your own life, including when you need support. My work is not about changing people. It is about creating the conditions where people can safely become authentically themselves.</p>
+        <p class="lead">That is sovereignty. My work is not about changing people. It is about creating the conditions where people can safely become authentically themselves.</p>
       </div>
       <p class="lead" style="margin-top:0">That is why these words keep appearing:</p>
       <ul class="conditions">
@@ -376,13 +332,11 @@
     <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_corridor.jpg" aria-hidden="true">
       <source src="/assets/keynote/kv_corridor.mp4" type="video/mp4">
     </video>
-    <div class="scrim" aria-hidden="true"></div>
-    <p class="film-thesis">The person did not change. The conditions did.</p>
     <button class="motion" type="button" data-motion aria-pressed="false">Pause motion</button>
   </div>
 
   <!-- WHAT MY WORK IS REALLY ABOUT -->
-  <section id="really-about" class="section-major">
+  <section id="really-about">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">What my work is really about</span>
@@ -400,7 +354,7 @@
   </section>
 
   <!-- THE WORK MOVES OUTWARD -->
-  <section id="outward" class="section-standard">
+  <section id="outward">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">The work moves outward</span>
@@ -440,84 +394,77 @@
   </div>
 
   <!-- PRACTICE LIBRARY -->
-  <section id="library" class="section-major">
+  <section id="library">
     <div class="wrap">
-      <div class="sec-head wide">
+      <div class="sec-head">
         <span class="eyebrow">Free 2 B Me Practice Library</span>
         <h2 class="serif">Eight connected books</h2>
         <p class="lead">The Free 2 B Me Practice Library develops these ideas across eight connected books. Four books explore the ideas from the perspective of people and families. Four companion books translate the same foundations into counselling, Positive Behaviour Support, supervision, team and organisational practice.</p>
       </div>
 
       <div class="terr">
-        <div class="pair">
-          <div class="pair-head"><span class="num">Pair 1</span><span class="terr-name serif">Access to sovereignty</span></div>
-          <div class="terr-row">
-            <div class="bk">
-              <div class="aud">For people and families</div>
-              <h3>It Shouldn&rsquo;t Be This Hard</h3>
-              <p class="st">The Hidden Cost of Living in Conditions That Don&rsquo;t Fit</p>
-              <p>The world is not asking too much of you because you are broken. It is often asking too much because the conditions are not right.</p>
-            </div>
-            <div class="bk">
-              <div class="aud">Professional companion</div>
-              <h3>Access Before Intervention</h3>
-              <p class="st">A Neuroaffirming Framework for Counselling, Positive Behaviour Support and Disability Practice</p>
-              <p>Can professionals make valid decisions if the person has never truly had access? Whose knowledge counts?</p>
-            </div>
+        <div class="terr-row">
+          <div class="bk">
+            <div class="aud">Book 1</div>
+            <h3>It Shouldn&rsquo;t Be This Hard</h3>
+            <p class="st">The Hidden Cost of Living in Conditions That Don&rsquo;t Fit</p>
+            <p>The world is not asking too much of you because you are broken. It is often asking too much because the conditions are not right.</p>
+            <div class="sov">Access to sovereignty</div>
+          </div>
+          <div class="bk">
+            <div class="aud">Professional companion</div>
+            <h3>Access Before Intervention</h3>
+            <p class="st">A Neuroaffirming Framework for Counselling, Positive Behaviour Support and Disability Practice</p>
+            <p>Can professionals make valid decisions if the person has never truly had access? Whose knowledge counts?</p>
+            <div class="sov">Epistemic sovereignty</div>
           </div>
         </div>
-
-        <div class="pair">
-          <div class="pair-head"><span class="num">Pair 2</span><span class="terr-name serif">Interpretive sovereignty</span></div>
-          <div class="terr-row">
-            <div class="bk">
-              <div class="aud">For people and families</div>
-              <h3>You Make Sense</h3>
-              <p class="st">A Rights-Based Guide to Distress, Communication and Support That Helps</p>
-              <p>Your experiences, body and behaviour make sense. Understanding yourself restores your ability to make choices instead of living inside everyone else&rsquo;s interpretations.</p>
-            </div>
-            <div class="bk">
-              <div class="aud">Professional companion</div>
-              <h3>Behaviour Makes Sense</h3>
-              <p class="st">Rights-Based Positive Behaviour Support Beyond Compliance</p>
-              <p>Behaviour is not something to eliminate. It is information from a person whose life belongs to them. Who gets to decide what behaviour means?</p>
-            </div>
+        <div class="terr-row">
+          <div class="bk">
+            <div class="aud">Book 2</div>
+            <h3>You Make Sense</h3>
+            <p class="st">A Rights-Based Guide to Distress, Communication and Support That Helps</p>
+            <p>Your experiences, body and behaviour make sense. Understanding yourself restores your ability to make choices instead of living inside everyone else&rsquo;s interpretations.</p>
+            <div class="sov">Internal sovereignty</div>
+          </div>
+          <div class="bk">
+            <div class="aud">Professional companion</div>
+            <h3>Behaviour Makes Sense</h3>
+            <p class="st">Rights-Based Positive Behaviour Support Beyond Compliance</p>
+            <p>Behaviour is not something to eliminate. It is information from a person whose life belongs to them. Who gets to decide what behaviour means?</p>
+            <div class="sov">Interpretive sovereignty</div>
           </div>
         </div>
-
-        <div class="pair">
-          <div class="pair-head"><span class="num">Pair 3</span><span class="terr-name serif">Embodied sovereignty</span></div>
-          <div class="terr-row">
-            <div class="bk">
-              <div class="aud">For people and families</div>
-              <h3>Nervous System Nourishment</h3>
-              <p class="st">Finding What Supports Your Brain and Body</p>
-              <p>Calm is not the goal. Having enough safety, access and choice to participate in your own life is.</p>
-            </div>
-            <div class="bk">
-              <div class="aud">Professional companion</div>
-              <h3>Beyond Regulation</h3>
-              <p class="st">Nervous System Nourishment in Counselling and Positive Behaviour Support</p>
-              <p>Are we helping someone participate? Or are we helping them look regulated enough for everyone else?</p>
-            </div>
+        <div class="terr-row">
+          <div class="bk">
+            <div class="aud">Book 3</div>
+            <h3>Nervous System Nourishment</h3>
+            <p class="st">Finding What Supports Your Brain and Body</p>
+            <p>Calm is not the goal. Having enough safety, access and choice to participate in your own life is.</p>
+            <div class="sov">Nervous-system sovereignty</div>
+          </div>
+          <div class="bk">
+            <div class="aud">Professional companion</div>
+            <h3>Beyond Regulation</h3>
+            <p class="st">Nervous System Nourishment in Counselling and Positive Behaviour Support</p>
+            <p>Are we helping someone participate? Or are we helping them look regulated enough for everyone else?</p>
+            <div class="sov">Embodied sovereignty</div>
           </div>
         </div>
-
-        <div class="pair">
-          <div class="pair-head"><span class="num">Pair 4</span><span class="terr-name serif">Shared and systemic sovereignty</span></div>
-          <div class="terr-row">
-            <div class="bk">
-              <div class="aud">For people and families</div>
-              <h3>Built With You</h3>
-              <p class="st">Why You Belong in the Design of Your Support and Your Life</p>
-              <p>Support should never replace your voice. It should increase your influence over your own life.</p>
-            </div>
-            <div class="bk">
-              <div class="aud">Professional companion</div>
-              <h3>Practice That Holds</h3>
-              <p class="st">Supervision, Teams and Systems for Neuroaffirming Practice</p>
-              <p>Can organisations create environments where practitioners and participants retain their humanity?</p>
-            </div>
+        <div class="terr-row">
+          <div class="bk">
+            <div class="aud">Book 4</div>
+            <h3>Built With You</h3>
+            <p class="st">Why You Belong in the Design of Your Support and Your Life</p>
+            <p>Support should never replace your voice. It should increase your influence over your own life.</p>
+            <div class="sov">Shared sovereignty</div>
+          </div>
+          <div class="bk">
+            <div class="aud">Professional companion</div>
+            <h3>Practice That Holds</h3>
+            <p class="st">Supervision, Teams and Systems for Neuroaffirming Practice</p>
+            <p>Can organisations create environments where practitioners and participants retain their humanity?</p>
+            <div class="sov">Systemic sovereignty</div>
           </div>
         </div>
       </div>
@@ -529,7 +476,7 @@
   </section>
 
   <!-- FEATURED KEYNOTE -->
-  <section id="keynote" class="section-standard">
+  <section id="keynote">
     <div class="wrap">
       <div class="sec-head" style="margin-bottom:34px">
         <span class="eyebrow">Featured keynote</span>
@@ -557,16 +504,16 @@
   </section>
 
   <!-- FRAMEWORKS AND TOOLS -->
-  <section id="frameworks" class="section-standard">
+  <section id="frameworks">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Frameworks and tools</span>
-        <h2 class="serif">From principle to practice</h2>
+        <h2 class="serif">Turning ideas into practice</h2>
       </div>
       <div class="tools">
         <a class="tool" href="/frameworks/access-before-intervention/">
           <h3>Access Before Intervention</h3>
-          <p>Before choosing a support or technique, consider whether the person can access what it requires, before difficulty is read as resistance or lack of capacity.</p>
+          <p>Before choosing a support or technique, consider whether the person can access what it requires - before difficulty is read as resistance or lack of capacity.</p>
           <span class="go">Read more &rarr;</span>
         </a>
         <a class="tool" href="/frameworks/nervous-system-nourishment/">
@@ -587,12 +534,12 @@
   </section>
 
   <!-- SPEAKING AND PROFESSIONAL LEARNING -->
-  <section id="speaking" class="section-standard">
+  <section id="speaking">
     <div class="wrap">
-      <div class="sec-head wide">
+      <div class="sec-head">
         <span class="eyebrow">Speaking and professional learning</span>
         <h2 class="serif">Bringing the work into rooms where practice and systems can change</h2>
-        <p class="lead">Keynotes, workshops, professional learning, team development, supervision and reflective practice, and systems and organisational work, all returning to one question: who gets to decide what a person&rsquo;s life should look like?</p>
+        <p class="lead">Keynotes, workshops, professional learning, team development, supervision and reflective practice, and systems and organisational work - all returning to one question: who gets to decide what a person&rsquo;s life should look like?</p>
       </div>
       <div class="paths">
         <a class="path" href="/speaking/"><h3 class="serif">Speaking</h3><p>Keynotes and conference presentations, and keynote-plus-workshop packages.</p><span class="go">Explore Speaking &rarr;</span></a>
@@ -603,17 +550,17 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section-major">
+  <section id="about">
     <div class="wrap person">
       <div class="portrait-wrap">
         <img class="portrait-img" src="/assets/keynote/portrait.jpg" width="660" height="660" loading="lazy" alt="Tanya Hicks">
       </div>
       <div>
         <span class="eyebrow">About</span>
-        <h2 class="serif">About Tanya Hicks</h2>
-        <p style="color:var(--soft);font-size:var(--fs-lead)">I am an Autistic author and practitioner, a counsellor and Behaviour Support Practitioner, a framework developer, researcher and speaker.</p>
-        <p style="color:var(--muted)">I founded Neurodivergent Empowered and Sparkly Aliens Inc., and I am the author of the wider Free 2 B Me body of work. My work asks a different question of practice, not &ldquo;what can this person do?&rdquo;, but &ldquo;what conditions are shaping what we&rsquo;re able to see?&rdquo;</p>
-        <p style="color:var(--soft);font-size:var(--fs-small);line-height:1.55">Counsellor (ACA R82053), NDIS Behaviour Support Practitioner (P1362818), and Master of Counselling candidate. I created the Sovereignty Conditions Audit.</p>
+        <h2 class="serif">About me</h2>
+        <p style="color:var(--soft);font-size:16.5px">I am an Autistic author and practitioner, a counsellor and Behaviour Support Practitioner, a framework developer, researcher and speaker.</p>
+        <p style="color:var(--muted);font-size:16px">I founded Neurodivergent Empowered and Sparkly Aliens Inc., and I am the author of the wider Free 2 B Me body of work. My work asks a different question of practice - not &ldquo;what can this person do?&rdquo;, but &ldquo;what conditions are shaping what we&rsquo;re able to see?&rdquo;</p>
+        <p style="color:var(--soft);font-size:15px;line-height:1.55">Counsellor (ACA R82053), NDIS Behaviour Support Practitioner (P1362818), and Master of Counselling candidate. I created the Sovereignty Conditions Audit.</p>
         <div class="memberships">
           <div class="cap">Professional memberships</div>
           <div class="marks">
@@ -621,7 +568,7 @@
             <span style="background:#fff;border-radius:10px;padding:9px 15px;display:inline-flex;align-items:center"><img src="/assets/aca-member.png" alt="Australian Counselling Association member" height="30" style="display:block"></span>
           </div>
         </div>
-        <p class="scope">TanyaHicks.com is the home of my books, speaking, frameworks, research translation and professional learning. Participant supports are delivered separately through Neurodivergent Empowered and The Nest within the relevant practitioner&rsquo;s qualifications, professional scope and active provider registration.</p>
+        <p style="color:var(--faint);font-size:13.5px;line-height:1.55">TanyaHicks.com is the home of my books, speaking, frameworks, research translation and professional learning. Participant supports are delivered separately through Neurodivergent Empowered and The Nest within the relevant practitioner&rsquo;s qualifications, professional scope and active provider registration.</p>
         <div class="cta-row">
           <a class="btn btn-teal" href="/work-with-tanya/">Work With Me</a>
         </div>
@@ -630,7 +577,7 @@
   </section>
 
   <!-- WHERE THE WORK LIVES -->
-  <section id="homes" class="section-standard">
+  <section id="homes">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Where the work lives</span>
@@ -653,7 +600,7 @@
           <span class="go">Visit &rarr;</span>
         </a>
       </div>
-      <p class="statement statement--rule statement--wide">Tanya Hicks, Neurodivergent Empowered and Sparkly Aliens Inc. are different expressions of the same commitment: creating the conditions where people can safely become authentically themselves and remain the primary authority over their own lives.</p>
+      <p class="statement statement--rule"><span class="lede">These are not unrelated brands.</span> They are different expressions of the same commitment: creating the conditions where people can safely become authentically themselves and remain the primary authority over their own lives.</p>
     </div>
   </section>
 
@@ -665,7 +612,7 @@
       <p class="senses">People make sense in context. Behaviour makes sense. Distress makes sense. Changes in capacity make sense.</p>
       <p class="body">Support should not be designed to make people appear more compliant, independent or typical. It should reduce unnecessary barriers, protect rights, support communication and build the conditions in which people can participate, recover, develop and belong.</p>
       <div class="cta-row">
-        <a class="btn btn-teal" href="#question">Explore Human Sovereignty</a>
+        <a class="btn btn-teal" href="#question">Explore My Work</a>
         <a class="btn btn-ghost" href="/speaking/from-support-to-sovereignty/">Watch From Support to Sovereignty</a>
         <a class="btn btn-ghost" href="/work-with-tanya/">Work With Me</a>
       </div>
