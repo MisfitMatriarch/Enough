@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tanya Hicks | What underpins my work</title>
-<meta name="description" content="A connected neuroaffirming, rights-based practice framework. It begins with a simple principle: people make sense in context.">
+<title>Tanya Hicks | Human Sovereignty</title>
+<meta name="description" content="People cannot truly become themselves unless they have sovereignty over their own lives. My work explores the conditions that make this possible.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tanya Hicks">
 <meta property="og:url" content="https://tanyahicks.com/">
-<meta property="og:title" content="Tanya Hicks | What underpins my work">
-<meta property="og:description" content="People make sense in context. A connected neuroaffirming, rights-based practice framework.">
+<meta property="og:title" content="Tanya Hicks | Human Sovereignty">
+<meta property="og:description" content="People cannot truly become themselves unless they have sovereignty over their own lives.">
 <meta property="og:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Tanya Hicks - Capacity follows conditions. Sovereignty follows safety.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tanya Hicks | What underpins my work">
-<meta name="twitter:description" content="People make sense in context. A connected neuroaffirming, rights-based practice framework.">
+<meta name="twitter:title" content="Tanya Hicks | Human Sovereignty">
+<meta name="twitter:description" content="People cannot truly become themselves unless they have sovereignty over their own lives.">
 <meta name="twitter:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0b10'/><circle cx='16' cy='16' r='6' fill='%236bd0c6'/></svg>">
 <style>
@@ -35,194 +35,217 @@
   a{color:inherit;text-decoration:none}
   .wrap{max-width:var(--wrap);margin:0 auto;padding:0 26px}
   .serif{font-family:var(--serif)}
-  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:400}
+  .eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
   .skip{position:absolute;left:-9999px;top:0;background:var(--teal);color:#052018;padding:10px 16px;z-index:200}
   .skip:focus{left:12px;top:12px}
 
-  header{position:sticky;top:0;z-index:60;background:rgba(10,11,16,.74);
+  header{position:sticky;top:0;z-index:60;background:rgba(10,11,16,.76);
     backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
-  nav.bar{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{font-family:var(--serif);font-size:21px;letter-spacing:.02em;line-height:1}
-  .brand small{display:block;font-family:var(--sans);font-size:9.5px;letter-spacing:.3em;
-    text-transform:uppercase;color:var(--faint);margin-top:4px}
-  .navlinks{display:flex;gap:24px;align-items:center;font-size:14.5px;color:var(--soft)}
-  .navlinks a{color:var(--soft);transition:color .2s}
-  .navlinks a:hover{color:var(--cream)}
+  nav.bar{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
+  .brand{font-family:var(--serif);font-size:21px;letter-spacing:.02em;line-height:1;white-space:nowrap;
+    display:flex;align-items:center;gap:11px}
+  .brand img{width:auto;height:46px;display:block}
+  .navlinks{display:flex;gap:15px;align-items:center;font-size:13px;color:var(--soft)}
+  .navlinks>a{color:var(--soft);transition:color .2s;white-space:nowrap}
+  .navlinks>a:hover{color:var(--cream)}
   .btn{display:inline-flex;align-items:center;gap:.5em;font-size:14px;font-weight:500;
     padding:11px 20px;border-radius:100px;transition:.2s;cursor:pointer;border:1px solid transparent;white-space:nowrap}
-  .btn-teal{background:var(--teal);color:#052018;font-weight:600;box-shadow:0 6px 22px -8px rgba(107,208,198,.5)}
-  .btn-teal:hover{background:#83ded5;transform:translateY(-1px)}
+  .navlinks>a.btn-teal,.btn-teal{background:var(--teal);color:#052018;font-weight:600;
+    box-shadow:0 6px 22px -8px rgba(107,208,198,.5)}
+  .navlinks>a.btn-teal:hover,.btn-teal:hover{background:#83ded5;color:#052018;transform:translateY(-1px)}
   .btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(255,255,255,.02)}
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
   .menu-toggle{display:none;background:none;border:0;color:var(--cream);font-size:22px;cursor:pointer}
 
-  /* in-page anchor rail */
-  .rail{position:sticky;top:70px;z-index:55;background:rgba(10,11,16,.82);backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--line2)}
-  .rail .wrap{display:flex;gap:30px;align-items:center;height:46px;overflow-x:auto;scrollbar-width:none}
-  .rail .wrap::-webkit-scrollbar{display:none}
-  .rail a{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
-    white-space:nowrap;transition:color .2s;padding:2px 0}
-  .rail a:hover{color:var(--teal)}
-
-  /* hero - words dominant, gold filament only */
-  .hero{position:relative;padding:132px 0 104px;overflow:hidden;border-top:0}
-  .crack{position:absolute;top:-10%;left:66%;width:2px;height:120%;transform:rotate(7deg);
-    background:linear-gradient(to bottom,transparent,var(--gold) 42%,#fff6e6 52%,var(--gold) 62%,transparent 92%);
-    filter:blur(.4px);opacity:.45;pointer-events:none}
-  .crack::after{content:"";position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);
-    width:420px;height:420px;border-radius:50%;
-    background:radial-gradient(circle,rgba(216,178,122,.15),transparent 68%);filter:blur(28px)}
-  .hero-inner{position:relative;max-width:880px}
-  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,7.4vw,86px);line-height:1.03;
-    letter-spacing:.004em;margin:22px 0 0;text-wrap:balance}
-  .hero .lead{font-size:clamp(17px,2.05vw,20px);color:var(--muted);max-width:640px;margin:30px 0 0;line-height:1.6}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px;align-items:center}
+  /* HERO */
+  .hero{position:relative;padding:128px 0 96px;overflow:hidden}
+  .hero-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% center;
+    z-index:0;opacity:1;pointer-events:none;
+    -webkit-mask-image:linear-gradient(90deg,transparent 2%,rgba(0,0,0,.5) 32%,#000 58%);
+    mask-image:linear-gradient(90deg,transparent 2%,rgba(0,0,0,.5) 32%,#000 58%)}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(90deg,var(--ground) 6%,rgba(10,11,16,.86) 34%,rgba(10,11,16,.3) 60%,transparent 82%)}
+  .hero-inner{position:relative;z-index:2;max-width:900px}
+  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.6vw,58px);line-height:1.14;
+    margin:22px 0 0;text-wrap:balance}
+  .hero .lead{font-size:clamp(16px,1.9vw,19px);color:var(--muted);max-width:620px;margin:26px 0 0;line-height:1.66}
+  .hero-conditions{font-family:var(--serif);font-size:clamp(15px,1.6vw,19px);color:var(--gold);
+    margin:26px 0 0;max-width:620px;line-height:1.75;opacity:.92}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;align-items:center}
   .cta-row .btn{padding:15px 26px;font-size:15px}
-  .credentials{display:flex;flex-wrap:wrap;gap:9px 26px;margin:46px 0 0;padding:0;list-style:none;
-    font-size:13.5px;color:var(--faint)}
-  .credentials li{position:relative}
-  .credentials li+li::before{content:"";position:absolute;left:-14px;top:50%;width:3px;height:3px;
-    border-radius:50%;background:var(--faint);transform:translateY(-50%)}
+  .credentials{display:flex;flex-wrap:wrap;gap:8px 24px;margin:42px 0 0;padding:0;list-style:none;
+    font-size:13.5px;color:var(--faint);position:relative;z-index:2}
+  .credentials li+li::before{content:"\00b7";margin-right:12px;color:var(--faint)}
 
-  section{padding:96px 0;border-top:1px solid var(--line2)}
-  .sec-head{margin-bottom:44px;max-width:760px}
-  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4vw,46px);margin:12px 0 0;
-    letter-spacing:.01em;line-height:1.14;text-wrap:balance}
-  .lead{color:var(--muted);font-size:17px;margin-top:18px;line-height:1.66}
-  .note{color:var(--faint);font-size:14px;line-height:1.6;border-left:1px solid var(--line);padding-left:18px;max-width:720px}
+  section{padding:92px 0;border-top:1px solid var(--line2)}
+  .sec-head{margin-bottom:42px;max-width:780px}
+  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.8vw,44px);margin:12px 0 0;
+    line-height:1.16;text-wrap:balance}
+  .lead{color:var(--muted);font-size:17px;margin-top:18px;line-height:1.68}
+  .note{color:var(--faint);font-size:14px;line-height:1.6;border-left:1px solid var(--line);
+    padding-left:18px;max-width:740px}
+  .statement{font-family:var(--serif);font-size:clamp(21px,2.7vw,30px);line-height:1.36;color:var(--cream);
+    max-width:860px;margin:36px 0 0;text-wrap:balance}
 
-  /* cinematic film bands */
-  .film{position:relative;width:100%;height:44vh;min-height:290px;max-height:520px;overflow:hidden;
+  /* film bands */
+  .film{position:relative;width:100%;height:42vh;min-height:280px;max-height:500px;overflow:hidden;
     border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
   .film video{width:100%;height:100%;object-fit:cover;display:block;
     -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 82%,transparent 100%);
     mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 82%,transparent 100%)}
   .film.seed video{object-position:center 45%;filter:brightness(.86) contrast(1.08)}
+  /* kv_seed.mp4 is only 620x348 - keep it contained so it is not upscaled across
+     the full viewport, where it visibly softens. */
+  .film.seed{max-width:1000px;margin:0 auto;height:auto;min-height:0;max-height:none;
+    border:1px solid var(--line2);border-radius:18px}
+  .film.seed video{aspect-ratio:620/348;height:auto;border-radius:17px;
+    -webkit-mask-image:none;mask-image:none}
   .film.corridor video{object-position:center 42%;filter:brightness(.72) contrast(1.06) saturate(.9)}
-  .motion{position:absolute;right:18px;bottom:16px;z-index:3;background:rgba(10,11,16,.7);
+  .motion{position:absolute;right:18px;bottom:16px;z-index:4;background:rgba(10,11,16,.7);
     border:1px solid var(--line);color:var(--soft);border-radius:100px;padding:7px 15px;font-size:12px;
     letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(6px);font-family:var(--sans)}
   .motion:hover{border-color:var(--teal);color:var(--teal)}
 
-  /* six foundations */
-  .found{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
-  .found article{padding:34px 34px 34px 0;border-bottom:1px solid var(--line)}
-  .found article:nth-child(even){padding-left:34px;border-left:1px solid var(--line)}
-  .found h3{font-family:var(--serif);font-weight:400;font-size:23px;margin:0 0 12px;line-height:1.24;
-    color:var(--cream)}
-  .found .num{font-size:11px;letter-spacing:.28em;color:var(--teal-dim);display:block;margin-bottom:10px}
-  .found p{color:var(--muted);font-size:15.5px;margin:0}
+  /* blockers list */
+  .blockers{list-style:none;margin:30px 0 0;padding:0;max-width:820px;columns:2;column-gap:40px}
+  .blockers li{break-inside:avoid;color:var(--soft);font-size:15.5px;padding:10px 0 10px 24px;
+    position:relative;border-bottom:1px solid var(--line2)}
+  .blockers li::before{content:"";position:absolute;left:0;top:20px;width:9px;height:1px;background:var(--gold)}
 
-  /* conditions - one connected lockup, not ten cards */
-  .conditions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;
-    list-style:none;margin:52px 0 0;padding:44px 26px;position:relative;
+  /* conditions lockup */
+  .conditions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;list-style:none;
+    margin:48px 0 0;padding:42px 22px;position:relative;
     border-top:1px solid rgba(216,178,122,.28);border-bottom:1px solid rgba(216,178,122,.28)}
   .conditions::before{content:"";position:absolute;inset:0;pointer-events:none;
     background:radial-gradient(60% 120% at 50% 50%,rgba(216,178,122,.09),transparent 72%)}
-  .conditions li{font-family:var(--serif);font-size:clamp(20px,2.7vw,32px);color:var(--cream);
-    padding:10px 24px;position:relative;line-height:1.2}
+  .conditions li{font-family:var(--serif);font-size:clamp(19px,2.6vw,31px);color:var(--cream);
+    padding:9px 22px;position:relative;line-height:1.2}
   .conditions li+li::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;
     border-radius:50%;background:var(--gold);opacity:.75;transform:translate(-50%,-50%)}
 
-  /* the inversion - typographic pacing */
+  /* inversion */
   .inversion{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-  .inversion li{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--line);
-    align-items:baseline}
-  .inversion .inv-a{padding:26px 30px 26px 0;color:var(--faint);font-family:var(--serif);
-    font-size:clamp(18px,2.1vw,23px);line-height:1.3}
-  .inversion .inv-b{padding:26px 0 26px 30px;color:var(--cream);font-family:var(--serif);
-    font-size:clamp(18px,2.1vw,23px);line-height:1.3;border-left:1px solid rgba(216,178,122,.3)}
-  .flourish{font-family:var(--serif);font-size:clamp(22px,3vw,32px);line-height:1.32;color:var(--cream);
-    max-width:820px;margin:52px 0 0;text-wrap:balance}
+  .inversion li{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);align-items:baseline}
+  .inversion .a{padding:24px 28px 24px 0;color:var(--faint);font-family:var(--serif);
+    font-size:clamp(17px,2vw,22px);line-height:1.3}
+  .inversion .b{padding:24px 0 24px 28px;color:var(--cream);font-family:var(--serif);
+    font-size:clamp(17px,2vw,22px);line-height:1.3;border-left:1px solid rgba(216,178,122,.3)}
 
-  /* practice library - four paired territories */
+  /* outward */
+  .outward{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+  .outward article{padding:30px 24px 30px 0;border-bottom:1px solid var(--line);position:relative}
+  .outward article+article{padding-left:24px;border-left:1px solid var(--line)}
+  .outward .step{font-size:11px;letter-spacing:.26em;color:var(--teal-dim);display:block;margin-bottom:12px}
+  .outward h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 10px;color:var(--cream)}
+  .outward p{color:var(--muted);font-size:15px;margin:0}
+
+  /* library */
   .terr{border-top:1px solid var(--line)}
-  .terr-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid var(--line)}
-  .terr-row .bk{padding:32px 32px 32px 0}
-  .terr-row .bk+.bk{padding:32px 0 32px 32px;border-left:1px solid var(--line);background:rgba(255,255,255,.012)}
-  .terr-row .aud{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:12px}
-  .terr-row h3{font-family:var(--serif);font-weight:400;font-size:22px;margin:0 0 6px;line-height:1.25;color:var(--cream)}
-  .terr-row .st{color:var(--faint);font-size:13.5px;line-height:1.5;margin:0 0 14px}
-  .terr-row p{color:var(--muted);font-size:15px;margin:0 0 14px}
+  .terr-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+  .terr-row .bk{padding:30px 30px 30px 0}
+  .terr-row .bk+.bk{padding:30px 0 30px 30px;border-left:1px solid var(--line);background:rgba(255,255,255,.012)}
+  .terr-row .aud{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:11px}
+  .terr-row h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 6px;line-height:1.25;color:var(--cream)}
+  .terr-row .st{color:var(--faint);font-size:13.5px;line-height:1.5;margin:0 0 13px}
+  .terr-row p{color:var(--muted);font-size:15px;margin:0 0 13px}
   .terr-row .sov{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.85}
 
-  /* in practice */
-  .practice-list{columns:2;column-gap:44px;list-style:none;margin:0;padding:0;max-width:900px}
-  .practice-list li{break-inside:avoid;color:var(--soft);font-size:16px;padding:11px 0 11px 26px;
-    position:relative;border-bottom:1px solid var(--line2)}
-  .practice-list li::before{content:"";position:absolute;left:0;top:21px;width:9px;height:1px;background:var(--teal)}
-  .boundary{margin-top:46px;padding:32px 34px;border:1px solid rgba(107,208,198,.28);border-radius:16px;
-    background:linear-gradient(180deg,rgba(107,208,198,.05),var(--ground2));max-width:820px}
-  .boundary h3{font-family:var(--serif);font-weight:400;font-size:24px;margin:0 0 12px;color:var(--cream)}
-  .boundary p{color:var(--muted);font-size:16px;margin:0}
-
-  /* keynote feature */
-  .feature{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border:1px solid var(--line);
+  /* keynote */
+  .feature{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--line);
     border-radius:20px;overflow:hidden}
   .feature .l{padding:46px;background:linear-gradient(180deg,var(--panel),var(--ground2))}
-  .feature .r{position:relative;background:#090b10;min-height:320px;overflow:hidden}
+  .feature .r{position:relative;background:#090b10;min-height:330px;overflow:hidden}
   .feature .r video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
   .feature .tagrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:14px}
-  .feature h2{font-family:var(--serif);font-weight:400;font-size:clamp(27px,3.2vw,36px);margin:0 0 16px;line-height:1.15}
+  .feature h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.1vw,35px);margin:0 0 14px;line-height:1.16}
+  .feature .kq{font-family:var(--serif);font-size:19px;color:var(--gold);margin:0 0 14px;opacity:.92}
   .feature p{color:var(--muted);font-size:16px;margin:0 0 24px}
 
-  /* about */
-  .person{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
-  .portrait-wrap{position:relative}
-  .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;
-    border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(216,178,122,.16),transparent 72%);filter:blur(22px)}
-  .portrait-img{position:relative;z-index:1;width:100%;border-radius:18px;border:1px solid var(--line);display:block;
-    filter:contrast(1.02) saturate(.98);box-shadow:0 24px 60px -34px rgba(0,0,0,.85)}
-  .person h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.6vw,40px);margin:14px 0 18px}
-  .person p{margin:0 0 16px}
-  .memberships{margin:24px 0 28px}
-  .memberships .cap{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:13px}
-  .memberships .marks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  /* frameworks */
+  .tools{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .tool{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
+    border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:.22s}
+  .tool:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
+  .tool h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 10px;line-height:1.24}
+  .tool p{color:var(--muted);font-size:14.5px;margin:0 0 16px}
+  .chip{display:inline-flex;align-self:flex-start;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    padding:5px 11px;border-radius:100px;border:1px solid var(--line);color:var(--muted);margin-bottom:14px}
+  .chip.now{border-color:rgba(107,208,198,.45);color:var(--teal)}
+  .chip.dev{border-color:rgba(216,178,122,.4);color:var(--gold)}
+  .tool .go{margin-top:auto;font-size:14px;color:var(--teal);font-weight:500}
 
-  /* pathways */
+  /* cards */
   .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .path{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
     border-radius:16px;padding:28px;transition:.22s;display:flex;flex-direction:column}
   .path:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
-  .path h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 10px;line-height:1.22}
+  .path h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 10px;line-height:1.22}
   .path p{color:var(--muted);font-size:15px;margin:0}
   .path .go{margin-top:auto;padding-top:18px;font-size:14.5px;color:var(--teal);font-weight:500}
 
-  .closer{text-align:center;padding:112px 0;border-top:1px solid var(--line2)}
-  .closer .phrase{font-family:var(--serif);font-size:clamp(27px,4vw,44px);line-height:1.25;
+  /* about */
+  .person{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}
+  /* portrait.jpg is 660x660 - cap the displayed width so it is never upscaled. */
+  .portrait-wrap{position:relative;max-width:440px}
+  .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;
+    border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(216,178,122,.16),transparent 72%);filter:blur(22px)}
+  .portrait-img{position:relative;z-index:1;width:100%;border-radius:18px;border:1px solid var(--line);display:block;
+    box-shadow:0 24px 60px -34px rgba(0,0,0,.85)}
+  .person h2{font-family:var(--serif);font-weight:400;font-size:clamp(27px,3.4vw,38px);margin:14px 0 18px}
+  .person p{margin:0 0 15px}
+  .memberships{margin:22px 0 26px}
+  .memberships .cap{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .memberships .marks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+
+  /* where the work lives */
+  .homes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .home{border:1px solid var(--line);border-radius:16px;padding:28px;
+    background:linear-gradient(180deg,var(--panel),var(--ground2));display:flex;flex-direction:column;transition:.22s}
+  .home:hover{border-color:rgba(216,178,122,.35);transform:translateY(-2px)}
+  .home h3{font-family:var(--serif);font-weight:400;font-size:21px;margin:0 0 10px}
+  .home p{color:var(--muted);font-size:15px;margin:0}
+  .home .go{margin-top:auto;padding-top:18px;font-size:14px;color:var(--teal)}
+
+  .closer{text-align:center;padding:104px 0;border-top:1px solid var(--line2)}
+  .closer .q{font-family:var(--serif);font-size:clamp(26px,3.8vw,42px);line-height:1.26;
     text-wrap:balance;margin:0 auto;max-width:900px}
-  .closer .practice{margin-top:20px;color:var(--muted);font-size:15px}
+  .closer .senses{font-family:var(--serif);font-size:clamp(18px,2.1vw,23px);color:var(--gold);
+    margin:26px auto 0;max-width:760px;opacity:.92;line-height:1.6}
+  .closer .body{color:var(--muted);font-size:16px;max-width:700px;margin:24px auto 0}
+  .closer .cta-row{justify-content:center}
   footer{border-top:1px solid var(--line2);padding:42px 0;color:var(--faint);font-size:13.5px}
   .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-  .foot .fl{display:flex;gap:22px;flex-wrap:wrap}
+  .foot .fl{display:flex;gap:20px;flex-wrap:wrap}
   .foot a:hover{color:var(--soft)}
 
+  @media (max-width:980px){
+    .navlinks{gap:16px;font-size:13px}
+    .outward,.tools,.paths,.homes{grid-template-columns:1fr 1fr}
+  }
   @media (max-width:860px){
     .navlinks{display:none}
     .menu-toggle{display:block}
-    .found,.inversion li,.terr-row,.feature,.person,.paths{grid-template-columns:1fr}
-    .found article,.found article:nth-child(even){padding:28px 0;border-left:0}
-    .inversion .inv-a{padding:22px 0 6px}
-    .inversion .inv-b{padding:0 0 22px 18px;border-left:1px solid rgba(216,178,122,.3);margin-bottom:22px}
+    .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;
+      align-items:flex-start;gap:0;background:var(--ground2);border-bottom:1px solid var(--line);padding:10px 26px 18px}
+    .navlinks.open>a{padding:11px 0;width:100%}
+    .inversion li,.terr-row,.feature,.person,.outward,.tools,.paths,.homes{grid-template-columns:1fr}
+    .outward article,.outward article+article{padding:26px 0;border-left:0}
     .terr-row .bk,.terr-row .bk+.bk{padding:26px 0;border-left:0}
-    .practice-list{columns:1}
-    .person{gap:34px}
-    .hero{padding:80px 0 64px}
-    section{padding:64px 0}
+    .inversion .a{padding:22px 0 6px}
+    .inversion .b{padding:0 0 22px 18px;border-left:1px solid rgba(216,178,122,.3);margin-bottom:22px}
+    .blockers{columns:1}
+    .person{gap:32px}
+    .hero{padding:76px 0 60px}
+    section{padding:62px 0}
     .film{height:30vh;min-height:210px}
     .cta-row .btn{width:100%;justify-content:center}
   }
   @media (max-width:520px){
-    /* At 390px the headline overflows at 44px: scale it down. Keep the <br> -
-       hiding it joins "sense" and "in" with no space. */
-    .hero h1{font-size:clamp(34px,8.6vw,44px)}
-    .conditions{padding:32px 8px}
-    .conditions li{padding:8px 16px}
-  }
-  @media (prefers-reduced-motion:no-preference){
-    .crack{animation:glow 7s ease-in-out infinite}
-    @keyframes glow{0%,100%{opacity:.38}50%{opacity:.58}}
+    .hero h1{font-size:clamp(27px,7.2vw,34px)}
+    .hero-film{opacity:.34}
+    .hero::after{background:linear-gradient(180deg,rgba(10,11,16,.5),rgba(10,11,16,.88) 55%,var(--ground))}
+    .conditions{padding:30px 8px}
+    .conditions li{padding:8px 15px}
   }
 </style>
 </head>
@@ -231,42 +254,38 @@
 
 <header>
   <nav class="wrap bar" aria-label="Primary">
-    <a class="brand" href="#top">Tanya Hicks<small>Neurodiversity-affirming practice</small></a>
-    <div class="navlinks">
+    <a class="brand" href="#top"><img src="/assets/free-to-be-me-logo-180.png" alt="Free To Be Me" width="180" height="193"><span>Tanya Hicks</span></a>
+    <div class="navlinks" id="nav">
+      <a href="#top">Home</a>
+      <a href="#sovereignty">Human Sovereignty</a>
       <a href="/books/">Books</a>
+      <a href="/frameworks/">Frameworks and Tools</a>
       <a href="/speaking/">Speaking</a>
-      <a href="/frameworks/">Frameworks &amp; Tools</a>
       <a href="/professional-learning/">Professional Learning</a>
-      <a href="/research/">Research &amp; Systems Change</a>
-      <a href="#about">About &amp; Media</a>
-      <a class="btn btn-teal" href="/work-with-tanya/">Work With Tanya</a>
+      <a href="#about">About</a>
+      <a class="btn btn-teal" href="/work-with-tanya/">Work With Me</a>
     </div>
     <button class="menu-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
   </nav>
 </header>
 
-<div class="rail">
-  <div class="wrap" role="navigation" aria-label="On this page">
-    <a href="#foundations">Foundations</a>
-    <a href="#conditions">Conditions</a>
-    <a href="#library">Practice Library</a>
-    <a href="#practice">In practice</a>
-  </div>
-</div>
-
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="crack" aria-hidden="true"></div>
+  <section class="hero" id="top" style="border-top:0">
+    <video class="hero-film" muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="/assets/keynote/kv_concrete_hd.mp4" type="video/mp4">
+    </video>
+    <button class="motion" type="button" data-motion>Pause motion</button>
     <div class="wrap hero-inner">
-      <span class="eyebrow">Practice foundations</span>
-      <h1 class="serif">People make sense<br>in context.</h1>
-      <p class="lead">What underpins my work is a connected neuroaffirming, rights-based practice framework. It begins with a simple principle.</p>
+      <span class="eyebrow">Tanya Hicks</span>
+      <h1 class="serif">People cannot truly become themselves unless they have sovereignty over their own lives.</h1>
+      <p class="lead">Sovereignty does not mean independence or doing whatever you want. It means having genuine authority over your own life. My work explores the conditions that make this possible.</p>
+      <p class="hero-conditions">Access. Safety. Choice. Voice. Belonging. Capacity. Consent. Understanding. Partnership.</p>
       <div class="cta-row">
-        <a class="btn btn-teal" href="#foundations">Read the foundations</a>
+        <a class="btn btn-teal" href="#sovereignty">Explore My Work</a>
         <a class="btn btn-ghost" href="/speaking/from-support-to-sovereignty/">Watch From Support to Sovereignty</a>
-        <a class="btn btn-ghost" href="/books/">Explore the Practice Library</a>
+        <a class="btn btn-ghost" href="/books/">Explore the Books</a>
       </div>
       <ul class="credentials">
         <li>Author &amp; speaker</li>
@@ -278,70 +297,32 @@
     </div>
   </section>
 
-  <!-- SEED FILM BAND -->
-  <div class="film seed">
-    <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_seed.jpg" aria-hidden="true">
-      <source src="/assets/keynote/kv_seed.mp4" type="video/mp4">
-    </video>
-    <button class="motion" type="button" data-motion>Pause motion</button>
-  </div>
-
-  <!-- WHAT UNDERPINS OUR WORK -->
-  <section id="underpins">
+  <!-- THE DEEPER THREAD -->
+  <section id="sovereignty">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">What underpins my work</span>
-        <h2 class="serif">Distress is not a failure of motivation.</h2>
+        <span class="eyebrow">The deeper thread</span>
+        <h2 class="serif">The deeper thread is sovereignty</h2>
+        <p class="lead">When I map the eight books together, I do not think they are actually about behaviour, regulation, Autism, counselling or systems. Those are the vehicles.</p>
       </div>
-      <p class="lead" style="max-width:820px;margin-top:0">Distress, withdrawal, shutdown, escalation, communication differences, avoidance and changes in capacity are not treated as failures, defiance or lack of motivation. They are understood as meaningful responses to the person&rsquo;s body, nervous system, environment, relationships, history, access needs and current conditions.</p>
-      <p class="lead" style="max-width:820px">The role of support is not to make a person appear more compliant, independent or typical. It is to understand what is happening, reduce unnecessary barriers, support communication, protect rights and build conditions in which the person can participate, recover, develop and belong.</p>
-      <p class="flourish" style="margin-top:38px">That is the point.</p>
+      <p class="statement" style="margin-top:0">People cannot truly become themselves unless they have sovereignty over their own lives. And sovereignty does not mean independence or doing whatever you want. It means having genuine authority over your own life.</p>
+      <p class="lead" style="max-width:820px">My books repeatedly argue that sovereignty requires conditions. A person cannot exercise meaningful sovereignty if they:</p>
+      <ul class="blockers">
+        <li>cannot communicate in a way people recognise</li>
+        <li>are constantly overwhelmed</li>
+        <li>are expected to survive inaccessible environments</li>
+        <li>are misunderstood</li>
+        <li>have every behaviour interpreted through deficit</li>
+        <li>are excluded from decisions</li>
+        <li>are supported for rather than with</li>
+        <li>are forced to trade authenticity for belonging</li>
+        <li>exist in systems that value compliance over humanity</li>
+      </ul>
+      <p class="lead" style="max-width:820px">That is why my books do not stop at self-help. They keep moving outward.</p>
     </div>
   </section>
 
-  <!-- THE FOUNDATIONS OF OUR APPROACH -->
-  <section id="foundations">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">The foundations of the approach</span>
-        <h2 class="serif">Six commitments that shape every decision.</h2>
-      </div>
-      <div class="found">
-        <article>
-          <span class="num">01</span>
-          <h3>Access before intervention</h3>
-          <p>We first look at whether the environment, communication, expectations, sensory conditions, timing and support arrangements are accessible. A person should not be expected to overcome preventable barriers before support is considered successful.</p>
-        </article>
-        <article>
-          <span class="num">02</span>
-          <h3>Behaviour and communication make sense</h3>
-          <p>Behaviour is not separated from context. We look at what the person may be communicating, what demands or conditions may be affecting them, what support has or has not been available, and what needs to change around them as well as within the support approach.</p>
-        </article>
-        <article>
-          <span class="num">03</span>
-          <h3>The body and nervous system matter</h3>
-          <p>Capacity is not fixed. Pain, sensory load, fatigue, uncertainty, trauma, health, executive functioning, emotional intensity and accumulated demand can all change what a person can access at a particular time. Support is adapted to the person&rsquo;s current capacity rather than requiring them to perform consistency.</p>
-        </article>
-        <article>
-          <span class="num">04</span>
-          <h3>Self-determination is part of the support</h3>
-          <p>People belong in the design of their own support. Their communication, preferences, boundaries, interests, goals, identity and lived experience must meaningfully shape decisions. Choice is not limited to selecting from options that have already been designed by someone else.</p>
-        </article>
-        <article>
-          <span class="num">05</span>
-          <h3>Belonging is not an optional outcome</h3>
-          <p>People should not have to mask, perform or become less themselves in order to access support or community. Safety, identity, connection and genuine belonging are part of quality of life and often make participation and development possible.</p>
-        </article>
-        <article>
-          <span class="num">06</span>
-          <h3>Practice must be held by systems</h3>
-          <p>Neuroaffirming practice cannot depend only on the goodwill of one worker. It must be supported through supervision, team communication, reflective practice, clear responsibilities, rights-based decision-making, safeguarding and organisational systems that remain accountable to the person.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CORRIDOR FILM BAND -->
+  <!-- CORRIDOR FILM -->
   <div class="film corridor">
     <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_corridor.jpg" aria-hidden="true">
       <source src="/assets/keynote/kv_corridor.mp4" type="video/mp4">
@@ -349,52 +330,93 @@
     <button class="motion" type="button" data-motion>Pause motion</button>
   </div>
 
-  <!-- THE THREAD UNDERNEATH -->
-  <section id="conditions">
+  <!-- THE CENTRAL QUESTION -->
+  <section id="question">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">The thread underneath</span>
-        <h2 class="serif">Sovereignty requires conditions.</h2>
-        <p class="lead">Sovereignty does not mean independence or doing whatever you want. It means having genuine authority over your own life. A person cannot exercise meaningful sovereignty if they cannot communicate in a way people recognise, are constantly overwhelmed, are expected to survive inaccessible environments, are excluded from decisions, or are forced to trade authenticity for belonging.</p>
+        <span class="eyebrow">The central question</span>
+        <h2 class="serif">Who gets to decide what a person&rsquo;s life should look like?</h2>
+        <p class="lead">Every book asks this question. That is sovereignty. My work is not about changing people. It is about creating the conditions where people can safely become themselves.</p>
       </div>
+      <p class="lead" style="margin-top:0">That is why these words keep appearing:</p>
       <ul class="conditions">
         <li>Access</li><li>Safety</li><li>Choice</li><li>Voice</li><li>Belonging</li><li>Capacity</li><li>Consent</li><li>Holding</li><li>Understanding</li><li>Partnership</li>
       </ul>
-      <p class="lead" style="text-align:center;max-width:640px;margin:26px auto 0">Every one of these is a prerequisite, not an outcome.</p>
+      <p class="lead" style="text-align:center;max-width:640px;margin:24px auto 0">They are all prerequisites for sovereignty.</p>
     </div>
   </section>
 
-  <!-- THE INTERESTING THING -->
-  <section id="inversion">
+  <!-- WHAT MY WORK IS REALLY ABOUT -->
+  <section id="really-about">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">The interesting thing</span>
-        <h2 class="serif">We do not teach the outcome. We build the conditions.</h2>
+        <span class="eyebrow">What my work is really about</span>
+        <h2 class="serif">I teach the conditions.</h2>
       </div>
       <ul class="inversion">
-        <li><span class="inv-a">We do not teach authenticity.</span><span class="inv-b">We teach the conditions that make authenticity possible.</span></li>
-        <li><span class="inv-a">We do not teach confidence.</span><span class="inv-b">We teach the conditions where confidence naturally grows.</span></li>
-        <li><span class="inv-a">We do not teach independence.</span><span class="inv-b">We teach environments where interdependence does not remove agency.</span></li>
-        <li><span class="inv-a">We do not teach regulation.</span><span class="inv-b">We teach access.</span></li>
-        <li><span class="inv-a">We do not teach resilience.</span><span class="inv-b">We teach conditions that reduce unnecessary suffering.</span></li>
+        <li><span class="a">I do not actually teach authenticity.</span><span class="b">I teach the conditions that make authenticity possible.</span></li>
+        <li><span class="a">I do not teach confidence.</span><span class="b">I teach the conditions where confidence naturally grows.</span></li>
+        <li><span class="a">I do not teach independence.</span><span class="b">I teach environments where interdependence does not remove agency.</span></li>
+        <li><span class="a">I do not teach regulation.</span><span class="b">I teach access.</span></li>
+        <li><span class="a">I do not teach resilience.</span><span class="b">I teach conditions that reduce unnecessary suffering.</span></li>
       </ul>
-      <p class="flourish">Human beings flourish when they have genuine authority over their own lives, within relationships and communities that can hold them.</p>
+      <p class="statement">Human beings flourish when they have genuine authority over their own lives within relationships and communities that can hold them.</p>
     </div>
   </section>
 
-  <!-- FREE 2 B ME PRACTICE LIBRARY -->
+  <!-- THE WORK MOVES OUTWARD -->
+  <section id="outward">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The work moves outward</span>
+        <h2 class="serif">From the person, into systems.</h2>
+      </div>
+      <div class="outward">
+        <article>
+          <span class="step">01</span>
+          <h3>The person</h3>
+          <p>Understanding your experience restores your ability to make choices instead of living inside everyone else&rsquo;s interpretations.</p>
+        </article>
+        <article>
+          <span class="step">02</span>
+          <h3>Relationships and support</h3>
+          <p>Support should never replace a person&rsquo;s voice. It should increase their influence over their own life.</p>
+        </article>
+        <article>
+          <span class="step">03</span>
+          <h3>Professional practice</h3>
+          <p>Professionals must ask whether a person has genuinely had access before interpreting, assessing or intervening.</p>
+        </article>
+        <article>
+          <span class="step">04</span>
+          <h3>Systems</h3>
+          <p>Good practice must be held through supervision, teams, organisations and systems that remain accountable to the person.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEED FILM -->
+  <div class="film seed">
+    <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_seed.jpg" aria-hidden="true">
+      <source src="/assets/keynote/kv_seed.mp4" type="video/mp4">
+    </video>
+    <button class="motion" type="button" data-motion>Pause motion</button>
+  </div>
+
+  <!-- PRACTICE LIBRARY -->
   <section id="library">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Free 2 B Me Practice Library</span>
-        <h2 class="serif">Eight connected books.</h2>
-        <p class="lead">The Free 2 B Me Practice Library develops these foundations across eight connected books. Four books explore the ideas from the perspective of people and families. Four companion books translate the same foundations into counselling, Positive Behaviour Support, supervision, team and organisational practice.</p>
+        <h2 class="serif">Eight connected books</h2>
+        <p class="lead">The Free 2 B Me Practice Library develops these ideas across eight connected books. Four books explore the ideas from the perspective of people and families. Four companion books translate the same foundations into counselling, Positive Behaviour Support, supervision, team and organisational practice.</p>
       </div>
 
       <div class="terr">
         <div class="terr-row">
           <div class="bk">
-            <div class="aud">For people and families</div>
+            <div class="aud">Book 1</div>
             <h3>It Shouldn&rsquo;t Be This Hard</h3>
             <p class="st">The Hidden Cost of Living in Conditions That Don&rsquo;t Fit</p>
             <p>The world is not asking too much of you because you are broken. It is often asking too much because the conditions are not right.</p>
@@ -408,10 +430,9 @@
             <div class="sov">Epistemic sovereignty</div>
           </div>
         </div>
-
         <div class="terr-row">
           <div class="bk">
-            <div class="aud">For people and families</div>
+            <div class="aud">Book 2</div>
             <h3>You Make Sense</h3>
             <p class="st">A Rights-Based Guide to Distress, Communication and Support That Helps</p>
             <p>Your experiences, body and behaviour make sense. Understanding yourself restores your ability to make choices instead of living inside everyone else&rsquo;s interpretations.</p>
@@ -425,10 +446,9 @@
             <div class="sov">Interpretive sovereignty</div>
           </div>
         </div>
-
         <div class="terr-row">
           <div class="bk">
-            <div class="aud">For people and families</div>
+            <div class="aud">Book 3</div>
             <h3>Nervous System Nourishment</h3>
             <p class="st">Finding What Supports Your Brain and Body</p>
             <p>Calm is not the goal. Having enough safety, access and choice to participate in your own life is.</p>
@@ -442,10 +462,9 @@
             <div class="sov">Embodied sovereignty</div>
           </div>
         </div>
-
         <div class="terr-row">
           <div class="bk">
-            <div class="aud">For people and families</div>
+            <div class="aud">Book 4</div>
             <h3>Built With You</h3>
             <p class="st">Why You Belong in the Design of Your Support and Your Life</p>
             <p>Support should never replace your voice. It should increase your influence over your own life.</p>
@@ -461,53 +480,28 @@
         </div>
       </div>
 
-      <div class="note" style="margin-top:30px">The books provide a deeper exploration of the framework. They are not required reading and do not replace individual assessment, informed consent, current support information or the person&rsquo;s own communication.</div>
-
       <div class="cta-row">
         <a class="btn btn-teal" href="/books/">Explore the Practice Library</a>
       </div>
     </div>
   </section>
 
-  <!-- WHAT THIS MEANS IN PRACTICE -->
-  <section id="practice">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">What this means in practice</span>
-        <h2 class="serif">This framework shapes how we:</h2>
-      </div>
-      <ul class="practice-list">
-        <li>listen to and interpret communication</li>
-        <li>understand distress and changes in capacity</li>
-        <li>design environments and supports</li>
-        <li>identify access barriers</li>
-        <li>respond to sensory and nervous-system needs</li>
-        <li>develop goals with the person</li>
-        <li>support participation without forcing performance</li>
-        <li>work with families and professional teams</li>
-        <li>review whether support is actually improving quality of life</li>
-        <li>maintain rights, consent, dignity and self-determination</li>
-      </ul>
-      <div class="boundary">
-        <h3 class="serif">Support remains individual.</h3>
-        <p>A shared framework does not mean every person receives the same strategies, goals, pathway or response. The framework guides how we think; the person guides what their support needs to become.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FROM SUPPORT TO SOVEREIGNTY -->
+  <!-- FEATURED KEYNOTE -->
   <section id="keynote">
     <div class="wrap">
+      <div class="sec-head" style="margin-bottom:34px">
+        <span class="eyebrow">Featured keynote</span>
+      </div>
       <div class="feature">
         <div class="l">
           <div class="tagrow">Cinematic keynote film &middot; 23 min</div>
           <h2 class="serif">From Support to Sovereignty</h2>
-          <p>Capacity, safety, and the conditions for neurodivergent self-determination &mdash; a keynote that moves practitioners from asking what a person can do toward asking what conditions make capacity visible, hidden, costly, or safe.</p>
+          <p class="kq">Capacity follows conditions. Sovereignty follows safety.</p>
+          <p>The opposite of survival is not independence. It is sovereignty.</p>
           <div class="cta-row" style="margin-top:0">
-            <a class="btn btn-teal" href="/speaking/from-support-to-sovereignty/">Watch the presentation</a>
-            <a class="btn btn-ghost" href="/sovereignty/transcript/">Read the transcript</a>
-            <a class="btn btn-ghost" href="/sovereignty/">Companion audit</a>
-            <a class="btn btn-ghost" href="/work-with-tanya/">Speaking enquiry</a>
+            <a class="btn btn-teal" href="/speaking/from-support-to-sovereignty/">Watch the Presentation</a>
+            <a class="btn btn-ghost" href="/sovereignty/transcript/">Read the Transcript</a>
+            <a class="btn btn-ghost" href="/sovereignty/">Explore the Sovereignty Conditions Audit</a>
           </div>
         </div>
         <div class="r">
@@ -520,18 +514,64 @@
     </div>
   </section>
 
-  <!-- ABOUT TANYA -->
+  <!-- FRAMEWORKS AND TOOLS -->
+  <section id="frameworks">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Frameworks and tools</span>
+        <h2 class="serif">Turning ideas into practice</h2>
+      </div>
+      <div class="tools">
+        <a class="tool" href="/frameworks/access-before-intervention/">
+          <h3>Access Before Intervention</h3>
+          <p>Before choosing a support or technique, consider whether the person can access what it requires &mdash; before difficulty is read as resistance or lack of capacity.</p>
+          <span class="go">Read more &rarr;</span>
+        </a>
+        <a class="tool" href="/frameworks/nervous-system-nourishment/">
+          <h3>Nervous System Nourishment</h3>
+          <p>The collaborative creation and protection of the conditions that support access, while preserving choice, bodily integrity and self-determination.</p>
+          <span class="go">Read more &rarr;</span>
+        </a>
+        <a class="tool" href="/sovereignty/">
+          <h3>Sovereignty Conditions Audit</h3>
+          <p>A reflection tool for examining the conditions that shape access. Not diagnostic.</p>
+          <span class="go">Open the audit &rarr;</span>
+        </a>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="/frameworks/">Explore Frameworks and Tools</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING AND PROFESSIONAL LEARNING -->
+  <section id="speaking">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Speaking and professional learning</span>
+        <h2 class="serif">Bringing the work into rooms where practice and systems can change</h2>
+        <p class="lead">Keynotes, workshops, professional learning, team development, supervision and reflective practice, and systems and organisational work &mdash; all returning to one question: who gets to decide what a person&rsquo;s life should look like?</p>
+      </div>
+      <div class="paths">
+        <a class="path" href="/speaking/"><h3 class="serif">Speaking</h3><p>Keynotes and conference presentations, and keynote-plus-workshop packages.</p><span class="go">Explore Speaking &rarr;</span></a>
+        <a class="path" href="/professional-learning/"><h3 class="serif">Professional Learning</h3><p>Workshops, team development, supervision and reflective practice.</p><span class="go">Explore Professional Learning &rarr;</span></a>
+        <a class="path" href="/work-with-tanya/"><h3 class="serif">Work With Me</h3><p>Systems and organisational work, media, and collaboration.</p><span class="go">Work With Me &rarr;</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section id="about">
     <div class="wrap person">
       <div class="portrait-wrap">
-        <img class="portrait-img" src="/assets/keynote/portrait.jpg" width="660" height="660" loading="lazy" alt="Tanya Hicks - counsellor, keynote speaker, and creator of the Sovereignty Conditions Audit">
+        <img class="portrait-img" src="/assets/keynote/portrait.jpg" width="660" height="660" loading="lazy" alt="Tanya Hicks">
       </div>
       <div>
         <span class="eyebrow">About</span>
-        <h2 class="serif">Tanya Hicks</h2>
-        <p style="color:var(--soft);font-size:16.5px">An AuDHD thinker, counsellor, writer, and speaker working at the intersection of neurodiversity, sovereignty, nervous-system safety, and systems design.</p>
-        <p style="color:var(--muted);font-size:16px">Her work asks a different question of practice &mdash; not &ldquo;what can this person do?&rdquo;, but &ldquo;what conditions are shaping what we&rsquo;re able to see?&rdquo;</p>
-        <p style="color:var(--soft);font-size:15px;line-height:1.55"><span style="color:var(--teal-dim)">Author</span>, speaker, counsellor (ACA R82053), NDIS Behaviour Support Practitioner (P1362818), Master of Counselling candidate and framework developer. Founder of Neurodivergent Empowered and creator of the Sovereignty Conditions Audit.</p>
+        <h2 class="serif">About me</h2>
+        <p style="color:var(--soft);font-size:16.5px">I am an Autistic author and practitioner, a counsellor and Behaviour Support Practitioner, a framework developer, researcher and speaker.</p>
+        <p style="color:var(--muted);font-size:16px">I founded Neurodivergent Empowered and Sparkly Aliens Inc., and I am the author of the wider Free 2 B Me body of work. My work asks a different question of practice &mdash; not &ldquo;what can this person do?&rdquo;, but &ldquo;what conditions are shaping what we&rsquo;re able to see?&rdquo;</p>
+        <p style="color:var(--soft);font-size:15px;line-height:1.55">Counsellor (ACA R82053), NDIS Behaviour Support Practitioner (P1362818), and Master of Counselling candidate. I created the Sovereignty Conditions Audit.</p>
         <div class="memberships">
           <div class="cap">Professional memberships</div>
           <div class="marks">
@@ -539,43 +579,54 @@
             <span style="background:#fff;border-radius:10px;padding:9px 15px;display:inline-flex;align-items:center"><img src="/assets/aca-member.png" alt="Australian Counselling Association member" height="30" style="display:block"></span>
           </div>
         </div>
-        <p style="color:var(--faint);font-size:13.5px;line-height:1.55">TanyaHicks.com is the home of Tanya Hicks&rsquo; books, speaking, frameworks, research translation and professional learning. Participant supports are delivered separately through Neurodivergent Empowered and The Nest within the relevant practitioner&rsquo;s qualifications, professional scope and active provider registration.</p>
+        <p style="color:var(--faint);font-size:13.5px;line-height:1.55">TanyaHicks.com is the home of my books, speaking, frameworks, research translation and professional learning. Participant supports are delivered separately through Neurodivergent Empowered and The Nest within the relevant practitioner&rsquo;s qualifications, professional scope and active provider registration.</p>
         <div class="cta-row">
-          <a class="btn btn-teal" href="/work-with-tanya/">Work with Tanya</a>
-          <a class="btn btn-ghost" href="#foundations">Read the foundations</a>
+          <a class="btn btn-teal" href="/work-with-tanya/">Work With Me</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PATHWAYS -->
-  <section id="pathways">
+  <!-- WHERE THE WORK LIVES -->
+  <section id="homes">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">Where to go next</span>
-        <h2 class="serif">Start where the work meets you</h2>
+        <span class="eyebrow">Where the work lives</span>
+        <h2 class="serif">One philosophy expressed in different ways</h2>
       </div>
-      <div class="paths">
-        <a class="path" href="/books/"><h3 class="serif">Books</h3><p>The Free 2 B Me Practice Library &mdash; four books for people and families, four companions for professional practice.</p><span class="go">Explore the books &rarr;</span></a>
-        <a class="path" href="/speaking/"><h3 class="serif">Speaking</h3><p>Keynotes, conference presentations and keynote-plus-workshop packages.</p><span class="go">Explore speaking &rarr;</span></a>
-        <a class="path" href="/frameworks/"><h3 class="serif">Frameworks &amp; Tools</h3><p>The practice architecture behind the work, and the Sovereignty Conditions Audit.</p><span class="go">Explore frameworks and tools &rarr;</span></a>
-        <a class="path" href="/professional-learning/"><h3 class="serif">Professional Learning</h3><p>Professional development, workshops, reflective practice, supervision and team development.</p><span class="go">Explore professional learning &rarr;</span></a>
-        <a class="path" href="/research/"><h3 class="serif">Research &amp; Systems Change</h3><p>Essays, framework notes and longer-form writing on capacity, safety, sovereignty and systems.</p><span class="go">Explore research and systems change &rarr;</span></a>
-        <a class="path" href="/work-with-tanya/"><h3 class="serif">Work With Tanya</h3><p>Keynotes, professional learning, supervision, media and organisational conversations.</p><span class="go">Start a conversation &rarr;</span></a>
+      <div class="homes">
+        <div class="home">
+          <h3 class="serif">Tanya Hicks</h3>
+          <p>Books, writing, frameworks, research, speaking and professional learning.</p>
+          <span class="go">You are here</span>
+        </div>
+        <a class="home" href="https://www.free2bme.au" target="_blank" rel="noopener">
+          <h3 class="serif">Neurodivergent Empowered</h3>
+          <p>Neuroaffirming counselling, disability support and professional practice.</p>
+          <span class="go">Visit &rarr;</span>
+        </a>
+        <a class="home" href="https://sparklyaliensinc.com" target="_blank" rel="noopener">
+          <h3 class="serif">Sparkly Aliens Inc.</h3>
+          <p>Community, sanctuary, connection and access.</p>
+          <span class="go">Visit &rarr;</span>
+        </a>
       </div>
-      <div class="note" style="margin-top:34px">
-        <strong style="color:var(--cream)">Looking for support services?</strong><br>
-        Therapy, client services, and NDIS supports are delivered through Neurodivergent Empowered.
-        <a href="https://www.free2bme.au" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;color:var(--teal)">Visit Neurodivergent Empowered &rarr;</a>
-      </div>
+      <p class="statement">These are not unrelated brands. They are different expressions of the same commitment: creating the conditions where people can safely become themselves and remain the primary authority over their own lives.</p>
     </div>
   </section>
 
-  <!-- CLOSER -->
+  <!-- FINAL -->
   <div class="closer">
     <div class="wrap">
-      <p class="phrase serif">Access is created with the person, not earned through performance.<br>Capacity is contextual. Agency is not earned. Self-determination guides the work.</p>
-      <p class="practice">Assess the conditions before you assess capacity.</p>
+      <span class="eyebrow">The deeper question remains</span>
+      <p class="q serif" style="margin-top:16px">Who gets to decide what a person&rsquo;s life should look like?</p>
+      <p class="senses">People make sense in context. Behaviour makes sense. Distress makes sense. Changes in capacity make sense.</p>
+      <p class="body">Support should not be designed to make people appear more compliant, independent or typical. It should reduce unnecessary barriers, protect rights, support communication and build the conditions in which people can participate, recover, develop and belong.</p>
+      <div class="cta-row">
+        <a class="btn btn-teal" href="#sovereignty">Explore My Work</a>
+        <a class="btn btn-ghost" href="/speaking/from-support-to-sovereignty/">Watch From Support to Sovereignty</a>
+        <a class="btn btn-ghost" href="/work-with-tanya/">Work With Me</a>
+      </div>
     </div>
   </div>
 </main>
@@ -585,42 +636,36 @@
     <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
       <img src="/assets/loapac-affiliate.png" alt="LOAPAC Affiliate Member" width="34" height="34" style="display:block">
       <span style="background:#fff;border-radius:6px;padding:4px 8px;display:inline-flex;align-items:center"><img src="/assets/aca-member.png" alt="Australian Counselling Association member" height="16" style="display:block"></span>
-      <span>&copy; Tanya Hicks &middot; Neurodiversity-affirming practice</span>
+      <span>&copy; Tanya Hicks</span>
     </div>
     <div class="fl">
+      <a href="#sovereignty">Human Sovereignty</a>
       <a href="/books/">Books</a>
+      <a href="/frameworks/">Frameworks and Tools</a>
       <a href="/speaking/">Speaking</a>
-      <a href="/frameworks/">Frameworks &amp; Tools</a>
       <a href="/professional-learning/">Professional Learning</a>
-      <a href="/research/">Research &amp; Systems Change</a>
-      <a href="/work-with-tanya/">Work With Tanya</a>
+      <a href="/work-with-tanya/">Work With Me</a>
     </div>
   </div>
 </footer>
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  var m=document.querySelector('.menu-toggle');
-  if(m)m.addEventListener('click',function(){
-    var n=document.querySelector('.navlinks');
-    if(!n)return;
-    var open=n.style.display==='flex';
-    n.style.display=open?'none':'flex';
-    m.setAttribute('aria-expanded',String(!open));
+  var m=document.querySelector('.menu-toggle'),n=document.getElementById('nav');
+  if(m&&n)m.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    m.setAttribute('aria-expanded',String(open));
   });
-
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-motion]').forEach(function(btn){
-    var scope=btn.parentElement;
-    var vid=scope?scope.querySelector('video'):null;
+    var vid=btn.parentElement?btn.parentElement.querySelector('video'):null;
     if(!vid){btn.style.display='none';return;}
     function paint(){btn.textContent=vid.paused?'Play motion':'Pause motion';}
     function go(){var p=vid.play();if(p&&p.catch)p.catch(function(){});}
     if(reduce){vid.pause();}else{go();}
     paint();
     btn.addEventListener('click',function(){vid.paused?go():vid.pause();paint();});
-    vid.addEventListener('play',paint);
-    vid.addEventListener('pause',paint);
+    vid.addEventListener('play',paint);vid.addEventListener('pause',paint);
   });
 });
 </script>
