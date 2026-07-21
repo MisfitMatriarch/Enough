@@ -4,19 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tanya Hicks | Human Sovereignty</title>
-<meta name="description" content="People cannot truly become themselves unless they have sovereignty over their own lives. My work explores the conditions that make this possible.">
+<meta name="description" content="People cannot truly become authentically themselves unless they have sovereignty over their own lives. My work explores the conditions that make this possible.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tanya Hicks">
 <meta property="og:url" content="https://tanyahicks.com/">
 <meta property="og:title" content="Tanya Hicks | Human Sovereignty">
-<meta property="og:description" content="People cannot truly become themselves unless they have sovereignty over their own lives.">
+<meta property="og:description" content="People cannot truly become authentically themselves unless they have sovereignty over their own lives.">
 <meta property="og:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Tanya Hicks - Capacity follows conditions. Sovereignty follows safety.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Tanya Hicks | Human Sovereignty">
-<meta name="twitter:description" content="People cannot truly become themselves unless they have sovereignty over their own lives.">
+<meta name="twitter:description" content="People cannot truly become authentically themselves unless they have sovereignty over their own lives.">
 <meta name="twitter:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0b10'/><circle cx='16' cy='16' r='6' fill='%236bd0c6'/></svg>">
 <style>
@@ -229,7 +229,18 @@
     .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;
       align-items:flex-start;gap:0;background:var(--ground2);border-bottom:1px solid var(--line);padding:10px 26px 18px}
     .navlinks.open>a{padding:11px 0;width:100%}
-    .inversion li,.terr-row,.feature,.person,.outward,.tools,.paths,.homes{grid-template-columns:1fr}
+    /* minmax(0,1fr): a plain 1fr track cannot shrink below its content's
+       min-content width, so long nowrap button text forced the grid wider
+       than the viewport. */
+    .inversion li,.terr-row,.feature,.person,.outward,.tools,.paths,.homes{grid-template-columns:minmax(0,1fr)}
+    .feature .l{padding:28px 22px}
+    .btn{white-space:normal;text-align:center}
+    /* tap targets: 44px minimum */
+    .btn,.navlinks.open>a{min-height:44px;display:flex;align-items:center;justify-content:center}
+    .menu-toggle{min-width:44px;min-height:44px}
+    .foot .fl{gap:0 20px}
+    .foot .fl a,.brand{min-height:44px;display:inline-flex;align-items:center}
+    .motion{min-height:40px;right:10px;bottom:10px}
     .outward article,.outward article+article{padding:26px 0;border-left:0}
     .terr-row .bk,.terr-row .bk+.bk{padding:26px 0;border-left:0}
     .inversion .a{padding:22px 0 6px}
@@ -280,7 +291,7 @@
     <button class="motion" type="button" data-motion>Pause motion</button>
     <div class="wrap hero-inner">
       <span class="eyebrow">Tanya Hicks</span>
-      <h1 class="serif">People cannot truly become themselves unless they have sovereignty over their own lives.</h1>
+      <h1 class="serif">People cannot truly become authentically themselves unless they have sovereignty over their own lives.</h1>
       <div class="cta-row">
         <a class="btn btn-teal" href="#question">Explore My Work</a>
         <a class="btn btn-ghost" href="/speaking/from-support-to-sovereignty/">Watch From Support to Sovereignty</a>
@@ -302,7 +313,7 @@
       <div class="sec-head">
         <span class="eyebrow">The central question</span>
         <h2 class="serif">Who gets to decide what a person&rsquo;s life should look like?</h2>
-        <p class="lead">That is sovereignty. My work is not about changing people. It is about creating the conditions where people can safely become themselves.</p>
+        <p class="lead">That is sovereignty. My work is not about changing people. It is about creating the conditions where people can safely become authentically themselves.</p>
       </div>
       <p class="lead" style="margin-top:0">That is why these words keep appearing:</p>
       <ul class="conditions">
@@ -334,7 +345,7 @@
         <li><span class="a">I do not teach regulation.</span><span class="b">I teach access.</span></li>
         <li><span class="a">I do not teach resilience.</span><span class="b">I teach conditions that reduce unnecessary suffering.</span></li>
       </ul>
-      <p class="statement">Human beings flourish when they have genuine authority over their own lives within relationships and communities that can hold them.</p>
+      <p class="statement">Human beings flourish when they have genuine authority over their own lives, within relationships and communities that can hold them.</p>
     </div>
   </section>
 
@@ -349,7 +360,7 @@
         <article>
           <span class="step">01</span>
           <h3>The person</h3>
-          <p>Understanding your experience restores your ability to make choices instead of living inside everyone else&rsquo;s interpretations.</p>
+          <p>Understanding your experience restores your ability to make informed choices instead of living inside everyone else&rsquo;s interpretations.</p>
         </article>
         <article>
           <span class="step">02</span>
@@ -468,7 +479,7 @@
       </div>
       <div class="feature">
         <div class="l">
-          <div class="tagrow">Cinematic keynote film &middot; 23 min</div>
+          <div class="tagrow">NeuroAffirming Practitioners Conference 2026 &middot; Cinematic keynote film &middot; 23 min</div>
           <h2 class="serif">From Support to Sovereignty</h2>
           <p class="kq">Capacity follows conditions. Sovereignty follows safety.</p>
           <p>The opposite of survival is not independence. It is sovereignty.</p>
@@ -498,7 +509,7 @@
       <div class="tools">
         <a class="tool" href="/frameworks/access-before-intervention/">
           <h3>Access Before Intervention</h3>
-          <p>Before choosing a support or technique, consider whether the person can access what it requires &mdash; before difficulty is read as resistance or lack of capacity.</p>
+          <p>Before choosing a support or technique, consider whether the person can access what it requires - before difficulty is read as resistance or lack of capacity.</p>
           <span class="go">Read more &rarr;</span>
         </a>
         <a class="tool" href="/frameworks/nervous-system-nourishment/">
@@ -524,7 +535,7 @@
       <div class="sec-head">
         <span class="eyebrow">Speaking and professional learning</span>
         <h2 class="serif">Bringing the work into rooms where practice and systems can change</h2>
-        <p class="lead">Keynotes, workshops, professional learning, team development, supervision and reflective practice, and systems and organisational work &mdash; all returning to one question: who gets to decide what a person&rsquo;s life should look like?</p>
+        <p class="lead">Keynotes, workshops, professional learning, team development, supervision and reflective practice, and systems and organisational work - all returning to one question: who gets to decide what a person&rsquo;s life should look like?</p>
       </div>
       <div class="paths">
         <a class="path" href="/speaking/"><h3 class="serif">Speaking</h3><p>Keynotes and conference presentations, and keynote-plus-workshop packages.</p><span class="go">Explore Speaking &rarr;</span></a>
@@ -544,7 +555,7 @@
         <span class="eyebrow">About</span>
         <h2 class="serif">About me</h2>
         <p style="color:var(--soft);font-size:16.5px">I am an Autistic author and practitioner, a counsellor and Behaviour Support Practitioner, a framework developer, researcher and speaker.</p>
-        <p style="color:var(--muted);font-size:16px">I founded Neurodivergent Empowered and Sparkly Aliens Inc., and I am the author of the wider Free 2 B Me body of work. My work asks a different question of practice &mdash; not &ldquo;what can this person do?&rdquo;, but &ldquo;what conditions are shaping what we&rsquo;re able to see?&rdquo;</p>
+        <p style="color:var(--muted);font-size:16px">I founded Neurodivergent Empowered and Sparkly Aliens Inc., and I am the author of the wider Free 2 B Me body of work. My work asks a different question of practice - not &ldquo;what can this person do?&rdquo;, but &ldquo;what conditions are shaping what we&rsquo;re able to see?&rdquo;</p>
         <p style="color:var(--soft);font-size:15px;line-height:1.55">Counsellor (ACA R82053), NDIS Behaviour Support Practitioner (P1362818), and Master of Counselling candidate. I created the Sovereignty Conditions Audit.</p>
         <div class="memberships">
           <div class="cap">Professional memberships</div>
@@ -585,7 +596,7 @@
           <span class="go">Visit &rarr;</span>
         </a>
       </div>
-      <p class="statement">These are not unrelated brands. They are different expressions of the same commitment: creating the conditions where people can safely become themselves and remain the primary authority over their own lives.</p>
+      <p class="statement">These are not unrelated brands. They are different expressions of the same commitment: creating the conditions where people can safely become authentically themselves and remain the primary authority over their own lives.</p>
     </div>
   </section>
 

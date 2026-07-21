@@ -78,3 +78,44 @@ footer a{color:var(--soft);text-decoration:none}
 .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+
+/* ═══════════════════════════════════════════
+   Responsive layer. Added 2026-07-22.
+   hub.css previously had no width media queries, so every hub page
+   rendered its desktop layout on phones. CSS only - no markup changes.
+═══════════════════════════════════════════ */
+
+/* Never let a grid track be forced wider than the viewport by its content. */
+.grid{grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr))}
+
+@media (max-width:860px){
+  .wrap{padding:0 18px}
+
+  /* Nav: no hamburger exists in the markup, so wrap it into a readable
+     block with proper tap targets instead of a cramped single line. */
+  nav.bar{padding:12px 0;gap:10px}
+  .navlinks{gap:4px 16px;width:100%}
+  .navlinks a{font-size:15px;padding:9px 0;min-height:44px;display:inline-flex;align-items:center}
+  .brand{font-size:20px}
+
+  /* Buttons: allow wrapping and meet the 44px tap target. */
+  .btn{display:inline-flex;align-items:center;justify-content:center;
+       min-height:44px;white-space:normal;text-align:center}
+  .cta-row{gap:10px}
+  .cta-row .btn{width:100%}
+
+  section{padding:34px 0}
+  h1{font-size:clamp(26px,7.4vw,34px)}
+  h2{font-size:clamp(21px,5.4vw,26px)}
+  .lead{font-size:16px}
+  .card{padding:18px}
+  .note{padding:14px 16px}
+  footer .navlinks a{min-height:40px}
+}
+
+@media (max-width:520px){
+  .wrap{padding:0 15px}
+  .navlinks{gap:2px 14px}
+  .navlinks a{font-size:14.5px}
+  .boundary{font-size:13px}
+}

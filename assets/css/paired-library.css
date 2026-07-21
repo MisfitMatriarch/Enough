@@ -24,3 +24,10 @@
 .principle-card p{color:var(--muted);font-size:14px;margin:0}
 .rights-gate{border-left:4px solid #d46b6b;background:rgba(212,107,107,.08);padding:18px 22px;border-radius:0 12px 12px 0;color:var(--soft)}
 @media(max-width:860px){.pair-grid,.pair-body,.principles-grid{grid-template-columns:1fr}.book-side+.book-side{border-left:0;border-top:1px solid var(--line)}}
+
+@media (max-width:860px){
+  .pair-body{grid-template-columns:minmax(0,1fr)}
+  .book-side{padding:20px;min-height:0}
+  .book-side+.book-side{border-left:0;border-top:1px solid var(--line)}
+  .pair-territory{font-size:20px}
+}
