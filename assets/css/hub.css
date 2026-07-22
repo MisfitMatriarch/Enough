@@ -1,3 +1,7 @@
+@font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Figtree';src:url('/assets/fonts/figtree-var.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
+html{font-synthesis:none}
 /* ═══════════════════════════════════════════
    TANYA HICKS — hub.css
    Shared styles for Category 5 hub pages.
@@ -7,8 +11,8 @@
   --ground:#0a0b10; --panel:#11141c; --cream:#ece9e1; --soft:#cfd3d9;
   --muted:#a7b0b9; --faint:#79828c; --teal:#6bd0c6; --teal-dim:#4a9a92;
   --gold:#d8b27a; --line:rgba(255,255,255,.09);
-  --serif:Georgia,"Times New Roman",serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
   --wrap:1140px;
 }
 *,*::before,*::after{box-sizing:border-box}
