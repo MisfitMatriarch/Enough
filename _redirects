@@ -1,11 +1,23 @@
 # Netlify redirects - TanyaHicks.com
 #
-# ENOUGH interactive content (starting-line visual, exhaustion, energy-drain,
-# the six-stage ledger interactive) migrated into /books/it-shouldnt-be-this-hard/
-# on 2026-07-16. The /enough/ route now redirects there. The trailing "!" forces
-# the redirect even though a small /enough/index.html stub still exists.
-/enough/*  /books/it-shouldnt-be-this-hard/  301!
+# BOOK 1 IDENTITY (2026-08-27). The foundational person-facing book is now
+#   FREE 2B ME: Less fixing. More living.
+# canonical at /books/free-2b-me/. Every historical route for that book resolves
+# there in ONE hop.
+#
+# One hop matters. /enough/* and /books/enough/ previously pointed at
+# /books/it-shouldnt-be-this-hard/. Leaving them alone and adding a further
+# redirect from the old slug would have built a chain
+#   /enough/* -> old slug -> new slug
+# which leaks link equity and slows every historical inbound link. They are
+# repointed straight at the canonical route instead.
+#
+# The trailing "!" forces the redirect even though the historical page files still
+# exist on disk. That is deliberate: the source is PRESERVED in the repository for
+# provenance while the public route resolves to the current book.
 
-# Preserve historical external links while titles are migrated.
-/designed-for-more/*  /books/  301
-/books/enough/        /books/it-shouldnt-be-this-hard/  301
+/books/it-shouldnt-be-this-hard/*  /books/free-2b-me/  301!
+/books/book-1/*                    /books/free-2b-me/  301!
+/books/enough/*                    /books/free-2b-me/  301!
+/enough/*                          /books/free-2b-me/  301!
+/designed-for-more/*               /books/free-2b-me/  301!

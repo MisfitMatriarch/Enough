@@ -1,30 +1,34 @@
 {
   "library": {
-    "name": "Free 2 B Me Practice Library",
+    "name": "FREE 2B ME Practice Library",
     "descriptor": "Four books for people. Four books for practice. One coherent way of working.",
     "editorial_status": "locked",
     "editorial_lock_date": "2026-07-15",
     "publisher_contract_status": "review_required",
     "title_clearance_status": "publisher_and_legal_clearance_required",
     "governing_principle": "Access",
-    "shared_promise": "Free 2 B Me"
+    "shared_promise": "Less fixing. More living."
   },
   "pairs": [
     {
       "id": "access-and-conditions",
       "territory": "Access, hidden cost and conditions",
       "person": {
-        "title": "IT SHOULDN'T BE THIS HARD",
-        "subtitle": "The Hidden Cost of Living in Conditions That Don't Fit",
-        "slug": "it-shouldnt-be-this-hard",
+        "title": "FREE 2B ME",
+        "subtitle": "Less fixing. More living.",
+        "slug": "free-2b-me",
         "status": "in_development",
-        "promise": "The difficulty is not proof that you have failed. It is information about conditions, access and fit.",
+        "promise": "The book does not decide in advance that the person must change or that the environment is always the problem. It asks what needs to be learned, supported, understood, changed or redesigned - and where responsibility and authority sit.",
         "source_reservoirs": [
           "ENOUGH",
           "UNMASKED",
           "UNTANGLED",
           "Arrival Ledger",
           "Misfit Tax Ledgers"
+        ],
+        "historical_source_titles": [
+          "ENOUGH",
+          "It Shouldn't Be This Hard"
         ]
       },
       "practice": {
