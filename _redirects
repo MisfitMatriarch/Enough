@@ -1,11 +1,12 @@
-# Netlify redirects - TanyaHicks.com
+# Netlify redirects
 #
-# ENOUGH interactive content (starting-line visual, exhaustion, energy-drain,
-# the six-stage ledger interactive) migrated into /books/it-shouldnt-be-this-hard/
-# on 2026-07-16. The /enough/ route now redirects there. The trailing "!" forces
-# the redirect even though a small /enough/index.html stub still exists.
-/enough/*  /books/it-shouldnt-be-this-hard/  301!
+# Book one's canonical route is /books/free-2b-me/ (title: FREE 2B ME: Less fixing.
+# More living.). Every earlier route for that book is preserved as a 301 so inbound
+# links, citations and publication history keep resolving. The old titles survive as
+# provenance only - they are not the current public identity of the book.
+/books/it-shouldnt-be-this-hard/*  /books/free-2b-me/  301!
+/books/enough/                     /books/free-2b-me/  301
+/enough/*                          /books/free-2b-me/  301!
 
 # Preserve historical external links while titles are migrated.
 /designed-for-more/*  /books/  301
-/books/enough/        /books/it-shouldnt-be-this-hard/  301
