@@ -21,3 +21,9 @@
 /books/enough/*                    /books/free-2b-me/  301!
 /enough/*                          /books/free-2b-me/  301!
 /designed-for-more/*               /books/free-2b-me/  301!
+
+# /the-practice/ was a live page until the Book 1 restructure removed it. Its subject -
+# understanding and access before intervention - now lives under /frameworks/. Without this it
+# would 404 for every inbound link that already points at it, which is the one thing a
+# restructure must not do quietly.
+/the-practice/*                    /frameworks/        301
