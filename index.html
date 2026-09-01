@@ -209,6 +209,19 @@
   .memberships .cap{font-size:var(--fs-eyebrow);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
   .memberships .marks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 
+  /* Ecosystem cards. These classes are used by the ecosystem section but were only
+     ever defined in assets/css/hub.css, which the homepage does not load - it has no
+     external stylesheet at all. The eight ecosystem cards were therefore rendering with
+     no panel, border, padding or grid on the live site. Rules lifted verbatim from
+     hub.css so the homepage and the interior pages stay identical; every variable they
+     use is already defined in :root above. */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:18px}
+  .card{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
+    border-radius:16px;padding:28px;transition:.22s}
+  .card:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
+  .card h3{margin-top:0}
+  .card p{margin:0;color:var(--muted);font-size:var(--fs-small);max-width:44ch}
+
   /* Where the work lives */
   .homes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
   .home{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,var(--panel),var(--ground2));display:flex;flex-direction:column;transition:.22s}
@@ -237,6 +250,7 @@
     .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--ground2);border-bottom:1px solid var(--line);padding:10px 26px 18px}
     .navlinks.open>a{padding:11px 0;width:100%;min-height:44px;display:flex;align-items:center}
     .inversion li,.terr-row,.feature,.person,.outward,.tools,.paths,.homes{grid-template-columns:minmax(0,1fr)}
+    .card{padding:22px}
     .feature .l{padding:28px 22px}
     .btn{white-space:normal;text-align:center;min-height:44px}
     .cta-row .btn{width:100%}
