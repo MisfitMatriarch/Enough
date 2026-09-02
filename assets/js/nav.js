@@ -7,6 +7,11 @@
 
    Not loaded on the Book 1 landing page or the Sovereignty audit tool - both keep
    their own navigation deliberately.
+
+   LABELLING - LOCKED. The panel wordmark is "FREE 2B ME" and the first route stays
+   "Home". Do not rename Home to FREE 2B ME: brand identity and destination label do
+   different jobs, and using the brand twice would make the reader work out whether it
+   meant the brand, the ecosystem overview, or the home page.
    ========================================================================== */
 (function () {
   'use strict';

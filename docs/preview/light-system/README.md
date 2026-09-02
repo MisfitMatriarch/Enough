@@ -22,3 +22,21 @@ reviewed without a running local server and without deploying to production.
 | `13-desktop-header-and-buttons.jpg` | Desktop - full nav, magenta primary, teal active |
 
 Desktop captures are 1328px wide. Mobile captures are rendered at a true 390px viewport.
+
+## Locked decisions
+
+- **Mobile navigation:** Option B, the FREE 2B ME Menu. Not the wrapped editorial band -
+  nine routes at 44px targets cost roughly 39% of a 390x844 screen even when refined.
+- **Menu labelling:** panel wordmark is FREE 2B ME; the first route stays Home. The brand
+  identity and the destination label do different jobs.
+- **Buttons:** 18px radius, magenta primary, charcoal outline secondary, aqua as accent.
+- **Logo:** two explicit surface-context assets. Light surfaces use
+  `free-to-be-me-logo-light`, dark surfaces keep the existing reversed asset. The header
+  composition is phoenix brandmark + Tanya Hicks, not the full arced lockup.
+
+## Outstanding
+
+`free-to-be-me-logo-light.svg` / `.png` - transparent, full-colour phoenix, charcoal
+lettering, ~1024px+. Until it exists the light slot points at the reversed asset, so the
+mark reads faint on warm white. Swapping it is one line: `assets/css/nav.css`, the
+`--brand-mark-light` declaration.
