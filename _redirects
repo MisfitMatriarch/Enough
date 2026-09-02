@@ -14,3 +14,9 @@
 # /systems-change/ became /for-organisations/. The page was framed as a critique of
 # sector failure; it is now an offer to organisations. The old path keeps resolving.
 /systems-change/*                  /for-organisations/  301!
+
+# Sovereignty routing, locked 2026-09-02. The old top-level path now resolves to the optional
+# professional deep dive. No splat: /sovereignty/transcript/ is a real page and must keep
+# resolving to itself. The audit tool it used to hold moved to /frameworks/ and is linked from
+# the deeper-architecture page rather than deleted.
+/sovereignty/                      /the-practice/deeper-architecture/  301
