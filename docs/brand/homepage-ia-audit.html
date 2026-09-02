@@ -1,0 +1,329 @@
+<title>Homepage Communication Pass</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --ground:#FBFAF7; --panel:#FFFFFF; --panel2:#F4F2EE;
+    --ink:#222222; --body:#3A3A3A; --muted:#5C5A56; --faint:#7A7770;
+    --teal:#23807A; --magenta:#C4114F; --purple:#6B4C9A; --amber:#8A5A00;
+    --line:rgba(34,34,34,.14); --line2:rgba(34,34,34,.07);
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --sans:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#1C1B1A; --panel:#252423; --panel2:#2E2C2A;
+      --ink:#F5F3EF; --body:#DDD9D3; --muted:#AAA59D; --faint:#8A857D;
+      --teal:#5FD3CA; --magenta:#F2769F; --purple:#B49AD8; --amber:#E0B25E;
+      --line:rgba(255,255,255,.16); --line2:rgba(255,255,255,.08);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#1C1B1A; --panel:#252423; --panel2:#2E2C2A;
+    --ink:#F5F3EF; --body:#DDD9D3; --muted:#AAA59D; --faint:#8A857D;
+    --teal:#5FD3CA; --magenta:#F2769F; --purple:#B49AD8; --amber:#E0B25E;
+    --line:rgba(255,255,255,.16); --line2:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ground);color:var(--body);
+    font:400 16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--ink);text-wrap:balance;margin:0}
+  h1{font:300 clamp(34px,6vw,54px)/1.08 var(--serif);letter-spacing:-.01em}
+  h2{font:400 clamp(23px,3.4vw,31px)/1.2 var(--serif);margin:0 0 6px}
+  h3{font:600 15px/1.4 var(--sans);letter-spacing:.01em}
+  p{margin:0 0 14px;max-width:66ch}
+  .eyebrow{font:600 11px/1 var(--sans);letter-spacing:.17em;text-transform:uppercase;
+    color:var(--teal);margin:0 0 12px}
+
+  header.top{padding:56px 0 34px;border-bottom:1px solid var(--line)}
+  .sub{font:300 clamp(17px,2.4vw,21px)/1.5 var(--serif);color:var(--muted);max-width:60ch;margin:14px 0 0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;
+    font:500 12.5px/1 var(--sans);color:var(--faint)}
+  .meta b{color:var(--ink);font-weight:600}
+
+  section.block{padding:46px 0;border-bottom:1px solid var(--line2)}
+  .lede{font:300 clamp(18px,2.6vw,22px)/1.48 var(--serif);color:var(--ink);max-width:62ch}
+
+  /* evidence figures */
+  .figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;
+    background:var(--line2);border:1px solid var(--line2);border-radius:12px;overflow:hidden;margin:26px 0 8px}
+  .fig{background:var(--panel);padding:18px 18px 16px}
+  .fig .n{font:600 30px/1 var(--sans);color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+  .fig .l{font:500 12.5px/1.35 var(--sans);color:var(--muted);margin-top:7px}
+  .fig .k{font:500 11.5px/1.3 var(--sans);color:var(--faint);margin-top:4px}
+
+  /* audit table */
+  .scroll{overflow-x:auto;margin:22px 0 6px;border:1px solid var(--line2);border-radius:12px}
+  table{border-collapse:collapse;width:100%;min-width:660px;background:var(--panel)}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line2);vertical-align:top;font-size:14.5px}
+  th{font:600 11.5px/1.3 var(--sans);letter-spacing:.09em;text-transform:uppercase;
+    color:var(--faint);background:var(--panel2);position:sticky;top:0}
+  tr:last-child td{border-bottom:0}
+  td.sec{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--ink);white-space:nowrap}
+  td.num{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+
+  .tag{display:inline-block;font:600 11px/1 var(--sans);letter-spacing:.06em;
+    text-transform:uppercase;padding:5px 9px;border-radius:5px;white-space:nowrap;border:1px solid}
+  .keep{color:var(--teal);border-color:color-mix(in srgb,var(--teal) 42%,transparent);
+    background:color-mix(in srgb,var(--teal) 9%,transparent)}
+  .merge{color:var(--purple);border-color:color-mix(in srgb,var(--purple) 42%,transparent);
+    background:color-mix(in srgb,var(--purple) 9%,transparent)}
+  .deeper{color:var(--amber);border-color:color-mix(in srgb,var(--amber) 42%,transparent);
+    background:color-mix(in srgb,var(--amber) 10%,transparent)}
+  .trans{color:var(--magenta);border-color:color-mix(in srgb,var(--magenta) 40%,transparent);
+    background:color-mix(in srgb,var(--magenta) 8%,transparent)}
+
+  /* proposed structure */
+  ol.ia{list-style:none;counter-reset:s;padding:0;margin:24px 0 0}
+  ol.ia li{counter-increment:s;position:relative;padding:0 0 0 54px;margin-bottom:22px}
+  ol.ia li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:1px;
+    font:600 12px/1 var(--sans);color:var(--teal);letter-spacing:.06em;
+    border:1px solid color-mix(in srgb,var(--teal) 35%,transparent);border-radius:5px;padding:6px 7px}
+  ol.ia h3{font:400 20px/1.3 var(--serif);color:var(--ink);margin-bottom:3px}
+  ol.ia p{margin:0;font-size:15px;color:var(--muted);max-width:62ch}
+  ol.ia .from{display:block;margin-top:5px;font:500 12.5px/1.4 var(--sans);color:var(--faint)}
+
+  /* before / after */
+  .ba{border:1px solid var(--line2);border-radius:12px;overflow:hidden;margin:18px 0}
+  .ba .row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line2)}
+  .ba .cell{background:var(--panel);padding:16px 18px}
+  .ba .cell.after{background:var(--panel2)}
+  .ba .lab{font:600 10.5px/1 var(--sans);letter-spacing:.13em;text-transform:uppercase;
+    color:var(--faint);margin-bottom:9px}
+  .ba .cell.after .lab{color:var(--teal)}
+  .ba q{quotes:none;display:block;font:300 17px/1.45 var(--serif);color:var(--ink)}
+  .ba .why{font-size:13.5px;color:var(--muted);margin:9px 0 0;max-width:none}
+  @media (max-width:660px){ .ba .row{grid-template-columns:1fr} }
+
+  .callout{border-left:3px solid var(--magenta);background:var(--panel);
+    padding:16px 20px;border-radius:0 10px 10px 0;margin:22px 0}
+  .callout p:last-child{margin-bottom:0}
+  .callout strong{color:var(--ink)}
+
+  ul.plain{padding-left:19px;margin:12px 0}
+  ul.plain li{margin-bottom:8px;max-width:64ch}
+  .q{color:var(--ink);font-weight:600}
+  footer.end{padding:38px 0 66px;color:var(--faint);font-size:13.5px}
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <p class="eyebrow">Phase 1 · Audit before changing copy</p>
+  <h1>The homepage doesn't have a<br>vocabulary problem.</h1>
+  <p class="sub">It has three navigation systems, seventeen sections and thirty-three cards.
+    The framework words are a symptom of that, not the cause.</p>
+  <div class="meta">
+    <span>Branch <b>homepage-communication-ia</b></span>
+    <span>Baseline <b>2c22a03</b></span>
+    <span>Nothing changed yet</span>
+  </div>
+</header>
+
+<section class="block">
+  <p class="eyebrow">What I measured</p>
+  <h2>The brief's word counts were file-wide.</h2>
+  <p>Counted inside the page body only — excluding <code>&lt;head&gt;</code>, nav and footer —
+     the framework vocabulary is lighter than the brief assumed. That matters, because it
+     changes what the fix is.</p>
+
+  <div class="figs">
+    <div class="fig"><div class="n">7</div><div class="l">“conditions”</div><div class="k">briefed as 16</div></div>
+    <div class="fig"><div class="n">7</div><div class="l">“sovereignty”</div><div class="k">briefed as 12</div></div>
+    <div class="fig"><div class="n">2</div><div class="l">“authority”</div><div class="k">briefed as 5</div></div>
+    <div class="fig"><div class="n">17</div><div class="l">sections</div><div class="k">2,085 words</div></div>
+    <div class="fig"><div class="n">33</div><div class="l">cards</div><div class="k">across 3 systems</div></div>
+  </div>
+
+  <div class="callout">
+    <p><strong>The actual finding.</strong> A visitor is asked to choose from a card grid
+    three separate times — <code>#find-your-way-in</code> (6 routes), <code>#ecosystem</code>
+    (9 parts) and <code>#homes</code> (8 destinations). Seventeen of those cards name overlapping
+    things. The Nest, Neurodivergent Empowered, the Practitioner Pathway, the Practice and the
+    books each appear <em>twice</em>, in different groupings, with different framing.</p>
+    <p>That is what makes the page feel like it must be decoded. Removing the word
+    “sovereignty” would not touch it.</p>
+  </div>
+</section>
+
+<section class="block">
+  <p class="eyebrow">Section-by-section</p>
+  <h2>Seventeen sections, audited.</h2>
+  <p>Density flags sections where framework vocabulary carries more than ~2% of the words.</p>
+
+  <div class="scroll">
+  <table>
+    <thead><tr>
+      <th>Section</th><th>Reader question it should answer</th>
+      <th class="num">Words</th><th class="num">Cards</th><th>Action</th>
+    </tr></thead>
+    <tbody>
+      <tr><td class="sec">#top</td><td>What is this, in one breath?</td><td class="num">106</td><td class="num">0</td><td><span class="tag keep">Keep</span></td></tr>
+      <tr><td class="sec">#find-your-way-in</td><td>Where do I belong?</td><td class="num">148</td><td class="num">6</td><td><span class="tag merge">Reshape</span></td></tr>
+      <tr><td class="sec">#the-idea</td><td>Why has support felt so hard?</td><td class="num">93</td><td class="num">0</td><td><span class="tag keep">Keep</span></td></tr>
+      <tr><td class="sec">#ecosystem</td><td>What is all of this?</td><td class="num">188</td><td class="num">9</td><td><span class="tag merge">Merge</span></td></tr>
+      <tr><td class="sec">#core-practice</td><td>What does it do differently?</td><td class="num">103</td><td class="num">0</td><td><span class="tag merge">Merge</span></td></tr>
+      <tr><td class="sec">#what-can-change</td><td>What could actually be different?</td><td class="num">152</td><td class="num">7</td><td><span class="tag keep">Keep</span></td></tr>
+      <tr><td class="sec">#manifesto</td><td>What do you stand for?</td><td class="num">37</td><td class="num">0</td><td><span class="tag keep">Keep</span></td></tr>
+      <tr><td class="sec">#really-about</td><td>Does this mean giving up on growth?</td><td class="num">73</td><td class="num">0</td><td><span class="tag trans">Translate</span></td></tr>
+      <tr><td class="sec">#outward</td><td>How does the reasoning work?</td><td class="num">86</td><td class="num">0</td><td><span class="tag deeper">Move deeper</span></td></tr>
+      <tr><td class="sec">#continuity</td><td>What happens when I'm doing better?</td><td class="num">114</td><td class="num">0</td><td><span class="tag keep">Keep</span></td></tr>
+      <tr><td class="sec">#library</td><td>What can I read?</td><td class="num">312</td><td class="num">0</td><td><span class="tag trans">Translate</span></td></tr>
+      <tr><td class="sec">#professional-depth</td><td>Who should be involved?</td><td class="num">74</td><td class="num">0</td><td><span class="tag deeper">Move deeper</span></td></tr>
+      <tr><td class="sec">#keynote</td><td>Can I see her speak?</td><td class="num">73</td><td class="num">0</td><td><span class="tag trans">Translate</span></td></tr>
+      <tr><td class="sec">#frameworks</td><td>What can I use?</td><td class="num">86</td><td class="num">0</td><td><span class="tag merge">Merge</span></td></tr>
+      <tr><td class="sec">#speaking</td><td>Can she work with us?</td><td class="num">85</td><td class="num">3</td><td><span class="tag merge">Merge</span></td></tr>
+      <tr><td class="sec">#about</td><td>Who is behind this?</td><td class="num">167</td><td class="num">0</td><td><span class="tag trans">Translate</span></td></tr>
+      <tr><td class="sec">#homes</td><td>What is all of this?</td><td class="num">188</td><td class="num">8</td><td><span class="tag merge">Merge</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p style="margin-top:14px;font-size:14.5px;color:var(--muted)">
+    Two sections answer the identical question — <code>#ecosystem</code> and <code>#homes</code>
+    both say “what is all of this?”, 376 words and 17 cards apart.</p>
+</section>
+
+<section class="block">
+  <p class="eyebrow">Proposed structure</p>
+  <h2>Nine sections. One navigation system.</h2>
+  <p class="lede">Layers 1 and 2 on the homepage. Layers 3 and 4 move to
+    <code>/the-practice/</code> and <code>/the-practice/deeper-architecture/</code>, which exist
+    precisely to hold them.</p>
+
+  <ol class="ia">
+    <li>
+      <h3>Less fixing. More living.</h3>
+      <p>The front door, untouched. Headline, the challenge question, one short paragraph, two actions.</p>
+      <span class="from">from #top — unchanged</span>
+    </li>
+    <li>
+      <h3>What if the person isn't the only thing that could change?</h3>
+      <p>Already the strongest writing on the site. Concrete, no jargon, recognisable while exhausted.</p>
+      <span class="from">from #the-idea — unchanged</span>
+    </li>
+    <li>
+      <h3>There is more than one place to look.</h3>
+      <p>Seven cards in the person's own voice — “My body or health”, “The place around me”.
+         This <em>is</em> the architecture translated. It should stay exactly as written.</p>
+      <span class="from">from #what-can-change — unchanged</span>
+    </li>
+    <li>
+      <h3>Find your way in.</h3>
+      <p>Five role routes, one human sentence each. Australia moves out of the card set into a
+         single supporting line — it is a geography question, not a role, and as a peer card it
+         forces a comparison nobody needs to make yet.</p>
+      <span class="from">from #find-your-way-in — 6 cards → 5 + 1 line</span>
+    </li>
+    <li>
+      <h3>The person is not the only one expected to change.</h3>
+      <p>The dark band. Short, strong, already right.</p>
+      <span class="from">from #manifesto — unchanged</span>
+    </li>
+    <li>
+      <h3>There is no requirement to graduate from belonging.</h3>
+      <p>Answers a question families genuinely carry. Trim by roughly a third.</p>
+      <span class="from">from #continuity — shortened</span>
+    </li>
+    <li>
+      <h3>One body of work. Different ways in.</h3>
+      <p>The single replacement for both card grids: Books · The Practice · Practitioner Learning ·
+         Tools · Speaking. One human sentence each, then one quiet link — “See how the whole
+         ecosystem fits together →”. Architecture becomes available, not an entry requirement.</p>
+      <span class="from">merges #ecosystem + #homes + #frameworks + #speaking + #core-practice — 20 cards → 5</span>
+    </li>
+    <li>
+      <h3>Ideas you can live with.</h3>
+      <p>The four person-facing books with one human sentence each. The four professional
+         companions revealed on interaction or linked, not presented as eight titles at once.</p>
+      <span class="from">from #library — 312 words → ~150</span>
+    </li>
+    <li>
+      <h3>About Tanya</h3>
+      <p>Kept, shortened, and “Human Systems Architect” given a plain-English companion line.
+         Credentials stay — a professional reader is looking for them.</p>
+      <span class="from">from #about — translated</span>
+    </li>
+  </ol>
+  <p style="margin-top:26px">
+    <strong style="color:var(--ink)">Result:</strong> 17 sections → 9, 33 cards → 17,
+    ~2,085 words → ~1,250. Nothing legitimate is deleted. <code>#outward</code>,
+    <code>#professional-depth</code> and the keynote's conceptual lines move to pages built for them.</p>
+</section>
+
+<section class="block">
+  <p class="eyebrow">Copy direction</p>
+  <h2>Translate for meaning, not word-for-word.</h2>
+
+  <div class="ba"><div class="row">
+    <div class="cell"><div class="lab">Now — #outward</div>
+      <q>The Practice uses a repeatable reasoning process: Notice → Separate → Locate → Make
+         Accessible → Choose Direction → Support &amp; Implement → Review → Recalibrate.</q></div>
+    <div class="cell after"><div class="lab">Homepage</div>
+      <q>Work out what is happening before deciding what to do about it.</q>
+      <p class="why">The eight named steps are real and stay — on <code>/the-practice/</code>,
+         where a practitioner is looking for them. On the homepage they ask a frightened parent
+         to learn a process before they know whether this place is safe.</p></div>
+  </div></div>
+
+  <div class="ba"><div class="row">
+    <div class="cell"><div class="lab">Now — #frameworks</div>
+      <q>The collaborative creation and protection of the conditions that support access, while
+         preserving choice, bodily integrity and self-determination.</q></div>
+    <div class="cell after"><div class="lab">Homepage</div>
+      <q>Making things easier to reach, without taking the decisions away from the person.</q>
+      <p class="why">A definition written for citation, doing frontstage work. The precise wording
+         belongs in the framework page it defines.</p></div>
+  </div></div>
+
+  <div class="ba"><div class="row">
+    <div class="cell"><div class="lab">Now — #keynote</div>
+      <q>Capacity follows conditions. Sovereignty follows safety.</q></div>
+    <div class="cell after"><div class="lab">Homepage</div>
+      <q>People can do more when life works with them instead of against them.</q>
+      <p class="why">Then the original line sits underneath in smaller type as the keynote's own
+         words. Both layers present; the plain one leads.</p></div>
+  </div></div>
+
+  <div class="ba"><div class="row">
+    <div class="cell"><div class="lab">Now — #really-about</div>
+      <q>We build capability without making conformity the goal.</q></div>
+    <div class="cell after"><div class="lab">Homepage</div>
+      <q>Learn what you want to learn. Not what makes you easier to be around.</q>
+      <p class="why">Same argument, sharper, and repeatable — someone could say it out loud about
+         their own life.</p></div>
+  </div></div>
+
+  <div class="callout">
+    <p><strong>What I will not do.</strong> Flatten it. “Capability without conformity” is a good
+    phrase and the <code>#what-can-change</code> cards are already exemplary. The risk in this pass
+    is replacing precise writing with generic wellbeing copy, and I would rather leave a strong
+    sentence containing a framework word than trade it for something emptier.</p>
+  </div>
+</section>
+
+<section class="block">
+  <p class="eyebrow">Before I write anything</p>
+  <h2>Four decisions.</h2>
+  <ul class="plain">
+    <li><span class="q">Does the merged “One body of work” section replace both card grids?</span>
+        This is the single biggest change and the one that fixes the decode problem. It means
+        <code>#homes</code> disappears as a section and its eight destinations are represented by
+        five routes plus a link to the full ecosystem.</li>
+    <li><span class="q">Sparkly Aliens Inc. and Evidence &amp; Review.</span> Both currently appear
+        only in the card grids being merged. Do they need homepage presence, or is the ecosystem
+        page the right home?</li>
+    <li><span class="q">Books — four or eight?</span> I propose four person-facing titles visible,
+        four professional companions one interaction away. Tell me if all eight must stay visible.</li>
+    <li><span class="q">Scope.</span> Homepage only this pass, or do the interior pages follow?
+        They carry the same vocabulary. I would do the homepage first and measure.</li>
+  </ul>
+  <p style="margin-top:20px">On <code>/the-practice/deeper-architecture/</code>: I am treating it
+     as exempt. It exists to hold the architecture, and thinning it would defeat the layering.</p>
+</section>
+
+<footer class="end">
+  <p>Branch <b style="color:var(--ink)">homepage-communication-ia</b> cut from production
+     <b style="color:var(--ink)">2c22a03</b>. No copy has been changed. Production is untouched.</p>
+</footer>
+
+</div>
