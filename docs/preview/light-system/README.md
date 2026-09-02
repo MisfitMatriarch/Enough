@@ -15,5 +15,7 @@ reviewed without a running local server and without deploying to production.
 | `06-mobile-390-hero-routes-ecosystem.jpg` | 390px - hero, routes, ecosystem |
 | `07-mobile-390-change-dark-nest.jpg` | 390px - what can change, dark band, Nest |
 | `08-sovereignty-audit-tool-preserved.jpg` | The Sovereignty Conditions Audit, moved not deleted |
+| `09-desktop-continuity.jpg` | Home - "There is no requirement to graduate from belonging" |
+| `10-desktop-close-and-footer.jpg` | Home - the closing promise, three routes out, and the footer |
 
 Desktop captures are 1328px wide. Mobile captures are rendered at a true 390px viewport.
