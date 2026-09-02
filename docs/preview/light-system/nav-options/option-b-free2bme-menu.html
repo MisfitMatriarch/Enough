@@ -1,0 +1,112 @@
+<!doctype html><html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Option B - FREE 2B ME Menu</title>
+<link rel="stylesheet" href="/assets/css/hub.css">
+<style>
+/* OPTION B - a named menu, not a hamburger.
+   The trigger says what it opens. The panel is a full warm-white page with
+   oversized serif items, so the menu is a moment in the identity rather than
+   a drawer of links. */
+@media (max-width:860px){
+  .bar{align-items:center;padding-top:14px;padding-bottom:14px}
+  .brand{font-size:24px}
+  .navlinks{display:none}
+  .menu-open{
+    display:inline-flex;align-items:center;gap:9px;
+    background:none;border:0;cursor:pointer;padding:10px 2px;min-height:44px;
+    font-family:var(--sans);font-size:11.5px;font-weight:600;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+  }
+  .menu-open .rule{display:block;width:26px;height:1px;background:var(--teal)}
+}
+@media (min-width:861px){ .menu-open{display:none} }
+
+/* the panel */
+.menu-panel{
+  position:fixed;inset:0;z-index:200;background:var(--ground);
+  display:flex;flex-direction:column;padding:22px 26px 34px;
+  opacity:0;visibility:hidden;transition:opacity .28s ease;
+  overflow-y:auto;
+}
+.menu-panel[data-open="true"]{opacity:1;visibility:visible}
+.menu-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.menu-wordmark{font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.menu-close{background:none;border:0;cursor:pointer;min-height:44px;padding:10px 2px;
+  font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+.menu-mark{width:64px;height:auto;margin-bottom:22px;opacity:.9}
+.menu-list{display:flex;flex-direction:column}
+.menu-list a{
+  font-family:var(--serif);font-size:29px;line-height:1.15;color:var(--cream);
+  text-decoration:none;padding:15px 0;border-bottom:1px solid var(--line2);
+  display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+}
+.menu-list a[aria-current="page"]{color:var(--teal)}
+.menu-list a[aria-current="page"]::after{
+  content:"";flex:0 0 26px;height:2px;background:var(--teal);align-self:center}
+.menu-list a .n{font-family:var(--sans);font-size:11px;letter-spacing:.14em;color:var(--faint)}
+.menu-cta{margin-top:26px}
+.menu-cta .btn{width:100%;justify-content:center;min-height:50px;font-size:15px}
+/* a restrained trace of the phoenix palette */
+.menu-accent{height:2px;margin:24px 0 0;border-radius:2px;
+  background:linear-gradient(90deg,var(--magenta) 0%,var(--teal) 55%,var(--purple) 100%);opacity:.55}
+.demo-note{font:12px/1.5 var(--sans);color:var(--faint);padding:14px 20px;border-bottom:1px solid var(--line2);background:var(--ground2)}
+@media (prefers-reduced-motion:reduce){.menu-panel{transition:none}}
+</style></head><body>
+<div class="demo-note"><strong>Option B</strong> - FREE 2B ME Menu. Tap <em>MENU</em> to open the panel.</div>
+<header>
+  <nav class="bar wrap">
+    <a class="brand" href="/">Tanya Hicks</a>
+    <div class="navlinks">
+      <a href="/">Home</a><a href="/the-practice/" aria-current="page">The Practice</a>
+      <a href="/the-nest/">The Nest</a><a href="/books/">Books &amp; Tools</a>
+      <a href="/practitioner-pathway/">Practitioner Pathway</a>
+      <a href="/professional-learning/">Professional Learning</a>
+      <a href="/for-organisations/">For Organisations</a><a href="/speaking/">Speaking</a>
+      <a class="btn btn-teal" href="/#about">About Tanya</a>
+    </div>
+    <button class="menu-open" aria-expanded="false" aria-controls="f2bm-menu">
+      <span class="rule" aria-hidden="true"></span>Menu</button>
+  </nav>
+</header>
+
+<div class="menu-panel" id="f2bm-menu" data-open="false" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="menu-head">
+    <span class="menu-wordmark">Free 2B Me</span>
+    <button class="menu-close">Close</button>
+  </div>
+  <img class="menu-mark" src="/assets/free-to-be-me-logo-180.png" alt="" width="180" height="193">
+  <nav class="menu-list" aria-label="Site">
+    <a href="/">Home</a>
+    <a href="/the-practice/" aria-current="page">The Practice</a>
+    <a href="/the-nest/">The Nest</a>
+    <a href="/books/">Books &amp; Tools</a>
+    <a href="/practitioner-pathway/">Practitioner Pathway</a>
+    <a href="/professional-learning/">Professional Learning</a>
+    <a href="/for-organisations/">For Organisations</a>
+    <a href="/speaking/">Speaking</a>
+  </nav>
+  <div class="menu-cta"><a class="btn btn-teal" href="/#about">About Tanya</a></div>
+  <div class="menu-accent" aria-hidden="true"></div>
+</div>
+
+<main class="wrap" style="padding-top:34px">
+  <p class="eyebrow">THE FREE 2B ME PRACTICE</p>
+  <h1 class="serif" style="font-size:34px;line-height:1.12;margin:.2em 0 .5em">Understand before<br>you intervene.</h1>
+  <p>FREE 2B ME is a neuroaffirming practice for working out what is happening, what matters to the person, where useful change belongs and who has the responsibility and authority to act.</p>
+  <p>It begins with the person's own knowledge of their life.</p>
+</main>
+<script>
+(function(){
+  var p=document.getElementById('f2bm-menu'),
+      o=document.querySelector('.menu-open'),
+      c=document.querySelector('.menu-close');
+  function set(v){p.dataset.open=v;o.setAttribute('aria-expanded',v);
+    document.body.style.overflow=v==='true'?'hidden':'';
+    if(v==='true'){c.focus();}else{o.focus();}}
+  o.addEventListener('click',function(){set('true')});
+  c.addEventListener('click',function(){set('false')});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&p.dataset.open==='true')set('false')});
+})();
+</script>
+</body></html>

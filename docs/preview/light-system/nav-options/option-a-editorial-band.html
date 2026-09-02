@@ -1,0 +1,62 @@
+<!doctype html><html lang="en-AU"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Option A - Editorial navigation band</title>
+<link rel="stylesheet" href="/assets/css/hub.css">
+<style>
+/* OPTION A - the wrapped nav, made deliberate.
+   Rows are justified edge to edge so there is no ragged right margin, and a hairline
+   rule under each row states that a row is a row. The nav stops reading as spill. */
+@media (max-width:860px){
+  header{border-bottom:1px solid var(--line);overflow-x:clip}
+  nav.bar{flex-direction:column;align-items:stretch;row-gap:0;column-gap:16px;padding-top:10px;padding-bottom:0}
+  .brand{font-size:21px;align-self:flex-start;padding-bottom:9px}
+  .navlinks{
+    width:100%;display:flex;flex-wrap:wrap;
+    justify-content:space-between;   /* justified rows, no ragged right edge */
+    align-items:stretch;row-gap:0;column-gap:16px;
+    border-top:1px solid var(--line2);
+  }
+  .navlinks a{
+    font-size:14px;letter-spacing:.012em;
+    min-height:44px;display:inline-flex;align-items:center;padding:0;
+    flex:0 0 auto;position:relative;
+  }
+  /* one continuous rule per row, drawn full-bleed behind the items */
+  .navlinks a::before{
+    content:"";position:absolute;left:-50vw;right:-50vw;bottom:0;
+    height:1px;background:var(--line2);
+  }
+  .navlinks a[aria-current="page"]{color:var(--teal)}
+  .navlinks a[aria-current="page"]::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--teal);
+  }
+  .navlinks a.btn-teal{min-height:34px;padding:0 16px;align-self:center;margin:5px 0}
+  .navlinks a.btn-teal::before{display:none}
+}
+/* the demo frame only */
+.demo-note{font:12px/1.5 var(--sans);color:var(--faint);padding:14px 20px;border-bottom:1px solid var(--line2);background:var(--ground2)}
+</style></head><body>
+<div class="demo-note"><strong>Option A</strong> - refined visible wrapped navigation. Justified rows, hairline row rules, active item ruled in teal.</div>
+<header>
+  <nav class="bar wrap">
+    <a class="brand" href="/">Tanya Hicks</a>
+    <div class="navlinks">
+      <a href="/">Home</a>
+      <a href="/the-practice/" aria-current="page">The Practice</a>
+      <a href="/the-nest/">The Nest</a>
+      <a href="/books/">Books &amp; Tools</a>
+      <a href="/practitioner-pathway/">Practitioner Pathway</a>
+      <a href="/professional-learning/">Professional Learning</a>
+      <a href="/for-organisations/">For Organisations</a>
+      <a href="/speaking/">Speaking</a>
+      <a class="btn btn-teal" href="/#about">About Tanya</a>
+    </div>
+  </nav>
+</header>
+<main class="wrap" style="padding-top:34px">
+  <p class="eyebrow">THE FREE 2B ME PRACTICE</p>
+  <h1 class="serif" style="font-size:34px;line-height:1.12;margin:.2em 0 .5em">Understand before<br>you intervene.</h1>
+  <p>FREE 2B ME is a neuroaffirming practice for working out what is happening, what matters to the person, where useful change belongs and who has the responsibility and authority to act.</p>
+  <p>It begins with the person's own knowledge of their life.</p>
+</main>
+</body></html>
