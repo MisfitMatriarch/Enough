@@ -33,10 +33,11 @@
   html{font-synthesis:none}
 
   :root{
-    --ground:#0a0b10; --ground2:#0c0e14; --panel:#11141c; --panel2:#141824;
-    --cream:#ece9e1; --soft:#cfd3d9; --muted:#a7b0b9; --faint:#79828c;
-    --teal:#6bd0c6; --teal-dim:#4a9a92; --gold:#d8b27a;
-    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.05);
+    --ground:#FBFAF7; --ground2:#F3F1EE; --panel:#FFFFFF; --panel2:#F7F5F1;
+    --cream:#222222; --soft:#3A3A3A; --muted:#515151; --faint:#6E6E6E;
+    --teal:#23807A; --teal-bright:#4ECEC5; --teal-dim:#1B6560; --gold:#E01560;
+    --magenta:#EB256E; --magenta-text:#E01560; --purple:#6B4C9A;
+    --line:rgba(34,34,34,.13); --line2:rgba(34,34,34,.07);
     --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
     --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
     --wrap:1140px;
@@ -54,6 +55,16 @@
     --sp-standard:clamp(68px,7.5vw,108px);
     --sp-compact:clamp(52px,5vw,76px);
   }
+  /* Intentional dark sections. Deep charcoal is a statement surface, never the page
+     default. Overriding the tokens locally means every rule inside keeps working
+     unchanged, and the accents swap to their dark-ground variants: true aqua passes
+     8.3:1 on charcoal, magenta has to lighten to reach 4.5:1. */
+  .dark{--ground:#222222; --ground2:#1A1A1A; --panel:#2A2A2A; --panel2:#242424;
+    --cream:#FBFAF7; --soft:#E4E1DB; --muted:#B9B4AB; --faint:#8E8880;
+    --teal:#4ECEC5; --teal-bright:#4ECEC5; --teal-dim:#7BDDD6; --gold:#EE4A87;
+    --magenta:#EE4A87; --magenta-text:#EE4A87; --purple:#977CBE;
+    --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.06);
+    background:var(--ground); color:var(--cream)}
   *{box-sizing:border-box}
   body{margin:0;background:var(--ground);color:var(--cream);font-family:var(--sans);
     font-size:var(--fs-body);-webkit-font-smoothing:antialiased;line-height:1.62;overflow-x:hidden}
@@ -67,7 +78,7 @@
   a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
   .tool:focus-visible,.path:focus-visible,.home:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
 
-  header{position:sticky;top:0;z-index:60;background:rgba(10,11,16,.76);
+  header{position:sticky;top:0;z-index:60;background:rgba(251,250,247,.76);
     backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
   nav.bar{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
   .brand{font-family:var(--serif);font-size:22px;letter-spacing:.01em;line-height:1;white-space:nowrap;
@@ -78,9 +89,9 @@
   .navlinks>a:hover{color:var(--cream)}
   .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-size:14px;font-weight:500;
     padding:11px 20px;border-radius:100px;transition:.2s;cursor:pointer;border:1px solid transparent;white-space:nowrap}
-  .navlinks>a.btn-teal,.btn-teal{background:var(--teal);color:#052018;font-weight:600;box-shadow:0 6px 22px -8px rgba(107,208,198,.5)}
-  .navlinks>a.btn-teal:hover,.btn-teal:hover{background:#83ded5;color:#052018;transform:translateY(-1px)}
-  .btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(255,255,255,.02)}
+  .navlinks>a.btn-teal,.btn-teal{background:var(--teal-bright);color:#052018;font-weight:600;box-shadow:0 6px 22px -8px rgba(78,206,197,.5)}
+  .navlinks>a.btn-teal:hover,.btn-teal:hover{background:#7BDDD6;color:#052018;transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(34,34,34,.03)}
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
 
   /* Hamburger drawn in CSS - no glyph dependency, proper 44px target. */
@@ -97,8 +108,8 @@
     -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.45) 34%,#000 62%);
     mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.45) 34%,#000 62%)}
   .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(90deg,var(--ground) 8%,rgba(10,11,16,.88) 36%,rgba(10,11,16,.34) 62%,transparent 84%)}
-  .hero-inner{position:relative;z-index:2;max-width:900px}
+    background:linear-gradient(90deg,var(--ground) 30%,rgba(251,250,247,.93) 54%,rgba(251,250,247,.46) 73%,transparent 89%)}
+  .hero-inner{position:relative;z-index:2;max-width:760px}
   .hero h1{font-family:var(--serif);font-weight:500;font-size:var(--fs-hero);line-height:1.05;
     letter-spacing:-.018em;margin:22px 0 0;max-width:19ch;text-wrap:balance}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;align-items:center}
@@ -121,7 +132,7 @@
   .statement{font-family:var(--serif);font-size:var(--fs-pull);line-height:1.34;color:var(--soft);
     max-width:46ch;margin:36px 0 0;text-wrap:pretty;hyphens:none}
   .statement .lede{display:block;color:var(--cream);margin-bottom:.42em;text-wrap:balance}
-  .statement--rule{padding-top:30px;border-top:1px solid rgba(216,178,122,.32)}
+  .statement--rule{padding-top:30px;border-top:1px solid rgba(235,37,110,.32)}
 
   /* Cinematic film bands */
   .film{position:relative;width:100%;height:42vh;min-height:280px;max-height:500px;overflow:hidden;
@@ -133,7 +144,7 @@
   .film.seed{max-width:640px;margin:0 auto;height:auto;min-height:0;max-height:none;border:1px solid var(--line2);border-radius:18px}
   .film.seed video{aspect-ratio:620/348;height:auto;border-radius:17px;-webkit-mask-image:none;mask-image:none}
   .film.corridor video{object-position:center 42%;filter:brightness(.72) contrast(1.06) saturate(.9)}
-  .motion{position:absolute;right:18px;bottom:16px;z-index:4;background:rgba(10,11,16,.7);
+  .motion{position:absolute;right:18px;bottom:16px;z-index:4;background:rgba(251,250,247,.7);
     border:1px solid var(--line);color:var(--soft);border-radius:100px;padding:9px 16px;font-size:12px;
     min-height:40px;display:inline-flex;align-items:center;letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(6px);font-family:var(--sans)}
   .motion:hover{border-color:var(--teal);color:var(--teal)}
@@ -142,8 +153,8 @@
   /* Conditions lockup */
   .conditions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;list-style:none;
     margin:48px 0 0;padding:42px 22px;position:relative;
-    border-top:1px solid rgba(216,178,122,.28);border-bottom:1px solid rgba(216,178,122,.28)}
-  .conditions::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 120% at 50% 50%,rgba(216,178,122,.09),transparent 72%)}
+    border-top:1px solid rgba(235,37,110,.28);border-bottom:1px solid rgba(235,37,110,.28)}
+  .conditions::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 120% at 50% 50%,rgba(235,37,110,.09),transparent 72%)}
   .conditions li{font-family:var(--serif);font-size:clamp(19px,2.6vw,31px);color:var(--cream);padding:9px 22px;position:relative;line-height:1.2}
   .conditions li+li::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.75;transform:translate(-50%,-50%)}
 
@@ -151,7 +162,7 @@
   .inversion{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
   .inversion li{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);align-items:baseline}
   .inversion .a{padding:24px 28px 24px 0;color:var(--faint);font-family:var(--serif);font-size:clamp(17px,2vw,22px);line-height:1.3}
-  .inversion .b{padding:24px 0 24px 28px;color:var(--cream);font-family:var(--serif);font-size:clamp(17px,2vw,22px);line-height:1.3;border-left:1px solid rgba(216,178,122,.3)}
+  .inversion .b{padding:24px 0 24px 28px;color:var(--cream);font-family:var(--serif);font-size:clamp(17px,2vw,22px);line-height:1.3;border-left:1px solid rgba(235,37,110,.3)}
 
   /* The work moves outward */
   .outward{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
@@ -165,7 +176,7 @@
   .terr{border-top:1px solid var(--line)}
   .terr-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
   .terr-row .bk{padding:30px 30px 30px 0}
-  .terr-row .bk+.bk{padding:30px 0 30px 30px;border-left:1px solid var(--line);background:rgba(255,255,255,.012)}
+  .terr-row .bk+.bk{padding:30px 0 30px 30px;border-left:1px solid var(--line);background:rgba(34,34,34,.02)}
   .terr-row .aud{font-size:var(--fs-eyebrow);letter-spacing:.24em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:11px}
   .terr-row h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 6px;line-height:1.2;color:var(--cream)}
   .terr-row .st{color:var(--faint);font-size:var(--fs-small);line-height:1.5;margin:0 0 13px}
@@ -175,7 +186,7 @@
   /* Featured keynote */
   .feature{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--line);border-radius:20px;overflow:hidden}
   .feature .l{padding:46px;background:linear-gradient(180deg,var(--panel),var(--ground2))}
-  .feature .r{position:relative;background:#090b10;min-height:330px;overflow:hidden}
+  .feature .r{position:relative;background:#F3F1EE;min-height:330px;overflow:hidden}
   .feature .r video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
   .feature .tagrow{font-size:var(--fs-eyebrow);letter-spacing:.16em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:14px}
   .feature h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.1vw,35px);margin:0 0 14px;line-height:1.12}
@@ -185,7 +196,7 @@
   /* Frameworks */
   .tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
   .tool{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:.22s}
-  .tool:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
+  .tool:hover{border-color:rgba(78,206,197,.32);transform:translateY(-2px)}
   .tool h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.18}
   .tool p{color:var(--muted);font-size:var(--fs-small);margin:0 0 16px;max-width:42ch}
   .tool .go{margin-top:auto;font-size:14px;color:var(--teal);font-weight:500}
@@ -193,7 +204,7 @@
   /* Pathway cards */
   .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
   .path{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);border-radius:16px;padding:28px;transition:.22s;display:flex;flex-direction:column}
-  .path:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
+  .path:hover{border-color:rgba(78,206,197,.32);transform:translateY(-2px)}
   .path h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.18}
   .path p{color:var(--muted);font-size:var(--fs-small);margin:0;max-width:42ch}
   .path .go{margin-top:auto;padding-top:18px;font-size:14.5px;color:var(--teal);font-weight:500}
@@ -201,7 +212,7 @@
   /* About */
   .person{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
   .portrait-wrap{position:relative;max-width:460px}
-  .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(216,178,122,.16),transparent 72%);filter:blur(22px)}
+  .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(235,37,110,.16),transparent 72%);filter:blur(22px)}
   .portrait-img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:1px solid var(--line);display:block;box-shadow:0 24px 60px -34px rgba(0,0,0,.85)}
   .person h2{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);margin:14px 0 18px;line-height:1.08;letter-spacing:-.012em}
   .person p{margin:0 0 15px;max-width:56ch}
@@ -218,14 +229,14 @@
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:18px}
   .card{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
     border-radius:16px;padding:28px;transition:.22s}
-  .card:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
+  .card:hover{border-color:rgba(78,206,197,.32);transform:translateY(-2px)}
   .card h3{margin-top:0}
   .card p{margin:0;color:var(--muted);font-size:var(--fs-small);max-width:44ch}
 
   /* Where the work lives */
   .homes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
   .home{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,var(--panel),var(--ground2));display:flex;flex-direction:column;transition:.22s}
-  .home:hover{border-color:rgba(216,178,122,.35);transform:translateY(-2px)}
+  .home:hover{border-color:rgba(235,37,110,.35);transform:translateY(-2px)}
   .home h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.16}
   .home p{color:var(--muted);font-size:var(--fs-small);margin:0;max-width:38ch}
   .home .go{margin-top:auto;padding-top:18px;font-size:14px;color:var(--teal)}
@@ -260,7 +271,7 @@
     .terr-row .bk,.terr-row .bk+.bk{padding:26px 0;border-left:0}
     .terr-row .bk+.bk{border-top:1px solid var(--line)}
     .inversion .a{padding:22px 0 6px}
-    .inversion .b{padding:0 0 22px 18px;border-left:1px solid rgba(216,178,122,.3);margin-bottom:22px}
+    .inversion .b{padding:0 0 22px 18px;border-left:1px solid rgba(235,37,110,.3);margin-bottom:22px}
     .person{gap:32px}
     .hero{padding:76px 0 60px}
     .hero h1{max-width:none}
@@ -268,8 +279,8 @@
   }
   @media (max-width:520px){
     .hero h1{font-size:clamp(30px,8.4vw,40px)}
-    .hero-film{opacity:.34}
-    .hero::after{background:linear-gradient(180deg,rgba(10,11,16,.5),rgba(10,11,16,.88) 55%,var(--ground))}
+    .hero-film{opacity:.16}
+    .hero::after{background:linear-gradient(100deg,rgba(251,250,247,.97) 0%,rgba(251,250,247,.93) 44%,rgba(251,250,247,.58) 74%,rgba(251,250,247,.34) 100%),linear-gradient(180deg,rgba(251,250,247,.30),rgba(251,250,247,.70) 62%,var(--ground))}
     .conditions{padding:30px 8px}
     .conditions li{padding:8px 15px}
   }
@@ -308,24 +319,34 @@
     </video>
     <button class="motion" type="button" data-motion aria-pressed="false">Pause motion</button>
     <div class="wrap hero-inner">
-      <span class="eyebrow">FREE 2B ME</span>
+      <span class="eyebrow">Tanya Hicks &times; FREE 2B ME</span>
       <h1 class="serif">Less fixing. More living.</h1>
-        <p class="lead">A connected neuroaffirming practice ecosystem built around what matters to the person.</p>
-        <p class="lead">FREE 2B ME brings together real-life support, counselling, Specialist Behaviour Support, professional practice, evidence and review, learning, books, workforce capability, technology and governance.</p>
-        <p class="lead"><strong>The person is not the only place change can happen. Neither is the environment. We work out where the useful work actually belongs.</strong></p>
+        <p class="lead">What if support stopped treating the person as the automatic problem?</p>
+        <p class="lead">FREE 2B ME connects real-life support, community, professional practice, books and tools, Practitioner learning, evidence and better systems around one idea: work out what is actually getting in the way without taking over the person&rsquo;s life.</p>
         <p class="lead">More of the life that matters to you, within reach.</p>
         <div class="cta-row">
-          <a class="btn btn-teal" href="#ecosystem">Explore FREE 2B ME</a>
-          <a class="btn btn-ghost" href="/the-practice/">See the Practice</a>
+          <a class="btn btn-teal" href="#find-your-way-in">Explore FREE 2B ME</a>
           <a class="btn btn-ghost" href="#about">Meet Tanya</a>
         </div>
-      <ul class="credentials">
-        <li>Author &amp; speaker</li>
-        <li>Counsellor (ACA R82053)</li>
-        <li>NDIS Behaviour Support Practitioner (P1362818)</li>
-        <li>Framework developer</li>
-        <li>Founder, Neurodivergent Empowered</li>
-      </ul>
+    </div>
+  </section>
+
+  <!-- FIND YOUR WAY IN -->
+  <section id="find-your-way-in">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Start anywhere</span>
+        <h2 class="serif">Find your way in.</h2>
+        <p class="lead">You do not need to understand the whole ecosystem before you choose. Pick whichever is closest to why you are here.</p>
+      </div>
+      <div class="paths">
+        <a class="path" href="/books/"><h3 class="serif">I want something for me</h3><p>Books, tools and ideas for understanding what is happening in your own life and what might help.</p><span class="go">Start here &rarr;</span></a>
+        <a class="path" href="/the-practice/"><h3 class="serif">I support someone</h3><p>Ideas for families, supporters and people working alongside neurodivergent people.</p><span class="go">Explore support thinking &rarr;</span></a>
+        <a class="path" href="/practitioner-pathway/"><h3 class="serif">I&rsquo;m a practitioner</h3><p>The FREE 2B ME Practice, the Practitioner Pathway, professional learning, tools and applied practice.</p><span class="go">For practitioners &rarr;</span></a>
+        <a class="path" href="/for-organisations/"><h3 class="serif">I lead a service or organisation</h3><p>Workforce capability, supervision, implementation, evidence, governance and better service design.</p><span class="go">For organisations &rarr;</span></a>
+        <a class="path" href="https://www.free2bme.au" target="_blank" rel="noopener"><h3 class="serif">I&rsquo;m looking for Australian support</h3><p>Meet The Nest and Neurodivergent Empowered, where FREE 2B ME is delivered in everyday life.</p><span class="go">Visit FREE 2B ME Australia &rarr;</span></a>
+        <a class="path" href="#about"><h3 class="serif">I&rsquo;m looking for Tanya</h3><p>Speaking, media, writing, collaboration and founder work.</p><span class="go">Meet Tanya &rarr;</span></a>
+      </div>
     </div>
   </section>
 
@@ -347,20 +368,23 @@
   <section id="ecosystem">
       <div class="wrap">
         <div class="sec-head">
-          <span class="eyebrow">One ecosystem</span>
-          <h2 class="serif">One ecosystem. Different ways it comes to life.</h2>
-          <p class="lead">FREE 2B ME is not one service, one framework or one programme. It connects the different parts of support and practice that too often operate separately &mdash; the person&rsquo;s own knowledge and goals, everyday support, professional services, learning, evidence, workforce capability and the systems that hold practice accountable.</p>
+          <span class="eyebrow">One body of work</span>
+          <h2 class="serif">One body of work. Different ways it comes to life.</h2>
+          <p class="lead">FREE 2B ME is not one service, one framework or one programme. These are the parts, and they are built to work together.</p>
         </div>
         <div class="grid">
-          <div class="card"><h3 class="serif">The FREE 2B ME Practice</h3><p>The shared way of thinking and working.</p><div class="cta-row"><a class="btn btn-ghost" href="/the-practice/">See the Practice</a></div></div>
-          <div class="card"><h3 class="serif">Neurodivergent Empowered</h3><p>Registered provider and professional practice.</p></div>
-          <div class="card"><h3 class="serif">The Nest</h3><p>Real-life community practice environment.</p><div class="cta-row"><a class="btn btn-ghost" href="https://www.free2bme.au" target="_blank" rel="noopener">Explore The Nest &rarr;</a></div></div>
-          <div class="card"><h3 class="serif">FREE 2B ME Practitioner Pathway</h3><p>How practitioners learn, apply, demonstrate and remain accountable to the Practice.</p></div>
-          <div class="card"><h3 class="serif">Practice Library</h3><p>Person-facing books and professional companion books.</p><div class="cta-row"><a class="btn btn-ghost" href="/books/">Explore the books</a></div></div>
-          <div class="card"><h3 class="serif">Professional Learning</h3><p>Training, supervision, workshops and organisational learning.</p><div class="cta-row"><a class="btn btn-ghost" href="/professional-learning/">Explore</a></div></div>
-          <div class="card"><h3 class="serif">Evidence &amp; Review</h3><p>How practice is tested against what actually happens.</p></div>
-          <div class="card"><h3 class="serif">Systems, Technology &amp; Governance</h3><p>The structures designed to keep the practice usable, accountable and sustainable.</p></div>
+          <div class="card"><h3 class="serif">The FREE 2B ME Practice</h3><p>A way of working out what might genuinely help.</p><div class="cta-row"><a class="btn btn-ghost" href="/the-practice/">Explore the Practice</a></div></div>
+          <div class="card"><h3 class="serif">The Nest</h3><p>Real interests. Real community. Individual support.</p><div class="cta-row"><a class="btn btn-ghost" href="/the-nest/">Discover The Nest</a></div></div>
+          <div class="card"><h3 class="serif">Neurodivergent Empowered</h3><p>The registered Australian provider delivering relevant services, including individual support, counselling and Specialist Behaviour Support.</p><div class="cta-row"><a class="btn btn-ghost" href="https://www.free2bme.au" target="_blank" rel="noopener">Explore Australian services &rarr;</a></div></div>
+          <div class="card"><h3 class="serif">Books &amp; Tools</h3><p>Ideas and practical resources people can actually use.</p><div class="cta-row"><a class="btn btn-ghost" href="/books/">See the books</a></div></div>
+          <div class="card"><h3 class="serif">Practitioner Pathway</h3><p>Turning the Practice into supervised and accountable capability.</p><div class="cta-row"><a class="btn btn-ghost" href="/practitioner-pathway/">Explore the Pathway</a></div></div>
+          <div class="card"><h3 class="serif">Professional Learning</h3><p>Learning for people who want to practise differently.</p><div class="cta-row"><a class="btn btn-ghost" href="/professional-learning/">Explore learning</a></div></div>
+          <div class="card"><h3 class="serif">Evidence &amp; Review</h3><p>Checking what is actually happening rather than assuming something works.</p></div>
+          <div class="card"><h3 class="serif">Systems, Technology &amp; Governance</h3><p>Helping good practice survive real organisations.</p><div class="cta-row"><a class="btn btn-ghost" href="/for-organisations/">For organisations</a></div></div>
+          <div class="card"><h3 class="serif">Speaking &amp; Ideas</h3><p>Taking the work into rooms, professions and systems that matter.</p><div class="cta-row"><a class="btn btn-ghost" href="/speaking/">Speaking &amp; media</a></div></div>
         </div>
+        <div class="cta-row"><a class="btn btn-ghost" href="/the-practice/deeper-architecture/">See how the whole ecosystem fits together &rarr;</a></div>
+        <p class="note">Architecture is available to people who want depth. It is not an entry requirement.</p>
       </div>
     </section>
 
@@ -393,6 +417,16 @@
         <div class="card"><h3 class="serif">Services and systems</h3><p>Rules, staffing, processes, expectations, policies or organisational decisions one person cannot change alone.</p></div>
       </div>
       <p class="note">Sometimes the work sits with the person. Sometimes it sits around them. Often it sits in more than one place.</p>
+    </div>
+  </section>
+
+  <!-- DARK STATEMENT -->
+  <section class="dark" id="manifesto">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="serif">The person is not the only one <span style="color:var(--magenta-text)">expected to change</span>.</h2>
+        <p class="lead">Support should be able to change too. So should the practitioner, the environment, the service, the workforce, the documentation, the technology and the organisation.</p>
+      </div>
     </div>
   </section>
 

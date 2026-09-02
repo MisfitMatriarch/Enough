@@ -10,10 +10,11 @@ html{font-synthesis:none}
    tracking, refined cards and pill buttons, reading measures.
 ═══════════════════════════════════════════ */
 :root{
-  --ground:#0a0b10; --ground2:#0c0e14; --panel:#11141c; --panel2:#141824;
-  --cream:#ece9e1; --soft:#cfd3d9; --muted:#a7b0b9; --faint:#79828c;
-  --teal:#6bd0c6; --teal-dim:#4a9a92; --gold:#d8b27a;
-  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.05);
+  --ground:#FBFAF7; --ground2:#F3F1EE; --panel:#FFFFFF; --panel2:#F7F5F1;
+    --cream:#222222; --soft:#3A3A3A; --muted:#515151; --faint:#6E6E6E;
+    --teal:#23807A; --teal-bright:#4ECEC5; --teal-dim:#1B6560; --gold:#E01560;
+    --magenta:#EB256E; --magenta-text:#E01560; --purple:#6B4C9A;
+    --line:rgba(34,34,34,.13); --line2:rgba(34,34,34,.07);
   --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
   --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
   --wrap:1140px;
@@ -40,7 +41,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
 
 /* header / nav */
-header{position:sticky;top:0;z-index:50;background:rgba(10,11,16,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
+header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
 nav.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0;height:70px;flex-wrap:wrap}
 .brand{font-family:var(--serif);font-size:22px;color:var(--cream);text-decoration:none;line-height:1.05;letter-spacing:.01em}
 .brand small{display:block;font-family:var(--sans);font-size:11px;color:var(--faint);letter-spacing:.02em}
@@ -52,9 +53,9 @@ nav.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;p
 /* buttons - pills, matching the homepage */
 .btn{display:inline-flex;align-items:center;gap:.5em;padding:12px 22px;border-radius:100px;font-family:var(--sans);
   font-size:14px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:.2s;white-space:nowrap}
-.btn-teal{background:var(--teal);color:#04120f;font-weight:600;box-shadow:0 6px 22px -8px rgba(107,208,198,.5)}
-.btn-teal:hover{background:#83ded5;color:#04120f;transform:translateY(-1px)}
-.btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(255,255,255,.02)}
+.btn-teal{background:var(--teal-bright);color:#04120f;font-weight:600;box-shadow:0 6px 22px -8px rgba(78,206,197,.5)}
+.btn-teal:hover{background:#7BDDD6;color:#04120f;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(34,34,34,.03)}
 .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
 .btn-text{color:var(--teal);padding-left:0;padding-right:0;background:none}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
@@ -80,15 +81,15 @@ li{margin-bottom:6px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:18px}
 .card{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
   border-radius:16px;padding:28px;transition:.22s}
-.card:hover{border-color:rgba(107,208,198,.32);transform:translateY(-2px)}
+.card:hover{border-color:rgba(78,206,197,.32);transform:translateY(-2px)}
 .card h3{margin-top:0}
 .card p{margin:0;color:var(--muted);font-size:var(--fs-small);max-width:44ch}
 
 /* status pills */
 .status{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
   padding:4px 11px;border-radius:999px;border:1px solid var(--line)}
-.status.now{background:rgba(107,208,198,.14);color:var(--teal);border-color:rgba(107,208,198,.35)}
-.status.dev{background:rgba(216,178,122,.12);color:var(--gold);border-color:rgba(216,178,122,.3)}
+.status.now{background:rgba(78,206,197,.14);color:var(--teal);border-color:rgba(78,206,197,.35)}
+.status.dev{background:rgba(235,37,110,.12);color:var(--gold);border-color:rgba(235,37,110,.3)}
 .status.review,.status.research{background:rgba(167,176,185,.12);color:var(--soft)}
 .status.historical,.status.future{background:transparent;color:var(--faint)}
 

@@ -10,3 +10,7 @@
 
 # Preserve historical external links while titles are migrated.
 /designed-for-more/*  /books/  301
+
+# /systems-change/ became /for-organisations/. The page was framed as a critique of
+# sector failure; it is now an offer to organisations. The old path keeps resolving.
+/systems-change/*                  /for-organisations/  301!
