@@ -21,26 +21,27 @@
    SURFACE-CONTEXT ASSETS. Two explicit slots, switched by surface rather than trying
    to make one file work everywhere.
 
-   >>> OUTSTANDING: --brand-mark-light currently points at the REVERSED asset because
-   >>> no light-background export exists in this repo. Both files in /assets are the
-   >>> dark-surface version - measured, 73.9% and 74.8% of their opaque pixels are
-   >>> near-white, which is why the mark looks faint on the warm-white header.
-   >>> When free-to-be-me-logo-light.(svg|png) lands, change that ONE line below and
-   >>> every header on the site is correct. No other edit is required. */
+   Light  -> free-to-be-me-phoenix-light.png  (charcoal body, full-colour strokes)
+   Dark   -> free-to-be-me-phoenix-dark.png   (cream body, full-colour strokes)
+
+   Both are the phoenix brandmark only, cropped from the approved artwork with no
+   recolouring - the composition here is phoenix + "Tanya Hicks", not the full arced
+   lockup squeezed into a header. The complete lockups remain available as
+   free-to-be-me-logo-light.png and free-to-be-me-logo.png. */
 :root{
-  --brand-mark-light:url('/assets/free-to-be-me-logo-180.png');  /* <-- replace */
-  --brand-mark-dark:url('/assets/free-to-be-me-logo-180.png');
+  --brand-mark-light:url('/assets/free-to-be-me-phoenix-light.png');
+  --brand-mark-dark:url('/assets/free-to-be-me-phoenix-dark.png');
   --brand-mark:var(--brand-mark-light);
 }
 .dark{ --brand-mark:var(--brand-mark-dark) }
 
-.brand{display:inline-flex;align-items:center;gap:11px}
+.brand{display:inline-flex;align-items:center;gap:12px}
 .brand::before{
   content:"";flex:0 0 auto;display:block;
-  width:38px;height:41px;                 /* 512x550 source, ratio preserved */
+  width:46px;height:39px;                 /* 1010x859 source, ratio preserved */
   background:var(--brand-mark) center/contain no-repeat;
 }
-@media (max-width:860px){ .brand::before{width:34px;height:37px} }
+@media (max-width:860px){ .brand::before{width:41px;height:35px} }
 
 /* ---- MENU trigger ------------------------------------------------------- */
 .menu-open{

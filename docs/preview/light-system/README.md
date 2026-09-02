@@ -20,6 +20,9 @@ reviewed without a running local server and without deploying to production.
 | `11-mobile-390-unified-header.jpg` | 390px - one header across home, The Practice and The Nest |
 | `12-mobile-390-menu-open.jpg` | 390px - the FREE 2B ME Menu panel open |
 | `13-desktop-header-and-buttons.jpg` | Desktop - full nav, magenta primary, teal active |
+| `14-final-mobile-header-light-logo.jpg` | FINAL 390px - light phoenix mark across three pages |
+| `15-final-mobile-menu-open.jpg` | FINAL 390px - menu open |
+| `16-final-desktop-header-light-logo.jpg` | FINAL desktop - header with the light phoenix mark |
 
 Desktop captures are 1328px wide. Mobile captures are rendered at a true 390px viewport.
 
@@ -34,9 +37,28 @@ Desktop captures are 1328px wide. Mobile captures are rendered at a true 390px v
   `free-to-be-me-logo-light`, dark surfaces keep the existing reversed asset. The header
   composition is phoenix brandmark + Tanya Hicks, not the full arced lockup.
 
-## Outstanding
+## Logo - resolved
 
-`free-to-be-me-logo-light.svg` / `.png` - transparent, full-colour phoenix, charcoal
-lettering, ~1024px+. Until it exists the light slot points at the reversed asset, so the
-mark reads faint on warm white. Swapping it is one line: `assets/css/nav.css`, the
-`--brand-mark-light` declaration.
+Exported from the master Canva design "logo" (DAF-IW4Ykdk), page 1 - the approved
+light-background lockup with charcoal lettering. Page 4 is the reversed version that
+was already in the repo.
+
+Four assets now exist:
+
+| File | Use |
+|---|---|
+| `free-to-be-me-phoenix-light.png` | header on light surfaces (1010x859) |
+| `free-to-be-me-phoenix-dark.png` | header on dark surfaces (385x322) |
+| `free-to-be-me-logo-light.png` | full arced lockup, light (1632x1632) |
+| `free-to-be-me-logo.png` | full arced lockup, reversed |
+
+The header marks are the phoenix only, cropped from the approved artwork - no
+recolouring, no CSS filters, brand colours byte-identical to the source. The crop was
+located by the saturated-pixel bounding box, since the arced lettering is monochrome
+and the phoenix is the only part carrying colour.
+
+Canva's export API offers PDF/JPG/PNG/PPTX/GIF/MP4 - no SVG. PNG at 1632px is the
+highest-fidelity export available through it.
+
+Note: the dark slot is wired and correct but no current surface renders a header on a
+dark background, so it is not exercised today.
