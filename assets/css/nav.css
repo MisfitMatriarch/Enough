@@ -63,7 +63,9 @@
 
 @media (max-width:860px){
   .menu-open{display:inline-flex}
-  .navlinks{display:none !important}
+  /* Scoped to the header. The footer uses .navlinks too, and an unscoped rule took
+     the footer navigation off every interior page on mobile. */
+  header .navlinks{display:none !important}
 }
 
 /* ---- the panel ---------------------------------------------------------- */
