@@ -17,5 +17,8 @@ reviewed without a running local server and without deploying to production.
 | `08-sovereignty-audit-tool-preserved.jpg` | The Sovereignty Conditions Audit, moved not deleted |
 | `09-desktop-continuity.jpg` | Home - "There is no requirement to graduate from belonging" |
 | `10-desktop-close-and-footer.jpg` | Home - the closing promise, three routes out, and the footer |
+| `11-mobile-390-unified-header.jpg` | 390px - one header across home, The Practice and The Nest |
+| `12-mobile-390-menu-open.jpg` | 390px - the FREE 2B ME Menu panel open |
+| `13-desktop-header-and-buttons.jpg` | Desktop - full nav, magenta primary, teal active |
 
 Desktop captures are 1328px wide. Mobile captures are rendered at a true 390px viewport.

@@ -52,7 +52,6 @@
   .btn-teal:hover{background:#83ded5;transform:translateY(-1px)}
   .btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(255,255,255,.02)}
   .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
-  .menu-toggle{display:none;background:none;border:0;color:var(--cream);font-size:22px;cursor:pointer}
 
   .page-hero{position:relative;padding:96px 0 48px;overflow:hidden}
   .crack{position:absolute;top:-10%;left:70%;width:2px;height:120%;transform:rotate(7deg);
@@ -84,19 +83,19 @@
   .foot a:hover{color:var(--soft)}
 
   @media (max-width:860px){
-    .navlinks{display:none}
-    .menu-toggle{display:block}
     .form-grid{grid-template-columns:1fr}
     .page-hero{padding:64px 0 36px}
   }
 </style>
+  <link rel="stylesheet" href="/assets/css/nav.css">
+  <script src="/assets/js/nav.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header>
   <nav class="wrap bar" aria-label="Primary">
-    <a class="brand" href="/">Tanya Hicks</a>
+    <a class="brand" href="/"><span>Tanya Hicks</span></a>
     <div class="navlinks">
       <a href="/">Home</a>
       <a href="/the-practice/">The Practice</a>
@@ -109,7 +108,6 @@
       <a class="btn btn-teal" href="/#about">About Tanya</a>
     
     </div>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
   </nav>
 </header>
 
@@ -224,14 +222,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var done=function(){f.style.display='none';var t=document.getElementById('thankyou');if(t){t.style.display='block';t.scrollIntoView({behavior:'smooth',block:'center'});}};
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(done).catch(done);
   });
-  var m=document.querySelector('.menu-toggle');
-  if(m)m.addEventListener('click',function(){
-    var n=document.querySelector('.navlinks');
-    if(!n)return;
-    var open=n.style.display==='flex';
-    n.style.display=open?'none':'flex';
-    m.setAttribute('aria-expanded',String(!open));
-  });
+  /* Mobile navigation is handled by the shared /assets/js/nav.js. */
 });
 </script>
 </body>

@@ -37,7 +37,7 @@
     --cream:#222222; --soft:#3A3A3A; --muted:#515151; --faint:#6E6E6E;
     --teal:#23807A; --teal-bright:#4ECEC5; --teal-dim:#1B6560; --gold:#E01560;
     --magenta:#EB256E; --magenta-text:#E01560; --purple:#6B4C9A;
-    --line:rgba(34,34,34,.13); --line2:rgba(34,34,34,.07);
+    --btn-primary-bg:#E01560; --btn-primary-fg:#FFFFFF; --line:rgba(34,34,34,.13); --line2:rgba(34,34,34,.07);
     --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
     --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
     --wrap:1140px;
@@ -63,7 +63,7 @@
     --cream:#FBFAF7; --soft:#E4E1DB; --muted:#B9B4AB; --faint:#8E8880;
     --teal:#4ECEC5; --teal-bright:#4ECEC5; --teal-dim:#7BDDD6; --gold:#EE4A87;
     --magenta:#EE4A87; --magenta-text:#EE4A87; --purple:#977CBE;
-    --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.06);
+    --btn-primary-bg:#EE4A87; --btn-primary-fg:#1A1A1A; --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.06);
     background:var(--ground); color:var(--cream)}
   *{box-sizing:border-box}
   body{margin:0;background:var(--ground);color:var(--cream);font-family:var(--sans);
@@ -87,19 +87,21 @@
   .navlinks{display:flex;gap:15px;align-items:center;font-size:13px;color:var(--soft)}
   .navlinks>a{color:var(--soft);transition:color .2s;white-space:nowrap}
   .navlinks>a:hover{color:var(--cream)}
-  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-size:14px;font-weight:500;
-    padding:11px 20px;border-radius:100px;transition:.2s;cursor:pointer;border:1px solid transparent;white-space:nowrap}
-  .navlinks>a.btn-teal,.btn-teal{background:var(--teal-bright);color:#052018;font-weight:600;box-shadow:0 6px 22px -8px rgba(78,206,197,.5)}
-  .navlinks>a.btn-teal:hover,.btn-teal:hover{background:#7BDDD6;color:#052018;transform:translateY(-1px)}
-  .btn-ghost{border-color:var(--line);color:var(--cream);background:rgba(34,34,34,.03)}
-  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+  /* Buttons. Editorial radius rather than a full capsule, magenta primary carrying the
+     phoenix's attitude, charcoal outline secondary. Aqua stays a brand accent elsewhere.
+     Primary foreground is tokenised: white on magenta passes AA on light (4.72:1) but
+     fails on the dark band (3.52:1), where near-black is used instead (4.94:1). */
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-size:14px;font-weight:600;
+    padding:13px 24px;border-radius:18px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap;
+    transition:background .2s,color .2s,border-color .2s,transform .2s,filter .2s}
+  .navlinks>a.btn-primary,.btn-primary,.navlinks>a.btn-teal,.btn-teal{
+    background:var(--btn-primary-bg);color:var(--btn-primary-fg);border-color:var(--btn-primary-bg)}
+  .navlinks>a.btn-primary:hover,.btn-primary:hover,.navlinks>a.btn-teal:hover,.btn-teal:hover{
+    filter:brightness(1.08);transform:translateY(-1px)}
+  .btn-outline,.btn-ghost{background:none;border-color:var(--cream);color:var(--cream)}
+  .btn-outline:hover,.btn-ghost:hover{border-color:var(--btn-primary-bg);color:var(--btn-primary-bg);transform:translateY(-1px)}
+  .btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 
-  /* Hamburger drawn in CSS - no glyph dependency, proper 44px target. */
-  .menu-toggle{display:none;background:none;border:0;cursor:pointer;width:44px;height:44px;padding:0;position:relative}
-  .menu-toggle span,.menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:11px;width:22px;height:2px;background:var(--cream);border-radius:2px}
-  .menu-toggle span{top:50%;transform:translateY(-1px)}
-  .menu-toggle span::before{top:-7px}
-  .menu-toggle span::after{top:7px}
 
   /* HERO */
   .hero{position:relative;padding:128px 0 96px;overflow:hidden}
@@ -110,6 +112,10 @@
   .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
     background:linear-gradient(90deg,var(--ground) 30%,rgba(251,250,247,.93) 54%,rgba(251,250,247,.46) 73%,transparent 89%)}
   .hero-inner{position:relative;z-index:2;max-width:760px}
+  /* The hero lead is tightened on mobile to cut vertical load before the first CTA.
+     Same meaning, fewer lines. */
+  .lead-tight{display:none}
+  @media (max-width:640px){ .lead-wide{display:none} .lead-tight{display:block} }
   .hero h1{font-family:var(--serif);font-weight:500;font-size:var(--fs-hero);line-height:1.05;
     letter-spacing:-.018em;margin:22px 0 0;max-width:19ch;text-wrap:balance}
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;align-items:center}
@@ -256,10 +262,6 @@
     .outward,.tools,.paths,.homes{grid-template-columns:1fr 1fr}
   }
   @media (max-width:860px){
-    .navlinks{display:none}
-    .menu-toggle{display:block}
-    .navlinks.open{display:flex;position:absolute;top:70px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--ground2);border-bottom:1px solid var(--line);padding:10px 26px 18px}
-    .navlinks.open>a{padding:11px 0;width:100%;min-height:44px;display:flex;align-items:center}
     .inversion li,.terr-row,.feature,.person,.outward,.tools,.paths,.homes{grid-template-columns:minmax(0,1fr)}
     .card{padding:22px}
     .feature .l{padding:28px 22px}
@@ -289,13 +291,15 @@
     *{animation-duration:.001ms!important;transition-duration:.001ms!important}
   }
 </style>
+  <link rel="stylesheet" href="/assets/css/nav.css">
+  <script src="/assets/js/nav.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header>
   <nav class="wrap bar" aria-label="Primary">
-    <a class="brand" href="#top"><img src="/assets/free-to-be-me-logo-180.png" alt="Free To Be Me" width="180" height="193"><span>Tanya Hicks</span></a>
+    <a class="brand" href="#top"><span>Tanya Hicks</span></a>
     <div class="navlinks" id="nav">
       <a href="#top">Home</a>
       <a href="/the-practice/">The Practice</a>
@@ -308,7 +312,6 @@
       <a class="btn btn-teal" href="/#about">About Tanya</a>
     
     </div>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false"><span></span></button>
   </nav>
 </header>
 
@@ -324,7 +327,8 @@
       <span class="eyebrow">Tanya Hicks &times; FREE 2B ME</span>
       <h1 class="serif">Less fixing. More living.</h1>
         <p class="lead">What if support stopped treating the person as the automatic problem?</p>
-        <p class="lead">FREE 2B ME connects real-life support, community, professional practice, books and tools, Practitioner learning, evidence and better systems around one idea: work out what is actually getting in the way without taking over the person&rsquo;s life.</p>
+        <p class="lead lead-wide">FREE 2B ME connects real-life support, community, professional practice, books and tools, Practitioner learning, evidence and better systems around one idea: work out what is actually getting in the way without taking over the person&rsquo;s life.</p>
+        <p class="lead lead-tight">FREE 2B ME connects real-life support, community, professional practice, books, learning and better systems around one idea: work out what is getting in the way without taking over the person&rsquo;s life.</p>
         <p class="lead">More of the life that matters to you, within reach.</p>
         <div class="cta-row">
           <a class="btn btn-teal" href="#find-your-way-in">Explore FREE 2B ME</a>
@@ -736,11 +740,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  var m=document.querySelector('.menu-toggle'),n=document.getElementById('nav');
-  if(m&&n)m.addEventListener('click',function(){
-    var open=n.classList.toggle('open');
-    m.setAttribute('aria-expanded',String(open));
-  });
+  /* Mobile navigation is handled by the shared /assets/js/nav.js. */
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('[data-motion]').forEach(function(btn){
     var vid=btn.parentElement?btn.parentElement.querySelector('video'):null;
