@@ -283,6 +283,30 @@
   .home p{color:var(--muted);font-size:var(--fs-small);margin:0;max-width:38ch}
   .home .go{margin-top:auto;padding-top:18px;font-size:14px;color:var(--teal)}
 
+  /* Global Recognition - added 2026-09-06 */
+  #recognition{padding-block:var(--sp-major)}
+  .rec-head{max-width:58ch}
+  .rec-tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 34px}
+  @media(max-width:900px){.rec-tiers{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.rec-tiers{grid-template-columns:1fr}}
+  .rec-tier{border:1px solid var(--line);border-radius:16px;padding:22px 20px;background:var(--panel);
+            display:flex;flex-direction:column;gap:4px;transition:border-color .18s ease,transform .18s ease}
+  .rec-tier:hover{transform:translateY(-2px)}
+  .rec-tier .n{font-family:var(--serif);font-size:clamp(34px,3vw,46px);line-height:1;letter-spacing:-.01em}
+  .rec-tier .t{font-size:var(--fs-eyebrow);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+  .rec-tier.g{border-top:3px solid #C9A227} .rec-tier.g .n{color:#B08D1F}
+  .rec-tier.s{border-top:3px solid #9AA1A8} .rec-tier.s .n{color:#78808A}
+  .rec-tier.b{border-top:3px solid #B87333} .rec-tier.b .n{color:#9C6029}
+  .rec-tier.f{border-top:3px solid var(--teal)} .rec-tier.f .n{color:var(--teal)}
+  .rec-group{border-top:1px solid var(--line);padding-top:22px;margin-top:26px}
+  .rec-group > h3{font-family:var(--serif);font-size:var(--fs-card);margin:0 0 2px;font-weight:400}
+  .rec-group > .sub{font-size:var(--fs-eyebrow);letter-spacing:.28em;text-transform:uppercase;color:var(--faint);margin:0 0 16px}
+  .rec-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 34px}
+  @media(max-width:760px){.rec-list{grid-template-columns:1fr}}
+  .rec-list li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:13px;align-items:baseline}
+  .rec-list .yr{font-variant-numeric:tabular-nums;font-size:var(--fs-small);color:var(--faint);flex:0 0 3.1em}
+  .rec-list .nm{font-size:var(--fs-small);color:var(--soft);line-height:1.5}
+  .rec-list .bd{display:block;color:var(--faint);font-size:12.5px;margin-top:1px}
   .closer{text-align:center;padding-block:var(--sp-major);border-top:1px solid var(--line2)}
   .closer .q{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,52px);line-height:1.12;letter-spacing:-.012em;text-wrap:balance;margin:0 auto;max-width:20ch}
   .closer .senses{font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);color:var(--gold);margin:26px auto 0;max-width:44ch;opacity:.92;line-height:1.4;text-wrap:balance}
@@ -626,6 +650,94 @@
         <div class="cta-row">
           <a class="btn btn-teal" href="/work-with-tanya/">Work With Me</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GLOBAL RECOGNITION -->
+  <section id="recognition">
+    <div class="wrap">
+      <span class="eyebrow">Global Recognition</span>
+      <h2 class="serif rec-head">Recognised locally, nationally and internationally.</h2>
+      <p style="color:var(--muted);font-size:var(--fs-body);max-width:66ch">These are not the reason the work exists. They are one external marker of a model built from lived experience, professional practice, community need and sustained implementation.</p>
+
+      <div class="rec-tiers">
+        <div class="rec-tier g"><span class="n">12</span><span class="t">Gold</span></div>
+        <div class="rec-tier s"><span class="n">6</span><span class="t">Silver</span></div>
+        <div class="rec-tier b"><span class="n">4</span><span class="t">Bronze</span></div>
+        <div class="rec-tier f"><span class="n">21</span><span class="t">Finalists</span></div>
+      </div>
+
+      <div class="rec-group">
+        <h3 class="serif">Gold Winners</h3>
+        <p class="sub">Winner</p>
+        <ul class="rec-list">
+          <li><span class="yr">2026</span><span class="nm">Big Idea<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Non-Profit Organisation of the Year<span class="bd">Stevie Awards for Women in Business, International</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Children&rsquo;s Education<span class="bd">Women Changing the World Global Awards, London</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Emerging Non-Profit Business<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Rising Star<span class="bd">Women Changing the World Regional Awards, APAC</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Global Female Executive<span class="bd">Stevie Awards for Women in Business, International (Sparkly Aliens Inc.)</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Education Provider of the Year<span class="bd">Sunshine Coast Business Awards</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Community Leader of the Year<span class="bd">Beam National Awards, Australia</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Overcoming the Odds Award<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
+          <li><span class="yr">2023</span><span class="nm">ND/Autistic Excellence Provider of the Year<span class="bd">Divergantz Autistic Business Awards, Queensland</span></span></li>
+          <li><span class="yr">2023</span><span class="nm">Community Inclusion Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
+          <li><span class="yr">2022</span><span class="nm">Emerging Community Leader Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
+        </ul>
+      </div>
+
+      <div class="rec-group">
+        <h3 class="serif">Silver Winners</h3>
+        <p class="sub">Second place</p>
+        <ul class="rec-list">
+          <li><span class="yr">2025</span><span class="nm">Achievement in Diversity &amp; Inclusion<span class="bd">Stevie Awards for Women in Business, International</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Woman in Education<span class="bd">Women Changing the World Regional Awards, APAC</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Emerging AusMumpreneur of the Year<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Global Woman of the Year<span class="bd">Stevie Awards for Women in Business, International (Sparkly Aliens Inc.)</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Global Female Executive<span class="bd">Stevie Awards for Women in Business, International (Neurodivergent Empowered)</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Disabled Business Excellence<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
+        </ul>
+      </div>
+
+      <div class="rec-group">
+        <h3 class="serif">Bronze Winners &amp; Honourable Mentions</h3>
+        <p class="sub">Third place and honourable mention</p>
+        <ul class="rec-list">
+          <li><span class="yr">2026</span><span class="nm">Girl of the Year<span class="bd">Women Changing the World Global Awards, Paris (Kianni Jackson, third place)</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Most Resilient Women-Owned Business<span class="bd">Stevie Awards for Women in Business, International</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Advocacy Impact<span class="bd">Women Changing the World Global Awards, London (third place)</span></span></li>
+          <li><span class="yr">2025</span><span class="nm">Thought Leader of the Year<span class="bd">Women Changing the World Regional Awards, APAC (Honourable Mention)</span></span></li>
+        </ul>
+      </div>
+
+      <div class="rec-group">
+        <h3 class="serif">Finalists</h3>
+        <p class="sub">Shortlisted</p>
+        <ul class="rec-list">
+          <li><span class="yr">2026</span><span class="nm">Community Group or Organisation<span class="bd">Sunshine Coast Australia Day Community Awards (Sparkly Aliens Inc.)</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Citizen of the Year<span class="bd">Sunshine Coast Australia Day Community Awards (Tanya Hicks)</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Sustainable Business Woman of the Year<span class="bd">Sunshine Coast Business Women&rsquo;s Network Awards (Neurodivergent Empowered)</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Woman Changing the World<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Business Evolution<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Thought Leader of the Year<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Rising Star<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Woman in Education<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Woman in Therapy &amp; Counselling Services<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Disability Inclusion Impact<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Human Rights<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Innovation<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2026</span><span class="nm">Thought Leader of the Year<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Outstanding Growth<span class="bd">Telstra Best of Business Awards, Australia</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Championing Health<span class="bd">Telstra Best of Business Awards, Australia</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Woman of the Year<span class="bd">Beam National Awards, Australia</span></span></li>
+          <li><span class="yr">2024</span><span class="nm">Excellence in Diversity &amp; Inclusion<span class="bd">Beam National Awards, Australia</span></span></li>
+          <li><span class="yr">2023</span><span class="nm">Fisher Business of the Year<span class="bd">Fisher Community Awards, Caloundra</span></span></li>
+          <li><span class="yr">2022</span><span class="nm">Community Leadership Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
+          <li><span class="yr">2022</span><span class="nm">Social Commitment Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
+          <li><span class="yr">2021</span><span class="nm">Best Children&rsquo;s Disability Service<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
+        </ul>
       </div>
     </div>
   </section>
