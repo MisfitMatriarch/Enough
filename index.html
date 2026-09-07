@@ -114,6 +114,9 @@
   .hero-inner{position:relative;z-index:2;max-width:760px}
   /* The hero lead is tightened on mobile to cut vertical load before the first CTA.
      Same meaning, fewer lines. */
+  .path-pending{opacity:.72;cursor:default;border-style:dashed}
+  .path-pending .go{font-style:italic}
+  .promise{font-family:var(--serif,Georgia,serif);font-size:clamp(1.35rem,2.4vw,1.9rem);line-height:1.25;margin:.35rem 0 1rem}
   .lead-tight{display:none}
   @media (max-width:640px){ .lead-wide{display:none} .lead-tight{display:block} }
   .hero h1{font-family:var(--serif);font-weight:500;font-size:var(--fs-hero);line-height:1.05;
@@ -385,34 +388,61 @@
     <button class="motion" type="button" data-motion aria-pressed="false">Pause motion</button>
     <div class="wrap hero-inner">
       <span class="eyebrow">Tanya Hicks &times; FREE 2B ME</span>
-      <h1 class="serif">Less fixing. More living.</h1>
-        <p class="lead">What if support stopped treating the person as the automatic problem?</p>
+      <h1 class="serif">What if the person is not the automatic problem?</h1>
+        <p class="promise">Less fixing. More living.</p>
         <p class="lead lead-wide">FREE 2B ME connects real-life support, community, professional practice, books and tools, Practitioner learning, evidence and better systems around one idea: work out what is actually getting in the way without taking over the person&rsquo;s life.</p>
         <p class="lead lead-tight">FREE 2B ME connects real-life support, community, professional practice, books, learning and better systems around one idea: work out what is getting in the way without taking over the person&rsquo;s life.</p>
         <p class="lead">More of the life that matters to you, within reach.</p>
         <div class="cta-row">
-          <a class="btn btn-teal" href="#find-your-way-in">Explore FREE 2B ME</a>
-          <a class="btn btn-ghost" href="#about">Meet Tanya</a>
+          <a class="btn btn-teal" href="#find-your-way-in">Find your place to begin</a>
+          <a class="btn btn-ghost" href="#ecosystem">Explore the FREE 2B ME ecosystem</a>
         </div>
     </div>
   </section>
 
   <!-- FIND YOUR WAY IN -->
+
+  <!-- OPENING (v0.2 approved final opening copy) -->
+  <section id="different-question">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="serif">FREE 2B ME begins with a different question.</h2>
+        <p class="lead">Instead of asking people to become easier, calmer, more typical or more independent before they can belong, we look at the whole situation: the person, their body, communication, relationships, support, environment and the systems around them.</p>
+        <p class="lead">Sometimes the person needs a skill. Sometimes they need support. Sometimes the environment, timetable, role, relationship or communication route needs to change.</p>
+        <p class="lead">Often, several things are true at once.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPACITY CAN CHANGE WITH CONDITIONS (v0.2 Section 1) -->
+  <section id="capacity">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Capacity</span>
+        <h2 class="serif">Capacity can change with conditions.</h2>
+        <p class="lead">A person&rsquo;s capacity is not always fixed. Noise, pain, uncertainty, communication demands, trust, recovery time, sensory load and the support available can all change what is possible in that moment.</p>
+        <p class="lead">Support does not cancel capability. Needing help does not make someone&rsquo;s contribution less real. Doing something with support is still doing it.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="find-your-way-in">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Start anywhere</span>
-        <h2 class="serif">Find your way in.</h2>
-        <p class="lead">You do not need to understand the whole ecosystem before you choose. Pick whichever is closest to why you are here.</p>
+        <h2 class="serif">More than one place to begin.</h2>
+        <p class="lead">People arrive with different questions. These are four places to begin:</p>
       </div>
       <div class="paths">
-        <a class="path" href="/books/"><h3 class="serif">I want something for me</h3><p>Books, tools and ideas for understanding what is happening in your own life and what might help.</p><span class="go">Start here &rarr;</span></a>
-        <a class="path" href="/the-practice/"><h3 class="serif">I support someone</h3><p>Ideas for families, supporters and professionals looking for more helpful ways forward.</p><span class="go">Explore support thinking &rarr;</span></a>
-        <a class="path" href="/practitioner-pathway/"><h3 class="serif">I&rsquo;m a practitioner</h3><p>The FREE 2B ME Practice, the Practitioner Pathway, professional learning, tools and applied practice.</p><span class="go">For practitioners &rarr;</span></a>
-        <a class="path" href="/for-organisations/"><h3 class="serif">I lead a service or organisation</h3><p>Workforce capability, supervision, implementation, evidence, governance and better service design.</p><span class="go">For organisations &rarr;</span></a>
-        
-        <a class="path" href="/work-with-tanya/"><h3 class="serif">I&rsquo;m looking for Tanya</h3><p>Speaking, media, writing, collaboration and systems work.</p><span class="go">Work with Tanya &rarr;</span></a>
+        <!-- v0.2 Section 2 route cards. Each label is already this site's canonical territory
+             label in the Practice Library below, so these route to confirmed live anchors on this
+             page rather than to a guessed or invented URL. -->
+        <a class="path" href="#begin-access"><h3 class="serif">When life takes more than people can see</h3><span class="go">Start here &rarr;</span></a>
+        <a class="path" href="#begin-meaning"><h3 class="serif">When behaviour is not the whole story</h3><span class="go">Start here &rarr;</span></a>
+        <a class="path" href="#begin-body"><h3 class="serif">When calm is not the whole answer</h3><span class="go">Start here &rarr;</span></a>
+        <a class="path" href="#begin-design"><h3 class="serif">Having a real say in your own life</h3><span class="go">Start here &rarr;</span></a>
       </div>
+      <p class="lead" style="margin-top:24px">Each route opens a different part of the FREE 2B ME ecosystem without reducing a person&rsquo;s life to a diagnosis, behaviour or service category.</p>
       <p class="note" style="margin-top:24px">In Australia and looking for support right now? <a href="https://www.free2bme.au" target="_blank" rel="noopener">The Nest and Neurodivergent Empowered</a> deliver FREE 2B ME in everyday life.</p>
     </div>
   </section>
@@ -554,7 +584,7 @@
 
       <div class="terr">
         <!-- canonical: Access and conditions -->
-        <p class="terr-label">When life takes more than people can see</p>
+        <p class="terr-label" id="begin-access">When life takes more than people can see</p>
         <div class="terr-row">
           <a class="bk" href="/books/free-2b-me/">
             <div class="aud">Book 1</div>
@@ -568,7 +598,7 @@
             <p>Can professionals make valid decisions if the person has never truly had access? Whose knowledge counts?</p>
           </a>
         </div><!-- canonical: Meaning and interpretation -->
-        <p class="terr-label">When behaviour is not the whole story</p>
+        <p class="terr-label" id="begin-meaning">When behaviour is not the whole story</p>
         <div class="terr-row">
           <a class="bk" href="/books/you-make-sense/">
             <div class="aud">Book 2</div>
@@ -581,7 +611,7 @@
             <p>Behaviour is not something to eliminate. It is information from a person whose life belongs to them. Who gets to decide what behaviour means?</p>
           </a>
         </div><!-- canonical: Body and nervous system -->
-        <p class="terr-label">When calm is not the whole answer</p>
+        <p class="terr-label" id="begin-body">When calm is not the whole answer</p>
         <div class="terr-row">
           <a class="bk" href="/books/nervous-system-nourishment/">
             <div class="aud">Book 3</div>
@@ -594,7 +624,7 @@
             <p>Are we helping someone participate? Or are we helping them look regulated enough for everyone else?</p>
           </a>
         </div><!-- canonical: Design and systems -->
-        <p class="terr-label">Having a real say in your own life</p>
+        <p class="terr-label" id="begin-design">Having a real say in your own life</p>
         <div class="terr-row">
           <a class="bk" href="/books/built-with-you/">
             <div class="aud">Book 4</div>
