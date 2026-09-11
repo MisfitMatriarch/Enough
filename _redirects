@@ -15,8 +15,10 @@
 # sector failure; it is now an offer to organisations. The old path keeps resolving.
 /systems-change/*                  /for-organisations/  301!
 
-# Sovereignty routing, locked 2026-09-02. The old top-level path now resolves to the optional
-# professional deep dive. No splat: /sovereignty/transcript/ is a real page and must keep
-# resolving to itself. The audit tool it used to hold moved to /frameworks/ and is linked from
-# the deeper-architecture page rather than deleted.
-/sovereignty/                      /the-practice/deeper-architecture/  301
+# Sovereignty routing. Superseded 2026-09-11 by owner instruction: From Support to Sovereignty
+# belongs inside Professional Learning only, so the old top-level path resolves there rather
+# than to the Practice deep dive it pointed at under the 2026-09-02 rule. Still no splat:
+# /sovereignty/transcript/ is a real page and must keep resolving to itself. The audit tool it
+# used to hold moved to /frameworks/ and is linked rather than deleted.
+/sovereignty/                      /professional-learning/  301
+/sovereignty                       /professional-learning/  301

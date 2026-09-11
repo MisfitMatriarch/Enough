@@ -1,0 +1,43 @@
+/* FREE 2B ME brand tokens.
+   Pigments and paper measured from the seven Book 1 chapter plates at full resolution,
+   not taken from any interface source. This is the system across all eight books, so the
+   proportions below are part of the token set, not decoration.
+
+   Measured share of pigment area across the plates:
+     aqua family   62.6%   pink family 24.6%   gold 9.5%   violet 3.2%
+     paper occupies 36.4% of every plate before any pigment is laid down.
+*/
+:root{
+  /* Paper. The canvas is warm, never stark white. */
+  --f2bm-paper:#fdfcf9;          /* measured plate field */
+  --f2bm-cream:#fbf7ef;          /* page ground */
+  --f2bm-cream-deep:#f6ecdf;     /* banded/alternate ground */
+
+  /* Ink. Deeper than the paint on purpose: these carry contrast, the paint does not. */
+  --f2bm-navy:#082b58;
+  --f2bm-ink:#18334f;
+
+  /* Aqua family — the lead. Roughly two and a half times the pink. */
+  --f2bm-aqua-deep:#0b829b;
+  --f2bm-aqua:#1db8cf;
+  --f2bm-aqua-mid:#64cce1;
+  --f2bm-aqua-pale:#a4e1ee;
+
+  /* Pink family — the counterweight, never the lead. */
+  --f2bm-pink:#f84f97;
+  --f2bm-pink-pale:#faa4c9;
+  --f2bm-magenta:#d20f69;        /* type and rules only, too strong as a field */
+
+  /* Gold — restrained. Under a tenth of the pigment, seams and flecks only. */
+  --f2bm-gold:#dcac66;
+  --f2bm-gold-pale:#f5daaa;
+  --f2bm-gold-rule:#caa45a;
+
+  /* Violet — a whisper. Accent, never a field. */
+  --f2bm-violet-pale:#d1a7e4;
+  --f2bm-violet:#6d329d;         /* type only */
+
+  /* Type */
+  --f2bm-serif:"Cormorant Garamond",Georgia,serif;
+  --f2bm-sans:"DM Sans","Figtree",system-ui,sans-serif;
+}

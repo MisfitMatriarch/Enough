@@ -3,797 +3,1154 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FREE 2B ME | A connected neuroaffirming practice ecosystem</title>
-<meta name="description" content="FREE 2B ME is a connected neuroaffirming practice ecosystem. Begin with the person. Add useful support, skills, evidence and professional expertise without replacing their authority. Less fixing. More living.">
+<title>FREE 2B ME | Less fixing. More living.</title>
+<meta name="description" content="FREE 2B ME is a body of books, practice, tools, practitioner development, professional learning and systems work. It explores what becomes possible when the person is no longer treated as the only place change can happen.">
+<link rel="canonical" href="https://tanyahicks.com/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Tanya Hicks">
+<meta property="og:site_name" content="FREE 2B ME">
 <meta property="og:url" content="https://tanyahicks.com/">
 <meta property="og:title" content="FREE 2B ME | Less fixing. More living.">
-<meta property="og:description" content="FREE 2B ME is a connected neuroaffirming practice ecosystem. Begin with the person. Add useful support, skills, evidence and professional expertise without replacing their authority. Less fixing. More living.">
-<meta property="og:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="FREE 2B ME - Less fixing. More living.">
+<meta property="og:description" content="Books, practice, tools, learning and systems work for lives that should not have to be built around being fixed.">
+<meta property="og:image" content="https://tanyahicks.com/assets/brand/intro-gold-seam-1024.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FREE 2B ME | Less fixing. More living.">
-<meta name="twitter:description" content="FREE 2B ME is a connected neuroaffirming practice ecosystem. Begin with the person. Add useful support, skills, evidence and professional expertise without replacing their authority. Less fixing. More living.">
-<meta name="twitter:image" content="https://tanyahicks.com/assets/keynote/og-share.jpg">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0b10'/><circle cx='16' cy='16' r='6' fill='%236bd0c6'/></svg>">
-<link rel="canonical" href="https://tanyahicks.com/">
+<link rel="icon" href="/assets/brand/phoenix-dark-120.png">
+<link rel="preload" href="/assets/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <style>
-  /* Self-hosted type. All three files are SIL OFL (self-hosting permitted).
-     Figtree is a variable face (300-900) in one file; Cormorant Garamond is
-     the Light optical cut (400 + 500), used for display only. */
-  @font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-400.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
-  @font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
-  @font-face{font-family:'Figtree';src:url('/assets/fonts/figtree-var.woff2') format('woff2');font-weight:300 900;font-style:normal;font-display:swap}
+/* ------------------------------------------------------------------
+   FREE 2B ME homepage.
+   Type is self-hosted; no font CDN. Colour comes from f2bm-tokens.css,
+   whose pigment values were measured from the chapter plates.
+   Every artwork placement is capped at half its source pixel width so a
+   2x screen still reads native. Nothing is upscaled, nothing full-bleed.
+------------------------------------------------------------------- */
+@font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-400.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Cormorant Garamond';src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Figtree';src:url('/assets/fonts/figtree-var.woff2') format('woff2');font-weight:300 900;font-display:swap}
 
-  html{font-synthesis:none}
+:root{
+  --ground:var(--f2bm-cream);
+  --ink:var(--f2bm-navy);
+  --body:#2d4260;
+  --rule:rgba(202,164,90,.42);
+  --hair:rgba(8,43,88,.12);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --wrap:1180px;
+  --fs-body:21px;
+  --fs-lead:clamp(24px,1.5vw + 17px,32px);
+  --fs-h2:clamp(40px,5vw + 8px,74px);
+  --fs-h3:clamp(28px,1.8vw + 18px,38px);
+  --fs-eyebrow:14.5px;
+  --sp:clamp(86px,9vw,150px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html,body{overflow-x:clip;max-width:100%}
+[id]{scroll-margin-top:clamp(88px,9vw,112px)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0;background:var(--ground);color:var(--body);
+  font-family:var(--sans);font-size:var(--fs-body);line-height:1.62;font-weight:350;
+  /* warm paper, never stark white: two very low-contrast washes, no image */
+  background-image:
+    radial-gradient(120% 60% at 12% -8%, rgba(100,204,225,.055), transparent 60%),
+    radial-gradient(100% 55% at 92% 4%, rgba(248,79,151,.045), transparent 62%);
+  background-attachment:fixed;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--ink);letter-spacing:-.012em;line-height:1.03;margin:0;text-wrap:balance}
+h2{font-size:var(--fs-h2)}
+h3{font-size:var(--fs-h3);line-height:1.08}
+p{margin:0 0 1.05em;text-wrap:pretty}
+.wrap{width:min(100% - 48px,var(--wrap));margin-inline:auto}
+.eyebrow{font-family:var(--sans);font-size:var(--fs-eyebrow);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--f2bm-aqua-deep);margin:0 0 18px}
+.lead{font-family:var(--serif);font-size:var(--fs-lead);line-height:1.3;color:var(--ink)}
+.measure{max-width:60ch}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:18px;top:14px;z-index:99;background:var(--ink);color:#fff;padding:11px 18px;border-radius:3px}
+:focus-visible{outline:2px solid var(--f2bm-aqua-deep);outline-offset:3px}
 
-  :root{
-    --ground:#FBFAF7; --ground2:#F3F1EE; --panel:#FFFFFF; --panel2:#F7F5F1;
-    --cream:#222222; --soft:#3A3A3A; --muted:#515151; --faint:#6E6E6E;
-    --teal:#23807A; --teal-bright:#4ECEC5; --teal-dim:#1B6560; --gold:#E01560;
-    --magenta:#EB256E; --magenta-text:#E01560; --purple:#6B4C9A;
-    --btn-primary-bg:#E01560; --btn-primary-fg:#FFFFFF; --line:rgba(34,34,34,.13); --line2:rgba(34,34,34,.07);
-    --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
-    --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
-    --wrap:1140px;
-    /* One fluid scale (spaces around every calc operator - a missing space
-       is invalid CSS and silently drops the whole clamp). */
-    --fs-eyebrow:12px;
-    --fs-small:clamp(13px,.3vw + 12px,14px);
-    --fs-body:clamp(16px,.2vw + 15.2px,17px);
-    --fs-lead:clamp(17px,.5vw + 15px,19px);
-    --fs-card:clamp(21px,1vw + 17px,25px);
-    --fs-pull:clamp(27px,2vw + 19px,35px);
-    --fs-h2:clamp(34px,4vw + 16px,50px);
-    --fs-hero:clamp(42px,6vw + 18px,70px);
-    --sp-major:clamp(88px,10vw,144px);
-    --sp-standard:clamp(68px,7.5vw,108px);
-    --sp-compact:clamp(52px,5vw,76px);
-  }
-  /* Intentional dark sections. Deep charcoal is a statement surface, never the page
-     default. Overriding the tokens locally means every rule inside keeps working
-     unchanged, and the accents swap to their dark-ground variants: true aqua passes
-     8.3:1 on charcoal, magenta has to lighten to reach 4.5:1. */
-  .dark{--ground:#222222; --ground2:#1A1A1A; --panel:#2A2A2A; --panel2:#242424;
-    --cream:#FBFAF7; --soft:#E4E1DB; --muted:#B9B4AB; --faint:#8E8880;
-    --teal:#4ECEC5; --teal-bright:#4ECEC5; --teal-dim:#7BDDD6; --gold:#EE4A87;
-    --magenta:#EE4A87; --magenta-text:#EE4A87; --purple:#977CBE;
-    --btn-primary-bg:#EE4A87; --btn-primary-fg:#1A1A1A; --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.06);
-    background:var(--ground); color:var(--cream)}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--ground);color:var(--cream);font-family:var(--sans);
-    font-size:var(--fs-body);-webkit-font-smoothing:antialiased;line-height:1.62;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 26px}
-  .serif{font-family:var(--serif)}
-  .eyebrow{font-size:var(--fs-eyebrow);letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-family:var(--sans)}
-  .skip{position:absolute;left:-9999px;top:0;background:var(--teal);color:#052018;padding:10px 16px;z-index:200}
-  .skip:focus{left:12px;top:12px}
+/* gold hairline seam, drawn not printed */
+.seam{height:1px;border:0;margin:0;background:linear-gradient(90deg,transparent,var(--f2bm-gold) 18%,var(--f2bm-gold-pale) 50%,var(--f2bm-gold) 82%,transparent);opacity:.75}
 
-  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,
-  .tool:focus-visible,.path:focus-visible,.home:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+.link{display:inline-block;font-size:16px;font-weight:600;color:var(--ink);text-decoration:none;padding-bottom:5px;border-bottom:1px solid var(--f2bm-gold)}
+.link:hover{border-bottom-color:var(--f2bm-aqua-deep)}
 
-  header{position:sticky;top:0;z-index:60;background:rgba(251,250,247,.76);
-    backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)}
-  nav.bar{display:flex;align-items:center;justify-content:space-between;height:70px;gap:20px}
-  .brand{font-family:var(--serif);font-size:22px;letter-spacing:.01em;line-height:1;white-space:nowrap;
-    display:flex;align-items:center;gap:11px;color:var(--cream)}
-  .brand img{width:auto;height:46px;display:block}
-  .navlinks{display:flex;gap:15px;align-items:center;font-size:13px;color:var(--soft)}
-  .navlinks>a{color:var(--soft);transition:color .2s;white-space:nowrap}
-  .navlinks>a:hover{color:var(--cream)}
-  /* Buttons. Editorial radius rather than a full capsule, magenta primary carrying the
-     phoenix's attitude, charcoal outline secondary. Aqua stays a brand accent elsewhere.
-     Primary foreground is tokenised: white on magenta passes AA on light (4.72:1) but
-     fails on the dark band (3.52:1), where near-black is used instead (4.94:1). */
-  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-size:14px;font-weight:600;
-    padding:13px 24px;border-radius:18px;cursor:pointer;border:1.5px solid transparent;white-space:nowrap;
-    transition:background .2s,color .2s,border-color .2s,transform .2s,filter .2s}
-  .navlinks>a.btn-primary,.btn-primary,.navlinks>a.btn-teal,.btn-teal{
-    background:var(--btn-primary-bg);color:var(--btn-primary-fg);border-color:var(--btn-primary-bg)}
-  .navlinks>a.btn-primary:hover,.btn-primary:hover,.navlinks>a.btn-teal:hover,.btn-teal:hover{
-    filter:brightness(1.08);transform:translateY(-1px)}
-  .btn-outline,.btn-ghost{background:none;border-color:var(--cream);color:var(--cream)}
-  .btn-outline:hover,.btn-ghost:hover{border-color:var(--btn-primary-bg);color:var(--btn-primary-bg);transform:translateY(-1px)}
-  .btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+/* ---------- Acknowledgement of Country ---------- */
+.aoc{padding:clamp(58px,7vw,96px) 0;border-bottom:1px solid var(--hair)}
+.aoc-card{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,4vw,56px);align-items:start;max-width:940px}
+.aoc-mark{width:132px}
+.aoc h2{font-size:clamp(34px,3vw + 14px,52px)}
+.aoc p{max-width:60ch;font-size:19px}
+.aoc-lead{font-family:var(--serif);font-size:clamp(21px,1.2vw + 15px,27px);line-height:1.32;color:var(--ink)}
+.aoc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+body.aoc-overlay{overflow:hidden}
+body.aoc-overlay .aoc{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:clamp(24px,5vw,56px);
+  background:var(--f2bm-cream);
+  background-image:
+    radial-gradient(62% 46% at 50% 116%, rgba(29,184,207,.20), transparent 72%),
+    radial-gradient(52% 38% at 6% -12%, rgba(248,79,151,.13), transparent 72%),
+    radial-gradient(44% 32% at 98% 6%, rgba(220,172,102,.13), transparent 72%);
+  border-bottom:0;overflow:auto}
+body.aoc-overlay .aoc-card{grid-template-columns:1fr;justify-items:center;text-align:center;gap:26px;max-width:680px}
+body.aoc-overlay .aoc-card .seam{margin-inline:auto}
+body.aoc-overlay .aoc-actions{justify-content:center}
+body.aoc-overlay main,body.aoc-overlay .site-header,body.aoc-overlay footer,body.aoc-overlay .a11y-toggle{display:none}
+body.aoc-entered .aoc{display:none}
+.enter{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff;background:var(--ink);border:0;border-radius:2px;padding:15px 30px;cursor:pointer}
+.enter:hover{background:var(--f2bm-aqua-deep)}
+.listen{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--f2bm-gold);border-radius:2px;padding:13px 20px;cursor:pointer}
+.listen:hover,.listen[aria-pressed="true"]{background:#fff;border-color:var(--f2bm-aqua-deep)}
+
+/* ---------- header ---------- */
+.site-header{position:sticky;top:0;z-index:40;background:rgba(251,247,239,.9);backdrop-filter:blur(9px);border-bottom:1px solid var(--hair)}
+.header-in{display:flex;align-items:center;gap:26px;padding:14px 0;width:min(100% - 48px,var(--wrap));margin-inline:auto}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:0 0 auto}
+.brand img{width:54px}
+.brand small{font-family:var(--serif);font-size:16.5px;color:var(--body);font-style:italic}
+.site-header nav{margin-left:auto;display:flex;gap:26px;flex-wrap:wrap}
+.site-header nav a{font-size:15.5px;font-weight:500;text-decoration:none;color:var(--ink);padding:4px 0;border-bottom:1px solid transparent}
+.site-header nav a:hover{border-bottom-color:var(--f2bm-gold)}
+.cta{font-size:14.5px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--ink);border:1px solid var(--f2bm-gold);padding:11px 20px}
+.cta:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;padding:clamp(56px,6vw,92px) 0 clamp(52px,6vw,86px);text-align:center}
+.hero-edge{position:absolute;top:0;bottom:0;width:165px;pointer-events:none}
+.hero-edge img{height:100%;width:165px;object-fit:cover;opacity:.92}
+.hero-edge.l{left:0}
+.hero-edge.l::after,.hero-edge.r::after{content:"";position:absolute;inset:0}
+.hero-edge.l::after{background:linear-gradient(90deg,transparent 40%,var(--f2bm-cream))}
+.hero-edge.r{right:0}
+.hero-edge.r::after{background:linear-gradient(270deg,transparent 40%,var(--f2bm-cream))}
+.hero-in{position:relative;z-index:2;width:min(100% - 240px,1120px);margin-inline:auto}
+.hero-phoenix{width:min(58vw,268px);margin:0 auto 26px}
+.hero h1{font-size:clamp(46px,6.2vw,96px);line-height:1.02}
+.hero h1 .f{color:var(--f2bm-aqua-deep)}
+.hero h1 .m{color:var(--f2bm-magenta)}
+.hero .claim{margin:30px auto 0;max-width:26ch;font-family:var(--serif);font-size:clamp(26px,1.9vw + 16px,40px);line-height:1.16;color:var(--f2bm-aqua-deep);text-wrap:balance}
+.hero .sub{margin:24px auto 0;max-width:none;font-size:clamp(17px,.5vw + 15px,19.5px);line-height:1.55;color:var(--body);text-wrap:balance}
+.hero .seam{width:140px;margin:34px auto 0}
+
+/* ---------- sections ---------- */
+section{position:relative}
+.band{padding-block:var(--sp)}
+.rule-top{border-top:1px solid var(--hair)}
+
+/* intro: asymmetric, artwork as a contained band on the right */
+.intro-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(36px,5vw,84px);align-items:center}
+.intro-art{max-width:512px;justify-self:end}
+.intro-art figcaption{margin-top:14px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:var(--f2bm-aqua-deep)}
+
+/* ways: type-led, no pictures beside text */
+.ways-head{display:grid;grid-template-columns:.85fr 1.4fr;gap:clamp(30px,4vw,70px);align-items:end;margin-bottom:56px}
+.ways-list{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(40px,5vw,88px)}
+.way{padding:34px 0;border-top:1px solid var(--hair)}
+.way:nth-child(-n+2){border-top:1px solid var(--rule)}
+.way span{font-family:var(--serif);font-size:20px;color:var(--f2bm-magenta)}
+.way h3{margin:6px 0 12px}
+.way p{font-size:19px;max-width:44ch}
+
+/* practice: navy, artwork contained, fine lines drawn over it */
+.practice{background:var(--ink);color:#dce8f4;overflow:hidden}
+.practice h2,.practice h3{color:#fff}
+.practice .eyebrow{color:var(--f2bm-aqua-mid)}
+.practice .lead{color:#eaf3fb}
+.practice .link{color:#fff;border-bottom-color:var(--f2bm-gold)}
+.practice{padding-block:clamp(96px,10vw,160px)}
+.practice-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(36px,5vw,86px);align-items:center}
+.practice-art{position:relative;justify-self:start;width:min(100%,432px);margin-left:calc(50% - 50vw);padding-left:max(24px,calc(50vw - var(--wrap)/2))}
+.practice-art img{opacity:.94;clip-path:polygon(0 6%,58% 0,100% 14%,92% 72%,46% 100%,4% 86%)}
+.practice-art svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.practice-copy .lead{margin-top:26px}
+
+/* change can happen: organic mask, no rectangle */
+.change-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(36px,5vw,80px);align-items:center}
+.change-art{max-width:400px;justify-self:center}
+.change-art img{clip-path:path("M200,6 C296,6 394,84 394,196 C394,300 322,394 202,394 C92,394 6,312 6,200 C6,88 96,6 200,6 Z");}
+
+/* learning: three crops of one plate */
+.learn-head{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,4vw,70px);align-items:end;margin-bottom:54px}
+.routes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,46px)}
+.route figure{margin:0 0 22px;max-width:256px;overflow:hidden}
+.route:nth-child(1) figure{border-radius:128px 128px 6px 6px}
+.route:nth-child(2) figure{border-radius:6px}
+.route:nth-child(3) figure{border-radius:6px 6px 128px 128px}
+.route span{font-family:var(--serif);font-size:19px;color:var(--f2bm-magenta)}
+.route h3{margin:4px 0 12px;font-size:clamp(24px,1.3vw + 17px,31px)}
+.route p{font-size:18.5px}
+
+/* tanya */
+.tanya-head{display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,60px);align-items:end;margin-bottom:clamp(34px,4vw,58px)}
+.tanya-name{font-size:clamp(54px,6vw,104px);line-height:.94}
+.tanya-role{font-family:var(--serif);font-size:clamp(24px,1.6vw + 15px,34px);color:var(--f2bm-violet);margin:10px 0 0}
+.tanya-head .eyebrow{margin-bottom:12px}
+.tanya-grid{display:grid;grid-template-columns:minmax(0,600px) minmax(0,1fr);gap:clamp(40px,5vw,90px);align-items:start}
+.tanya-photo{position:sticky;top:104px;max-width:600px;overflow:hidden;border-radius:300px 300px 12px 12px;box-shadow:0 34px 80px rgba(8,43,88,.14)}
+.story{max-width:46ch}
+.story p{font-size:21.5px}
+.story p:first-child{font-family:var(--serif);font-size:clamp(27px,1.9vw + 16px,38px);line-height:1.22;color:var(--ink);margin-bottom:.7em}
+
+/* leadership statement */
+.leadership{position:relative;background:var(--ink);color:#e7f0f8;overflow:hidden;padding-block:clamp(88px,8.5vw,132px)}
+.leadership .wash{position:absolute;right:-7%;top:46%;transform:translateY(-50%) rotate(-8deg);width:min(44%,350px);opacity:.34;mix-blend-mode:screen;pointer-events:none}
+.leadership .wash img{clip-path:polygon(18% 2%,74% 0,100% 34%,92% 82%,46% 100%,6% 74%,0 30%)}
+.leadership .eyebrow{color:var(--f2bm-aqua-mid)}
+.leadership blockquote{margin:0;max-width:30ch;font-family:var(--serif);font-size:clamp(36px,4.1vw,72px);line-height:1.06;color:#fff;text-wrap:balance}
+.leadership-note{position:relative;z-index:2;display:grid;grid-template-columns:auto minmax(0,58ch);gap:clamp(22px,3vw,44px);align-items:center;margin-top:clamp(40px,4.5vw,68px);padding-top:clamp(28px,3vw,44px);border-top:1px solid rgba(202,164,90,.45)}
+.leadership-note img{width:104px}
+.leadership-note p{margin:0;font-size:19px;color:#cadcee}
+
+/* books */
+.books{background:linear-gradient(102deg,var(--f2bm-cream) 0 58%,var(--f2bm-cream-deep) 58%)}
+.books-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(40px,5vw,86px);align-items:center}
+.destinations{list-style:none;margin:32px 0 26px;padding:0;border-top:1px solid var(--rule)}
+.destinations li{border-bottom:1px solid var(--hair)}
+.destinations a{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:17px 0;font-size:18px;color:var(--ink);text-decoration:none}
+.destinations a::after{content:"\2192";color:var(--f2bm-gold);font-size:17px}
+.destinations a:hover{color:var(--f2bm-aqua-deep)}
+.status{max-width:52ch;font-size:16.5px;color:#5b6f88}
+.pair-status{display:inline-block;margin-top:9px;padding:4px 10px;border:1px solid var(--rule);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5b6f88}
+.book-figure{margin:0;position:relative;z-index:2;text-align:center}
+.book-figure figcaption{margin-top:20px}
+.book-figure b{display:block;font-size:17px;letter-spacing:.04em;color:var(--ink)}
+.book-figure > figcaption > span{display:block;font-family:var(--serif);font-size:20px;color:var(--f2bm-magenta)}
+.book-figure .pair-status{font-family:var(--sans);font-size:11.5px;color:#5b6f88}
+.pairs{list-style:none;margin:0;padding:0;counter-reset:pair}
+.pairs > li{counter-increment:pair;padding:clamp(26px,3vw,40px) 0;border-top:1px solid var(--hair)}
+.pairs > li:last-child{border-bottom:1px solid var(--hair)}
+.pair-theme{position:relative;margin:0 0 18px;padding-left:44px;font-family:var(--serif);font-size:clamp(21px,1.2vw + 15px,27px);line-height:1.28;color:var(--ink)}
+.pair-theme::before{content:counter(pair,decimal-leading-zero);position:absolute;left:0;top:.18em;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--f2bm-magenta)}
+.pair-two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,56px);padding-left:44px}
+.pair-two span{display:block;font-size:13.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--f2bm-aqua-deep);margin-bottom:7px}
+.pair-two h3{font-size:clamp(24px,1.3vw + 17px,31px);margin-bottom:7px}
+.pair-two p{margin:0;font-size:17.5px}
+.book-stage{position:relative;display:flex;justify-content:center}
+.book-stage .edge{position:absolute;right:-6%;top:-6%;width:min(62%,362px);opacity:.5;z-index:1}
+.book-stage .edge img{clip-path:polygon(14% 0,100% 9%,88% 94%,0 100%)}
+.book-cover-img{position:relative;z-index:2;width:min(72%,330px);box-shadow:0 26px 64px rgba(8,43,88,.2)}
+
+/* speaking */
+.speaking-grid{display:grid;grid-template-columns:1fr .92fr;gap:clamp(36px,5vw,80px);align-items:center}
+.speaking-art{max-width:512px}
+.speaking-art img{clip-path:polygon(0 6%,100% 0,94% 100%,5% 92%)}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin:28px 0 30px}
+.tags span{padding:10px 16px;border:1px solid var(--rule);font-size:14px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink)}
+
+/* recognition */
+.recognition{position:relative;background:var(--ink);color:#d7e4f1;overflow:hidden;padding-block:clamp(96px,10vw,158px)}
+.recognition .wash{position:absolute;left:-10%;bottom:-22%;width:min(58%,512px);opacity:.18;mix-blend-mode:screen;pointer-events:none}
+.recognition h2,.recognition h3{color:#fff}
+.recognition .eyebrow{color:var(--f2bm-aqua-mid)}
+.rec-head{position:relative;z-index:2;display:grid;grid-template-columns:auto 1.5fr 1fr;gap:clamp(28px,4vw,64px);align-items:start;margin-bottom:56px}
+.rec-head img{width:118px}
+.rec-head p{font-size:18.5px;color:#bed2e6}
+.totals{position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--rule);border-left:1px solid var(--rule)}
+.totals div{padding:26px 22px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.totals strong{display:block;font-family:var(--serif);font-size:clamp(44px,3.6vw,68px);line-height:1;font-weight:400}
+.totals span{font-size:14px;letter-spacing:.13em;text-transform:uppercase;color:#a9c2d9}
+.totals div:nth-child(1) strong{color:var(--f2bm-gold-pale)}
+.totals div:nth-child(2) strong{color:#cfd8e0}
+.totals div:nth-child(3) strong{color:#e0a878}
+.totals div:nth-child(4) strong{color:var(--f2bm-aqua-mid)}
+.totals div:nth-child(5) strong{color:var(--f2bm-pink-pale)}
+.strip{position:relative;z-index:2;margin:clamp(46px,5vw,72px) 0 0;padding:26px 0;border-top:1px solid rgba(202,164,90,.45);border-bottom:1px solid rgba(202,164,90,.45)}
+.strip-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:10px;scrollbar-width:thin}
+.strip-rail::-webkit-scrollbar{height:6px}
+.strip-rail::-webkit-scrollbar-thumb{background:rgba(202,164,90,.5)}
+.strip-rail picture{flex:0 0 auto;scroll-snap-align:start}
+.strip-rail img{width:196px;height:164px;object-fit:cover;border:1px solid rgba(202,164,90,.34)}
+.strip-note{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:16px;font-size:14px;color:#9fb8d0}
+.tiers{position:relative;z-index:2;display:flex;flex-wrap:wrap;gap:10px;margin:clamp(46px,5vw,70px) 0 34px}
+.tiers button{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.04em;color:#cfe0f0;background:transparent;border:1px solid rgba(202,164,90,.45);border-radius:2px;padding:11px 18px;cursor:pointer}
+.tiers button[aria-selected="true"]{background:var(--f2bm-gold);border-color:var(--f2bm-gold);color:#0a2036}
+.chrono{position:relative;z-index:2}
+.year{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:clamp(20px,3vw,54px);padding:clamp(26px,3vw,40px) 0;border-top:1px solid rgba(202,164,90,.42)}
+.year:last-child{border-bottom:1px solid rgba(202,164,90,.42)}
+.year h3{font-size:clamp(40px,3.4vw,62px);line-height:1;color:var(--f2bm-gold-pale);font-variant-numeric:tabular-nums}
+.year ul{list-style:none;margin:0;padding:0;columns:2;column-gap:clamp(28px,3.5vw,60px)}
+.year li{display:flex;gap:16px;align-items:baseline;padding:9px 0;break-inside:avoid}
+.mark{flex:0 0 auto;min-width:8.4em;font-size:12.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;padding-top:3px}
+.mark.gold{color:var(--f2bm-gold-pale)}
+.mark.silver{color:#d3dbe3}
+.mark.bronze{color:#e2ab7b}
+.mark.finalist{color:var(--f2bm-aqua-mid)}
+.mark.nominated{color:var(--f2bm-pink-pale)}
+.what b{display:block;font-weight:500;font-size:17.5px;color:#fff}
+.what span{display:block;font-size:14.5px;color:#9fb8d0;margin-top:2px}
+
+/* nest */
+.nest-grid{display:grid;grid-template-columns:1fr .96fr;gap:clamp(36px,5vw,80px);align-items:center}
+.nest-art{max-width:452px;justify-self:end}
+.nest-art img{clip-path:polygon(6% 0,100% 5%,94% 100%,0 95%)}
+.nest-line{font-family:var(--serif);font-size:clamp(24px,1.7vw + 15px,34px);line-height:1.2;color:var(--f2bm-magenta);margin:14px 0 22px}
+.participate{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 28px}
+.participate span{padding:8px 14px;border:1px solid var(--hair);font-size:15px;color:var(--ink)}
+
+/* footer */
+footer{position:relative;overflow:hidden;padding-top:clamp(64px,7vw,104px);border-top:1px solid var(--hair)}
+.foot-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:clamp(30px,4vw,64px);padding-bottom:clamp(44px,5vw,72px)}
+.foot-brand img{width:86px;margin-bottom:14px}
+.foot-brand p{font-family:var(--serif);font-size:21px;color:var(--ink);margin:0}
+.foot-grid b{display:block;font-size:13.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--f2bm-aqua-deep);margin-bottom:14px;font-weight:600}
+.foot-grid a,.foot-grid span{display:block;font-size:16px;text-decoration:none;padding:5px 0;color:var(--body)}
+.foot-grid a:hover{color:var(--f2bm-aqua-deep)}
+.foot-band{position:absolute;left:0;right:0;bottom:0;height:170px;overflow:hidden;opacity:.85}
+.foot-band img{width:100%;height:170px;object-fit:cover;object-position:center 40%}
+.foot-legal{position:relative;z-index:2;padding:0 0 clamp(186px,17vw,210px);font-size:14.5px;color:#6f8299}
+
+/* accessibility control */
+.a11y-toggle{position:fixed;right:18px;bottom:18px;z-index:50;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--f2bm-gold);border-radius:2px;padding:11px 16px;cursor:pointer;box-shadow:0 8px 24px rgba(8,43,88,.12)}
+.a11y-panel{position:fixed;right:18px;bottom:68px;z-index:50;width:238px;background:#fff;border:1px solid var(--f2bm-gold);border-radius:2px;padding:18px;box-shadow:0 18px 48px rgba(8,43,88,.17)}
+.a11y-panel h2{font-size:19px;margin-bottom:12px}
+.a11y-panel button{display:block;width:100%;text-align:left;margin-bottom:7px;padding:11px 13px;font-family:var(--sans);font-size:15.5px;color:var(--ink);background:var(--f2bm-cream);border:1px solid var(--hair);border-radius:2px;cursor:pointer}
+.a11y-panel button:hover,.a11y-panel button[aria-pressed="true"]{border-color:var(--f2bm-aqua-deep);background:#fff}
+body.text-larger{--fs-body:24px}
+body.text-larger .story p{font-size:25px}
+body.high-contrast{--body:#0a1f3a;--hair:rgba(8,43,88,.4);--rule:rgba(140,102,30,.85)}
+body.high-contrast .eyebrow{color:#065064}
+body.high-contrast img{filter:contrast(1.08)}
 
 
-  /* HERO */
-  .hero{position:relative;padding:128px 0 96px;overflow:hidden}
-  .hero-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:22% center;
-    z-index:0;opacity:1;pointer-events:none;
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.45) 34%,#000 62%);
-    mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.45) 34%,#000 62%)}
-  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(90deg,var(--ground) 30%,rgba(251,250,247,.93) 54%,rgba(251,250,247,.46) 73%,transparent 89%)}
-  .hero-inner{position:relative;z-index:2;max-width:760px}
-  /* The hero lead is tightened on mobile to cut vertical load before the first CTA.
-     Same meaning, fewer lines. */
-  .lead-tight{display:none}
-  @media (max-width:640px){ .lead-wide{display:none} .lead-tight{display:block} }
-  .hero h1{font-family:var(--serif);font-weight:500;font-size:var(--fs-hero);line-height:1.05;
-    letter-spacing:-.018em;margin:22px 0 0;max-width:19ch;text-wrap:balance}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;align-items:center}
-  .cta-row .btn{padding:15px 26px;font-size:15px}
-  .credentials{display:flex;flex-wrap:wrap;gap:8px 24px;margin:42px 0 0;padding:0;list-style:none;
-    font-size:var(--fs-small);color:var(--faint);position:relative;z-index:2}
-  .credentials li+li::before{content:"·";margin-right:12px;color:var(--faint)}
+/* ---------- editorial pauses, signature ideas, the Ledger ---------- */
+.pause{padding-block:clamp(96px,10vw,168px)}
+.pause-in{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(34px,5vw,88px);align-items:start}
+.pause h2{font-size:clamp(40px,4.6vw,80px);line-height:1.02;max-width:16ch}
+.pause-copy{padding-top:.6em}
+.pause-copy p{font-family:var(--serif);font-size:clamp(20px,1vw + 16px,25px);line-height:1.42;color:var(--ink);max-width:44ch}
+.pause-copy p:nth-child(2){color:var(--f2bm-aqua-deep)}
 
-  section{padding:var(--sp-standard) 0;border-top:1px solid var(--line2)}
-  /* The header is sticky at 70px, so an anchored heading landed underneath it. */
-  [id]{scroll-margin-top:88px}
-  /* Vertical rhythm by section id - no markup change required. */
-  #ecosystem,#library,#about{padding-block:var(--sp-major)}
-  #outward,#keynote,#frameworks,#speaking,#homes{padding-block:var(--sp-standard)}
-  /* Two sections earn a change of pace rather than another full-height text slide. */
-  #really-about{padding-block:var(--sp-compact)}
-  #outward{padding-block:var(--sp-compact);background:var(--panel2);border-top:1px solid var(--line2)}
-  .sec-head{margin-bottom:42px;max-width:760px}
-  /* Territory labels name the four pairings so the two-book logic is legible.
-     These are HOMEPAGE TRANSLATIONS ONLY - orientation copy above each pair, never
-     book subtitles and never the formal territory names. The canonical territories
-     stay backstage as: Access and conditions | Meaning and interpretation |
-     Body and nervous system | Design and systems. The underlying pair architecture,
-     source IDs and book relationships are unchanged. */
-  .terr-label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--teal);margin:34px 0 14px}
-  .terr-row:first-of-type .terr-label{margin-top:0}
-  /* Each book now links to its own page; keep the card's look, add affordance. */
-  a.bk{text-decoration:none;color:inherit;display:block;transition:transform .2s,border-color .2s}
-  a.bk:hover{transform:translateY(-2px);border-color:var(--teal)}
-  a.bk:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.ideas{border-top:1px solid var(--hair)}
+.idea-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 clamp(30px,4vw,72px);margin-top:12px}
+.idea-list article{padding-top:30px;border-top:1px solid var(--rule)}
+.idea-list h3{font-size:clamp(26px,1.5vw + 17px,34px);margin-bottom:14px;text-wrap:balance}
+.idea-list p{font-size:18px;max-width:34ch}
 
-  /* Capability - a centred statement carrying the argument, then two short supports.
-     Breaks the run of left-aligned text slides without a centred wall of body copy. */
-  .statement{max-width:900px;margin:0 auto;text-align:center}
-  .statement .eyebrow{display:block}
-  .statement h2{font-size:clamp(30px,3.1vw + 14px,44px);line-height:1.14;letter-spacing:-.015em;
-    max-width:42ch;margin:0 auto;text-wrap:balance}
-  .statement h2 em{font-style:normal;color:var(--magenta-text)}
-  .statement .rule{width:56px;height:2px;background:var(--magenta-text);
-    border-radius:2px;margin:30px auto 0;opacity:.85}
-  .support{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 46px;
-    max-width:820px;margin:38px auto 0;text-align:left}
-  .support p{margin:0;max-width:44ch;color:var(--soft);font-size:16.5px;line-height:1.6}
-  @media (max-width:720px){
-    .statement h2{max-width:none}
-    .support{grid-template-columns:1fr;gap:20px;margin-top:30px}
-  }
+.ledger{padding-block:clamp(92px,9vw,150px);background:var(--f2bm-cream-deep);border-top:1px solid var(--hair)}
+.ledger h2{font-size:clamp(46px,5.4vw,92px);margin-bottom:clamp(36px,4vw,58px)}
+.ledger-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,76px)}
+.ledger-col h3{font-size:15px;font-family:var(--sans);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--f2bm-aqua-deep);margin-bottom:20px}
+.ledger-col ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.ledger-col li{padding:14px 0;border-bottom:1px solid var(--hair);font-family:var(--serif);font-size:clamp(21px,1.1vw + 16px,27px);color:var(--ink)}
+.ledger-col.cost h3{color:var(--f2bm-magenta)}
+.ledger-col.cost li{color:var(--f2bm-violet)}
+.ledger-col.cost.veiled li{opacity:.24;filter:blur(2.5px);transition:opacity .5s ease,filter .5s ease}
+@media(prefers-reduced-motion:reduce){.ledger-col.cost.veiled li{filter:none;opacity:.4;transition:none}}
+.ledger-btn{margin-top:30px;font-family:var(--sans);font-size:14.5px;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--f2bm-gold);border-radius:2px;padding:13px 22px;cursor:pointer}
+.ledger-btn:hover{background:#fff;border-color:var(--f2bm-aqua-deep)}
+.ledger-end{margin:clamp(34px,4vw,54px) 0 0;font-family:var(--serif);font-size:clamp(28px,2.2vw + 16px,46px);color:var(--ink)}
 
-  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);margin:12px 0 0;
-    line-height:1.1;letter-spacing:-.012em;text-wrap:balance}
-  .lead{color:var(--muted);font-size:var(--fs-lead);margin-top:18px;line-height:1.66;max-width:56ch;text-wrap:pretty}
-  .note{color:var(--faint);font-size:var(--fs-small);line-height:1.6;border-left:1px solid var(--line);padding-left:18px;max-width:72ch}
+.turn{padding-block:clamp(70px,7vw,118px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.turn p{margin:0;font-family:var(--serif);font-size:clamp(30px,3.4vw,58px);line-height:1.1;color:var(--ink);max-width:24ch;text-wrap:balance}
 
-  /* Pull statements */
-  .statement{font-family:var(--serif);font-size:var(--fs-pull);line-height:1.34;color:var(--soft);
-    max-width:46ch;margin:36px 0 0;text-wrap:pretty;hyphens:none}
-  .statement .lede{display:block;color:var(--cream);margin-bottom:.42em;text-wrap:balance}
-  .statement--rule{padding-top:30px;border-top:1px solid rgba(235,37,110,.32)}
+.hinge{font-family:var(--serif);font-size:clamp(25px,1.6vw + 16px,34px)!important;line-height:1.26;color:var(--f2bm-aqua-deep);border-left:2px solid var(--f2bm-gold);padding-left:26px;margin-block:1.1em}
+.book-invite{max-width:34ch;margin:16px auto 14px;font-family:var(--serif);font-size:19px;line-height:1.34;color:var(--ink)}
 
-  /* Cinematic film bands */
-  .film{position:relative;width:100%;height:42vh;min-height:280px;max-height:500px;overflow:hidden;
-    border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
-  .film video{width:100%;height:100%;object-fit:cover;display:block;
-    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 82%,transparent 100%);
-    mask-image:linear-gradient(180deg,transparent 0,#000 26%,#000 82%,transparent 100%)}
-  .film.seed video{object-position:center 45%;filter:brightness(.86) contrast(1.08)}
-  .film.seed{max-width:640px;margin:0 auto;height:auto;min-height:0;max-height:none;border:1px solid var(--line2);border-radius:18px}
-  .film.seed video{aspect-ratio:620/348;height:auto;border-radius:17px;-webkit-mask-image:none;mask-image:none}
-  .film.corridor video{object-position:center 42%;filter:brightness(.72) contrast(1.06) saturate(.9)}
-  .motion{position:absolute;right:18px;bottom:16px;z-index:4;background:rgba(251,250,247,.7);
-    border:1px solid var(--line);color:var(--soft);border-radius:100px;padding:9px 16px;font-size:12px;
-    min-height:40px;display:inline-flex;align-items:center;letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(6px);font-family:var(--sans)}
-  .motion:hover{border-color:var(--teal);color:var(--teal)}
-  .motion[aria-pressed="true"]{border-color:var(--teal-dim)}
+.closing{padding-block:clamp(96px,10vw,164px);border-top:1px solid var(--hair)}
+.closing h2{font-size:clamp(42px,5vw,88px);line-height:1.02;max-width:18ch}
+.closing-line{margin-top:28px;max-width:46ch;font-family:var(--serif);font-size:clamp(21px,1.2vw + 15px,28px);line-height:1.34;color:var(--ink)}
+.closing-routes{display:grid;grid-template-columns:repeat(4,1fr);gap:0 clamp(24px,3vw,52px);margin-top:clamp(44px,5vw,74px);border-top:1px solid var(--rule)}
+.closing-routes a{padding:22px 0;font-size:18px;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--hair)}
+.closing-routes a::after{content:" \2192";color:var(--f2bm-gold)}
+.closing-routes a:hover{color:var(--f2bm-aqua-deep)}
 
-  /* Conditions lockup */
-  .conditions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0;list-style:none;
-    margin:48px 0 0;padding:42px 22px;position:relative;
-    border-top:1px solid rgba(235,37,110,.28);border-bottom:1px solid rgba(235,37,110,.28)}
-  .conditions::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 120% at 50% 50%,rgba(235,37,110,.09),transparent 72%)}
-  .conditions li{font-family:var(--serif);font-size:clamp(19px,2.6vw,31px);color:var(--cream);padding:9px 22px;position:relative;line-height:1.2}
-  .conditions li+li::before{content:"";position:absolute;left:0;top:50%;width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.75;transform:translate(-50%,-50%)}
-
-  /* Manifesto */
-  .inversion{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-  .inversion li{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);align-items:baseline}
-  .inversion .a{padding:24px 28px 24px 0;color:var(--faint);font-family:var(--serif);font-size:clamp(17px,2vw,22px);line-height:1.3}
-  .inversion .b{padding:24px 0 24px 28px;color:var(--cream);font-family:var(--serif);font-size:clamp(17px,2vw,22px);line-height:1.3;border-left:1px solid rgba(235,37,110,.3)}
-
-  /* The work moves outward */
-  .outward{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
-  .outward article{padding:30px 24px 30px 0;border-bottom:1px solid var(--line);position:relative}
-  .outward article+article{padding-left:24px;border-left:1px solid var(--line)}
-  .outward .step{font-size:var(--fs-eyebrow);letter-spacing:.26em;color:var(--teal-dim);display:block;margin-bottom:12px}
-  .outward h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;color:var(--cream);line-height:1.16}
-  .outward p{color:var(--muted);font-size:var(--fs-body);margin:0;max-width:34ch}
-
-  /* Practice Library (paired rows: person-facing book + professional companion) */
-  .terr{border-top:1px solid var(--line)}
-  .terr-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
-  .terr-row .bk{padding:30px 30px 30px 0}
-  .terr-row .bk+.bk{padding:30px 0 30px 30px;border-left:1px solid var(--line);background:rgba(34,34,34,.02)}
-  .terr-row .aud{font-size:var(--fs-eyebrow);letter-spacing:.24em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:11px}
-  .terr-row h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 6px;line-height:1.2;color:var(--cream)}
-  .terr-row .st{color:var(--faint);font-size:var(--fs-small);line-height:1.5;margin:0 0 13px}
-  .terr-row p{color:var(--muted);font-size:var(--fs-body);margin:0 0 13px;max-width:42ch}
-  .terr-row .sov{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:.85}
-
-  /* Featured keynote */
-  .feature{display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--line);border-radius:20px;overflow:hidden}
-  .feature .l{padding:46px;background:linear-gradient(180deg,var(--panel),var(--ground2))}
-  .feature .r{position:relative;background:#F3F1EE;min-height:330px;overflow:hidden}
-  .feature .r video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
-  .feature .tagrow{font-size:var(--fs-eyebrow);letter-spacing:.16em;text-transform:uppercase;color:var(--teal-dim);margin-bottom:14px}
-  .feature h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.1vw,35px);margin:0 0 14px;line-height:1.12}
-  .feature .kq{font-family:var(--serif);font-size:clamp(19px,1.6vw,23px);color:var(--gold);margin:0 0 14px;opacity:.92}
-  .feature p{color:var(--muted);font-size:var(--fs-body);margin:0 0 24px;max-width:46ch}
-
-  /* Frameworks */
-  .tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .tool{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column;transition:.22s}
-  .tool:hover{border-color:rgba(78,206,197,.32);transform:translateY(-2px)}
-  .tool h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.18}
-  .tool p{color:var(--muted);font-size:var(--fs-small);margin:0 0 16px;max-width:42ch}
-  .tool .go{margin-top:auto;font-size:14px;color:var(--teal);font-weight:500}
-
-  /* Pathway cards */
-  .paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .path{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);border-radius:16px;padding:28px;transition:.22s;display:flex;flex-direction:column}
-  .path:hover{border-color:rgba(78,206,197,.32);transform:translateY(-2px)}
-  .path h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.18}
-  .path p{color:var(--muted);font-size:var(--fs-small);margin:0;max-width:42ch}
-  .path .go{margin-top:auto;padding-top:18px;font-size:14.5px;color:var(--teal);font-weight:500}
-
-  /* About */
-  .person{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
-  .portrait-wrap{position:relative;max-width:460px}
-  .portrait-wrap::before{content:"";position:absolute;left:-16px;right:-16px;top:-16px;height:58%;z-index:0;border-radius:26px;background:radial-gradient(120% 85% at 62% 0%,rgba(235,37,110,.16),transparent 72%);filter:blur(22px)}
-  .portrait-img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:18px;border:1px solid var(--line);display:block;box-shadow:0 24px 60px -34px rgba(0,0,0,.85)}
-  .person h2{font-family:var(--serif);font-weight:400;font-size:var(--fs-h2);margin:14px 0 18px;line-height:1.08;letter-spacing:-.012em}
-  .person p{margin:0 0 15px;max-width:56ch}
-  .memberships{margin:22px 0 26px}
-  .memberships .cap{font-size:var(--fs-eyebrow);letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-  .memberships .marks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-
-  /* Ecosystem cards. These classes are used by the ecosystem section but were only
-     ever defined in assets/css/hub.css, which the homepage does not load - it has no
-     external stylesheet at all. The eight ecosystem cards were therefore rendering with
-     no panel, border, padding or grid on the live site. Rules lifted verbatim from
-     hub.css so the homepage and the interior pages stay identical; every variable they
-     use is already defined in :root above. */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:18px}
-  .card{background:linear-gradient(180deg,var(--panel),var(--ground2));border:1px solid var(--line);
-    border-radius:16px;padding:28px;transition:.22s}
-  .card:hover{border-color:rgba(78,206,197,.32);transform:translateY(-2px)}
-  .card h3{margin-top:0}
-  .card p{margin:0;color:var(--muted);font-size:var(--fs-small);max-width:44ch}
-
-  /* Where the work lives */
-  .homes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-  .home{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(180deg,var(--panel),var(--ground2));display:flex;flex-direction:column;transition:.22s}
-  .home:hover{border-color:rgba(235,37,110,.35);transform:translateY(-2px)}
-  .home h3{font-family:var(--serif);font-weight:400;font-size:var(--fs-card);margin:0 0 10px;line-height:1.16}
-  .home p{color:var(--muted);font-size:var(--fs-small);margin:0;max-width:38ch}
-  .home .go{margin-top:auto;padding-top:18px;font-size:14px;color:var(--teal)}
-
-  /* Global Recognition - added 2026-09-06 */
-  #recognition{padding-block:var(--sp-major)}
-  .rec-head{max-width:58ch}
-  .rec-tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:30px 0 34px}
-  @media(max-width:900px){.rec-tiers{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.rec-tiers{grid-template-columns:1fr}}
-  .rec-tier{border:1px solid var(--line);border-radius:16px;padding:22px 20px;background:var(--panel);
-            display:flex;flex-direction:column;gap:4px;transition:border-color .18s ease,transform .18s ease}
-  .rec-tier:hover{transform:translateY(-2px)}
-  .rec-tier .n{font-family:var(--serif);font-size:clamp(34px,3vw,46px);line-height:1;letter-spacing:-.01em}
-  .rec-tier .t{font-size:var(--fs-eyebrow);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-  .rec-tier.g{border-top:3px solid #C9A227} .rec-tier.g .n{color:#B08D1F}
-  .rec-tier.s{border-top:3px solid #9AA1A8} .rec-tier.s .n{color:#78808A}
-  .rec-tier.b{border-top:3px solid #B87333} .rec-tier.b .n{color:#9C6029}
-  .rec-tier.f{border-top:3px solid var(--teal)} .rec-tier.f .n{color:var(--teal)}
-  .rec-group{border-top:1px solid var(--line);padding-top:22px;margin-top:26px}
-  .rec-group > h3{font-family:var(--serif);font-size:var(--fs-card);margin:0 0 2px;font-weight:400}
-  .rec-group > .sub{font-size:var(--fs-eyebrow);letter-spacing:.28em;text-transform:uppercase;color:var(--faint);margin:0 0 16px}
-  .rec-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 34px}
-  @media(max-width:760px){.rec-list{grid-template-columns:1fr}}
-  .rec-list li{padding:9px 0;border-bottom:1px solid var(--line);display:flex;gap:13px;align-items:baseline}
-  .rec-list .yr{font-variant-numeric:tabular-nums;font-size:var(--fs-small);color:var(--faint);flex:0 0 3.1em}
-  .rec-list .nm{font-size:var(--fs-small);color:var(--soft);line-height:1.5}
-  .rec-list .bd{display:block;color:var(--faint);font-size:12.5px;margin-top:1px}
-  .closer{text-align:center;padding-block:var(--sp-major);border-top:1px solid var(--line2)}
-  .closer .q{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.4vw,52px);line-height:1.12;letter-spacing:-.012em;text-wrap:balance;margin:0 auto;max-width:20ch}
-  .closer .senses{font-family:var(--serif);font-size:clamp(19px,2.2vw,26px);color:var(--gold);margin:26px auto 0;max-width:44ch;opacity:.92;line-height:1.4;text-wrap:balance}
-  .closer .body{color:var(--muted);font-size:var(--fs-body);max-width:62ch;margin:24px auto 0;text-wrap:pretty}
-  .closer .cta-row{justify-content:center}
-  footer{border-top:1px solid var(--line2);padding:42px 0;color:var(--faint);font-size:var(--fs-small)}
-  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-  .foot .fl{display:flex;gap:20px;flex-wrap:wrap}
-  .foot a:hover{color:var(--soft)}
-
-  @media (max-width:980px){
-    .navlinks{gap:16px;font-size:13px}
-    .outward,.tools,.paths,.homes{grid-template-columns:1fr 1fr}
-  }
-  @media (max-width:860px){
-    .inversion li,.terr-row,.feature,.person,.outward,.tools,.paths,.homes{grid-template-columns:minmax(0,1fr)}
-    .card{padding:22px}
-    .feature .l{padding:28px 22px}
-    .btn{white-space:normal;text-align:center;min-height:44px}
-    .cta-row .btn{width:100%}
-    .foot .fl{gap:0 20px}
-    .foot .fl a,.brand{min-height:44px;display:inline-flex;align-items:center}
-    .outward article,.outward article+article{padding:26px 0;border-left:0}
-    .terr-row .bk,.terr-row .bk+.bk{padding:26px 0;border-left:0}
-    .terr-row .bk+.bk{border-top:1px solid var(--line)}
-    .inversion .a{padding:22px 0 6px}
-    .inversion .b{padding:0 0 22px 18px;border-left:1px solid rgba(235,37,110,.3);margin-bottom:22px}
-    .person{gap:32px}
-    .hero{padding:76px 0 60px}
-    .hero h1{max-width:none}
-    .film{height:30vh;min-height:210px}
-  }
-  @media (max-width:520px){
-    .hero h1{font-size:clamp(30px,8.4vw,40px)}
-    .hero-film{opacity:.16}
-    .hero::after{background:linear-gradient(100deg,rgba(251,250,247,.97) 0%,rgba(251,250,247,.93) 44%,rgba(251,250,247,.58) 74%,rgba(251,250,247,.34) 100%),linear-gradient(180deg,rgba(251,250,247,.30),rgba(251,250,247,.70) 62%,var(--ground))}
-    .conditions{padding:30px 8px}
-    .conditions li{padding:8px 15px}
-  }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    *{animation-duration:.001ms!important;transition-duration:.001ms!important}
-  }
+/* ---------- responsive: rearranged, not squashed ---------- */
+@media(min-width:1500px){
+  .hero-edge,.hero-edge img{width:215px}
+  .hero-in{width:min(100% - 300px,1240px)}
+}
+@media(min-width:1800px){
+  .hero-edge,.hero-edge img{width:265px}
+}
+@media(max-width:1040px){
+  .rec-head{grid-template-columns:auto 1fr}
+  .rec-head p{grid-column:2}
+  .totals{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  :root{--fs-body:19.5px;--sp:clamp(64px,10vw,92px)}
+  .wrap{width:min(100% - 36px,var(--wrap))}
+  .header-in{flex-wrap:wrap;gap:14px;padding:12px 0}
+  .site-header nav{order:3;width:100%;margin-left:0;gap:20px;padding-top:8px;border-top:1px solid var(--hair);overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+  .site-header nav a{white-space:nowrap;font-size:13.5px}
+  .cta{margin-left:auto;padding:9px 15px;font-size:12.5px}
+  .hero{padding-block:clamp(40px,9vw,64px) clamp(38px,7vw,60px)}
+  .hero-edge,.hero-edge img{width:74px}
+  .hero-in{width:min(100% - 168px,600px)}
+  .hero-phoenix{width:min(46vw,168px);margin-bottom:20px}
+  .hero .sub{font-size:19px;margin-top:22px}
+  .intro-grid,.change-grid,.practice-grid,.tanya-grid,.tanya-head,.books-grid,.speaking-grid,.nest-grid,.ways-head,.learn-head{grid-template-columns:1fr;gap:32px}
+  .intro-art,.nest-art{justify-self:start}
+  .practice-art{width:100%;margin-left:0;padding-left:0}
+  .ways-list{grid-template-columns:1fr}
+  .routes{grid-template-columns:1fr;gap:34px}
+  .route figure{max-width:100%;height:210px}
+  .route figure img{width:100%;height:210px;object-fit:cover;object-position:center 42%}
+  .route:nth-child(1) figure{border-radius:105px 105px 6px 6px}
+  .route:nth-child(3) figure{border-radius:6px 6px 105px 105px}
+  .tanya-photo{position:static;max-width:100%;border-radius:200px 200px 10px 10px}
+  .tanya-head{grid-template-columns:1fr;gap:10px;align-items:start}
+  .story{max-width:none}
+  .leadership-note{grid-template-columns:1fr;gap:18px}
+  .leadership-note img{width:82px}
+  .pair-two,.pair-theme{padding-left:0}
+  .pair-two{grid-template-columns:1fr;gap:22px}
+  .book-stage .edge{position:relative;right:auto;top:auto;width:100%;max-width:362px;margin-bottom:-70px;opacity:.42}
+  .foot-grid{grid-template-columns:1fr 1fr;padding-bottom:40px}
+.pause-in{grid-template-columns:1fr;gap:24px}
+  .pause h2{max-width:none}
+  .idea-list{grid-template-columns:1fr;gap:0}
+  .idea-list article{padding-block:26px 4px}
+  .ledger-grid{grid-template-columns:1fr;gap:34px}
+  .closing-routes{grid-template-columns:1fr}
+  .turn p{max-width:none}
+  .hinge{padding-left:18px}
+  .strip-rail img{width:154px;height:129px}
+  body.aoc-overlay .aoc-card img{width:76px}
+}
+@media(max-width:560px){
+  .totals{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr;gap:26px}
+  .leadership blockquote{font-size:clamp(32px,8.4vw,42px);max-width:none}
+}
 </style>
-  <link rel="stylesheet" href="/assets/css/nav.css">
-  <script src="/assets/js/nav.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <nav class="wrap bar" aria-label="Primary">
-    <a class="brand" href="#top"><span>Tanya Hicks</span></a>
-    <div class="navlinks" id="nav">
-      <a href="#top">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/the-nest/">The Nest</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/practitioner-pathway/">Practitioner Pathway</a>
-      <a href="/professional-learning/">Professional Learning</a>
-      <a href="/for-organisations/">For Organisations</a>
-      <a href="/speaking/">Speaking</a>
-      <a class="btn btn-teal" href="/#about">About Tanya</a>
-    
+<section class="aoc" id="aoc" aria-labelledby="aoc-title">
+  <div class="wrap aoc-card">
+    <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
+    <div class="aoc-body">
+      <p class="eyebrow">Before you explore</p>
+      <h2 id="aoc-title">Acknowledgement of Country</h2>
+      <hr class="seam" style="width:150px;margin:0 0 24px">
+      <div data-listen>
+        <p class="aoc-lead">Sovereignty was never ceded. No treaty was ever signed. Aboriginal and Torres Strait Islander peoples are the Traditional Custodians of the lands and waters on which this work is made, and that does not become less true with time, legislation or silence.</p>
+        <p>FREE 2B ME acknowledges Elders past, present and emerging. This body of work exists because systems cause harm when they ask people to become easier to accommodate. No community in this country has been asked to do that more often, or for longer, than First Nations peoples.</p>
+        <p>We hold that as a matter of practice, not sentiment.</p>
+      </div>
+      <div class="aoc-actions">
+        <button class="enter" type="button" id="aoc-enter" hidden>Enter the site</button>
+        <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
+      </div>
     </div>
-  </nav>
+  </div>
+</section>
+
+<header class="site-header">
+  <div class="header-in">
+    <a class="brand" href="/" aria-label="FREE 2B ME home">
+      <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
+      <small>by Tanya Hicks</small>
+    </a>
+    <nav aria-label="Main">
+      <a href="/the-practice/">The Practice</a>
+      <a href="/books/">Books &amp; Tools</a>
+      <a href="#learning">Learning</a>
+      <a href="/speaking/">Speaking &amp; Media</a>
+      <a href="#tanya">About Tanya</a>
+    </nav>
+    <a class="cta" href="#begin">Explore FREE 2B ME</a>
+  </div>
 </header>
 
 <main id="main">
 
   <!-- HERO -->
-  <section class="hero" id="top" style="border-top:0">
-    <video class="hero-film" muted loop playsinline preload="auto" aria-hidden="true">
-      <source src="/assets/keynote/kv_concrete_hd.mp4" type="video/mp4">
-    </video>
-    <button class="motion" type="button" data-motion aria-pressed="false">Pause motion</button>
-    <div class="wrap hero-inner">
-      <span class="eyebrow">Tanya Hicks &times; FREE 2B ME</span>
-      <h1 class="serif">Less fixing. More living.</h1>
-        <p class="lead">What if support stopped treating the person as the automatic problem?</p>
-        <p class="lead lead-wide">FREE 2B ME connects real-life support, community, professional practice, books and tools, Practitioner learning, evidence and better systems around one idea: work out what is actually getting in the way without taking over the person&rsquo;s life.</p>
-        <p class="lead lead-tight">FREE 2B ME connects real-life support, community, professional practice, books, learning and better systems around one idea: work out what is getting in the way without taking over the person&rsquo;s life.</p>
-        <p class="lead">More of the life that matters to you, within reach.</p>
-        <div class="cta-row">
-          <a class="btn btn-teal" href="#find-your-way-in">Explore FREE 2B ME</a>
-          <a class="btn btn-ghost" href="#about">Meet Tanya</a>
+  <section class="hero" aria-label="FREE 2B ME">
+    <div class="hero-edge l" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="/assets/brand/hero-edge-left-165.avif 165w,/assets/brand/hero-edge-left-330.avif 330w" sizes="165px">
+        <source type="image/webp" srcset="/assets/brand/hero-edge-left-165.webp 165w,/assets/brand/hero-edge-left-330.webp 330w" sizes="165px">
+        <img src="/assets/brand/hero-edge-left-330.jpg" width="330" height="556" alt="" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="hero-edge r" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="/assets/brand/hero-edge-right-165.avif 165w,/assets/brand/hero-edge-right-330.avif 330w" sizes="165px">
+        <source type="image/webp" srcset="/assets/brand/hero-edge-right-165.webp 165w,/assets/brand/hero-edge-right-330.webp 330w" sizes="165px">
+        <img src="/assets/brand/hero-edge-right-330.jpg" width="330" height="556" alt="" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="hero-in">
+      <img class="hero-phoenix" src="/assets/brand/phoenix-dark-480.png" srcset="/assets/brand/phoenix-dark-240.png 240w,/assets/brand/phoenix-dark-480.png 480w" sizes="(max-width:900px) 168px, 230px" width="480" height="480" alt="FREE TO BE ME" fetchpriority="high">
+      <h1>Less <span class="f">fixing</span>.<br>More <span class="m">living</span>.</h1>
+      <p class="claim">Not everything that is hard about your life belongs to you to fix.</p>
+      <p class="sub">FREE 2B ME brings together books, practice, tools, learning and systems change so people can live, belong and grow without being treated as problems to fix.</p>
+      <hr class="seam">
+    </div>
+  </section>
+
+  <!-- RECOGNITION MOMENT -->
+  <section class="pause rule-top" aria-labelledby="pause-title">
+    <div class="wrap pause-in">
+      <h2 id="pause-title">Maybe you were never the whole problem.</h2>
+      <div class="pause-copy">
+        <p>You can spend years learning to cope better, communicate better, work harder, recover faster and need less.</p>
+        <p>Sometimes those things help.</p>
+        <p>And sometimes the question nobody asked was whether the life around you needed to change too.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- A DIFFERENT PLACE TO BEGIN -->
+  <section class="band rule-top" id="begin">
+    <div class="wrap intro-grid">
+      <div>
+        <p class="eyebrow">The body of work</p>
+        <h2>A different place<br>to begin</h2>
+        <p class="lead" style="margin-top:26px">FREE 2B ME is a body of books, practice, tools, practitioner development, professional learning and systems work.</p>
+        <p class="measure">It explores what becomes possible when the person is no longer treated as the only place change can happen.</p>
+      </div>
+      <figure class="intro-art" style="margin:0">
+        <picture>
+          <source type="image/avif" srcset="/assets/brand/intro-gold-seam-512.avif 512w,/assets/brand/intro-gold-seam-1024.avif 1024w" sizes="(max-width:900px) 90vw, 512px">
+          <source type="image/webp" srcset="/assets/brand/intro-gold-seam-512.webp 512w,/assets/brand/intro-gold-seam-1024.webp 1024w" sizes="(max-width:900px) 90vw, 512px">
+          <img src="/assets/brand/intro-gold-seam-512.jpg" width="1024" height="500" loading="lazy" decoding="async" alt="Watercolour strata in aqua, blue and pink with a gold seam running through them">
+        </picture>
+        <hr class="seam" style="margin-top:16px">
+        <figcaption>Books &middot; Practice &middot; Learning &middot; Systems</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- WAYS IN -->
+  <section class="band rule-top" aria-labelledby="ways-title">
+    <div class="wrap">
+      <div class="ways-head">
+        <p class="eyebrow" style="margin:0">Ways into FREE 2B ME</p>
+        <h2 id="ways-title">Start with what you need.</h2>
+      </div>
+      <p class="lead measure" style="margin:-34px 0 44px">You do not need to understand the whole ecosystem before you enter it.</p>
+      <div class="ways-list">
+        <article class="way"><span>01</span><h3>Something for me</h3><p>Books, tools and ideas for understanding your own life without beginning from what is wrong with you.</p><a class="link" href="/books/">Find your way in</a></article>
+        <article class="way"><span>02</span><h3>Supporting someone</h3><p>A clearer way to think about access, capability, communication, support and change.</p><a class="link" href="/the-practice/">Explore support differently</a></article>
+        <article class="way"><span>03</span><h3>Developing practice</h3><p>Structured routes for practitioners, teams and organisations who want to work differently.</p><a class="link" href="#learning">Choose a learning route</a></article>
+        <article class="way"><span>04</span><h3>Support in Australia</h3><p>The Nest is the real-world community practice environment in Caloundra. Same space. Different goals. Individual support.</p><a class="link" href="https://free2bme.au">Visit The Nest</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PRACTICE -->
+  <section class="practice band" id="practice">
+    <div class="wrap practice-grid">
+      <div class="practice-art">
+        <picture>
+          <source type="image/avif" srcset="/assets/brand/practice-panel-432.avif 432w,/assets/brand/practice-panel-864.avif 864w" sizes="(max-width:900px) 92vw, 432px">
+          <source type="image/webp" srcset="/assets/brand/practice-panel-432.webp 432w,/assets/brand/practice-panel-864.webp 864w" sizes="(max-width:900px) 92vw, 432px">
+          <img src="/assets/brand/practice-panel-432.jpg" width="864" height="760" loading="lazy" decoding="async" alt="Separate watercolour planes standing at different depths against open cream">
+        </picture>
+        <svg viewBox="0 0 432 380" fill="none" aria-hidden="true" preserveAspectRatio="none">
+          <circle cx="214" cy="184" r="168" stroke="rgba(255,255,255,.34)"/>
+          <circle cx="214" cy="184" r="116" stroke="rgba(220,172,102,.6)"/>
+          <circle cx="214" cy="184" r="62" stroke="rgba(255,255,255,.28)"/>
+        </svg>
+      </div>
+      <div class="practice-copy">
+        <p class="eyebrow">The FREE 2B ME Practice</p>
+        <h2>What if the person is not the automatic problem?</h2>
+        <p class="lead">When life becomes difficult, the answer is not always to ask the person to try harder, cope better or become easier to support.</p>
+        <p class="measure">The FREE 2B ME Practice considers the whole situation: what the person needs, what is already working, what is getting in the way and what could change around them.</p>
+        <a class="link" href="/the-practice/">Explore the Practice</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHANGE CAN HAPPEN -->
+  <section class="band">
+    <div class="wrap change-grid">
+      <div>
+        <p class="eyebrow">More than one place</p>
+        <h2>Change can happen in more than one place.</h2>
+        <p class="lead" style="margin-top:24px">Across the person, relationships, support, environments, professional practice and systems.</p>
+        <p class="measure">Sometimes the person needs a skill. Sometimes the space, the pace, a relationship or the system needs to change. Often it is more than one of them at once.</p>
+      </div>
+      <div class="change-art">
+        <picture>
+          <source type="image/avif" srcset="/assets/brand/change-organic-400.avif 400w,/assets/brand/change-organic-800.avif 800w" sizes="(max-width:900px) 84vw, 400px">
+          <source type="image/webp" srcset="/assets/brand/change-organic-400.webp 400w,/assets/brand/change-organic-800.webp 800w" sizes="(max-width:900px) 84vw, 400px">
+          <img src="/assets/brand/change-organic-400.jpg" width="800" height="800" loading="lazy" decoding="async" alt="Watercolour movement radiating outward from a single point in many directions">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE IDEAS -->
+  <section class="ideas band">
+    <div class="wrap">
+      <p class="eyebrow">Ideas that keep coming back</p>
+      <div class="idea-list">
+        <article><h3>The cost of looking fine.</h3><p>Visible functioning does not tell us what it cost, what made it possible or what happens afterwards.</p></article>
+        <article><h3>Capacity is conditional.</h3><p>What was possible yesterday is information. It is not a contract for today.</p></article>
+        <article><h3>Whose change is this?</h3><p>Sometimes change belongs with the person. Sometimes with support, relationships, environments or systems. Often it is shared.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE LEDGER -->
+  <section class="ledger" aria-labelledby="ledger-title">
+    <div class="wrap">
+      <p class="eyebrow">The FREE 2B ME Ledger</p>
+      <h2 id="ledger-title">What did &ldquo;fine&rdquo; cost?</h2>
+      <div class="ledger-grid">
+        <div class="ledger-col">
+          <h3>What people saw</h3>
+          <ul>
+            <li>Made it to work.</li><li>Joined the meeting.</li><li>Answered the messages.</li><li>Went to dinner.</li><li>Got through the day.</li>
+          </ul>
         </div>
-    </div>
-  </section>
-
-  <!-- FIND YOUR WAY IN -->
-  <section id="find-your-way-in">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Start anywhere</span>
-        <h2 class="serif">Find your way in.</h2>
-        <p class="lead">You do not need to understand the whole ecosystem before you choose. Pick whichever is closest to why you are here.</p>
-      </div>
-      <div class="paths">
-        <a class="path" href="/books/"><h3 class="serif">I want something for me</h3><p>Books, tools and ideas for understanding what is happening in your own life and what might help.</p><span class="go">Start here &rarr;</span></a>
-        <a class="path" href="/the-practice/"><h3 class="serif">I support someone</h3><p>Ideas for families, supporters and professionals looking for more helpful ways forward.</p><span class="go">Explore support thinking &rarr;</span></a>
-        <a class="path" href="/practitioner-pathway/"><h3 class="serif">I&rsquo;m a practitioner</h3><p>The FREE 2B ME Practice, the Practitioner Pathway, professional learning, tools and applied practice.</p><span class="go">For practitioners &rarr;</span></a>
-        <a class="path" href="/for-organisations/"><h3 class="serif">I lead a service or organisation</h3><p>Workforce capability, supervision, implementation, evidence, governance and better service design.</p><span class="go">For organisations &rarr;</span></a>
-        
-        <a class="path" href="/work-with-tanya/"><h3 class="serif">I&rsquo;m looking for Tanya</h3><p>Speaking, media, writing, collaboration and systems work.</p><span class="go">Work with Tanya &rarr;</span></a>
-      </div>
-      <p class="note" style="margin-top:24px">In Australia and looking for support right now? <a href="https://www.free2bme.au" target="_blank" rel="noopener">The Nest and Neurodivergent Empowered</a> deliver FREE 2B ME in everyday life.</p>
-    </div>
-  </section>
-
-  <!-- THE IDEA -->
-  <section id="the-idea">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">The idea</span>
-        <h2 class="serif">What if the person isn&rsquo;t the only thing that could change?</h2>
-        <p class="lead">People are often asked to try harder, cope better, calm down, communicate differently, be more independent, tolerate more or fit in better.</p>
-        <p class="lead">Sometimes learning, treatment or personal change genuinely helps. And sometimes the thing getting in the way is somewhere else.</p>
-        <p class="lead">FREE 2B ME asks what is happening, what matters to the person, what is making this harder, what could change, and who is actually responsible for changing it.</p>
-        <p class="lead"><strong>Change what needs changing. Don&rsquo;t make the person the default target.</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- THE CENTRAL QUESTION -->
-  
-
-    
-
-  <!-- WHAT CAN ACTUALLY CHANGE -->
-  <section id="what-can-change">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">What can actually change?</span>
-        <h2 class="serif">There is more than one place to look.</h2>
-      </div>
-      <div class="grid">
-        <div class="card"><h3 class="serif">Something I want to learn or practise</h3><p>Skills, communication, confidence, everyday capability, self-advocacy or something else that matters.</p></div>
-        <div class="card"><h3 class="serif">My body or health</h3><p>Pain, sleep, fatigue, medication, movement, sensory needs, physical health or the state I want to access.</p></div>
-        <div class="card"><h3 class="serif">Communication</h3><p>How information is given, how I express myself, processing time, AAC, written communication or another route.</p></div>
-        <div class="card"><h3 class="serif">Relationships and support</h3><p>How people listen, respond, help, share responsibility and repair things when they go wrong.</p></div>
-        <div class="card"><h3 class="serif">The place around me</h3><p>Noise, lighting, layout, timing, predictability, transport, crowding, demands or physical access.</p></div>
-        <div class="card"><h3 class="serif">Professional support</h3><p>Counselling, Specialist Behaviour Support, medical care or another professional service where it is actually needed.</p></div>
-        <div class="card"><h3 class="serif">Services and systems</h3><p>Rules, staffing, processes, expectations, policies or organisational decisions one person cannot change alone.</p></div>
-      </div>
-      <p class="note">Sometimes the work sits with the person. Sometimes it sits around them. Often it sits in more than one place.</p>
-    </div>
-  </section>
-
-  <!-- DARK STATEMENT -->
-  <section class="dark" id="manifesto">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 class="serif">The person is not the only one <span style="color:var(--magenta-text)">expected to change</span>.</h2>
-        <p class="lead">Support should be able to change too. So should the practitioner, the environment, the service, the workforce, the documentation, the technology and the organisation.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CORRIDOR FILM -->
-  <div class="film corridor">
-    <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_corridor.jpg" aria-hidden="true">
-      <source src="/assets/keynote/kv_corridor.mp4" type="video/mp4">
-    </video>
-    <button class="motion" type="button" data-motion aria-pressed="false">Pause motion</button>
-  </div>
-
-  <!-- WHAT MY WORK IS REALLY ABOUT -->
-  <section id="really-about">
-      <div class="wrap">
-        <div class="statement">
-          <span class="eyebrow">Capability without conformity</span>
-          <h2 class="serif">Learn what you want to learn.<br><em>Not what makes you easier to be around.</em></h2>
-          <div class="rule" aria-hidden="true"></div>
-        </div>
-        <div class="support">
-          <p>People may want to learn, build skills, accept support, use treatment or make changes that matter to them.</p>
-          <p>That is different from requiring someone to appear more typical, compliant, independent or convenient.</p>
+        <div class="ledger-col cost" id="ledger-cost">
+          <h3>What they may not have seen</h3>
+          <ul>
+            <li>Preparation.</li><li>Masking.</li><li>Pain.</li><li>Sensory load.</li><li>Rehearsing.</li><li>Support.</li><li>Cancelled plans.</li><li>Recovery afterwards.</li>
+          </ul>
         </div>
       </div>
-    </section>
+      <button class="ledger-btn" type="button" id="ledger-btn" aria-expanded="true" aria-controls="ledger-cost" hidden>Show what it cost</button>
+      <p class="ledger-end">Same outcome. Different cost.</p>
+    </div>
+  </section>
 
-  <!-- THE WORK MOVES OUTWARD -->
-  <section id="outward">
-      <div class="wrap">
-        <div class="sec-head">
-          <span class="eyebrow">The FREE 2B ME Practice</span>
-          <h2 class="serif">Understand before you intervene.</h2>
-          <p class="lead"><strong>Work out what is happening before deciding what to do about it.</strong></p>
-          <p class="lead">The FREE 2B ME Practice helps work out what needs to change, develop, be supported, understood or redesigned, and who is responsible for acting.</p>
-          <div class="cta-row"><a class="btn btn-primary" href="/the-practice/">See how the Practice works</a></div>
+  <!-- TRANSITION -->
+  <aside class="turn"><p class="wrap">Being able to endure something is not proof that it works for you.</p></aside>
+
+  <!-- LEARNING -->
+  <section class="band rule-top" id="learning">
+    <div class="wrap">
+      <div class="learn-head">
+        <div>
+          <p class="eyebrow">Learning</p>
+          <h2>One doorway.<br>Three distinct routes.</h2>
         </div>
+        <p class="lead" style="margin:0">Choose the way you want to learn, practise or explore.</p>
       </div>
-    </section>
-
-  <!-- CONTINUITY -->
-  <section id="continuity">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">Continuity</span>
-        <h2 class="serif">There is no requirement to graduate from belonging.</h2>
-        <p class="lead">People do not have to outgrow support or become someone else to belong. What support looks like can change across a person&rsquo;s life. Someone may need more support at one time, less at another, or a different kind as life changes.</p>
-        <p class="lead">A counselling episode may end. A Behaviour Support intervention may change. A particular funded support may start or stop. Ongoing community, communication access, sensory-responsive environments and useful support are not signs that someone has failed to progress.</p>
-        <p class="lead"><strong>Success is not measured by how completely support disappears.</strong></p>
-        <p class="lead">Continuity is available, not compulsory. People can leave, return, pause, change how they participate or choose somewhere else. Support can change without belonging having to end.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="ecosystem">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">One body of work</span>
-        <h2 class="serif">Different ways in.</h2>
-        <p class="lead">Not one service, one framework or one programme. These are the parts, and they are built to work together. You do not need to understand how they connect before you use any one of them.</p>
-      </div>
-      <div class="paths">
-        <a class="path" href="/books/"><h3 class="serif">Books</h3><p>Ideas you can live with. Four books for living it. Four professional companions for putting it into practice.</p><span class="go">Read the Library &rarr;</span></a>
-        <a class="path" href="/the-practice/"><h3 class="serif">The FREE 2B ME Practice</h3><p>A way of working out what would actually help, without taking over someone&rsquo;s life.</p><span class="go">See how it works &rarr;</span></a>
-        <a class="path" href="/practitioner-pathway/"><h3 class="serif">Practitioner learning</h3><p>Turning the ideas into practice people can be accountable for.</p><span class="go">Explore the Pathway &rarr;</span></a>
-        <a class="path" href="/frameworks/"><h3 class="serif">Tools</h3><p>Ways to notice what is happening, and what might help.</p><span class="go">Open the tools &rarr;</span></a>
-        <a class="path" href="/speaking/"><h3 class="serif">Speaking &amp; professional learning</h3><p>Changing the conversations happening in rooms where practice and systems get decided.</p><span class="go">Speaking and workshops &rarr;</span></a>
-      </div>
-      <p class="note" style="margin-top:26px">Support in Australia is delivered by <a href="https://www.free2bme.au" target="_blank" rel="noopener">The Nest and Neurodivergent Empowered</a>. Organisational and systems work sits at <a href="/for-organisations/">For Organisations</a> and <a href="/work-with-tanya/">Work With Me</a>. <a href="https://sparklyaliensinc.com" target="_blank" rel="noopener">Sparkly Aliens Inc.</a> is a related community organisation.</p>
-      <div class="cta-row" style="margin-top:8px"><a class="btn btn-outline" href="/the-practice/deeper-architecture/">See how the whole ecosystem fits together &rarr;</a></div>
-    </div>
-  </section>
-
-  <!-- SEED FILM -->
-  <div class="film seed">
-    <video muted loop playsinline preload="metadata" poster="/assets/keynote/poster_seed.jpg" aria-hidden="true">
-      <source src="/assets/keynote/kv_seed.mp4" type="video/mp4">
-    </video>
-    <button class="motion" type="button" data-motion aria-pressed="false">Pause motion</button>
-  </div>
-
-  <!-- PRACTICE LIBRARY -->
-  <section id="library">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">FREE 2B ME Practice Library</span>
-        <h2 class="serif">Eight connected books</h2>
-        <p class="lead">The FREE 2B ME Practice Library develops these ideas across eight connected books. Four books explore the ideas from the perspective of people and families. Four companion books translate the same foundations into counselling, Positive Behaviour Support, supervision, team and organisational practice.</p>
-      </div>
-
-      <div class="terr">
-        <!-- canonical: Access and conditions -->
-        <p class="terr-label">When life takes more than people can see</p>
-        <div class="terr-row">
-          <a class="bk" href="/books/free-2b-me/">
-            <div class="aud">Book 1</div>
-            <h3>FREE 2B ME</h3>
-            <p class="st">Less fixing. More living.</p>
-            <p>What changes when you stop treating yourself as the only place change can happen? Hidden effort, skills, support, health, relationships, conditions, practical leverage and authorship - without making conformity the goal.</p>
-          </a><a class="bk" href="/books/access-before-intervention/">
-            <div class="aud">Professional companion</div>
-            <h3>Access Before Intervention</h3>
-            <p class="st">A Neuroaffirming Framework for Counselling, Positive Behaviour Support and Disability Practice</p>
-            <p>Can professionals make valid decisions if the person has never truly had access? Whose knowledge counts?</p>
-          </a>
-        </div><!-- canonical: Meaning and interpretation -->
-        <p class="terr-label">When behaviour is not the whole story</p>
-        <div class="terr-row">
-          <a class="bk" href="/books/you-make-sense/">
-            <div class="aud">Book 2</div>
-            <h3>You Make Sense</h3>
-            <p>Your experiences, body and behaviour make sense. Understanding yourself restores your ability to make choices instead of living inside everyone else&rsquo;s interpretations.</p>
-          </a><a class="bk" href="/books/behaviour-makes-sense/">
-            <div class="aud">Professional companion</div>
-            <h3>Behaviour Makes Sense</h3>
-            <p class="st">Rights-Based Positive Behaviour Support Beyond Compliance</p>
-            <p>Behaviour is not something to eliminate. It is information from a person whose life belongs to them. Who gets to decide what behaviour means?</p>
-          </a>
-        </div><!-- canonical: Body and nervous system -->
-        <p class="terr-label">When calm is not the whole answer</p>
-        <div class="terr-row">
-          <a class="bk" href="/books/nervous-system-nourishment/">
-            <div class="aud">Book 3</div>
-            <h3>Nervous System Nourishment</h3>
-            <p>Calm is not the goal. Having enough safety, access and choice to participate in your own life is.</p>
-          </a><a class="bk" href="/books/beyond-regulation/">
-            <div class="aud">Professional companion</div>
-            <h3>Beyond Regulation</h3>
-            <p class="st">Nervous System Nourishment in Counselling and Positive Behaviour Support</p>
-            <p>Are we helping someone participate? Or are we helping them look regulated enough for everyone else?</p>
-          </a>
-        </div><!-- canonical: Design and systems -->
-        <p class="terr-label">Having a real say in your own life</p>
-        <div class="terr-row">
-          <a class="bk" href="/books/built-with-you/">
-            <div class="aud">Book 4</div>
-            <h3>Built With You</h3>
-            <p class="st">Why You Belong in the Design of Your Support and Your Life</p>
-            <p>Support should never replace your voice. It should increase your influence over your own life.</p>
-          </a><a class="bk" href="/books/practice-that-holds/">
-            <div class="aud">Professional companion</div>
-            <h3>Practice That Holds</h3>
-            <p class="st">Supervision, Teams and Systems for Neuroaffirming Practice</p>
-            <p>Can organisations create environments where practitioners and participants retain their humanity?</p>
-          </a>
-        </div></div>
-
-      <div class="cta-row">
-        <a class="btn btn-teal" href="/books/">Explore the Practice Library</a>
+      <div class="routes">
+        <article class="route">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/assets/brand/learning-1-pathway-256.avif 256w,/assets/brand/learning-1-pathway-512.avif 512w" sizes="(max-width:900px) 90vw, 256px">
+              <source type="image/webp" srcset="/assets/brand/learning-1-pathway-256.webp 256w,/assets/brand/learning-1-pathway-512.webp 512w" sizes="(max-width:900px) 90vw, 256px">
+              <img src="/assets/brand/learning-1-pathway-256.jpg" width="512" height="880" loading="lazy" decoding="async" alt="">
+            </picture>
+          </figure>
+          <span>01</span><h3>Practitioner Pathway</h3>
+          <p>Structured learning, supervised application, observed practice and capability evidence.</p>
+          <a class="link" href="/practitioner-pathway/">Explore the Pathway</a>
+        </article>
+        <article class="route">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/assets/brand/learning-2-professional-256.avif 256w,/assets/brand/learning-2-professional-512.avif 512w" sizes="(max-width:900px) 90vw, 256px">
+              <source type="image/webp" srcset="/assets/brand/learning-2-professional-256.webp 256w,/assets/brand/learning-2-professional-512.webp 512w" sizes="(max-width:900px) 90vw, 256px">
+              <img src="/assets/brand/learning-2-professional-256.jpg" width="512" height="880" loading="lazy" decoding="async" alt="">
+            </picture>
+          </figure>
+          <span>02</span><h3>Professional Learning</h3>
+          <p>Workshops, practice development and organisational learning.</p>
+          <a class="link" href="/professional-learning/">View professional learning</a>
+        </article>
+        <article class="route">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="/assets/brand/learning-3-library-256.avif 256w,/assets/brand/learning-3-library-512.avif 512w" sizes="(max-width:900px) 90vw, 256px">
+              <source type="image/webp" srcset="/assets/brand/learning-3-library-256.webp 256w,/assets/brand/learning-3-library-512.webp 512w" sizes="(max-width:900px) 90vw, 256px">
+              <img src="/assets/brand/learning-3-library-256.jpg" width="512" height="880" loading="lazy" decoding="async" alt="">
+            </picture>
+          </figure>
+          <span>03</span><h3>Practice Library and Tools</h3>
+          <p>Books, public resources, worksheets and reflection tools.</p>
+          <a class="link" href="/frameworks/">Explore the library</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- PROFESSIONAL DEPTH -->
-  
-
-  <!-- FEATURED KEYNOTE -->
-  
-
-  <!-- FRAMEWORKS AND TOOLS -->
-  
-
-  <!-- SPEAKING AND PROFESSIONAL LEARNING -->
-  
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap person">
-      <div class="portrait-wrap">
-        <img class="portrait-img" src="/assets/keynote/portrait.jpg" width="660" height="660" loading="lazy" alt="Tanya Hicks">
+  <!-- TANYA -->
+  <section class="band rule-top" id="tanya">
+    <div class="wrap">
+      <div class="tanya-head">
+        <div>
+          <p class="eyebrow">Founder &middot; Author &middot; Speaker &middot; Practitioner</p>
+          <h2 class="tanya-name">Tanya Hicks</h2>
+        </div>
+        <p class="tanya-role">Human Systems Architect.</p>
+      </div>
+      <hr class="seam" style="margin-bottom:clamp(34px,4vw,56px)">
+    </div>
+    <div class="wrap tanya-grid">
+      <div class="tanya-photo">
+        <picture>
+          <source type="image/avif" srcset="/assets/brand/tanya-portrait-376.avif 376w,/assets/brand/tanya-portrait-600.avif 600w,/assets/brand/tanya-portrait-1003.avif 1003w" sizes="(max-width:900px) 94vw, 600px">
+          <source type="image/webp" srcset="/assets/brand/tanya-portrait-376.webp 376w,/assets/brand/tanya-portrait-600.webp 600w,/assets/brand/tanya-portrait-1003.webp 1003w" sizes="(max-width:900px) 94vw, 600px">
+          <img src="/assets/brand/tanya-portrait-600.jpg" width="1003" height="1254" loading="lazy" decoding="async" alt="Tanya Hicks">
+        </picture>
       </div>
       <div>
-        <span class="eyebrow">About</span>
-        <h2 class="serif">About me</h2>
-        <p style="color:var(--soft);font-size:16.5px">I am the creator and architect of FREE 2B ME - an Autistic author and practitioner, Human Systems Architect, counsellor and NDIS Behaviour Support Practitioner, framework developer, researcher and speaker.</p>
-        <p style="color:var(--muted);font-size:16px">I founded Neurodivergent Empowered and Sparkly Aliens Inc., and I am the author of the FREE 2B ME Practice Library. My work grew from lived experience, professional practice and years of seeing neurodivergent people expected to adapt to systems that had never been designed with them in mind. Rather than build another isolated programme, I began connecting the pieces - real-life support, counselling, Specialist Behaviour Support, evidence, books, practitioner learning, workforce systems and governance.</p>
-        <p style="color:var(--soft);font-size:15px;line-height:1.55">Counsellor (ACA R82053), NDIS Behaviour Support Practitioner (P1362818), and Master of Counselling candidate. I created the Sovereignty Conditions Audit.</p>
-        <div class="memberships">
-          <div class="cap">Professional memberships</div>
-          <div class="marks">
-            <img src="/assets/loapac-affiliate.png" alt="LOAPAC Affiliate Member" title="LOAPAC Affiliate Member" width="66" height="66" style="display:block">
-            <span style="background:#fff;border-radius:10px;padding:9px 15px;display:inline-flex;align-items:center"><img src="/assets/aca-member.png" alt="Australian Counselling Association member" height="30" style="display:block"></span>
+        <div class="story" data-listen>
+          <p>I know what it costs to spend years trying to become easier for the world to hold.</p>
+          <p>As a late-identified AuDHD woman living with disability, chronic illness and trauma, and as a single mother of a transgender daughter, I have seen how difference becomes something to correct, and how much life is lost when belonging depends on becoming smaller, quieter or easier to understand.</p>
+          <p class="hinge">I stopped trying to fix myself into acceptability and began building what I could not find: places, practices and pathways where people can belong without becoming less of themselves.</p>
+          <p>That became FREE 2B ME Global: Less fixing. More living.</p>
+          <p>It lives in The Nest, where therapeutic practice meets shared interests, relationships and community life; in the Practitioner Pathway, developing people to carry neuroaffirming practice with capability, humility and accountability into different professions and systems; and in books, learning and tools changing how people are understood and supported.</p>
+        </div>
+        <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP STATEMENT -->
+  <section class="leadership" aria-label="Why I build">
+    <div class="wash" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="/assets/brand/leadership-wash-350.avif 350w,/assets/brand/leadership-wash-700.avif 700w" sizes="350px">
+        <source type="image/webp" srcset="/assets/brand/leadership-wash-350.webp 350w,/assets/brand/leadership-wash-700.webp 700w" sizes="350px">
+        <img src="/assets/brand/leadership-wash-350.jpg" width="700" height="700" loading="lazy" decoding="async" alt="">
+      </picture>
+    </div>
+    <div class="wrap">
+      <p class="eyebrow">Why I build</p>
+      <blockquote>My story is about turning lived experience into infrastructure so our daughters inherit more than encouragement. They inherit different possibilities.</blockquote>
+      <div class="leadership-note">
+        <img src="/assets/brand/phoenix-light-240.png" srcset="/assets/brand/phoenix-light-120.png 120w,/assets/brand/phoenix-light-240.png 240w" sizes="104px" width="240" height="240" alt="" loading="lazy">
+        <p>The aim is not to make people resilient enough to tolerate damaging systems. It is to change what the system asks people to endure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section class="books band" id="books">
+    <div class="wrap books-grid">
+      <div>
+        <p class="eyebrow">The FREE 2B ME Practice Library</p>
+        <h2>Ideas to recognise yourself in&mdash;and ideas that change practice.</h2>
+        <p class="lead" style="margin-top:24px">The FREE 2B ME Practice Library brings together books for people, professional companions and practical tools.</p>
+        <p class="measure">Each offers a different way to understand what is happening, consider what may help and protect the person&rsquo;s authority over their own life.</p>
+        <ul class="destinations">
+          <li><a href="/books/free-2b-me/">Discover FREE 2B ME</a></li>
+          <li><a href="/books/">Explore the paired Practice Library</a></li>
+          <li><a href="/frameworks/">Use public tools and resources</a></li>
+        </ul>
+        <p class="status">All eight titles are in development. They are released as editorial and specialist-review gates are completed, and no edition is available for purchase yet.</p>
+      </div>
+      <div class="book-stage">
+        <div class="edge" aria-hidden="true">
+          <picture>
+            <source type="image/avif" srcset="/assets/brand/books-edge-362.avif 362w,/assets/brand/books-edge-724.avif 724w" sizes="362px">
+            <source type="image/webp" srcset="/assets/brand/books-edge-362.webp 362w,/assets/brand/books-edge-724.webp 724w" sizes="362px">
+            <img src="/assets/brand/books-edge-362.jpg" width="724" height="900" loading="lazy" decoding="async" alt="">
+          </picture>
+        </div>
+        <figure class="book-figure">
+          <picture>
+            <source type="image/avif" srcset="/assets/brand/book-cover-330.avif 330w,/assets/brand/book-cover-660.avif 660w" sizes="330px">
+            <source type="image/webp" srcset="/assets/brand/book-cover-330.webp 330w,/assets/brand/book-cover-660.webp 660w" sizes="330px">
+            <img class="book-cover-img" src="/assets/brand/book-cover-330.jpg" width="1024" height="1536" loading="lazy" decoding="async" alt="FREE 2B ME, Less fixing. More living. Book cover.">
+          </picture>
+          <figcaption><b>Book 1 &middot; FREE 2B ME</b><span>Less fixing. More living.</span><p class="book-invite">A book for anyone who became very good at functioning in a life that was costing too much.</p><span class="pair-status">In development</span></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <hr class="seam" style="margin:clamp(54px,6vw,92px) 0 clamp(34px,4vw,52px)">
+      <p class="eyebrow">The paired library &middot; the same territory, two different positions</p>
+      <ol class="pairs">
+        <li>
+          <p class="pair-theme">Hidden effort, access, support and authorship</p>
+          <div class="pair-two">
+            <div><span>For people and families</span><h3>FREE 2B ME</h3><p>Less fixing. More living.</p></div>
+            <div><span>For practice</span><h3>Access Before Intervention</h3><p>A neuroaffirming framework for counselling, Positive Behaviour Support and disability practice.</p><span class="pair-status">In development</span></div>
           </div>
+        </li>
+        <li>
+          <p class="pair-theme">Behaviour, communication, distress and quality of life</p>
+          <div class="pair-two">
+            <div><span>For people and families</span><h3>You Make Sense</h3><p>A rights-based guide to distress, communication and support that helps.</p></div>
+            <div><span>For practice</span><h3>Behaviour Makes Sense</h3><p>Rights-based Positive Behaviour Support beyond compliance.</p><span class="pair-status">In development</span></div>
+          </div>
+        </li>
+        <li>
+          <p class="pair-theme">Body, sensory experience, regulation language and access</p>
+          <div class="pair-two">
+            <div><span>For people and families</span><h3>Nervous System Nourishment</h3><p>Finding what supports your brain and body.</p></div>
+            <div><span>For practice</span><h3>Beyond Regulation</h3><p>Nervous system nourishment in counselling and Positive Behaviour Support.</p><span class="pair-status">In development</span></div>
+          </div>
+        </li>
+        <li>
+          <p class="pair-theme">Co-design, support relationships, workforce and systems</p>
+          <div class="pair-two">
+            <div><span>For people and families</span><h3>Built With You</h3><p>Why you belong in the design of your support and your life.</p></div>
+            <div><span>For practice</span><h3>Practice That Holds</h3><p>Keeping good practice alive under pressure.</p><span class="pair-status">In development</span></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- TRANSITION -->
+  <aside class="turn"><p class="wrap">Support is part of the outcome, not evidence that you should have managed without it.</p></aside>
+
+  <!-- SPEAKING -->
+  <section class="band rule-top" id="speaking">
+    <div class="wrap speaking-grid">
+      <div>
+        <p class="eyebrow">Speaking &amp; Media</p>
+        <h2>Bring a different question into the room.</h2>
+        <p class="lead" style="margin-top:24px">Keynotes, panels, media and conversations about disability, leadership and support without conformity.</p>
+        <p class="measure">Systems that stop making survival the entry fee for contribution.</p>
+        <div class="tags"><span>Keynotes</span><span>Media</span><span>Panels</span><span>Selected appearances</span></div>
+        <a class="link" href="/speaking/">Speaking and media</a>
+      </div>
+      <div class="speaking-art">
+        <picture>
+          <source type="image/avif" srcset="/assets/brand/speaking-sweep-512.avif 512w,/assets/brand/speaking-sweep-1024.avif 1024w" sizes="(max-width:900px) 90vw, 512px">
+          <source type="image/webp" srcset="/assets/brand/speaking-sweep-512.webp 512w,/assets/brand/speaking-sweep-1024.webp 1024w" sizes="(max-width:900px) 90vw, 512px">
+          <img src="/assets/brand/speaking-sweep-512.jpg" width="1024" height="520" loading="lazy" decoding="async" alt="A single flowing watercolour ribbon crossing open cream">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section class="recognition" id="recognition">
+    <div class="wash" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="/assets/brand/recognition-wash-512.avif 512w,/assets/brand/recognition-wash-1024.avif 1024w" sizes="512px">
+        <source type="image/webp" srcset="/assets/brand/recognition-wash-512.webp 512w,/assets/brand/recognition-wash-1024.webp 1024w" sizes="512px">
+        <img src="/assets/brand/recognition-wash-512.jpg" width="1024" height="744" loading="lazy" decoding="async" alt="">
+      </picture>
+    </div>
+    <div class="wrap">
+      <div class="rec-head">
+        <img src="/assets/brand/phoenix-light-240.png" srcset="/assets/brand/phoenix-light-120.png 120w,/assets/brand/phoenix-light-240.png 240w" sizes="118px" width="240" height="240" alt="" loading="lazy">
+        <div>
+          <p class="eyebrow">Australian &amp; international recognition</p>
+          <h2>Recognition for leadership that changes what is possible.</h2>
         </div>
-        <p style="color:var(--faint);font-size:13.5px;line-height:1.55">TanyaHicks.com is the home of my books, speaking, frameworks, research translation and professional learning. Participant supports are delivered separately through Neurodivergent Empowered and The Nest within the relevant practitioner&rsquo;s qualifications, professional scope and active provider registration.</p>
-        <div class="cta-row">
-          <a class="btn btn-teal" href="/work-with-tanya/">Work With Me</a>
+        <p>Tanya&rsquo;s work has received Australian and international recognition across leadership, education, innovation, inclusion, advocacy and community impact.</p>
+      </div>
+
+      <div class="totals" aria-label="Recognition totals">
+        <div><strong>12</strong><span>Gold</span></div>
+        <div><strong>6</strong><span>Silver</span></div>
+        <div><strong>4</strong><span>Bronze &amp; HM</span></div>
+        <div><strong>19</strong><span>Finalists</span></div>
+        <div><strong>2</strong><span>Nominations</span></div>
+      </div>
+
+      <div class="strip">
+        <div class="strip-rail" id="badges" role="list" aria-label="Award emblems"></div>
+        <p class="strip-note"><span>Every emblem awarded, 2021 to 2026.</span><span aria-hidden="true">Scroll &rarr;</span></p>
+      </div>
+
+      <div class="tiers" role="tablist" aria-label="Filter recognition by tier">
+        <button type="button" role="tab" data-tier="all" aria-selected="true">All</button>
+        <button type="button" role="tab" data-tier="gold" aria-selected="false">Gold</button>
+        <button type="button" role="tab" data-tier="silver" aria-selected="false">Silver</button>
+        <button type="button" role="tab" data-tier="bronze" aria-selected="false">Bronze &amp; HM</button>
+        <button type="button" role="tab" data-tier="finalist" aria-selected="false">Finalist</button>
+        <button type="button" role="tab" data-tier="nominated" aria-selected="false">Nominated</button>
+      </div>
+
+      <div class="chrono">
+        <div class="year" data-year="2026">
+          <h3>2026</h3>
+          <ul>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Big Idea</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="bronze"><span class="mark bronze">Third place</span><span class="what"><b>Girl of the Year</b><span>Women Changing the World Global Awards, Paris &middot; Kianni Jackson</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Rising Star</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Woman in Education</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Woman in Therapy &amp; Counselling Services</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Disability Inclusion Impact</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Human Rights</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Innovation</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Thought Leader of the Year</b><span>Women Changing the World Global Awards, Paris</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Sustainable Business Woman of the Year</b><span>Sunshine Coast Business Women&rsquo;s Network Awards</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Woman Changing the World</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Business Evolution</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Thought Leader of the Year</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+            <li data-tier="nominated"><span class="mark nominated">Nominee</span><span class="what"><b>Citizen of the Year</b><span>Sunshine Coast Australia Day Community Awards &middot; Tanya Hicks</span></span></li>
+            <li data-tier="nominated"><span class="mark nominated">Nominee</span><span class="what"><b>Community Group or Organisation</b><span>Sunshine Coast Australia Day Community Awards &middot; Sparkly Aliens Inc.</span></span></li>
+          </ul>
+        </div>
+        <div class="year" data-year="2025">
+          <h3>2025</h3>
+          <ul>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Non-Profit Organisation of the Year</b><span>Stevie Awards for Women in Business, International</span></span></li>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Children&rsquo;s Education</b><span>Women Changing the World Global Awards, London</span></span></li>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Emerging Non-Profit Business</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Rising Star</b><span>Women Changing the World Regional Awards, APAC</span></span></li>
+            <li data-tier="silver"><span class="mark silver">Silver</span><span class="what"><b>Achievement in Diversity &amp; Inclusion</b><span>Stevie Awards for Women in Business, International</span></span></li>
+            <li data-tier="silver"><span class="mark silver">Silver</span><span class="what"><b>Woman in Education</b><span>Women Changing the World Regional Awards, APAC</span></span></li>
+            <li data-tier="silver"><span class="mark silver">Silver</span><span class="what"><b>Emerging AusMumpreneur of the Year</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+            <li data-tier="bronze"><span class="mark bronze">Bronze</span><span class="what"><b>Most Resilient Women-Owned Business</b><span>Stevie Awards for Women in Business, International</span></span></li>
+            <li data-tier="bronze"><span class="mark bronze">Third place</span><span class="what"><b>Advocacy &amp; Impact</b><span>Women Changing the World Global Awards, London</span></span></li>
+            <li data-tier="bronze"><span class="mark bronze">Honourable mention</span><span class="what"><b>Thought Leader of the Year</b><span>Women Changing the World Regional Awards, APAC</span></span></li>
+          </ul>
+        </div>
+        <div class="year" data-year="2024">
+          <h3>2024</h3>
+          <ul>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Global Female Executive</b><span>Stevie Awards for Women in Business, International</span></span></li>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Education Provider of the Year</b><span>Sunshine Coast Business Awards</span></span></li>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Community Leader of the Year</b><span>Beam National Awards, Australia</span></span></li>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Overcoming the Odds</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+            <li data-tier="silver"><span class="mark silver">Silver</span><span class="what"><b>Global Woman of the Year</b><span>Stevie Awards for Women in Business, International</span></span></li>
+            <li data-tier="silver"><span class="mark silver">Silver</span><span class="what"><b>Global Female Executive</b><span>Stevie Awards for Women in Business, International</span></span></li>
+            <li data-tier="silver"><span class="mark silver">Silver</span><span class="what"><b>Disabled Business Excellence</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Outstanding Growth</b><span>Telstra Best of Business Awards, Australia</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Championing Health</b><span>Telstra Best of Business Awards, Australia</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Woman of the Year</b><span>Beam National Awards, Australia</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Excellence in Diversity &amp; Inclusion</b><span>Beam National Awards, Australia</span></span></li>
+          </ul>
+        </div>
+        <div class="year" data-year="2023">
+          <h3>2023</h3>
+          <ul>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>ND/Autistic Excellence Provider of the Year</b><span>Divergantz Autistic Business Awards, Queensland</span></span></li>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Community Inclusion Award</b><span>Sunshine Coast Community Gala Awards</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Fisher Business of the Year</b><span>Fisher Community Awards, Caloundra</span></span></li>
+          </ul>
+        </div>
+        <div class="year" data-year="2022">
+          <h3>2022</h3>
+          <ul>
+            <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Emerging Community Leader</b><span>Sunshine Coast Community Gala Awards</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Community Leadership Award</b><span>Sunshine Coast Community Gala Awards</span></span></li>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Social Commitment Award</b><span>Sunshine Coast Community Gala Awards</span></span></li>
+          </ul>
+        </div>
+        <div class="year" data-year="2021">
+          <h3>2021</h3>
+          <ul>
+            <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Best Children&rsquo;s Disability Service</b><span>Sunshine Coast Community Gala Awards</span></span></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- GLOBAL RECOGNITION -->
-  <section id="recognition">
-    <div class="wrap">
-      <span class="eyebrow">Global Recognition</span>
-      <h2 class="serif rec-head">Recognised locally, nationally and internationally.</h2>
-      <p style="color:var(--muted);font-size:var(--fs-body);max-width:66ch">These are not the reason the work exists. They are one external marker of a model built from lived experience, professional practice, community need and sustained implementation.</p>
-
-      <div class="rec-tiers">
-        <div class="rec-tier g"><span class="n">12</span><span class="t">Gold</span></div>
-        <div class="rec-tier s"><span class="n">6</span><span class="t">Silver</span></div>
-        <div class="rec-tier b"><span class="n">4</span><span class="t">Bronze</span></div>
-        <div class="rec-tier f"><span class="n">21</span><span class="t">Finalists</span></div>
+  <!-- THE NEST -->
+  <section class="band rule-top" id="nest">
+    <div class="wrap nest-grid">
+      <div>
+        <p class="eyebrow">Australian support &middot; Caloundra</p>
+        <h2>Australian support through The Nest</h2>
+        <p class="nest-line">Same space. Different goals.<br>Individual support.</p>
+        <p class="measure">The Nest is FREE 2B ME&rsquo;s real-life community practice environment in Australia, operated by Neurodivergent Empowered. People come together around interests like gaming, art, movement, animals or music, and the support stays individual.</p>
+        <div class="participate"><span>Talk</span><span>Watch</span><span>Use AAC</span><span>Type</span><span>Move</span><span>Wear headphones</span><span>Take breaks</span><span>Be alongside</span></div>
+        <a class="link" href="https://free2bme.au">Visit The Nest</a>
       </div>
-
-      <div class="rec-group">
-        <h3 class="serif">Gold Winners</h3>
-        <p class="sub">Winner</p>
-        <ul class="rec-list">
-          <li><span class="yr">2026</span><span class="nm">Big Idea<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Non-Profit Organisation of the Year<span class="bd">Stevie Awards for Women in Business, International</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Children&rsquo;s Education<span class="bd">Women Changing the World Global Awards, London</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Emerging Non-Profit Business<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Rising Star<span class="bd">Women Changing the World Regional Awards, APAC</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Global Female Executive<span class="bd">Stevie Awards for Women in Business, International (Sparkly Aliens Inc.)</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Education Provider of the Year<span class="bd">Sunshine Coast Business Awards</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Community Leader of the Year<span class="bd">Beam National Awards, Australia</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Overcoming the Odds Award<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
-          <li><span class="yr">2023</span><span class="nm">ND/Autistic Excellence Provider of the Year<span class="bd">Divergantz Autistic Business Awards, Queensland</span></span></li>
-          <li><span class="yr">2023</span><span class="nm">Community Inclusion Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
-          <li><span class="yr">2022</span><span class="nm">Emerging Community Leader Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
-        </ul>
-      </div>
-
-      <div class="rec-group">
-        <h3 class="serif">Silver Winners</h3>
-        <p class="sub">Second place</p>
-        <ul class="rec-list">
-          <li><span class="yr">2025</span><span class="nm">Achievement in Diversity &amp; Inclusion<span class="bd">Stevie Awards for Women in Business, International</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Woman in Education<span class="bd">Women Changing the World Regional Awards, APAC</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Emerging AusMumpreneur of the Year<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Global Woman of the Year<span class="bd">Stevie Awards for Women in Business, International (Sparkly Aliens Inc.)</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Global Female Executive<span class="bd">Stevie Awards for Women in Business, International (Neurodivergent Empowered)</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Disabled Business Excellence<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
-        </ul>
-      </div>
-
-      <div class="rec-group">
-        <h3 class="serif">Bronze Winners &amp; Honourable Mentions</h3>
-        <p class="sub">Third place and honourable mention</p>
-        <ul class="rec-list">
-          <li><span class="yr">2026</span><span class="nm">Girl of the Year<span class="bd">Women Changing the World Global Awards, Paris (Kianni Jackson, third place)</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Most Resilient Women-Owned Business<span class="bd">Stevie Awards for Women in Business, International</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Advocacy Impact<span class="bd">Women Changing the World Global Awards, London (third place)</span></span></li>
-          <li><span class="yr">2025</span><span class="nm">Thought Leader of the Year<span class="bd">Women Changing the World Regional Awards, APAC (Honourable Mention)</span></span></li>
-        </ul>
-      </div>
-
-      <div class="rec-group">
-        <h3 class="serif">Finalists</h3>
-        <p class="sub">Shortlisted</p>
-        <ul class="rec-list">
-          <li><span class="yr">2026</span><span class="nm">Community Group or Organisation<span class="bd">Sunshine Coast Australia Day Community Awards (Sparkly Aliens Inc.)</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Citizen of the Year<span class="bd">Sunshine Coast Australia Day Community Awards (Tanya Hicks)</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Sustainable Business Woman of the Year<span class="bd">Sunshine Coast Business Women&rsquo;s Network Awards (Neurodivergent Empowered)</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Woman Changing the World<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Business Evolution<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Thought Leader of the Year<span class="bd">AusMumpreneur National Awards, Australia</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Rising Star<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Woman in Education<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Woman in Therapy &amp; Counselling Services<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Disability Inclusion Impact<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Human Rights<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Innovation<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2026</span><span class="nm">Thought Leader of the Year<span class="bd">Women Changing the World Global Awards, Paris</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Outstanding Growth<span class="bd">Telstra Best of Business Awards, Australia</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Championing Health<span class="bd">Telstra Best of Business Awards, Australia</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Woman of the Year<span class="bd">Beam National Awards, Australia</span></span></li>
-          <li><span class="yr">2024</span><span class="nm">Excellence in Diversity &amp; Inclusion<span class="bd">Beam National Awards, Australia</span></span></li>
-          <li><span class="yr">2023</span><span class="nm">Fisher Business of the Year<span class="bd">Fisher Community Awards, Caloundra</span></span></li>
-          <li><span class="yr">2022</span><span class="nm">Community Leadership Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
-          <li><span class="yr">2022</span><span class="nm">Social Commitment Award<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
-          <li><span class="yr">2021</span><span class="nm">Best Children&rsquo;s Disability Service<span class="bd">Sunshine Coast Community Gala Awards</span></span></li>
-        </ul>
+      <div class="nest-art">
+        <picture>
+          <source type="image/avif" srcset="/assets/brand/nest-panel-452.avif 452w,/assets/brand/nest-panel-904.avif 904w" sizes="(max-width:900px) 90vw, 452px">
+          <source type="image/webp" srcset="/assets/brand/nest-panel-452.webp 452w,/assets/brand/nest-panel-904.webp 904w" sizes="(max-width:900px) 90vw, 452px">
+          <img src="/assets/brand/nest-panel-452.jpg" width="904" height="760" loading="lazy" decoding="async" alt="Many distinct watercolour planes meeting around a shared cream path">
+        </picture>
       </div>
     </div>
   </section>
-
-  <!-- WHERE THE WORK LIVES -->
-  
-
-  <!-- FINAL -->
-  <div class="closer">
+  <!-- CLOSING -->
+  <section class="closing" aria-labelledby="closing-title">
     <div class="wrap">
-      <span class="eyebrow">The promise</span>
-        <p class="q serif" style="margin-top:16px">Less fixing. More living.</p>
-        <p class="senses">People do not need another system built around correcting them.</p>
-        <p class="body">They need support, skills, relationships, professional expertise and environments that make more of what matters possible - without taking authorship of their lives away. FREE 2B ME is being built to connect those pieces. More of the life that matters to you, within reach.</p>
-      <div class="cta-row">
-        <a class="btn btn-teal" href="#ecosystem">Explore FREE 2B ME</a>
-        <a class="btn btn-ghost" href="/speaking/from-support-to-sovereignty/">Watch From Support to Sovereignty</a>
-        <a class="btn btn-ghost" href="/work-with-tanya/">Work With Me</a>
+      <h2 id="closing-title">You were never the only thing that needed to change.</h2>
+      <p class="closing-line">FREE 2B ME is about learning where change belongs&mdash;and building more room to live.</p>
+      <div class="closing-routes">
+        <a href="/books/">Start with a book</a>
+        <a href="/the-practice/">Understand the Practice</a>
+        <a href="#learning">Learn or develop practice</a>
+        <a href="https://free2bme.au">Find support in Australia</a>
       </div>
     </div>
-  </div>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <img src="/assets/loapac-affiliate.png" alt="LOAPAC Affiliate Member" width="34" height="34" style="display:block">
-      <span style="background:#fff;border-radius:6px;padding:4px 8px;display:inline-flex;align-items:center"><img src="/assets/aca-member.png" alt="Australian Counselling Association member" height="16" style="display:block"></span>
-      <span>&copy; Tanya Hicks</span>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="86px" width="240" height="240" alt="FREE TO BE ME" loading="lazy">
+      <p>Less fixing. More living.</p>
     </div>
-    <div class="fl">
+    <div>
+      <b>Explore</b>
       <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books</a>
-      <a href="/frameworks/">Frameworks and Tools</a>
-      <a href="/speaking/">Speaking</a>
-      <a href="/professional-learning/">Professional Learning</a>
-      <a href="/work-with-tanya/">Work With Me</a>
+      <a href="/books/">Books &amp; Tools</a>
+      <a href="#learning">Learning</a>
+      <a href="/speaking/">Speaking &amp; Media</a>
     </div>
+    <div>
+      <b>Connect</b>
+      <a href="#tanya">About Tanya</a>
+      <a href="#aoc" id="aoc-reopen">Acknowledgement of Country</a>
+      <a href="/work-with-tanya/">Work with Tanya</a>
+      <a href="https://free2bme.au">The Nest in Australia</a>
+    </div>
+    <div>
+      <b>Websites</b>
+      <span>tanyahicks.com</span>
+      <span>free2bme.global</span>
+      <span>free2bme.au</span>
+    </div>
+  </div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="foot-band" aria-hidden="true">
+    <picture>
+      <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
+      <source type="image/webp" srcset="/assets/brand/footer-band-512.webp 512w,/assets/brand/footer-band-1024.webp 1024w" sizes="100vw">
+      <img src="/assets/brand/footer-band-1024.jpg" width="1024" height="444" loading="lazy" decoding="async" alt="">
+    </picture>
   </div>
 </footer>
 
+<button class="a11y-toggle" type="button" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel" hidden>Accessibility</button>
+<aside class="a11y-panel" id="a11y-panel" aria-label="Accessibility settings" hidden>
+  <h2>Accessibility</h2>
+  <button type="button" data-a11y="text-larger" aria-pressed="false">Larger text</button>
+  <button type="button" data-a11y="high-contrast" aria-pressed="false">High contrast</button>
+  <button type="button" data-a11y="reduce-motion" aria-pressed="false">Reduce motion</button>
+  <button type="button" data-a11y="reset">Reset</button>
+</aside>
+
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-  /* Mobile navigation is handled by the shared /assets/js/nav.js. */
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('[data-motion]').forEach(function(btn){
-    var vid=btn.parentElement?btn.parentElement.querySelector('video'):null;
-    if(!vid){btn.style.display='none';return;}
-    function paint(){var p=vid.paused;btn.textContent=p?'Play motion':'Pause motion';btn.setAttribute('aria-pressed',String(p));}
-    function go(){var p=vid.play();if(p&&p.catch)p.catch(function(){});}
-    if(reduce){vid.pause();}else{go();}
-    paint();
-    btn.addEventListener('click',function(){vid.paused?go():vid.pause();paint();});
-    vid.addEventListener('play',paint);vid.addEventListener('pause',paint);
-  });
-});
+/* Progressive enhancement only. Without JS the page is complete:
+   the Acknowledgement of Country reads as the first section, and the
+   accessibility controls stay hidden rather than appearing and doing nothing. */
+(function(){
+  "use strict";
+  var store = (function(){ try{ localStorage.getItem("t"); return localStorage; }catch(e){ return null; } })();
+  var speech = window.speechSynthesis;
+
+  function stopSpeech(){
+    if (!speech) return;
+    speech.cancel();
+    Array.prototype.forEach.call(document.querySelectorAll("[data-listen-btn]"), function(b){
+      b.setAttribute("aria-pressed","false"); b.lastChild.nodeValue = " Listen";
+    });
+  }
+
+  /* Listen: reads the block it belongs to. Shown only where it can actually work. */
+  if (speech) {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-listen-btn]"), function(btn){
+      btn.hidden = false;
+      btn.setAttribute("aria-pressed","false");
+      btn.addEventListener("click", function(){
+        var on = btn.getAttribute("aria-pressed") === "true";
+        stopSpeech();
+        if (on) return;
+        var block = btn.closest("section, article, div.wrap") || document;
+        var source = block.querySelector("[data-listen]") || block;
+        var u = new SpeechSynthesisUtterance((source.innerText || "").replace(/\s+/g," ").trim());
+        u.rate = 0.95; u.lang = "en-AU";
+        u.onend = function(){ btn.setAttribute("aria-pressed","false"); btn.lastChild.nodeValue = " Listen"; };
+        btn.setAttribute("aria-pressed","true"); btn.lastChild.nodeValue = " Stop";
+        speech.speak(u);
+      });
+    });
+  }
+
+  /* Acknowledgement of Country becomes an entry experience, once per session.
+     Without JS it simply reads as the first section of the page. */
+  var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
+  /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
+  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var openAoc = function(){
+    document.body.classList.remove("aoc-entered");
+    document.body.classList.add("aoc-overlay");
+    aoc.setAttribute("role","dialog"); aoc.setAttribute("aria-modal","true");
+    enter.hidden = false; enter.focus();
+  };
+  if (aoc && enter) {
+    if (!seen) { openAoc(); } else { document.body.classList.add("aoc-entered"); }
+    enter.addEventListener("click", function(){
+      stopSpeech();
+      document.body.classList.remove("aoc-overlay");
+      document.body.classList.add("aoc-entered");
+      aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
+      enter.hidden = true;
+      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      var brand = document.querySelector(".brand"); brand && brand.focus();
+    });
+    var reopen = document.getElementById("aoc-reopen");
+    reopen && reopen.addEventListener("click", function(e){ e.preventDefault(); openAoc(); });
+  }
+
+  /* Accessibility controls */
+  var toggle = document.getElementById("a11y-toggle"), panel = document.getElementById("a11y-panel");
+  if (toggle && panel) {
+    toggle.hidden = false;
+    toggle.addEventListener("click", function(){
+      var open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      panel.hidden = open;
+    });
+    var apply = function(cls, on){
+      document.body.classList.toggle(cls, on);
+      var b = panel.querySelector('[data-a11y="'+cls+'"]');
+      b && b.setAttribute("aria-pressed", String(on));
+      try { store && (on ? store.setItem("f2bm-"+cls,"1") : store.removeItem("f2bm-"+cls)); } catch(e){}
+    };
+    ["text-larger","high-contrast","reduce-motion"].forEach(function(cls){
+      if (store && store.getItem("f2bm-"+cls) === "1") apply(cls, true);
+    });
+    panel.addEventListener("click", function(e){
+      var b = e.target.closest("[data-a11y]"); if(!b) return;
+      var k = b.getAttribute("data-a11y");
+      if (k === "reset") { ["text-larger","high-contrast","reduce-motion"].forEach(function(c){ apply(c,false); }); return; }
+      apply(k, !document.body.classList.contains(k));
+    });
+  }
+
+  /* Award badges: 41 real award cards, built from the manifest rather than
+     41 hand-written <picture> blocks. Lazy, so they cost nothing above the fold. */
+  var wall = document.getElementById("badges");
+  if (wall) {
+    var labels = ["2025 Gold, Rising Star","2025 Gold, Non-Profit Organisation of the Year","2025 Gold, Emerging Non-Profit Business Excellence","2025 Gold, Children's Education","2024 Gold, Global Female Executive","2024 Gold, Overcoming the Odds","2024 Gold, Community Leader of the Year","2024 Gold, Education Provider of the Year","2023 Gold, ND/Autistic Excellence Provider of the Year","2023 Gold, Community Inclusion Award","2022 Gold, Emerging Community Leader","2025 Silver, Children's Education","2025 Silver, Achievement in Diversity and Inclusion","2025 Silver, Women in Education","2025 Silver, Emerging AusMumpreneur of the Year","2024 Silver, Global Female Executive","2024 Silver, Global Female Executive","2024 Silver, Global Woman of the Year","2024 Silver, Disabled Business Excellence","2025 Bronze, Advocacy and Impact","2025 Bronze, Most Resilient Woman Owned Business","2026 Finalist, Big Idea","2026 Finalist, Thought Leader of the Year","2026 Finalist, Innovation","2026 Finalist, Human Rights","2026 Finalist, Disability Inclusion Impact","2026 Finalist, Woman in Therapy and Counselling Services","2026 Finalist, Woman in Education","2026 Finalist, Rising Star","2026 Finalist, Girl of the Year under 16","2026 Nomination, Citizen of the Year","2026 Nomination, Community Group of the Year","2025 Honourable Mention, Thought Leader of the Year","2024 Finalist, Excellence in Diversity and Inclusion","2024 Finalist, Woman of the Year","2024 Finalist, Championing Health","2024 Finalist, Outstanding Growth","2023 Finalist, Fisher Business of the Year","2022 Finalist, Social Commitment Award","2022 Finalist, Community Leadership Award","2021 Finalist, Best Children's Disability Service"];
+    var html = "";
+    for (var i = 1; i <= 41; i++) {
+      html += '<picture role="listitem">'
+        + '<source type="image/avif" srcset="/assets/brand/awards/'+i+'-170.avif 170w,/assets/brand/awards/'+i+'-340.avif 340w" sizes="196px">'
+        + '<img src="/assets/brand/awards/'+i+'-340.webp" width="196" height="164" loading="lazy" decoding="async" alt="'+(labels[i-1]||"Award")+'">'
+        + '</picture>';
+    }
+    wall.innerHTML = html;
+  }
+
+  /* The Ledger. Without JS both columns read plainly, which is the point being made;
+     with JS the cost side starts veiled so the reveal lands. */
+  var lbtn = document.getElementById("ledger-btn"), lcost = document.getElementById("ledger-cost");
+  if (lbtn && lcost) {
+    lbtn.hidden = false;
+    lcost.classList.add("veiled");
+    lbtn.setAttribute("aria-expanded","false");
+    lbtn.addEventListener("click", function(){
+      var veiled = lcost.classList.toggle("veiled");
+      lbtn.setAttribute("aria-expanded", String(!veiled));
+      lbtn.textContent = veiled ? "Show what it cost" : "Hide what it cost";
+    });
+  }
+
+  /* Tier filter. Without JS every tier is visible, which is the correct fallback. */
+  var tabs = document.querySelectorAll('.tiers [data-tier]');
+  var groups = document.querySelectorAll('.chrono li[data-tier]');
+  if (tabs.length && groups.length) {
+    Array.prototype.forEach.call(tabs, function(tab){
+      tab.addEventListener("click", function(){
+        var want = tab.getAttribute("data-tier");
+        Array.prototype.forEach.call(tabs, function(t){ t.setAttribute("aria-selected", String(t === tab)); });
+        Array.prototype.forEach.call(groups, function(g){
+          g.hidden = !(want === "all" || g.getAttribute("data-tier") === want);
+        });
+        Array.prototype.forEach.call(document.querySelectorAll(".year"), function(y){
+          y.hidden = !y.querySelector("li:not([hidden])");
+        });
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>
