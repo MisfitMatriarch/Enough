@@ -63,3 +63,42 @@ No founder adjectives: visionary, inspirational, passionate, courageous, award-w
 
 It shows the questions are reaching rooms they were not always invited into. It is never evidence
 of safety, accessibility or efficacy, and it never opens a page.
+
+---
+
+## The centre moves (12 September 2026)
+
+Tan's ruling: the site was organised around problem, change, fixing, cost and systems, and
+those are ecosystem ideas, not the emotional centre. The centre is being yourself, belonging,
+having choices and living a life that is yours &mdash; not earned by becoming easy enough,
+productive enough, regulated enough, independent enough or normal enough.
+
+The homepage now runs recognition &rarr; possibility &rarr; language &rarr; belonging &rarr;
+participation, in this order: life, recognition, understanding. Not problem, problem, change,
+change, cost.
+
+### Lines added to the canon
+
+| role | line |
+|---|---|
+| Opening promise | A life that feels like yours. |
+| Flagship candidate | You don't have to become less of yourself to have more of a life. |
+| Ecosystem line | One promise. Many places it has to become real. |
+| Belonging line | Belonging shouldn't require becoming less of yourself. |
+| Support line | Support doesn't cancel capability. |
+| Permission line | Your life is allowed to fit you. |
+| Inheritance line | Not permission to be themselves. A world in which they don't need permission. |
+| Closing refusal | FREE 2B ME isn't a promise that life will become easy. It is a refusal to make becoming someone else the price of belonging to it. |
+
+### Lines retired from the homepage
+
+- "You were never the only thing that needed to change." &mdash; ended the page on change.
+- "FREE 2B ME is about learning where change belongs."
+- "What if the person is not the automatic problem?"
+- "Change can happen in more than one place."
+- "Whose change is this?"
+- "The aim is not to make people resilient enough to tolerate damaging systems."
+- "One doorway. Three distinct routes." &mdash; information architecture talking to itself.
+- "Systems that stop making survival the entry fee for contribution." &mdash; as the sole payoff of Speaking.
+
+They remain true. They are not the door.

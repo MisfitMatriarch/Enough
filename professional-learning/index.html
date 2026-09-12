@@ -50,11 +50,11 @@
     <nav aria-label="Main">
       <a href="/the-practice/">The Practice</a>
       <a href="/books/">Books &amp; Tools</a>
-      <a href="#learning">Learning</a>
+      <a href="/#learning">Learning</a>
       <a href="/speaking/">Speaking &amp; Media</a>
       <a href="/about/">About Tanya</a>
     </nav>
-    <a class="cta" href="#begin">Explore FREE 2B ME</a>
+    <a class="cta" href="/#ecosystem">Find your way in</a>
   </div>
 </header>
 
@@ -141,8 +141,9 @@
       <b>Explore</b>
       <a href="/the-practice/">The Practice</a>
       <a href="/books/">Books &amp; Tools</a>
-      <a href="#learning">Learning</a>
+      <a href="/#learning">Learning</a>
       <a href="/speaking/">Speaking &amp; Media</a>
+      <a href="/recognition/">Recognition</a>
     </div>
     <div>
       <b>Connect</b>
@@ -267,20 +268,6 @@
     });
   }
 
-  /* Award badges: 41 real award cards, built from the manifest rather than
-     41 hand-written <picture> blocks. Lazy, so they cost nothing above the fold. */
-  var wall = document.getElementById("badges");
-  if (wall) {
-    var labels = ["2025 Gold, Rising Star","2025 Gold, Non-Profit Organisation of the Year","2025 Gold, Emerging Non-Profit Business Excellence","2025 Gold, Children's Education","2024 Gold, Global Female Executive","2024 Gold, Overcoming the Odds","2024 Gold, Community Leader of the Year","2024 Gold, Education Provider of the Year","2023 Gold, ND/Autistic Excellence Provider of the Year","2023 Gold, Community Inclusion Award","2022 Gold, Emerging Community Leader","2025 Silver, Children's Education","2025 Silver, Achievement in Diversity and Inclusion","2025 Silver, Women in Education","2025 Silver, Emerging AusMumpreneur of the Year","2024 Silver, Global Female Executive","2024 Silver, Global Female Executive","2024 Silver, Global Woman of the Year","2024 Silver, Disabled Business Excellence","2025 Bronze, Advocacy and Impact","2025 Bronze, Most Resilient Woman Owned Business","2026 Finalist, Big Idea","2026 Finalist, Thought Leader of the Year","2026 Finalist, Innovation","2026 Finalist, Human Rights","2026 Finalist, Disability Inclusion Impact","2026 Finalist, Woman in Therapy and Counselling Services","2026 Finalist, Woman in Education","2026 Finalist, Rising Star","2026 Finalist, Girl of the Year under 16","2026 Nomination, Citizen of the Year","2026 Nomination, Community Group of the Year","2025 Honourable Mention, Thought Leader of the Year","2024 Finalist, Excellence in Diversity and Inclusion","2024 Finalist, Woman of the Year","2024 Finalist, Championing Health","2024 Finalist, Outstanding Growth","2023 Finalist, Fisher Business of the Year","2022 Finalist, Social Commitment Award","2022 Finalist, Community Leadership Award","2021 Finalist, Best Children's Disability Service"];
-    var html = "";
-    for (var i = 1; i <= 41; i++) {
-      html += '<picture role="listitem">'
-        + '<source type="image/avif" srcset="/assets/brand/awards/'+i+'-170.avif 170w,/assets/brand/awards/'+i+'-340.avif 340w" sizes="196px">'
-        + '<img src="/assets/brand/awards/'+i+'-340.webp" width="196" height="164" loading="lazy" decoding="async" alt="'+(labels[i-1]||"Award")+'">'
-        + '</picture>';
-    }
-    wall.innerHTML = html;
-  }
 
   /* The Ledger. Without JS both columns read plainly, which is the point being made;
      with JS the cost side starts veiled so the reveal lands. */
