@@ -1072,3 +1072,9 @@ body.interior main > section ul:not([class]) li{break-inside:avoid;margin:0;padd
 /* any section that carries artwork becomes its containing block */
 .artful{position:relative;overflow:hidden}
 .artful > .wrap{position:relative;z-index:2}
+/* the spoken rhythm: short lines that stand as their own beat */
+.cadence.spoken{max-width:52ch}
+.cadence.spoken p{padding:11px 0;border-bottom:1px solid var(--hair);
+  font-size:clamp(20px,1vw + 15px,26px);margin:0}
+.cadence.spoken p:last-child{border-bottom:0}
+.continuum b strong,.continuum span strong{font-weight:600;color:var(--ink);display:block;margin-bottom:6px}
