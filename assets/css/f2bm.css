@@ -850,10 +850,13 @@ body.interior .status.review{color:#98701c;border-color:var(--rule)}
 /* buttons: one filled, the rest are links wearing a rule */
 body.interior .cta-row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:clamp(20px,2.2vw,30px)}
 body.interior .btn-teal{display:inline-block;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.04em;
-  text-decoration:none;color:#fff;background:var(--ink);border:1px solid var(--ink);border-radius:2px;padding:14px 26px}
+  text-decoration:none;color:#fff !important;background:var(--ink);border:1px solid var(--ink);border-radius:2px;padding:14px 26px}
 body.interior .btn-teal:hover{background:var(--f2bm-aqua-deep);border-color:var(--f2bm-aqua-deep)}
+/* These are written as "btn btn-ghost", so they inherit the filled button's background,
+   padding and border. Without resetting those, the label is navy on navy and invisible. */
 body.interior .btn-ghost, body.interior .btn-text{display:inline-block;font-family:var(--sans);font-size:16px;font-weight:600;
-  text-decoration:none;color:var(--ink);padding-bottom:5px;border-bottom:1px solid var(--f2bm-gold)}
+  text-decoration:none;color:var(--ink);background:none;border:0;border-radius:0;
+  padding:0 0 5px;border-bottom:1px solid var(--f2bm-gold)}
 body.interior .btn-ghost:hover, body.interior .btn-text:hover{border-bottom-color:var(--f2bm-aqua-deep)}
 
 /* book pages */
