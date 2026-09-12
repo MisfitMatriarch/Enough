@@ -136,3 +136,8 @@ footer a:hover{color:var(--cream)}
   html{scroll-behavior:auto}
   *{animation-duration:.001ms!important;transition-duration:.001ms!important}
 }
+
+/* A standfirst: the line that sits between the headline and the body and carries the
+   promise. Added 2026-09-12 with the FREE 2B ME copy pass on the interior pages. */
+.stand{margin:0 0 20px;max-width:30ch;color:var(--teal);
+  font-size:clamp(21px,1.3vw + 15px,30px);line-height:1.2;text-wrap:balance}
