@@ -48,6 +48,7 @@
       <small>by Tanya Hicks</small>
     </a>
     <nav aria-label="Main">
+      <a href="/">Home</a>
       <a href="/the-practice/">The Practice</a>
       <a href="/books/">Books &amp; Tools</a>
       <a href="/#learning">Learning</a>
@@ -238,7 +239,7 @@
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
     aoc.setAttribute("role","dialog"); aoc.setAttribute("aria-modal","true");
-    enter.hidden = false; enter.focus();
+    enter.hidden = false; enter.focus({preventScroll:true}); aoc.scrollTop = 0; window.scrollTo(0,0);
   };
   if (aoc && enter) {
     if (!seen) { openAoc(); } else { document.body.classList.add("aoc-entered"); }
