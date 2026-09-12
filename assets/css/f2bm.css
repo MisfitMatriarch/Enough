@@ -941,7 +941,7 @@ body.interior main > section ul:not([class]) li{break-inside:avoid;margin:0;padd
   mask-image:linear-gradient(90deg,transparent,#000 34%,#000 100%)}
 .art-band img{object-position:center 52%;opacity:.55}
 .art-band::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,var(--f2bm-cream) 0 26%,rgba(251,247,239,.72) 58%,rgba(251,247,239,.3))}
+  background:linear-gradient(90deg,var(--f2bm-cream) 0 44%,rgba(251,247,239,.82) 68%,rgba(251,247,239,.28))}
 
 /* the one arch on the page, opposite the question */
 .art-arch{right:max(24px,calc(50vw - var(--wrap)/2));top:clamp(80px,9vw,140px);
@@ -1092,3 +1092,48 @@ body.interior main > section ul:not([class]) li{break-inside:avoid;margin:0;padd
   .stages{grid-template-columns:1fr;gap:0}
   .stages li + li::before{display:none}
 }
+/* Clearance has to reach the copy wherever it sits, not only direct children of .wrap.
+   The About story sits inside .story, so the earlier rule never reached it and the
+   lozenge ran underneath the text. */
+.art-lozenge + .wrap .story,.art-lozenge + .wrap .rooms,.art-lozenge + .wrap .cadence,
+.art-lozenge + .wrap .stack,.art-lozenge + .wrap .qlist,.art-lozenge + .wrap .into,
+.art-arch + .wrap .story,.art-arch + .wrap .rooms,.art-arch + .wrap .cadence,
+.art-arch + .wrap .stack,.art-arch + .wrap .qlist,.art-arch + .wrap .into,
+.art-strip + .wrap .story,.art-strip + .wrap .stack,.art-strip + .wrap .qlist,
+.art-left + .wrap .story,.art-left + .wrap .stack,.art-left + .wrap .qlist{max-width:min(100%,700px)}
+/* a two-column list needs more room than a single reading column */
+.art-lozenge + .wrap .rooms,.art-arch + .wrap .rooms,.art-lozenge + .wrap .into,.art-arch + .wrap .into{max-width:min(100%,820px)}
+.art-lozenge + .wrap .tanya-grid,.art-arch + .wrap .tanya-grid{max-width:min(100%,760px)}
+@media(max-width:900px){
+  .art-lozenge + .wrap .story,.art-lozenge + .wrap .rooms,.art-lozenge + .wrap .cadence,
+  .art-lozenge + .wrap .stack,.art-lozenge + .wrap .qlist,.art-lozenge + .wrap .into,
+  .art-arch + .wrap .story,.art-arch + .wrap .rooms,.art-arch + .wrap .cadence,
+  .art-arch + .wrap .stack,.art-arch + .wrap .qlist,.art-arch + .wrap .into,
+  .art-strip + .wrap .story,.art-strip + .wrap .stack,.art-strip + .wrap .qlist,
+  .art-left + .wrap .story,.art-left + .wrap .stack,.art-left + .wrap .qlist,
+  .art-lozenge + .wrap .tanya-grid,.art-arch + .wrap .tanya-grid{max-width:none}
+}
+
+/* ---------- About opens on the person ---------- */
+.about-hero{position:relative;overflow:hidden}
+.about-hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+  gap:clamp(36px,5vw,88px);align-items:center;position:relative;z-index:2}
+.about-portrait{margin:0;justify-self:end;width:min(34vw,420px);
+  border-radius:min(17vw,210px) min(17vw,210px) 12px 12px;overflow:hidden;
+  box-shadow:0 34px 80px rgba(8,43,88,.16)}
+.about-portrait img{width:100%;height:auto;display:block}
+.about-hero-copy h1{max-width:15ch}
+.about-hero-copy .became{margin:clamp(22px,2.6vw,34px) 0 0}
+/* the five places fill the page on About rather than stopping two thirds across */
+.about-realms .realms{max-width:none}
+.about-realms .realms > li{grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr)}
+@media(max-width:900px){
+  .about-hero .wrap{grid-template-columns:1fr;gap:clamp(26px,5vw,38px)}
+  .about-portrait{justify-self:start;width:min(74vw,340px);grid-row:1}
+  .about-realms .realms > li{grid-template-columns:1fr}
+}
+/* the five things she became: a list, not bullets */
+.became{list-style:none;margin:clamp(22px,2.6vw,34px) 0 clamp(24px,2.8vw,36px);padding:0;
+  max-width:34ch;border-top:1px solid var(--rule)}
+.became li{padding:11px 0;border-bottom:1px solid var(--hair);
+  font-family:var(--serif);font-size:clamp(20px,1vw + 15px,25px);color:var(--ink)}
