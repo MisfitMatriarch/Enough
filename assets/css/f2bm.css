@@ -733,3 +733,86 @@ body.high-contrast img{filter:contrast(1.08)}
   .signup-grid{grid-template-columns:1fr;gap:clamp(38px,7vw,54px)}
   .signup{max-width:none}
 }
+
+/* ---------- INTERIOR PAGES (2026-09-12) ----------
+   Fourteen pages were still on the old stylesheet: the seven book pages, the framework
+   pages, Research, For organisations and two deep dives. Their markup is unchanged; these
+   rules re-dress the components it uses in the FREE 2B ME system, so the whole site is one
+   worldview rather than two. Cream ground, teal headings, gold seams, navy for reading. */
+.serif{font-family:var(--serif)}
+.sec-head{max-width:60ch;margin-bottom:clamp(30px,3.4vw,46px)}
+.sec-head .lead{margin-top:20px}
+.stand{margin:clamp(20px,2.4vw,32px) 0 0;max-width:30ch;font-family:var(--serif);
+  font-size:clamp(23px,1.4vw + 15px,34px);line-height:1.18;color:var(--head)}
+
+/* a scope, evidence or limitation notice. It has to read as deliberate, never as fine print. */
+.note,.boundary{margin:clamp(28px,3.2vw,44px) 0 0;max-width:64ch;
+  padding:clamp(18px,2vw,26px) 0 clamp(18px,2vw,26px) clamp(20px,2.2vw,28px);
+  border-left:2px solid var(--f2bm-gold);font-size:17px;color:var(--body)}
+.note strong,.boundary strong{color:var(--ink);font-weight:600}
+
+/* ruled tiles, not floating panels */
+.grid,.principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));
+  gap:0 clamp(26px,3vw,52px)}
+.card,.principle-card{padding:clamp(24px,2.6vw,34px) 0 clamp(18px,2vw,26px);border-top:1px solid var(--rule);background:none}
+.card h3,.principle-card h3{font-size:clamp(22px,1.2vw + 16px,29px);line-height:1.14;margin:0 0 11px}
+.card p,.principle-card p{font-size:17.5px;max-width:56ch;margin:0 0 .7em}
+.grid .card p,.principles-grid .principle-card p{max-width:38ch}
+.card p:last-child,.principle-card p:last-child{margin-bottom:0}
+
+/* development-status chips */
+.status{display:inline-block;margin:0 0 13px;padding:4px 10px;border:1px solid var(--rule);
+  font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#5b6f88}
+.status.now{color:var(--teal-small);border-color:rgba(10,110,132,.4)}
+.status.dev,.status.research{color:var(--f2bm-magenta);border-color:rgba(210,15,105,.34)}
+.status.review{color:#98701c;border-color:var(--rule)}
+
+/* buttons: one filled, the rest are links wearing a rule */
+.cta-row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-top:clamp(20px,2.2vw,30px)}
+.btn-teal{display:inline-block;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:.04em;
+  text-decoration:none;color:#fff;background:var(--ink);border:1px solid var(--ink);border-radius:2px;padding:14px 26px}
+.btn-teal:hover{background:var(--f2bm-aqua-deep);border-color:var(--f2bm-aqua-deep)}
+.btn-ghost,.btn-text{display:inline-block;font-family:var(--sans);font-size:16px;font-weight:600;
+  text-decoration:none;color:var(--ink);padding-bottom:5px;border-bottom:1px solid var(--f2bm-gold)}
+.btn-ghost:hover,.btn-text:hover{border-bottom-color:var(--f2bm-aqua-deep)}
+
+/* book pages */
+.library-intro{max-width:64ch}
+.book-subtitle{margin:clamp(16px,1.8vw,24px) 0 0;max-width:34ch;font-family:var(--serif);
+  font-size:clamp(24px,1.6vw + 15px,36px);line-height:1.16;color:var(--f2bm-magenta)}
+.book-promise{margin:clamp(24px,2.8vw,38px) 0 0;max-width:44ch;font-family:var(--serif);
+  font-size:clamp(21px,1.2vw + 15px,28px);line-height:1.26;color:var(--ink)}
+.book-actions{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:center;margin-top:clamp(26px,3vw,40px)}
+.book-side{position:relative;padding-left:22px}
+.book-side::before{content:"";position:absolute;left:0;top:.2em;bottom:.2em;width:2px;border-radius:2px}
+.book-side.person::before{background:var(--f2bm-aqua-deep)}
+.book-side.practice::before{background:var(--f2bm-magenta)}
+
+/* the paired territory cards */
+.pair-card{padding:clamp(26px,3vw,42px) 0;border-top:1px solid var(--rule)}
+.pair-card:last-child{border-bottom:1px solid var(--rule)}
+.pair-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-bottom:14px}
+.pair-kicker{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--f2bm-magenta)}
+.pair-territory{font-family:var(--serif);font-size:clamp(22px,1.3vw + 15px,30px);line-height:1.16;color:var(--ink)}
+.pair-body{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,56px)}
+.pair-body p{max-width:44ch}
+
+.video-embed{position:relative;margin:clamp(28px,3.4vw,46px) 0 0;padding-bottom:56.25%;height:0;overflow:hidden}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+main ul{list-style:none;margin:clamp(24px,2.6vw,36px) 0 0;padding:0;
+  columns:2;column-gap:clamp(36px,5vw,84px);max-width:88ch;border-top:1px solid var(--rule)}
+main ul li{break-inside:avoid;margin:0;padding:13px 0;border-bottom:1px solid var(--hair);
+  font-family:var(--serif);font-size:clamp(20px,1vw + 15px,25px);color:var(--ink)}
+main .destinations,main .places,main .rooms,main .living-list,main .permits,main .test-list,
+main .lang-list,main .realms,main .pairs,main .stack,main .tiers,main .rec-picks,main .year ul,
+main .chrono ul,main .signup-side .places{border-top:0}
+main .destinations li,main .pairs > li,main .realms > li,main .stack li,main .test-list li,
+main .lang-list li,main .rec-picks li,main .year li{font-family:inherit;font-size:inherit;color:inherit}
+
+@media(max-width:900px){
+  .grid,.principles-grid{grid-template-columns:1fr}
+  .pair-body{grid-template-columns:1fr;gap:18px}
+  main ul{columns:1}
+}
