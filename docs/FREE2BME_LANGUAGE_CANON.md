@@ -102,3 +102,51 @@ change, cost.
 - "Systems that stop making survival the entry fee for contribution." &mdash; as the sole payoff of Speaking.
 
 They remain true. They are not the door.
+
+---
+
+## The cult-worthy language system (12 September 2026)
+
+Tan's ruling: the site gave visitors statements to read. It now gives them things they can
+use. Shared language is what escapes a website; practices are what make it culture. These are
+the words protected across the site, the eight books, social, speaking, learning and The Nest.
+Not every phrase appears everywhere.
+
+| role | line |
+|---|---|
+| The promise | FREE 2B ME |
+| The philosophy | Less fixing. More living. |
+| The aspiration | A life that feels like yours. |
+| The deepest proposition | You don't have to become less of yourself to have more of a life. |
+| The recognition question | What did &ldquo;fine&rdquo; cost? |
+| The capacity principle | Capacity is conditional. |
+| The support principle | Support doesn't cancel capability. |
+| The life-design principle | Your life is allowed to fit you. |
+| The everyday test | Does this leave room for me to be me? |
+| The practitioner test | What does my practice require the person to become? |
+| The belonging principle | Different participation is still participation. |
+| The generational ambition | Not permission to be themselves. A world in which they don't need permission. |
+
+### The four practices
+
+A practice is something a person can do with the idea, not a ritual to perform.
+
+1. **The Ledger.** What did &ldquo;fine&rdquo; cost?
+2. **The FREE 2B ME test.** Does this leave room for me to be me? Used in support, at work,
+   in relationships, in healthcare, in community and in your own life.
+3. **The practitioner question.** What does my practice require the person to become?
+4. **The participation principle.** Different participation is still participation.
+
+### The repeatable book device
+
+Each pair is named by territory, and each title is marked **For living it.** or
+**For practising it.** Read one because you need it. Read the others because the person
+doesn't stop being a person when the setting changes.
+
+### Retired from the homepage in this pass
+
+- "The FREE 2B ME ecosystem" as a visible label. People don't fall in love with ecosystems.
+- "Practice that leaves more of the person intact." Implied practice ordinarily damages people.
+- "One doorway. Three distinct routes."
+- "They are released as editorial and specialist-review gates are completed." Document control.
+- The paragraphs before the Ledger about years of coping better. The visual tells the story.
