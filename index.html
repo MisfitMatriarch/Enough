@@ -28,7 +28,7 @@
     <div class="aoc-body">
       <p class="eyebrow">Before you explore</p>
       <h2 id="aoc-title">Acknowledgement of Country</h2>
-      <hr class="seam" style="width:150px;margin:0 0 24px">
+      <hr class="seam" style="width:170px;margin:22px 0 26px">
       <div data-listen>
         <p class="aoc-lead">Sovereignty was never ceded. No treaty was ever signed. Aboriginal and Torres Strait Islander peoples are the Traditional Custodians of the lands and waters on which this work is made, and that does not become less true with time, legislation or silence.</p>
         <p>FREE 2B ME acknowledges Elders past, present and emerging. This body of work exists because systems cause harm when they ask people to become easier to accommodate. No community in this country has been asked to do that more often, or for longer, than First Nations peoples.</p>
@@ -139,17 +139,12 @@
   <!-- THE PRACTICE -->
   <section class="practice band" id="practice">
     <div class="wrap practice-grid">
-      <div class="practice-art">
+      <div class="practice-art" aria-hidden="true">
         <picture>
-          <source type="image/avif" srcset="/assets/brand/practice-panel-432.avif 432w,/assets/brand/practice-panel-864.avif 864w" sizes="(max-width:900px) 92vw, 432px">
-          <source type="image/webp" srcset="/assets/brand/practice-panel-432.webp 432w,/assets/brand/practice-panel-864.webp 864w" sizes="(max-width:900px) 92vw, 432px">
-          <img src="/assets/brand/practice-panel-432.jpg" width="864" height="760" loading="lazy" decoding="async" alt="Separate watercolour planes standing at different depths against open cream">
+          <source type="image/avif" srcset="/assets/brand/practice-panel-432.avif 432w,/assets/brand/practice-panel-864.avif 864w" sizes="(max-width:900px) 100vw, min(52vw,660px)">
+          <source type="image/webp" srcset="/assets/brand/practice-panel-432.webp 432w,/assets/brand/practice-panel-864.webp 864w" sizes="(max-width:900px) 100vw, min(52vw,660px)">
+          <img src="/assets/brand/practice-panel-864.jpg" width="864" height="760" loading="lazy" decoding="async" alt="">
         </picture>
-        <svg viewBox="0 0 432 380" fill="none" aria-hidden="true" preserveAspectRatio="none">
-          <circle cx="214" cy="184" r="168" stroke="rgba(255,255,255,.34)"/>
-          <circle cx="214" cy="184" r="116" stroke="rgba(220,172,102,.6)"/>
-          <circle cx="214" cy="184" r="62" stroke="rgba(255,255,255,.28)"/>
-        </svg>
       </div>
       <div class="practice-copy">
         <p class="eyebrow">The FREE 2B ME Practice</p>
@@ -217,7 +212,7 @@
   </section>
 
   <!-- TRANSITION -->
-  <aside class="turn"><p class="wrap">Being able to endure something is not proof that it works for you.</p></aside>
+  <aside class="turn"><div class="wrap"><p>Being able to endure something is not proof that it works for you.</p></div></aside>
 
   <!-- LEARNING -->
   <section class="band rule-top" id="learning">
@@ -307,8 +302,8 @@
   <section class="leadership" aria-label="Why I build">
     <div class="wash" aria-hidden="true">
       <picture>
-        <source type="image/avif" srcset="/assets/brand/leadership-wash-350.avif 350w,/assets/brand/leadership-wash-700.avif 700w" sizes="350px">
-        <source type="image/webp" srcset="/assets/brand/leadership-wash-350.webp 350w,/assets/brand/leadership-wash-700.webp 700w" sizes="350px">
+        <source type="image/avif" srcset="/assets/brand/leadership-wash-350.avif 350w,/assets/brand/leadership-wash-700.avif 700w" sizes="(max-width:900px) 62vw, min(58vw,520px)">
+        <source type="image/webp" srcset="/assets/brand/leadership-wash-350.webp 350w,/assets/brand/leadership-wash-700.webp 700w" sizes="(max-width:900px) 62vw, min(58vw,520px)">
         <img src="/assets/brand/leadership-wash-350.jpg" width="700" height="700" loading="lazy" decoding="async" alt="">
       </picture>
     </div>
@@ -393,7 +388,7 @@
   </section>
 
   <!-- TRANSITION -->
-  <aside class="turn"><p class="wrap">Support is part of the outcome, not evidence that you should have managed without it.</p></aside>
+  <aside class="turn"><div class="wrap"><p>Support is part of the outcome, not evidence that you should have managed without it.</p></div></aside>
 
   <!-- SPEAKING -->
   <section class="band rule-top" id="speaking">
@@ -427,7 +422,7 @@
     </div>
     <div class="wrap">
       <div class="rec-head">
-        <img src="/assets/brand/phoenix-light-240.png" srcset="/assets/brand/phoenix-light-120.png 120w,/assets/brand/phoenix-light-240.png 240w" sizes="118px" width="240" height="240" alt="" loading="lazy">
+        <img src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="118px" width="240" height="240" alt="" loading="lazy">
         <div>
           <p class="eyebrow">Recognition</p>
           <h2>The work has travelled.</h2>
@@ -667,7 +662,11 @@
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
       try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
-      var brand = document.querySelector(".brand"); brand && brand.focus();
+      // Move focus into the page, not onto the logo link. Focusing the brand anchor drew a
+      // focus ring around the logo and "by Tanya Hicks", which reads as a broken box. A
+      // skip-target container takes focus for the screen reader and shows nothing.
+      var main = document.getElementById("main");
+      if (main) { main.setAttribute("tabindex", "-1"); main.focus(); }
     });
     var reopen = document.getElementById("aoc-reopen");
     reopen && reopen.addEventListener("click", function(e){ e.preventDefault(); openAoc(); });
