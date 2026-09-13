@@ -186,7 +186,12 @@ section{position:relative}
 .change-art img{clip-path:path("M200,6 C296,6 394,84 394,196 C394,300 322,394 202,394 C92,394 6,312 6,200 C6,88 96,6 200,6 Z");}
 
 /* learning: three crops of one plate */
-.learn-head{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,4vw,70px);align-items:end;margin-bottom:54px}
+/* The headline sets in three lines at this measure, so it is balanced rather than
+   left to rag. The line on the right is bottom-aligned and sits under a gold rule,
+   so it reads as a deliberate second column instead of floating free. */
+.learn-head{display:grid;grid-template-columns:1.32fr .68fr;gap:clamp(30px,4vw,64px);align-items:start;margin-bottom:clamp(36px,4vw,54px)}
+.learn-head h2{text-wrap:balance;margin-bottom:0}
+.learn-head .lead{margin-top:10px;padding-top:18px;border-top:2px solid var(--f2bm-gold)}
 .routes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3vw,46px)}
 .route figure{margin:0 0 22px;max-width:256px;overflow:hidden}
 .route:nth-child(1) figure{border-radius:128px 128px 6px 6px}
