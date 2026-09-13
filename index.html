@@ -81,7 +81,7 @@
     <div class="hero-in">
       <img class="hero-phoenix" src="/assets/brand/phoenix-dark-480.png" srcset="/assets/brand/phoenix-dark-240.png 240w,/assets/brand/phoenix-dark-480.png 480w" sizes="(max-width:900px) 168px, 230px" width="480" height="480" alt="FREE TO BE ME" fetchpriority="high">
       <h1>A life that feels like yours.</h1>
-      <p class="claim">Being yourself. Belonging. Having choices. Living a life that is yours.</p>
+      <p class="claim">Being yourself. Belonging. Having choices.</p>
       <p class="sub">Not earning those things by becoming someone else.</p>
       <p class="signature">Less <span class="f">fixing</span>. More <span class="m">living</span>.</p>
       <div class="hero-actions">
@@ -93,15 +93,15 @@
 
   <!-- THE LINE -->
   <section class="opening" aria-label="FREE 2B ME">
+    <div class="wrap">
+      <p class="opening-line">You don&rsquo;t have to become less of yourself to have more of a life.</p>
+    </div>
     <div class="opening-art" aria-hidden="true">
       <picture>
         <source type="image/avif" srcset="/assets/brand/intro-gold-seam-512.avif 512w,/assets/brand/intro-gold-seam-1024.avif 1024w" sizes="100vw">
         <source type="image/webp" srcset="/assets/brand/intro-gold-seam-512.webp 512w,/assets/brand/intro-gold-seam-1024.webp 1024w" sizes="100vw">
         <img src="/assets/brand/intro-gold-seam-1024.jpg" width="1024" height="500" fetchpriority="high" decoding="async" alt="">
       </picture>
-    </div>
-    <div class="wrap">
-      <p class="opening-line">You don&rsquo;t have to become less of yourself to have more of a life.</p>
     </div>
   </section>
 
@@ -140,7 +140,7 @@
   </section>
 
   <!-- THE LEDGER -->
-  <section class="ledger rule-top" aria-labelledby="ledger-title">
+  <section class="ledger rule-top artful" aria-labelledby="ledger-title">
     <div class="art art-strip" aria-hidden="true">
       <picture>
           <source type="image/avif" srcset="/assets/brand/country-wash-400.avif 400w,/assets/brand/country-wash-800.avif 800w" sizes="min(16vw,190px)">
@@ -166,7 +166,6 @@
           </ul>
         </div>
       </div>
-      <button class="ledger-btn" type="button" id="ledger-btn" aria-expanded="true" aria-controls="ledger-cost" hidden>Show what it cost</button>
       <p class="ledger-end">Functioning tells us something happened.<br>It doesn&rsquo;t tell us what it cost.</p>
     </div>
   </section>
@@ -184,7 +183,7 @@
   </aside>
 
   <!-- THE QUESTION -->
-  <section class="test band" id="the-question" aria-labelledby="test-title">
+  <section class="test band artful" id="the-question" aria-labelledby="test-title">
     <div class="art art-arch" aria-hidden="true">
       <picture>
           <source type="image/avif" srcset="/assets/brand/recognition-wash-512.avif 512w,/assets/brand/recognition-wash-1024.avif 1024w" sizes="min(28vw,340px)">
@@ -267,7 +266,7 @@
   </section>
 
   <!-- THE LANGUAGE -->
-  <section class="lang band" aria-labelledby="lang-title">
+  <section class="lang band artful" aria-labelledby="lang-title">
     <div class="art art-left" aria-hidden="true">
       <picture>
           <source type="image/avif" srcset="/assets/brand/practice-panel-432.avif 432w,/assets/brand/practice-panel-864.avif 864w" sizes="min(22vw,260px)">
@@ -407,7 +406,7 @@
   </section>
 
   <!-- MORE ROOM -->
-  <section class="inherit band" aria-labelledby="inherit-title">
+  <section class="inherit band artful" aria-labelledby="inherit-title">
     <div class="art art-lozenge" aria-hidden="true">
       <picture>
           <source type="image/avif" srcset="/assets/brand/nest-panel-452.avif 452w,/assets/brand/nest-panel-904.avif 904w" sizes="min(30vw,380px)">
@@ -562,7 +561,7 @@
   </section>
 
   <!-- CLOSING -->
-  <section class="closing" aria-labelledby="closing-title">
+  <section class="closing artful" aria-labelledby="closing-title">
     <div class="wrap">
       <h2 id="closing-title">Your life is allowed to belong to you.</h2>
       <div class="cadence closing-cadence">
@@ -586,7 +585,6 @@
           <img src="/assets/brand/footer-band-512.jpg" width="1024" height="444" loading="lazy" decoding="async" alt="">
         </picture>
       </div>
-      <img class="closing-phoenix" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="112px" width="240" height="240" alt="FREE TO BE ME" loading="lazy">
       <p class="closing-sign">Less <span class="f">fixing</span>. More <span class="m">living</span>.</p>
       <div class="closing-actions">
         <a class="btn" href="#ecosystem">Find your way in <span aria-hidden="true">&rarr;</span></a>
@@ -736,19 +734,6 @@
     });
   }
 
-  /* The Ledger. Without JS both columns read plainly, which is the point being made;
-     with JS the cost side starts veiled so the reveal lands. */
-  var lbtn = document.getElementById("ledger-btn"), lcost = document.getElementById("ledger-cost");
-  if (lbtn && lcost) {
-    lbtn.hidden = false;
-    lcost.classList.add("veiled");
-    lbtn.setAttribute("aria-expanded","false");
-    lbtn.addEventListener("click", function(){
-      var veiled = lcost.classList.toggle("veiled");
-      lbtn.setAttribute("aria-expanded", String(!veiled));
-      lbtn.textContent = veiled ? "Show what it cost" : "Hide what it cost";
-    });
-  }
 
   /* Tier filter. Without JS every tier is visible, which is the correct fallback. */
   var tabs = document.querySelectorAll('.tiers [data-tier]');
