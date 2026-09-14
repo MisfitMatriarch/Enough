@@ -459,8 +459,11 @@ body.high-contrast img{filter:contrast(1.08)}
 .claim-line p{margin:0;font-family:var(--serif);font-size:clamp(30px,3.2vw,56px);line-height:1.1;color:var(--ink);max-width:26ch;text-wrap:balance}
 
 /* plain editorial runs */
-.run{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(30px,4vw,78px);align-items:start}
-.run h2{font-size:clamp(32px,2.6vw + 14px,54px);max-width:15ch}
+/* Two fixed columns broke when the section also reserved a gutter for artwork:
+   the heading was left about 300px and ran to seven lines ending on an orphan.
+   auto-fit stacks the pair whenever there is no longer room for two real columns. */
+.run{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr));gap:clamp(28px,3.4vw,64px);align-items:start}
+.run h2{font-size:clamp(32px,2.6vw + 14px,54px);max-width:24ch;text-wrap:balance}
 .run .body p{max-width:56ch}
 .stack{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--rule)}
 .stack li{padding:16px 0;border-bottom:1px solid var(--hair);font-size:18.5px;color:var(--ink)}
