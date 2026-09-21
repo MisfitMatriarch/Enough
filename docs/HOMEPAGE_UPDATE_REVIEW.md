@@ -3,14 +3,18 @@
 Status: implemented on local branch `codex/more-living-homepage`; not published.
 Base: `6968300b951726bd244cdd08a8ca7979b5547532`.
 
-This is the first implementation pass of the reviewed homepage direction. It
-adds MC/hosting and workshops, women's empowerment, LGBTQI+ belonging, and a
-community partnerships entry. The main welcome addresses the reader as “you”.
-The women's section remains specific to women, including trans women.
+The homepage now has one primary directory and one closing section. Duplicate
+introductions and standalone philosophy blocks have been removed. Events,
+MCing and workshops are a primary route. Empowerment addresses people of all
+genders. LGBTQI+ belonging remains an explicit section.
 
-The community partnerships card intentionally has only its agreed heading and
-an enquiry link. Detailed copy is still open; no new partnership or programme
-is announced. Sparkly Aliens remains linked by name in the belonging section.
+Community partnerships includes Headspace Caloundra's Rainbow Social Group at
+Neurodivergent Empowered Nest, with details supplied in the owner's screenshot:
+free, ages 12–16, LGBTQIA+, questioning and allies; every second Monday,
+3:30–4:30pm from 21 September 2026. Enquiries use Headspace's supplied phone.
+The unseen effort diagram, future possibilities graphic and permission statement
+use accessible HTML and existing book artwork. Book-series and award detail are
+available in native expandable sections.
 
 Existing phoenix and book artwork, navigation destinations, section IDs, book
 content, recognition, Acknowledgement of Country and accessibility code remain.
@@ -24,6 +28,8 @@ there is no fixed-height page wrapper, nested page scroller or wheel interceptio
   homepage anchor and external/internal destination, local asset paths, unique
   IDs, one H1, unchanged original inline script, and guards against page caps.
 - `node --check assets/js/home-more-living.js`: passes.
+- `python3 scripts/check-homepage-content.py`: balanced HTML, no repeated
+  substantial paragraphs/headings, user corrections, accessible references.
 - `git diff --check`: passes.
 
 ## Release gates still open
