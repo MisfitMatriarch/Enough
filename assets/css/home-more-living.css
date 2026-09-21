@@ -23,7 +23,7 @@
 .f2b-additions .f-stagecopy{min-width:0}
 .f2b-additions .f-stage figcaption{background:linear-gradient(transparent,#252525e6)}
 .f2b-additions .f-action{font-size:17px}
-.home-more-living .hero h1{max-width:19ch;font-size:clamp(44px,5.8vw,84px)}
+.home-more-living .hero h1{margin-inline:auto;text-align:center;max-width:min(19ch,100%);font-size:clamp(44px,5.8vw,84px)}
 .home-more-living .hero h1 em{color:var(--teal-small)}
 .home-more-living .hero .claim{margin-top:24px}
 .home-more-living .hero .sub{max-width:42ch;margin-inline:auto}
