@@ -129,6 +129,21 @@
 @media(max-width:650px){.route-cards{grid-template-columns:1fr;gap:18px}.route-cards .route-content{padding:24px}.route-map{padding:40px 20px}.route-cards .route-feature>img,.route-cards .route-book-art{height:220px}}
 
 /* A day above the surface, with its unseen experience beneath. */
+/* The photo is the centre of this section, with the lines held either side of it rather than
+   stacked in one column beside it. Three columns on desktop; on narrow screens the photo leads
+   and the lines fall beneath it in reading order, which is why the left group comes first in the
+   markup. Wording is unchanged. (2026-09-22) */
+.future-around-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;padding:0;background:none}
+.future-around-photo>figure{order:0;margin:0}
+.future-around-photo .future-side{display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vw,38px)}
+.future-around-photo .future-side-right{text-align:right}
+.future-around-photo .future-side p{margin:0}
+.future-around-photo .future-open{font-style:italic}
+@media(max-width:860px){
+  .future-around-photo{grid-template-columns:1fr;gap:28px}
+  .future-around-photo>figure{order:-1;width:100%;max-width:480px;justify-self:center}
+  .future-around-photo .future-side-right{text-align:left}
+}
 .future-with-photo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,70px);align-items:center;padding:0;background:none}
 .future-with-photo .future-possibilities{display:block}
 .future-with-photo .future-possibilities li,.future-with-photo .future-possibilities li:nth-child(2n){padding:16px 0;background:none;border:0;border-bottom:1px solid var(--rule);box-shadow:none;transform:none;font-size:clamp(25px,2.5vw,34px)}
