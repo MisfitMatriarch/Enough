@@ -48,3 +48,6 @@ body.high-contrast .site-enquiry input,body.high-contrast .site-enquiry select,b
 .leadership .wash{mix-blend-mode:multiply;opacity:.18}
 .leadership .wash img{clip-path:none}
 body.high-contrast .leadership,body.high-contrast .leadership *{background:white;color:black}
+.speaking-photo{margin:0 auto 40px}
+.speaking-photo img{width:100%;height:auto;border-radius:6px;display:block}
+.speaking-photo figcaption{text-align:center}
