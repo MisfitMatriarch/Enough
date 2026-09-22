@@ -51,3 +51,14 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
 .speaking-photo{margin:0 auto 40px}
 .speaking-photo img{width:100%;height:auto;border-radius:6px;display:block}
 .speaking-photo figcaption{text-align:center}
+
+/* Recognition chronology: the narrow-screen collapse every other two-column
+   construct on the site already had. .year is a 190px + 1fr grid whose list is
+   then set in two CSS columns, and .mark carries a hard min-width:8.4em, so on a
+   phone the tier label alone was wider than its column and every award title was
+   pushed outside the viewport and clipped. */
+@media(max-width:900px){
+  .year{grid-template-columns:1fr;gap:12px}
+  .year h3{font-size:clamp(34px,8vw,48px)}
+  .year ul{columns:1}
+}
