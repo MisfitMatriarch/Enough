@@ -783,13 +783,13 @@ footer.site-foot a:hover{color:var(--f2bm-aqua-deep)}
       </div>
     </div>
 
-    <!-- Right - cover placeholder (final cover art in development) -->
+    <!-- Right - the branded cover, the same artwork the homepage carries -->
     <div class="book-sticky-col" style="position: sticky; top: 120px; min-width: 280px;">
-      <div style="width: 280px; aspect-ratio: 2 / 3; border-radius: 12px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 8px 24px rgba(0,0,0,0.2); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px; color: #fff; box-sizing: border-box;">
-        <div style="font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 26px; line-height: 1.15; margin-bottom: 14px;">FREE 2B ME</div>
-        <div style="font-size: 13px; opacity: 0.8;">Tanya Hicks</div>
-        <div style="margin-top: 22px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.6;">Cover in development</div>
-      </div>
+      <picture>
+        <source type="image/avif" srcset="/assets/brand/book-cover-330.avif 330w,/assets/brand/book-cover-660.avif 660w,/assets/brand/book-cover-1024.avif 1024w" sizes="280px">
+        <source type="image/webp" srcset="/assets/brand/book-cover-330.webp 330w,/assets/brand/book-cover-660.webp 660w,/assets/brand/book-cover-1024.webp 1024w" sizes="280px">
+        <img src="/assets/brand/book-cover-330.jpg" width="1024" height="1536" loading="lazy" decoding="async" alt="FREE 2B ME, Less fixing. More living. Book cover." style="width: 280px; height: auto; border-radius: 12px; display: block; box-shadow: 0 24px 64px rgba(0,0,0,0.35), 0 8px 24px rgba(0,0,0,0.2);">
+      </picture>
     </div>
   </div>
 
