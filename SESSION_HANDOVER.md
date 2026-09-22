@@ -1,3 +1,13 @@
+# Current handover — 22 September 2026
+
+The historical July notes below are superseded by `WEBSITE-ALIGNMENT-2026-09-22.md` and the user’s September instructions. Do not restore removed homepage sections, old book covers or payment-now checkout.
+
+Current branch: `codex/more-living-homepage`. The owner has approved publication. GitHub write requests from ChatGPT return HTTP 403; the source changes remain local. Verify authorised write access before attempting deployment. Netlify is the existing host.
+
+Book reservations: `book-preorders` at `/books/pre-order/`, A$39/book, payment at launch. Event enquiries: `speaking-booking` at `/work-with-tanya/`. Existing book-only signup consent remains separate. None of these notification/delivery flows has been verified end-to-end in production during this work.
+
+## Historical notes below — not current implementation instructions
+
 # SESSION HANDOVER — tanyahicks.com
 
 **Last updated:** 2026-07-22

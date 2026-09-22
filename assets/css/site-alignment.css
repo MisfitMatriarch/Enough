@@ -1,0 +1,50 @@
+/* Shared editorial system aligned with the approved homepage, September 2026. */
+:root{--ink:#30383b;--body:#3e4447;--head:#087d91;--sp:clamp(60px,7vw,100px)}
+body{font-size:20px;background-color:var(--f2bm-cream)}
+main{height:auto;max-height:none;overflow:visible}
+h1{color:var(--head)}
+h2{font-size:clamp(36px,4.5vw,62px);line-height:1.08}
+h3{font-size:clamp(27px,3vw,38px);line-height:1.15}
+h1+p,h2+p,h3+p{margin-top:1em}
+.site-header{position:relative}
+.site-header nav{flex-wrap:wrap}
+.site-header .cta,.btn,body.interior .btn-teal{background:#08768a;color:#fff;border-color:#08768a}
+.site-header .cta:hover,.btn:hover{background:#075c6a;color:#fff}
+.btn-ghost{background:transparent!important;color:#08768a!important}
+.page-hero .stand{max-width:42ch}
+.page-hero .measure{margin-top:24px}
+footer .foot-legal{font-size:14px}
+.closing{padding-bottom:36px}
+.book-detail-layout{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(180px,.6fr);align-items:center;gap:clamp(28px,6vw,80px)}
+.book-detail-layout .book-detail-cover{width:100%;max-width:300px;justify-self:center;height:auto;box-shadow:0 16px 30px #42372118}
+.book-reservation{margin-top:30px;max-width:43ch}
+.book-reservation .small,.small{font-size:16px;line-height:1.6;margin-top:16px}
+.book-reservation .btn{display:inline-block}
+.enquiry-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,90px);align-items:start}
+.enquiry-layout a{overflow-wrap:anywhere}
+.site-enquiry{display:grid;gap:22px;max-width:680px}
+.site-enquiry label{display:block;font-size:18px;font-weight:500;margin-bottom:8px}
+.site-enquiry input:not([type=checkbox]),.site-enquiry textarea,.site-enquiry select{width:100%;padding:13px 15px;border:1px solid #9c9a90;border-radius:3px;background:#fdfcf9;color:#30383b;font:inherit}
+.site-enquiry input[type=checkbox]{width:20px;height:20px;flex:none;accent-color:#08768a}
+.site-enquiry .choice{display:flex;gap:12px;align-items:start;font-weight:400}
+.site-enquiry .btn{justify-self:start;font:inherit;padding:14px 24px;cursor:pointer}
+.site-enquiry .field p{margin-bottom:0}
+.offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 54px;margin:36px 0}
+.offer-grid article{border-top:1px solid var(--rule);padding-top:22px}
+.speaking-hero-photo{margin:0 auto 36px}
+.speaking-hero-photo img{width:100%;height:auto}
+.speaking-hero-photo figcaption{font-size:16px;margin-top:12px;color:var(--teal-small)}
+.founder-legacy{font:400 clamp(28px,3vw,40px)/1.25 var(--serif);color:#963166;border-left:2px solid var(--f2bm-gold);padding-left:22px;margin-top:32px}
+.home-more-living .hero .signature{font:400 clamp(22px,2.5vw,30px)/1.35 var(--serif);max-width:40ch;margin:24px auto}
+.tiers button[aria-pressed=true]{background:var(--f2bm-gold);color:#082b58}
+[hidden]{display:none!important}
+body.high-contrast .site-enquiry input,body.high-contrast .site-enquiry select,body.high-contrast .site-enquiry textarea{background:white;color:black;border-color:black}
+@media(max-width:750px){.book-detail-layout,.enquiry-layout,.offer-grid{grid-template-columns:1fr}.book-detail-layout .book-detail-cover{max-width:230px;grid-row:2}.principles-grid[style],.pair-body[style]{grid-template-columns:1fr!important}.site-header nav{gap:12px 18px}.site-enquiry .btn{width:100%}.page-hero .wrap{min-width:0}main h1,main h2,main h3{overflow-wrap:break-word}.site-header .header-in{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.leadership{background:#edf4f1;color:var(--body)}
+.leadership blockquote{color:var(--head)}
+.leadership .eyebrow{color:var(--teal-small)}
+.leadership-note p{color:var(--body)}
+.leadership .wash{mix-blend-mode:multiply;opacity:.18}
+.leadership .wash img{clip-path:none}
+body.high-contrast .leadership,body.high-contrast .leadership *{background:white;color:black}

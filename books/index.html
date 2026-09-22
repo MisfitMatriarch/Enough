@@ -17,7 +17,8 @@
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <link rel="stylesheet" href="/assets/css/f2bm.css">
-<style>.library-cover{display:block;width:180px;max-width:100%;height:auto;margin:0 0 24px;box-shadow:4px 8px 18px #392a2020}</style></head>
+<style>.library-cover{display:block;width:180px;max-width:100%;height:auto;margin:0 0 24px;box-shadow:4px 8px 18px #392a2020}</style><link rel="stylesheet" href="/assets/css/site-alignment.css">
+</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
@@ -47,15 +48,8 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -163,8 +157,8 @@
 
   <section class="closing">
     <div class="wrap">
-      <h2>A library with a philosophy, not eight separate books.</h2>
-      <p class="closing-line">Support should increase authorship, not replace it.</p>
+      <h2>Eight books. Each stands on its own.</h2>
+      <p class="closing-line">Choose the book that matters to you. There is no required order and no need to buy the whole collection.</p>
       <div class="closing-routes">
         <a href="/the-practice/">Understand the Practice</a>
         <a href="/frameworks/">Use public tools and resources</a>
@@ -204,7 +198,7 @@
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -265,7 +259,7 @@
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -280,7 +274,7 @@
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -348,5 +342,6 @@
 })();
 
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>

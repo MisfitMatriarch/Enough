@@ -17,6 +17,7 @@
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <link rel="stylesheet" href="/assets/css/f2bm.css">
+<link rel="stylesheet" href="/assets/css/site-alignment.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -47,15 +48,8 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -70,17 +64,13 @@
       </picture>
     </div>
     <div class="wrap">
-      <p class="eyebrow">Speaking &amp; Media</p>
-      <h1>I speak to bring a different question into the room.</h1>
-      <div class="cadence stand-cadence">
-        <p>Not another set of perfect words for people to repeat.</p>
-        <p>Not inspiration that disappears when the conference ends.</p>
-        <p class="beat">A question that changes what people notice after they leave.</p>
-      </div>
+      <p class="eyebrow">MC, Speaking &amp; Workshops</p>
+      <h1>Make room for people to light up.</h1>
+      <div class="cadence stand-cadence"><p>I love helping people share what they know, tell a story in their own words and have their moment.</p><p class="beat">MCing, speaking and conversations with room for different ways to participate.</p></div>
       <p class="measure">Because sometimes the most important shift happens when something familiar becomes impossible to see in quite the same way again.</p>
       <hr class="seam">
     </div>
-  </section>
+  </section><figure class="wrap speaking-hero-photo"><img src="/assets/brand/tanya-wcw-speaking-2025.jpg" width="2048" height="1365" alt="Tanya Hicks speaking as attendees stand and participate"><figcaption>Speaking · Women Changing the World, 2025</figcaption></figure><section class="band rule-top"><div class="wrap"><p class="eyebrow">Choose the shape of your gathering</p><h2>Different rooms. Different ways to take part.</h2><div class="offer-grid"><article><h3>MC &amp; event host</h3><p>For conferences, awards and gatherings. Introductions, interviews, transitions and room connection that give other people room to share what they bring.</p></article><article><h3>Keynotes &amp; conversations</h3><p>For audiences exploring identity, belonging, leadership and change. Stories and questions that connect the ideas with people’s lives.</p></article><article><h3>Panels &amp; interviews</h3><p>For organisers bringing different perspectives together. Preparation, thoughtful questions and space for more than one way to contribute.</p></article><article><h3>Participant workshops</h3><p>For community groups and gatherings, including women’s events and LGBTQI+ conversations. Enquire about a tailored session; dates and content are agreed with the organiser.</p></article><article><h3>Professional learning</h3><p>For practitioners, teams and organisations. Explore access, reasoning, power and accountable support in real work.</p></article></div><p class="measure">Speaking, listening, writing, watching or taking a break can all be part of participation. Discuss access and audience needs during planning. Women’s events include trans women; each event’s audience is agreed explicitly.</p><a class="btn" href="/work-with-tanya/#enquiry">Enquire about your event</a></div></section>
 
   <section class="band rule-top claim-line-sec artful" aria-labelledby="runs-title">
     <div class="art art-arch" aria-hidden="true">
@@ -281,7 +271,7 @@
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -342,7 +332,7 @@
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -357,7 +347,7 @@
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -425,5 +415,6 @@
 })();
 
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>

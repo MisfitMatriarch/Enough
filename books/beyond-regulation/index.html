@@ -17,6 +17,7 @@
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <link rel="stylesheet" href="/assets/css/f2bm.css">
+<link rel="stylesheet" href="/assets/css/site-alignment.css">
 </head>
 <body class="interior">
 <a class="skip" href="#main">Skip to content</a>
@@ -47,15 +48,8 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -68,11 +62,11 @@
         <img src="/assets/brand/change-organic-400.jpg" width="800" height="800" loading="lazy" decoding="async" alt="">
       </picture>
     </div>
-    <div class="wrap library-intro">
+    <div class="wrap library-intro book-detail-layout"><div class="book-detail-copy">
       <span class="eyebrow">FREE 2B ME Practice Library · For practice</span>
       <h1 class="serif">Beyond Regulation</h1>
       <p class="lead">Nervous System Nourishment in Counselling and Positive Behaviour Support</p>
-    </div>
+    <div class="book-reservation"><p>A$39 · Reserve now. Pay at launch.</p><a class="btn" href="/books/pre-order/?book=beyond-regulation#reserve">Pre-order now</a><p class="small">No payment is taken now. We’ll contact you with payment and delivery details when this book launches.</p></div></div><img class="book-detail-cover" src="/assets/brand/beyond-regulation-logo-cover.png" width="1024" height="1536" alt="Beyond Regulation by Tanya Hicks"></div>
   </section>
 
   <section class="band rule-top">
@@ -96,7 +90,7 @@
       </picture>
     </div>
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Its paired companion</span><h2 class="serif">The same territory, from the other side</h2></div>
+      <div class="sec-head"><span class="eyebrow">Optional related reading</span><h2 class="serif">Another perspective, if useful.</h2></div>
       <article class="pair-card">
         <div class="pair-head"><div><div class="pair-kicker">For people and families</div><div class="pair-territory">Nervous System Nourishment</div></div></div>
         <div class="pair-body" style="grid-template-columns:1fr">
@@ -123,11 +117,11 @@
       <div class="sec-head"><span class="eyebrow">Scope &amp; access</span><h2 class="serif">How to read this book</h2></div>
       <div class="principles-grid" style="grid-template-columns:repeat(2,1fr)">
         <div class="principle-card"><strong>Evidence &amp; scope</strong><p>This is a professional practice text. It sets out method, evidence expectations, scope and implementation. It does not certify competence, replace supervision, or authorise any practice beyond a practitioner’s qualifications, registration and governance.</p></div>
-        <div class="principle-card"><strong>In practice at Neurodivergent Empowered</strong><p>Neuroaffirming Counselling, Specialist Behaviour Support and Participation &amp; Everyday Life.</p></div>
+        <div class="principle-card"><strong>Your choice of reading</strong><p>Read this book on its own. Related books offer another perspective and are optional.</p></div>
       </div>
-      <p class="note" style="margin-top:20px"><strong>Accessible formats planned:</strong> print, ebook, audio, Easy Read or visual summary, large print, chapter sampler. No book is required to receive support, and complimentary copies are never claimed from an NDIS plan.</p>
-      <div class="cta-row" style="margin-top:8px"><a class="btn btn-teal" href="/books/">Back to the Practice Library</a><a class="btn btn-ghost" href="/books/nervous-system-nourishment/">See its companion</a></div>
-      <p class="boundary" style="margin-top:18px">Source and status last reviewed 2026-07-15. This page describes a book in development; publication, ISBN, title and legal clearance are still required.</p>
+      <p class="note">No book purchase is required to receive support. Ask about format or access needs when reserving your copy.</p>
+      <div class="cta-row" style="margin-top:8px"><a class="btn btn-teal" href="/books/">Back to the Practice Library</a><a class="btn btn-ghost" href="/books/nervous-system-nourishment/">Explore related reading</a></div>
+      <p class="boundary">Pre-orders are reservations only. No payment is taken until launch. Release dates and available formats will be confirmed when your book is ready.</p>
     </div>
   </section>
 </main>
@@ -161,7 +155,7 @@
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -222,7 +216,7 @@
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -237,7 +231,7 @@
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -305,5 +299,6 @@
 })();
 
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>

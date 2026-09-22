@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Nest | What happens when the ideas become a place</title>
-<meta name="description" content="The Nest is the Australian real-world practice environment where FREE 2B ME principles meet ordinary life. Same space. Different goals. Individual support.">
+<meta name="description" content="The Nest is the Australian real-world practice environment where FREE 2B ME principles meet real life. Same space. Different goals. Individual support.">
 <link rel="canonical" href="https://tanyahicks.com/the-nest/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FREE 2B ME">
 <meta property="og:url" content="https://tanyahicks.com/the-nest/">
 <meta property="og:title" content="The Nest | What happens when the ideas become a place">
-<meta property="og:description" content="The Nest is the Australian real-world practice environment where FREE 2B ME principles meet ordinary life. Same space. Different goals. Individual support.">
+<meta property="og:description" content="The Nest is the Australian real-world practice environment where FREE 2B ME principles meet real life. Same space. Different goals. Individual support.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/brand/phoenix-dark-120.png">
 <link rel="preload" href="/assets/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <link rel="stylesheet" href="/assets/css/f2bm.css">
+<link rel="stylesheet" href="/assets/css/site-alignment.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -47,15 +48,8 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -71,7 +65,7 @@
     <div class="wrap">
       <p class="eyebrow">Australian support &middot; Caloundra</p>
       <h1>What happens when the ideas become a place?</h1>
-      <p class="stand">The Nest is the Australian real-world practice environment where FREE 2B ME principles meet ordinary life.</p>
+      <p class="stand">The Nest is the Australian real-world practice environment where FREE 2B ME principles meet real life.</p>
       <hr class="seam">
     </div>
   </section>
@@ -111,7 +105,7 @@
     <div class="wrap nest-grid">
       <div>
         <h2>Where the Practice meets a Tuesday afternoon</h2>
-        <p class="measure">Everything on this site is an idea until somebody has to live it in a real room, with real people, on a day that is not going well. The Nest is where that happens.</p>
+        <p class="measure">The Nest is one place where the work happens: shared interests, relationships, community and individual support. People can join in, watch first, use AAC or typing, take breaks or participate quietly.</p>
       </div>
       <div class="nest-art">
         <picture>
@@ -135,7 +129,7 @@
       </div>
     </div>
   </section>
-</main>
+<section class="band rule-top"><div class="wrap measure"><h2>Support that stays individual.</h2><p>NDIS claims relate to disability-related support actually provided, not the ordinary activity, friendship or interest itself. Ask Neurodivergent Empowered about current services and funding arrangements.</p><a class="link" href="https://free2bme.au/">Visit The Nest for current information</a></div></section></main>
 
 <footer>
   <div class="wrap foot-grid">
@@ -166,7 +160,7 @@
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -227,7 +221,7 @@
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -242,7 +236,7 @@
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -310,5 +304,6 @@
 })();
 
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>

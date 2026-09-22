@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About Tanya Hicks | I stopped organising my life around becoming more acceptable</title>
-<meta name="description" content="Tanya Hicks, founder of FREE 2B ME. Turning lived experience into infrastructure, so our daughters inherit more than encouragement.">
+<meta name="description" content="Tanya Hicks, founder of FREE 2B ME. Turning lived experience into infrastructure so our daughters inherit more than encouragement.">
 <link rel="canonical" href="https://tanyahicks.com/about/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="FREE 2B ME">
 <meta property="og:url" content="https://tanyahicks.com/about/">
 <meta property="og:title" content="About Tanya Hicks | I stopped organising my life around becoming more acceptable">
-<meta property="og:description" content="Turning lived experience into infrastructure, so our daughters inherit more than encouragement. They inherit different possibilities.">
+<meta property="og:description" content="Turning lived experience into infrastructure so our daughters inherit more than encouragement. They inherit different possibilities.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/brand/phoenix-dark-120.png">
 <link rel="preload" href="/assets/fonts/cormorant-garamond-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <link rel="stylesheet" href="/assets/css/f2bm.css">
+<link rel="stylesheet" href="/assets/css/site-alignment.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -47,15 +48,8 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -192,7 +186,7 @@
       </picture>
     </div>
     <div class="wrap">
-      <blockquote>My story is about turning lived experience into infrastructure, so our daughters inherit more than encouragement. They inherit different possibilities.</blockquote>
+      <blockquote>My story is about turning lived experience into infrastructure so our daughters inherit more than encouragement. They inherit different possibilities.</blockquote>
     </div>
   </section>
 
@@ -221,7 +215,7 @@
   <section class="band rule-top" aria-labelledby="women-title">
     <div class="wrap">
       <p class="eyebrow">Where I stand</p>
-      <h2 id="women-title">Women&rsquo;s inclusion includes trans women.</h2>
+      <h2 id="women-title">Women&rsquo;s inclusion includes trans women. Queer, non-binary, gender-diverse, intersex and questioning people belong across the wider FREE 2B ME work.</h2>
       <p class="claim-end">Belonging is not meaningful if some women have to negotiate their right to be there.</p>
     </div>
   </section>
@@ -235,11 +229,11 @@
       </picture>
     </div>
     <div class="wrap">
-      <p class="eyebrow">What I bring to it</p>
+      <p class="eyebrow">Experience &amp; contribution</p>
       <h2 id="bring-title">What I bring to it</h2>
       <ul class="stack">
         <li><b>Counselling and behaviour support practice</b>Registered practice, supervision and professional accountability.</li>
-        <li><b>Author</b>The FREE 2B ME Practice Library: four books beginning with the person, four professional companions.</li>
+        <li><b>Author</b>An eight-book library in development: four books beginning with the person, four taking a professional perspective. Each stands alone.</li>
         <li><b>Practitioner development</b>The Practitioner Pathway, built around capability that can be observed&mdash;not attendance alone.</li>
         <li><b>Organisational and systems work</b>Access, conditions, reasoning, implementation and what organisations make possible in ordinary practice.</li>
         <li><b>Founder</b>FREE 2B ME, and The Nest in Caloundra with Neurodivergent Empowered.</li>
@@ -318,7 +312,7 @@
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -379,7 +373,7 @@
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -394,7 +388,7 @@
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -462,5 +456,6 @@
 })();
 
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>

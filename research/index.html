@@ -17,6 +17,7 @@
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <link rel="stylesheet" href="/assets/css/f2bm.css">
+<link rel="stylesheet" href="/assets/css/site-alignment.css">
 </head>
 <body class="interior">
 <a class="skip" href="#main">Skip to content</a>
@@ -47,15 +48,8 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -87,9 +81,9 @@
     </div>
 
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">The capstone</span><h2 class="serif">A supervised postgraduate capstone</h2></div>
+      <div class="sec-head"><span class="eyebrow">The capstone</span><h2 class="serif">Postgraduate research direction</h2></div>
       <div class="card">
-        <span class="status research">Research in progress</span>
+        <span class="status research">Practice development</span>
         <h3 class="serif">Access Before Intervention: Developing an Evidence-Informed Nervous System Nourishment Practice Guide for Neurodivergent-Affirming Counselling and Behaviour Support Practice</h3>
         <p>A supervised capstone and practice-development project. It is <strong>not</strong> a treatment-validation trial, and <strong>not</strong> evidence that Nervous System Nourishment is already a validated intervention. It is a critical development of pre-existing work rather than its unexamined reproduction.</p>
       </div>
@@ -107,8 +101,8 @@
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">PhD by Publication</span>
-        <h2 class="serif">One research programme, two forms of translation</h2>
-        <p class="lead">The professional books translate the work for practice. Peer-reviewed publications and an integrating exegesis carry the doctoral contribution.</p>
+        <h2 class="serif">A proposed direction, not a claim of candidature</h2>
+        <p class="lead">A possible PhD-by-publication pathway remains a future direction, subject to university admission and requirements. The professional books translate the work for practice. Peer-reviewed publications and an integrating exegesis carry the doctoral contribution.</p>
       </div>
       <div class="grid">
         <div class="card"><h3>Access Before Intervention</h3><p>Conceptual framework, therapeutic access, formulation and hidden access-cost measurement.</p></div>
@@ -194,7 +188,7 @@
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -255,7 +249,7 @@
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -270,7 +264,7 @@
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -338,5 +332,6 @@
 })();
 
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>

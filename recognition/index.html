@@ -17,7 +17,8 @@
 <link rel="preload" href="/assets/fonts/figtree-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
 <link rel="stylesheet" href="/assets/css/f2bm.css">
-<style>.closing[aria-labelledby=rec-close]{padding-bottom:24px}.recognition-celebration h2+.closing-line{margin-top:1.34em}.recognition-celebration{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}.recognition-celebration figure{margin:0;max-width:440px;justify-self:center}.recognition-celebration img{display:block;width:100%;height:auto}.recognition-celebration figcaption{font:500 14px/1.5 var(--sans);padding-top:12px;color:var(--teal-small)}@media(max-width:700px){.recognition-celebration{grid-template-columns:1fr}}</style></head>
+<style>.closing[aria-labelledby=rec-close]{padding-bottom:24px}.recognition-celebration h2+.closing-line{margin-top:1.34em}.recognition-celebration{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}.recognition-celebration figure{margin:0;max-width:440px;justify-self:center}.recognition-celebration img{display:block;width:100%;height:auto}.recognition-celebration figcaption{font:500 14px/1.5 var(--sans);padding-top:12px;color:var(--teal-small)}@media(max-width:700px){.recognition-celebration{grid-template-columns:1fr}}</style><link rel="stylesheet" href="/assets/css/site-alignment.css">
+</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
@@ -47,15 +48,8 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -90,20 +84,20 @@
       </picture>
     </div>
     <div class="wrap">
-      <p class="tally rec-tally">Australian and international, 2021 to 2026 &mdash; twelve gold, six silver, four bronze or honourable mention, twenty-one finalist places, across leadership, education, innovation, inclusion, advocacy and community impact.</p>
+      <p class="tally rec-tally">Australian and international recognition, 2021–2026, across leadership, education, innovation, inclusion, advocacy and community impact. Each entry identifies its recorded status.</p>
 
-      <div class="tiers" role="tablist" aria-label="Filter recognition by tier">
-        <button type="button" role="tab" data-tier="all" aria-selected="true">All</button>
-        <button type="button" role="tab" data-tier="gold" aria-selected="false">Gold</button>
-        <button type="button" role="tab" data-tier="silver" aria-selected="false">Silver</button>
-        <button type="button" role="tab" data-tier="bronze" aria-selected="false">Bronze &amp; HM</button>
-        <button type="button" role="tab" data-tier="finalist" aria-selected="false">Finalist</button>
+      <div class="tiers" role="group" aria-label="Filter recognition by tier">
+        <button type="button" data-tier="all" aria-pressed="true">All</button>
+        <button type="button" data-tier="gold" aria-pressed="false">Gold</button>
+        <button type="button" data-tier="silver" aria-pressed="false">Silver</button>
+        <button type="button" data-tier="bronze" aria-pressed="false">Bronze &amp; HM</button>
+        <button type="button" data-tier="finalist" aria-pressed="false">Finalist</button><button type="button" data-tier="nominee" aria-pressed="false">Nominee</button><button type="button" data-tier="recognition" aria-pressed="false">Other recognition</button>
       </div>
 
     <div class="chrono">
       <div class="year" data-year="2026">
         <h3>2026</h3>
-        <ul>
+        <ul><li data-tier="recognition"><span class="mark">Top 100</span><span class="what"><b>Top 100 AusMumpreneurs in Australia</b><span>AusMumpreneur · Tanya Hicks · 2026</span></span></li>
           <li data-tier="gold"><span class="mark gold">Gold</span><span class="what"><b>Big Idea</b><span>Women Changing the World Global Awards, Paris</span></span></li>
           <li data-tier="bronze"><span class="mark bronze">Third place</span><span class="what"><b>Girl of the Year</b><span>Women Changing the World Global Awards, Paris &middot; Kianni Jackson</span></span></li>
           <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Rising Star</b><span>Women Changing the World Global Awards, Paris</span></span></li>
@@ -114,11 +108,11 @@
           <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Innovation</b><span>Women Changing the World Global Awards, Paris</span></span></li>
           <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Thought Leader of the Year</b><span>Women Changing the World Global Awards, Paris</span></span></li>
           <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Sustainable Business Woman of the Year</b><span>Sunshine Coast Business Women&rsquo;s Network Awards</span></span></li>
-          <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Woman Changing the World</b><span>AusMumpreneur National Awards, Australia</span></span></li>
+          <li data-tier="bronze"><span class="mark bronze">Bronze</span><span class="what"><b>Woman Changing the World</b><span>AusMumpreneur National Awards, Australia</span></span></li>
           <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Business Evolution</b><span>AusMumpreneur National Awards, Australia</span></span></li>
           <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Thought Leader of the Year</b><span>AusMumpreneur National Awards, Australia</span></span></li>
-          <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Citizen of the Year</b><span>Sunshine Coast Australia Day Community Awards &middot; Tanya Hicks</span></span></li>
-          <li data-tier="finalist"><span class="mark finalist">Finalist</span><span class="what"><b>Community Group or Organisation</b><span>Sunshine Coast Australia Day Community Awards &middot; Sparkly Aliens Inc.</span></span></li>
+          <li data-tier="nominee"><span class="mark nominee">Nominee</span><span class="what"><b>Citizen of the Year</b><span>Sunshine Coast Australia Day Community Awards &middot; Tanya Hicks</span></span></li>
+          <li data-tier="nominee"><span class="mark nominee">Nominee</span><span class="what"><b>Community Group or Organisation</b><span>Sunshine Coast Australia Day Community Awards &middot; Sparkly Aliens Inc.</span></span></li>
         </ul>
       </div>
       <div class="year" data-year="2025">
@@ -223,7 +217,7 @@
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -284,7 +278,7 @@
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -299,7 +293,7 @@
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -354,7 +348,7 @@
     Array.prototype.forEach.call(tabs, function(tab){
       tab.addEventListener("click", function(){
         var want = tab.getAttribute("data-tier");
-        Array.prototype.forEach.call(tabs, function(t){ t.setAttribute("aria-selected", String(t === tab)); });
+        Array.prototype.forEach.call(tabs, function(t){ t.setAttribute("aria-pressed", String(t === tab)); });
         Array.prototype.forEach.call(groups, function(g){
           g.hidden = !(want === "all" || g.getAttribute("data-tier") === want);
         });
@@ -367,5 +361,6 @@
 })();
 
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>

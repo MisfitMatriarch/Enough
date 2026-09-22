@@ -181,6 +181,7 @@ footer.site-foot b{display:block;font-size:13.5px;letter-spacing:.13em;text-tran
 footer.site-foot a:hover{color:var(--f2bm-aqua-deep)}
 .a11y-toggle{background:#fff;border:1px solid var(--f2bm-gold);color:var(--ink);border-radius:2px;padding:11px 16px;font-size:14px;font-weight:600}
 </style>
+<link rel="stylesheet" href="/assets/css/site-alignment.css">
 </head>
 <body class="dark-chrome">
 <a class="skip" href="#main">Skip to content</a>
@@ -211,15 +212,8 @@ footer.site-foot a:hover{color:var(--f2bm-aqua-deep)}
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main">
-      <a href="/">Home</a>
-      <a href="/the-practice/">The Practice</a>
-      <a href="/books/">Books &amp; Tools</a>
-      <a href="/#learning">Learning</a>
-      <a href="/speaking/">Speaking &amp; Media</a>
-      <a href="/about/">About Tanya</a>
-    </nav>
-    <a class="cta" href="/#ecosystem">Find your way in</a>
+    <nav aria-label="Main"><a href="/">Home</a><a href="/speaking/">Events &amp; Speaking</a><a href="/books/">Books &amp; Tools</a><a href="/the-practice/">The Practice</a><a href="/#learning">Learning</a><a href="/about/">About Tanya</a></nav>
+    <a class="cta" href="/work-with-tanya/#enquiry">Book Tanya</a>
   </div>
 </header>
 
@@ -342,7 +336,7 @@ footer.site-foot a:hover{color:var(--f2bm-aqua-deep)}
       <span>free2bme.au</span>
     </div>
   </div>
-  <div class="wrap foot-legal">&copy; Tanya Hicks. FREE 2B ME is a registered trade mark.</div>
+  <div class="wrap foot-legal">&copy; Tanya Hicks. All rights reserved.</div>
   <div class="foot-band" aria-hidden="true">
     <picture>
       <source type="image/avif" srcset="/assets/brand/footer-band-512.avif 512w,/assets/brand/footer-band-1024.avif 1024w" sizes="100vw">
@@ -403,7 +397,7 @@ footer.site-foot a:hover{color:var(--f2bm-aqua-deep)}
      Without JS it simply reads as the first section of the page. */
   var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
   /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (store && store.getItem("f2bm-aoc") === "1") || (location.hash && location.hash !== "#aoc");
+  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
   var openAoc = function(){
     document.body.classList.remove("aoc-entered");
     document.body.classList.add("aoc-overlay");
@@ -418,7 +412,7 @@ footer.site-foot a:hover{color:var(--f2bm-aqua-deep)}
       document.body.classList.add("aoc-entered");
       aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
       enter.hidden = true;
-      try { store && store.setItem("f2bm-aoc","1"); } catch(e){}
+      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
       var brand = document.querySelector(".brand"); brand && brand.focus();
     });
     var reopen = document.getElementById("aoc-reopen");
@@ -627,5 +621,6 @@ footer.site-foot a:hover{color:var(--f2bm-aqua-deep)}
   function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
 })();
 </script>
+<script src="/assets/js/site-access.js"></script>
 </body>
 </html>
