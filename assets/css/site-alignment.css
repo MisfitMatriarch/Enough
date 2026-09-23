@@ -105,3 +105,31 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
   .notice-grid{grid-template-columns:1fr;gap:clamp(24px,4vw,34px)}
   .notice .notice-lede{max-width:none}
 }
+
+/* A display line-height of 1.08 is right for a heading that fits on one line and
+   wrong for one that wraps: in the narrow left column of .run, three lines of
+   fifty-four pixel serif sat almost on top of each other. Enough leading to
+   separate them, not enough to loosen the setting. */
+.run h2{line-height:1.16}
+
+/* Type scale: the opening heading is the same size wherever it opens a page.
+   The reservation pages open in a .band rather than a .page-hero, so their h1
+   was never picked up by the hero rule and fell back to the browser default of
+   forty pixels, against sixty-nine everywhere else. Same clamp as .page-hero h1,
+   so the two stay in step if either is ever changed. */
+.reserve-wrap h1{font-size:clamp(44px,5.4vw,92px);line-height:1.01;max-width:17ch}
+
+/* Standing statements get one treatment. The permission statement sets it:
+   centred on a paper panel, held between two gold rules, in teal serif. The
+   claim lines were doing the same job left-aligned between two hairlines, at a
+   different size and colour, so they read as a different kind of thing. They
+   now match, and the type scale matches with them. */
+.claim-line{padding-block:clamp(40px,6vw,72px);padding-inline:28px;text-align:center;
+  border-top:2px solid var(--f2bm-gold);border-bottom:2px solid var(--f2bm-gold);
+  background:var(--f2bm-paper)}
+.claim-line p{margin:0 auto;font:400 clamp(40px,5.8vw,76px)/1.05 var(--serif);
+  max-width:22ch;color:var(--teal-small);text-wrap:balance}
+@media(max-width:650px){
+  .claim-line{padding:38px 16px}
+  .claim-line p{font-size:clamp(36px,9vw,54px)}
+}
