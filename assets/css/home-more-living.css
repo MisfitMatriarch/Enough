@@ -206,3 +206,15 @@
 .home-more-living .series-book .pair-status{font-size:10px;margin-top:14px}
 @media(max-width:900px){.home-more-living .pair-two{grid-template-columns:1fr}.home-more-living .pair-two>.series-book{grid-template-columns:140px minmax(0,1fr)}}
 @media(max-width:400px){.home-more-living .pair-two>.series-book{grid-template-columns:105px minmax(0,1fr);gap:16px}}
+
+/* The Nest sits alone in a two-column grid, so the second column was rendering
+   empty. The brand roundel fills it: the mark on its violet disc, with the two
+   rings from the logo lockup and nothing outside the circle.
+   The panel treatment on the card came from .f-path:last-child, which the
+   roundel now occupies, so #f-world states it directly instead. */
+#f-world .f-path{padding:24px;background:#f3eee3}
+.f-roundel{align-self:center;justify-self:center;width:100%;max-width:340px}
+.f-roundel svg{display:block;width:100%;height:auto}
+@media(max-width:650px){
+  .f-roundel{max-width:240px}
+}
