@@ -72,3 +72,36 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
 .media-bio p{font-family:var(--serif);font-size:clamp(21px,.9vw + 16px,26px);
   line-height:1.5;color:var(--ink);margin:0 0 .9em}
 .media-bio p:last-child{margin-bottom:0}
+
+/* "The point is not to leave agreeing with me" - hierarchy correction.
+   The heading ran to sixty-eight pixels on a full sentence, which left a wide
+   empty band beside it; the eight examples flowed through a two-column CSS
+   column-set that broke them into uneven halves, in a serif close to the
+   heading's own; and the magenta line opened a second hero-sized block beneath.
+   Everything asked for attention at once.
+
+   Now: heading and takeaway hold the left, the examples read as one list down
+   the right, and the magenta line is a takeaway rather than a second headline.
+   Scoped to .notice so the shared .noticing and .emphasis lists on other pages
+   are untouched. Wording is unchanged. */
+.notice-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:clamp(30px,5vw,80px);align-items:start;position:relative;z-index:2}
+.notice .notice-lede{max-width:34ch}
+.notice h2#notice-title{font-size:clamp(30px,2.9vw + 8px,52px);line-height:1.12;max-width:22ch}
+/* One restrained separator, between the heading and what it concludes. */
+.notice .claim-end{margin-top:clamp(24px,2.6vw,34px);padding-top:clamp(20px,2.2vw,28px);
+  border-top:1px solid var(--rule);max-width:30ch;
+  font-size:clamp(22px,.9vw + 17px,30px);line-height:1.22}
+.notice .measure{margin-top:12px;font-size:18px}
+/* One column, body sans, even spacing, and no decorative dash. */
+.notice .noticing{columns:1;column-gap:0;margin:0;border-top:0;padding-top:0}
+.notice .noticing li{font-family:var(--sans);font-size:clamp(18px,.3vw + 17px,20px);
+  line-height:1.5;color:var(--body);padding:0 0 0 0;margin:0 0 clamp(13px,1.3vw,18px)}
+.notice .noticing li:last-child{margin-bottom:0}
+.notice .noticing li::before{display:none}
+/* The artwork stays at the edge and behind, clear of both columns. */
+.notice .art{z-index:0;opacity:.5}
+@media(max-width:860px){
+  .notice-grid{grid-template-columns:1fr;gap:clamp(24px,4vw,34px)}
+  .notice .notice-lede{max-width:none}
+}
