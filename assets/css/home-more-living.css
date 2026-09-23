@@ -218,3 +218,42 @@
 @media(max-width:650px){
   .f-roundel{max-width:240px}
 }
+
+/* What they inherit, drawn as a mind map: the photograph at the centre and the
+   possibilities radiating from it, each on its own connector. The section used
+   to carry four lines stacked either side of the picture, which read as two
+   paragraphs rather than as a set - and the set is the point, so it grew.
+   The connectors are drawn in CSS rather than as an image so they stay crisp
+   and cost nothing to load. */
+.future-mind{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) minmax(0,1fr);
+  gap:clamp(20px,3vw,44px);align-items:center}
+.future-mind .event-photo{margin:0}
+.mind-nodes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;
+  gap:clamp(10px,1.4vw,16px)}
+.mind-nodes li{position:relative;font:500 clamp(15px,1vw + 9px,17px)/1.35 var(--sans);
+  color:var(--ink);background:var(--f2bm-paper);border:1px solid var(--rule);
+  border-radius:999px;padding:11px 18px}
+/* The connector runs from the pill to the picture, so it points inward on both sides. */
+.mind-nodes li::after{content:"";position:absolute;top:50%;width:clamp(12px,2vw,28px);
+  height:1px;background:var(--f2bm-gold)}
+.mind-nodes li::before{content:"";position:absolute;top:50%;width:5px;height:5px;
+  border-radius:50%;background:var(--f2bm-gold);transform:translateY(-2px);z-index:1}
+.mind-left li{text-align:right}
+.mind-left li::after{left:100%}
+.mind-left li::before{left:calc(100% + clamp(12px,2vw,28px) - 2px)}
+.mind-right li::after{right:100%}
+.mind-right li::before{right:calc(100% + clamp(12px,2vw,28px) - 2px)}
+.future-mind .future-open{grid-column:1/-1;justify-self:center;text-align:center;
+  max-width:24ch;margin:clamp(22px,3vw,38px) 0 0}
+
+@media(max-width:900px){
+  /* Stacked, the connectors point at nothing, so they go and the nodes become a set. */
+  .future-mind{grid-template-columns:1fr;gap:clamp(20px,4vw,30px)}
+  .future-mind .event-photo{order:-1;max-width:420px;margin-inline:auto}
+  .mind-nodes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .mind-nodes li,.mind-left li{text-align:center}
+  .mind-nodes li::after,.mind-nodes li::before{display:none}
+}
+@media(max-width:480px){
+  .mind-nodes{grid-template-columns:1fr}
+}
