@@ -62,3 +62,13 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
   .year h3{font-size:clamp(34px,8vw,48px)}
   .year ul{columns:1}
 }
+
+/* The media biography is written to be lifted whole, so it was one block of
+   about eleven hundred characters running the full width of the page: roughly
+   ninety characters a line, in a thirty-two pixel serif, with no paragraph to
+   rest on. The words are unchanged. It now breaks where its subject changes and
+   sits on a measure a person can actually read down. */
+.media-bio{max-width:62ch;margin-top:26px}
+.media-bio p{font-family:var(--serif);font-size:clamp(21px,.9vw + 16px,26px);
+  line-height:1.5;color:var(--ink);margin:0 0 .9em}
+.media-bio p:last-child{margin-bottom:0}
