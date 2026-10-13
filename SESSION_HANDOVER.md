@@ -1,4 +1,10 @@
-# Current handover — 22 September 2026
+# Current expo build handover 13 October 2026
+
+The QR destination is being added on `codex/expo-qr-destination` for `free2bme.global/free2bme/`. Implementation and release checks are in `docs/EXPO_QR_BUILD.md`. The new Netlify endpoint stores private reservations and separate marketing consent; it does not reuse existing Forms notifications. The reflection PDF is a review draft, public download disabled until approval. Founder profiles are not supplied and remain hidden. Both future tools remain disabled. This branch has not been deployed or verified on the public domain.
+
+The existing homepage regression scripts reference a commit outside a shallow checkout and stale homepage content. They fail on the unchanged baseline. The new expo tests, link checks and build are separate. Existing homepage, book and enquiry content is preserved.
+
+# Previous handover 22 September 2026
 
 The historical July notes below are superseded by `WEBSITE-ALIGNMENT-2026-09-22.md` and the user’s September instructions. Do not restore removed homepage sections, old book covers or payment-now checkout.
 

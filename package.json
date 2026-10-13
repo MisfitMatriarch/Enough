@@ -1,0 +1,9 @@
+{
+  "name": "free2bme-global",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-expo.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": { "@netlify/blobs": "10.5.0" }
+}
