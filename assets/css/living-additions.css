@@ -176,3 +176,12 @@
 .whole-self-film .whole-lines li{font-size:clamp(19px,1.6vw,23px);padding:14px 0}
 .whole-self-film .whole-lines li.whole-close{font-size:clamp(23px,2.2vw,30px)}
 @media(max-width:900px){.whole-self.whole-self-film{grid-template-columns:1fr}}
+
+/* All of you belongs here: worth that doesn't depend on achievement, placed after the awards and photographs */
+.all-belongs{padding:clamp(56px,7vw,96px) 0;background:var(--f2bm-paper);border-block:1px solid var(--rule);text-align:center}
+.all-belongs .wrap{max-width:820px}
+.all-belongs h2{font-family:var(--serif);font-weight:400;color:var(--teal-small);margin:0 0 26px}
+.all-belongs p{font-size:19px;line-height:1.65;color:var(--body);margin:0 auto 18px;max-width:58ch}
+.all-belongs .belongs-lead{font:400 clamp(22px,2.3vw,30px)/1.35 var(--serif);color:var(--ink);max-width:34ch}
+.all-belongs .belongs-close{margin-top:30px;padding-top:26px;border-top:1px solid var(--f2bm-gold);display:inline-block;font:400 clamp(24px,2.4vw,32px)/1.2 var(--serif);color:#ab236e}
+.high-contrast .all-belongs{background:#fff}.high-contrast .all-belongs :is(h2,p){color:#000}

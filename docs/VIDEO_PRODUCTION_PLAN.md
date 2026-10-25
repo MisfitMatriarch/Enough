@@ -122,3 +122,24 @@ No `autoplay`, `muted` or `loop`. Native controls stay visible. `preload="none"`
 ## Quality gate
 
 Each film is reviewed with sound, muted (captions must carry it alone) and on a phone. Any shot that weakens the edit comes out. Films go on the site only after Tanya approves the cut.
+
+## Reframe, 25 October 2026 (Tanya's direction)
+
+**The subject is embracing all of yourself.** Disability is part of Tanya's experience, not the organising subject. The homepage film should leave someone thinking: *What could become possible if I embraced all of me?*
+
+**Progression, using only Tanya's recorded words and never spliced into sentences she didn't say:**
+1. Recognising the energy spent judging, hiding or squashing parts of yourself.
+2. Acceptance of the whole person, including the parts harder to love or understand.
+3. What that acceptance makes possible: expression, connection, ambition, pleasure and joy.
+
+Then joyful footage as evidence of a life being lived, ending on *Less fixing. More living.* Acceptance is never framed as a strategy for success; achievement isn't the evidence that someone deserved acceptance.
+
+**Draft 2 decisions so far:**
+- **Opening:** "Acceptance. Acceptance for all of you." (review copy 22.6 s). A real pause precedes it (22.15–22.6 s), and every test start transcribes cleanly.
+- **Applause cutaway:** removed, because draft 2 starts after it.
+- **Tammy:** the acknowledgement belongs in the fuller About story.
+- **Movements 1 and 2:** the Acceptance clip supplies them: "So instead of trying to squash this little bit here… kick it and try and boot it out the door… and accepting all of it."
+- **"accepting, getting the heart bigger":** unverified. It must be confirmed by Tanya's ear, or the passage replaced. An automated transcript can't settle it.
+- **Movement 3:** not in the Acceptance clip. It needs Tanya's other recordings.
+
+**Next transfer:** audio-only review copies of every numbered speech clip, the singing sign-off and the dance footage. Mono, 64 kbps, about 1 MB per minute, so no splitting is needed. Every clip is transcribed with timestamps, then the matching video passages are requested as review copies.
