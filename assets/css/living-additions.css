@@ -26,7 +26,7 @@
 @media(max-width:760px){.whole-self{grid-template-columns:1fr;width:calc(100% - 36px);gap:28px}.whole-self figure{max-width:420px;justify-self:center}.whole-self figure img{max-height:520px}}
 
 /* Team leadership principle */
-.team-principle{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,4vw,56px);margin:clamp(44px,5vw,64px) 0 clamp(36px,4vw,52px);padding:clamp(32px,4vw,52px);background:var(--f2bm-paper);border-top:2px solid var(--f2bm-gold);border-bottom:1px solid var(--rule)}
+.team-principle{align-items:center;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,4vw,56px);margin:clamp(44px,5vw,64px) 0 clamp(36px,4vw,52px);padding:clamp(32px,4vw,52px);background:var(--f2bm-paper);border-top:2px solid var(--f2bm-gold);border-bottom:1px solid var(--rule)}
 .team-principle blockquote{margin:0;font:400 clamp(30px,3.4vw,46px)/1.1 var(--serif);color:var(--teal-small)}
 .home-more-living .team-principle blockquote p,.team-principle blockquote p{font:inherit;color:inherit;margin:0;max-width:16ch}
 .team-principle blockquote cite{display:block;margin-top:18px;font:600 13px/1.5 var(--sans);font-style:normal;letter-spacing:.13em;text-transform:uppercase;color:var(--body)}
@@ -81,3 +81,54 @@
 /* High contrast */
 .high-contrast .team-principle,.high-contrast .signature-offer,.high-contrast .sig-outcome,.high-contrast .evidence-space{background:#fff;color:#000}
 .high-contrast :is(.whole-lines li,.team-principle blockquote,.team-principle .team-includes,.sig-grid h3,.offer-steps h3){color:#000}
+
+/* Homepage composition, October 2026 revision */
+/* Speaking: one audience photograph beside the offer and its booking action */
+.f-stage.f-stage-split{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:stretch}
+.f-stage-split .f-stagecopy{padding:clamp(36px,4vw,56px) clamp(24px,3.5vw,48px)}
+.f-stage-split .stage-photo{margin:0;display:flex;flex-direction:column;padding:clamp(24px,3vw,40px) clamp(24px,3vw,40px) clamp(24px,3vw,40px) 0}
+.f-stage-split .stage-photo img{width:100%;flex:1;min-height:320px;max-height:560px;height:auto;object-fit:cover;object-position:center 40%}
+.f-stage-split .stage-photo figcaption{position:static;padding:12px 0 0;background:none;color:var(--teal-small);font:500 14px/1.5 var(--sans)}
+@media(max-width:860px){.f-stage.f-stage-split{grid-template-columns:1fr}.f-stage-split .stage-photo{padding:0 22px 28px;order:2}.f-stage-split .stage-photo img{min-height:0;max-height:none;aspect-ratio:3/2}}
+
+/* Community: The Nest and the partner group as balanced, clearly separate cards */
+.community-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(28px,4vw,56px);padding:0 36px}
+.community-pair>.f-wrap{padding:clamp(44px,6vw,76px) 0;display:flex;flex-direction:column}
+.community-pair .f-lifehead{grid-template-columns:1fr;gap:14px;align-items:start;margin-bottom:26px}
+.community-pair .f-lifehead h2{font-size:clamp(32px,3.4vw,46px)}
+.community-pair .f-paths{grid-template-columns:1fr;flex:1}
+.community-pair .f-path{position:relative;padding:24px;background:#f3eee3;height:100%}
+.community-pair .f-owner{font:500 14px/1.5 var(--sans)!important;letter-spacing:.02em;color:var(--body);margin-top:8px!important}
+.community-pair .nest-mark{position:absolute;top:18px;right:18px;width:76px;max-width:76px}
+.community-pair #nest .f-num,.community-pair #nest h3{padding-right:88px}
+@media(max-width:760px){.community-pair{grid-template-columns:1fr;padding:0 20px}.community-pair>.f-wrap{padding:36px 0}.community-pair .nest-mark{width:60px}.community-pair #nest .f-num,.community-pair #nest h3{padding-right:70px}}
+
+/* Biography: both photographs in the left column, no empty row */
+.tanya-photos{display:grid;gap:24px;align-content:start}
+.tanya-photos .event-photo{margin:0}
+.tanya-photos .event-photo+.event-photo img{aspect-ratio:3/2;object-fit:cover}
+.home-more-living .tanya-grid{align-items:start}
+
+/* Inheritance: shorter path from the mind map to the declaration */
+.home-more-living .future-world .future-map{margin-top:18px;padding-top:8px}
+.home-more-living .future-world .future-open{margin-top:22px;margin-bottom:0}
+.home-more-living .future-world .permission-statement{margin-top:28px}
+
+/* Recognition: photograph and evidence side by side, achievements visible */
+.home-more-living .recognition .rec-head{margin-bottom:28px}
+.rec-compact{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,56px);align-items:start}
+.rec-compact .event-photo{margin:0}
+.rec-compact .event-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%}
+.rec-selected{font:600 13px/1.5 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--teal-small);margin:0 0 4px}
+.home-more-living .rec-compact .rec-picks{margin-top:0}
+.rec-compact .rec-all{display:inline-block;margin-top:22px}
+@media(max-width:760px){.rec-compact{grid-template-columns:1fr}.rec-compact .event-photo{max-width:420px}.rec-compact .event-photo img{aspect-ratio:3/2}}
+
+/* Closing: the reflection and its action together, photograph beside */
+.f-keep.f-keep-split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,4vw,56px);align-items:center;text-align:left}
+.f-keep-split .keep-copy .f-choices,.f-keep-split .keep-copy .f-actions{justify-content:flex-start}
+.f-keep-split blockquote{margin:26px 0;max-width:22ch}
+.f-keep-split .event-photo{margin:0;max-width:none}
+.f-keep-split .event-photo img{width:100%;height:auto;aspect-ratio:auto}
+@media(max-width:760px){.f-keep.f-keep-split{grid-template-columns:1fr}}
+.home-more-living .rec-head>div,.home-more-living .rec-head>p{grid-column:auto}
