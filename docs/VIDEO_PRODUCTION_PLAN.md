@@ -16,7 +16,23 @@ Checked 25 October 2026:
 | Direct Google download hosts | `drive.google.com/uc`, `drive.usercontent.google.com/download` | Refused by the environment's egress proxy (CONNECT 403) before reaching Google |
 | Drive API | `GET www.googleapis.com/drive/v3/files/{id}?alt=media` | Host reachable; Google returns 403 *"missing a valid API key"*. The environment holds no Google credential, and the connector's sign-in isn't exposed to the shell. |
 
-**To unblock, preferred first:** transfer the clips from Tanya's side, where streamed Drive access works, into a location this environment can read. GitHub is reachable from here, so a separate, never-merged branch (for example `footage-source`) carrying the selected clips in a top-level `footage/` folder through Git LFS should arrive with an ordinary `git fetch` and `git lfs pull`. That route still needs testing with one clip. The clips stay out of `main` and out of the deploy (`dist/` excludes them, and the build guard fails on leaks of internal material). **Fallbacks:** allow `drive.usercontent.google.com` and link-share the clips, or store a read-only Drive credential as a network secret.
+**To unblock, preferred first: Git LFS from Tanya's computer.** Tested from the build environment on 25 October 2026:
+
+- **Download side (what this environment needs):** GitHub's LFS batch API at `github.com/MisfitMatriarch/Enough.git/info/lfs/objects/batch` answers through the proxy. Asked for an object that wasn't there, it correctly returned 404. Download links go to `github-cloud.githubusercontent.com`, which is reachable. Plausible, but **unproven until one real clip is fetched.**
+- **Upload side:** the build environment can't upload, because the proxy refuses `lfs.github.com`. That doesn't block the plan: Tanya's own computer isn't behind this proxy.
+- **One-clip test** (on Tanya's computer, with Git and Git LFS installed):
+  ```
+  git clone https://github.com/MisfitMatriarch/Enough.git && cd Enough
+  git checkout -b footage-source
+  git lfs install && git lfs track "footage/*.mp4"
+  mkdir footage && cp "/path/to/Acceptance.mp4" footage/
+  git add .gitattributes footage/Acceptance.mp4
+  git commit -m "Source footage: Acceptance (not for merge)"
+  git push -u origin footage-source
+  ```
+  The build environment then runs `git fetch origin footage-source` and `git lfs pull`, and checks the file plays end to end. Move the rest of the collection only after that works. Never open a PR from `footage-source`. `footage/` is excluded from every build regardless.
+
+**Fallbacks:** allow `drive.usercontent.google.com` and link-share the clips, or store a read-only Drive credential as a network secret.
 
 The full recording (`tanyas speech_.mp4`) and the repaired full recording are never used as a substitute source, and are never published, embedded or linked. Numbered clips are source material only.
 
@@ -26,7 +42,7 @@ Each film has its own spine and lead material. None is a shorter version of anot
 
 | Film | Length | Placement | Editorial job | Built around |
 |---|---|---|---|---|
-| **All of this is me** | 30–45 s | Homepage, in the existing *All of this is me* section directly after the opening, replacing the Paris photograph. Its five lines stay beside the player, ending on "Assistance belongs in the plan. So does joy." | Recognition: a first-time visitor hears what *Less fixing. More living.* means | A coherent passage from Tanya's *acceptance of all of you* message, opening on her face and voice, with a brief joyful moment (entrance or singing) around it so sparkle sits alongside substance |
+| **All of this is me** | 30–45 s | Homepage, in the existing *All of this is me* section directly after the opening, replacing the Paris photograph. The section becomes a landscape layout: a 16:9 player across the wider column, never squeezed into the portrait frame. The layout changes in the same commit that adds the film. Its five lines stay beside the player, ending on "Assistance belongs in the plan. So does joy." | Recognition: a first-time visitor hears what *Less fixing. More living.* means | A coherent passage from Tanya's *acceptance of all of you* message, opening on her face and voice, with a brief joyful moment (entrance or singing) around it so sparkle sits alongside substance |
 | **Speaking reel** | 60–90 s | Events & Speaking, beside or directly below the signature keynote. The homepage speaking section keeps its audience photograph and gains a "Watch Tanya speak" link to the reel, published together with the reel | The booking decision: an organiser pictures Tanya in their room | 1. **The welcome:** a short part of her introduction, then her walk on stage (keep the wide shot that shows the room and the room sound of the welcome), then a closer shot into her strongest spoken hook. 2. **The substance:** her strongest words on acceptance, assistance, genius and joy, the water demonstration, and genuine audience responses at the moments they happen. 3. **The celebration:** her singing finale, letting the joy and connection land. 4. **The close:** original phoenix, *Less fixing. More living.* and the booking destination |
 | **Acceptance story** | about 45–60 s | About Tanya, beside the personal account, replacing one photograph | Story: one coherent account of accepting all of herself and making room for support, ambition and joy | The fuller *acceptance of all of you* passage as an unbroken spoken line, with supporting footage laid over the words, never replacing them |
 
@@ -44,7 +60,7 @@ The entrance and the singing finale are signature moments, not spare footage. Bu
 
 The reels are references for which moments Tanya chose, not sources. Facebook can't be played from the build environment, so nobody here has watched them yet. Locate the matching original recordings in the Drive folder for full quality, then watch and transcribe them before choosing exact words or timestamps.
 
-**Tanya's chosen still (25 October 2026):** the singing finale on the Empowering Women Expo stage at Venue 114, Sunshine Coast. Tanya in the silver fringed top and teal velvet trousers, pointing to the audience, with the *Less fixing. More living.* slide on screen behind her and an audience member filming and laughing. Use this frame, taken from the original footage, as the speaking reel's poster. It's also the preferred photograph for the speaking sections on the Speaking page and homepage. Only a chat preview has been received so far; take the frame from the source clip at full resolution.
+**Tanya's chosen still (25 October 2026), 1920 × 1080:** the singing finale on the Empowering Women Expo stage at Venue 114, Sunshine Coast. Tanya in the silver fringed top and teal velvet trousers, pointing to the audience, with the *Less fixing. More living.* slide on screen behind her and an audience member filming and laughing. Use this frame, taken from the original footage, as the speaking reel's poster. It's also the preferred photograph for the speaking sections on the Speaking page and homepage. Tanya has the original image. The build environment needs its Drive file ID or a link (Drive search doesn't index the shared expo files), or the file on the `footage-source` branch. It's under the connector's 10 MB limit, so it can be downloaded directly once identified.
 
 **Music rights:** the singing finale needs its song's publication rights checked before its audio is published. If the song can't be cleared, keep Tanya's movement and celebration with cleared audio and her own spoken closing line.
 
