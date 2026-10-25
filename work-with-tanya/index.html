@@ -75,6 +75,7 @@
       <a href="/about/">About Tanya</a>
       <a href="#aoc" id="aoc-reopen">Acknowledgement of Country</a>
       <a href="/work-with-tanya/">Work with Tanya</a>
+      <a href="/stay-connected/">Stay connected</a>
       <a href="https://free2bme.au">The Nest in Australia</a>
     </div>
     <div>
@@ -229,5 +230,15 @@
 
 </script>
 <script src="/assets/js/site-access.js"></script>
+<script>
+/* Preselect the enquiry type from links such as ?type=keynote. Leaves the choice editable. */
+(function(){
+  var map={keynote:"Keynote speaking",mc:"MC / event hosting",panel:"Panel facilitation",workshop:"Participant / community workshop","professional-learning":"Professional learning",pathway:"Practitioner Pathway",organisation:"Organisational work",media:"Media enquiry"};
+  var t; try{ t=new URLSearchParams(location.search).get("type"); }catch(e){ return; }
+  var sel=document.getElementById("enq-type");
+  if(!t||!sel||!map[t]) return;
+  Array.prototype.forEach.call(sel.options,function(o){ if(o.text===map[t]) sel.value=o.value||o.text; });
+})();
+</script>
 </body>
 </html>

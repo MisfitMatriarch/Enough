@@ -133,3 +133,9 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
   .claim-line{padding:38px 16px}
   .claim-line p{font-size:clamp(36px,9vw,54px)}
 }
+
+/* Reader question on book pages, October 2026 */
+.book-detail-copy .reader-question,.page-hero .reader-question{font:italic 400 clamp(22px,2.2vw,28px)/1.35 var(--serif);color:#ab236e;margin-top:18px}
+/* Book detail heroes: the cover takes the right column, so the art-sweep padding must not also reserve it. */
+.art-hero-sweep + .wrap.book-detail-layout,body.interior .library-intro.book-detail-layout{padding-right:0;max-width:1100px}
+.book-detail-layout{position:relative;z-index:1}

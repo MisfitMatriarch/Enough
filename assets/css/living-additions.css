@@ -1,0 +1,80 @@
+/* Less fixing. More living. additions, October 2026.
+   Shared by the homepage and interior pages. Uses the existing tokens only:
+   cream paper, teal headings, gold seams, pink as counterweight, Cormorant + Figtree. */
+
+/* Homepage opening */
+.home-more-living .hero .hero-explain{max-width:50ch;margin:22px auto 0;font-size:19px;line-height:1.6;color:var(--body)}
+.hero-routes{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:16px 22px;margin-top:34px}
+.hero-routes .btn{margin:0}
+.hero-routes .route-secondary{display:inline-flex;align-items:center;min-height:48px;padding:12px 22px;border:1px solid #08768a;color:#08768a;font:500 17px/1.4 var(--sans);text-decoration:none;background:transparent}
+.hero-routes .route-secondary:hover{background:#08768a;color:#fff}
+.hero-routes a:focus-visible{outline:3px solid var(--f2bm-magenta);outline-offset:3px}
+
+/* All of this is me */
+.whole-self{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center;width:min(100% - 48px,1180px);margin:0 auto;padding:clamp(56px,7vw,96px) 0;border-top:1px solid var(--rule)}
+.whole-self figure{margin:0}
+.whole-self figure img{width:100%;height:auto;aspect-ratio:2/3;max-height:640px;object-fit:cover;object-position:center 62%;display:block}
+.whole-self figcaption{padding:12px 0 0;color:var(--teal-small);font:500 14px/1.5 var(--sans)}
+.whole-self h2{font-family:var(--serif);font-weight:400;color:var(--teal-small);margin:0 0 28px}
+.whole-lines{list-style:none;margin:0;padding:0;border-top:2px solid var(--f2bm-gold)}
+.whole-lines li{padding:18px 0;border-bottom:1px solid var(--rule);font:400 clamp(22px,2.2vw,28px)/1.32 var(--serif);color:var(--ink)}
+.whole-lines li.whole-close{border-bottom:0;padding-top:24px;color:#ab236e;font-size:clamp(26px,2.8vw,36px)}
+.whole-self .whole-more{display:inline-block;margin-top:22px;font-size:17px}
+@media(max-width:760px){.whole-self{grid-template-columns:1fr;width:calc(100% - 36px);gap:28px}.whole-self figure{max-width:420px;justify-self:center}.whole-self figure img{max-height:520px}}
+
+/* Team leadership principle */
+.team-principle{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,4vw,56px);margin:clamp(44px,5vw,64px) 0 clamp(36px,4vw,52px);padding:clamp(32px,4vw,52px);background:var(--f2bm-paper);border-top:2px solid var(--f2bm-gold);border-bottom:1px solid var(--rule)}
+.team-principle blockquote{margin:0;font:400 clamp(30px,3.4vw,46px)/1.1 var(--serif);color:var(--teal-small)}
+.home-more-living .team-principle blockquote p,.team-principle blockquote p{font:inherit;color:inherit;margin:0;max-width:16ch}
+.team-principle blockquote cite{display:block;margin-top:18px;font:600 13px/1.5 var(--sans);font-style:normal;letter-spacing:.13em;text-transform:uppercase;color:var(--body)}
+.team-principle p{margin:0 0 16px;font-size:18px;line-height:1.6}
+.team-principle .team-includes{font:400 24px/1.3 var(--serif);color:#ab236e;margin-top:6px}
+.team-principle ul{margin:4px 0 18px;padding-left:1.1em;font-size:17px;line-height:1.6}
+.team-principle a{font-size:17px}
+@media(max-width:760px){.team-principle{grid-template-columns:1fr;padding:28px 20px}}
+
+/* Signature talk */
+.signature-offer{border-top:2px solid var(--f2bm-gold);background:var(--f2bm-paper)}
+.signature-offer .sig-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,56px);align-items:end}
+.signature-offer h2{color:var(--teal-small);max-width:16ch}
+.signature-offer .sig-idea{font:400 clamp(22px,2.2vw,28px)/1.35 var(--serif);color:var(--ink);margin:0}
+.sig-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,36px);margin-top:clamp(32px,4vw,48px)}
+.sig-grid section{border-top:1px solid var(--rule);padding-top:20px}
+.sig-grid h3{font:600 14px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--teal-small);margin:0 0 14px}
+.sig-grid p,.sig-grid li{font-size:18px;line-height:1.6;margin:0 0 10px}
+.sig-grid ul{padding-left:1.1em;margin:0}
+.sig-outcome{margin-top:clamp(32px,4vw,48px);padding:clamp(24px,3vw,36px);border-left:3px solid #ab236e;background:var(--f2bm-cream)}
+.sig-outcome p{margin:0 0 12px}
+.sig-outcome ol{margin:0;padding-left:1.3em;font:400 clamp(21px,2vw,26px)/1.4 var(--serif);color:var(--ink)}
+.sig-actions{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;margin-top:32px}
+.sig-note{font-size:15px;color:var(--body);margin-top:14px}
+.distinct-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,36px);margin-top:28px}
+.distinct-offers article{border-top:2px solid var(--f2bm-gold);padding-top:20px}
+.distinct-offers h3{color:var(--teal-small)}
+.distinct-offers p{line-height:1.6}
+@media(max-width:860px){.signature-offer .sig-head,.sig-grid,.distinct-offers{grid-template-columns:1fr}}
+
+/* Who it is for, what happens, what you receive, next step */
+.offer-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.4vw,28px);margin:28px 0 0;padding:0;counter-reset:step}
+.offer-steps>li{border-top:2px solid var(--f2bm-gold);padding-top:18px;counter-increment:step}
+.offer-steps>li::before{content:"0" counter(step);display:block;font:500 12px/1.4 var(--sans);letter-spacing:.1em;color:var(--teal-small);margin-bottom:8px}
+.offer-steps h3{font:600 15px/1.4 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--teal-small);margin:0 0 10px}
+.offer-steps p,.offer-steps li li{font-size:17px;line-height:1.55;margin:0 0 8px}
+.offer-steps ul{padding-left:1.1em;margin:0}
+.evidence-space{margin-top:clamp(28px,4vw,44px);padding:22px 24px;border:1px dashed var(--f2bm-gold-rule);background:var(--f2bm-paper)}
+.evidence-space h3{font:600 14px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--teal-small);margin:0 0 10px}
+.evidence-space p{font-size:17px;margin:0}
+@media(max-width:900px){.offer-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.offer-steps{grid-template-columns:1fr}}
+
+/* Film: used only once a reviewed edit exists. No autoplay, native controls, captions, transcript. */
+.film{margin:0}
+.film video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--f2bm-ink);object-fit:cover}
+.film figcaption{padding:12px 0 0;color:var(--teal-small);font:500 14px/1.5 var(--sans)}
+.film details{margin-top:10px;border-top:1px solid var(--rule);padding-top:10px}
+.film summary{cursor:pointer;font:500 16px/1.5 var(--sans);color:var(--teal-small)}
+.film .transcript{font-size:17px;line-height:1.6;max-width:62ch}
+
+/* High contrast */
+.high-contrast .team-principle,.high-contrast .signature-offer,.high-contrast .sig-outcome,.high-contrast .evidence-space{background:#fff;color:#000}
+.high-contrast :is(.whole-lines li,.team-principle blockquote,.team-principle .team-includes,.sig-grid h3,.offer-steps h3){color:#000}
