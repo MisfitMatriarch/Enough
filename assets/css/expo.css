@@ -5,3 +5,5 @@
 @media(max-width:420px){.wrap{width:calc(100% - 2rem)}.expo-header{padding:1rem;align-items:flex-start}.expo-header>a:last-child{max-width:90px;font-size:.9rem}.brand img{width:46px;height:46px}.brand span{font-size:.95rem}.book{grid-template-columns:90px minmax(0,1fr);gap:1rem}.book h3{font-size:1.2rem}.reflection-text{padding-left:1rem}.button{width:100%}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{body{background:white;color:#082b58;font-size:12pt}.expo-header,.hero,#books,#businesses,#privacy,.country,footer,.skip,#print-reflection,#reflection>.small,#reflection>.actions{display:none!important}.section{padding:0}.wrap{width:100%}#reflection{border:0}.reflection-text{border-left:0;padding:0}.writing-space{min-height:2cm}.reflection-text h3{break-after:avoid}.prompts p{break-inside:avoid}}
+
+.book .companion{font-size:15px;line-height:1.5;margin:6px 0 10px}

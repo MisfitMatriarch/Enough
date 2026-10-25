@@ -157,3 +157,7 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
   .site-header .a11y-panel{right:0;width:min(260px,calc(100vw - 36px))}
 }
 @media(max-width:360px){.site-header .brand small{display:none}}
+
+/* Book pairs: the connection line under each pair heading */
+.pair-connection{font:italic 400 clamp(18px,1.6vw,21px)/1.4 var(--serif);color:#ab236e;margin:6px 0 0}
+.book-quantity small{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--teal-small)}
