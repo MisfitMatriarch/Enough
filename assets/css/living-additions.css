@@ -160,3 +160,9 @@
 }
 .f-keep-split>.event-photo{align-self:center}
 .f-action{gap:.4em}
+
+/* Speaking photograph: the expo singing still, framed on Tanya and the slide */
+.f-stage-split .stage-photo{justify-content:center}
+.f-stage-split .stage-photo picture{display:block}
+.f-stage-split .stage-photo picture img{flex:none;min-height:0;max-height:none;aspect-ratio:4/3;object-position:52% 50%}
+@media(max-width:860px){.f-stage-split .stage-photo picture img{aspect-ratio:16/9}}
