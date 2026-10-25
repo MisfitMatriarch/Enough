@@ -16,6 +16,10 @@ Checked 25 October 2026:
 | Direct Google download hosts | `drive.google.com/uc`, `drive.usercontent.google.com/download` | Refused by the environment's egress proxy (CONNECT 403) before reaching Google |
 | Drive API | `GET www.googleapis.com/drive/v3/files/{id}?alt=media` | Host reachable; Google returns 403 *"missing a valid API key"*. The environment holds no Google credential, and the connector's sign-in isn't exposed to the shell. |
 
+**Measured connector ceiling (25 October 2026):** `download_file_content` delivered files of 2.07, 2.38, 2.55, 4.32 and 5.02 MB intact (byte sizes matched, clean decodes). It failed on the 6.45 MB Acceptance review copy, with the connection closed because the message was too large. The practical limit is therefore **about 5 MB per file**. The supplied stage photograph (198 KB) downloaded and verified at 1920 × 1080.
+
+**Quality-preserving transfer within that limit:** split any file into raw parts of 4 MB or less, plus a checksum. The build environment downloads each part and joins them back into the identical original. On a Mac or Linux computer: `split -b 4m "Acceptance.mp4" "Acceptance.mp4.part-"` and `shasum -a 256 "Acceptance.mp4" > "Acceptance.mp4.sha256"`. Upload the parts and the checksum to the Drive folder and share the file IDs. Use this for review copies first. Then, for the final render, use it for only the original passages the edit actually uses, rather than whole 130–150 MB clips.
+
 **To unblock, preferred first: Git LFS from Tanya's computer.** Tested from the build environment on 25 October 2026:
 
 - **Download side (what this environment needs):** GitHub's LFS batch API at `github.com/MisfitMatriarch/Enough.git/info/lfs/objects/batch` answers through the proxy. Asked for an object that wasn't there, it correctly returned 404. Download links go to `github-cloud.githubusercontent.com`, which is reachable. Plausible, but **unproven until one real clip is fetched.**
