@@ -1,3 +1,9 @@
+# Less fixing. More living. update, 25 October 2026
+
+Branch `claude/confident-galileo-jsna30`. Book status corrected sitewide (eight complete books, publication forthcoming, A$39 reservation, no payment until launch). Homepage opening, *All of this is me* and team principle added; Speaking has the signature keynote with MC kept distinct; new separate `free2bme-updates` Netlify form at `/stay-connected/`; at-a-glance offer steps on Professional Learning, Pathway and For Organisations; approved reader questions on four book pages; seven book-detail heroes fixed (art-sweep padding had collapsed the column). New shared CSS: `assets/css/living-additions.css`.
+
+Waiting on: expo clips (only the full recording is visible in Drive, and Drive hosts are blocked by the network policy; see `docs/VIDEO_PRODUCTION_PLAN.md`); Tanya's approval of `review/one-cost-one-change.html` (Ledger v1.1 is still READY_FOR_CONTENT_OWNER_APPROVAL); approved extracts and contents for book pages; confirmed talk durations; approved organiser feedback (commented slots are in place). Netlify must detect the new `free2bme-updates` form after deploy; send one clearly labelled test and delete it. Note: the build publishes `docs/` publicly.
+
 # Current expo build handover 13 October 2026
 
 The QR destination is being added on `codex/expo-qr-destination` for `free2bme.global/free2bme/`. Implementation and release checks are in `docs/EXPO_QR_BUILD.md`. The new Netlify endpoint stores private reservations and separate marketing consent; it does not reuse existing Forms notifications. The reflection PDF is a review draft, public download disabled until approval. Founder profiles are not supplied and remain hidden. Both future tools remain disabled. This branch has not been deployed or verified on the public domain.
