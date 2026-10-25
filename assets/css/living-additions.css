@@ -166,3 +166,13 @@
 .f-stage-split .stage-photo picture{display:block}
 .f-stage-split .stage-photo picture img{flex:none;min-height:0;max-height:none;aspect-ratio:4/3;object-position:52% 50%}
 @media(max-width:860px){.f-stage-split .stage-photo picture img{aspect-ratio:16/9}}
+
+/* All of this is me, film version: a landscape player with the five statements beside it.
+   Used when the approved homepage film replaces the photograph. */
+.whole-self.whole-self-film{grid-template-columns:minmax(0,1.45fr) minmax(0,.85fr);align-items:start}
+.whole-self-film .film video{aspect-ratio:16/9;max-height:none}
+.whole-self-film .film video::cue{font-family:Figtree,system-ui,sans-serif;background:rgba(24,51,79,.78);color:#fff}
+.whole-self-film .whole-copy h2{margin-bottom:20px}
+.whole-self-film .whole-lines li{font-size:clamp(19px,1.6vw,23px);padding:14px 0}
+.whole-self-film .whole-lines li.whole-close{font-size:clamp(23px,2.2vw,30px)}
+@media(max-width:900px){.whole-self.whole-self-film{grid-template-columns:1fr}}
