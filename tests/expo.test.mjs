@@ -73,6 +73,6 @@ test('internal documents and review material never reach the published build',as
   build(settings);
   const dist = new URL('../dist/', import.meta.url).pathname;
   assert.deepEqual(findInternalFiles(dist),[]);
-  for (const dir of ['docs','review','private-exports','scripts','tests','content','netlify']) assert.equal(existsSync(join(dist,dir)),false,dir);
+  for (const dir of ['docs','review','private-exports','footage','scripts','tests','content','netlify']) assert.equal(existsSync(join(dist,dir)),false,dir);
   assert.equal(existsSync(join(dist,'stay-connected','index.html')),true);
 });

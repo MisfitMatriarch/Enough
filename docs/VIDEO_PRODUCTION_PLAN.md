@@ -16,21 +16,39 @@ Checked 25 October 2026:
 | Direct Google download hosts | `drive.google.com/uc`, `drive.usercontent.google.com/download` | Refused by the environment's egress proxy (CONNECT 403) before reaching Google |
 | Drive API | `GET www.googleapis.com/drive/v3/files/{id}?alt=media` | Host reachable; Google returns 403 *"missing a valid API key"*. The environment holds no Google credential, and the connector's sign-in isn't exposed to the shell. |
 
-**To unblock:** store a read-only Google Drive credential in the environment settings as a network secret, read as `GOOGLE_DRIVE_TOKEN` (an OAuth access token with `drive.readonly`, or a service account the folder is shared with). Files then download through the Drive API, which is already reachable. Alternatives: allow `drive.usercontent.google.com` and share the clips by link, or place the clips in private storage the environment can read.
+**To unblock, preferred first:** transfer the clips from Tanya's side, where streamed Drive access works, into a location this environment can read. GitHub is reachable from here, so a separate, never-merged branch (for example `footage-source`) carrying the selected clips in a top-level `footage/` folder through Git LFS should arrive with an ordinary `git fetch` and `git lfs pull`. That route still needs testing with one clip. The clips stay out of `main` and out of the deploy (`dist/` excludes them, and the build guard fails on leaks of internal material). **Fallbacks:** allow `drive.usercontent.google.com` and link-share the clips, or store a read-only Drive credential as a network secret.
 
 The full recording (`tanyas speech_.mp4`) and the repaired full recording are never used as a substitute source, and are never published, embedded or linked. Numbered clips are source material only.
 
 ## Three films, three jobs
 
-Each film has its own spine. None is a shorter version of another, and each uses different lead material.
+Each film has its own spine and lead material. None is a shorter version of another. The homepage features one film only.
 
 | Film | Length | Placement | Editorial job | Built around |
 |---|---|---|---|---|
-| **Homepage film** | 30–45 s | Homepage, after the three opening routes | Recognition. A first-time visitor sees themselves and hears what *Less fixing. More living.* means | One clear, quotable passage that states the idea, opening on Tanya's face and voice; sparkle and warmth from the dance footage at the turn; ends on the brand line |
-| **Speaking reel** | 60–90 s | Speaking page, after the signature keynote | The booking decision. An organiser sees what they'd get: substance, delivery, humour, the room responding | Two or three coherent passages across different moments of the speech, each allowed to land, cut against genuine audience responses to those exact moments; closes on the call to bring Tanya into the room |
-| **Acceptance story** | 45–60 s | About page beside the fuller story; may later replace the photograph in *All of this is me* | Story. One continuous account of accepting strengths and disability, putting assistance in the plan, and making room for joy | `Acceptance.mp4` as an unbroken spoken line, with B-roll laid over the words (never replacing them), resolving into joy |
+| **All of this is me** | 30–45 s | Homepage, in the existing *All of this is me* section directly after the opening, replacing the Paris photograph. Its five lines stay beside the player, ending on "Assistance belongs in the plan. So does joy." | Recognition: a first-time visitor hears what *Less fixing. More living.* means | A coherent passage from Tanya's *acceptance of all of you* message, opening on her face and voice, with a brief joyful moment (entrance or singing) around it so sparkle sits alongside substance |
+| **Speaking reel** | 60–90 s | Events & Speaking, beside or directly below the signature keynote. The homepage speaking section keeps its audience photograph and gains a "Watch Tanya speak" link to the reel, published together with the reel | The booking decision: an organiser pictures Tanya in their room | 1. **The welcome:** a short part of her introduction, then her walk on stage (keep the wide shot that shows the room and the room sound of the welcome), then a closer shot into her strongest spoken hook. 2. **The substance:** her strongest words on acceptance, assistance, genius and joy, the water demonstration, and genuine audience responses at the moments they happen. 3. **The celebration:** her singing finale, letting the joy and connection land. 4. **The close:** original phoenix, *Less fixing. More living.* and the booking destination |
+| **Acceptance story** | about 45–60 s | About Tanya, beside the personal account, replacing one photograph | Story: one coherent account of accepting all of herself and making room for support, ambition and joy | The fuller *acceptance of all of you* passage as an unbroken spoken line, with supporting footage laid over the words, never replacing them |
 
-Media page: the three finished films for organisers and producers, each with a transcript. Social cut-downs come after the website films are approved.
+The story every film serves: accepting your strengths, difficulties and support needs helps you choose where your energy goes and makes more room for living.
+
+### Signature moments (Tanya's selection, 25 October 2026)
+
+The entrance and the singing finale are signature moments, not spare footage. Build towards them deliberately.
+
+| Moment | Tanya's reference | Use |
+|---|---|---|
+| Introduction and walk on stage | facebook.com/reel/1817530072720100 | Opens the speaking reel. Being small in the frame is fine: it shows her relationship with the whole room. Follow it with a closer shot so viewers connect with her face and words |
+| Acceptance of all of you | facebook.com/reel/1526364612710422 | Central passage of the homepage film; a shorter passage in the speaking reel; the fuller account on About |
+| Singing finale | facebook.com/reel/1425874299681714 | Closes the speaking reel |
+
+The reels are references for which moments Tanya chose, not sources. Facebook can't be played from the build environment, so nobody here has watched them yet. Locate the matching original recordings in the Drive folder for full quality, then watch and transcribe them before choosing exact words or timestamps.
+
+**Tanya's chosen still (25 October 2026):** the singing finale on the Empowering Women Expo stage at Venue 114, Sunshine Coast. Tanya in the silver fringed top and teal velvet trousers, pointing to the audience, with the *Less fixing. More living.* slide on screen behind her and an audience member filming and laughing. Use this frame, taken from the original footage, as the speaking reel's poster. It's also the preferred photograph for the speaking sections on the Speaking page and homepage. Only a chat preview has been received so far; take the frame from the source clip at full resolution.
+
+**Music rights:** the singing finale needs its song's publication rights checked before its audio is published. If the song can't be cleared, keep Tanya's movement and celebration with cleared audio and her own spoken closing line.
+
+Each player: strong poster frame, visible native controls, captions, transcript, no autoplay or sound on load. The original phoenix, ivory paper, watercolour, teal and gold carry through the films and the layout around them.
 
 ## Editorial approach
 

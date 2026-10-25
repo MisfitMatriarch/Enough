@@ -31,7 +31,7 @@ ${founders.length ? `<section id="businesses" class="section wrap" aria-labelled
 }
 
 // Source-only material that must never be served: notes, reviews, previews, tooling and private exports.
-export const internalDirectories = ['.git','node_modules','dist','.netlify','content','netlify','review','tests','scripts','docs','private-exports'];
+export const internalDirectories = ['.git','node_modules','dist','.netlify','content','netlify','review','tests','scripts','docs','private-exports','footage'];
 const internalFile = /\.(md|markdown|patch|diff|py|mjs|sh|zip|docx?|sha256|log)$/i;
 
 // Fails if anything internal reached the publish directory. Run after every build.
