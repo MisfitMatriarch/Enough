@@ -1,54 +1,71 @@
 # Expo films: production plan and embed standard
 
-Updated 25 October 2026. **Status: blocked on source access. No video is on the site.**
+Updated 25 October 2026. Internal document: excluded from the published build.
+**Status: footage exists and is accessible to Tanya. Files can't yet be transferred into the build environment. No video is on the site.**
 
-## Why nothing is published yet
+## Footage access (corrected)
 
-- The expo footage folder shows only `tanyas speech_.mp4` (1.02 GB, the full recording) to Tanya's Drive connector. `Acceptance.mp4`, `tans speech video one.mp4`, `2` to `13`, `tans - i am woman- singing sign off_.mp4`, `tanyas speech_REPAIRED_v2.mp4`, the photographs and dance footage are not visible. They may sit in a subfolder or be shared separately.
-- The build environment's network policy blocks `drive.google.com` and `drive.usercontent.google.com`, so files cannot be fetched directly.
-- The full recording is source only and must never be published, embedded or linked. Neither is it a substitute for the individual clips Tanya specified.
+The individual clips exist in the supplied folder. An earlier note said they were missing; that was wrong. A parent-folder search returned only the full recording because the clips don't report that folder as their parent, and Drive search doesn't index them. Direct lookup by file ID works.
 
-To unblock: share the individual clips with Tanya's Google account (or move them into the folder itself), and allow the two Google hosts in the environment's network settings. Alternatively, commit the clips to a private location the build can read.
+Checked 25 October 2026:
 
-## The three films
+| Route | Operation | Result |
+|---|---|---|
+| Drive connector (authenticated) | Metadata for `Acceptance.mp4` (128.7 MB), `tans speech video one.mp4` (149.4 MB), `tans speech video 13.mp4` (154.3 MB) | Succeeds |
+| Drive connector | `download_file_content` on `Acceptance.mp4` | Fails: *"File too large for download, over limit of 10 MB."* The tool returns base64 inline only and has no streamed-file option. Every clip is over the limit. |
+| Direct Google download hosts | `drive.google.com/uc`, `drive.usercontent.google.com/download` | Refused by the environment's egress proxy (CONNECT 403) before reaching Google |
+| Drive API | `GET www.googleapis.com/drive/v3/files/{id}?alt=media` | Host reachable; Google returns 403 *"missing a valid API key"*. The environment holds no Google credential, and the connector's sign-in isn't exposed to the shell. |
 
-| Film | Length | Placement | Purpose |
-|---|---|---|---|
-| Homepage film | 30–45 s | Beside the homepage opening, after the three routes | Recognition, personality, the meaning of *Less fixing. More living.* |
-| Speaking reel | 60–90 s | Speaking page, after the signature keynote | Ideas, delivery, humour, connection with the room |
-| Acceptance story | 45–60 s | About page, beside the fuller story; homepage *All of this is me* may use it instead of the photograph | One coherent account: strengths and disability, support, room for joy |
+**To unblock:** store a read-only Google Drive credential in the environment settings as a network secret, read as `GOOGLE_DRIVE_TOKEN` (an OAuth access token with `drive.readonly`, or a service account the folder is shared with). Files then download through the Drive API, which is already reachable. Alternatives: allow `drive.usercontent.google.com` and share the clips by link, or place the clips in private storage the environment can read.
 
-Media page: the three finished films plus organiser-usable cuts, each with a transcript. No raw or numbered clips.
+The full recording (`tanyas speech_.mp4`) and the repaired full recording are never used as a substitute source, and are never published, embedded or linked. Numbered clips are source material only.
 
-## Editorial method
+## Three films, three jobs
 
-1. Transcribe every clip (Whisper large or equivalent) and check each line against the audio by ear. Keep timestamps.
-2. Choose the strongest sentences Tanya actually said. Keep continuous speech; avoid montage. Preserve qualifications around disability and support.
-3. Open each film on Tanya's face and voice within the first two seconds.
-4. Use audience reactions only with the moment they respond to.
-5. Cut podium adjustments, waiting, camera searches, repeats and unusable sound. Avoid long distant shots; crop only where resolution stays sharp. No upscaling, sharpening or stretching.
-6. Music only where rights are established in writing. *I Am Woman* is a commercial recording, so the singing sign-off cannot carry published music without a licence.
-7. No stock footage, generated replacements, heavy transitions or generic motivational treatment.
+Each film has its own spine. None is a shorter version of another, and each uses different lead material.
+
+| Film | Length | Placement | Editorial job | Built around |
+|---|---|---|---|---|
+| **Homepage film** | 30–45 s | Homepage, after the three opening routes | Recognition. A first-time visitor sees themselves and hears what *Less fixing. More living.* means | One clear, quotable passage that states the idea, opening on Tanya's face and voice; sparkle and warmth from the dance footage at the turn; ends on the brand line |
+| **Speaking reel** | 60–90 s | Speaking page, after the signature keynote | The booking decision. An organiser sees what they'd get: substance, delivery, humour, the room responding | Two or three coherent passages across different moments of the speech, each allowed to land, cut against genuine audience responses to those exact moments; closes on the call to bring Tanya into the room |
+| **Acceptance story** | 45–60 s | About page beside the fuller story; may later replace the photograph in *All of this is me* | Story. One continuous account of accepting strengths and disability, putting assistance in the plan, and making room for joy | `Acceptance.mp4` as an unbroken spoken line, with B-roll laid over the words (never replacing them), resolving into joy |
+
+Media page: the three finished films for organisers and producers, each with a transcript. Social cut-downs come after the website films are approved.
+
+## Editorial approach
+
+Coherent speech, purposeful cutting. Montage isn't the enemy; meaningless montage is.
+
+1. Transcribe every clip and check each line by ear against the audio, with timestamps. Choose passages before choosing shots.
+2. Keep each spoken passage intact enough to carry its meaning, including Tanya's qualifications around disability and support. Never splice words into a sentence she didn't say.
+3. Within and between passages, cut with purpose: to Tanya's movement, to relevant imagery (the stage, the expo, the dance footage, approved photographs), and to genuine audience responses at the moment they respond. A cutaway must add energy or meaning, not cover a gap.
+4. Bring Tanya's face and voice in within the first two seconds of every film.
+5. Remove podium adjustments, waiting, camera searches, repeats and unusable sound.
+6. Prefer close and mid shots. Crop only where resolution stays sharp; never upscale, stretch or artificially sharpen.
+7. Music only where rights are established in writing, mixed under the voice. *I Am Woman* is a commercial recording: the singing sign-off can't carry it in a published edit without a licence.
+8. No stock footage, generated substitutes, decorative transitions or generic motivational treatment.
 
 ## Brand graphics
 
-Built from the site's own assets, not approximations:
+Reference: Tanya's three supplied screenshots of the homepage book series (25 October 2026). Use original assets and existing styles only; nothing redrawn or approximated.
 
-- Paper: `--f2bm-cream #fbf7ef`, `--f2bm-paper #fdfcf9`.
-- Headings and title cards: Cormorant Garamond 400/500 (`assets/fonts/cormorant-garamond-*.woff2`) in teal `#08768a` / `--f2bm-aqua-deep #0b829b`.
-- Labels, captions and lower thirds: Figtree (`assets/fonts/figtree-var.woff2`), navy `--f2bm-navy #082b58` or white on a navy scrim; magenta `#ab236e` highlight used sparingly; gold `--f2bm-gold-rule #caa45a` hairline.
-- Watercolour: the existing ribbon plates (`assets/brand/hero-edge-*`, `speaking-sweep-*`, `footer-band-*`) framing the picture edges only, never over faces.
-- Closing frame: original phoenix (`assets/brand/phoenix-dark-480.png`, complete lettering, unaltered proportions), *Less fixing. More living.*, and `tanyahicks.com`, on cream paper with a watercolour edge.
-- Captions: burned-in for social cuts only. Web films use WebVTT so captions stay selectable and resizable.
+- **Paper:** warm ivory and cream, `--f2bm-cream #fbf7ef`, `--f2bm-paper #fdfcf9`, `--f2bm-cream-deep #f6ecdf`, with the soft diagonal paper tone seen behind the series.
+- **Watercolour movement:** the existing ribbon artwork (`assets/brand/hero-edge-*`, `speaking-sweep-*`, `footer-band-*`) in turquoise, aqua, deep blue, pink, magenta and violet with fine gold. Frame the picture edges and title cards; never cover faces or footage.
+- **Titles:** Cormorant Garamond 400/500 (`assets/fonts/cormorant-garamond-*.woff2`) in teal `#08768a`.
+- **Labels and lower thirds:** Figtree (`assets/fonts/figtree-var.woff2`), tracked uppercase in teal as in "FOR LIVING IT."; body and caption text in deep navy `--f2bm-navy #082b58` / `--f2bm-ink #18334f`.
+- **Accents:** magenta `#ab236e` used sparingly, as in the series numerals; gold hairlines `--f2bm-gold-rule #caa45a`, as in the pre-order buttons.
+- **Logo:** the original phoenix (`assets/brand/phoenix-dark-480.png`) with its complete lettering and proportions.
+- **Closing frame:** phoenix, *Less fixing. More living.* and `tanyahicks.com` on ivory paper with a watercolour edge.
+- **Captions:** web films use WebVTT so captions stay selectable and resizable; burn-in for social cuts only, in Figtree on a soft navy scrim.
 
 ## Delivery specification
 
-- Masters: ProRes or high-bitrate H.264 kept off the site with the originals.
-- Web: H.264 High, CRF 21–23, `+faststart`, 1920×1080 and 1280×720 renditions, AAC 128 kbps, loudness normalised to −16 LUFS integrated with clean dialogue EQ.
-- Poster: a sharp frame of Tanya mid-sentence, exported as AVIF/WebP/JPEG.
-- Captions: `.vtt`, checked line by line against the audio. Transcript: the same text as HTML.
+- Masters (ProRes or high-bitrate H.264) are kept with the untouched originals and never published.
+- Web: H.264 High, CRF 21–23, `+faststart`, 1920×1080 and 1280×720, AAC 128 kbps, dialogue cleaned and normalised to −16 LUFS integrated. Shots colour-matched with restraint.
+- Poster: a sharp frame of Tanya mid-sentence, in AVIF, WebP and JPEG.
+- Captions `.vtt` checked line by line against the audio, with the matching HTML transcript.
 
-## Embed standard (CSS in `assets/css/living-additions.css`, `.film`)
+## Embed standard (`.film` in `assets/css/living-additions.css`)
 
 ```html
 <figure class="film">
@@ -62,8 +79,8 @@ Built from the site's own assets, not approximations:
 </figure>
 ```
 
-No `autoplay`, `muted` or `loop`. Native controls stay visible. Use `preload="none"` with a poster so pages stay light.
+No `autoplay`, `muted` or `loop`. Native controls stay visible. `preload="none"` with a poster keeps pages light.
 
-## Quality gate before embedding
+## Quality gate
 
-Each film is reviewed with sound, muted (captions alone must carry it) and on a phone. Any shot that weakens the edit comes out. Publish only after Tanya approves the cut.
+Each film is reviewed with sound, muted (captions must carry it alone) and on a phone. Any shot that weakens the edit comes out. Films go on the site only after Tanya approves the cut.

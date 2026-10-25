@@ -1,5 +1,5 @@
 import { readFileSync, writeFileSync, mkdirSync, cpSync, readdirSync, rmSync, statSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { resolve, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -30,6 +30,27 @@ ${founders.length ? `<section id="businesses" class="section wrap" aria-labelled
 <footer class="wrap"><p>FREE 2B ME by Tanya Hicks</p><nav aria-label="Footer"><a href="/">Home</a><a href="/books/">Books</a><a href="/work-with-tanya/" data-track="enquiry_link_click">Work with Tanya</a><a href="mailto:${escape(settings.contactEmail)}">Contact Tanya</a><a href="#privacy">Privacy</a></nav><p class="small">© Tanya Hicks. All rights reserved.</p></footer></body></html>`;
 }
 
+// Source-only material that must never be served: notes, reviews, previews, tooling and private exports.
+export const internalDirectories = ['.git','node_modules','dist','.netlify','content','netlify','review','tests','scripts','docs','private-exports'];
+const internalFile = /\.(md|markdown|patch|diff|py|mjs|sh|zip|docx?|sha256|log)$/i;
+
+// Fails if anything internal reached the publish directory. Run after every build.
+export function findInternalFiles(dir) {
+  const found = [];
+  const walk = current => {
+    for (const entry of readdirSync(current, { withFileTypes:true })) {
+      const full = resolve(current, entry.name);
+      const rel = relative(dir, full).split(sep).join('/');
+      if (entry.isDirectory()) {
+        if (internalDirectories.includes(entry.name)) found.push(rel + '/');
+        else walk(full);
+      } else if (internalFile.test(entry.name)) found.push(rel);
+    }
+  };
+  walk(dir);
+  return found;
+}
+
 export function build(settings) {
   if (settings.features.onlineReflectionEnabled || settings.features.paidPlanEnabled) throw new Error('Future tools require a separate completed implementation before enabling.');
   if (new URL(settings.canonicalUrl).protocol !== 'https:') throw new Error('Use an HTTPS canonical URL.');
@@ -46,7 +67,7 @@ export function build(settings) {
   writeFileSync(resolve(root, 'free2bme/index.html'), renderPage(settings, { pdfSize }));
   rmSync(resolve(root, 'dist'), { recursive:true, force:true });
   mkdirSync(resolve(root, 'dist'));
-  const excluded = new Set(['.git','node_modules','dist','.netlify','content','netlify','review','tests','scripts']);
+  const excluded = new Set(internalDirectories);
   for (const entry of readdirSync(root, { withFileTypes:true })) {
     if (excluded.has(entry.name) || entry.name.startsWith('.')) continue;
     if (entry.isDirectory() || /\.(html|css|xml|txt)$/.test(entry.name) || entry.name === '_redirects') cpSync(resolve(root,entry.name),resolve(root,'dist',entry.name),{ recursive:true });
@@ -56,6 +77,8 @@ export function build(settings) {
     mkdirSync(resolve(destination,'..'), { recursive:true });
     cpSync(pdfPath,destination);
   }
+  const leaked = findInternalFiles(resolve(root,'dist'));
+  if (leaked.length) throw new Error(`Internal files reached dist: ${leaked.join(', ')}`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

@@ -33,10 +33,19 @@
 .print-only{display:none}
 @media print{
   .draft-flag,.no-print,fieldset,details,.finish,.rules,header,footer{display:none!important}
-  .print-only{display:block}
+  .print-only{display:block;font-size:12px;color:#555;margin-top:6px}
   .q textarea{border:1px solid #999;min-height:0;height:auto;background:#fff}
-  .q{break-inside:avoid}
+  .q{break-inside:avoid;margin:0 0 14px;padding-top:12px}
+  .reflect{padding:0;max-width:none}
+  .reflect img{width:72px;height:72px;margin-bottom:8px!important}
+  .reflect h1{font-size:30px;margin-bottom:8px}
+  .reflect .promise{font-size:17px;margin-bottom:12px}
+  .q h2{font-size:22px;margin-bottom:4px}
+  .q .hint{font-size:14px;margin-bottom:6px}
+  .q textarea{height:150px;resize:none}
+  body{background:#fff}
 }
+@page{size:A4;margin:14mm}
 </style>
 </head>
 <body class="interior">

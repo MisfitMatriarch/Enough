@@ -60,3 +60,19 @@ test('PDF and founder links are absent until approved; future offers are absent'
   const html=renderPage(settings);assert.ok(!html.includes(settings.reflection.url));assert.ok(!html.includes('id="businesses"'));assert.ok(!html.includes('My FREE 2B ME Plan'));assert.ok(!html.includes('checkout'));assert.ok(!html.includes('type="checkbox" name="marketing-consent" checked'));
   const custom=structuredClone(settings);custom.reflection.approved=true;const approved=renderPage(custom,{pdfSize:2000});assert.ok(approved.includes('download data-track="pdf_link_click"'));assert.ok(approved.includes('2 KB'));
 });
+
+test('internal documents and review material never reach the published build',async()=>{
+  const { build, findInternalFiles } = await import('../scripts/build-expo.mjs');
+  const { mkdtempSync, mkdirSync, writeFileSync, existsSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  const planted = mkdtempSync(join(tmpdir(),'f2bm-dist-'));
+  mkdirSync(join(planted,'docs')); mkdirSync(join(planted,'assets'));
+  writeFileSync(join(planted,'assets','notes.md'),'x'); writeFileSync(join(planted,'assets','ok.css'),'x');
+  assert.deepEqual(findInternalFiles(planted).sort(),['assets/notes.md','docs/']);
+  build(settings);
+  const dist = new URL('../dist/', import.meta.url).pathname;
+  assert.deepEqual(findInternalFiles(dist),[]);
+  for (const dir of ['docs','review','private-exports','scripts','tests','content','netlify']) assert.equal(existsSync(join(dist,dir)),false,dir);
+  assert.equal(existsSync(join(dist,'stay-connected','index.html')),true);
+});
