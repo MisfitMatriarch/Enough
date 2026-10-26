@@ -98,7 +98,7 @@ body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-he
 .practice-books li span{display:block;font-size:15px}
 .interest-form,.speaking-enquiry form{display:grid;gap:16px;max-width:620px}
 .interest-form .field label,.speaking-enquiry .field label{display:block;font-weight:600;margin-bottom:6px}
-.interest-form input,.interest-form textarea,.interest-form select{width:100%}
+
 .offer-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:22px 0 28px;padding:0;list-style:none}
 .offer-facts li{border-top:2px solid var(--brand-gold);padding-top:10px}
 .offer-facts b{display:block;font:700 12px/1.4 var(--sans,Figtree,sans-serif);letter-spacing:.16em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:4px}
