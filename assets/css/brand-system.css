@@ -119,19 +119,14 @@ body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-he
 .f-path a.partner-email{display:inline-flex;align-items:center;gap:.35em;min-height:44px;color:var(--brand-teal);font-weight:600;text-decoration:underline;text-underline-offset:4px}
 
 /* Interior layout system (every page except the homepage and For your life, which use home-calm.css).
-   Same rhythm for every section, ivory alternating with one warm tint, watercolour kept for the
-   page opening and the closing band, one heading scale, magenta kept for the single italic word. */
+   Same rhythm for every section, ivory alternating with one warm tint, one heading scale,
+   magenta kept for the single italic word. Photos and watercolour sit in the side frames. */
 body:not(.home-more-living) main{--calm-pad:clamp(72px,8vw,120px);--calm-h2:clamp(36px,2.6vw + 18px,56px)}
 body:not(.home-more-living) main>section.band,
 body:not(.home-more-living) main>aside.turn{padding-block:var(--calm-pad);border-top:0;border-bottom:0;background:var(--f2bm-paper)}
 body:not(.home-more-living) main>section.band:nth-of-type(even),
 body:not(.home-more-living) main>aside.turn{background:var(--f2bm-cream-deep)}
 body:not(.home-more-living) main>section.closing{border-top:0}
-body:not(.home-more-living) main>section.band>.art,
-body:not(.home-more-living) main>aside.turn>.art{display:none}
-body:not(.home-more-living) main>section.band>.art + .wrap,
-body:not(.home-more-living) main>aside.turn>.art + .wrap{padding-left:0;padding-right:0}
-body:not(.home-more-living) main>section.band>.art-band + .wrap > *{max-width:none}
 body:not(.home-more-living) main>section.band h2{font-size:var(--calm-h2);line-height:1.08;max-width:22ch;text-wrap:balance}
 body:not(.home-more-living) main>section.band .claim-end{font-size:clamp(23px,1vw + 16px,30px);line-height:1.25}
 body:not(.home-more-living) main>section.band p:not(.eyebrow):not(.claim-end){max-width:68ch}
@@ -175,3 +170,8 @@ body:not(.home-more-living) main>section.band{padding-block:var(--calm-pad);bord
 body:not(.home-more-living) main>section.band:nth-of-type(even){background:var(--f2bm-cream-deep)}
 .team-with-photo .team-principle{grid-template-columns:1fr;gap:18px;padding:clamp(28px,3vw,40px)}
 @media (min-width:861px){#practitioners .offer-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Real photos in the arch and rounded frames */
+.photo-slot picture{height:100%}
+.photo-slot img{object-position:center 30%!important;opacity:1}
+.photo-slot::after{display:none}
