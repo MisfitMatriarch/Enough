@@ -1,0 +1,47 @@
+/* Homepage calm system: one section pattern, ivory alternating with one soft tint,
+   one accent per section, watercolour kept for the opening and the close. Loaded last on the homepage only. */
+.home-more-living main{--calm-pad:clamp(72px,8vw,120px);--calm-gut:max(24px,calc((100% - 1180px) / 2));--calm-h2:clamp(36px,2.6vw + 18px,56px)}
+.home-more-living main>.f2b-additions{max-width:none;margin:0}
+
+/* Bands: full width, same rhythm, no borders, panels or gradients */
+.home-more-living main [data-tone]{background:var(--f2bm-paper);border:0;border-radius:0;box-shadow:none;margin:0;max-width:none;width:auto;padding-block:var(--calm-pad)}
+.home-more-living main [data-tone=tint]{background:var(--f2bm-cream-deep)}
+.home-more-living main .f-wrap[data-tone],
+.home-more-living main .reflection-focus[data-tone],
+.home-more-living main .whole-self[data-tone],
+.home-more-living main .f-stage[data-tone]{padding-inline:var(--calm-gut)}
+.home-more-living main .community-pair[data-tone]{padding:var(--calm-pad) var(--calm-gut)}
+.home-more-living main .community-pair>.f-wrap{padding:0}
+.home-more-living main .community-pair .f-path,.home-more-living main #f-world .f-path{background:var(--f2bm-paper)}
+
+/* One heading scale, one eyebrow */
+.home-more-living main [data-tone] h2{font-size:var(--calm-h2);line-height:1.08;text-wrap:balance}
+.home-more-living main .community-pair h2{font-size:clamp(32px,2vw + 18px,44px)}
+.home-more-living main .reflection-focus h2{font-size:var(--calm-h2)}
+.home-more-living main [data-tone] .eyebrow,
+.home-more-living main [data-tone] .f-kicker{font:600 13px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-small);margin:0 0 18px}
+
+/* Readable measure for body copy */
+.home-more-living main [data-tone] p:not(.eyebrow):not(.f-kicker){max-width:64ch}
+
+/* Section-specific colour and decoration reduced to one accent each */
+.home-more-living main .f-belong[data-tone]{border:0}
+.home-more-living main .f-belong .f-kicker{color:var(--f2bm-magenta)}
+.home-more-living main .f-stage[data-tone]{border:0;gap:clamp(32px,5vw,72px);align-items:center}
+.home-more-living main .books[data-tone] .edge,
+.home-more-living main .recognition[data-tone] .wash{display:none}
+.home-more-living main .whole-self[data-tone]{width:auto;border:0}
+.home-more-living main .future-world[data-tone]{border:0}
+.home-more-living main .all-belongs[data-tone]{border:0}
+.home-more-living main .f-keep[data-tone]{border:0}
+
+/* Tanya's founder line sits under the statements in the film section */
+.home-more-living main .whole-self-film[data-tone]{align-items:center}
+.home-more-living main .whole-copy .founder-legacy{margin:26px 0 4px;padding:0;border:0;font:italic 400 clamp(19px,.6vw + 15px,22px)/1.45 var(--serif);color:var(--f2bm-ink);max-width:44ch}
+.home-more-living main .whole-copy .link{display:inline-block;margin:18px 28px 0 0}
+
+@media (max-width:860px){
+  .home-more-living main{--calm-pad:clamp(52px,12vw,72px);--calm-gut:20px}
+  .home-more-living main .f-stage[data-tone]{grid-template-columns:1fr}
+  .home-more-living main .f-belong .welcome-here-badge{width:110px;height:auto;justify-self:start}
+}
