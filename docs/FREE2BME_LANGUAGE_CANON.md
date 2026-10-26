@@ -139,8 +139,8 @@ A practice is something a person can do with the idea, not a ritual to perform.
 
 ### The repeatable book device
 
-Each pair is named by territory, and each title is marked **For living it.** or
-**For practising it.** Read one because you need it. Read the others because the person
+Each pair is named by territory, and each title is marked **For your life** or
+**For your practice**, with one sentence saying what the pair connects (Tanya, 25 October 2026). Read one because you need it. Read the others because the person
 doesn't stop being a person when the setting changes.
 
 ### Retired from the homepage in this pass

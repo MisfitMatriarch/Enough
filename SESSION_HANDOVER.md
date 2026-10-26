@@ -1,3 +1,33 @@
+# Latest correction: All of me is not Acceptance
+
+Tanya rejected the acceptance-led homepage film. The homepage now uses the actual So this is all of me passage from speech 06, original 00:10–00:59 (about 53 seconds with the closing card). The text includes ordinary days and value below 100 percent. See docs/HOMEPAGE_FILM_CONTENT_LOCK.md. Do not restore an Acceptance opener here. About remains the Acceptance story. Preserve the standard faststart video format.
+
+---
+
+# Latest delivery, 26 October 2026
+
+Three actual edited film drafts are now in the website preview: homepage, speaking reel and About. All 16 small complete video sources are also in private Drive. Read docs/FILM_PRODUCTION_DELIVERY_2026-10-26.md. Do not ask Tanya for audio, video proxies, dancing or the stage photograph again. The speaking reel includes her actual entrance and singing close. Final listening/caption and browser playback checks remain; do not describe drafts as final-approved films.
+
+Verified website book-copy errors were corrected against the manuscripts. Read review/register/BOOK_REPAIR_CONTROL.md. Manuscripts were not overwritten, specialist professional content is preserved, and proposed broad renaming/restructuring is not automatically authorised.
+
+---
+
+# Current completion status, 26 October 2026
+
+Tanya has requested completion of the website. The six small interactions are implemented. Final corrections add a copy-text alternative with visible error feedback, a practitioner responsibility question, and a named print page so card page settings do not affect ordinary pages. The single-tool-for-everything proposal is withdrawn. All of you has value; personal acceptance and conditions of freedom remain the organising message.
+
+**Film transfer is unblocked:** all 13 numbered speech clips, singing sign-off and both dance clips have complete small review MP3s in Drive. Source inventory and instructions: `docs/FILM_AUDIO_HANDOFF_2026-10-26.md`. Do not ask Tanya for audio or the already-downloaded stage photograph again. Final films must render from high-quality originals, not review audio. The existing Acceptance draft/preview is not the finished three-film package.
+
+Read `review/register/00-SUMMARY.md` for the reduced substantive release work. Optional ideas and ordinary-day details are not blockers. Keep the PR in draft until final content and film review; no public deployment has been authorised by this handoff.
+
+---
+
+# Less fixing. More living. update, 25 October 2026
+
+Branch `claude/confident-galileo-jsna30`. Book status corrected sitewide (eight complete books, publication forthcoming, A$39 reservation, no payment until launch). Homepage opening, *All of this is me* and team principle added; Speaking has the signature keynote with MC kept distinct; new separate `free2bme-updates` Netlify form at `/stay-connected/`; at-a-glance offer steps on Professional Learning, Pathway and For Organisations; approved reader questions on four book pages; seven book-detail heroes fixed (art-sweep padding had collapsed the column). New shared CSS: `assets/css/living-additions.css`. Homepage composition revised: speaking offer beside one audience photograph with the booking action, Nest and Headspace as paired cards with their operators named, both biography photographs in one column, compact recognition with achievements visible, closing action beside its sentence. Accessibility control moved into the header on all 34 pages (Aa on phones). Book series closed by default; inheritance lines styled as statements; mobile biography ordered portrait, story, signing photo. Video plan records Tanya's signature moments (entrance, acceptance message, singing finale) and her chosen poster still.
+
+Waiting on: transfer of the expo clips into the environment (they exist and the Drive connector reads their metadata, but its download is capped at 10 MB and there is no Google credential for the Drive API; see `docs/VIDEO_PRODUCTION_PLAN.md`); Tanya's approval of `review/one-cost-one-change.html` (Ledger v1.1 is still READY_FOR_CONTENT_OWNER_APPROVAL); approved extracts and contents for book pages; confirmed talk durations; approved organiser feedback (commented slots are in place). Netlify must detect the new `free2bme-updates` form after deploy; send one clearly labelled test and delete it. `docs/`, `review/` and other internal material are excluded from `dist/`; the build fails if any internal file reaches it.
+
 # Current expo build handover 13 October 2026
 
 The QR destination is being added on `codex/expo-qr-destination` for `free2bme.global/free2bme/`. Implementation and release checks are in `docs/EXPO_QR_BUILD.md`. The new Netlify endpoint stores private reservations and separate marketing consent; it does not reuse existing Forms notifications. The reflection PDF is a review draft, public download disabled until approval. Founder profiles are not supplied and remain hidden. Both future tools remain disabled. This branch has not been deployed or verified on the public domain.

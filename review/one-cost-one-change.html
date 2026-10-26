@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>One cost. One change. More living. | REVIEW DRAFT</title>
+<link rel="icon" href="/assets/brand/phoenix-dark-120.png">
+<link rel="stylesheet" href="/assets/css/f2bm-tokens.css">
+<link rel="stylesheet" href="/assets/css/f2bm.css">
+<link rel="stylesheet" href="/assets/css/site-alignment.css">
+<style>
+/* Review draft. Not deployed: review/ is excluded by scripts/build-expo.mjs.
+   Built from TOOL-P01-LEDGER-001 v1.1 boundaries and Tanya's working structure (25 Oct 2026). */
+.draft-flag{background:var(--f2bm-cream-deep);border-bottom:2px solid var(--f2bm-gold);padding:12px 24px;font:500 15px/1.5 var(--sans);text-align:center}
+.reflect{max-width:760px;margin:0 auto;padding:clamp(40px,6vw,80px) 24px}
+.reflect h1{color:var(--teal-small);margin:0 0 18px}
+.reflect .promise{font:400 clamp(22px,2.4vw,28px)/1.4 var(--serif);margin:0 0 22px}
+.reflect .rules{list-style:none;padding:0;margin:0 0 36px;border-top:1px solid var(--rule)}
+.reflect .rules li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:17px}
+.q{margin:0 0 40px;padding-top:24px;border-top:2px solid var(--f2bm-gold)}
+.q h2{font:400 clamp(28px,3vw,38px)/1.15 var(--serif);color:var(--teal-small);margin:0 0 10px}
+.q .hint{font-size:17px;margin:0 0 14px}
+.q textarea{width:100%;min-height:130px;padding:14px;border:1px solid var(--f2bm-gold-rule);background:var(--f2bm-paper);font:inherit;font-size:18px;color:var(--ink)}
+.q textarea:focus-visible{outline:3px solid var(--f2bm-magenta);outline-offset:2px}
+.q fieldset{border:0;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:8px 18px;font-size:16px}
+.q legend{font-size:15px;margin-bottom:6px;color:var(--body)}
+.q details{margin-top:12px;font-size:16px}.q details ul{margin:8px 0 0;padding-left:1.1em}
+.finish{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;margin-top:20px}
+.finish button{font:500 17px/1.4 var(--sans);min-height:48px;padding:12px 22px;cursor:pointer}
+.finish .clear{background:transparent;border:1px solid #08768a;color:#08768a}
+.note{font-size:16px;color:var(--body);margin-top:28px}
+.print-only{display:none}
+@media print{
+  .draft-flag,.no-print,fieldset,details,.finish,.rules,header,footer{display:none!important}
+  .print-only{display:block;font-size:12px;color:#555;margin-top:6px}
+  .q textarea{border:1px solid #999;min-height:0;height:auto;background:#fff}
+  .q{break-inside:avoid;margin:0 0 14px;padding-top:12px}
+  .reflect{padding:0;max-width:none}
+  .reflect img{width:72px;height:72px;margin-bottom:8px!important}
+  .reflect h1{font-size:30px;margin-bottom:8px}
+  .reflect .promise{font-size:17px;margin-bottom:12px}
+  .q h2{font-size:22px;margin-bottom:4px}
+  .q .hint{font-size:14px;margin-bottom:6px}
+  .q textarea{height:150px;resize:none}
+  body{background:#fff}
+}
+@page{size:A4;margin:14mm}
+</style>
+</head>
+<body class="interior">
+<p class="draft-flag">Review draft for Tanya’s approval. Not published. Ledger v1.1 is marked ready for content-owner approval.</p>
+<main class="reflect" id="main">
+  <img src="/assets/brand/phoenix-dark-240.png" width="120" height="120" alt="FREE TO BE ME" style="display:block;margin:0 0 20px">
+  <p class="eyebrow">A free reflection</p>
+  <h1>One cost. One change. More living.</h1>
+  <p class="promise">Sometimes people see what you did and miss what it took. This reflection helps you make a fuller account, and notice what you would like more room for.</p>
+  <ul class="rules no-print">
+    <li>There is no score. It does not diagnose you or decide what you can do.</li>
+    <li>You can skip any question, keep an answer private, or choose <strong>Not safe to answer</strong>. You don’t have to say why.</li>
+    <li>No email or account. Your words stay on this page and are not sent or saved anywhere.</li>
+    <li>You don’t have to change anything.</li>
+  </ul>
+
+  <form id="reflection" onsubmit="return false">
+    <section class="q" aria-labelledby="q1">
+      <h2 id="q1">What takes more out of me than people realise?</h2>
+      <p class="hint">Think of one ordinary thing. What did it take before, during and after?</p>
+      <textarea id="a1" aria-labelledby="q1" aria-describedby="q1-hint"></textarea>
+      <details class="no-print" id="q1-hint"><summary>Some places hidden effort can sit</summary><ul><li>Getting ready, travelling or arriving</li><li>Light, sound, people, or managing how you appear</li><li>Finding words, planning, remembering or deciding</li><li>Pain, fatigue or health</li><li>Recovering afterwards, or catching up on what got pushed aside</li></ul></details>
+      <fieldset><legend>Or choose</legend><label><input type="radio" name="s1" value="Not sure"> Not sure</label><label><input type="radio" name="s1" value="Private"> Private</label><label><input type="radio" name="s1" value="Not safe to answer"> Not safe to answer</label><label><input type="radio" name="s1" value="Skip"> Skip</label></fieldset>
+    </section>
+
+    <section class="q" aria-labelledby="q2">
+      <h2 id="q2">What could help?</h2>
+      <p class="hint">Something to reduce, protect, restore or add. Some help can come from you. Some belongs with another person, a workplace or a service.</p>
+      <textarea id="a2" aria-labelledby="q2"></textarea>
+      <details class="no-print"><summary>About adjustments</summary><p>An adjustment or support can make something more workable. It doesn’t remove disability, and it doesn’t have to. Assistance belongs in the plan.</p></details>
+      <fieldset><legend>Or choose</legend><label><input type="radio" name="s2" value="Not sure"> Not sure</label><label><input type="radio" name="s2" value="Private"> Private</label><label><input type="radio" name="s2" value="Not safe to answer"> Not safe to answer</label><label><input type="radio" name="s2" value="Skip"> Skip</label><label><input type="radio" name="s2" value="Not mine to carry"> Not mine to carry</label></fieldset>
+    </section>
+
+    <section class="q" aria-labelledby="q3">
+      <h2 id="q3">What would I like that to make room for?</h2>
+      <p class="hint">Your ideas, your people, your joy. Something that matters simply because you love it.</p>
+      <textarea id="a3" aria-labelledby="q3"></textarea>
+      <fieldset><legend>Or choose</legend><label><input type="radio" name="s3" value="Not sure"> Not sure</label><label><input type="radio" name="s3" value="Private"> Private</label><label><input type="radio" name="s3" value="Not safe to answer"> Not safe to answer</label><label><input type="radio" name="s3" value="Skip"> Skip</label></fieldset>
+    </section>
+
+    <div class="finish">
+      <button class="btn" type="button" id="print">Print my reflection</button>
+      <button class="clear" type="reset">Clear and leave</button>
+    </div>
+  </form>
+  <p class="note no-print">A reflection is a current map. It can change. Changing it later is information, not failure.</p>
+  <p class="print-only">FREE 2B ME · Less fixing. More living. · tanyahicks.com</p>
+</main>
+<script>
+document.getElementById("print").addEventListener("click", function(){ window.print(); });
+document.querySelector("#reflection").addEventListener("reset", function(){ setTimeout(function(){ location.href = "/"; }, 0); });
+</script>
+</body>
+</html>
