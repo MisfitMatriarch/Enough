@@ -1,3 +1,11 @@
+# Latest delivery, 26 October 2026
+
+Three actual edited film drafts are now in the website preview: homepage, speaking reel and About. All 16 small complete video sources are also in private Drive. Read docs/FILM_PRODUCTION_DELIVERY_2026-10-26.md. Do not ask Tanya for audio, video proxies, dancing or the stage photograph again. The speaking reel includes her actual entrance and singing close. Final listening/caption and browser playback checks remain; do not describe drafts as final-approved films.
+
+Verified website book-copy errors were corrected against the manuscripts. Read review/register/BOOK_REPAIR_CONTROL.md. Manuscripts were not overwritten, specialist professional content is preserved, and proposed broad renaming/restructuring is not automatically authorised.
+
+---
+
 # Current completion status, 26 October 2026
 
 Tanya has requested completion of the website. The six small interactions are implemented. Final corrections add a copy-text alternative with visible error feedback, a practitioner responsibility question, and a named print page so card page settings do not affect ordinary pages. The single-tool-for-everything proposal is withdrawn. All of you has value; personal acceptance and conditions of freedom remain the organising message.

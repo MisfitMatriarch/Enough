@@ -1,3 +1,9 @@
+# Current delivery update
+
+Three film drafts now exist in the website preview. All 16 small source VIDEO files have transferred successfully. Source availability is no longer a blocker. Read FILM_PRODUCTION_DELIVERY_2026-10-26.md for current status; the plan below records earlier editorial context.
+
+---
+
 # Expo films: production plan and embed standard
 
 Updated 25 October 2026. Internal document: excluded from the published build.
