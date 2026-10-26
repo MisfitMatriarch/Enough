@@ -1,3 +1,9 @@
+# Latest correction: All of me is not Acceptance
+
+Tanya rejected the acceptance-led homepage film. The homepage now uses the actual So this is all of me passage from speech 06, original 00:10–00:59 (about 53 seconds with the closing card). The text includes ordinary days and value below 100 percent. See docs/HOMEPAGE_FILM_CONTENT_LOCK.md. Do not restore an Acceptance opener here. About remains the Acceptance story. Preserve the standard faststart video format.
+
+---
+
 # Latest delivery, 26 October 2026
 
 Three actual edited film drafts are now in the website preview: homepage, speaking reel and About. All 16 small complete video sources are also in private Drive. Read docs/FILM_PRODUCTION_DELIVERY_2026-10-26.md. Do not ask Tanya for audio, video proxies, dancing or the stage photograph again. The speaking reel includes her actual entrance and singing close. Final listening/caption and browser playback checks remain; do not describe drafts as final-approved films.

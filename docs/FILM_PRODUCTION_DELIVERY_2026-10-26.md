@@ -1,3 +1,9 @@
+# Homepage correction: actual All of me passage
+
+The earlier 28-second homepage edit opened with acceptance and was rejected by Tanya for that position. It is replaced with the actual So this is all of me passage from speech 06, 00:10 to 00:59, plus the closing card (about 53 seconds). The poster, transcript, captions and nearby wording change together. See HOMEPAGE_FILM_CONTENT_LOCK.md. About remains Acceptance; the speaking reel remains entrance, message and singing. Preserve the standard faststart remux on all three files.
+
+---
+
 # Three film drafts delivered, 26 October 2026
 
 All sixteen complete video review copies are now in the existing private Drive footage folder, with a small VIDEO_LINKS_READY_26_OCT.txt index of direct IDs. They are actual videos under 4 MB each. Both dance videos and the singing finale are included. No additional source preparation is outstanding from Tanya. Private links and IDs stay out of this public repository.
