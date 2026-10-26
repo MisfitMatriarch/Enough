@@ -115,3 +115,5 @@ body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-he
 .collection-pair li a{display:inline-block;font:400 24px/1.25 var(--serif);color:var(--brand-teal)}
 .collection-pair li span{display:block;font-size:15px;margin-top:4px}
 @media (max-width:700px){.collection-pair{grid-template-columns:1fr}}
+
+.f-path a.partner-email{display:inline-flex;align-items:center;gap:.35em;min-height:44px;color:var(--brand-teal);font-weight:600;text-decoration:underline;text-underline-offset:4px}
