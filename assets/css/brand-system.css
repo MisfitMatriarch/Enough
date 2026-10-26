@@ -76,6 +76,14 @@ body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-he
 .book-card h3 a:hover,.book-card h3 a:focus-visible{text-decoration:underline}
 .book-card p{font-size:15px;margin:0 0 8px}
 .book-card .book-price{font-weight:600;color:var(--f2bm-ink)}
+.book-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.book-card{grid-template-columns:132px 1fr;gap:24px;padding:24px;align-items:stretch}
+.book-card img{width:132px;height:auto;align-self:start}
+.book-card>div{display:flex;flex-direction:column;align-items:flex-start}
+.book-card p{font-size:17px;line-height:1.5}
+.book-card .book-price{margin-top:auto;padding-top:8px}
+@media (max-width:760px){.book-cards{grid-template-columns:1fr}}
+@media (max-width:520px){.book-card{grid-template-columns:96px 1fr;gap:16px;padding:18px}.book-card img{width:96px}.book-card .pair-status{letter-spacing:.08em}}
 .reflection-cta{margin-top:32px;padding-top:28px;border-top:1px solid var(--rule)}
 .reflection-cta p{max-width:64ch}
 .participant-support .scope-statement{font:400 clamp(20px,.8vw + 15px,24px)/1.45 var(--serif);color:var(--f2bm-ink);max-width:60ch;border-left:3px solid var(--brand-gold);padding-left:20px;margin:8px 0 22px}
@@ -105,7 +113,7 @@ body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-he
 .interest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,56px);margin-top:28px}
 .interest-grid>section{background:var(--brand-paper);border:1px solid var(--brand-aqua-pale);border-radius:4px;padding:clamp(22px,3vw,34px)}
 .interest-grid h3{font:400 30px/1.15 var(--serif);color:var(--brand-teal);margin:0 0 10px}
-@media (max-width:520px){.book-card{grid-template-columns:72px 1fr}.book-card img{width:72px}.offer-card dl{grid-template-columns:1fr}}
+@media (max-width:520px){.offer-card dl{grid-template-columns:1fr}}
 
 .about-hero .about-lead{font:400 clamp(26px,1.6vw + 16px,38px)/1.2 var(--serif);color:var(--f2bm-ink);margin:0 0 18px;max-width:22ch}
 .page-hero h1 em{font-style:italic;color:var(--brand-magenta)}
