@@ -209,12 +209,12 @@
 .q-card-foot{margin:28px 0 0;font:400 20px/1.3 var(--serif);color:#ab236e}
 .q-card-actions{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin-bottom:20px}
 @media print{
-  body.card-print{background:#fff}
+  body.card-print{background:#fff;page:practitioner-card}
   body.card-print > :not(main),body.card-print .aoc,body.card-print .a11y-panel{display:none!important}
   body.card-print main .band{padding:0;background:none;border:0}
   body.card-print main .band .wrap > :not(.q-card){display:none!important}
   body.card-print .q-card{box-sizing:border-box;margin:0 auto;box-shadow:none;max-width:none;width:100%;break-inside:avoid}
-  @page{size:A4;margin:20mm}
+  @page practitioner-card{size:A4;margin:20mm}
 }
 
 .card-link{display:inline-block;margin:20px 0 0 24px}

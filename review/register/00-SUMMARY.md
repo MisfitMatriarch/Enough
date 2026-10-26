@@ -52,31 +52,27 @@ Updated 26 October 2026. The detailed registers are 01 to 04 (page, current word
 - **Film review:** draft 2 brief reframed around embracing all of yourself; review page and homepage preview rebuilt from the current homepage.
 - **House style:** spaced hyphens, capitalisation and US spellings cleared from changed public files.
 
-## Held for Tanya (not applied)
+## Completion decisions, 26 October 2026
 
-1. Keynote take-aways in "In the room / Understanding / Afterwards" form (02-#3); MC audience line (02-#5).
-2. **Practitioner Pathway authorisation:** who authorises, against what, and is it operating? Also "Work Authority" (02-#31, #53).
-3. Panels: facilitator, panellist, or both? This decides the form option wording (02-#7, #66).
-4. Participant workshop content (02-#8).
-5. Rename "The deeper architecture" (banned word) to "Underneath the Practice"? (02-#46)
-6. Add NATCA 2026 to "Where I have stood up and said it"?
-7. **Keynote film:** does the Drive film have captions? Is a trailer or written summary planned?
-8. **Public email:** sparkly@ or tanya@? The transcript footer still uses tanya@.
-9. **Netlify forms:** confirm `speaking-booking` notifications reach you, and that `free2bme-updates` is detected.
-10. **"Book Tanya" header label:** the destination is an enquiry. Keep, or "Work with Tanya"?
-11. **Navigation:** "Learning" goes to a homepage section; "Events & Speaking" lists no events; footer "The Nest in Australia" goes off-site while /the-nest/ is orphaned; /research/ is orphaned. Restructure?
-12. **About:** an ordinary good day; more on hockey; may Tammy / Yoga Nrg be named; role at Neurodivergent Empowered; one or two more contradictions in your own words (01 Q1–3, 11, 12).
-13. **Family detail in third-party bios:** "single mother of a transgender daughter" (01 Q4).
-14. Kianni Jackson context (01 Q5).
-15. Contribution at The Nest: what people make or share (01 Q6).
-16. **Partner responsibilities:** confirm Headspace runs its group and handles sign-ups (01 Q7); preferred lower-case "headspace"? (Q8)
-17. Women's empowerment on the homepage, or all-genders framing deliberate? (01 Q9)
-18. "FREE 2B ME Global" in the founder story (01 Q10).
-19. **Practice That Holds:** "alive under pressure" or "alive in daily practice"? (03 Q6)
-20. Should the expo page show the practice books without a click? (03 Q7)
-21. Reader-style questions for the four practice books? Drafts are in 03 Q8, not used.
-22. "I" on Be first to know vs "we" on reservations (03 Q9).
-23. **Film:** confirm "accepting, getting the heart bigger" by ear; send audio-only copies of the other clips for movement 3 of the homepage film.
+Tanya has asked for completion. Routine wording, navigation refinements and optional brand additions are not 23 separate release gates.
+
+- Keep the approved visual design, Book Tanya header, all-genders public positioning and eight-book distinctions. Preserve existing published contact and family choices without adding personal details.
+- Use confirmed facts already on the site and supplied by Tanya. Do not invent an ordinary-day story, accreditation, workshop scope, credentials, dates or testimonials to fill a space. Omit optional additions when the fact is not established.
+- Less fixing. More living. remains the signature phrase. What would make you more free to be you? remains the broad organising question. The ledger reflection is one optional route and its pending approval must not block other existing resources, pages or films.
+- The professional card now includes responsibility for changing practice or conditions. It preserves evidence, safeguarding and chosen learning/treatment.
+- All 16 additional audio review copies have been supplied. See `docs/FILM_AUDIO_HANDOFF_2026-10-26.md`; do not ask Tanya to prepare them again.
+
+### Remaining substantive release work
+
+1. Finish homepage film draft 2, speaking reel and About story, with complete verified speech and final-original rendering. Keep edits in review pending approval. Resolve unclear wording using a clean alternative recorded passage where possible.
+2. Verify actual Netlify form detection, delivery and notifications. A successful local UI check alone is not proof of operational receipt. Do not send an unlabelled test or enrol anyone in marketing.
+3. Any claim of external accreditation or authorisation must have its awarding body and scope verified. Otherwise describe only the internal learning and observed-practice process already documented.
+4. Obtain final content/film review before merge. Leave optional testimonials, new personal disclosures and additional programmes out until supplied.
+
+### Verification of the finishing changes in this session
+
+- JavaScript syntax, the existing 11 tests and production build pass.
+- Browser verification was attempted, but no Chromium binary is available here and the browser download failed. Do not report these latest finishing changes as browser-verified in this session. The earlier checks below remain attributed to the earlier session.
 
 ## Verification
 

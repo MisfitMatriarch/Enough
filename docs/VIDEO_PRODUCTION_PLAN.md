@@ -1,44 +1,15 @@
 # Expo films: production plan and embed standard
 
 Updated 25 October 2026. Internal document: excluded from the published build.
-**Status: footage exists and is accessible to Tanya. Files can't yet be transferred into the build environment. No video is on the site.**
+**Status: Acceptance draft 1 and the homepage preview exist in review. All 16 additional audio review files are supplied. Final film edits are not yet complete or published.**
 
-## Footage access (corrected)
+## Footage access: current status, 26 October 2026
 
-The individual clips exist in the supplied folder. An earlier note said they were missing; that was wrong. A parent-folder search returned only the full recording because the clips don't report that folder as their parent, and Drive search doesn't index them. Direct lookup by file ID works.
+Transfer is working. Acceptance arrived as split review parts and draft 1 exists. The chosen stage photograph is downloaded and already used on the homepage. All 13 numbered speech clips, the singing sign-off and both dance clips now have complete mono 64 kbps MP3 review files in the existing Drive folder. Each is below 0.7 MB.
 
-Checked 25 October 2026:
+**Use [FILM_AUDIO_HANDOFF_2026-10-26.md](FILM_AUDIO_HANDOFF_2026-10-26.md) for the audio inventory and matching-original instructions. No audio preparation is outstanding from Tanya.** Retrieve each small audio file through the connected private Drive account, transcribe with timestamps, and select complete passages. Original high-quality files remain the final-render sources. Review MP3s contain encoder padding, so confirm final sync against the original video.
 
-| Route | Operation | Result |
-|---|---|---|
-| Drive connector (authenticated) | Metadata for `Acceptance.mp4` (128.7 MB), `tans speech video one.mp4` (149.4 MB), `tans speech video 13.mp4` (154.3 MB) | Succeeds |
-| Drive connector | `download_file_content` on `Acceptance.mp4` | Fails: *"File too large for download, over limit of 10 MB."* The tool returns base64 inline only and has no streamed-file option. Every clip is over the limit. |
-| Direct Google download hosts | `drive.google.com/uc`, `drive.usercontent.google.com/download` | Refused by the environment's egress proxy (CONNECT 403) before reaching Google |
-| Drive API | `GET www.googleapis.com/drive/v3/files/{id}?alt=media` | Host reachable; Google returns 403 *"missing a valid API key"*. The environment holds no Google credential, and the connector's sign-in isn't exposed to the shell. |
-
-**Measured connector ceiling (25 October 2026):** `download_file_content` delivered files of 2.07, 2.38, 2.55, 4.32 and 5.02 MB intact (byte sizes matched, clean decodes). It failed on the 6.45 MB Acceptance review copy, with the connection closed because the message was too large. The practical limit is therefore **about 5 MB per file**. The supplied stage photograph (198 KB) downloaded and verified at 1920 × 1080.
-
-**Quality-preserving transfer within that limit:** split any file into raw parts of 4 MB or less, plus a checksum. The build environment downloads each part and joins them back into the identical original. On a Mac or Linux computer: `split -b 4m "Acceptance.mp4" "Acceptance.mp4.part-"` and `shasum -a 256 "Acceptance.mp4" > "Acceptance.mp4.sha256"`. Upload the parts and the checksum to the Drive folder and share the file IDs. Use this for review copies first. Then, for the final render, use it for only the original passages the edit actually uses, rather than whole 130–150 MB clips.
-
-**To unblock, preferred first: Git LFS from Tanya's computer.** Tested from the build environment on 25 October 2026:
-
-- **Download side (what this environment needs):** GitHub's LFS batch API at `github.com/MisfitMatriarch/Enough.git/info/lfs/objects/batch` answers through the proxy. Asked for an object that wasn't there, it correctly returned 404. Download links go to `github-cloud.githubusercontent.com`, which is reachable. Plausible, but **unproven until one real clip is fetched.**
-- **Upload side:** the build environment can't upload, because the proxy refuses `lfs.github.com`. That doesn't block the plan: Tanya's own computer isn't behind this proxy.
-- **One-clip test** (on Tanya's computer, with Git and Git LFS installed):
-  ```
-  git clone https://github.com/MisfitMatriarch/Enough.git && cd Enough
-  git checkout -b footage-source
-  git lfs install && git lfs track "footage/*.mp4"
-  mkdir footage && cp "/path/to/Acceptance.mp4" footage/
-  git add .gitattributes footage/Acceptance.mp4
-  git commit -m "Source footage: Acceptance (not for merge)"
-  git push -u origin footage-source
-  ```
-  The build environment then runs `git fetch origin footage-source` and `git lfs pull`, and checks the file plays end to end. Move the rest of the collection only after that works. Never open a PR from `footage-source`. `footage/` is excluded from every build regardless.
-
-**Fallbacks:** allow `drive.usercontent.google.com` and link-share the clips, or store a read-only Drive credential as a network secret.
-
-The full recording (`tanyas speech_.mp4`) and the repaired full recording are never used as a substitute source, and are never published, embedded or linked. Numbered clips are source material only.
+Do not repeat Git LFS, credentials or sharing-permission investigations before trying the supplied small files. If one fails, report its actual filename and error. Source and review files remain excluded from deployment. Never publish the full recording as a substitute for the three edits.
 
 ## Three films, three jobs
 
@@ -47,7 +18,7 @@ Each film has its own spine and lead material. None is a shorter version of anot
 | Film | Length | Placement | Editorial job | Built around |
 |---|---|---|---|---|
 | **All of this is me** | 30–45 s | Homepage, in the existing *All of this is me* section directly after the opening, replacing the Paris photograph. The section becomes a landscape layout: a 16:9 player across the wider column, never squeezed into the portrait frame. The layout changes in the same commit that adds the film. Its five lines stay beside the player, ending on "Assistance belongs in the plan. So does joy." | Recognition: a first-time visitor hears what *Less fixing. More living.* means | A coherent passage from Tanya's *acceptance of all of you* message, opening on her face and voice, with a brief joyful moment (entrance or singing) around it so sparkle sits alongside substance |
-| **Speaking reel** | 60–90 s | Events & Speaking, beside or directly below the signature keynote. The homepage speaking section keeps its audience photograph and gains a "Watch Tanya speak" link to the reel, published together with the reel | The booking decision: an organiser pictures Tanya in their room | 1. **The welcome:** a short part of her introduction, then her walk on stage (keep the wide shot that shows the room and the room sound of the welcome), then a closer shot into her strongest spoken hook. 2. **The substance:** her strongest words on acceptance, assistance, genius and joy, the water demonstration, and genuine audience responses at the moments they happen. 3. **The celebration:** her singing finale, letting the joy and connection land. 4. **The close:** original phoenix, *Less fixing. More living.* and the booking destination |
+| **Speaking reel** | 60–90 s | Events & Speaking, beside or directly below the signature keynote. The homepage speaking section keeps Tanya's chosen singing-stage photograph and gains a "Watch Tanya speak" link to the reel, published together with the reel | The booking decision: an organiser pictures Tanya in their room | 1. **The welcome:** a short part of her introduction, then her walk on stage (keep the wide shot that shows the room and the room sound of the welcome), then a closer shot into her strongest spoken hook. 2. **The substance:** her strongest words on acceptance, assistance, genius and joy, the water demonstration, and genuine audience responses at the moments they happen. 3. **The celebration:** her singing finale, letting the joy and connection land. 4. **The close:** original phoenix, *Less fixing. More living.* and the booking destination |
 | **Acceptance story** | about 45–60 s | About Tanya, beside the personal account, replacing one photograph | Story: one coherent account of accepting all of herself and making room for support, ambition and joy | The fuller *acceptance of all of you* passage as an unbroken spoken line, with supporting footage laid over the words, never replacing them |
 
 The story every film serves: accepting your strengths, difficulties and support needs helps you choose where your energy goes and makes more room for living.
@@ -64,7 +35,7 @@ The entrance and the singing finale are signature moments, not spare footage. Bu
 
 The reels are references for which moments Tanya chose, not sources. Facebook can't be played from the build environment, so nobody here has watched them yet. Locate the matching original recordings in the Drive folder for full quality, then watch and transcribe them before choosing exact words or timestamps.
 
-**Tanya's chosen still (25 October 2026), 1920 × 1080:** the singing finale on the Empowering Women Expo stage at Venue 114, Sunshine Coast. Tanya in the silver fringed top and teal velvet trousers, pointing to the audience, with the *Less fixing. More living.* slide on screen behind her and an audience member filming and laughing. Use this frame, taken from the original footage, as the speaking reel's poster. It's also the preferred photograph for the speaking sections on the Speaking page and homepage. Tanya has the original image. The build environment needs its Drive file ID or a link (Drive search doesn't index the shared expo files), or the file on the `footage-source` branch. It's under the connector's 10 MB limit, so it can be downloaded directly once identified.
+**Tanya's chosen still (25 October 2026), 1920 × 1080:** the singing finale on the Empowering Women Expo stage at Venue 114, Sunshine Coast. Tanya in the silver fringed top and teal velvet trousers, pointing to the audience, with the *Less fixing. More living.* slide on screen behind her and an audience member filming and laughing. Use this frame, taken from the original footage, as the speaking reel's poster. It's also the preferred photograph for the speaking sections on the Speaking page and homepage. The original image has already downloaded and is in use as the homepage speaking photograph. Do not request it again.
 
 **Music rights:** the singing finale needs its song's publication rights checked before its audio is published. If the song can't be cleared, keep Tanya's movement and celebration with cleared audio and her own spoken closing line.
 
@@ -142,4 +113,4 @@ Then joyful footage as evidence of a life being lived, ending on *Less fixing. M
 - **"accepting, getting the heart bigger":** unverified. It must be confirmed by Tanya's ear, or the passage replaced. An automated transcript can't settle it.
 - **Movement 3:** not in the Acceptance clip. It needs Tanya's other recordings.
 
-**Next transfer:** audio-only review copies of every numbered speech clip, the singing sign-off and the dance footage. Mono, 64 kbps, about 1 MB per minute, so no splitting is needed. Every clip is transcribed with timestamps, then the matching video passages are requested as review copies.
+**Next action:** download the 16 supplied review MP3 files from the linked audio handoff, transcribe and select the third movement. Transfer is no longer waiting on Tanya. Match selected passages back to their original recordings for final-quality rendering.

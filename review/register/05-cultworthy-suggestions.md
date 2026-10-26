@@ -24,7 +24,7 @@ The site already has strong language, so the gap is mostly the last three. Each 
 
 | # | Suggestion | Where | Why it works | Needs |
 |---|---|---|---|---|
-| B1 | **"One cost. One change. More living." as the signature practice.** Once the reflection is approved, make it the one practice the whole brand points to: homepage, talks, books, Nest, organisations. Same three questions everywhere. | Homepage reflection route, end of every talk, book pages, professional pages | A cult has one ritual everyone knows. This one is short enough to do on a phone in a queue. | **needs Tanya**: content approval of the ledger reflection (already pending) |
+| B1 | **"One cost. One change. More living." as one optional reflection.** Keep it available for people who want to explore hidden effort. Other routes may begin with joy, identity, relationships, ordinary life or a condition that needs changing. | Homepage reflection route, end of every talk, book pages, professional pages | A useful reflection can support the wider message without becoming a prerequisite or the organising model for all eight books. | **needs Tanya**: content approval of the ledger reflection (already pending) |
 | B2 | **The Room List.** A printable, private list for "things I want more room for", with no scoring and nothing stored. It's the joy-side counterpart to the cost-side reflection. | Linked from *All of this is me* and the closing section | The site talks about joy. This gives joy a practice too, so acceptance leads somewhere. | **needs Tanya**: wording; builds on existing `f-room` lines |
 | B3 | **The practitioner question as a card.** *What does my practice require the person to become?* as a one-page printable for team rooms and supervision, beside the Sovereignty Conditions Audit. | Professional Learning, Pathway, For Organisations | Professional rituals spread through teams. A card on a wall keeps working after the training ends, as the speaking page says a good question should. | Design only; existing canon line |
 | B4 | **"Bring it to your team" kit for organisers.** After a talk: the three take-aways, one discussion question per take-away, and the team principle (*In my team, you don’t have to be at 100% to be valued.*). | Speaking page (after enquiry), For Organisations | Organisers become carriers. The team principle is the most shareable organisational line on the site. | **needs Tanya**: approve discussion questions |
@@ -34,7 +34,7 @@ The site already has strong language, so the gap is mostly the last three. Each 
 | # | Suggestion | Where | Why it works | Needs |
 |---|---|---|---|---|
 | C1 | **A named sign-off.** End every talk, film and email the same way. The singing finale and *Less fixing. More living.* are already a natural signature; make the closing moment deliberate and identical each time. | Speaking reel, live talks, films, newsletters | Rituals are what audiences retell. "She always ends with…" is how reputations travel. | **needs Tanya**: choose the spoken sign-off; music rights for the song |
-| C2 | **The unphotographed days.** A recurring, opt-in prompt for the Stay connected list: share an ordinary day you're proud of, with no achievement required. Published only with permission, never as a testimonial. | Stay connected, social | Puts "value on the days nobody photographs" into practice, and gives the community a voice that isn't about success. | **needs Tanya**: moderation approach, consent wording, frequency (none is promised yet) |
+| C2 | **The unphotographed days.** A recurring, opt-in prompt for the Stay connected list: offer an ordinary moment if they want to; pride, a positive lesson and a photograph are not required. Published only with permission, never as a testimonial. | Stay connected, social | Puts "value on the days nobody photographs" into practice, and gives the community a voice that isn't about success. | **needs Tanya**: moderation approach, consent wording, frequency (none is promised yet) |
 | C3 | **Founding readers.** Recognise everyone who reserves before launch as *founding readers*: a name for the group, not a reward, with a note in the book launch email. | Pre-order thank-you, launch communications | People join identities, not mailing lists. No payment change; reservation stays exactly as it is. | **needs Tanya**: approve the name; nothing printed in books without her decision |
 | C4 | **A visible "how we hold this" promise.** The team principle, the consent rules and "you choose what you share" gathered into one short public promise. | Footer link, The Nest, Stay connected | Trust is what lets people bring all of themselves. Making the promise visible makes it something people can hold you to. | **needs Tanya**: wording; must match actual practice |
 
@@ -44,7 +44,7 @@ The site already has strong language, so the gap is mostly the last three. Each 
 |---|---|---|---|---|
 | D1 | **Organiser feedback, when approved.** Fill the commented slots already on Professional Learning, Pathway and For Organisations with real, attributed feedback. | Existing hidden slots | Social proof, honestly sourced. The slots are ready. | **needs Tanya**: approved quotes with permission (none invented) |
 | D2 | **"How people use the work".** Short, permissioned accounts of what someone did with one question or practice, told as what changed in a day, not as a transformation story. | Practice, books, speaking | Shows the idea working in ordinary life, consistent with "recognition is context, not proof". | **needs Tanya**: real examples with consent |
-| D3 | **A whole-person photo edit.** Alongside the stage and award photos, add photographs of ordinary moments: writing, walking, the Nest on a Tuesday, a quiet day. | Homepage, About | The words now say value exists on unphotographed days. The pictures should say it too. | **needs Tanya**: photos and permissions |
+| D3 | **A whole-person photo edit.** Alongside the stage and award photos, add photographs of ordinary moments: writing, walking, the Nest on a Tuesday, a quiet day. | Homepage, About | The words now say value exists on unphotographed days. Photographs can widen representation. People do not owe anyone pictures of private or difficult days. | **needs Tanya**: photos and permissions |
 
 ## E. Moments of delight (low effort)
 
@@ -56,10 +56,14 @@ The site already has strong language, so the gap is mostly the last three. Each 
 
 ## Suggested order
 
-1. **B1**, the signature practice, once the reflection is approved. Everything else points to it.
+1. Preserve **Less fixing. More living.** as the signature phrase and **What would make you more free to be you?** as the broad organising question. B1 remains one optional reflection, pending its content review.
 2. **A1 + C1**, the shared phrase and sign-off, built into the films now in production.
 3. **A3 + E3**, shareable lines and thank-you lines: small builds that use approved words only.
 4. **D1 + D3**, real evidence and whole-person photos, as Tanya supplies them.
 5. **C2, C3, C4**, community rituals, once consent and moderation are decided.
 
 Note: another session is reviewing the book manuscripts for gaps. Suggestions touching the books (C3, D2) should be checked against that review before any wording reaches print.
+
+## Completion direction, 26 October 2026
+
+The six implemented interactions are A2, A3, B3, E1, E2 and E3. The shared message is whole-person value and the conditions of freedom. No single tool is compulsory. A1 and C1 must not replace the signature phrase. Do not create more features before the three film edits and existing release checks are complete.

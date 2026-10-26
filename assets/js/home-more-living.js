@@ -12,9 +12,13 @@ root.querySelectorAll('[data-line]').forEach(button=>button.addEventListener('cl
 const k=keys[n];root.querySelectorAll('[data-line]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.line===k)));const q=root.querySelector('#f-pocket-line');if(q)q.textContent=lines[k];})();
 /* Save the current line as a branded image, drawn in the browser. Nothing is sent anywhere. */
 (()=>{const btn=root.querySelector('#save-line');if(!btn||!document.createElement('canvas').getContext)return;btn.hidden=false;
+const status=document.createElement('p');status.setAttribute('role','status');status.className='small';btn.after(status);
+const copy=document.createElement('button');copy.type='button';copy.className='save-line';copy.textContent='Copy this line';status.before(copy);
+copy.addEventListener('click',async()=>{const text=root.querySelector('#f-pocket-line').textContent.trim();
+try{if(navigator.clipboard&&navigator.clipboard.writeText){await navigator.clipboard.writeText(text);}else{const field=document.createElement('textarea');field.value=text;field.setAttribute('readonly','');field.style.position='fixed';field.style.opacity='0';document.body.appendChild(field);field.select();const ok=document.execCommand('copy');field.remove();copy.focus();if(!ok)throw new Error('Copy unavailable');}status.textContent='Line copied.';}catch(e){status.textContent='Copy is unavailable in this browser. Select the sentence above to copy it.';}});
 const load=src=>new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src;});
 btn.addEventListener('click',async()=>{const text=root.querySelector('#f-pocket-line').textContent.trim();btn.disabled=true;
-try{await document.fonts.load('500 64px "Cormorant Garamond"');await document.fonts.load('500 30px Figtree');
+try{if(document.fonts){await document.fonts.load('500 76px "Cormorant Garamond"');await document.fonts.load('400 46px "Cormorant Garamond"');await document.fonts.load('500 30px Figtree');await document.fonts.ready;}
 const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
 x.fillStyle='#fbf7ef';x.fillRect(0,0,W,H);
 const [band,phoenix]=await Promise.all([load('/assets/brand/footer-band-1024.jpg'),load('/assets/brand/phoenix-dark-480.png')]);
@@ -27,7 +31,7 @@ x.strokeStyle='#caa45a';x.lineWidth=3;x.beginPath();x.moveTo(W/2-70,y+10);x.line
 x.fillStyle='#ab236e';x.font='400 46px "Cormorant Garamond", Georgia, serif';x.fillText('Less fixing. More living.',W/2,y+80);
 x.fillStyle='#18334f';x.font='500 30px Figtree, system-ui, sans-serif';x.fillText('tanyahicks.com',W/2,y+136);
 const a=document.createElement('a');a.download='free2bme-line.png';a.href=c.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove();}
-catch(e){}finally{btn.disabled=false;}});})();
+catch(e){status.textContent='The image could not be saved. You can still copy the line.';}finally{btn.disabled=false;}});})();
 })();
 
 
