@@ -235,3 +235,37 @@ body:not(.home-more-living) main>section.band:nth-of-type(even){background:var(-
 .into,.requires,.tags{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;list-style:none;padding:0}
 .into li,.requires li,.tags span{margin:0;padding:7px 15px!important;border:1px solid var(--brand-aqua-pale)!important;border-radius:999px;background:#fff;font:400 clamp(17px,.3vw + 15px,19px)/1.3 var(--serif);color:var(--f2bm-ink)}
 .into li::after,.requires li::after,.tags span::after{display:none!important}
+
+/* Main menu: two journeys with Books and Speaking under each, then About */
+.site-header nav{align-items:center;gap:8px 30px}
+.site-header .nav-group{position:relative;display:flex;align-items:center;gap:2px}
+.site-header .nav-more{width:30px;height:34px;padding:0;border:0;background:none;color:inherit;cursor:pointer;display:inline-grid;place-items:center}
+.site-header .nav-more::before{content:"";width:7px;height:7px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
+.site-header .nav-group.open .nav-more::before{transform:translateY(2px) rotate(-135deg)}
+.site-header .nav-more:focus-visible{outline:2px solid var(--brand-teal);outline-offset:2px}
+.site-header .nav-menu{display:none;position:absolute;top:100%;left:-20px;z-index:60;min-width:300px;margin:0;padding:10px 0;list-style:none;background:var(--brand-paper,#fdfcf9);border:1px solid rgba(202,164,90,.45);border-top:3px solid var(--brand-gold,#caa45a);border-radius:0 0 4px 4px;box-shadow:0 18px 40px rgba(24,51,79,.12)}
+.site-header .nav-group.open .nav-menu{display:block}
+@media (hover:hover) and (min-width:901px){
+  .site-header .nav-group::after{content:"";position:absolute;left:0;right:0;top:100%;height:14px}
+  .site-header .nav-group:hover .nav-menu{display:block}
+  .site-header .nav-group:hover .nav-more::before{transform:translateY(2px) rotate(-135deg)}
+}
+.site-header .nav-menu li{margin:0}
+.site-header .nav-menu a{display:block;padding:11px 24px;border:0;font-size:15.5px;white-space:nowrap;color:var(--f2bm-ink)}
+.site-header .nav-menu a:hover,.site-header .nav-menu a:focus-visible{background:var(--f2bm-cream-deep,#f5ece0);color:var(--brand-teal);border:0}
+.site-header .nav-menu a[aria-current="page"]{color:var(--brand-teal);font-weight:600;text-decoration:none}
+.site-header .nav-group.is-current>.nav-top{color:var(--brand-teal);text-decoration:underline;text-decoration-color:var(--brand-gold);text-underline-offset:6px;text-decoration-thickness:2px}
+@media (max-width:900px){
+  .site-header nav{position:relative;overflow:visible!important;flex-wrap:wrap!important;gap:6px 18px}
+  .site-header .nav-group{position:static}
+  .site-header .nav-menu{left:0;right:0;min-width:0;top:calc(100% + 6px)}
+  .site-header .nav-menu a{white-space:normal;font-size:16px;padding:13px 20px}
+}
+
+/* Wide offer card: photo beside the facts */
+.offer-card.wide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;gap:0;margin-top:40px}
+.offer-card.has-photo.wide>*{margin:0}
+.offer-card.wide .card-photo img{height:100%;aspect-ratio:auto;min-height:320px}
+.offer-card.wide .card-body{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:30px 32px}
+.offer-card.wide .card-body .eyebrow{margin:0}
+@media (max-width:860px){.offer-card.wide{grid-template-columns:1fr}.offer-card.wide .card-photo img{min-height:0;aspect-ratio:16/10}}

@@ -53,7 +53,7 @@
       <img src="/assets/brand/phoenix-dark-120.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="46px" width="120" height="120" alt="FREE TO BE ME phoenix">
       <small>by Tanya Hicks</small>
     </a>
-    <nav aria-label="Main"><a href="/for-your-life/">For your life</a><a href="/for-your-work/">For your work</a><a href="/books/">Books</a><a href="/speaking/">Speaking</a><a href="/about/">About</a></nav>
+    <nav aria-label="Main"><div class="nav-group"><a class="nav-top" href="/for-your-life/">For your life</a><button type="button" class="nav-more" aria-expanded="false" aria-controls="nav-life"><span class="sr-only">For your life menu</span></button><ul class="nav-menu" id="nav-life"><li><a href="/for-your-life/">Start here</a></li><li><a href="/books/#for-your-life">Books for your life</a></li><li><a href="/speaking/#rooms">Talks and workshops for communities</a></li><li><a href="/free2bme/#reflection">Free reflection</a></li></ul></div><div class="nav-group"><a class="nav-top" href="/for-your-work/">For your work</a><button type="button" class="nav-more" aria-expanded="false" aria-controls="nav-work"><span class="sr-only">For your work menu</span></button><ul class="nav-menu" id="nav-work"><li><a href="/for-your-work/">Start here</a></li><li><a href="/books/#for-your-practice">Books for your practice</a></li><li><a href="/speaking/">Keynotes, MC and panels</a></li><li><a href="/professional-learning/">Professional learning</a></li><li><a href="/the-practice/">The FREE 2B ME Practice</a></li></ul></div><a class="nav-top nav-solo" href="/about/">About</a></nav>
     <button class="a11y-toggle" type="button" id="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel" hidden><span class="a11y-icon" aria-hidden="true">Aa</span><span class="a11y-label">Accessibility</span></button>
     <aside class="a11y-panel" id="a11y-panel" aria-label="Accessibility settings" hidden>
   <h2>Accessibility</h2>
@@ -94,18 +94,30 @@
     <p class="eyebrow">Find your way in</p>
     <h2 id="routes-title">Where would you like <em>to start?</em></h2>
     <div class="route-pair">
-      <article class="route-card">
+      <article class="route-card has-photo">
+        <picture class="card-photo"><source type="image/webp" srcset="/assets/brand/tanya-future-self-paris-800.webp 800w,/assets/brand/tanya-future-self-paris-1400.webp 1400w" sizes="(max-width:860px) 100vw, 50vw"><img src="/assets/brand/tanya-future-self-paris-800.jpg" srcset="/assets/brand/tanya-future-self-paris-800.jpg 800w,/assets/brand/tanya-future-self-paris-1400.jpg 1400w" sizes="(max-width:860px) 100vw, 50vw" width="1400" height="933" loading="lazy" decoding="async" alt="Tanya Hicks writing a letter by hand during a picnic in Paris"></picture>
         <h3>For your life</h3>
-        <p>More room to be you: your identity, relationships, ambition, contradictions and joy. Books for your life, a free reflection and ways to connect.</p>
+        <p>More room to be you: your identity, relationships, ambition, contradictions and joy.</p>
+        <h4>Books for your life</h4>
+        <ul class="route-books"><li><a href="/books/free-2b-me/"><picture><source type="image/webp" srcset="/assets/brand/covers/free-2b-me-200.webp 200w,/assets/brand/covers/free-2b-me-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/free-2b-me-200.jpg" srcset="/assets/brand/covers/free-2b-me-200.jpg 200w,/assets/brand/covers/free-2b-me-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>FREE 2B ME</span></a></li><li><a href="/books/you-make-sense/"><picture><source type="image/webp" srcset="/assets/brand/covers/you-make-sense-200.webp 200w,/assets/brand/covers/you-make-sense-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/you-make-sense-200.jpg" srcset="/assets/brand/covers/you-make-sense-200.jpg 200w,/assets/brand/covers/you-make-sense-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>You Make Sense</span></a></li><li><a href="/books/nervous-system-nourishment/"><picture><source type="image/webp" srcset="/assets/brand/covers/nervous-system-nourishment-200.webp 200w,/assets/brand/covers/nervous-system-nourishment-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/nervous-system-nourishment-200.jpg" srcset="/assets/brand/covers/nervous-system-nourishment-200.jpg 200w,/assets/brand/covers/nervous-system-nourishment-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>Nervous System Nourishment</span></a></li><li><a href="/books/built-with-you/"><picture><source type="image/webp" srcset="/assets/brand/covers/built-with-you-200.webp 200w,/assets/brand/covers/built-with-you-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/built-with-you-200.jpg" srcset="/assets/brand/covers/built-with-you-200.jpg 200w,/assets/brand/covers/built-with-you-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>Built With You</span></a></li></ul>
+        <h4>Speaking</h4>
+        <p>Talks and workshops for community groups and gatherings, including women’s events and LGBTQI+ conversations.</p>
+        <a class="link" href="/speaking/#rooms">Community talks and workshops <span aria-hidden="true">&rarr;</span></a>
         <a class="btn" href="/for-your-life/">Explore for your life</a>
       </article>
-      <article class="route-card">
+      <article class="route-card has-photo">
+        <picture class="card-photo"><source type="image/webp" srcset="/assets/brand/tanya-wcw-speaking-2025-800.webp 800w,/assets/brand/tanya-wcw-speaking-2025-1400.webp 1400w" sizes="(max-width:860px) 100vw, 50vw"><img src="/assets/brand/tanya-wcw-speaking-2025-800.jpg" srcset="/assets/brand/tanya-wcw-speaking-2025-800.jpg 800w,/assets/brand/tanya-wcw-speaking-2025-1400.jpg 1400w" sizes="(max-width:860px) 100vw, 50vw" width="1400" height="933" loading="lazy" decoding="async" alt="Tanya Hicks speaking as attendees stand and participate"></picture>
         <h3>For your work</h3>
-        <p>Make more room for people to be themselves in practice, leadership, culture and education. Speaking, professional learning and the FREE 2B ME Practice.</p>
+        <p>Make more room for people to be themselves in practice, leadership, culture and education.</p>
+        <h4>Books for your practice</h4>
+        <ul class="route-books"><li><a href="/books/access-before-intervention/"><picture><source type="image/webp" srcset="/assets/brand/covers/access-before-intervention-200.webp 200w,/assets/brand/covers/access-before-intervention-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/access-before-intervention-200.jpg" srcset="/assets/brand/covers/access-before-intervention-200.jpg 200w,/assets/brand/covers/access-before-intervention-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>Access Before Intervention</span></a></li><li><a href="/books/behaviour-makes-sense/"><picture><source type="image/webp" srcset="/assets/brand/covers/behaviour-makes-sense-200.webp 200w,/assets/brand/covers/behaviour-makes-sense-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/behaviour-makes-sense-200.jpg" srcset="/assets/brand/covers/behaviour-makes-sense-200.jpg 200w,/assets/brand/covers/behaviour-makes-sense-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>Behaviour Makes Sense</span></a></li><li><a href="/books/beyond-regulation/"><picture><source type="image/webp" srcset="/assets/brand/covers/beyond-regulation-200.webp 200w,/assets/brand/covers/beyond-regulation-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/beyond-regulation-200.jpg" srcset="/assets/brand/covers/beyond-regulation-200.jpg 200w,/assets/brand/covers/beyond-regulation-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>Beyond Regulation</span></a></li><li><a href="/books/practice-that-holds/"><picture><source type="image/webp" srcset="/assets/brand/covers/practice-that-holds-200.webp 200w,/assets/brand/covers/practice-that-holds-400.webp 400w" sizes="(max-width:520px) 22vw, 110px"><img src="/assets/brand/covers/practice-that-holds-200.jpg" srcset="/assets/brand/covers/practice-that-holds-200.jpg 200w,/assets/brand/covers/practice-that-holds-400.jpg 400w" sizes="(max-width:520px) 22vw, 110px" width="200" height="300" loading="lazy" decoding="async" alt=""></picture><span>Practice That Holds</span></a></li></ul>
+        <h4>Speaking</h4>
+        <p>Keynotes, MC and hosting, panels and professional learning, shaped around your audience.</p>
+        <a class="link" href="/speaking/">Keynotes, MC and panels <span aria-hidden="true">&rarr;</span></a>
         <a class="btn" href="/for-your-work/">Explore for your work</a>
       </article>
     </div>
-    <p class="route-speaking">Booking a speaker, MC or host? <a href="/speaking/#enquiry">Enquire about speaking <span aria-hidden="true">&rarr;</span></a></p>
+    <p class="reserve-line route-reserve">Find your book. <a href="/books/pre-order/">Pre-order here.</a> Reserve today. No payment until launch.</p>
   </div>
 </section>
 <section data-tone="tint" class="whole-self whole-self-film" id="all-of-this-is-me" aria-labelledby="whole-title">
@@ -131,49 +143,6 @@
       <li class="whole-close">All of me has value. Assistance belongs in the plan. So does joy.</li>
     </ul>
     <a class="link whole-more" href="/about/">Read the fuller story <span aria-hidden="true">&rarr;</span></a>
-  </div>
-</section>
-<section data-tone="paper" class="books band" id="books" aria-labelledby="books-title">
-    <div class="wrap books-grid">
-      <div>
-        <p class="eyebrow">The FREE 2B ME library</p>
-        <h2 id="books-title">Find language for <em>your experience.</em></h2>
-        <p class="lead">Books for your life, your body and the way you support others. Explore the series, or start with the question that matters to you.</p>
-        <p class="status">Eight books. Two perspectives. Less fixing. More living. A$39 each.</p>
-        <p class="reserve-line">Find your book. <a href="/books/pre-order/">Pre-order here.</a> Reserve today. No payment until launch.</p>
-        <div class="collections">
-          <div><h3>For your life</h3><ul><li><a href="/books/free-2b-me/">FREE 2B ME</a></li><li><a href="/books/you-make-sense/">You Make Sense</a></li><li><a href="/books/nervous-system-nourishment/">Nervous System Nourishment</a></li><li><a href="/books/built-with-you/">Built With You</a></li></ul></div>
-          <div><h3>For your practice</h3><ul><li><a href="/books/access-before-intervention/">Access Before Intervention</a></li><li><a href="/books/behaviour-makes-sense/">Behaviour Makes Sense</a></li><li><a href="/books/beyond-regulation/">Beyond Regulation</a></li><li><a href="/books/practice-that-holds/">Practice That Holds</a></li></ul></div>
-        </div>
-        <a class="btn" href="/books/">Explore all eight books</a>
-      </div>
-      <div class="book-stage">
-        <figure class="book-figure">
-          <img class="book-cover-img" src="/assets/brand/free-2b-me-author-cover.png" width="1024" height="1536" loading="lazy" decoding="async" alt="FREE 2B ME, Less fixing. More living. Book cover.">
-          <figcaption><b>FREE 2B ME</b><span>Less fixing. More living.</span><p class="book-invite">A book for anyone who became very good at functioning in a life that was costing too much.</p><a class="pair-status" href="/books/pre-order/?book=free-2b-me#reserve">Reserve this book · A$39</a></figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-<section data-tone="tint" class="home-speaking" id="speaking" aria-labelledby="speaking-title">
-  <div class="wrap home-speaking-grid">
-    <div>
-      <p class="eyebrow">Speaking</p>
-      <h2 id="speaking-title">I love a room where someone gets to <em>light up.</em></h2>
-      <p>When they get to share the thing they know. Tell the story in their own words. Be seen doing their genius.</p>
-      <p>That’s what I love about MCing: helping other people have their moment, and helping the room meet them there.</p>
-      <ul class="format-list"><li>MC and event hosting</li><li>Keynotes</li><li>Panels and interviews</li><li>Workshops and professional learning</li></ul>
-      <div class="action-row"><a class="btn" href="/speaking/#enquiry">Enquire about speaking</a><a class="link" href="/speaking/">See talks and formats <span aria-hidden="true">&rarr;</span></a></div>
-    </div>
-    <figure class="film home-reel">
-    <video controls preload="none" playsinline poster="/assets/brand/tanya-expo-singing-1920.jpg" width="1280" height="720" aria-describedby="home-reel-transcript">
-      <source src="/assets/video/speaking-reel.mp4" type="video/mp4">
-      <track kind="captions" src="/assets/video/speaking-reel.en.vtt" srclang="en" label="English" default>
-    </video>
-    <figcaption>Tanya Hicks · Introduction and keynote moments · Empowering Women Expo, 2026</figcaption>
-    <p class="small"><a href="/assets/video/speaking-reel.mp4">Open the speaking reel</a></p>
-    <details><summary>Read the transcript</summary><div class="transcript" id="home-reel-transcript"><p>Known as The Sparkly Alien, she combines lived experience and professional practice to create places where people belong without becoming less of themselves.</p><p>How much of your life is going on trying to fix yourself? Think about it.</p><p>Acceptance. Acceptance for all of you.</p><p>There’s no expectations. You don’t have to perform, and you are very much free to be you. And you belong simply because you exist.</p><p>So my question for you is this: if you had more space, what would you make room for? If you weren’t doing the things that were hard for you all the time and spending all of your energy, what would that open up? Where is your genius? Where is your joy?</p></div></details>
-  </figure>
   </div>
 </section>
 <section data-tone="paper" class="home-tanya" id="tanya" aria-labelledby="tanya-title">
@@ -216,6 +185,7 @@
       <b>For your life</b>
       <a href="/for-your-life/">For your life</a>
       <a href="/books/#for-your-life">Books for your life</a>
+      <a href="/speaking/#rooms">Talks and workshops for communities</a>
       <a href="/free2bme/#reflection">Free reflection</a>
       <a href="/for-your-life/#participant-support">Participant support</a>
       <a href="/stay-connected/">Stay connected</a>
@@ -223,6 +193,8 @@
     <div>
       <b>For your work</b>
       <a href="/for-your-work/">For your work</a>
+      <a href="/books/#for-your-practice">Books for your practice</a>
+      <a href="/speaking/">Keynotes, MC and panels</a>
       <a href="/the-practice/">The FREE 2B ME Practice</a>
       <a href="/practitioner-pathway/">Practitioner Pathway</a>
       <a href="/professional-learning/">Professional learning</a>
@@ -231,7 +203,6 @@
     </div>
     <div>
       <b>Connect</b>
-      <a href="/speaking/#enquiry">Enquire about speaking</a>
       <a href="/about/">About Tanya</a>
       <a href="/media/">Media kit</a>
       <a href="/recognition/">Recognition</a>
