@@ -1,0 +1,53 @@
+/* FREE 2B ME Global brand system. Loaded last on every page.
+   Teal leads on ivory with navy text; magenta is kept for the one italic word in a heading; gold for thin rules. */
+:root{--brand-teal:#0a6e84;--brand-teal-dark:#075c6a;--brand-aqua-pale:#a4e1ee;--brand-mist:#eaf5f6;--brand-magenta:#c40d61;--brand-paper:#fdfcf9;--brand-gold:#caa45a}
+
+/* 3. One heading recipe: boxed label, serif heading with one italic magenta word */
+.eyebrow,.f-kicker{display:inline-block;width:auto;max-width:100%;font:700 11.5px/1.4 var(--sans,Figtree,sans-serif)!important;letter-spacing:.2em;text-transform:uppercase;color:var(--brand-teal);background:var(--brand-mist);border:1px solid var(--brand-aqua-pale);border-radius:2px;padding:.5em .95em;margin-bottom:20px}
+.hero .eyebrow{background:transparent;border-color:transparent}
+h2 em,h2 .accent{font-style:italic;color:var(--brand-magenta)}
+.f-belong .f-kicker{color:var(--brand-teal)}
+
+/* 4. Restrained buttons: 2px corners, small uppercase, solid teal plus at most one outline */
+.btn,.f-action,.site-header .cta,.save-line{display:inline-flex;align-items:center;justify-content:center;gap:.5em;border-radius:2px;font:600 13px/1.2 var(--sans,Figtree,sans-serif);letter-spacing:.08em;text-transform:uppercase;padding:1.05em 1.75em;min-height:44px;background:var(--brand-teal);color:#fff;border:1px solid var(--brand-teal);text-decoration:none}
+.btn:hover,.f-action:hover,.site-header .cta:hover,.save-line:hover{background:var(--brand-teal-dark);border-color:var(--brand-teal-dark);color:#fff}
+.f-action.f-outline,.route-secondary,.btn-outline{display:inline-flex;align-items:center;min-height:44px;border-radius:2px;font:600 13px/1.2 var(--sans,Figtree,sans-serif);letter-spacing:.08em;text-transform:uppercase;padding:1.05em 1.75em;background:transparent;color:var(--brand-teal);border:1px solid var(--brand-teal);text-decoration:none}
+.f-action.f-outline:hover,.route-secondary:hover,.btn-outline:hover{background:var(--brand-mist);color:var(--brand-teal-dark)}
+.hero-routes .route-secondary,.hero-routes .btn{font:600 13px/1.2 var(--sans,Figtree,sans-serif);letter-spacing:.08em;padding:1.05em 1.75em;min-height:48px}
+.hero-routes .route-secondary:hover{background:var(--brand-mist);color:var(--brand-teal-dark)}
+.site-header .cta{padding:.9em 1.4em;font-size:12px}
+
+/* 5. Quiet cards: paper, thin pale-aqua border, small corners, a gentle lift */
+.f-path,.offer-grid>article,.distinct-offers>article{background:var(--brand-paper)!important;border:1px solid var(--brand-aqua-pale);border-radius:4px}
+@media (prefers-reduced-motion:no-preference){
+  .f-path,.offer-grid>article,.distinct-offers>article{transition:box-shadow .2s,transform .2s}
+  .f-path:hover,.offer-grid>article:hover,.distinct-offers>article:hover{box-shadow:0 8px 28px rgba(10,110,132,.12);transform:translateY(-2px)}
+}
+.reduce-motion .f-path:hover,.reduce-motion .offer-grid>article:hover,.reduce-motion .distinct-offers>article:hover{transform:none}
+
+/* 1. Palette: retire stray plum and violet text accents */
+.f-keep blockquote{color:var(--brand-teal)}
+
+/* 6. Frosted ivory header that stays with you on larger screens */
+@media (min-width:1000px){
+  .site-header,.home-more-living .site-header{position:sticky;top:0;z-index:50;background:rgba(253,252,249,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid rgba(202,164,90,.35)}
+  html{scroll-padding-top:96px}
+}
+
+/* 6. The ribbon under the opening */
+.f-thread.ribbon{display:block;overflow:hidden;padding:14px 0;background:var(--brand-mist);border-block:1px solid var(--brand-aqua-pale);color:var(--brand-teal)}
+.f-thread.ribbon .ribbon-track{display:flex;width:max-content;gap:0;margin-inline:auto}
+.f-thread.ribbon .ribbon-set{display:flex;gap:48px;padding-right:48px;font:600 12px/1.5 var(--sans,Figtree,sans-serif);letter-spacing:.18em;white-space:nowrap}
+.f-thread.ribbon .ribbon-set span::after{content:"·";margin-left:48px;color:var(--brand-gold)}
+@media (prefers-reduced-motion:no-preference){.f-thread.ribbon.ribbon-on .ribbon-track{animation:brand-ribbon 40s linear infinite}}
+.f-thread.ribbon:hover .ribbon-track,.f-thread.ribbon:focus-within .ribbon-track{animation-play-state:paused}
+.reduce-motion .f-thread.ribbon .ribbon-track{animation:none}
+.reduce-motion .f-thread.ribbon .ribbon-set[aria-hidden]{display:none}
+@keyframes brand-ribbon{to{transform:translateX(-50%)}}
+
+/* Accessibility modes keep priority */
+body.high-contrast .eyebrow,body.high-contrast .f-kicker{background:#fff;color:#065064;border-color:#065064}
+body.high-contrast h2 em{color:#8a0844}
+body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-header .cta{background:#054a59;border-color:#054a59}
+
+@media print{.site-header{position:static}.f-thread.ribbon .ribbon-track{animation:none}}

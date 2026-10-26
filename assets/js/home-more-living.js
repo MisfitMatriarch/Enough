@@ -48,3 +48,4 @@ catch(e){status.textContent='The image could not be saved. You can still copy th
   select(0);
   section.querySelector('.reflection-choices').hidden=false;
 })();
+document.querySelectorAll('.f-thread.ribbon').forEach(r=>{const t=r.querySelector('.ribbon-track'),s=t&&t.querySelector('.ribbon-set');if(!s||t.children.length>1)return;const c=s.cloneNode(true);c.setAttribute('aria-hidden','true');t.appendChild(c);r.classList.add('ribbon-on');});
