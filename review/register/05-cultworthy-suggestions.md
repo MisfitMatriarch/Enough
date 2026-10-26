@@ -1,6 +1,6 @@
 # Register 05: Cult-worthy suggestions
 
-Suggestions only. Nothing here has been applied. Each one builds on language already in the canon (`docs/FREE2BME_LANGUAGE_CANON.md`) and on the approved whole-person direction. None of them adds facts, claims, outcomes, testimonials or dates. Anything that needs Tanya’s words, content or permission is marked **needs Tanya**.
+Status, 26 October 2026: A2, A3, B3, E1, E2 and E3 are **applied** (they needed no approval). Everything marked **needs Tanya** is still a suggestion only. Each one builds on language already in the canon (`docs/FREE2BME_LANGUAGE_CANON.md`) and on the approved whole-person direction. None of them adds facts, claims, outcomes, testimonials or dates. Anything that needs Tanya’s words, content or permission is marked **needs Tanya**.
 
 What makes a brand cult-worthy is less about aesthetics and more about four things:
 

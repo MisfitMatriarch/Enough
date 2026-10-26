@@ -163,3 +163,7 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
 .pair-q:has(+ .pair-connection){margin-bottom:12px}
 .book-quantity small{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--teal-small)}
 @media(max-width:900px){.pair-connection{padding-left:0}}
+
+/* The everyday test: one recognisable treatment wherever it appears (Cormorant italic, gold rule) */
+.everyday-test{font-family:var(--serif);font-style:italic;font-weight:400;text-decoration:underline;text-decoration-color:var(--f2bm-gold-rule);text-decoration-thickness:1.5px;text-underline-offset:.28em;text-decoration-skip-ink:auto}
+.high-contrast .everyday-test{text-decoration-color:currentColor}

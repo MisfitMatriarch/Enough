@@ -7,6 +7,27 @@ const entries={joy:['Something can matter simply because you love it.','Making. 
 root.querySelectorAll('[data-room]').forEach(button=>button.addEventListener('click',()=>{root.querySelectorAll('[data-room]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));const e=entries[button.dataset.room];root.querySelector('#f-answer-title').textContent=e[0];root.querySelector('#f-answer-text').textContent=e[1];const link=root.querySelector('#f-answer-link');link.textContent=e[2];link.setAttribute('href',e[3]);}));
 const lines={life:'You don’t have to justify the life you want.',support:'Support doesn’t cancel capability.',belong:'You don’t have to become less of yourself to belong.',joy:'Something does not need to improve you to deserve space in your life.'};
 root.querySelectorAll('[data-line]').forEach(button=>button.addEventListener('click',()=>{root.querySelectorAll('[data-line]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));root.querySelector('#f-pocket-line').textContent=lines[button.dataset.line];}));
+/* A different line on each return visit. Storage is optional; without it the first line stays. */
+(()=>{const keys=Object.keys(lines);let n=0;try{n=(parseInt(localStorage.getItem('f2bm-line-visit')||'0',10)+1)%keys.length;localStorage.setItem('f2bm-line-visit',String(n));}catch(e){return;}
+const k=keys[n];root.querySelectorAll('[data-line]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.line===k)));const q=root.querySelector('#f-pocket-line');if(q)q.textContent=lines[k];})();
+/* Save the current line as a branded image, drawn in the browser. Nothing is sent anywhere. */
+(()=>{const btn=root.querySelector('#save-line');if(!btn||!document.createElement('canvas').getContext)return;btn.hidden=false;
+const load=src=>new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src;});
+btn.addEventListener('click',async()=>{const text=root.querySelector('#f-pocket-line').textContent.trim();btn.disabled=true;
+try{await document.fonts.load('500 64px "Cormorant Garamond"');await document.fonts.load('500 30px Figtree');
+const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+x.fillStyle='#fbf7ef';x.fillRect(0,0,W,H);
+const [band,phoenix]=await Promise.all([load('/assets/brand/footer-band-1024.jpg'),load('/assets/brand/phoenix-dark-480.png')]);
+const bh=band.height*W/band.width;x.save();const g=x.createLinearGradient(0,H-bh*.55,0,H);g.addColorStop(0,'rgba(251,247,239,1)');g.addColorStop(.45,'rgba(251,247,239,0)');x.drawImage(band,0,H-bh*.55,W,bh);x.fillStyle=g;x.fillRect(0,H-bh*.55,W,bh);x.restore();
+x.drawImage(phoenix,(W-240)/2,120,240,240);
+x.fillStyle='#08768a';x.textAlign='center';x.font='500 76px "Cormorant Garamond", Georgia, serif';
+const words=text.split(' '),out=[];let line='';for(const w of words){const t=line?line+' '+w:w;if(x.measureText(t).width>W-200&&line){out.push(line);line=w;}else line=t;}out.push(line);
+let y=560-((out.length-1)*92)/2;for(const l of out){x.fillText(l,W/2,y);y+=92;}
+x.strokeStyle='#caa45a';x.lineWidth=3;x.beginPath();x.moveTo(W/2-70,y+10);x.lineTo(W/2+70,y+10);x.stroke();
+x.fillStyle='#ab236e';x.font='400 46px "Cormorant Garamond", Georgia, serif';x.fillText('Less fixing. More living.',W/2,y+80);
+x.fillStyle='#18334f';x.font='500 30px Figtree, system-ui, sans-serif';x.fillText('tanyahicks.com',W/2,y+136);
+const a=document.createElement('a');a.download='free2bme-line.png';a.href=c.toDataURL('image/png');document.body.appendChild(a);a.click();a.remove();}
+catch(e){}finally{btn.disabled=false;}});})();
 })();
 
 
