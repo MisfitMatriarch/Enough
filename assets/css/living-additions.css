@@ -219,3 +219,6 @@
 
 .card-link{display:inline-block;margin:20px 0 0 24px}
 @media(max-width:560px){.card-link{margin-left:0}}
+
+.about-film{max-width:820px;margin:clamp(28px,4vw,44px) 0}
+.film video::cue{font-family:Figtree,system-ui,sans-serif;background:rgba(24,51,79,.78);color:#fff}
