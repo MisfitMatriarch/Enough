@@ -269,3 +269,8 @@ body:not(.home-more-living) main>section.band:nth-of-type(even){background:var(-
 .offer-card.wide .card-body{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:30px 32px}
 .offer-card.wide .card-body .eyebrow{margin:0}
 @media (max-width:860px){.offer-card.wide{grid-template-columns:1fr}.offer-card.wide .card-photo img{min-height:0;aspect-ratio:16/10}}
+
+/* Book hooks and series line, under the subtitle */
+.book-series{font:600 13px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-teal);margin:6px 0 0}
+.book-hook{font:italic 400 clamp(21px,.8vw + 16px,26px)/1.35 var(--serif);color:var(--f2bm-magenta,#b0306f);margin:14px 0 6px;max-width:34ch}
+.collection-note{font:400 17px/1.55 var(--sans);color:var(--f2bm-ink);max-width:62ch;margin:0 0 16px}
