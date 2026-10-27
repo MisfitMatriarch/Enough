@@ -3,8 +3,10 @@
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
+import json
 import sys
 from urllib.parse import unquote, urlsplit
+import xml.etree.ElementTree as ET
 
 
 FORM_NAMES = {
@@ -52,6 +54,7 @@ def check(directory):
     if not files:
         return ["No built HTML pages found; run npm run build first."], 0, 0, 0
     pages = {path.resolve(): Page(path.read_text()) for path in files}
+    contracts = json.loads((Path(__file__).resolve().parent.parent / "review/handover/form-contracts.json").read_text())
     errors = []
     seen_forms = set()
     form_instances = 0
@@ -82,6 +85,11 @@ def check(directory):
             name_attr = attrs.get("name")
             if attrs.get("data-netlify") != "true":
                 continue  # The separate JavaScript reservation flow is covered by its unit tests.
+            actual = {"name": name_attr, "action": attrs.get("action"), "fields": [
+                {key: value for key, value in field.items() if key in {"name", "type", "value", "required"}}
+                for field in form["fields"]]}
+            if contracts.get(name + "::" + name_attr) != actual:
+                errors.append(f"{name}: form fields or destination differ from the recorded enquiry contract")
             form_instances += 1
             seen_forms.add(name_attr)
             if name_attr not in FORM_NAMES:
@@ -96,6 +104,19 @@ def check(directory):
                 errors.append(f"{name}: missing form success page")
     for missing in sorted(FORM_NAMES - seen_forms):
         errors.append(f"Missing required Netlify form route {missing!r}")
+    for success in root.rglob("thank-you/index.html"):
+        source = success.read_text()
+        if '<meta name="robots" content="noindex,follow">' not in source:
+            errors.append(f"{success.relative_to(root)}: success pages must be noindex")
+    sitemap = ET.parse(root / "sitemap.xml")
+    locations = {node.text for node in sitemap.iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
+    for route in ["for-your-life", "for-your-work", "free2bme"]:
+        if f"https://tanyahicks.com/{route}/" not in locations:
+            errors.append(f"sitemap.xml: missing {route}")
+    if 'href="https://tanyahicks.com/free2bme/"' not in (root / "free2bme/index.html").read_text():
+        errors.append("The reflection canonical must point to its public Tanya Hicks route")
+    if not (root / "404.html").is_file():
+        errors.append("Missing branded 404 page")
     return errors, len(files), reference_count, form_instances
 
 

@@ -47,3 +47,7 @@ Operational form delivery, recipient notifications, a complete caption listen-th
 Local before/after logs, review screenshots and settings read-backs are saved at `/Users/kingit/Documents/ChatGPT/Enough-homepage-draft-2026-10-27/`. They are outside the site checkout and publish output.
 
 Close the draft PR to discard the code candidate. The old production site is still running. The owner can manage the branch lock and Pages settings separately; do not re-enable the extra publication or weaken protections as part of undoing a visual change.
+
+## Full-site follow-up
+
+The current review branch is `codex/site-polish-final-review`. Its required `Site quality` workflow also checks all 44 HTML routes at four widths, the seven original form field contracts, prepared form validity without submission, and automated WCAG 2.1 A/AA results. Read `FINAL_DRAFT_REVIEW_2026-10-27.md` for the remaining release gates. The production lock remains in place.
