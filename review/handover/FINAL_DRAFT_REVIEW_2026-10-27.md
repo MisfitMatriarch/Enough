@@ -30,7 +30,7 @@ The `Site quality` workflow also runs:
 
 The original baseline is not weakened. No reservation functions, reservation stores, package manifest/lockfile, redirects or Netlify settings are changed. The production build still excludes internal files.
 
-Local evidence: `/Users/kingit/Documents/ChatGPT/Enough-final-draft-2026-10-27/`. This directory is outside the checkout and publish output. Before-view images reuse the previously verified captures of the same starting commit `d267ea4`; the new before-check log records the fresh baseline run. Disk exhaustion interrupted some later local screenshot exports. The CI run and its retained captures are the independent verification of the committed candidate; report actual run results separately, do not describe interrupted exports as passing.
+Local evidence: `/Users/kingit/Documents/ChatGPT/Enough-final-draft-2026-10-27/`. This directory is outside the checkout and publish output. Before-view images reuse the previously verified captures of the same starting commit `d267ea4`; the new before-check log records the fresh baseline run. Disk exhaustion interrupted earlier screenshot export attempts. After removing an unused local browser-test download, the original baseline was rerun successfully: all 150 assertions and 18 captures completed. The fresh Node 22 tests/build, 560 release checks and 45 accessibility states also pass. Earlier interrupted attempts are not counted as passes.
 
 ## Prepared form tests: no submission authority
 
@@ -43,10 +43,14 @@ The Netlify Forms dashboard currently presents a login screen in the available b
 ## Publication remains held
 
 - Tanya must specify the cleared photo permissions, especially the child on stage, Kianni’s comfort with the About wording, caption listen-through, working book subtitles/hooks and cover artwork alignment. “Some approved” is not an item-by-item approval. The singing remains excluded from the reel.
-- Live Netlify form detection, routing and recipient receipt remain unverified; Tanya requested preparation only. The custom 404’s actual host status and production redirects also need verification against the hosted candidate/approved release, rather than only a static local server.
+- Live Netlify form detection, routing and recipient receipt remain unverified; Tanya requested preparation only. Hosted candidate checks now pass: 52 HTTP checks on the PR #12 Netlify preview, including all built page routes, the branded genuine 404, six legacy redirects and exclusion of internal files. This verifies the preview host; production smoke checks still wait for publication authority.
 - The unchanged dependency audit reports eight affected package entries: six moderate and two high. The high entries concern the OpenTelemetry Jaeger propagator/SDK chain. Assess and patch under a separately authorised dependency change, or record a justified release decision; do not silently call these fixed or harmless. No dependency upgrades are permitted by the current handover.
 - `main` stays protected and locked, with the GitHub Actions `Site quality` check required, administrator enforcement and force-push/deletion protections. GitHub Pages remains disabled. The shared administrator identity still prevents a genuine human-only approval boundary; a separate restricted automation identity is an owner setup task.
 - Netlify settings and response-header policy have not been changed. Post-release production verification is necessarily deferred until explicit publication authority.
+
+## Verified hosted draft
+
+The isolated review URL is https://deploy-preview-12--misfitmatriarchenough.netlify.app. The code candidate `6954cb8` passed GitHub Actions runs `40434327521` (branch) and `40434376315` (pull request), including the required `Site quality` checks. The live homepage response retains SHA-256 `5b778d8689a25fa95fcd8038763f97a61a04f342ad640b83be6fbfb1e70428ae`; `main` remains at `a66b79f` and locked. Both former GitHub Pages URLs still return 404. Later documentation-only commits should retain identical built output and pass the required checks at their own head.
 
 ## Review and undo
 
