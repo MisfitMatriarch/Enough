@@ -7,3 +7,19 @@
 @media print{body{background:white;color:#082b58;font-size:12pt}.expo-header,.hero,#books,#businesses,#privacy,.country,footer,.skip,#print-reflection,#reflection>.small,#reflection>.actions{display:none!important}.section{padding:0}.wrap{width:100%}#reflection{border:0}.reflection-text{border-left:0;padding:0}.writing-space{min-height:2cm}.reflection-text h3{break-after:avoid}.prompts p{break-inside:avoid}}
 
 .book .companion{font-size:15px;line-height:1.5;margin:6px 0 10px}
+
+/* The reflection carries Tanya's personal identity and the same restrained palette. */
+.brand .expo-name{display:block;font:500 28px/1 Cormorant,Georgia,serif;letter-spacing:0;color:#18334f}
+.brand .expo-wordmark small{font:650 10px/1.4 Figtree,sans-serif;letter-spacing:.17em;color:#075c6a;margin-top:6px}
+.expo-header{padding-block:1rem}
+.hero h1{color:#075c6a}
+.hero{background:radial-gradient(ellipse at 95% 90%,#a4e1ee55,transparent 55%),var(--f2bm-cream)}
+.button{background:#0a6e84;border-color:#0a6e84;border-radius:3px;font-size:15px;font-weight:600}
+.button:hover{background:#075c6a;border-color:#075c6a}
+.book{padding:24px;background:var(--f2bm-cream);border:1px solid #d9dcd4;border-radius:6px;box-shadow:0 8px 26px #18334f0d}
+.book-grid{gap:24px}
+.book h3{font:500 28px/1.12 Cormorant,Georgia,serif;color:#075c6a}
+.book img{box-shadow:0 6px 18px #18334f20}
+.book .reader-question{font-size:15px}
+.reservation-wrap{border-top:0;padding:28px;background:var(--f2bm-cream);border:1px solid #d9dcd4;border-radius:6px}
+@media(max-width:420px){.brand .expo-name{font-size:25px}.brand .expo-wordmark small{font-size:9px}.book{padding:18px;grid-template-columns:72px minmax(0,1fr)}.book h3{font-size:25px}.reservation-wrap{padding:20px}}

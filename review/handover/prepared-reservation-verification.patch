@@ -1,0 +1,22 @@
+--- a/netlify/lib/reservations.mjs
++++ b/netlify/lib/reservations.mjs
+@@ -51,13 +51,18 @@
+       if (!existing) {
+         const record = { id, name, email, titleIds, source, status: 'reserved', createdAt: now().toISOString(), termsVersion: settings.reservationTermsVersion, fingerprint };
+         const result = await reservations.setJSON(key, record, { onlyIfNew: true });
+-        if (!result.modified) {
++        if (result.modified) {
++          const saved = await reservations.get(key, { type: 'json' });
++          if (!saved || saved.fingerprint !== fingerprint) throw new Error('Reservation write was not confirmed');
++        } else {
+           const concurrent = await reservations.get(key, { type: 'json' });
+           if (!concurrent || concurrent.fingerprint !== fingerprint) return reply(409, { error: 'This request has already been used for a different reservation. Start a new reservation.' });
+         }
+       }
+       // Retry completes this separate consent write if it failed after the reservation saved.
+       await consents.setJSON(`consent/${id}`, { reservationId: id, optedIn: input.marketingConsent, wording: settings.marketingConsentWording, version: settings.marketingConsentVersion, recordedAt: now().toISOString() }, { onlyIfNew: true });
++      const savedConsent = await consents.get(`consent/${id}`, { type: 'json' });
++      if (!savedConsent || savedConsent.reservationId !== id || savedConsent.optedIn !== input.marketingConsent || savedConsent.version !== settings.marketingConsentVersion || savedConsent.wording !== settings.marketingConsentWording) throw new Error('Consent write was not confirmed');
+       return reply(200, { saved: true, reservationId: id, titles: titleIds.map(bookId => approved.get(bookId).title) });
+     } catch {
+       // Do not log contact details or raw storage errors.

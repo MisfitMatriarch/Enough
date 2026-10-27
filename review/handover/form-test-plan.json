@@ -1,0 +1,121 @@
+[
+  {
+    "source": "/work-with-tanya/",
+    "formName": "speaking-booking",
+    "expectedSuccessPath": "/work-with-tanya/thank-you/",
+    "status": "PREPARED ONLY; NOT SUBMITTED",
+    "fields": {
+      "form-name": "speaking-booking",
+      "bot-field": "",
+      "name": "WEBSITE TEST ONLY · 27 October 2026 · No real enquiry",
+      "email": "website-test@example.invalid",
+      "organisation": "",
+      "event-name": "",
+      "timing": "",
+      "location": "",
+      "audience": "",
+      "budget": "",
+      "enquiry-type": "Professional learning",
+      "message": "Prepared website delivery test only. No booking, order, application or subscription is requested. Please exclude this test from ordinary enquiries.",
+      "access": "",
+      "contact-consent": "yes"
+    }
+  },
+  {
+    "source": "/be-first-to-know/",
+    "formName": "be-first-to-know",
+    "expectedSuccessPath": "/be-first-to-know/thank-you/",
+    "status": "PREPARED ONLY; NOT SUBMITTED",
+    "fields": {
+      "form-name": "be-first-to-know",
+      "leave-this-empty": "",
+      "name": "WEBSITE TEST ONLY · 27 October 2026 · No real enquiry",
+      "email": "website-test@example.invalid",
+      "reason": "Organisation",
+      "consent": "yes"
+    }
+  },
+  {
+    "source": "/books/pre-order/",
+    "formName": "book-preorders",
+    "expectedSuccessPath": "/books/pre-order/thank-you/",
+    "status": "PREPARED ONLY; NOT SUBMITTED",
+    "fields": {
+      "form-name": "book-preorders",
+      "leave-this-empty": "",
+      "name": "WEBSITE TEST ONLY · 27 October 2026 · No real enquiry",
+      "email": "website-test@example.invalid",
+      "free-2b-me": "1",
+      "access-before-intervention": "0",
+      "you-make-sense": "0",
+      "behaviour-makes-sense": "0",
+      "nervous-system-nourishment": "0",
+      "beyond-regulation": "0",
+      "built-with-you": "0",
+      "practice-that-holds": "0",
+      "contact-consent": "yes"
+    }
+  },
+  {
+    "source": "/the-practice/",
+    "formName": "supervision-interest",
+    "expectedSuccessPath": "/the-practice/thank-you/",
+    "status": "PREPARED ONLY; NOT SUBMITTED",
+    "fields": {
+      "form-name": "supervision-interest",
+      "bot-field": "",
+      "name": "WEBSITE TEST ONLY · 27 October 2026 · No real enquiry",
+      "email": "website-test@example.invalid",
+      "role": "",
+      "message": "Prepared website delivery test only. No booking, order, application or subscription is requested. Please exclude this test from ordinary enquiries.",
+      "contact-consent": "yes"
+    }
+  },
+  {
+    "source": "/the-practice/",
+    "formName": "associate-interest",
+    "expectedSuccessPath": "/the-practice/thank-you/",
+    "status": "PREPARED ONLY; NOT SUBMITTED",
+    "fields": {
+      "form-name": "associate-interest",
+      "bot-field": "",
+      "name": "WEBSITE TEST ONLY · 27 October 2026 · No real enquiry",
+      "email": "website-test@example.invalid",
+      "role": "",
+      "message": "Prepared website delivery test only. No booking, order, application or subscription is requested. Please exclude this test from ordinary enquiries.",
+      "contact-consent": "yes"
+    }
+  },
+  {
+    "source": "/stay-connected/",
+    "formName": "free2bme-updates",
+    "expectedSuccessPath": "/stay-connected/thank-you/",
+    "status": "PREPARED ONLY; NOT SUBMITTED",
+    "fields": {
+      "form-name": "free2bme-updates",
+      "consent-wording": "Yes, email me resources, stories and occasional invitations to FREE 2B ME events, books and learning opportunities. I understand this is separate from book announcements.",
+      "leave-this-empty": "",
+      "name": "WEBSITE TEST ONLY · 27 October 2026 · No real enquiry",
+      "email": "website-test@example.invalid",
+      "consent": "yes"
+    }
+  },
+  {
+    "source": "/speaking/",
+    "formName": "speaking-booking",
+    "expectedSuccessPath": "/speaking/thank-you/",
+    "status": "PREPARED ONLY; NOT SUBMITTED",
+    "fields": {
+      "form-name": "speaking-booking",
+      "bot-field": "",
+      "name": "WEBSITE TEST ONLY · 27 October 2026 · No real enquiry",
+      "email": "website-test@example.invalid",
+      "enquiry-type": "Keynote speaking",
+      "event-name": "",
+      "audience": "",
+      "message": "Prepared website delivery test only. No booking, order, application or subscription is requested. Please exclude this test from ordinary enquiries.",
+      "access": "",
+      "contact-consent": "yes"
+    }
+  }
+]

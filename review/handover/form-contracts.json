@@ -1,0 +1,342 @@
+{
+  "work-with-tanya/index.html::speaking-booking": {
+    "name": "speaking-booking",
+    "action": "/work-with-tanya/thank-you/",
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "form-name",
+        "value": "speaking-booking"
+      },
+      {
+        "name": "bot-field"
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "required": null
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "required": null
+      },
+      {
+        "name": "organisation",
+        "type": "text"
+      },
+      {
+        "name": "event-name",
+        "type": "text"
+      },
+      {
+        "name": "timing",
+        "type": "text"
+      },
+      {
+        "name": "location",
+        "type": "text"
+      },
+      {
+        "name": "audience",
+        "type": "text"
+      },
+      {
+        "name": "budget",
+        "type": "text"
+      },
+      {
+        "name": "enquiry-type",
+        "required": null
+      },
+      {
+        "name": "message",
+        "required": null
+      },
+      {
+        "name": "access"
+      },
+      {
+        "type": "checkbox",
+        "name": "contact-consent",
+        "value": "yes",
+        "required": null
+      }
+    ]
+  },
+  "be-first-to-know/index.html::be-first-to-know": {
+    "name": "be-first-to-know",
+    "action": "/be-first-to-know/thank-you/",
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "form-name",
+        "value": "be-first-to-know"
+      },
+      {
+        "name": "leave-this-empty"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "required": null
+      },
+      {
+        "type": "radio",
+        "name": "reason",
+        "value": "For myself"
+      },
+      {
+        "type": "radio",
+        "name": "reason",
+        "value": "Supporting someone"
+      },
+      {
+        "type": "radio",
+        "name": "reason",
+        "value": "Practitioner"
+      },
+      {
+        "type": "radio",
+        "name": "reason",
+        "value": "Organisation"
+      },
+      {
+        "type": "checkbox",
+        "name": "consent",
+        "value": "yes",
+        "required": null
+      }
+    ]
+  },
+  "books/pre-order/index.html::book-preorders": {
+    "name": "book-preorders",
+    "action": "/books/pre-order/thank-you/",
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "form-name",
+        "value": "book-preorders"
+      },
+      {
+        "name": "leave-this-empty"
+      },
+      {
+        "name": "name",
+        "required": null
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "required": null
+      },
+      {
+        "name": "free-2b-me",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "name": "access-before-intervention",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "name": "you-make-sense",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "name": "behaviour-makes-sense",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "name": "nervous-system-nourishment",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "name": "beyond-regulation",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "name": "built-with-you",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "name": "practice-that-holds",
+        "type": "number",
+        "value": "0"
+      },
+      {
+        "type": "checkbox",
+        "name": "contact-consent",
+        "value": "yes",
+        "required": null
+      }
+    ]
+  },
+  "the-practice/index.html::supervision-interest": {
+    "name": "supervision-interest",
+    "action": "/the-practice/thank-you/",
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "form-name",
+        "value": "supervision-interest"
+      },
+      {
+        "name": "bot-field"
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "required": null
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "required": null
+      },
+      {
+        "name": "role",
+        "type": "text"
+      },
+      {
+        "name": "message"
+      },
+      {
+        "type": "checkbox",
+        "name": "contact-consent",
+        "value": "yes",
+        "required": null
+      }
+    ]
+  },
+  "the-practice/index.html::associate-interest": {
+    "name": "associate-interest",
+    "action": "/the-practice/thank-you/",
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "form-name",
+        "value": "associate-interest"
+      },
+      {
+        "name": "bot-field"
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "required": null
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "required": null
+      },
+      {
+        "name": "role",
+        "type": "text"
+      },
+      {
+        "name": "message"
+      },
+      {
+        "type": "checkbox",
+        "name": "contact-consent",
+        "value": "yes",
+        "required": null
+      }
+    ]
+  },
+  "stay-connected/index.html::free2bme-updates": {
+    "name": "free2bme-updates",
+    "action": "/stay-connected/thank-you/",
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "form-name",
+        "value": "free2bme-updates"
+      },
+      {
+        "type": "hidden",
+        "name": "consent-wording",
+        "value": "Yes, email me resources, stories and occasional invitations to FREE 2B ME events, books and learning opportunities. I understand this is separate from book announcements."
+      },
+      {
+        "name": "leave-this-empty"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "required": null
+      },
+      {
+        "type": "checkbox",
+        "name": "consent",
+        "value": "yes",
+        "required": null
+      }
+    ]
+  },
+  "speaking/index.html::speaking-booking": {
+    "name": "speaking-booking",
+    "action": "/speaking/thank-you/",
+    "fields": [
+      {
+        "type": "hidden",
+        "name": "form-name",
+        "value": "speaking-booking"
+      },
+      {
+        "name": "bot-field"
+      },
+      {
+        "name": "name",
+        "type": "text",
+        "required": null
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "required": null
+      },
+      {
+        "name": "enquiry-type",
+        "required": null
+      },
+      {
+        "name": "event-name",
+        "type": "text"
+      },
+      {
+        "name": "audience",
+        "type": "text"
+      },
+      {
+        "name": "message",
+        "required": null
+      },
+      {
+        "name": "access"
+      },
+      {
+        "type": "checkbox",
+        "name": "contact-consent",
+        "value": "yes",
+        "required": null
+      }
+    ]
+  }
+}

@@ -12,7 +12,17 @@ It records where the last agent (Claude Code) stopped, Tanya's latest decisions 
 
 - `main` is the live site.
 - Unpublished work: branch **`claude/confident-galileo-jsna30`**, draft pull request **#8** (https://github.com/MisfitMatriarch/Enough/pull/8). Start new work from that branch, not from `main`, or you will miss the newest menu, homepage and book changes.
-- The handover on that branch is the same file as here.
+- The original handover is also available on `main`; newer follow-up notes are listed below.
+
+## Current review and release controls (27 October 2026)
+
+- The current full-site review candidate is `codex/visitor-journey-polish`, continued from `43896ac` on `codex/dependency-hardening-comparison`. Read `review/handover/VISITOR_JOURNEY_REVIEW_2026-10-27.md` for the applied comparison improvements and remaining gates. The dependency/reservation fix and earlier full-site visual work are retained. Start overlapping work from this candidate.
+- Tanya subsequently authorised fixing dependency issues and completing available checks, without submitting forms or publishing. This narrowly supersedes the no-upgrades rule for this dependency repair. Tanya then explicitly approved applying and testing the reservation verification fix in `netlify/lib/reservations.mjs`. It is now applied and the actual-SDK regressions pass. The function entry point, storage namespaces, record formats and real records remain untouched. Retain these regression tests and check the latest `Site quality` result before any release; a clean advisory audit alone is not release readiness.
+- Tanya authorised the comparison improvements and an enquiry response window of 48 hours. Enquiry ownership/access and retention details are still unconfirmed.
+- Tanya authorised prepared synthetic enquiry tests only, with no submissions. Some content approvals are cleared but not yet specified; retain individual pending flags.
+- `main` is protected and locked for Tanya’s desktop/mobile draft review. Do not unlock it, merge, push to it or publish without her explicit publication instruction. The required status is `Site quality`; its Node 22 workflow is in `.github/workflows/site-quality.yml` on the review branch.
+- The unintended GitHub Pages site was disabled. Netlify remains the production host. `review/` is excluded from Netlify’s build, but this GitHub repository is public, so internal notes are not private files.
+- Read `review/handover/RELEASE_CONTROLS_2026-10-27.md` for the applied settings, identity limitation and release procedure.
 
 ## Non-negotiable limits
 
