@@ -5,3 +5,8 @@ node_modules/
 dist/
 .netlify/
 private-exports/
+
+# Local check output from review/handover/check-site.js
+site-check/
+before/
+after/
