@@ -12,7 +12,14 @@ It records where the last agent (Claude Code) stopped, Tanya's latest decisions 
 
 - `main` is the live site.
 - Unpublished work: branch **`claude/confident-galileo-jsna30`**, draft pull request **#8** (https://github.com/MisfitMatriarch/Enough/pull/8). Start new work from that branch, not from `main`, or you will miss the newest menu, homepage and book changes.
-- The handover on that branch is the same file as here.
+- The original handover is also available on `main`; newer follow-up notes are listed below.
+
+## Current review and release controls (27 October 2026)
+
+- The homepage brand pass and release workflow are on `codex/homepage-brand-release-controls`, based on the unpublished draft plus the handover refresh. Review that branch before starting overlapping work.
+- `main` is protected and locked for Tanya’s desktop/mobile draft review. Do not unlock it, merge, push to it or publish without her explicit publication instruction. The required status is `Site quality`; its Node 22 workflow is in `.github/workflows/site-quality.yml` on the review branch.
+- The unintended GitHub Pages site was disabled. Netlify remains the production host. `review/` is excluded from Netlify’s build, but this GitHub repository is public, so internal notes are not private files.
+- Read `review/handover/RELEASE_CONTROLS_2026-10-27.md` for the applied settings, identity limitation and release procedure.
 
 ## Non-negotiable limits
 

@@ -237,9 +237,14 @@ body:not(.home-more-living) main>section.band:nth-of-type(even){background:var(-
 .into li::after,.requires li::after,.tags span::after{display:none!important}
 
 /* Main menu: two journeys with Books and Speaking under each, then About */
+.site-header .brand{gap:12px}
+.site-header .brand-wordmark{display:flex;flex-direction:column;gap:5px;line-height:1}
+.site-header .brand-name{font:500 28px/1 var(--serif);color:var(--f2bm-ink)}
+.site-header .brand-family{font:600 10px/1.3 var(--sans);letter-spacing:.2em;color:var(--brand-teal)}
 .site-header nav{align-items:center;gap:8px 30px}
 .site-header .nav-group{position:relative;display:flex;align-items:center;gap:2px}
-.site-header .nav-more{width:30px;height:34px;padding:0;border:0;background:none;color:inherit;cursor:pointer;display:inline-grid;place-items:center}
+.site-header .nav-more{width:44px;height:44px;padding:0;border:0;background:none;color:inherit;cursor:pointer;display:inline-grid;place-items:center;flex:none}
+.site-header .nav-top{display:inline-flex;align-items:center;min-height:44px}
 .site-header .nav-more::before{content:"";width:7px;height:7px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s}
 .site-header .nav-group.open .nav-more::before{transform:translateY(2px) rotate(-135deg)}
 .site-header .nav-more:focus-visible{outline:2px solid var(--brand-teal);outline-offset:2px}
@@ -256,8 +261,11 @@ body:not(.home-more-living) main>section.band:nth-of-type(even){background:var(-
 .site-header .nav-menu a[aria-current="page"]{color:var(--brand-teal);font-weight:600;text-decoration:none}
 .site-header .nav-group.is-current>.nav-top{color:var(--brand-teal);text-decoration:underline;text-decoration-color:var(--brand-gold);text-underline-offset:6px;text-decoration-thickness:2px}
 @media (max-width:900px){
-  .site-header nav{position:relative;overflow:visible!important;flex-wrap:wrap!important;gap:6px 18px}
-  .site-header .nav-group{position:static}
+  .site-header .header-in{width:calc(100% - 32px);gap:10px}
+  .site-header .brand-name{font-size:26px}
+  .site-header nav,.home-more-living .site-header nav{position:relative;overflow:visible!important;flex-wrap:wrap!important;gap:0;justify-content:space-between}
+  .site-header .nav-group{position:static;gap:0}
+  .site-header .nav-top{font-size:13px;min-width:44px;justify-content:center}
   .site-header .nav-menu{left:0;right:0;min-width:0;top:calc(100% + 6px)}
   .site-header .nav-menu a{white-space:normal;font-size:16px;padding:13px 20px}
 }
