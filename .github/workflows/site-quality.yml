@@ -53,6 +53,7 @@ jobs:
           node review/handover/check-site.js site-check
           node scripts/check-release.cjs site-check/release
           node scripts/check-accessibility.cjs site-check/accessibility
+          node scripts/check-visitor-journey.cjs site-check/visitor
       - name: Retain browser review captures
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

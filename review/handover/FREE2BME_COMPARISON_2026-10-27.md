@@ -1,5 +1,7 @@
 # FREE2BME and Tanya Hicks: what to borrow, what to keep
 
+Implementation follow-up: Tanya authorised these improvements. The current candidate is `codex/visitor-journey-polish`; read `VISITOR_JOURNEY_REVIEW_2026-10-27.md` for what is applied, the approved 48-hour enquiry window and what still requires confirmation. The assessment below records the earlier comparison.
+
 27 October 2026. Compared the live https://free2bme.au/ and its Get Started page with the full Tanya draft from `df5bd8e`, not the older production design. Browser views include 1400 × 900 desktop and 390 × 844 phone. This is a design and visitor-journey assessment, not a claim about conversion rates, legal compliance or measured performance.
 
 ## Assessment
