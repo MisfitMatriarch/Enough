@@ -1,3 +1,9 @@
+# Superseded: read review/handover/HANDOVER_2026-10-27.md first
+
+That file holds the current state (main = PR #7, live; PR #8 = draft, not live), the latest decisions and the limits for the next agent. Where this file disagrees with it, that file wins. Notes below are kept as history; several (for example "keep PR #7 in draft" and "Australian Country") are out of date.
+
+---
+
 # Latest correction: All of me is not Acceptance
 
 Tanya rejected the acceptance-led homepage film. The homepage now uses the actual So this is all of me passage from speech 06, original 00:10–00:59 (about 53 seconds with the closing card). The text includes ordinary days and value below 100 percent. See docs/HOMEPAGE_FILM_CONTENT_LOCK.md. Do not restore an Acceptance opener here. About remains the Acceptance story. Preserve the standard faststart video format.
