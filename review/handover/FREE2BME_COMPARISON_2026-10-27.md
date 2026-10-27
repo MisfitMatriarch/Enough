@@ -1,0 +1,37 @@
+# FREE2BME and Tanya Hicks: what to borrow, what to keep
+
+27 October 2026. Compared the live https://free2bme.au/ and its Get Started page with the full Tanya draft from `df5bd8e`, not the older production design. Browser views include 1400 × 900 desktop and 390 × 844 phone. This is a design and visitor-journey assessment, not a claim about conversion rates, legal compliance or measured performance.
+
+## Assessment
+
+FREE2BME feels more established because its brand treatment, contact route and practical reassurance reinforce one another. Tanya’s current draft has already closed much of the visual gap: the real portrait, artwork, book covers, restrained type and replacement for the rejected statement boxes are a coherent personal identity. The next improvement should help people decide and enquire, while keeping the ivory, watercolour, phoenix, teal, magenta and gold.
+
+| Area | What FREE2BME does | Current Tanya draft | Suggested improvement |
+| --- | --- | --- | --- |
+| Brand consistency | Purple depth, a repeated phoenix motif and controlled section treatments create a recognisable world. | The personal portrait and watercolour are stronger personal-brand assets. Some interiors still rely on layered stylesheet overrides and varying content density. | Keep Tanya’s light palette. Standardise heading measures, section spacing, image crops, borders and button hierarchy. Reserve serif type for headings and selected quotations; use readable sans-serif supporting copy. Avoid another grid of six large statements. |
+| Contact visibility | A distinct desktop Get Started action sits alongside navigation. | Life, Work and About are visible; enquiry sits deeper in the journeys and footer. The speaking page already has a useful opening enquiry button. | Propose a direct “Enquire” action in the desktop header, retaining both approved journey menus. Keep mobile menus visible. Check the label and 320px fit before changing shared navigation. |
+| What happens next | The Get Started page explains its enquiry process, response timing and communication choices. | The enquiry page welcomes access information and email; its thank-you page says a reply comes by email. It does not set an agreed response window or explain the planning sequence. | Add a short process beside the existing form: enquiry, discussion of fit/access, then agreement on dates, scope and fees. Tanya must confirm response timing and operational ownership before any promise is published. Preserve every form field and routing contract. |
+| Visible trust | Operator identity, business details and provider scope are explicit. | Recognition and event evidence exist, but much of it requires a separate page visit. A footer already distinguishes Tanya’s work from participant support. | Surface two or three verified recognition or appearance items near the speaking decision, with clear captions and source links. Keep professional scope precise. Do not copy NDIS provider claims onto Tanya’s personal offers or invent testimonials. |
+| Privacy and reassurance | Privacy and feedback links are easy to find. | There is reservation-specific privacy material, but no general privacy link in the shared footer. Enquiry consent and optional access information are already present. | Prepare a concise, site-specific privacy notice and footer link covering the actual enquiry/Netlify handling and contact route. Confirm the facts first. A visible notice is useful; borrowing another organisation’s policy is not. |
+| Evidence of activity | A current-activity section presents an embedded Nest TV area. Its underlying feed was not verified in this review. | Tanya has real films, photographs and book artwork. Some opportunities are explicitly future interest, rather than currently bookable services. | Use existing, permission-cleared appearances and film excerpts as proof. Label availability and future offers accurately. Only add an events feed if somebody owns its upkeep. |
+| Clarity of offers | Support categories give visitors concrete ways in. | The Work page already lists audience, format, availability and fees by enquiry. Professional Learning already has an at-a-glance section. Those are strengths, not missing features. | Bring that existing clarity closer to the homepage journey links. Let visitors identify “book”, “speaker/MC” or “learning” before asking them to explore the whole body of work. Retain the approved Life/Work structure. |
+| Accessible interaction | Listen controls recur through the content. Their audio and assistive-technology behaviour were not fully audited here. | Keyboard dropdowns, larger text, contrast and reduced-motion controls are tested. Films have transcript/caption material awaiting the separate human approvals. | Keep the existing controls. Consider consistent section listening after a keyboard and screen-reader review. Do not equate the presence of a Listen button with accessibility conformance. |
+
+Sources: [FREE2BME homepage](https://free2bme.au/), [Get Started](https://free2bme.au/get-started). Business/provider details above describe what the website displays; they were not independently certified. Tanya evidence is in `index.html`, `assets/css/brand-system.css`, `assets/css/site-alignment.css`, `for-your-work/index.html`, `professional-learning/index.html`, `speaking/index.html` and `work-with-tanya/index.html` at the reviewed candidate.
+
+## Where copying FREE2BME would make Tanya worse
+
+At 390px, FREE2BME’s main navigation is absent from the rendered page and its first Get Started hero link starts around y=869, below the tested 844px opening screen. Tanya’s journey menus and two hero actions remain visible. FREE2BME also has a long homepage; it is not evidence that every Tanya section should become shorter. Keep the route clarity already gained and reduce repeated explanations where they obscure a decision.
+
+The shared opening slogan makes the relationship between the two sites clear, but also makes their openings similar. Keep Tanya’s name, portrait and “Books, speaking and professional learning” prominent so visitors immediately understand which site they are on. Her personal site does not need a participant intake form, provider dashboard, organisational registration banner or another purple identity.
+
+No timed speed, search ranking, form-delivery or conversion comparison was performed. No form was submitted on either site. Automated accessibility results belong to the Tanya draft only; do not use them to claim FREE2BME passed or failed an equivalent audit.
+
+## Recommended order
+
+1. **Release safety:** finish the confirmed SDK write-failure fix, retain the dependency audit gate, obtain the remaining content permissions, then test real form delivery only after Tanya authorises submissions.
+2. **Most useful next design pass:** direct enquiry access, the short enquiry process and a small evidence strip using existing approved material. Show desktop and mobile before publication.
+3. **Finish the system:** consistent interior spacing/type/card treatment and a factual general privacy notice. Do not change manuscript wording or form contracts as incidental design work.
+4. **Optional enhancements:** section listening and maintained current-activity content, if they serve visitors and have an owner.
+
+These are recommendations for review, not newly implemented public wording or permission to publish. The dependency pass leaves all 568 built static files byte-for-byte identical to `df5bd8e`.

@@ -1,5 +1,7 @@
 # Tanya Hicks website: final design draft for review
 
+Follow-up: the current candidate is now `codex/dependency-hardening-comparison`. Read `DEPENDENCY_REVIEW_2026-10-27.md` for the authorised dependency fix, clean audit and newly reproduced storage failure blocker, and `FREE2BME_COMPARISON_2026-10-27.md` for the requested comparison. The visual output below is unchanged. Dependency findings described later in this historical note are superseded by that follow-up; they must not be confused with the separate unresolved storage behaviour.
+
 27 October 2026. Branch: `codex/site-polish-final-review`, continued from `d267ea4` on `codex/homepage-brand-release-controls`. This is the current review candidate, including the unpublished menu and book work. Nothing in this note authorises publication, unlocking `main` or changing Netlify settings.
 
 ## Tanya’s current instructions

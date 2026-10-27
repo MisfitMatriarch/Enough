@@ -28,6 +28,8 @@ jobs:
           cache: npm
       - name: Install locked dependencies
         run: npm ci
+      - name: Reject known vulnerable production dependencies
+        run: npm audit --omit=dev --audit-level=low
       - name: Unit tests
         run: npm test
       - name: Production build and internal-file guard
