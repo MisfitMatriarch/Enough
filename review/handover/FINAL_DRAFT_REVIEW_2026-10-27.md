@@ -50,7 +50,7 @@ The Netlify Forms dashboard currently presents a login screen in the available b
 
 ## Verified hosted draft
 
-The isolated review URL is https://deploy-preview-12--misfitmatriarchenough.netlify.app. The code candidate `6954cb8` passed GitHub Actions runs `40434327521` (branch) and `40434376315` (pull request), including the required `Site quality` checks. The live homepage response retains SHA-256 `5b778d8689a25fa95fcd8038763f97a61a04f342ad640b83be6fbfb1e70428ae`; `main` remains at `a66b79f` and locked. Both former GitHub Pages URLs still return 404. Later documentation-only commits should retain identical built output and pass the required checks at their own head.
+The isolated review URL is https://deploy-preview-12--misfitmatriarchenough.netlify.app. The code candidate `6954cb8` passed GitHub Actions branch run `40434327521`, including `Site quality`. The PR run was still in progress when this note was written; do not count it as passed. Verify the latest PR head status before any publication decision and record the result in the PR and local review report. The live homepage response retains SHA-256 `5b778d8689a25fa95fcd8038763f97a61a04f342ad640b83be6fbfb1e70428ae`; `main` remains at `a66b79f` and locked. Both former GitHub Pages URLs still return 404. Later documentation-only commits should retain identical built output and pass the required checks at their own head.
 
 ## Review and undo
 
