@@ -29,7 +29,7 @@ No timed speed, search ranking, form-delivery or conversion comparison was perfo
 
 ## Recommended order
 
-1. **Release safety:** finish the confirmed SDK write-failure fix, retain the dependency audit gate, obtain the remaining content permissions, then test real form delivery only after Tanya authorises submissions.
+1. **Release safety:** the approved storage read-back fix is now applied and the actual 17-test suite passes. Retain the dependency audit gate, obtain the remaining content permissions, then test real form delivery only after Tanya authorises submissions.
 2. **Most useful next design pass:** direct enquiry access, the short enquiry process and a small evidence strip using existing approved material. Show desktop and mobile before publication.
 3. **Finish the system:** consistent interior spacing/type/card treatment and a factual general privacy notice. Do not change manuscript wording or form contracts as incidental design work.
 4. **Optional enhancements:** section listening and maintained current-activity content, if they serve visitors and have an owner.
