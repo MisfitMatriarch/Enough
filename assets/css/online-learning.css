@@ -15,3 +15,39 @@
 .learning-details { padding:clamp(3rem,6vw,5rem) 0; }
 .learning-small { font-size:.95rem; }
 @media(max-width:760px) { .learning-layout,.learning-grid { grid-template-columns:1fr; } }
+
+/* The online learning pages use the existing FREE 2B ME watercolours and photography. */
+.learning-hero { position:relative; overflow:hidden; background:#f8f3e9; padding:clamp(3.5rem,6vw,6rem) 0; }
+.learning-hero .wrap { position:relative; min-height:clamp(18rem,32vw,29rem); padding-right:46%; display:flex; flex-direction:column; justify-content:center; }
+.learning-hero h1 { font-size:clamp(2.8rem,4.6vw,4.8rem); line-height:1.03; max-width:14ch; color:#255e61; }
+.learning-hero .learning-intro { max-width:35rem; }
+.learning-hero .stand { color:#9d456d; font-weight:600; line-height:1.45; }
+.learning-hero .eyebrow { color:#8e3760; }
+.learning-hero-art { position:absolute; right:0; top:50%; transform:translateY(-50%); width:39%; height:94%; margin:0; background:center/cover no-repeat; border-radius:1.1rem 5rem 1.1rem 5rem; box-shadow:0 1.25rem 3rem rgba(31,60,58,.14); }
+.learning-hero-art::after { content:""; position:absolute; inset:.65rem; border:1px solid rgba(255,255,255,.64); border-radius:.75rem 4.3rem .75rem 4.3rem; pointer-events:none; }
+.catalogue-hero-art { background-image:url('/assets/brand/tanya-wcw-speaking-2025-800.webp'); background-position:center; }
+.course-art-1 { background-image:url('/assets/brand/learning-2-professional-512.webp'); }
+.course-art-2 { background-image:url('/assets/brand/learning-1-pathway-512.webp'); }
+.course-art-3 { background-image:url('/assets/brand/practice-panel-864.webp'); }
+.course-art-4 { background-image:url('/assets/brand/learning-3-library-512.webp'); }
+.learning-details { background:#fffdf8; }
+.learning-grid { gap:1.6rem; }
+.learning-card { position:relative; overflow:hidden; padding:0; border-radius:1rem; border:1px solid #e6dbc9; background:#fff; box-shadow:0 .8rem 2rem rgba(31,60,58,.08); display:flex; flex-direction:column; }
+.learning-card-art { height:clamp(10rem,17vw,14rem); background:center 45%/cover no-repeat; }
+.learning-card-body { padding:1.6rem 1.8rem 1.9rem; flex:1; display:flex; flex-direction:column; align-items:flex-start; }
+.learning-card-body .eyebrow { color:#a14670; }
+.learning-card-body h3 { color:#245e61; font-size:clamp(1.8rem,2.4vw,2.4rem); line-height:1.05; }
+.learning-card-body .learning-price { margin-top:auto; padding-top:1rem; }
+.learning-card-body .btn { margin-top:.3rem; }
+.learning-layout > div { max-width:46rem; }
+.learning-topics { padding:0; list-style:none; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.75rem; counter-reset:learning; }
+.learning-topics li { counter-increment:learning; background:#f5f2e9; border-radius:.7rem; padding:1rem 1rem 1rem 3.1rem; position:relative; line-height:1.5; }
+.learning-topics li::before { content:counter(learning,decimal-leading-zero); position:absolute; left:1rem; top:1rem; font-size:.8rem; color:#a04e71; font-weight:700; }
+.learning-purchase { border-top:5px solid #b57b90; position:sticky; top:1.25rem; }
+.learning-purchase h2 { color:#245e61; }
+@media(max-width:760px) {
+ .learning-hero .wrap { padding-right:0; min-height:0; }
+ .learning-hero-art { position:relative; transform:none; inset:auto; width:100%; height:15rem; margin:2rem 0 0; border-radius:1rem 3.5rem 1rem 3.5rem; }
+ .learning-purchase { position:static; }
+}
+@media(max-width:520px) { .learning-topics { grid-template-columns:1fr; } .learning-card-art { height:11rem; } }
