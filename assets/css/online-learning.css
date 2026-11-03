@@ -65,3 +65,21 @@
 .learning-solution { background:#edf5f2; border-left:4px solid #56928b; padding:1.4rem 1.6rem; border-radius:0 .7rem .7rem 0; margin:2rem 0; }
 .learning-solution p:last-child { margin-bottom:0; }
 @media(max-width:760px) { .learning-problem-grid { grid-template-columns:1fr; } }
+
+/* Catalogue sales and practitioner credibility */
+.learning-credibility { padding:clamp(3.5rem,7vw,6rem) 0; background:#f7f1e8; }
+.learning-credibility h2 { color:#245e61; max-width:21ch; }
+.learning-credibility-grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(16rem,1fr); gap:clamp(2rem,5vw,5rem); align-items:start; }
+.learning-credibility-grid p { line-height:1.7; }
+.learning-credentials { padding:1.5rem 1.8rem; border-radius:1rem; background:#fff; border-top:4px solid #b57491; }
+.learning-credentials p { margin:0 0 1.1rem; }
+.learning-credentials strong { color:#245e61; }
+.learning-card-subtitle { color:#5d6260; margin-top:0; }
+.learning-card-label { color:#245e61; font-weight:700; margin-bottom:.4rem; }
+.learning-card-list { margin:.1rem 0 1rem; padding-left:1.2rem; line-height:1.55; }
+.learning-card-list li { margin-bottom:.45rem; }
+.learning-card-body .learning-price span { font-size:.9rem; font-weight:400; color:#505b59; }
+.learning-final { padding:clamp(3.5rem,6vw,5rem) 0; background:#eaf3ef; }
+.learning-final h2 { color:#245e61; max-width:23ch; }
+.learning-final p { max-width:45rem; line-height:1.7; }
+@media(max-width:760px) { .learning-credibility-grid { grid-template-columns:1fr; } }
