@@ -1,5 +1,12 @@
 # Netlify redirects
 #
+# FREE 2B ME uses the same site as tanyahicks.com. Preserve every page path
+# for both domain forms and protocols; Netlify passes query strings through.
+https://free2bme.global/*      https://tanyahicks.com/:splat  301!
+https://www.free2bme.global/*  https://tanyahicks.com/:splat  301!
+http://free2bme.global/*       https://tanyahicks.com/:splat  301!
+http://www.free2bme.global/*   https://tanyahicks.com/:splat  301!
+
 # Book one's canonical route is /books/free-2b-me/ (title: FREE 2B ME: Less fixing.
 # More living.). Every earlier route for that book is preserved as a 301 so inbound
 # links, citations and publication history keep resolving. The old titles survive as
