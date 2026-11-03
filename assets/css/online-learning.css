@@ -25,7 +25,7 @@
 .learning-hero .eyebrow { color:#8e3760; }
 .learning-hero-art { position:absolute; right:0; top:50%; transform:translateY(-50%); width:39%; height:94%; margin:0; background:center/cover no-repeat; border-radius:1.1rem 5rem 1.1rem 5rem; box-shadow:0 1.25rem 3rem rgba(31,60,58,.14); }
 .learning-hero-art::after { content:""; position:absolute; inset:.65rem; border:1px solid rgba(255,255,255,.64); border-radius:.75rem 4.3rem .75rem 4.3rem; pointer-events:none; }
-.catalogue-hero-art { background-image:url('/assets/brand/tanya-wcw-speaking-2025-800.webp'); background-position:center; }
+.catalogue-hero-art { background-image:url('/assets/brand/tanya-wcw-speaking-2025-800.webp'); background-position:left center; }
 .course-art-1 { background-image:url('/assets/brand/learning-2-professional-512.webp'); }
 .course-art-2 { background-image:url('/assets/brand/learning-1-pathway-512.webp'); }
 .course-art-3 { background-image:url('/assets/brand/practice-panel-864.webp'); }
