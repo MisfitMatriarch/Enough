@@ -111,10 +111,10 @@ def check(directory):
     sitemap = ET.parse(root / "sitemap.xml")
     locations = {node.text for node in sitemap.iter("{http://www.sitemaps.org/schemas/sitemap/0.9}loc")}
     for route in ["for-your-life", "for-your-work", "free2bme"]:
-        if f"https://tanyahicks.com/{route}/" not in locations:
+        if f"https://free2bme.global/{route}/" not in locations:
             errors.append(f"sitemap.xml: missing {route}")
-    if 'href="https://tanyahicks.com/free2bme/"' not in (root / "free2bme/index.html").read_text():
-        errors.append("The reflection canonical must point to its public Tanya Hicks route")
+    if 'href="https://free2bme.global/free2bme/"' not in (root / "free2bme/index.html").read_text():
+        errors.append("The reflection canonical must point to its public FREE 2B ME Global route")
     if not (root / "404.html").is_file():
         errors.append("Missing branded 404 page")
     return errors, len(files), reference_count, form_instances
