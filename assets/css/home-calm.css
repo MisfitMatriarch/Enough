@@ -164,3 +164,19 @@
 .home-more-living main .route-card .card-photo{display:block;width:100%;align-self:stretch}
 .home-more-living main .route-card .card-photo img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .home-more-living main .route-card.has-photo h3{margin-top:10px}
+
+/* Author homepage: put the two main actions ahead of the portrait on small screens. */
+.home-more-living main > .brand-hero{padding-block:clamp(28px,4vw,56px)}
+.home-more-living .brand-hero .hero-roles{margin-bottom:12px}
+.home-more-living .brand-hero h1{font-size:clamp(48px,6vw,82px)}
+.home-more-living .brand-hero .hero-brand-line{font:400 clamp(28px,3.6vw,48px)/1.15 var(--serif);color:var(--brand-teal);margin:14px 0 0}
+.home-more-living .brand-hero .hero-brand-line em{color:var(--brand-magenta)}
+.home-more-living .brand-hero .signature{margin-top:16px}
+.home-more-living .brand-hero .hero-actions{flex-wrap:wrap}
+.home-more-living .home-speaking{background:var(--brand-mist)}
+.home-more-living .home-speaking figure{margin:0}
+.home-more-living .home-speaking img{display:block;width:100%;height:auto;border-radius:4px}
+.home-more-living .home-speaking .btn{margin-top:12px}
+.home-more-living main > .aoc{border-top:1px solid var(--hair);scroll-margin-top:32px}
+.home-more-living .aoc-card{width:min(940px,calc(100% - 40px))}
+@media(max-width:600px){.home-more-living .aoc-card{grid-template-columns:1fr;gap:20px}.home-more-living .aoc-mark{width:76px}}
