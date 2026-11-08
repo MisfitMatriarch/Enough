@@ -173,6 +173,7 @@
 .home-more-living .brand-hero .hero-brand-line em{color:var(--brand-magenta)}
 .home-more-living .brand-hero .signature{margin-top:16px}
 .home-more-living .brand-hero .hero-actions{flex-wrap:wrap}
+@media(min-width:761px){.home-more-living .brand-hero-portrait{max-width:390px}}
 .home-more-living .home-speaking{background:var(--brand-mist)}
 .home-more-living .home-speaking figure{margin:0}
 .home-more-living .home-speaking img{display:block;width:100%;height:auto;border-radius:4px}
