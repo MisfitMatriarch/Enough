@@ -68,11 +68,6 @@
 .home-more-living main .all-belongs[data-tone]{border:0}
 .home-more-living main .f-keep[data-tone]{border:0}
 
-/* Tanya's founder line sits under the statements in the film section */
-.home-more-living main .whole-self-film[data-tone]{align-items:center}
-.home-more-living main .whole-copy .founder-legacy{margin:26px 0 4px;padding:0;border:0;font:italic 400 clamp(19px,.6vw + 15px,22px)/1.45 var(--serif);color:var(--f2bm-ink);max-width:44ch}
-.home-more-living main .whole-copy .link{display:inline-block;margin:18px 28px 0 0}
-
 @media (max-width:860px){
   .home-more-living main{--calm-pad:clamp(40px,8vw,58px);--calm-gut:20px}
   .home-more-living main .f-stage[data-tone]{grid-template-columns:1fr}
@@ -119,30 +114,64 @@
 }
 @media (max-width:520px){.home-more-living main .collections{grid-template-columns:1fr}}
 
-/* All of this is me: film and heading side by side, the six statements as a card grid, the closing line centred */
-/* A personal story reads as an editorial spread, with one clear lead and no sentence boxes. */
-.home-more-living main .whole-self-film[data-tone]{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);column-gap:clamp(28px,5vw,72px);row-gap:20px;align-items:start}
-.home-more-living main .whole-heading{grid-column:1;grid-row:1}
-.home-more-living main .whole-heading h2{font-size:clamp(44px,4.2vw,62px);margin:0;max-width:none}
-.home-more-living main .whole-self-film .film{grid-column:1;grid-row:2;margin:0;min-width:0}
-.home-more-living main .whole-self-film .film video{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 14px 40px #18334f12}
-.home-more-living main .whole-self-film .whole-copy{display:block;grid-column:2;grid-row:1 / span 2;padding-top:0;min-width:0}
-.home-more-living main .whole-copy p{font:400 18px/1.65 var(--sans);color:var(--f2bm-ink);max-width:48ch;margin:0 0 16px}
-.home-more-living main .whole-copy p.whole-lead{font:400 clamp(28px,2.4vw,36px)/1.2 var(--serif);color:var(--brand-teal-dark);max-width:23ch;margin-bottom:20px}
-.home-more-living main .whole-notes{margin-top:18px}
-.home-more-living main .whole-copy .whole-more{margin:2px 0 0;font:600 15px/1.5 var(--sans);min-height:44px;display:inline-flex;align-items:center;gap:16px}
-.home-more-living main .whole-self-film[data-tone] p.whole-close{grid-column:1 / -1;max-width:none;margin:0;padding:22px 0 0;border-top:1px solid var(--hair);text-align:center;font:400 clamp(24px,2.2vw,32px)/1.35 var(--serif);color:var(--brand-teal-dark)}
-.home-more-living main .whole-close span{display:block;font-style:italic;color:var(--brand-magenta);margin-bottom:5px}
-@media (max-width:760px){
-  .home-more-living main .whole-self-film[data-tone]{grid-template-columns:1fr;gap:28px}
-  .home-more-living main .whole-heading,.home-more-living main .whole-self-film .film,.home-more-living main .whole-self-film .whole-copy{grid-column:1;grid-row:auto}
-  .home-more-living main .whole-heading h2{max-width:none;font-size:44px}
-  .home-more-living main .whole-self-film .whole-copy{padding:0}
-  .home-more-living main .whole-copy p{font-size:17px;line-height:1.65;margin-bottom:16px}
-  .home-more-living main .whole-copy p.whole-lead{font-size:29px}
-  .home-more-living main .whole-notes{margin-top:22px}
-  .home-more-living main .whole-self-film[data-tone] p.whole-close{text-align:left;margin:0;padding-top:4px;font-size:27px}
+/* Personal story: one heading, with the film and Tanya’s words side by side. */
+.home-more-living main .whole-self-film[data-tone]{
+  display:grid;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+  gap:clamp(22px,3vw,42px);
+  align-items:start;
 }
+.home-more-living main .whole-heading{grid-column:1 / -1}
+.home-more-living main .whole-heading .eyebrow{margin-bottom:8px}
+.home-more-living main .whole-heading h2{font-size:clamp(38px,4.2vw,60px);margin:0}
+.home-more-living main .whole-self-film .film{margin:0;min-width:0}
+.home-more-living main .whole-self-film .film video{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:6px;
+  box-shadow:0 14px 36px #18334f18;
+}
+.home-more-living main .whole-self-film .film figcaption{margin:12px 0 4px}
+.home-more-living main .whole-self-film .film .small{margin:0 0 12px}
+.home-more-living main .whole-copy{
+  min-width:0;
+  padding:clamp(20px,2.7vw,36px);
+  background:var(--brand-paper);
+  border:1px solid var(--brand-edge);
+  border-top:3px solid var(--brand-gold);
+  border-radius:6px;
+}
+.home-more-living main .whole-copy p{
+  margin:0 0 14px;
+  color:var(--f2bm-ink);
+  font:400 16px/1.6 var(--sans);
+}
+.home-more-living main .whole-copy .eyebrow{margin-bottom:12px}
+.home-more-living main .whole-copy .whole-quote{
+  margin-bottom:18px;
+  color:var(--brand-teal-dark);
+  font:500 clamp(29px,2.65vw,40px)/1.12 var(--serif);
+  text-wrap:balance;
+}
+.home-more-living main .whole-copy .whole-close{
+  margin:18px 0 4px;
+  padding-top:14px;
+  border-top:1px solid var(--hair);
+}
+.home-more-living main .whole-copy .whole-more{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  min-height:44px;
+  margin:0;
+  color:var(--brand-teal-dark);
+  font:600 15px/1.4 var(--sans);
+}
+@media (max-width:800px){
+  .home-more-living main .whole-self-film[data-tone]{grid-template-columns:minmax(0,1fr)}
+}
+body.text-larger.home-more-living main .whole-copy p:not(.eyebrow):not(.whole-quote){font-size:20px}
 
 /* Each route carries its own books and speaking */
 .home-more-living main .route-card{gap:14px}
