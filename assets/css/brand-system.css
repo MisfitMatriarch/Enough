@@ -55,6 +55,7 @@ body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-he
 /* Navigation current page and footer scope note */
 .site-header nav a[aria-current="page"]{color:var(--brand-teal);text-decoration:underline;text-decoration-color:var(--brand-gold);text-underline-offset:6px;text-decoration-thickness:2px}
 .foot-legal .foot-scope{max-width:80ch;font-size:14px;line-height:1.6;margin:0 0 10px}
+footer .foot-legal .foot-scope a:any-link{color:var(--brand-teal-dark);text-decoration:underline}
 .foot-legal p{margin:0}
 
 /* Shared components for For your life, For your work, Speaking enquiry and The Practice */
