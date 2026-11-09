@@ -24,26 +24,6 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title">
-  <div class="wrap aoc-card">
-    <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
-    <div class="aoc-body">
-      <p class="eyebrow">Before you explore</p>
-      <h2 id="aoc-title">Acknowledgement of Country</h2>
-      <hr class="seam" style="width:150px;margin:0 0 24px">
-      <div data-listen>
-        <p class="aoc-lead">Sovereignty was never ceded. No treaty was ever signed. Aboriginal and Torres Strait Islander peoples are the Traditional Custodians of the lands and waters on which this work is made, and that does not become less true with time, legislation or silence.</p>
-        <p>FREE 2B ME acknowledges Elders past, present and emerging. This body of work exists because systems cause harm when they ask people to become easier to accommodate. No community in this country has been asked to do that more often, or for longer, than First Nations peoples.</p>
-        <p>We hold that as a matter of practice, not sentiment.</p>
-      </div>
-      <div class="aoc-actions">
-        <button class="enter" type="button" id="aoc-enter" hidden>Enter the site</button>
-        <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <header class="site-header">
   <div class="header-in">
     <a class="brand" href="/" aria-label="Tanya Hicks, FREE 2B ME home">
@@ -70,7 +50,9 @@
       <div class="about-hero-copy">
       <p class="eyebrow">About Tanya</p>
       <h1>Meet <em>Tanya Hicks</em></h1>
-      <p class="about-lead">I spent years becoming easier for the world to hold.</p>
+      <p class="about-lead">My work is about how you make the most of the cards you’re dealt in life.</p>
+      <p>I draw on neuroscience, yoga, mindfulness, clinical hypnotherapy, counselling and lived experience. When we accommodate our challenges, we have more access to our genius and joy.</p>
+      <p>I spent years becoming easier for the world to hold.</p>
       <ul class="became">
         <li>More capable.</li>
         <li>More accommodating.</li>
@@ -245,10 +227,11 @@
       <ul class="stack">
         <li><b>MC and speaker</b>Hosting, keynotes, panels and workshops, with a love of helping other people have their moment.</li>
         <li><b>Counselling and behaviour support practice</b>Specialist Positive Behaviour Support Practitioner. Counsellor registered with the Australian Counselling Association at Level 2. Master of Counselling candidate. Ongoing supervision and professional accountability.</li>
+        <li><b>Yoga, mindfulness and clinical hypnotherapy</b>I teach yoga and draw on mindfulness and clinical hypnotherapy to explore attention, acceptance and how we respond to challenges.</li>
         <li><b>Author</b>Eight books. Two perspectives. Four begin with the person, four take a professional perspective, and each stands alone. Publication is forthcoming.</li>
         <li><b>Practitioner development</b>The Practitioner Pathway, built around capability that can be observed, not attendance alone.</li>
         <li><b>Organisational and systems work</b>Access, conditions, reasoning, implementation and what organisations make possible in ordinary practice.</li>
-        <li><b>Founder</b>FREE 2B ME, and The Nest in Caloundra with Neurodivergent Empowered.</li>
+        <li><b>Entrepreneur and community leader</b>I founded FREE 2B ME and Neurodivergent Empowered, which operates The Nest in Caloundra. I also serve as President of Sparkly Aliens Inc.</li>
       </ul>
     </div>
   </section>
@@ -294,6 +277,24 @@
   </section>
 </main>
 
+<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+  <div class="wrap aoc-card">
+    <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
+    <div class="aoc-body">
+      <h2 id="aoc-title">Acknowledgement of Country</h2>
+      <hr class="seam" style="width:150px;margin:0 0 24px">
+      <div data-listen>
+        <p class="aoc-lead">Sovereignty was never ceded. No treaty was ever signed. Aboriginal and Torres Strait Islander peoples are the Traditional Custodians of the lands and waters on which this work is made, and that does not become less true with time, legislation or silence.</p>
+        <p>FREE 2B ME acknowledges Elders past, present and emerging. This body of work exists because systems cause harm when they ask people to become easier to accommodate. No community in this country has been asked to do that more often, or for longer, than First Nations peoples.</p>
+        <p>We hold that as a matter of practice, not sentiment.</p>
+      </div>
+      <div class="aoc-actions">
+        <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap foot-grid">
     <div class="foot-brand">
@@ -327,7 +328,7 @@
       <a href="/recognition/">Recognition</a>
       <a href="/work-with-tanya/">Other enquiries</a>
       <a href="/privacy/">Privacy &amp; your details</a>
-      <a href="#aoc" id="aoc-reopen">Acknowledgement of Country</a>
+      <a href="#aoc">Acknowledgement of Country</a>
       <a href="https://free2bme.au/" rel="noopener">The Nest, Caloundra (free2bme.au), operated by Neurodivergent Empowered</a>
     </div>
   </div>
@@ -377,32 +378,6 @@
         speech.speak(u);
       });
     });
-  }
-
-  /* Acknowledgement of Country becomes an entry experience, once per session.
-     Without JS it simply reads as the first section of the page. */
-  var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
-  /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
-  var openAoc = function(){
-    document.body.classList.remove("aoc-entered");
-    document.body.classList.add("aoc-overlay");
-    aoc.setAttribute("role","dialog"); aoc.setAttribute("aria-modal","true");
-    enter.hidden = false; enter.focus({preventScroll:true}); aoc.scrollTop = 0; window.scrollTo(0,0);
-  };
-  if (aoc && enter) {
-    if (!seen) { openAoc(); } else { document.body.classList.add("aoc-entered"); var target = location.hash && location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) { requestAnimationFrame(function(){ target.scrollIntoView(); }); } }
-    enter.addEventListener("click", function(){
-      stopSpeech();
-      document.body.classList.remove("aoc-overlay");
-      document.body.classList.add("aoc-entered");
-      aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
-      enter.hidden = true;
-      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
-      var brand = document.querySelector(".brand"); brand && brand.focus();
-    });
-    var reopen = document.getElementById("aoc-reopen");
-    reopen && reopen.addEventListener("click", function(e){ e.preventDefault(); openAoc(); });
   }
 
   /* Accessibility controls */

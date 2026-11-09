@@ -85,24 +85,6 @@ p{margin:0 0 1.05em;text-wrap:pretty}
 .aoc-lead{font-family:var(--sans);font-size:clamp(20px,1vw + 15px,24px);font-weight:500;line-height:1.5;color:var(--ink)}
 .aoc p{font-family:var(--sans)}
 .aoc-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
-body.aoc-overlay{overflow:hidden}
-/* THE ACKNOWLEDGEMENT WEARS THE BRAND (2026-09-12).
-   It was cream and navy type on three faint CSS gradients - correct colours, no brand. It
-   now carries the real watercolour, entering from the lower edge the way the hero does, with
-   a restrained gold rule above it. Painted artwork, not a gradient approximating one. */
-body.aoc-overlay .aoc{position:fixed;inset:0;z-index:60;display:grid;place-items:center;padding:clamp(24px,5vw,56px) clamp(24px,5vw,56px) clamp(150px,18vh,230px);
-  background:var(--f2bm-cream);border-bottom:0;overflow:auto}
-body.aoc-overlay .aoc::before{content:"";position:fixed;left:0;right:0;bottom:0;height:clamp(120px,16vh,200px);
-  background:url("/assets/brand/footer-band-1024.jpg") center 42%/cover;opacity:.9;pointer-events:none;
-  -webkit-mask-image:linear-gradient(transparent,#000 62%);mask-image:linear-gradient(transparent,#000 62%)}
-body.aoc-overlay .aoc::after{content:"";position:fixed;left:0;right:0;bottom:clamp(118px,16vh,198px);height:1px;
-  background:linear-gradient(90deg,transparent,var(--f2bm-gold) 22%,var(--f2bm-gold-pale) 50%,var(--f2bm-gold) 78%,transparent);
-  opacity:.8;pointer-events:none}
-body.aoc-overlay .aoc-card{grid-template-columns:1fr;justify-items:center;text-align:center;gap:26px;max-width:680px}
-body.aoc-overlay .aoc-card .seam{margin-inline:auto}
-body.aoc-overlay .aoc-actions{justify-content:center}
-body.aoc-overlay main,body.aoc-overlay .site-header,body.aoc-overlay footer,body.aoc-overlay .a11y-toggle{display:none}
-body.aoc-entered .aoc{display:none}
 .enter{font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.06em;color:#fff;background:var(--ink);border:0;border-radius:2px;padding:15px 30px;cursor:pointer}
 .enter:hover{background:var(--f2bm-aqua-deep)}
 .listen{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink);background:transparent;border:1px solid var(--f2bm-gold);border-radius:2px;padding:13px 20px;cursor:pointer}
@@ -431,7 +413,6 @@ body.high-contrast img{filter:contrast(1.08)}
   .closing-routes{grid-template-columns:1fr}
   .turn p{max-width:none}
   .hinge{padding-left:18px}
-  body.aoc-overlay .aoc-card img{width:76px}
 }
 @media(max-width:560px){
   .totals{grid-template-columns:1fr 1fr}

@@ -23,26 +23,6 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title">
-  <div class="wrap aoc-card">
-    <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
-    <div class="aoc-body">
-      <p class="eyebrow">Before you explore</p>
-      <h2 id="aoc-title">Acknowledgement of Country</h2>
-      <hr class="seam" style="width:150px;margin:0 0 24px">
-      <div data-listen>
-        <p class="aoc-lead">Sovereignty was never ceded. No treaty was ever signed. Aboriginal and Torres Strait Islander peoples are the Traditional Custodians of the lands and waters on which this work is made, and that does not become less true with time, legislation or silence.</p>
-        <p>FREE 2B ME acknowledges Elders past, present and emerging. This body of work exists because systems cause harm when they ask people to become easier to accommodate. No community in this country has been asked to do that more often, or for longer, than First Nations peoples.</p>
-        <p>We hold that as a matter of practice, not sentiment.</p>
-      </div>
-      <div class="aoc-actions">
-        <button class="enter" type="button" id="aoc-enter" hidden>Enter the site</button>
-        <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
-      </div>
-    </div>
-  </div>
-</section>
-
 <header class="site-header">
   <div class="header-in">
     <a class="brand" href="/" aria-label="Tanya Hicks, FREE 2B ME home">
@@ -359,6 +339,24 @@
   </section>
 </main>
 
+<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+  <div class="wrap aoc-card">
+    <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
+    <div class="aoc-body">
+      <h2 id="aoc-title">Acknowledgement of Country</h2>
+      <hr class="seam" style="width:150px;margin:0 0 24px">
+      <div data-listen>
+        <p class="aoc-lead">Sovereignty was never ceded. No treaty was ever signed. Aboriginal and Torres Strait Islander peoples are the Traditional Custodians of the lands and waters on which this work is made, and that does not become less true with time, legislation or silence.</p>
+        <p>FREE 2B ME acknowledges Elders past, present and emerging. This body of work exists because systems cause harm when they ask people to become easier to accommodate. No community in this country has been asked to do that more often, or for longer, than First Nations peoples.</p>
+        <p>We hold that as a matter of practice, not sentiment.</p>
+      </div>
+      <div class="aoc-actions">
+        <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap foot-grid">
     <div class="foot-brand">
@@ -392,7 +390,7 @@
       <a href="/recognition/">Recognition</a>
       <a href="/work-with-tanya/">Other enquiries</a>
       <a href="/privacy/">Privacy &amp; your details</a>
-      <a href="#aoc" id="aoc-reopen">Acknowledgement of Country</a>
+      <a href="#aoc">Acknowledgement of Country</a>
       <a href="https://free2bme.au/" rel="noopener">The Nest, Caloundra (free2bme.au), operated by Neurodivergent Empowered</a>
     </div>
   </div>
@@ -442,32 +440,6 @@
         speech.speak(u);
       });
     });
-  }
-
-  /* Acknowledgement of Country becomes an entry experience, once per session.
-     Without JS it simply reads as the first section of the page. */
-  var aoc = document.getElementById("aoc"), enter = document.getElementById("aoc-enter");
-  /* A deep link goes straight to what was linked; the acknowledgement is not a gate on shared URLs. */
-  var seen = (function(){try{return sessionStorage.getItem("f2bm-aoc") === "1";}catch(e){return false;}})() || (location.hash && location.hash !== "#aoc");
-  var openAoc = function(){
-    document.body.classList.remove("aoc-entered");
-    document.body.classList.add("aoc-overlay");
-    aoc.setAttribute("role","dialog"); aoc.setAttribute("aria-modal","true");
-    enter.hidden = false; enter.focus({preventScroll:true}); aoc.scrollTop = 0; window.scrollTo(0,0);
-  };
-  if (aoc && enter) {
-    if (!seen) { openAoc(); } else { document.body.classList.add("aoc-entered"); var target = location.hash && location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1))); if (target) { requestAnimationFrame(function(){ target.scrollIntoView(); }); } }
-    enter.addEventListener("click", function(){
-      stopSpeech();
-      document.body.classList.remove("aoc-overlay");
-      document.body.classList.add("aoc-entered");
-      aoc.removeAttribute("role"); aoc.removeAttribute("aria-modal");
-      enter.hidden = true;
-      try { store && sessionStorage.setItem("f2bm-aoc","1"); } catch(e){}
-      var brand = document.querySelector(".brand"); brand && brand.focus();
-    });
-    var reopen = document.getElementById("aoc-reopen");
-    reopen && reopen.addEventListener("click", function(e){ e.preventDefault(); openAoc(); });
   }
 
   /* Accessibility controls */
