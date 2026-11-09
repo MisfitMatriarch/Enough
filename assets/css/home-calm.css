@@ -17,7 +17,7 @@
 .home-more-living .brand-hero .hero-actions .btn-outline:hover{background:var(--brand-mist)}
 .home-more-living .brand-hero-portrait{width:100%;max-width:440px;justify-self:end;margin:0;position:relative}
 .home-more-living .brand-hero-portrait picture{display:block;overflow:hidden;border-radius:4px}
-.home-more-living .brand-hero-portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.home-more-living .brand-hero-portrait img{display:block;width:100%;height:auto}
 .home-more-living .brand-hero-portrait figcaption{font:500 13px/1.5 var(--sans);letter-spacing:.03em;color:var(--brand-teal);margin-top:14px;text-align:right}
 @media(max-width:760px){
   .home-more-living main>.brand-hero{padding:32px 0 38px}
