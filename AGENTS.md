@@ -8,6 +8,10 @@ This repository is the public website **tanyahicks.com**. Netlify publishes the 
 
 It records where the last agent (Claude Code) stopped, Tanya's latest decisions and what each one supersedes, which sources win when they conflict, what you may and may not change, the contracts you must not break, and how to prove your work.
 
+## Standing website decisions
+
+Before auditing or editing the website, read the [standing website decision register](https://chatgpt.com/library?file_id=libfile_d013685f9c3c81918f33caf5d222258b&account_id=personal). Preserve the broad Tanya Hicks positioning, the four exact Stripe destinations and the decision to remove course access-date notices. An older draft or crawl does not reopen an owner decision. Record any new owner decision and what it supersedes in the register.
+
 ## Where the current work is
 
 - `main` is the live site.
