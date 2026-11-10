@@ -372,6 +372,7 @@ body.high-contrast img{filter:contrast(1.08)}
 @media(max-width:900px){
   :root{--fs-body:19.5px;--sp:clamp(64px,10vw,92px)}
   .wrap{width:min(100% - 36px,var(--wrap))}
+  .aoc-card{grid-template-columns:1fr;gap:24px}
   .header-in{flex-wrap:wrap;gap:14px;padding:12px 0}
   .site-header nav{order:3;width:100%;margin-left:0;gap:20px;padding-top:8px;border-top:1px solid var(--hair);overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
   .site-header nav a{white-space:nowrap;font-size:13.5px}
