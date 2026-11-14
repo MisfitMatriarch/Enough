@@ -235,3 +235,16 @@ body.high-contrast.editorial-home main .person-story[data-tone]{background:#fff!
 body.high-contrast.editorial-home main .person-story :is(p,h2,em,a,summary,figcaption){color:#000!important}
 body.high-contrast.editorial-home main .person-story .whole-statement,body.high-contrast.editorial-home main .person-story .whole-closing{border-color:#000}
 @media print{.editorial-home main .person-story[data-tone]{background:#fff;color:#000}.editorial-home main .person-story :is(p,h2,em,a,summary,figcaption){color:#000!important}}
+
+/* Owner review: deliberate keynote lines, readable introduction, correct speaker crop. */
+.editorial-speaking .signature-offer .sig-head{grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);align-items:start;gap:clamp(28px,4vw,56px)}
+.editorial-speaking #sig-title{max-width:none;text-wrap:initial;font-size:clamp(36px,3.8vw,52px);line-height:1.1}
+.editorial-speaking .sig-title-line{display:block}
+.editorial-speaking .sig-title-line+.sig-title-line{margin-top:10px}
+.editorial-speaking .sig-phrase{display:inline-block}
+.editorial-speaking .signature-offer .sig-idea{font:400 18px/1.65 var(--sans);max-width:48ch}
+.editorial-speaking .sig-idea p{font:inherit;margin:0}
+.editorial-speaking .sig-idea .sig-lead{font:400 clamp(25px,2.1vw,30px)/1.25 var(--serif);margin-bottom:18px}
+.editorial-speaking .speaker-right img{object-position:90% 45%!important}
+@media(max-width:860px){.editorial-speaking .signature-offer .sig-head{grid-template-columns:1fr;gap:26px}.editorial-speaking .signature-offer .sig-idea{max-width:58ch}}
+@media(max-width:600px){.editorial-speaking .signature-offer .sig-idea{font-size:17px}}

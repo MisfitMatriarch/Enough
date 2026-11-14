@@ -488,3 +488,23 @@ body.text-larger :is(.enquiry-steps p,.privacy-reading p,.privacy-summary p){fon
  .enquiry-page .page-hero .measure{grid-column:2;grid-row:3;margin:0;font-size:17px}
  .enquiry-page .enquiry-opening-actions{grid-column:2;grid-row:4;margin:0}
 }
+
+/* A compact shared footer: primary destinations, essential links, related sites. */
+footer.site-footer-compact{padding:44px 0 28px;border-top:1px solid var(--brand-aqua-pale)}
+.site-footer-compact .footer-main{display:flex;align-items:center;justify-content:space-between;gap:24px 48px;padding-bottom:28px}
+.site-footer-compact .footer-brand{display:flex;align-items:center;gap:18px;text-decoration:none;color:var(--brand-teal-dark)}
+.site-footer-compact .footer-brand img{width:64px;height:auto;flex-shrink:0}
+.site-footer-compact .footer-brand span{font:400 27px/1.15 var(--serif);max-width:18ch}
+.site-footer-compact .footer-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:0 24px;max-width:520px}
+.site-footer-compact a{color:inherit;text-underline-offset:4px}
+.site-footer-compact .footer-links a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;text-decoration:none}
+.site-footer-compact a:hover{text-decoration:underline}
+.site-footer-compact .footer-bottom{border-top:1px solid var(--brand-aqua-pale);padding-top:18px;color:var(--brand-teal-dark)}
+.site-footer-compact .footer-worlds{display:flex;flex-wrap:wrap;gap:0 24px;margin:0 0 8px;font:400 13px/1.6 var(--sans)}
+.site-footer-compact .footer-worlds a{display:inline-flex;align-items:center;min-height:36px}
+.site-footer-compact .footer-legal{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 24px;font:400 13px/1.6 var(--sans)}
+.site-footer-compact .footer-legal p{margin:0}
+.site-footer-compact .footer-legal nav{display:flex;flex-wrap:wrap;gap:0 24px}
+.site-footer-compact .footer-legal a{display:inline-flex;align-items:center;min-height:44px}
+.site-footer-compact a:focus-visible{outline:3px solid var(--brand-magenta);outline-offset:4px}
+@media(max-width:760px){.site-footer-compact .footer-main{align-items:flex-start;flex-direction:column;gap:18px;padding-bottom:20px}.site-footer-compact .footer-links{justify-content:flex-start;gap:0 22px}.site-footer-compact .footer-worlds{flex-direction:column;gap:0}.site-footer-compact .footer-brand span{font-size:25px}.site-footer-compact .footer-legal{align-items:flex-start;flex-direction:column;gap:4px}}
