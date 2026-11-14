@@ -209,13 +209,12 @@ body.text-larger .route-content>p{min-height:0}
 .editorial-home main .person-story .film .transcript p{color:#f5f1e8;line-height:1.65}
 .editorial-home main .person-story .whole-closing{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:70px;border-top:1px solid #527278;padding-top:34px;margin-top:12px}
 .editorial-home main .person-story[data-tone] p.whole-close{font:400 clamp(48px,5.3vw,76px)/.98 var(--serif);text-align:left;color:#fffaf1;margin:0;padding:0;letter-spacing:-.02em;grid-column:auto}
-.editorial-home main .person-story .whole-close br{display:none}
 .editorial-home main .person-story .whole-close em{color:#f2b7ce}
 .editorial-home main .person-story .whole-philosophy{font:400 clamp(24px,2.5vw,34px)/1.3 var(--serif);color:#b9e5df;max-width:29ch;margin:0}
 .editorial-home main .person-story .whole-philosophy em{color:#fffaf1}
 .editorial-home main .person-story :is(a,summary):focus-visible{outline-color:#f2b7ce}
-.editorial-books .library-hero .cta-row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
-.editorial-books .library-hero .cta-row>.link{display:inline-flex;align-items:center;min-height:44px}
+.editorial-books .library-hero .cta-row,.editorial-speaking .speaking-opening .cta-row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.editorial-books .library-hero .cta-row>.link,.editorial-speaking .speaking-opening .cta-row>.link{display:inline-flex;align-items:center;min-height:44px}
 @media(max-width:900px){
  .editorial-home main .person-story[data-tone]{grid-template-columns:1fr;gap:28px}
  .editorial-home main .person-story .whole-heading,.editorial-home main .person-story .film,.editorial-home main .person-story .whole-copy{grid-column:1;grid-row:auto}
