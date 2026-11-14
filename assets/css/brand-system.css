@@ -407,15 +407,25 @@ footer .foot-legal{color:#4c6277}
 .offer-shortcuts a{font:500 14px/1.4 var(--sans);color:var(--brand-teal-dark);min-height:44px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:4px}
 .home-more-living .brand-hero .hero-actions{margin-top:18px}
 .recognition-note{font:400 14px/1.6 var(--sans);max-width:44ch;margin:18px 0 0;color:var(--brand-teal-dark)}
-.proof-strip{display:grid;grid-template-columns:.85fr 1fr 1fr;gap:22px;align-items:stretch;padding-block:30px}
-.proof-strip>div{align-self:center}
-.proof-strip .eyebrow{margin:0 0 10px}
-.proof-strip .link{font-size:14px}
-.proof-item{display:flex;flex-direction:column;gap:7px;padding:20px 24px;background:var(--brand-paper);border:1px solid var(--brand-edge);border-radius:5px;color:var(--f2bm-ink);text-decoration:none}
-.proof-item>span{font:600 11px/1.4 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--brand-teal-dark)}
-.proof-item strong{font:500 19px/1.35 var(--sans)}
-.proof-item small{font:400 13px/1.5 var(--sans);color:var(--brand-teal-dark)}
-.proof-item:hover{border-color:var(--brand-teal);background:var(--brand-mist)}
+/* Featured speaking recognition: individual international wins, strongest first. */
+.speaker-recognition{padding-block:38px 46px;scroll-margin-top:100px}
+.recognition-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:24px}
+.recognition-heading .eyebrow{margin-bottom:8px}
+.recognition-heading h2{font:400 clamp(30px,3.3vw,46px)/1.08 var(--serif);margin:0;color:var(--brand-teal-dark)}
+.recognition-heading>.link{font-size:14px;flex-shrink:0}
+.recognition-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.award-highlight{display:flex;flex-direction:column;min-width:0;padding:26px;background:var(--brand-paper);border:1px solid var(--brand-edge);border-top:3px solid var(--brand-gold);border-radius:4px;color:var(--brand-teal-dark);text-decoration:none}
+.award-highlight .award-result{display:flex;justify-content:space-between;gap:12px;font:700 12px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.award-highlight h3{font:500 clamp(30px,2.7vw,38px)/1.05 var(--serif);margin:23px 0 18px;color:inherit}
+.award-highlight .award-program{font:600 15px/1.5 var(--sans);margin:0 0 12px;color:inherit}
+.award-highlight .award-recipient{font:400 13px/1.55 var(--sans);margin:0 0 22px;color:inherit}
+.award-highlight .award-source{display:flex;justify-content:space-between;gap:12px;margin-top:auto;padding-top:12px;font:600 13px/1.5 var(--sans);color:inherit}
+.award-highlight-lead{background:#173d45;color:#fbf7ef;border-color:#173d45;border-top-color:var(--brand-gold)}
+.award-highlight-lead .award-result{color:#e9cb91}
+.award-highlight:hover .award-source{text-decoration:underline;text-underline-offset:4px}
+.award-highlight:focus-visible{outline:3px solid var(--brand-magenta);outline-offset:4px}
+@media(max-width:900px){.recognition-heading{align-items:flex-start;flex-direction:column;gap:14px}.award-highlight{padding:22px}}
+@media(max-width:700px){.recognition-highlights{grid-template-columns:1fr;gap:16px}.speaker-recognition{padding-block:28px 36px}.award-highlight h3{font-size:34px;margin-top:18px}.award-highlight .award-recipient{margin-bottom:14px}}
 .enquiry-next{margin-top:32px}
 .enquiry-next .eyebrow{margin-bottom:16px}
 .enquiry-steps{display:grid;gap:13px;list-style:none;counter-reset:none;margin:0;padding:0}
@@ -463,11 +473,9 @@ body.text-larger :is(.enquiry-steps p,.privacy-reading p,.privacy-summary p){fon
  .site-header .nav-menu{left:0;right:0;min-width:0}
  .site-header .nav-top{font-size:13px}
  .site-header .nav-group{position:static}
- .proof-strip{grid-template-columns:1fr 1fr}
- .proof-strip>div{grid-column:1/-1}
  .privacy-layout{grid-template-columns:1fr;gap:36px}
 }
-@media(max-width:600px){.proof-strip{grid-template-columns:1fr;gap:14px}.proof-strip>div{margin-bottom:3px}.proof-item{padding:20px}.enquiry-steps>li{padding:16px}.privacy-reading h2{font-size:32px}.privacy-summary{padding:24px}}
+@media(max-width:600px){.enquiry-steps>li{padding:16px}.privacy-reading h2{font-size:32px}.privacy-summary{padding:24px}}
 @media(max-width:360px){.site-header .header-in{column-gap:6px}.site-header .brand{gap:7px}.site-header .brand img{width:30px;height:30px}.site-header .brand-name{font-size:22px}.site-header .header-enquire{padding:9px 10px;font-size:12px;gap:5px}.site-header .a11y-toggle{width:40px}.offer-shortcuts{column-gap:14px}.offer-shortcuts a{font-size:13px}}
 .enquiry-opening-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 22px;margin-top:26px}
 .enquiry-opening-actions .response-note{font:500 14px/1.4 var(--sans);color:var(--brand-teal-dark);margin:0}
