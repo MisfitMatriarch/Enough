@@ -182,3 +182,57 @@ body.text-larger .route-content>p{min-height:0}
 .talk-answer{padding:0 24px 24px}
 .talk-answer p{font-size:16px;line-height:1.65}
 @media(max-width:760px){.editorial-speaking .talks{grid-template-columns:1fr}.talk-question summary{font-size:25px}}
+
+/* Owner correction: retain the moving ribbon and make the personal story a
+   distinct visual chapter, with the original words and film intact. */
+.editorial-home main .person-story[data-tone]{background:#153f47;color:#fffaf1;padding-block:80px 60px;position:relative}
+.editorial-home main .person-story .whole-heading .eyebrow{color:#b9e5df!important}
+.editorial-home main .person-story .whole-heading h2{font-size:clamp(52px,5.7vw,82px);line-height:1.02;color:#fffaf1}
+.editorial-home main .person-story .whole-heading h2 em{color:#f2b7ce}
+.editorial-home main .person-story .whole-copy{padding-top:0}
+.editorial-home main .person-story .whole-copy p{color:#f5f1e8}
+.editorial-home main .person-story .whole-copy .whole-lead{font-size:clamp(28px,2.5vw,36px);line-height:1.18;max-width:22ch;margin-bottom:18px}
+.editorial-home main .person-story .whole-copy .whole-joy{font-size:17px;line-height:1.65;color:#b9e5df;max-width:36ch;margin-bottom:0}
+.editorial-home main .person-story .whole-notes{margin-top:30px}
+.editorial-home main .person-story .whole-statement{position:relative;border:0;border-left:2px solid #d9b46e;padding:0 0 0 24px;margin:0 0 30px;max-width:none}
+.editorial-home main .person-story .whole-statement p{font:400 clamp(29px,2.7vw,39px)/1.2 var(--serif);letter-spacing:-.01em;max-width:25ch;margin:0;color:#fffaf1}
+.editorial-home main .person-story .whole-statement em{color:#f2b7ce}
+.editorial-home main .person-story .whole-notes>p{font-size:15px;line-height:1.65;margin:0 0 14px;max-width:43ch}
+.editorial-home main .person-story .whole-notes>p:last-child{color:#b9e5df}
+.editorial-home main .person-story .whole-copy .whole-more{color:#fffaf1;border-color:#d9b46e;margin-top:10px}
+.editorial-home main .person-story .film{padding:0;align-self:start}
+.editorial-home main .person-story .film video{border-radius:2px;box-shadow:0 12px 45px #061b2430}
+.editorial-home main .person-story .film figcaption{font-size:12px;color:#b9e5df}
+.editorial-home main .person-story .film p,.editorial-home main .person-story .film a{color:#f5f1e8;font-size:14px}
+.editorial-home main .person-story .film details{margin-top:14px;border-color:#56777b;color:#f5f1e8;background:transparent}
+.editorial-home main .person-story .film summary{color:#f5f1e8;min-height:44px}
+.editorial-home main .person-story .film .transcript p{color:#f5f1e8;line-height:1.65}
+.editorial-home main .person-story .whole-closing{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:70px;border-top:1px solid #527278;padding-top:34px;margin-top:12px}
+.editorial-home main .person-story[data-tone] p.whole-close{font:400 clamp(48px,5.3vw,76px)/.98 var(--serif);text-align:left;color:#fffaf1;margin:0;padding:0;letter-spacing:-.02em;grid-column:auto}
+.editorial-home main .person-story .whole-close br{display:none}
+.editorial-home main .person-story .whole-close em{color:#f2b7ce}
+.editorial-home main .person-story .whole-philosophy{font:400 clamp(24px,2.5vw,34px)/1.3 var(--serif);color:#b9e5df;max-width:29ch;margin:0}
+.editorial-home main .person-story .whole-philosophy em{color:#fffaf1}
+.editorial-home main .person-story :is(a,summary):focus-visible{outline-color:#f2b7ce}
+.editorial-books .library-hero .cta-row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.editorial-books .library-hero .cta-row>.link{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:900px){
+ .editorial-home main .person-story[data-tone]{grid-template-columns:1fr;gap:28px}
+ .editorial-home main .person-story .whole-heading,.editorial-home main .person-story .film,.editorial-home main .person-story .whole-copy{grid-column:1;grid-row:auto}
+ .editorial-home main .person-story .whole-closing{gap:32px}
+}
+@media(max-width:760px){
+ .editorial-home main .person-story[data-tone]{padding-block:48px;gap:28px}
+ .editorial-home main .person-story .whole-heading h2{font-size:clamp(46px,12vw,64px)}
+ .editorial-home main .person-story .whole-copy .whole-lead{font-size:32px}
+ .editorial-home main .person-story .whole-statement{padding-left:20px;margin-bottom:26px}
+ .editorial-home main .person-story .whole-statement p{font-size:33px}
+ .editorial-home main .person-story .whole-notes>p{font-size:16px}
+ .editorial-home main .person-story .whole-closing{grid-template-columns:1fr;gap:24px;padding-top:28px}
+ .editorial-home main .person-story[data-tone] p.whole-close{font-size:52px}
+ .editorial-home main .person-story .whole-philosophy{font-size:27px}
+}
+body.high-contrast.editorial-home main .person-story[data-tone]{background:#fff!important;color:#000!important}
+body.high-contrast.editorial-home main .person-story :is(p,h2,em,a,summary,figcaption){color:#000!important}
+body.high-contrast.editorial-home main .person-story .whole-statement,body.high-contrast.editorial-home main .person-story .whole-closing{border-color:#000}
+@media print{.editorial-home main .person-story[data-tone]{background:#fff;color:#000}.editorial-home main .person-story :is(p,h2,em,a,summary,figcaption){color:#000!important}}

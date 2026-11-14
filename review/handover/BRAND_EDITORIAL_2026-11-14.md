@@ -11,7 +11,7 @@ The current published baseline includes the latest portrait, navigation, films, 
 
 ## Applied
 
-- Home: clearer hierarchy, square real portrait, direct speaking/books actions, static philosophy band, personal film, one Life/Work choice, readable featured books, later organisation links and optional reflection/subscription.
+- Home: clearer hierarchy, square real portrait, direct speaking/books actions, original moving topic ribbon and a contrasting personal-story section, personal film, one Life/Work choice, readable featured books, later organisation links and optional reflection/subscription.
 - Books: more direct introduction, two readable starting covers and access to all eight titles. Existing descriptions, prices and reservation implementation remain.
 - Speaking: broader introduction, organiser jump links, separately labelled signature keynote and new cards concept, compact accessible topic disclosures and a two-page PDF kit. Existing short reel remains.
 - Media: PDF kit with the existing text download retained as a separate accessible format.
@@ -49,7 +49,7 @@ This revisits `review/register/05-cultworthy-suggestions.md` against current sou
 | C3: “founding readers” | A possible launch campaign, but unnecessary to make current reservations clear. No reader identity or reward added without a launch plan. |
 | D1 / D2: organiser feedback and examples of the work in use | Highest-value remaining credibility additions. Require real quotes/accounts and permission. Existing films, event credits and sourced awards provide evidence meanwhile. |
 | D3: whole-person photography | Useful and already supported by the real Paris writing, speaking and London book photographs. These are retained and better presented. No stock/AI substitute or new private disclosure. |
-| E2 / E3: phoenix animation and meaningful thank-you pages | Existing thank-you copy retained. Additional animation is unnecessary; the new philosophy band is static and the existing access controls remain. |
+| E2 / E3: phoenix animation and meaningful thank-you pages | Existing thank-you copy retained. Additional animation is unnecessary; the original moving topic ribbon is retained at Tanya’s explicit request, including its reduced-motion behaviour; existing access controls remain. |
 
 Unverified operational receipt/notification routing and retention arrangements from the October handover remain distinct from this visual/content release. No form has been submitted and no real reservation data accessed. Older book subtitle/cover decisions are not silently reopened.
 
@@ -62,3 +62,7 @@ Unverified operational receipt/notification routing and retention arrangements f
 - Form names/fields, function code, reservation code, dependencies and four Stripe URLs are unchanged. No live submissions, main push, merge, protection changes or production deployment.
 
 Record final preview, current-head CI and responsive evidence below before requesting publication.
+
+### Owner correction during preview review
+
+Tanya explicitly requested retaining the moving topic ribbon and said the plain personal-story text block looked too basic. Restore the original ribbon markup and existing motion behaviour. Give the story a deep-teal chapter, cream and blush typography, a distinct pull quote and a large closing statement while retaining all original words and the short film. The supporting genius/joy line moves into the story closing. This supersedes the initial static-band proposal.
