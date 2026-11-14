@@ -15,8 +15,9 @@ Before auditing or editing the website, read the [standing website decision regi
 ## Where the current work is
 
 - `main` is the live site.
-- Unpublished work: branch **`claude/confident-galileo-jsna30`**, draft pull request **#8** (https://github.com/MisfitMatriarch/Enough/pull/8). Start new work from that branch, not from `main`, or you will miss the newest menu, homepage and book changes.
-- The original handover is also available on `main`; newer follow-up notes are listed below.
+- Start new work on a new branch from current `main`. The October branch and PR #8 references below are historical, and their useful changes have reached production through later releases.
+- **15 November 2026 owner instruction:** implement the whole-site review and publish it; investigate older drafts, retain useful work and close superseded PRs without breaking the site. See `review/handover/WHOLE_SITE_REFINEMENT_2026-11-15.md` for scope and draft disposition.
+- The original handover remains the historical record. Current owner decisions and the standing website decision register supersede its old branch and draft-only directions.
 
 ## Current review and release controls (27 October 2026)
 
@@ -31,8 +32,8 @@ Before auditing or editing the website, read the [standing website decision regi
 
 ## Non-negotiable limits
 
-1. Your first reply is **read-only**. Confirm the current state against the actual files and say what you would change and what is uncertain. Edit nothing until Tanya approves.
-2. Work on a **new branch** (for example `codex/<short-task-name>`) created from `claude/confident-galileo-jsna30`, and deliver a **draft** pull request.
+1. Confirm the current state against actual files before editing. Proceed with work already authorised by Tanya; otherwise present the proposed change for approval.
+2. Work on a **new branch** (for example `codex/<short-task-name>`) created from current `main`. Keep publication separate from implementation and verification.
 3. **Never push or merge to `main`, and never deploy.** Only Tanya authorises publishing, explicitly.
 4. Never force-push or rewrite history. No dependency upgrades, broad refactors or unrelated clean-up.
 5. Do not touch `netlify/functions/` (the book reservations store real people's names and emails), Netlify settings, form names or form fields.

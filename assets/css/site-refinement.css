@@ -1,0 +1,135 @@
+/* Shared interior rhythm. Existing brand artwork, transactions and access modes remain. */
+body.refined-page main{--refine-ink:#173f46;--refine-berry:#a32762;--refine-paper:#fcf9f2;--refine-tint:#edf1e9}
+body.refined-page main .wrap{width:min(1140px,calc(100% - 64px));margin-inline:auto}
+body.refined-page main h1{font:400 clamp(42px,4.6vw,64px)/1.06 var(--serif);letter-spacing:-.025em;max-width:22ch;text-wrap:pretty}
+body.refined-page main h2{font:400 clamp(34px,3.3vw,47px)/1.12 var(--serif);letter-spacing:-.018em;text-wrap:pretty}
+body.refined-page main h3{font-family:var(--serif);font-weight:400;line-height:1.18}
+body.refined-page main p{line-height:1.65}
+body.refined-page main .page-hero,body.refined-page main .life-hero,body.refined-page main .refine-hero{padding-block:52px 60px}
+body.refined-page main .band,body.refined-page main .refine-section{padding-block:56px}
+body.refined-page main .rule-top{border-top:0}
+body.refined-page main .artful>.art:not(.photo-slot){display:none}
+body.refined-page main .stand,body.refined-page main .lead{font-size:21px;line-height:1.55}
+body.refined-page main .eyebrow{font-size:11px;letter-spacing:.14em;line-height:1.55;margin:0 0 16px}
+body.refined-page main .refine-tint{background:var(--refine-tint)}
+.refine-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:start}
+.refine-split>*,.refine-cards>*{min-width:0}
+.refine-measure{max-width:65ch}
+.refine-heading{max-width:72ch;margin-bottom:32px}
+.refine-heading h2{margin-top:0}
+.refine-roles{font-size:12px;font-weight:650;letter-spacing:.025em}
+body.refined-page main .refine-intro{font:400 clamp(25px,2.4vw,32px)/1.25 var(--serif);max-width:28ch;margin:22px 0 16px}
+body.refined-page main .refine-signature{font-size:19px;font-weight:600;color:var(--refine-berry);margin:0 0 20px}
+.refined-page .cta-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-top:24px}
+.music-note{font-size:.55em;vertical-align:.12em;white-space:nowrap;display:inline-block}
+.refined-about .about-opening{align-items:center;grid-template-columns:1.12fr 1fr}
+.refined-about main .about-portrait{width:100%;max-width:450px;margin:0;justify-self:end;align-self:start}
+.refined-about main .about-portrait :is(picture,img){display:block;width:100%;height:auto;border-radius:3px;box-shadow:none}
+.refined-about main .about-film{width:100%;max-width:none;margin:0;padding:0}
+.refined-about main .about-film video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:3px}
+.refined-about main .about-film figcaption{font-size:12px;line-height:1.5;margin-top:12px}
+.refined-about main .about-film .small{font-size:13px}
+.refine-photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.refine-photo{margin:0}
+.refine-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
+.refine-photo figcaption{font-size:12px;line-height:1.5;margin-top:10px}
+.refine-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:22px;margin-top:30px}
+.refine-card{display:flex;flex-direction:column;align-items:flex-start;padding:28px;background:#fcf9f2;border:1px solid #d7dfd4;border-radius:3px}
+body.refined-page main .refine-card h3{font-size:30px;margin:0 0 16px}
+.refine-card p:not(.eyebrow){font-size:16px;margin:0 0 22px}
+.refine-card .link{margin-top:auto;min-height:44px;display:inline-flex;align-items:center;gap:12px;font-size:14px;line-height:1.5}
+.refine-four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.refine-four .refine-card{padding:24px}
+body.refined-page main .refine-four h3{font-size:26px}
+.refine-details{border:1px solid #ccd7ce;border-radius:3px;background:#fcf9f2;margin:20px 0}
+.refine-details>summary{cursor:pointer;padding:20px 24px;min-height:56px;font:600 16px/1.5 var(--sans);color:#173f46}
+.refine-details>summary:focus-visible{outline:3px solid #a32762;outline-offset:3px}
+.refine-detail-body{padding:0 24px 24px}
+.refine-detail-body>.wrap{width:100%!important}
+.refine-detail-body ul{padding-left:22px}
+.refine-detail-body li{margin-bottom:16px;line-height:1.6}
+.refined-about .refine-detail-body :is(strong,b){display:block;margin-bottom:5px}
+.refined-about .refine-detail-body ul{display:block;list-style:none;padding:0}
+.refined-about .refine-detail-body li{padding:0;background:transparent;border:0;box-shadow:none}
+body.refined-life main .life-hero h1{max-width:16ch}
+body.refined-life main .life-hero .life-lead{max-width:54ch;font-size:18px}
+body.refined-life main .reflection-focus{padding:48px max(32px,calc((100% - 1140px)/2));background:#edf1e9}
+body.refined-life main .reflection-focus h2{font-size:clamp(34px,3.3vw,47px)}
+body.refined-life main .reflection-question p{font:400 25px/1.4 var(--serif)}
+body.refined-life main .life-books{padding:56px 0}
+body.refined-life main .book-cards{gap:24px}
+body.refined-life main .offer-card.wide{display:grid;grid-template-columns:1fr 1fr;margin:0;padding:0;background:#fcf9f2;overflow:hidden}
+body.refined-life main .offer-card.wide .card-photo{display:block;height:100%;margin:0}
+body.refined-life main .offer-card.wide .card-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
+body.refined-life main .offer-card.wide .card-body{padding:32px}
+body.refined-life main .f-keep{padding-block:56px;max-width:1140px}
+body.refined-life main .f-keep blockquote{font-size:clamp(31px,3vw,43px);line-height:1.2}
+body.refined-life main .f-keep .event-photo{margin:0;align-self:center}
+body.refined-work main .offer-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+body.refined-work main .offer-card{padding:0 24px 24px;overflow:hidden;box-shadow:none}
+body.refined-work main .offer-card .card-photo{margin:0 -24px 24px}
+body.refined-work main .offer-card .card-photo img{aspect-ratio:3/2;object-fit:cover;width:100%;height:auto}
+body.refined-work main .offer-card h3{font-size:31px}
+body.refined-work main .offer-card dl{font-size:15px;line-height:1.55}
+body.refined-work main .offer-card .btn{font-size:13px;padding:12px 18px}
+body.refined-work main .practice-books{margin:0;padding:0;border:0}
+body.refined-work main .practice-books h3{font-size:35px}
+.refined-speaking .speaker-jump{padding-top:0;padding-bottom:20px}
+.refined-speaking .signature-offer .sig-outcome{margin:26px 0 32px}
+.refined-speaking .speaking-reel{max-width:850px;margin:0 auto}
+.refined-speaking .speaker-recognition{padding-block:40px}
+.refined-speaking .speaker-stage{padding-block:24px 36px}
+.refined-speaking .speaking-opening h1 .music-note{font-size:.55em}
+.optional-enquiry{grid-column:1/-1;margin:8px 0 20px;width:100%}
+.optional-enquiry .refine-detail-body{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.optional-enquiry .field{margin:0}
+body.refined-book main .book-detail-layout{align-items:center;gap:48px;grid-template-columns:minmax(0,1fr) 260px}
+body.refined-book main .book-detail-cover{display:block;width:100%;height:auto;max-width:260px;margin:0;box-shadow:6px 12px 25px #173f4625}
+body.refined-book main .book-detail-copy{max-width:58ch}
+.publication-status{font-size:13px;margin:26px 0 0}
+.refine-questions{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:0;margin:28px 0 0;counter-reset:question}
+.refine-questions li{padding:24px;background:#fcf9f2;border:1px solid #d7dfd4;font:400 26px/1.3 var(--serif);counter-increment:question}
+.refine-questions li::before{content:'0' counter(question);display:block;font:600 11px/1.5 var(--sans);letter-spacing:.14em;color:#a32762;margin-bottom:14px}
+.refine-companion{display:flex;align-items:center;justify-content:space-between;gap:32px}
+body.refined-page main .refine-companion h2{font-size:32px}
+.refine-companion .link{flex-shrink:0;min-height:44px;display:inline-flex;align-items:center}
+@media(max-width:1000px){.refine-four{grid-template-columns:1fr 1fr}body.refined-work main .offer-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:800px){
+ .refine-split,.refined-about .about-opening{grid-template-columns:1fr;gap:32px}
+ .refined-about main .about-portrait{max-width:380px;justify-self:start}
+ body.refined-life main .offer-card.wide{grid-template-columns:1fr}
+ body.refined-life main .offer-card.wide .card-photo img{aspect-ratio:16/9;height:auto}
+ .refine-questions{grid-template-columns:1fr}
+ .refine-companion{display:block}
+}
+@media(max-width:600px){
+ body.refined-page main .wrap{width:calc(100% - 40px)}
+ body.refined-page main :is(.page-hero,.life-hero,.refine-hero){padding-block:32px 40px}
+ body.refined-page main :is(.band,.refine-section){padding-block:40px}
+ body.refined-page main h1{font-size:43px}
+ body.refined-page main h2{font-size:35px}
+ body.refined-page main p{font-size:16px}
+ body.refined-page main .eyebrow{font-size:10px}
+ body.refined-page main .refine-roles{font-size:12px}
+ body.refined-page main .small,body.refined-page main .publication-status{font-size:13px}
+ .refined-about main .about-portrait{max-width:300px}
+ .refine-photo-pair{grid-template-columns:1fr;gap:24px}
+ .refine-cards,.refine-four{grid-template-columns:1fr}
+ .refine-card{padding:24px}
+ body.refined-work main .offer-cards{grid-template-columns:1fr}
+ body.refined-life main .reflection-focus{padding:40px 20px}
+ body.refined-life main .book-cards{grid-template-columns:1fr}
+ body.refined-life main .f-keep{padding-block:40px}
+ body.refined-life main .f-keep-split{grid-template-columns:1fr}
+ body.refined-book main .book-detail-layout{grid-template-columns:1fr;gap:28px}
+ body.refined-book main .book-detail-cover{width:180px;order:-1}
+ body.refined-book main h1{font-size:41px}
+ .optional-enquiry .refine-detail-body{grid-template-columns:1fr}
+ .refine-details>summary{padding:18px}
+ .refine-detail-body{padding:0 18px 20px}
+ .refine-questions li{font-size:25px}
+}
+body.high-contrast.refined-page main :is(.refine-tint,.refine-card,.refine-details,.refine-questions li){background:#fff!important;color:#000!important;border-color:#000}
+body.high-contrast.refined-page main :is(.refine-signature,.refine-roles,.refine-details summary,.music-note){color:#000!important}
+body.text-larger.refined-page main p{font-size:1.15em}
+@media print{.refine-split,.refine-cards{display:block}.refine-card,.refine-questions li{break-inside:avoid}.refine-photo img{max-height:250px;width:auto}.optional-enquiry{display:block}}
