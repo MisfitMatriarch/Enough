@@ -508,3 +508,9 @@ footer.site-footer-compact{padding:44px 0 28px;border-top:1px solid var(--brand-
 .site-footer-compact .footer-legal a{display:inline-flex;align-items:center;min-height:44px}
 .site-footer-compact a:focus-visible{outline:3px solid var(--brand-magenta);outline-offset:4px}
 @media(max-width:760px){.site-footer-compact .footer-main{align-items:flex-start;flex-direction:column;gap:18px;padding-bottom:20px}.site-footer-compact .footer-links{justify-content:flex-start;gap:0 22px}.site-footer-compact .footer-worlds{flex-direction:column;gap:0}.site-footer-compact .footer-brand span{font-size:25px}.site-footer-compact .footer-legal{align-items:flex-start;flex-direction:column;gap:4px}}
+
+/* Owner correction: the original watercolour band remains below the concise footer. */
+footer.site-footer-compact{padding-bottom:0}
+footer.site-footer-compact .foot-band{position:relative;inset:auto;height:clamp(120px,12vw,170px);max-height:none;margin-top:28px;overflow:hidden;opacity:.85}
+footer.site-footer-compact .foot-band picture{display:block}
+footer.site-footer-compact .foot-band img{display:block;width:100%;height:clamp(120px,12vw,170px);object-fit:cover;object-position:center 40%}

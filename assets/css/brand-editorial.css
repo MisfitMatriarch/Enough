@@ -248,3 +248,80 @@ body.high-contrast.editorial-home main .person-story .whole-statement,body.high-
 .editorial-speaking .speaker-right img{object-position:90% 45%!important}
 @media(max-width:860px){.editorial-speaking .signature-offer .sig-head{grid-template-columns:1fr;gap:26px}.editorial-speaking .signature-offer .sig-idea{max-width:58ch}}
 @media(max-width:600px){.editorial-speaking .signature-offer .sig-idea{font-size:17px}}
+
+/* Speaking: one clear sequence from the promise to evidence, offers and enquiry. */
+.editorial-speaking .speaking-opening h1{font-size:clamp(42px,4.2vw,62px);line-height:1.06;letter-spacing:-.025em;max-width:20ch;text-wrap:pretty}
+.editorial-speaking .speaking-opening h1>span{display:block}
+.editorial-speaking .speaking-opening h1 em{color:#a71850;font-weight:400}
+.editorial-speaking .speaker-signature{font:400 clamp(28px,2.7vw,36px)/1.2 var(--serif);color:var(--brand-teal-dark);margin:22px 0}
+.editorial-speaking .speaker-roles{font:600 13px/1.6 var(--sans);color:var(--brand-teal-dark);margin:0 0 12px}
+.editorial-speaking .speaker-stage{padding-block:28px 8px}
+.stage-intro{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 24px;margin-bottom:22px}
+.stage-intro .eyebrow{margin:0}
+.stage-intro h2{font:400 34px/1.15 var(--serif);margin:0}
+.stage-intro>.link{margin-left:auto;font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+.stage-credits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;padding:0;margin:0}
+.stage-credits li{padding:22px 24px;background:#eaf0eb;border-radius:3px}
+.stage-credits span{display:block;font:600 10px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#285b62;margin-bottom:10px}
+.stage-credits a{font:400 24px/1.18 var(--serif);color:var(--brand-teal-dark);text-decoration:none;text-underline-offset:4px}
+.stage-credits a:hover{text-decoration:underline}
+.stage-credits p{font:400 13px/1.6 var(--sans);margin:10px 0 0}
+.editorial-speaking .signature-offer .sig-outcome{background:transparent;border:0;padding:0;margin-top:36px}
+.editorial-speaking .sig-outcome ol{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;counter-reset:takeaway;padding:0}
+.editorial-speaking .sig-outcome li{counter-increment:takeaway;background:#f2ebe0;padding:24px;font:400 24px/1.3 var(--serif);border-radius:3px}
+.editorial-speaking .sig-outcome li::before{content:"0" counter(takeaway);display:block;font:600 11px/1.5 var(--sans);letter-spacing:.12em;color:#a71850;margin-bottom:14px}
+.keynote-planning{margin-top:24px;border:1px solid #d9d7ca;border-radius:3px;background:#fdfcf9}
+.keynote-planning summary{cursor:pointer;min-height:56px;padding:18px 24px;font:600 15px/1.5 var(--sans);color:var(--brand-teal-dark)}
+.keynote-planning-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;padding:8px 24px 24px}
+.keynote-planning h3{font:600 15px/1.4 var(--sans);margin:0 0 12px}
+.keynote-planning p{font:400 16px/1.65 var(--sans);margin:0}
+.editorial-speaking .cards-concept{background:#eaf0eb;border:0}
+.cards-concept-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(32px,5vw,72px);align-items:start}
+.editorial-speaking #cards-keynote-title{font-size:clamp(32px,3vw,43px);line-height:1.12;max-width:20ch}
+.cards-concept .link{display:inline-flex;align-items:center;min-height:44px;font-size:15px;gap:12px}
+.concept-intro{font:400 17px/1.65 var(--sans);margin:0 0 24px;max-width:60ch}
+.concept-takeaways{display:grid;gap:14px;list-style:none;padding:0;margin:0}
+.concept-takeaways li{padding:18px 22px;background:#fdfcf9;border-radius:3px}
+.concept-takeaways h3{font:400 25px/1.15 var(--serif);margin:0 0 8px}
+.concept-takeaways p{font:400 15px/1.6 var(--sans);margin:0}
+.speaker-section-heading{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:36px}
+.speaker-section-heading h2{margin:0;max-width:19ch}
+.speaker-section-heading>p{font:400 17px/1.65 var(--sans);max-width:48ch;margin:0}
+.speaker-format-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.speaker-format-grid article{display:flex;flex-direction:column;align-items:flex-start;padding:28px 24px;background:#f2ebe0;border-radius:3px}
+.format-number{font:600 11px/1.5 var(--sans);letter-spacing:.12em;color:#a71850}
+.speaker-format-grid h3{font:400 31px/1.1 var(--serif);margin:18px 0 16px}
+.speaker-format-grid p{font:400 15px/1.65 var(--sans);margin:0 0 22px}
+.speaker-format-grid .link{margin-top:auto;display:inline-flex;align-items:center;gap:10px;min-height:44px;font:600 13px/1.5 var(--sans)}
+.format-footnotes{display:flex;justify-content:space-between;align-items:start;gap:20px 44px;margin-top:24px}
+.format-footnotes p{font:400 13px/1.65 var(--sans);margin:0;max-width:49ch}
+.format-footnotes a{display:inline-block;padding-block:8px;text-underline-offset:4px}
+.editorial-speaking .speaker-questions{background:#f2ebe0}
+.speaker-questions-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:clamp(32px,5vw,72px);align-items:start}
+.speaker-question-photo{margin:0}
+.speaker-question-photo img{display:block;width:100%;height:auto;border-radius:3px}
+.speaker-question-photo figcaption{font:400 12px/1.5 var(--sans);color:var(--brand-teal-dark);margin-top:10px}
+.speaker-philosophy{border:0;padding:0;margin:30px 0 0}
+.speaker-philosophy p{font:400 clamp(28px,2.8vw,39px)/1.18 var(--serif);color:var(--brand-teal-dark);max-width:23ch;margin:0}
+.speaker-philosophy em{color:#a71850}
+.editorial-speaking .speaker-questions .talks{grid-template-columns:1fr;gap:14px;margin:0;min-width:0}
+.editorial-speaking .speaker-questions .talks>li{padding:0!important;margin:0!important;box-shadow:none;border:1px solid #d3cfc4!important;border-radius:3px}
+.editorial-speaking .speaker-questions .talks>li::before{display:none!important}
+.editorial-speaking .talk-question summary{font-size:26px;line-height:1.22;min-height:64px;padding:22px 24px}
+.editorial-speaking .talk-answer p{font:400 16px/1.65 var(--sans);max-width:60ch}
+.editorial-speaking .booking-summary{font:400 17px/1.65 var(--sans);max-width:64ch;margin:0 0 32px}
+.editorial-speaking :is(.keynote-planning summary,.stage-credits a,.speaker-format-grid a):focus-visible{outline:3px solid #a71850;outline-offset:4px}
+@media(max-width:1100px){.speaker-format-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.speaker-questions-grid{grid-template-columns:1fr}.speaker-question-context{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:28px}.speaker-question-context>span{display:none}.speaker-philosophy{margin:0}}
+@media(max-width:760px){
+ .editorial-speaking .speaking-opening h1{font-size:clamp(39px,10vw,58px)}
+ .stage-intro{display:block}.stage-intro h2{margin:10px 0}.stage-credits{grid-template-columns:1fr;gap:10px}.stage-credits li{padding:20px 22px}
+ .editorial-speaking .sig-outcome ol,.keynote-planning-grid,.cards-concept-grid,.speaker-section-heading{grid-template-columns:1fr}
+ .editorial-speaking .sig-outcome li{font-size:25px}.speaker-section-heading{gap:20px}
+ .speaker-format-grid{grid-template-columns:1fr 1fr;gap:12px}.speaker-format-grid article{padding:24px 20px}.speaker-format-grid h3{font-size:28px}
+ .format-footnotes{flex-direction:column;gap:12px}.speaker-question-context{grid-template-columns:1fr}.speaker-question-photo{max-width:500px}.speaker-philosophy p{font-size:34px;max-width:27ch}
+ .editorial-speaking .talk-question summary{font-size:25px;padding:20px}.talk-answer{padding:0 20px 20px}
+}
+@media(max-width:520px){.speaker-format-grid{grid-template-columns:1fr}}
+body.high-contrast.editorial-speaking :is(.stage-credits li,.sig-outcome li,.keynote-planning,.cards-concept,.concept-takeaways li,.speaker-format-grid article,.speaker-questions){background:#fff!important;color:#000!important;border:1px solid #000}
+body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.format-number,.speaker-philosophy p,.speaker-philosophy em,.speaker-signature,.speaker-roles){color:#000!important}
