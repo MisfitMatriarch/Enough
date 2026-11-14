@@ -66,7 +66,7 @@
 .editorial-home main .home-tanya p{font-size:17px;line-height:1.7}
 .editorial-home main .home-tanya .founder-legacy{font-size:26px;line-height:1.35}
 .editorial-home main .home-tanya .recognition-note{font-size:13px}
-.editorial-home main .world-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.editorial-home main .world-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .editorial-home main .world-grid article{display:flex;flex-direction:column;align-items:flex-start;padding:28px;background:#f5f4ee;border-radius:2px}
 .editorial-home main .world-grid h3{font:400 32px/1.12 var(--serif);color:var(--editorial-ink);margin:12px 0 16px}
 .editorial-home main .world-grid .eyebrow{font-size:10px!important;margin:0}
