@@ -1,5 +1,5 @@
 /* Shared personal-site components. Palette approved 15 November 2026. */
-:root{--brand-teal:#a32762;--brand-teal-dark:#17545b;--brand-aqua-pale:#d7c4ca;--brand-mist:#f4e8ed;--brand-magenta:#a32762;--brand-paper:#fcf8f2;--brand-gold:#b99855}
+:root{--brand-teal:#28232b;--brand-teal-dark:#17545b;--brand-aqua-pale:#bee9ed;--brand-mist:#f8f5f0;--brand-magenta:#28232b;--brand-paper:#fcf8f2;--brand-gold:#b99855}
 
 /* 3. One heading recipe: boxed label, serif heading with one italic magenta word */
 .eyebrow,.f-kicker{display:inline-block;width:auto;max-width:100%;font:700 11.5px/1.5 var(--sans,Figtree,sans-serif)!important;letter-spacing:.17em;text-transform:uppercase;color:var(--brand-teal);background:none;border:0;border-radius:0;padding:0;margin-bottom:18px}
@@ -46,7 +46,7 @@ h2 em,h2 .accent{font-style:italic;color:var(--brand-magenta)}
 
 /* Accessibility modes keep priority */
 body.high-contrast .eyebrow,body.high-contrast .f-kicker{background:#fff;color:#065064;border-color:#065064}
-body.high-contrast h2 em{color:#8a0844}
+body.high-contrast h2 em{color:#000000}
 body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-header .cta{background:#054a59;border-color:#054a59}
 
 @media print{.site-header{position:static}.f-thread.ribbon .ribbon-track{animation:none}}
@@ -279,11 +279,11 @@ body:not(.home-more-living) main>section.band:nth-of-type(even){background:var(-
 
 /* Book hooks and series line, under the subtitle */
 .book-series{font:600 13px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-teal);margin:6px 0 0}
-.book-hook{font:italic 400 clamp(21px,.8vw + 16px,26px)/1.35 var(--serif);color:var(--f2bm-magenta,#b0306f);margin:14px 0 6px;max-width:34ch}
+.book-hook{font:italic 400 clamp(21px,.8vw + 16px,26px)/1.35 var(--serif);color:var(--f2bm-magenta,#28232b);margin:14px 0 6px;max-width:34ch}
 .collection-note{font:400 17px/1.55 var(--sans);color:var(--f2bm-ink);max-width:62ch;margin:0 0 16px}
 
 /* Final editorial pass: a consistent reading scale, quieter surfaces and useful openings. */
-:root{--brand-edge:#d8cbc6;--brand-soft-shadow:0 8px 26px rgba(24,51,79,.055)}
+:root{--brand-edge:#dcd6cd;--brand-soft-shadow:0 8px 26px rgba(24,51,79,.055)}
 body{font-size:18px;line-height:1.65}
 body.text-larger{font-size:24px}
 main h1,main h2,main h3{text-wrap:balance}
@@ -372,7 +372,7 @@ footer .foot-legal{color:#4c6277}
 .systems-topics .card{padding:26px}
 .systems-topics h3{font-size:27px;margin:0}
 .audit-page{--serif:"Cormorant Garamond",Georgia,serif;--sans:Figtree,system-ui,sans-serif}
-.audit-page .tool{--ground:var(--f2bm-cream);--ground2:var(--f2bm-paper);--panel:var(--f2bm-paper);--ink:#28232b;--slate:#4c6277;--faint:#4c6277;--gold:#17545b;--gold-soft:#17545b;--teal:#a32762;--pink:#a32762;--pink-hi:#17545b;--line:#d8cbc6;--line2:#d8cbc6}
+.audit-page .tool{--ground:var(--f2bm-cream);--ground2:var(--f2bm-paper);--panel:var(--f2bm-paper);--ink:#28232b;--slate:#4c6277;--faint:#4c6277;--gold:#17545b;--gold-soft:#17545b;--teal:#28232b;--pink:#28232b;--pink-hi:#17545b;--line:#dcd6cd;--line2:#dcd6cd}
 .audit-page .tool .intro{min-height:0;padding:60px 0}
 .audit-page .tool .col{max-width:980px}
 .audit-page .tool .brandmark{width:70px}
@@ -523,13 +523,13 @@ footer.site-footer-compact .foot-band img{display:block;width:100%;height:clamp(
 body{font-family:var(--sans);font-weight:400;background-image:none}
 body main :is(input,textarea,select,button,label){font-family:var(--sans)}
 .site-header{background:#fcf8f2}
-.site-header .header-enquire{background:#a32762;border-color:#a32762}
-.site-header .header-enquire:hover{background:#7e204c;border-color:#7e204c}
+.site-header .header-enquire{background:#28232b;border-color:#28232b}
+.site-header .header-enquire:hover{background:#0a6e84;border-color:#0a6e84}
 .site-header .nav-menu{right:0;left:auto}
-.btn,.f-action,.save-line{font-size:14px;letter-spacing:0;text-transform:none;background:#a32762;border-color:#a32762}
-.btn:hover,.f-action:hover,.save-line:hover{background:#7e204c;border-color:#7e204c}
-.btn.btn-outline,.btn.btn-ghost,.btn.btn-text,.f-action.f-outline{background:transparent;color:#a32762;border-color:#a32762;letter-spacing:0;text-transform:none}
-.btn.btn-outline:hover,.btn.btn-ghost:hover,.btn.btn-text:hover{background:#f1dce4;color:#7e204c}
+.btn,.f-action,.save-line{font-size:14px;letter-spacing:0;text-transform:none;background:#28232b;border-color:#28232b}
+.btn:hover,.f-action:hover,.save-line:hover{background:#0a6e84;border-color:#0a6e84}
+.btn.btn-outline,.btn.btn-ghost,.btn.btn-text,.f-action.f-outline{background:transparent;color:#28232b;border-color:#28232b;letter-spacing:0;text-transform:none}
+.btn.btn-outline:hover,.btn.btn-ghost:hover,.btn.btn-text:hover{background:#eef6f6;color:#0a6e84}
 body:not(.high-contrast) :is(.brand-name,.footer-brand span){color:#28232b}
 @media(max-width:1050px){.site-header .header-in{grid-template-columns:minmax(160px,1fr) auto auto;gap:10px}.site-header nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:6px 24px}.site-header .header-enquire{grid-column:2;grid-row:1}.site-header .a11y-toggle{grid-column:3;grid-row:1}.site-header .nav-menu{left:auto;right:0;min-width:270px}}
 @media(max-width:600px){.site-header nav{justify-content:space-between;gap:0}.site-header .nav-top{font-size:13px;padding-inline:3px}.site-header .nav-more{min-width:30px;width:30px}.site-header .nav-menu{left:0;right:0;min-width:0}.site-header .brand-name{font-size:25px}.site-header .brand img{width:38px;height:38px}.site-header .header-in{grid-template-columns:minmax(130px,1fr) auto auto;gap:8px}.site-header .header-enquire{padding:9px 12px;font-size:13px}}

@@ -1,4 +1,4 @@
-/* Tanya Hicks personal site: ivory, ink, berry and blush.
+/* Tanya Hicks personal site: ivory and ink with sparing artwork colours.
    Teal is a supporting colour. Existing phoenix and watercolour artwork is preserved.
    The separate Free 2b ME Global website keeps its own approved palette. */
 :root{
@@ -11,23 +11,23 @@
   --f2bm-navy:#28232b;
   --f2bm-ink:#28232b;
 
-  /* Aqua family — the lead. Roughly two and a half times the pink. */
+  /* Turquoise artwork accents. */
   --f2bm-aqua-deep:#17545b;
   --f2bm-aqua:#1db8cf;
   --f2bm-aqua-mid:#64cce1;
-  --f2bm-aqua-pale:#d7c4ca;
+  --f2bm-aqua-pale:#bee9ed;
 
-  /* Pink family — the counterweight, never the lead. */
+  /* Bright pink artwork accents. */
   --f2bm-pink:#f84f97;
   --f2bm-pink-pale:#faa4c9;
-  --f2bm-magenta:#a32762;        /* type and rules only, too strong as a field */
+  --f2bm-magenta:#28232b;        /* legacy text token: ink, not maroon */
 
-  /* Gold — restrained. Under a tenth of the pigment, seams and flecks only. */
+  /* Gold: seams and small decorative details. */
   --f2bm-gold:#dcac66;
   --f2bm-gold-pale:#f5daaa;
   --f2bm-gold-rule:#b99855;
 
-  /* Violet — a whisper. Accent, never a field. */
+  /* Violet: a small artwork accent. */
   --f2bm-violet-pale:#d1a7e4;
   --f2bm-violet:#6d329d;         /* type only */
 
