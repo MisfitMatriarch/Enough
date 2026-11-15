@@ -11,7 +11,7 @@
 .editorial-home .hero-roles .intro-listen{min-height:30px;font-size:12px;padding:0}
 .editorial-home .brand-hero .signature{font-size:clamp(46px,4.9vw,70px);line-height:1.03;letter-spacing:-.025em;max-width:18ch;color:var(--editorial-ink);text-wrap:pretty}
 .editorial-home .signature>span{display:block}
-.editorial-home .signature em{font-style:italic;font-weight:400;color:var(--editorial-accent)}
+.editorial-home .brand-hero .signature em{font-style:italic;font-weight:400;color:var(--editorial-accent)}
 .editorial-home .brand-hero .hero-tagline{font-size:clamp(29px,2.9vw,40px);line-height:1.2;margin:22px 0 0}
 .editorial-home .brand-hero .hero-intro{font-size:17px;line-height:1.65;max-width:49ch;margin:22px 0 0}
 .editorial-home .brand-hero .hero-invitation{font-size:15px;line-height:1.6;margin:12px 0 0;color:var(--editorial-ink)}
@@ -356,6 +356,8 @@ body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.
 .editorial-home .story-more{display:inline-flex;gap:12px;align-items:center;min-height:44px;font:600 15px/1.5 var(--sans);color:var(--editorial-ink);text-decoration:none;border-bottom:2px solid var(--f2bm-pink);padding:8px 0 5px}
 .editorial-home .story-more:hover{border-color:var(--f2bm-aqua)}
 .editorial-home .hero-actions{align-items:center}
+.editorial-home .brand-hero .hero-actions .btn{background:var(--brand-teal);border-color:var(--brand-teal)}
+.editorial-home .brand-hero .hero-actions .btn:hover{background:var(--brand-teal-dark);border-color:var(--brand-teal-dark)}
 .editorial-home .hero-books-link{display:inline-flex;align-items:center;gap:14px;font-size:14px;min-height:48px;padding:10px 2px;margin-left:10px;border-bottom:2px solid var(--f2bm-aqua);color:var(--editorial-ink)}
 .editorial-home .brand-hero .hero-tagline em{color:var(--editorial-accent);text-decoration:underline;text-decoration-color:var(--f2bm-pink);text-decoration-thickness:2px;text-underline-offset:7px}
 .editorial-home .story-artwork-divider{height:44px;overflow:hidden}
