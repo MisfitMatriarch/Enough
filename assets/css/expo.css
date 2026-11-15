@@ -14,14 +14,14 @@
 .expo-header{padding-block:1rem}
 .hero h1{color:#17545b}
 .hero{background:radial-gradient(ellipse at 95% 90%,#a4e1ee55,transparent 55%),var(--f2bm-cream)}
-.button{background:#a32762;border-color:#a32762;border-radius:3px;font-size:15px;font-weight:600}
+.button{background:#28232b;border-color:#28232b;border-radius:3px;font-size:15px;font-weight:600}
 .button:hover{background:#17545b;border-color:#17545b}
-.book{padding:24px;background:var(--f2bm-cream);border:1px solid #d8cbc6;border-radius:6px;box-shadow:0 8px 26px #18334f0d}
+.book{padding:24px;background:var(--f2bm-cream);border:1px solid #dcd6cd;border-radius:6px;box-shadow:0 8px 26px #18334f0d}
 .book-grid{gap:24px}
 .book h3{font:500 28px/1.12 Cormorant,Georgia,serif;color:#17545b}
 .book img{box-shadow:0 6px 18px #18334f20}
 .book .reader-question{font-size:15px}
-.reservation-wrap{border-top:0;padding:28px;background:var(--f2bm-cream);border:1px solid #d8cbc6;border-radius:6px}
+.reservation-wrap{border-top:0;padding:28px;background:var(--f2bm-cream);border:1px solid #dcd6cd;border-radius:6px}
 @media(max-width:420px){.brand .expo-name{font-size:25px}.brand .expo-wordmark small{font-size:9px}.book{padding:18px;grid-template-columns:72px minmax(0,1fr)}.book h3{font-size:25px}.reservation-wrap{padding:20px}}
 
-.hero{background:#f4e8ed}.hero h1{color:#28232b}.button{background:#a32762;border-color:#a32762}.button:hover{background:#7e204c;border-color:#7e204c}
+.hero{background:#f8f5f0}.hero h1{color:#28232b}.button{background:#28232b;border-color:#28232b}.button:hover{background:#0a6e84;border-color:#0a6e84}

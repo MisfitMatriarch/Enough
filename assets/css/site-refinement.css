@@ -1,5 +1,5 @@
 /* Shared interior rhythm. Existing brand artwork, transactions and access modes remain. */
-body.refined-page main{--refine-ink:#28232b;--refine-berry:#a32762;--refine-paper:#fcf8f2;--refine-tint:#f4e8ed}
+body.refined-page main{--refine-ink:#28232b;--refine-accent:#28232b;--refine-paper:#fcf8f2;--refine-tint:#f8f5f0}
 body.refined-page main .wrap{width:min(1140px,calc(100% - 64px));margin-inline:auto}
 body.refined-page main h1{font:400 clamp(42px,4.6vw,64px)/1.06 var(--serif);letter-spacing:-.025em;max-width:22ch;text-wrap:pretty}
 body.refined-page main h2{font:400 clamp(34px,3.3vw,47px)/1.12 var(--serif);letter-spacing:-.018em;text-wrap:pretty}
@@ -19,7 +19,7 @@ body.refined-page main .refine-tint{background:var(--refine-tint)}
 .refine-heading h2{margin-top:0}
 .refine-roles{font-size:12px;font-weight:650;letter-spacing:.025em}
 body.refined-page main .refine-intro{font:400 clamp(25px,2.4vw,32px)/1.25 var(--serif);max-width:28ch;margin:22px 0 16px}
-body.refined-page main .refine-signature{font-size:19px;font-weight:600;color:var(--refine-berry);margin:0 0 20px}
+body.refined-page main .refine-signature{font-size:19px;font-weight:600;color:var(--refine-accent);margin:0 0 20px}
 .refined-page .cta-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-top:24px}
 .music-note{font-size:.55em;vertical-align:.12em;white-space:nowrap;display:inline-block}
 .refined-about .about-opening{align-items:center;grid-template-columns:1.12fr 1fr}
@@ -34,7 +34,7 @@ body.refined-page main .refine-signature{font-size:19px;font-weight:600;color:va
 .refine-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:3px}
 .refine-photo figcaption{font-size:12px;line-height:1.5;margin-top:10px}
 .refine-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:22px;margin-top:30px}
-.refine-card{display:flex;flex-direction:column;align-items:flex-start;padding:28px;background:#fcf8f2;border:1px solid #d8cbc6;border-radius:3px}
+.refine-card{display:flex;flex-direction:column;align-items:flex-start;padding:28px;background:#fcf8f2;border:1px solid #dcd6cd;border-radius:3px}
 body.refined-page main .refine-card h3{font-size:30px;margin:0 0 16px}
 .refine-card p:not(.eyebrow){font-size:16px;margin:0 0 22px}
 .refine-card .link{margin-top:auto;min-height:44px;display:inline-flex;align-items:center;gap:12px;font-size:14px;line-height:1.5}
@@ -43,7 +43,7 @@ body.refined-page main .refine-card h3{font-size:30px;margin:0 0 16px}
 body.refined-page main .refine-four h3{font-size:26px}
 .refine-details{border:1px solid #ccd7ce;border-radius:3px;background:#fcf8f2;margin:20px 0}
 .refine-details>summary{cursor:pointer;padding:20px 24px;min-height:56px;font:600 16px/1.5 var(--sans);color:#28232b}
-.refine-details>summary:focus-visible{outline:3px solid #a32762;outline-offset:3px}
+.refine-details>summary:focus-visible{outline:3px solid #28232b;outline-offset:3px}
 .refine-detail-body{padding:0 24px 24px}
 .refine-detail-body>.wrap{width:100%!important}
 .refine-detail-body ul{padding-left:22px}
@@ -53,7 +53,7 @@ body.refined-page main .refine-four h3{font-size:26px}
 .refined-about .refine-detail-body li{padding:0;background:transparent;border:0;box-shadow:none}
 body.refined-life main .life-hero h1{max-width:16ch}
 body.refined-life main .life-hero .life-lead{max-width:54ch;font-size:18px}
-body.refined-life main .reflection-focus{padding:48px max(32px,calc((100% - 1140px)/2));background:#f4e8ed}
+body.refined-life main .reflection-focus{padding:48px max(32px,calc((100% - 1140px)/2));background:#f8f5f0}
 body.refined-life main .reflection-focus h2{font-size:clamp(34px,3.3vw,47px)}
 body.refined-life main .reflection-question p{font:400 25px/1.4 var(--serif)}
 body.refined-life main .life-books{padding:56px 0}
@@ -88,8 +88,8 @@ body.refined-book main .book-detail-cover{display:block;width:100%;height:auto;m
 body.refined-book main .book-detail-copy{max-width:58ch}
 .publication-status{font-size:13px;margin:26px 0 0}
 .refine-questions{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding:0;margin:28px 0 0;counter-reset:question}
-.refine-questions li{padding:24px;background:#fcf8f2;border:1px solid #d8cbc6;font:400 26px/1.3 var(--serif);counter-increment:question}
-.refine-questions li::before{content:'0' counter(question);display:block;font:600 11px/1.5 var(--sans);letter-spacing:.14em;color:#a32762;margin-bottom:14px}
+.refine-questions li{padding:24px;background:#fcf8f2;border:1px solid #dcd6cd;font:400 26px/1.3 var(--serif);counter-increment:question}
+.refine-questions li::before{content:'0' counter(question);display:block;font:600 11px/1.5 var(--sans);letter-spacing:.14em;color:#28232b;margin-bottom:14px}
 .refine-companion{display:flex;align-items:center;justify-content:space-between;gap:32px}
 body.refined-page main .refine-companion h2{font-size:32px}
 .refine-companion .link{flex-shrink:0;min-height:44px;display:inline-flex;align-items:center}
@@ -144,13 +144,13 @@ body.refined-page main .refine-questions li{font-size:27px;line-height:1.3}
 body.refined-page main .refine-intro{font-size:28px;line-height:1.3}
 body.refined-page main .book-subtitle{font-size:27px;line-height:1.3}
 body.refined-page main .refine-roles{font-size:12px}
-body.refined-page main .eyebrow{font-size:11px!important;color:#a32762}
-body.refined-page main .refine-signature{color:#a32762;font-size:18px}
-body.refined-page main .refine-details{background:#fcf8f2;border-color:#d8cbc6}
+body.refined-page main .eyebrow{font-size:11px!important;color:#28232b}
+body.refined-page main .refine-signature{color:#28232b;font-size:18px}
+body.refined-page main .refine-details{background:#fcf8f2;border-color:#dcd6cd}
 body.refined-page main .practice-detail-section{padding-block:4px}
 body.refined-page main .practice-detail-section .refine-details{margin-block:8px}
 body.refined-page main .refine-cards h2{font-size:36px;margin-bottom:20px}
-body.refined-page main .refine-card{border-color:#d8cbc6;box-shadow:none}
+body.refined-page main .refine-card{border-color:#dcd6cd;box-shadow:none}
 body.refined-page main .refine-card .link{font-size:15px}
 body.refined-page main .sec-head{max-width:72ch;margin-bottom:28px}
 body.refined-page main .stages{gap:16px}

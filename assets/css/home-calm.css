@@ -81,7 +81,7 @@
 
 /* Homepage six-part structure */
 .home-more-living main .home-routes .route-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,36px);margin-top:12px}
-.home-more-living main .route-card{background:var(--f2bm-paper);border:1px solid var(--brand-aqua-pale,#d7c4ca);border-radius:4px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.home-more-living main .route-card{background:var(--f2bm-paper);border:1px solid var(--brand-aqua-pale,#bee9ed);border-radius:4px;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;align-items:flex-start;gap:16px}
 .home-more-living main .route-card h3{font:400 clamp(28px,1.6vw + 18px,38px)/1.1 var(--serif);color:var(--teal-small);margin:0}
 .home-more-living main .route-card p{margin:0;flex:1}
 .home-more-living main .route-speaking{margin-top:28px;font-size:18px}
@@ -101,7 +101,7 @@
 .home-more-living main .home-speaking-grid .film video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#28232b}
 .home-more-living main .home-speaking-grid figcaption{margin-top:10px;font:500 14px/1.5 var(--sans);color:var(--teal-small)}
 .home-more-living main .format-list{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;padding:0;margin:22px 0 28px}
-.home-more-living main .format-list li{border:1px solid var(--brand-aqua-pale,#d7c4ca);background:var(--f2bm-paper);border-radius:2px;padding:7px 12px;font:500 15px/1.3 var(--sans)}
+.home-more-living main .format-list li{border:1px solid var(--brand-aqua-pale,#bee9ed);background:var(--f2bm-paper);border-radius:2px;padding:7px 12px;font:500 15px/1.3 var(--sans)}
 .home-more-living main .action-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:22px}
 .home-more-living main .home-tanya-grid{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(32px,5vw,72px);align-items:center}
 .home-more-living main .home-tanya-grid .event-photo{margin:0}
