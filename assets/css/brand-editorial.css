@@ -336,7 +336,7 @@ body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.
 .editorial-books .library-hero .cta-row>.link,.editorial-speaking .speaking-opening .cta-row>.link{display:inline-flex;align-items:center;min-height:44px}
 
 /* Owner correction, 15 November: one focal point per section. */
-.editorial-home main .person-story[data-tone]{display:block;padding:64px 0;background:var(--f2bm-paper);color:var(--editorial-ink)}
+.editorial-home main .person-story[data-tone]{display:block;padding:64px 0 36px;background:var(--f2bm-paper);color:var(--editorial-ink)}
 .editorial-home .story-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
 .editorial-home .story-film{min-width:0;margin:0}
 .editorial-home .story-film video{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:2px;box-shadow:none}
@@ -358,7 +358,10 @@ body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.
 .editorial-home .hero-actions{align-items:center}
 .editorial-home .hero-books-link{display:inline-flex;align-items:center;gap:14px;font-size:14px;min-height:48px;padding:10px 2px;margin-left:10px;border-bottom:2px solid var(--f2bm-aqua);color:var(--editorial-ink)}
 .editorial-home .brand-hero .hero-tagline em{color:var(--editorial-ink);text-decoration:underline;text-decoration-color:var(--f2bm-pink);text-decoration-thickness:2px;text-underline-offset:7px}
-.editorial-home main .home-routes{padding-top:48px}
+.editorial-home .story-artwork-divider{height:32px;overflow:hidden}
+.editorial-home .story-artwork-divider picture{display:block;height:100%}
+.editorial-home .story-artwork-divider img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 45%}
+.editorial-home main .home-routes{padding-top:32px}
 .editorial-home main .home-books{background:transparent;padding:0;margin:0 0 60px}
 .editorial-home .home-book-pair{gap:48px}
 .editorial-home .home-book{grid-template-columns:150px minmax(0,1fr);gap:26px}
@@ -378,5 +381,5 @@ body.high-contrast.editorial-home .story-copy :is(h2,p,a,em){color:#000!importan
 body.text-larger.editorial-home main .story-copy p{font-size:20px}
 @media(max-width:1100px){.editorial-home .story-layout,.editorial-home .home-speaking{gap:32px}.editorial-home .home-book{grid-template-columns:112px minmax(0,1fr);gap:20px}.editorial-home .home-book .featured-cover img{width:112px}}
 @media(max-width:900px){.editorial-home .story-layout{grid-template-columns:1fr;gap:28px}.editorial-home .story-copy{max-width:65ch}.editorial-home .story-film{max-width:760px}.editorial-home .home-speaking{grid-template-columns:1fr;gap:28px}.editorial-home .home-speaking img{max-width:760px}.editorial-home .home-speaking-copy{max-width:65ch}}
-@media(max-width:760px){.editorial-home main .person-story[data-tone]{padding:40px 0}.editorial-home main .story-copy h2{font-size:38px;margin-bottom:18px}.editorial-home main .story-copy p{font-size:17px}.editorial-home .story-film figcaption{font-size:12px}.editorial-home .home-book-pair{gap:32px}.editorial-home .home-book{grid-template-columns:100px minmax(0,1fr);gap:20px}.editorial-home .home-book .featured-cover img{width:100px}.editorial-home main .home-book h4{font-size:27px}.editorial-home .home-speaking{padding-top:32px}.editorial-home main .home-speaking h3{font-size:36px}.editorial-home .hero-books-link{margin-left:0}.editorial-home .home-speaking .eyebrow{margin:0}}
+@media(max-width:760px){.editorial-home main .person-story[data-tone]{padding:40px 0 28px}.editorial-home .story-artwork-divider{height:24px}.editorial-home main .home-routes{padding-top:28px}.editorial-home main .story-copy h2{font-size:38px;margin-bottom:18px}.editorial-home main .story-copy p{font-size:17px}.editorial-home .story-film figcaption{font-size:12px}.editorial-home .home-book-pair{gap:32px}.editorial-home .home-book{grid-template-columns:100px minmax(0,1fr);gap:20px}.editorial-home .home-book .featured-cover img{width:100px}.editorial-home main .home-book h4{font-size:27px}.editorial-home .home-speaking{padding-top:32px}.editorial-home main .home-speaking h3{font-size:36px}.editorial-home .hero-books-link{margin-left:0}.editorial-home .home-speaking .eyebrow{margin:0}}
 @media(max-width:360px){.editorial-home .home-book{grid-template-columns:80px minmax(0,1fr);gap:16px}.editorial-home .home-book .featured-cover img{width:80px}.editorial-home main .home-book h4{font-size:25px}}
