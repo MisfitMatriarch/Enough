@@ -28,7 +28,7 @@ let failed=0;const ok=(c,m)=>{console.log((c?'PASS ':'FAIL ')+m);if(!c)failed++;
       await p.screenshot({path:path.join(OUT,`${tag}${url.replace(/\//g,'_')||'_'}.png`),fullPage:true});
     }
     await p.goto(BASE+'/');await p.waitForTimeout(800);
-    const btn='.site-header .nav-group:nth-child(2) .nav-more';
+    const btn='.site-header .nav-more[aria-controls="nav-ideas"]';
     await p.focus(btn);await p.keyboard.press('Enter');
     ok(await p.getAttribute(btn,'aria-expanded')==='true',`${tag} menu opens by keyboard`);
     await p.keyboard.press('Escape');
