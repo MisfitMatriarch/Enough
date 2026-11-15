@@ -20,6 +20,7 @@
 <style>.reserve-wrap{max-width:850px}.reserve-wrap h1{margin-bottom:24px}.reserve-wrap form{margin-top:40px}.book-quantity{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;border-bottom:1px solid #dacdbb}.book-quantity input{width:80px!important;flex-shrink:0}.reserve-wrap fieldset{border:0;padding:0;margin:32px 0}.reserve-wrap legend{font-weight:700}.reserve-wrap input{font:inherit;padding:12px}.reserve-wrap .field{margin:24px 0}.reserve-wrap .field>label{display:block}.reserve-wrap .field>input{width:100%;box-sizing:border-box}#order-error{color:#9b2359}.reserve-wrap .btn{white-space:normal}</style><link rel="stylesheet" href="/assets/css/site-alignment.css">
 <link rel="stylesheet" href="/assets/css/brand-system.css">
 <link rel="stylesheet" href="/assets/css/site-refinement.css">
+<link rel="stylesheet" href="/assets/css/acknowledgement.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -49,7 +50,7 @@
 <div class="field"><label for="customer-name">Your name</label><input id="customer-name" name="name" required autocomplete="name"></div><div class="field"><label for="customer-email">Email address</label><input id="customer-email" name="email" type="email" required autocomplete="email"></div>
 <fieldset><legend>Choose your books and quantities</legend><p>Leave a quantity at 0 for books you don’t want.</p><label class="book-quantity" for="free-2b-me"><span>FREE 2B ME <small>For your life</small></span><input id="free-2b-me" name="free-2b-me" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for FREE 2B ME"></label><label class="book-quantity" for="access-before-intervention"><span>Access Before Intervention <small>For your practice</small></span><input id="access-before-intervention" name="access-before-intervention" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for Access Before Intervention"></label><label class="book-quantity" for="you-make-sense"><span>You Make Sense <small>For your life</small></span><input id="you-make-sense" name="you-make-sense" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for You Make Sense"></label><label class="book-quantity" for="behaviour-makes-sense"><span>Behaviour Makes Sense <small>For your practice</small></span><input id="behaviour-makes-sense" name="behaviour-makes-sense" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for Behaviour Makes Sense"></label><label class="book-quantity" for="nervous-system-nourishment"><span>Nervous System Nourishment <small>For your life</small></span><input id="nervous-system-nourishment" name="nervous-system-nourishment" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for Nervous System Nourishment"></label><label class="book-quantity" for="beyond-regulation"><span>Beyond Regulation <small>For your practice</small></span><input id="beyond-regulation" name="beyond-regulation" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for Beyond Regulation"></label><label class="book-quantity" for="built-with-you"><span>Built With You <small>For your life</small></span><input id="built-with-you" name="built-with-you" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for Built With You"></label><label class="book-quantity" for="practice-that-holds"><span>Practice That Holds <small>For your practice</small></span><input id="practice-that-holds" name="practice-that-holds" type="number" min="0" max="99" step="1" value="0" inputmode="numeric" aria-label="Quantity for Practice That Holds"></label></fieldset><p id="order-total" aria-live="polite">No books selected.</p><p id="order-error" role="alert" hidden>Please choose at least one book.</p><div class="field"><label class="choice"><input type="checkbox" name="contact-consent" value="yes" required> Please contact me about my selected books and payment when they launch.</label></div><button class="btn" type="submit">Reserve my books · No payment now</button><p>Your details will be used to manage this reservation and contact you about launch and payment.</p></form></div></section></main>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+<dialog class="aoc" id="aoc" aria-labelledby="aoc-title">
   <div class="wrap aoc-card">
     <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
     <div class="aoc-body">
@@ -61,11 +62,13 @@
         <p>We hold that as a matter of practice, not sentiment.</p>
       </div>
       <div class="aoc-actions">
+        <button id="aoc-enter" type="button" hidden>Enter website</button>
+        <a class="aoc-return" href="#main">Back to page</a>
         <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
       </div>
     </div>
   </div>
-</section>
+</dialog>
 
 <footer class="site-footer-compact">
   <div class="wrap footer-main">
@@ -98,7 +101,7 @@
 <script>
 
 /* Progressive enhancement only. Without JS the page is complete:
-   the Acknowledgement of Country reads as the first section, and the
+   the acknowledgement is available through its footer link, and the
    accessibility controls stay hidden rather than appearing and doing nothing. */
 (function(){
   "use strict";

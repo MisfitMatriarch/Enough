@@ -1,0 +1,40 @@
+/* One entrance acknowledgement, never a repeated section in the page flow. */
+dialog#aoc {
+  box-sizing: border-box;
+  width: min(920px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid #c9b686;
+  border-radius: 8px;
+  background: #fcf8f0;
+  color: #283b40;
+  overflow: auto;
+  overscroll-behavior: contain;
+  font-family: Figtree, Arial, sans-serif;
+}
+dialog#aoc:not([open]) { display: none; }
+dialog#aoc::backdrop { background: rgb(19 37 42 / 65%); }
+dialog#aoc .aoc-card { width: 100%; max-width: none; padding: 0; display: block; }
+dialog#aoc .aoc-mark { width: 72px; max-width: 72px; height: auto; margin: 0 0 18px; }
+dialog#aoc h2 { margin: 0 0 20px; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; }
+dialog#aoc p { max-width: none; font-family: inherit; font-size: 17px; line-height: 1.6; margin: 0 0 18px; }
+dialog#aoc .seam { display: none; }
+dialog#aoc .aoc-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 24px; }
+dialog#aoc #aoc-enter { min-height: 44px; padding: 12px 20px; border: 1px solid #17545b; border-radius: 3px; background: #17545b; color: #fff; font: 600 16px/1.4 Figtree, Arial, sans-serif; cursor: pointer; }
+dialog#aoc #aoc-enter[hidden] { display: none; }
+dialog#aoc[open] .aoc-return { display: none; }
+body:has(dialog#aoc[open]) { overflow: hidden; }
+body.text-larger dialog#aoc p { font-size: 20px; }
+body.high-contrast dialog#aoc { background: #fff; color: #111; border-color: #111; }
+body.high-contrast dialog#aoc h2 { color: #111; }
+/* Without JavaScript, the footer link reveals a readable acknowledgement. */
+dialog#aoc:not([open]):target { display: block; position: static; margin: 24px auto; max-height: none; }
+@media (max-width: 600px) {
+  dialog#aoc { width: calc(100% - 20px); max-height: calc(100dvh - 20px); padding: 22px; }
+  dialog#aoc .aoc-mark { width: 58px; max-width: 58px; margin-bottom: 14px; }
+  dialog#aoc p { font-size: 16px; }
+  dialog#aoc .aoc-actions { margin-top: 20px; }
+}
+@media print { dialog#aoc { display: none !important; } }

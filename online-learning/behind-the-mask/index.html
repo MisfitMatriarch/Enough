@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="/assets/css/brand-system.css">
 <link rel="stylesheet" href="/assets/css/online-learning.css">
 <link rel="stylesheet" href="/assets/css/site-refinement.css">
+<link rel="stylesheet" href="/assets/css/acknowledgement.css">
 </head>
 <body class="work-page learning-page course-page refined-page">
 <a class="skip" href="#main">Skip to content</a>
@@ -50,7 +51,7 @@
 <section class="learning-details"><div class="wrap learning-layout"><div><p class="eyebrow">For the sessions that leave you wondering</p><h2>They turn up. They say they’re okay. But you’re not sure you’re getting the full picture.</h2><p>Your client is friendly, prepared and able to get through the session. They tell you things are going well. But later you hear they were exhausted, overwhelmed or struggling far more than you realised.</p>
 <div class="learning-solution"><p class="eyebrow">There is another place to start</p><h2>Learn to look beyond how someone appears.</h2><p>Behind the Mask explores why some autistic people hide or adjust parts of themselves to fit in or feel safer. Learn how to talk about the effort involved, listen to your client’s experience and support their choices about what they share.</p></div><div class="learning-solution"><p class="eyebrow">In your next session</p><p>A client tells you they are fine, but later describes being exhausted after appointments. You can ask about the effort involved, listen to their account and discuss what might make future sessions work better for them.</p></div><h2>What you’ll explore</h2><ul class="learning-topics"><li>What masking can look like and how autistic people describe it</li><li>Why someone might hide or adjust parts of themselves</li><li>The effort of preparing, getting through the day and recovering afterwards</li><li>Late identification and making sense of identity</li><li>Safety, belonging, culture and deciding whether to disclose</li><li>How masking can affect conversations and the working relationship</li><li>Supporting someone’s choices without expecting them to unmask</li><li>Writing about what a person tells you without making assumptions</li></ul><p class="learning-manifesto">A client doesn’t have to tell you everything. They do deserve a space where they can tell you what matters to them.</p><p class="learning-small">Apply the learning within your own role and professional scope.</p></div><aside aria-label="Program details" class="learning-purchase"><p class="eyebrow">Online professional learning</p><h2>Behind the Mask</h2><p class="learning-price">A$2,700</p><p>Per participant</p><a class="btn" href="https://buy.stripe.com/9B64gy53Bd8r5r1avz7IY02">Purchase for A$2,700</a><a class="link" href="mailto:tanya@neurodivergentempowered.com?subject=Behind%20the%20Mask%20training%20enquiry">Enquire about this program</a><p class="learning-small">Secure payment via Stripe.</p></aside></div></section></main>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+<dialog class="aoc" id="aoc" aria-labelledby="aoc-title">
   <div class="wrap aoc-card">
     <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
     <div class="aoc-body">
@@ -62,11 +63,13 @@
         <p>We hold that as a matter of practice, not sentiment.</p>
       </div>
       <div class="aoc-actions">
+        <button id="aoc-enter" type="button" hidden>Enter website</button>
+        <a class="aoc-return" href="#main">Back to page</a>
         <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
       </div>
     </div>
   </div>
-</section>
+</dialog>
 
 <footer class="site-footer-compact">
   <div class="wrap footer-main">
@@ -99,7 +102,7 @@
 <script>
 
 /* Progressive enhancement only. Without JS the page is complete:
-   the Acknowledgement of Country reads as the first section, and the
+   the acknowledgement is available through its footer link, and the
    accessibility controls stay hidden rather than appearing and doing nothing. */
 (function(){
   "use strict";
