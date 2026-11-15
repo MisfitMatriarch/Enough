@@ -419,8 +419,8 @@ footer .foot-legal{color:#4c6277}
 .award-highlight .award-program{font:600 15px/1.5 var(--sans);margin:0 0 12px;color:inherit}
 .award-highlight .award-recipient{font:400 13px/1.55 var(--sans);margin:0 0 22px;color:inherit}
 .award-highlight .award-source{display:flex;justify-content:space-between;gap:12px;margin-top:auto;padding-top:12px;font:600 13px/1.5 var(--sans);color:inherit}
-.award-highlight-lead{background:#28232b;color:#fcf8f2;border-color:#28232b;border-top-color:var(--brand-gold)}
-.award-highlight-lead .award-result{color:#e9cb91}
+.award-highlight-lead{background:#eaf5fa;color:#28232b;border-color:#c9dee7;border-top-color:var(--brand-gold)}
+.award-highlight-lead .award-result{color:#0a6e84}
 .award-highlight:hover .award-source{text-decoration:underline;text-underline-offset:4px}
 .award-highlight:focus-visible{outline:3px solid var(--brand-magenta);outline-offset:4px}
 @media(max-width:900px){.recognition-heading{align-items:flex-start;flex-direction:column;gap:14px}.award-highlight{padding:22px}}

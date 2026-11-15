@@ -21,6 +21,7 @@ body.refined-page main .refine-tint{background:var(--refine-tint)}
 body.refined-page main .refine-intro{font:400 clamp(25px,2.4vw,32px)/1.25 var(--serif);max-width:28ch;margin:22px 0 16px}
 body.refined-page main .refine-signature{font-size:19px;font-weight:600;color:var(--refine-accent);margin:0 0 20px}
 .refined-page .cta-row{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-top:24px}
+.music-phrase{display:inline-block;white-space:nowrap}
 .music-note{font-size:.55em;vertical-align:.12em;white-space:nowrap;display:inline-block}
 .refined-about .about-opening{align-items:center;grid-template-columns:1.12fr 1fr}
 .refined-about main .about-portrait{width:100%;max-width:450px;margin:0;justify-self:end;align-self:start}
