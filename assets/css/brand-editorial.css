@@ -238,6 +238,8 @@ body.text-larger .route-content>p{min-height:0}
 /* Speaking: one clear sequence from the promise to evidence, offers and enquiry. */
 .editorial-speaking .speaking-opening h1{font-size:clamp(42px,4.2vw,62px);line-height:1.06;letter-spacing:-.025em;max-width:20ch;text-wrap:pretty}
 .editorial-speaking .speaking-opening h1>span{display:block}
+.editorial-speaking .speaking-opening .split-hero-grid>div{container-type:inline-size}
+.editorial-speaking .speaking-opening h1 .music-phrase{font-size:min(1em,11.5cqi)}
 .editorial-speaking .speaking-opening h1 em{color:#28232b;font-weight:400}
 .editorial-speaking .speaker-signature{font:400 clamp(28px,2.7vw,36px)/1.2 var(--serif);color:var(--brand-teal-dark);margin:22px 0}
 .editorial-speaking .speaker-roles{font:600 13px/1.6 var(--sans);color:var(--brand-teal-dark);margin:0 0 12px}

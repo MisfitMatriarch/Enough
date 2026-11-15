@@ -12,6 +12,12 @@ It records where the last agent (Claude Code) stopped, Tanya's latest decisions 
 
 Before auditing or editing the website, read the [standing website decision register](https://chatgpt.com/library?file_id=libfile_d013685f9c3c81918f33caf5d222258b&account_id=personal). Preserve the broad Tanya Hicks positioning, the four exact Stripe destinations and the decision to remove course access-date notices. An older draft or crawl does not reopen an owner decision. Record any new owner decision and what it supersedes in the register.
 
+## Locked colours, 15 November 2026
+
+Tanya explicitly instructed: “KEEP LOCK THEM IN THE COLOURS”. Preserve the current ivory, ink, blue/turquoise, bright pink, pale blue and warm gold palette, original watercolour artwork and moving turquoise ribbon. Do not replace or neutralise this palette without a new explicit owner instruction. The specifically rejected dark 2026 speaking award card is the exception: use the existing pale blue surface with dark text and retain its gold top edge. This does not authorise other palette changes.
+
+Keep “🎼 play YOURS right 🎼.” together on one line wherever that musical phrase appears. Fit it within the available width on phones instead of breaking between the music signs.
+
 ## Where the current work is
 
 - `main` is the live site.
