@@ -1,5 +1,5 @@
 /* Shared personal-site components. Palette approved 15 November 2026. */
-:root{--brand-teal:#28232b;--brand-teal-dark:#17545b;--brand-aqua-pale:#bee9ed;--brand-mist:#f8f5f0;--brand-magenta:#28232b;--brand-paper:#fcf8f2;--brand-gold:#b99855}
+:root{--brand-teal:#0a6e84;--brand-teal-dark:#075468;--brand-aqua-pale:#bee9ed;--brand-mist:#f8f5f0;--brand-magenta:#0a6e84;--brand-paper:#fcf8f2;--brand-gold:#b99855}
 
 /* 3. One heading recipe: boxed label, serif heading with one italic magenta word */
 .eyebrow,.f-kicker{display:inline-block;width:auto;max-width:100%;font:700 11.5px/1.5 var(--sans,Figtree,sans-serif)!important;letter-spacing:.17em;text-transform:uppercase;color:var(--brand-teal);background:none;border:0;border-radius:0;padding:0;margin-bottom:18px}
@@ -523,14 +523,19 @@ footer.site-footer-compact .foot-band img{display:block;width:100%;height:clamp(
 body{font-family:var(--sans);font-weight:400;background-image:none}
 body main :is(input,textarea,select,button,label){font-family:var(--sans)}
 .site-header{background:#fcf8f2}
-.site-header .header-enquire{background:#28232b;border-color:#28232b}
-.site-header .header-enquire:hover{background:#0a6e84;border-color:#0a6e84}
+.site-header::after{content:"";display:block;height:7px;background:url("/assets/brand/footer-band-1024.jpg") center 45%/cover}
+.site-header .header-enquire{background:#0a6e84;border-color:#0a6e84}
+.site-header .header-enquire:hover{background:#075468;border-color:#075468}
 .site-header .nav-menu{right:0;left:auto}
-.btn,.f-action,.save-line{font-size:14px;letter-spacing:0;text-transform:none;background:#28232b;border-color:#28232b}
-.btn:hover,.f-action:hover,.save-line:hover{background:#0a6e84;border-color:#0a6e84}
+.btn,.f-action,.save-line{font-size:14px;letter-spacing:0;text-transform:none;background:#0a6e84;border-color:#0a6e84}
+.btn:hover,.f-action:hover,.save-line:hover{background:#075468;border-color:#075468}
 .btn.btn-outline,.btn.btn-ghost,.btn.btn-text,.f-action.f-outline{background:transparent;color:#28232b;border-color:#28232b;letter-spacing:0;text-transform:none}
 .btn.btn-outline:hover,.btn.btn-ghost:hover,.btn.btn-text:hover{background:#eef6f6;color:#0a6e84}
 body:not(.high-contrast) :is(.brand-name,.footer-brand span){color:#28232b}
 @media(max-width:1050px){.site-header .header-in{grid-template-columns:minmax(160px,1fr) auto auto;gap:10px}.site-header nav{grid-column:1/-1;grid-row:2;justify-content:center;gap:6px 24px}.site-header .header-enquire{grid-column:2;grid-row:1}.site-header .a11y-toggle{grid-column:3;grid-row:1}.site-header .nav-menu{left:auto;right:0;min-width:270px}}
 @media(max-width:600px){.site-header nav{justify-content:space-between;gap:0}.site-header .nav-top{font-size:13px;padding-inline:3px}.site-header .nav-more{min-width:30px;width:30px}.site-header .nav-menu{left:0;right:0;min-width:0}.site-header .brand-name{font-size:25px}.site-header .brand img{width:38px;height:38px}.site-header .header-in{grid-template-columns:minmax(130px,1fr) auto auto;gap:8px}.site-header .header-enquire{padding:9px 12px;font-size:13px}}
 body.high-contrast .site-header .header-enquire{background:#000!important;color:#fff!important;border-color:#000!important}
+
+/* Colour is carried by the original artwork and clear blue actions. */
+body:not(.high-contrast) main .link{border-bottom-color:#f84f97}
+body.high-contrast .site-header::after{background:#000;height:1px}

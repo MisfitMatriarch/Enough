@@ -1,6 +1,6 @@
 /* Tanya Hicks: an editorial layer for the personal brand and its two journeys.
    Keep the shared navigation, access controls, fonts and existing form contracts. */
-.editorial-home{--editorial-ink:#28232b;--editorial-accent:#28232b;--editorial-line:#dcd6cd}
+.editorial-home{--editorial-ink:#28232b;--editorial-accent:#0a6e84;--editorial-line:#dcd6cd}
 .editorial-home main{--calm-pad:clamp(48px,5vw,72px);--calm-h2:clamp(36px,3.5vw,50px)}
 .editorial-home .wrap{width:min(100% - 64px,1220px)}
 .editorial-home main>.brand-hero{padding:clamp(32px,4vw,60px) 0 48px}
@@ -313,11 +313,11 @@ body.high-contrast.editorial-speaking :is(.stage-credits li,.sig-outcome li,.key
 body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.format-number,.speaker-philosophy p,.speaker-philosophy em,.speaker-signature,.speaker-roles){color:#000!important}
 
 /* Shared personal-site composition: real people and clear destinations. */
-.editorial-home{--editorial-ink:#28232b;--editorial-accent:#28232b;--editorial-line:#dcd6cd}
+.editorial-home{--editorial-ink:#28232b;--editorial-accent:#0a6e84;--editorial-line:#dcd6cd}
 .editorial-home main .brand-hero .signature{color:#28232b}
 .editorial-home main .brand-hero .hero-tagline{color:#28232b}
 .editorial-home main .brand-hero .hero-roles{font-size:12px;letter-spacing:.035em}
-.editorial-home main .home-routes{background:#fcf8f2}
+.editorial-home main .home-routes{background:#eaf5fa}
 .editorial-home main .editorial-section-head{grid-template-columns:1.25fr .75fr;gap:48px;margin-bottom:36px}
 .editorial-home main .editorial-section-head h2{font-size:clamp(40px,4vw,56px);max-width:20ch;color:#28232b}
 .editorial-home main .home-books{margin:0 0 36px;padding:32px;background:#f6f1e8}
@@ -357,8 +357,8 @@ body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.
 .editorial-home .story-more:hover{border-color:var(--f2bm-aqua)}
 .editorial-home .hero-actions{align-items:center}
 .editorial-home .hero-books-link{display:inline-flex;align-items:center;gap:14px;font-size:14px;min-height:48px;padding:10px 2px;margin-left:10px;border-bottom:2px solid var(--f2bm-aqua);color:var(--editorial-ink)}
-.editorial-home .brand-hero .hero-tagline em{color:var(--editorial-ink);text-decoration:underline;text-decoration-color:var(--f2bm-pink);text-decoration-thickness:2px;text-underline-offset:7px}
-.editorial-home .story-artwork-divider{height:32px;overflow:hidden}
+.editorial-home .brand-hero .hero-tagline em{color:var(--editorial-accent);text-decoration:underline;text-decoration-color:var(--f2bm-pink);text-decoration-thickness:2px;text-underline-offset:7px}
+.editorial-home .story-artwork-divider{height:44px;overflow:hidden}
 .editorial-home .story-artwork-divider picture{display:block;height:100%}
 .editorial-home .story-artwork-divider img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 45%}
 .editorial-home main .home-routes{padding-top:32px}
@@ -375,11 +375,14 @@ body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.
 .editorial-home main .home-speaking p:not(.eyebrow){font:400 17px/1.65 var(--sans);margin:0 0 22px;max-width:45ch}
 .editorial-home .speaking-actions{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
 .editorial-home .speaking-actions .link{display:inline-flex;min-height:44px;align-items:center;gap:12px;font-size:14px}
-.editorial-home main .home-reflection[data-tone]{background:#f5f4ee}
+.editorial-home main .home-reflection[data-tone]{background:#fff2df}
 body.high-contrast.editorial-home :is(.person-story,.story-film .transcript){background:#fff!important;color:#000!important}
 body.high-contrast.editorial-home .story-copy :is(h2,p,a,em){color:#000!important}
 body.text-larger.editorial-home main .story-copy p{font-size:20px}
 @media(max-width:1100px){.editorial-home .story-layout,.editorial-home .home-speaking{gap:32px}.editorial-home .home-book{grid-template-columns:112px minmax(0,1fr);gap:20px}.editorial-home .home-book .featured-cover img{width:112px}}
 @media(max-width:900px){.editorial-home .story-layout{grid-template-columns:1fr;gap:28px}.editorial-home .story-copy{max-width:65ch}.editorial-home .story-film{max-width:760px}.editorial-home .home-speaking{grid-template-columns:1fr;gap:28px}.editorial-home .home-speaking img{max-width:760px}.editorial-home .home-speaking-copy{max-width:65ch}}
-@media(max-width:760px){.editorial-home main .person-story[data-tone]{padding:40px 0 28px}.editorial-home .story-artwork-divider{height:24px}.editorial-home main .home-routes{padding-top:28px}.editorial-home main .story-copy h2{font-size:38px;margin-bottom:18px}.editorial-home main .story-copy p{font-size:17px}.editorial-home .story-film figcaption{font-size:12px}.editorial-home .home-book-pair{gap:32px}.editorial-home .home-book{grid-template-columns:100px minmax(0,1fr);gap:20px}.editorial-home .home-book .featured-cover img{width:100px}.editorial-home main .home-book h4{font-size:27px}.editorial-home .home-speaking{padding-top:32px}.editorial-home main .home-speaking h3{font-size:36px}.editorial-home .hero-books-link{margin-left:0}.editorial-home .home-speaking .eyebrow{margin:0}}
+@media(max-width:760px){.editorial-home main .person-story[data-tone]{padding:40px 0 28px}.editorial-home .story-artwork-divider{height:32px}.editorial-home main .home-routes{padding-top:28px}.editorial-home main .story-copy h2{font-size:38px;margin-bottom:18px}.editorial-home main .story-copy p{font-size:17px}.editorial-home .story-film figcaption{font-size:12px}.editorial-home .home-book-pair{gap:32px}.editorial-home .home-book{grid-template-columns:100px minmax(0,1fr);gap:20px}.editorial-home .home-book .featured-cover img{width:100px}.editorial-home main .home-book h4{font-size:27px}.editorial-home .home-speaking{padding-top:32px}.editorial-home main .home-speaking h3{font-size:36px}.editorial-home .hero-books-link{margin-left:0}.editorial-home .home-speaking .eyebrow{margin:0}}
 @media(max-width:360px){.editorial-home .home-book{grid-template-columns:80px minmax(0,1fr);gap:16px}.editorial-home .home-book .featured-cover img{width:80px}.editorial-home main .home-book h4{font-size:25px}}
+
+body.high-contrast.editorial-home main .home-routes{background:#fff!important}
+body.high-contrast.editorial-home .signature em{color:#000}
