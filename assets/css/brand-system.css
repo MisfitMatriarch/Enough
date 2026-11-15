@@ -46,7 +46,7 @@ h2 em,h2 .accent{font-style:italic;color:var(--brand-magenta)}
 
 /* Accessibility modes keep priority */
 body.high-contrast .eyebrow,body.high-contrast .f-kicker{background:#fff;color:#065064;border-color:#065064}
-body.high-contrast h2 em{color:#8a0844}
+body.high-contrast h2 em{color:#000000}
 body.high-contrast .btn,body.high-contrast .f-action,body.high-contrast .site-header .cta{background:#054a59;border-color:#054a59}
 
 @media print{.site-header{position:static}.f-thread.ribbon .ribbon-track{animation:none}}
@@ -279,7 +279,7 @@ body:not(.home-more-living) main>section.band:nth-of-type(even){background:var(-
 
 /* Book hooks and series line, under the subtitle */
 .book-series{font:600 13px/1.5 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--brand-teal);margin:6px 0 0}
-.book-hook{font:italic 400 clamp(21px,.8vw + 16px,26px)/1.35 var(--serif);color:var(--f2bm-magenta,#b0306f);margin:14px 0 6px;max-width:34ch}
+.book-hook{font:italic 400 clamp(21px,.8vw + 16px,26px)/1.35 var(--serif);color:var(--f2bm-magenta,#28232b);margin:14px 0 6px;max-width:34ch}
 .collection-note{font:400 17px/1.55 var(--sans);color:var(--f2bm-ink);max-width:62ch;margin:0 0 16px}
 
 /* Final editorial pass: a consistent reading scale, quieter surfaces and useful openings. */

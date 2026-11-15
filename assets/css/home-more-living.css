@@ -157,7 +157,7 @@
 .effort-outcomes .day-icon{box-sizing:content-box;padding:18px;background:#eaf4f0;border-radius:50%}
 .surface-wave{display:block;width:100%;height:55px}
 .home-more-living .effort-depth{padding:20px 32px 32px;background:#eee8f4}
-.home-more-living .effort-depth h3{color:#9c2869}
+.home-more-living .effort-depth h3{color:#28232b}
 .home-more-living .effort-layers{gap:24px;margin-top:28px}
 .home-more-living .effort-layer{border:0;border-radius:12px;padding:24px;background:#ffffff80}
 .effort-layer .day-icon{color:#75418b;margin-bottom:20px}
@@ -171,7 +171,7 @@
 .route-editorial{gap:0 48px;counter-reset:entry}
 .route-editorial>a{background:transparent!important;border:0;border-radius:0;overflow:visible;border-top:1px solid #cec2ae;counter-increment:entry}
 .route-editorial .route-content{position:relative;padding:24px 0 24px 42px}
-.route-editorial .route-content:before{content:counter(entry,decimal-leading-zero);position:absolute;left:0;top:28px;font:600 12px/1.4 var(--sans);color:#a42c71}
+.route-editorial .route-content:before{content:counter(entry,decimal-leading-zero);position:absolute;left:0;top:28px;font:600 12px/1.4 var(--sans);color:#28232b}
 .route-editorial .route-label{display:none}
 .route-editorial strong{font-size:clamp(25px,2.3vw,31px);line-height:1.2}
 .f2b-additions .route-editorial p{font-size:16px;margin:10px 0 14px;max-width:42ch}
@@ -188,7 +188,7 @@
 .reflection-choices{display:flex;flex-wrap:wrap;gap:8px 20px;border-bottom:1px solid #d4c9b9;padding-bottom:14px}
 .reflection-choices[hidden]{display:none}
 .reflection-choices button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;padding:10px 0;min-height:44px;color:#545456;font:500 14px/1.4 var(--sans);cursor:pointer}
-.reflection-choices button[aria-pressed=true]{border-color:#ac2c73;color:#ac2c73}
+.reflection-choices button[aria-pressed=true]{border-color:#28232b;color:#28232b}
 .reflection-choices button:focus-visible{outline:2px solid #28232b;outline-offset:4px}
 .reflection-question{padding:30px 0 10px}
 .reflection-question[hidden]{display:none}
