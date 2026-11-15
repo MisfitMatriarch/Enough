@@ -8,9 +8,9 @@ h3{font-size:clamp(27px,3vw,38px);line-height:1.15}
 h1+p,h2+p,h3+p{margin-top:1em}
 .site-header{position:relative}
 .site-header nav{flex-wrap:wrap}
-.site-header .cta,.btn,body.interior .btn-teal{background:#08768a;color:#fff;border-color:#08768a}
+.site-header .cta,.btn,body.interior .btn-teal{background:#a32762;color:#fff;border-color:#a32762}
 .site-header .cta:hover,.btn:hover{background:#17545b;color:#fff}
-.btn-ghost{background:transparent!important;color:#08768a!important}
+.btn-ghost{background:transparent!important;color:#a32762!important}
 .page-hero .stand{max-width:42ch}
 .page-hero .measure{margin-top:24px}
 footer .foot-legal{font-size:14px}
@@ -25,7 +25,7 @@ footer .foot-legal{font-size:14px}
 .site-enquiry{display:grid;gap:22px;max-width:680px}
 .site-enquiry label{display:block;font-size:18px;font-weight:500;margin-bottom:8px}
 .site-enquiry input:not([type=checkbox]),.site-enquiry textarea,.site-enquiry select{width:100%;padding:13px 15px;border:1px solid #9c9a90;border-radius:3px;background:#fcf8f2;color:#30383b;font:inherit}
-.site-enquiry input[type=checkbox]{width:20px;height:20px;flex:none;accent-color:#08768a}
+.site-enquiry input[type=checkbox]{width:20px;height:20px;flex:none;accent-color:#a32762}
 .site-enquiry .choice{display:flex;gap:12px;align-items:start;font-weight:400}
 .site-enquiry .btn{justify-self:start;font:inherit;padding:14px 24px;cursor:pointer}
 .site-enquiry .field p{margin-bottom:0}
@@ -143,9 +143,9 @@ body.high-contrast .leadership,body.high-contrast .leadership *{background:white
 /* Accessibility control lives in the header, so it never covers page content. October 2026. */
 .site-header .header-in{position:relative}
 .site-header .a11y-toggle{position:static;display:inline-flex;align-items:center;gap:8px;margin-left:-12px;padding:10px 14px;min-height:44px;box-shadow:none;background:transparent;border:1px solid var(--f2bm-gold);color:var(--ink);font:600 14px/1 var(--sans);border-radius:2px;cursor:pointer}
-.site-header .a11y-toggle:hover,.site-header .a11y-toggle[aria-expanded="true"]{background:#fff;border-color:#08768a}
+.site-header .a11y-toggle:hover,.site-header .a11y-toggle[aria-expanded="true"]{background:#fff;border-color:#a32762}
 .site-header .a11y-toggle:focus-visible{outline:3px solid var(--f2bm-magenta);outline-offset:2px}
-.site-header .a11y-icon{display:none;font:500 19px/1 var(--serif);color:#08768a}
+.site-header .a11y-icon{display:none;font:500 19px/1 var(--serif);color:#a32762}
 .site-header .a11y-panel{position:absolute;top:calc(100% + 8px);right:0;bottom:auto;z-index:60}
 @media(max-width:750px){
   .site-header .header-in{column-gap:10px}

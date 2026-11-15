@@ -364,3 +364,7 @@ body.high-contrast.editorial-speaking :is(.stage-credits span,.stage-credits a,.
 body.high-contrast.editorial-home main .person-story[data-tone]{background:#fff!important;color:#000!important}
 body.high-contrast.editorial-home main .person-story :is(p,h2,em,a,summary,figcaption){color:#000!important}
 body.text-larger.editorial-home main .person-story .whole-notes>p,body.text-larger.editorial-home main .person-story .whole-philosophy{font-size:1.15em}
+
+/* Paired actions wrap with breathing room on small screens. */
+.editorial-books .library-hero .cta-row,.editorial-speaking .speaking-opening .cta-row{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center}
+.editorial-books .library-hero .cta-row>.link,.editorial-speaking .speaking-opening .cta-row>.link{display:inline-flex;align-items:center;min-height:44px}
