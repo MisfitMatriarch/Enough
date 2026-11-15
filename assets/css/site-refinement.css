@@ -164,3 +164,13 @@ body.refined-page main .systems-topics{grid-template-columns:repeat(2,minmax(0,1
 body.high-contrast.refined-page main :is(h1,h2,h3,h4,p,li,dd,dt,.eyebrow){color:#000!important}
 body.text-larger.refined-page main :is(p,li,dd,dt){font-size:1.15em}
 @media(max-width:600px){body.refined-page main :is(p,li,dd,dt){font-size:16px}body.refined-page main .lead{font-size:18px}body.refined-page main .refine-intro{font-size:25px}body.refined-page main .systems-topics{grid-template-columns:1fr}body.refined-page main .refine-questions li{font-size:25px}body.refined-page main .refine-card h2{font-size:32px}}
+
+/* Tanya’s two professional memberships on About. Keep both original marks readable and together on wide screens. */
+.refine-memberships .membership-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;max-width:960px;margin-top:28px}
+.refine-memberships .membership-card{align-items:stretch}
+.refine-memberships .membership-mark{display:flex;align-items:center;justify-content:flex-start;min-height:110px;padding:14px 16px;margin:0 0 18px;background:#fff;border-radius:2px}
+.refine-memberships .membership-mark img{display:block;width:auto;height:auto;max-width:100%;max-height:82px;object-fit:contain;object-position:left center}
+.refine-memberships .membership-card h3{font-size:26px;margin:0 0 12px}
+.refine-memberships .membership-card p{margin:0}
+.refine-memberships .membership-card .link{margin-top:auto;padding-top:18px}
+@media(max-width:600px){.refine-memberships .membership-grid{grid-template-columns:1fr}}
