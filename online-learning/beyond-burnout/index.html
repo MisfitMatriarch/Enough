@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="/assets/css/brand-system.css">
 <link rel="stylesheet" href="/assets/css/online-learning.css">
 <link rel="stylesheet" href="/assets/css/site-refinement.css">
+<link rel="stylesheet" href="/assets/css/acknowledgement.css">
 </head>
 <body class="work-page learning-page course-page refined-page">
 <a class="skip" href="#main">Skip to content</a>
@@ -50,7 +51,7 @@
 <section class="learning-details"><div class="wrap learning-layout"><div><p class="eyebrow">For the sessions that leave you wondering</p><h2>They used to manage. Now they can barely get through the day.</h2><p>Your client tells you they are exhausted. Things they once managed now feel impossible. You want to help, but every suggestion seems to become another thing they have to do.</p>
 <div class="learning-solution"><p class="eyebrow">There is another place to start</p><h2>Start with the whole picture, not another to-do list.</h2><p>Beyond Burnout explores autistic burnout, exhaustion and the things that may affect a person’s energy and ability to get through the day. Learn to have conversations about what is taking effort, what support is available and what might need to change.</p></div><div class="learning-solution"><p class="eyebrow">In your next session</p><p>A client can no longer follow a routine that once helped. You can step back, ask what is taking their energy and consider with them what support or changes may be useful now.</p></div><h2>What you’ll explore</h2><ul class="learning-topics"><li>What current research and autistic people say about burnout</li><li>What you notice, what the person tells you and what needs further consideration</li><li>How daily demands, support and energy can change over time</li><li>The effect of sensory experiences and surroundings</li><li>Interoception, or noticing signals from inside the body</li><li>Rest, enjoyment, connection and practical support</li><li>Physical and mental health, and working with other professionals</li><li>Making and reviewing a support plan together</li></ul><p class="learning-manifesto">The aim is to understand what the person needs, not give them another list of things to manage.</p><p class="learning-small">Apply the learning within your own role and professional scope.</p></div><aside aria-label="Program details" class="learning-purchase"><p class="eyebrow">Online professional learning</p><h2>Beyond Burnout</h2><p class="learning-price">A$2,700</p><p>Per participant</p><a class="btn" href="https://buy.stripe.com/6oUbJ00Nl6K32eP0UZ7IY04">Purchase for A$2,700</a><a class="link" href="mailto:tanya@neurodivergentempowered.com?subject=Beyond%20Burnout%20training%20enquiry">Enquire about this program</a><p class="learning-small">Secure payment via Stripe.</p></aside></div></section></main>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+<dialog class="aoc" id="aoc" aria-labelledby="aoc-title">
   <div class="wrap aoc-card">
     <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
     <div class="aoc-body">
@@ -62,11 +63,13 @@
         <p>We hold that as a matter of practice, not sentiment.</p>
       </div>
       <div class="aoc-actions">
+        <button id="aoc-enter" type="button" hidden>Enter website</button>
+        <a class="aoc-return" href="#main">Back to page</a>
         <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
       </div>
     </div>
   </div>
-</section>
+</dialog>
 
 <footer class="site-footer-compact">
   <div class="wrap footer-main">
@@ -99,7 +102,7 @@
 <script>
 
 /* Progressive enhancement only. Without JS the page is complete:
-   the Acknowledgement of Country reads as the first section, and the
+   the acknowledgement is available through its footer link, and the
    accessibility controls stay hidden rather than appearing and doing nothing. */
 (function(){
   "use strict";

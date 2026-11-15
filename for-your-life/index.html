@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="/assets/css/home-calm.css">
 <link rel="stylesheet" href="/assets/css/brand-system.css">
 <link rel="stylesheet" href="/assets/css/site-refinement.css">
+<link rel="stylesheet" href="/assets/css/acknowledgement.css">
 </head>
 <body class="home-more-living life-page refined-page refined-life">
 <a class="skip" href="#main">Skip to content</a>
@@ -75,7 +76,7 @@
 </div>
 </article></div></section><section class="refine-section refine-tint" id="participant-support"><div class="wrap"><span id="f-world"></span><span id="f-partnerships"></span><span id="nest"></span><span id="f-belong"></span><span id="inherit"></span><p class="eyebrow">Belonging, in real life</p><h2>Your identity is<br><em>not up for debate.</em></h2><p class="refine-measure">People of all genders, with and without disability, are welcome across this work. You choose what you share and how you participate. Women’s events include trans women.</p><div class="refine-cards"><article class="refine-card"><p class="eyebrow">Community &amp; connection</p><h3>Sparkly Aliens Inc.</h3><p>A separate not-for-profit working for community, inclusion and belonging.</p><a class="link" href="https://sparklyaliensinc.com/">Explore Sparkly Aliens <span aria-hidden="true">→</span></a></article><article class="refine-card"><p class="eyebrow">Caloundra &amp; Australian support</p><h3>The Nest / Neurodivergent Empowered</h3><p>Shared interests, relationships and individual support. Find current sessions, partnerships and referral information on the service website.</p><a class="link" href="https://free2bme.au/">Find current supports <span aria-hidden="true">→</span></a></article></div><p class="small">Participant supports are delivered within the relevant practitioner’s qualifications, professional scope and active provider registration.</p></div></section><div class="f2b-additions" data-tone="tint"><section class="f-wrap f-keep f-keep-split" id="f-lines"><div class="keep-copy"><span id="lang-title"></span><p class="f-kicker">A sentence for your pocket</p><h2 id="closing-title">Take something <em>with you.</em></h2><div aria-label="Choose a sentence" class="f-choices" hidden=""><button aria-pressed="true" class="cursor-interaction" data-line="life" type="button">My life</button><button aria-pressed="false" class="cursor-interaction" data-line="support" type="button">My support</button><button aria-pressed="false" class="cursor-interaction" data-line="belong" type="button">My belonging</button><button aria-pressed="false" class="cursor-interaction" data-line="joy" type="button">My joy</button></div><blockquote aria-live="polite" id="f-pocket-line">You don’t have to justify the life you want.</blockquote><p>Keep the words that help. Leave the rest.</p><button class="save-line" hidden="" id="save-line" type="button">Save this line as an image</button><div class="f-actions"><a class="f-action" href="/free2bme/#reflection">Try a free reflection <span aria-hidden="true">→</span></a><a href="/stay-connected/">Stay connected →</a></div></div><figure class="event-photo"><img alt="Tanya writing a letter by hand during a picnic in Paris" decoding="async" height="1365" loading="lazy" src="/assets/brand/tanya-future-self-paris.jpg" width="2048"/><figcaption>Tanya Hicks writing a letter to her future self · Under the Eiffel Tower, Paris</figcaption></figure></section></div></main>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+<dialog class="aoc" id="aoc" aria-labelledby="aoc-title">
   <div class="wrap aoc-card">
     <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
     <div class="aoc-body">
@@ -87,11 +88,13 @@
         <p>We hold that as a matter of practice, not sentiment.</p>
       </div>
       <div class="aoc-actions">
+        <button id="aoc-enter" type="button" hidden>Enter website</button>
+        <a class="aoc-return" href="#main">Back to page</a>
         <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
       </div>
     </div>
   </div>
-</section>
+</dialog>
 
 <footer class="site-footer-compact">
   <div class="wrap footer-main">
@@ -123,7 +126,7 @@
 
 <script>
 /* Progressive enhancement only. Without JS the page is complete:
-   the Acknowledgement of Country reads as the first section, and the
+   the acknowledgement is available through its footer link, and the
    accessibility controls stay hidden rather than appearing and doing nothing. */
 (function(){
   "use strict";

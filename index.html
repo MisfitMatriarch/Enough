@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="/assets/css/brand-system.css">
 <link rel="stylesheet" href="/assets/css/brand-editorial.css">
 <link rel="stylesheet" href="/assets/css/site-refinement.css">
+<link rel="stylesheet" href="/assets/css/acknowledgement.css">
 </head>
 <body class="home-more-living editorial-home site-worlds-clear">
 <a class="skip" href="#main">Skip to content</a>
@@ -134,7 +135,7 @@
 <section aria-labelledby="reflection-title" class="home-reflection" data-tone="tint" id="reflection"><div class="wrap reflection-pair"><div><p class="eyebrow">A moment for you</p><h2 id="reflection-title">What would you make<br/><em>more room for?</em></h2><p>A free reflection to notice what you want more of, what you want less of, and what would make life feel more like yours. Use the prompts that work for you.</p><a class="btn" href="/free2bme/#reflection">Start the free reflection <span aria-hidden="true">→</span></a><p class="reflection-note">Free. No email needed.</p></div><div class="stay-invite"><p class="eyebrow">Stay connected</p><h3>More living.<br/>In your inbox.</h3><p>Stories and practical ideas from my work and everyday life, plus book and event news.</p><a class="link" href="/stay-connected/">Stay connected <span aria-hidden="true">→</span></a><p class="reflection-note">An optional email subscription. Unsubscribe any time.</p></div></div></section>
 </main>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+<dialog class="aoc" id="aoc" aria-labelledby="aoc-title">
   <div class="wrap aoc-card">
     <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
     <div class="aoc-body">
@@ -146,11 +147,13 @@
         <p>We hold that as a matter of practice, not sentiment.</p>
       </div>
       <div class="aoc-actions">
+        <button id="aoc-enter" type="button" hidden>Enter website</button>
+        <a class="aoc-return" href="#main">Back to page</a>
         <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
       </div>
     </div>
   </div>
-</section>
+</dialog>
 
 <footer class="site-footer-compact">
   <div class="wrap footer-main">
@@ -182,7 +185,7 @@
 
 <script>
 /* Progressive enhancement only. Without JS the page is complete:
-   the Acknowledgement of Country reads as the first section, and the
+   the acknowledgement is available through its footer link, and the
    accessibility controls stay hidden rather than appearing and doing nothing. */
 (function(){
   "use strict";

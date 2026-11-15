@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="/assets/css/living-additions.css">
 <link rel="stylesheet" href="/assets/css/brand-system.css">
 <link rel="stylesheet" href="/assets/css/site-refinement.css">
+<link rel="stylesheet" href="/assets/css/acknowledgement.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -47,7 +48,7 @@
 
 <main id="main"><section class="band"><div class="wrap reserve-wrap"><p class="eyebrow">Thank you</p><h1>Your reservation is received.</h1><p class="stand">Nothing has been charged.</p><p>We’ll contact you at the email address you provided when your selected book launches, with payment and delivery details.</p><p class="keep-line-label">A line to keep</p><p class="keep-line">Something does not need to improve you to deserve space in your life.</p><a class="btn" href="/books/">Back to the books</a></div></section></main>
 
-<section class="aoc" id="aoc" aria-labelledby="aoc-title" tabindex="-1">
+<dialog class="aoc" id="aoc" aria-labelledby="aoc-title">
   <div class="wrap aoc-card">
     <img class="aoc-mark" src="/assets/brand/phoenix-dark-240.png" srcset="/assets/brand/phoenix-dark-120.png 120w,/assets/brand/phoenix-dark-240.png 240w" sizes="(max-width:900px) 96px, 132px" width="240" height="240" alt="FREE TO BE ME">
     <div class="aoc-body">
@@ -59,11 +60,13 @@
         <p>We hold that as a matter of practice, not sentiment.</p>
       </div>
       <div class="aoc-actions">
+        <button id="aoc-enter" type="button" hidden>Enter website</button>
+        <a class="aoc-return" href="#main">Back to page</a>
         <button class="listen" type="button" data-listen-btn hidden><span aria-hidden="true">&#9834;</span> Listen</button>
       </div>
     </div>
   </div>
-</section>
+</dialog>
 
 <footer class="site-footer-compact">
   <div class="wrap footer-main">
@@ -96,7 +99,7 @@
 <script>
 
 /* Progressive enhancement only. Without JS the page is complete:
-   the Acknowledgement of Country reads as the first section, and the
+   the acknowledgement is available through its footer link, and the
    accessibility controls stay hidden rather than appearing and doing nothing. */
 (function(){
   "use strict";

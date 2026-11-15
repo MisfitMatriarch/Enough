@@ -1,22 +1,38 @@
-/* Escape, focus containment and return focus for the existing acknowledgement. */
+/* Show the acknowledgement at the entrance once per tab visit, with a footer reread link. */
 (()=>{
   const dialog=document.getElementById('aoc');
   const close=document.getElementById('aoc-enter');
-  const reopen=document.getElementById('aoc-reopen');
-  if(!dialog||!close)return;
+  if(!dialog||!close||typeof dialog.showModal!=='function')return;
+  const title=dialog.querySelector('h2');
   let origin=null;
-  if(reopen)reopen.addEventListener('click',()=>{origin=reopen;});
-  close.addEventListener('click',()=>{if(origin){origin.focus();origin=null;}});
-  document.addEventListener('keydown',event=>{
-    if(!document.body.classList.contains('aoc-overlay'))return;
-    if(event.key==='Escape'){event.preventDefault();close.click();return;}
-    if(event.key!=='Tab')return;
-    const items=[...dialog.querySelectorAll('button:not([hidden]),a[href],input,select,textarea,[tabindex="0"]')].filter(el=>el.getClientRects().length);
-    if(!items.length)return;
-    const first=items[0],last=items[items.length-1];
-    if(event.shiftKey&&(document.activeElement===first||!dialog.contains(document.activeElement))){event.preventDefault();last.focus();}
-    else if(!event.shiftKey&&(document.activeElement===last||!dialog.contains(document.activeElement))){event.preventDefault();first.focus();}
+  // If storage is unavailable, keep reading optional rather than interrupting every page.
+  let seen=true;
+  try{seen=sessionStorage.getItem('f2bm-aoc')==='1';}catch{}
+  close.hidden=false;
+  function open(trigger){
+    if(dialog.open)return;
+    origin=trigger||null;
+    close.textContent=seen?'Return to website':'Enter website';
+    dialog.showModal();
+    if(title){title.tabIndex=-1;title.focus({preventScroll:true});}
+  }
+  close.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('close',()=>{
+    seen=true;
+    try{sessionStorage.setItem('f2bm-aoc','1');}catch{}
+    const listening=dialog.querySelector('[data-listen-btn][aria-pressed="true"]');
+    if(listening)listening.click();
+    if(location.hash==='#aoc')history.replaceState(null,'',location.pathname+location.search);
+    if(origin){origin.focus({preventScroll:true});origin=null;}
+    else{
+      const main=document.querySelector('main');
+      if(main){main.tabIndex=-1;main.focus({preventScroll:true});}
+    }
   });
+  document.querySelectorAll('a[href="#aoc"]').forEach(link=>{
+    link.addEventListener('click',event=>{event.preventDefault();open(link);});
+  });
+  if(!seen||location.hash==='#aoc')open();
 })();
 
 (function(){
