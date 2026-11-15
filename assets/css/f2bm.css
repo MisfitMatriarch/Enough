@@ -18,8 +18,8 @@
   /* COLOUR CORRECTION 2026-09-12. Teal leads the typography; navy is demoted to reading
      text, navigation and footer detail. Cream is the page, colour lives at the edges. */
   --head:var(--f2bm-aqua-deep);
-  --teal-small:#0a6e84;
-  --body:#2d4260;
+  --teal-small:#a32762;
+  --body:#28232b;
   --rule:rgba(202,164,90,.42);
   --hair:rgba(8,43,88,.12);
   --serif:'Cormorant Garamond',Georgia,serif;

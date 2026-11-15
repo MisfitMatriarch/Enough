@@ -9,7 +9,7 @@ h1+p,h2+p,h3+p{margin-top:1em}
 .site-header{position:relative}
 .site-header nav{flex-wrap:wrap}
 .site-header .cta,.btn,body.interior .btn-teal{background:#08768a;color:#fff;border-color:#08768a}
-.site-header .cta:hover,.btn:hover{background:#075c6a;color:#fff}
+.site-header .cta:hover,.btn:hover{background:#17545b;color:#fff}
 .btn-ghost{background:transparent!important;color:#08768a!important}
 .page-hero .stand{max-width:42ch}
 .page-hero .measure{margin-top:24px}
@@ -24,7 +24,7 @@ footer .foot-legal{font-size:14px}
 .enquiry-layout a{overflow-wrap:anywhere}
 .site-enquiry{display:grid;gap:22px;max-width:680px}
 .site-enquiry label{display:block;font-size:18px;font-weight:500;margin-bottom:8px}
-.site-enquiry input:not([type=checkbox]),.site-enquiry textarea,.site-enquiry select{width:100%;padding:13px 15px;border:1px solid #9c9a90;border-radius:3px;background:#fdfcf9;color:#30383b;font:inherit}
+.site-enquiry input:not([type=checkbox]),.site-enquiry textarea,.site-enquiry select{width:100%;padding:13px 15px;border:1px solid #9c9a90;border-radius:3px;background:#fcf8f2;color:#30383b;font:inherit}
 .site-enquiry input[type=checkbox]{width:20px;height:20px;flex:none;accent-color:#08768a}
 .site-enquiry .choice{display:flex;gap:12px;align-items:start;font-weight:400}
 .site-enquiry .btn{justify-self:start;font:inherit;padding:14px 24px;cursor:pointer}
@@ -36,7 +36,7 @@ footer .foot-legal{font-size:14px}
 .speaking-hero-photo figcaption{font-size:16px;margin-top:12px;color:var(--teal-small)}
 .founder-legacy{font:400 clamp(28px,3vw,40px)/1.25 var(--serif);color:#963166;border-left:2px solid var(--f2bm-gold);padding-left:22px;margin-top:32px}
 .home-more-living .hero .signature{font:400 clamp(22px,2.5vw,30px)/1.35 var(--serif);max-width:40ch;margin:24px auto}
-.tiers button[aria-pressed=true]{background:var(--f2bm-gold);color:#082b58}
+.tiers button[aria-pressed=true]{background:var(--f2bm-gold);color:#28232b}
 [hidden]{display:none!important}
 body.high-contrast .site-enquiry input,body.high-contrast .site-enquiry select,body.high-contrast .site-enquiry textarea{background:white;color:black;border-color:black}
 @media(max-width:750px){.book-detail-layout,.enquiry-layout,.offer-grid{grid-template-columns:1fr}.book-detail-layout .book-detail-cover{max-width:230px;grid-row:2}.principles-grid[style],.pair-body[style]{grid-template-columns:1fr!important}.site-header nav{gap:12px 18px}.site-enquiry .btn{width:100%}.page-hero .wrap{min-width:0}main h1,main h2,main h3{overflow-wrap:break-word}.site-header .header-in{flex-wrap:wrap}}
