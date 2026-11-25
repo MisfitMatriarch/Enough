@@ -1,3 +1,15 @@
+# Withdrawn paid courses. Old links lead to related reading on this site.
+/online-learning/access-before-intervention/*  /books/access-before-intervention/  301!
+/online-learning/access-before-intervention  /books/access-before-intervention/  301!
+/online-learning/behind-the-mask/*  /books/you-make-sense/  301!
+/online-learning/behind-the-mask  /books/you-make-sense/  301!
+/online-learning/from-compliance-to-collaboration/*  /books/built-with-you/  301!
+/online-learning/from-compliance-to-collaboration  /books/built-with-you/  301!
+/online-learning/beyond-burnout/*  /books/nervous-system-nourishment/  301!
+/online-learning/beyond-burnout  /books/nervous-system-nourishment/  301!
+/online-learning/*  /professional-learning/  301!
+/online-learning  /professional-learning/  301!
+
 # Netlify redirects
 #
 # FREE 2B ME uses the same site as tanyahicks.com. Preserve every page path
